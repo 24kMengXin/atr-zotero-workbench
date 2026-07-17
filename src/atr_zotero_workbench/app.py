@@ -1,33 +1,76 @@
-from __future__ import annotations
-import argparse, json
+import argparse
+import json
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from .core import load_legacy_run, project_graph
-from .zotero import export_bundle, sync_web_api
-from .human_input import impact_report
 
-HTML = '''<!doctype html><meta charset="utf-8"><title>ATR Research Workbench</title><style>
-body{margin:0;font:14px system-ui;color:#19212b;background:#f6f8fb}header{padding:16px 22px;background:#152b42;color:white}main{display:grid;grid-template-columns:1fr 340px;height:calc(100vh - 68px)}svg{width:100%;height:100%;background:white}.edge{stroke:#aab6c2;stroke-width:1.4}.node{cursor:pointer;stroke:white;stroke-width:2}.paper{fill:#3478b9}.concept{fill:#7b61a8}.research_question{fill:#ca6f1e}.evidence_boundary{fill:#4a9e85}.run{fill:#374151}aside{padding:18px;overflow:auto;border-left:1px solid #d5dde5}h2{margin-top:0}.tag{display:inline-block;padding:2px 7px;background:#e8eef5;border-radius:10px;margin:2px}a{color:#075da8}</style><header><b>ATR × Zotero Research Workbench</b><span id="meta"></span></header><main><svg id="g"></svg><aside id="detail"><h2>选择一个节点</h2><p>蓝色：文献；紫色：概念；橙色：研究问题；绿色：证据边界。</p></aside></main><script>
-fetch('graph.json').then(x=>x.json()).then(data=>{document.querySelector('#meta').textContent=' · '+data.run+' · 派生只读投影';let svg=document.querySelector('#g'),w=svg.clientWidth,h=svg.clientHeight, by=Object.fromEntries(data.nodes.map(x=>[x.id,x]));let pos={};data.nodes.forEach((n,i)=>{let a=i/data.nodes.length*6.283,r=Math.min(w,h)*.34;pos[n.id]=[w/2+Math.cos(a)*r,h/2+Math.sin(a)*r]});data.edges.forEach(e=>{let a=pos[e.source],b=pos[e.target];if(a&&b){let l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]);l.setAttribute('class','edge');svg.append(l)}});data.nodes.forEach(n=>{let [x,y]=pos[n.id],c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',n.kind==='run'?17:12);c.setAttribute('class','node '+n.kind);c.onclick=()=>show(n,data.edges);svg.append(c);let t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x',x+15);t.setAttribute('y',y+4);t.textContent=n.label.slice(0,32);t.style.fontSize='11px';svg.append(t)});function show(n,edges){let d=n.data, rel=edges.filter(e=>e.source===n.id||e.target===n.id).map(e=>by[e.source===n.id?e.target:e.source].label);document.querySelector('#detail').innerHTML='<h2>'+n.label+'</h2><p><span class="tag">'+n.kind+'</span></p>'+Object.entries(d).map(([k,v])=>'<h3>'+k+'</h3><div>'+ (Array.isArray(v)?v.join('<br>'):String(v).replaceAll('\n','<br>'))+'</div>').join('')+'<h3>连接</h3><div>'+rel.map(x=>'<span class="tag">'+x+'</span>').join(' ')+'</div>'}}
-});</script>'''
+from .core import load_legacy_run, project_graph
+from .human_input import impact_report
+from .zotero import export_bundle, sync_web_api
+
+
+# The graph is embedded at build time so the page works in Zotero's file:// tab
+# without relying on fetch() permissions.
+HTML = r'''<!doctype html>
+<meta charset="utf-8"><title>ATR Research Workbench</title>
+<style>
+:root{--ink:#172033;--muted:#64748b;--line:#d9e2ec;--paper:#276fbf;--question:#bc5b12;--concept:#7858a6;--bg:#f5f7fb}
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg)}
+header{padding:16px 24px;background:#122a43;color:#fff;display:flex;justify-content:space-between;gap:16px;align-items:center}header b{font-size:17px}header span{color:#c7d6e6}
+main{display:grid;grid-template-columns:minmax(520px,1fr) 360px;height:calc(100vh - 61px)}section{padding:18px 22px;overflow:auto}aside{padding:20px;overflow:auto;border-left:1px solid var(--line);background:#fff}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}.metric,.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}.metric b{display:block;font-size:24px}.metric span{color:var(--muted);font-size:12px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button{border:1px solid var(--line);border-radius:18px;padding:7px 12px;background:#fff;color:var(--ink);cursor:pointer}.tabs button.active{background:#122a43;border-color:#122a43;color:#fff}
+#map{width:100%;min-height:390px;background:#fff;border:1px solid var(--line);border-radius:10px}.edge{stroke:#b9c6d2;stroke-width:1.3}.node{cursor:pointer;stroke:#fff;stroke-width:2}.run{fill:#374151}.concept{fill:var(--concept)}.research_question{fill:var(--question)}
+.legend{color:var(--muted);margin:10px 0}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 12px}.paper-dot{background:var(--paper)}.question-dot{background:var(--question)}.concept-dot{background:var(--concept)}
+.paper{width:100%;text-align:left;margin:0 0 8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;color:var(--ink)}.paper:hover{border-color:#7aa7d7}.paper strong{display:block}.paper small{color:var(--muted)}
+.tag{display:inline-block;border-radius:12px;padding:3px 8px;margin:2px;background:#edf2f7;color:#425466;font-size:12px}h2{margin:0 0 10px;font-size:19px}h3{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:18px 0 5px}p{line-height:1.5}.empty{color:var(--muted);padding:22px}.warning{background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:10px;margin-top:12px}
+@media(max-width:800px){main{grid-template-columns:1fr;height:auto;min-height:calc(100vh - 61px)}aside{border-left:0;border-top:1px solid var(--line)}.metrics{grid-template-columns:1fr}.tabs{flex-wrap:wrap}}
+</style>
+<header><b>ATR × Zotero Research Workbench</b><span id="meta"></span></header>
+<main><section><div class="metrics" id="metrics"></div><div class="tabs"><button class="active" data-view="questions">研究问题地图</button><button data-view="papers">文献与证据边界</button></div><div id="view"></div></section><aside id="detail"><h2>从研究问题开始</h2><p>默认视图只显示研究问题、其所需概念与锚定文献，避免把全部证据节点挤成一团。</p></aside></main>
+<script>
+const data=__GRAPH_DATA__;
+const by=Object.fromEntries(data.nodes.map(n=>[n.id,n]));
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const short=(s,n=34)=>String(s??'').length>n?String(s).slice(0,n-1)+'…':String(s??'');
+function edgesFor(id){return data.edges.filter(e=>e.source===id||e.target===id)}
+function show(n){let d=n.data||{},related=edgesFor(n.id).map(e=>by[e.source===n.id?e.target:e.source]).filter(Boolean);let html='<h2>'+esc(n.label)+'</h2><span class="tag">'+esc(n.kind)+'</span>';
+ for(const [k,v] of Object.entries(d)){html+='<h3>'+esc(k.replaceAll('_',' '))+'</h3><p>'+esc(Array.isArray(v)?v.join('\n'):v).replaceAll('\n','<br>')+'</p>'}
+ if(related.length)html+='<h3>直接连接</h3>'+related.map(x=>'<span class="tag">'+esc(short(x.label,28))+'</span>').join('');$('#detail').innerHTML=html}
+function button(n){let b=document.createElement('button');b.className='paper';b.innerHTML='<strong>'+esc(n.label)+'</strong><small>'+esc(n.data.source_kind||n.kind)+' · '+esc(n.data.source_id||'')+'</small>';b.onclick=()=>show(n);return b}
+function renderMetrics(){let counts=data.nodes.reduce((a,n)=>(a[n.kind]=(a[n.kind]||0)+1,a),{});$('#meta').textContent=data.run+' · 派生只读投影';$('#metrics').innerHTML=`<div class="metric"><b>${counts.research_question||0}</b><span>待验证的研究问题</span></div><div class="metric"><b>${counts.paper||0}</b><span>可追溯文献</span></div><div class="metric"><b>${counts.evidence_boundary||0}</b><span>证据边界</span></div>`}
+function renderQuestions(){let qs=data.nodes.filter(n=>n.kind==='research_question'), ids=new Set(['concept:domain',...qs.map(n=>n.id)]);for(const e of data.edges)if(qs.some(q=>q.id===e.source)&&by[e.target]?.kind==='concept')ids.add(e.target);let nodes=[...ids].map(id=>by[id]).filter(Boolean);let svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.id='map';svg.setAttribute('viewBox','0 0 900 470');let pos={};let domain=by['concept:domain'];if(domain)pos[domain.id]=[450,92];qs.forEach((q,i)=>pos[q.id]=[260+i*(380/Math.max(qs.length-1,1)),220]);let concepts=nodes.filter(n=>n.kind==='concept'&&n.id!=='concept:domain');concepts.forEach((n,i)=>pos[n.id]=[95+(i%5)*178,365+Math.floor(i/5)*72]);let run=data.nodes.find(n=>n.kind==='run');if(run){nodes.unshift(run);pos[run.id]=[450,28]}
+ for(const e of data.edges){if(!pos[e.source]||!pos[e.target])continue;let l=document.createElementNS(svg.namespaceURI,'line');l.setAttribute('x1',pos[e.source][0]);l.setAttribute('y1',pos[e.source][1]);l.setAttribute('x2',pos[e.target][0]);l.setAttribute('y2',pos[e.target][1]);l.setAttribute('class','edge');svg.append(l)}
+ for(const n of nodes){let [x,y]=pos[n.id],g=document.createElementNS(svg.namespaceURI,'g'),c=document.createElementNS(svg.namespaceURI,'circle'),t=document.createElementNS(svg.namespaceURI,'text');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',n.kind==='research_question'?20:14);c.setAttribute('class','node '+n.kind);t.setAttribute('x',x);t.setAttribute('y',y+(n.kind==='research_question'?37:31));t.setAttribute('text-anchor','middle');t.setAttribute('font-size','12');t.textContent=short(n.label,30);g.append(c,t);g.onclick=()=>show(n);svg.append(g)}
+ let wrap=document.createElement('div');wrap.innerHTML='<div class="legend"><i class="question-dot"></i>研究问题 <i class="concept-dot"></i>所需概念</div>';wrap.append(svg);if(data.diagnostics?.length){let d=document.createElement('div');d.className='warning';d.textContent='数据完整性提示：'+data.diagnostics.join('；');wrap.append(d)}$('#view').replaceChildren(wrap)}
+function renderPapers(){let wrap=document.createElement('div');wrap.innerHTML='<p class="legend">选择一篇文献，可在右侧查看其支持范围与不支持的结论。证据边界不会作为独立节点堆叠显示。</p>';for(const n of data.nodes.filter(n=>n.kind==='paper'))wrap.append(button(n));$('#view').replaceChildren(wrap)}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x===b));(b.dataset.view==='questions'?renderQuestions:renderPapers)()});renderMetrics();renderQuestions();
+</script>'''
+
 
 def build(run_dir: Path, out: Path) -> dict:
-    graph = project_graph(load_legacy_run(run_dir)); out.mkdir(parents=True, exist_ok=True)
-    (out/'graph.json').write_text(json.dumps(graph,ensure_ascii=False,indent=2),encoding='utf-8'); (out/'index.html').write_text(HTML,encoding='utf-8'); export_bundle(graph,out); return graph
+    graph = project_graph(load_legacy_run(run_dir))
+    out.mkdir(parents=True, exist_ok=True)
+    encoded = json.dumps(graph, ensure_ascii=False).replace("</", "<\\/")
+    (out / "graph.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "index.html").write_text(HTML.replace("__GRAPH_DATA__", encoded), encoding="utf-8")
+    export_bundle(graph, out)
+    return graph
+
+
 def main() -> None:
-    p=argparse.ArgumentParser(); sub=p.add_subparsers(dest='cmd', required=True)
-    b=sub.add_parser('build'); b.add_argument('run_dir',type=Path); b.add_argument('--out',type=Path,required=True)
-    s=sub.add_parser('serve'); s.add_argument('directory',type=Path); s.add_argument('--port',type=int,default=8765)
-    y=sub.add_parser('sync'); y.add_argument('directory',type=Path)
-    h=sub.add_parser('review-human-input'); h.add_argument('directory',type=Path); h.add_argument('--out',type=Path)
-    a=p.parse_args()
-    if a.cmd=='build': print(json.dumps({"built":str(a.out),"nodes":len(build(a.run_dir,a.out)['nodes'])},ensure_ascii=False))
-    elif a.cmd=='serve':
-        with ThreadingHTTPServer(('127.0.0.1',a.port),partial(SimpleHTTPRequestHandler,directory=str(a.directory))) as server: print(f'http://127.0.0.1:{a.port}'); server.serve_forever()
-    elif a.cmd=='sync': print(json.dumps(sync_web_api(json.loads((a.directory/'graph.json').read_text()),a.directory/'zotero'/'sync-audit.json'),ensure_ascii=False))
-    else:
-        report=impact_report(a.directory)
-        if a.out: a.out.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-        print(json.dumps(report,ensure_ascii=False))
-if __name__=='__main__': main()
+    p = argparse.ArgumentParser()
+    sub = p.add_subparsers(dest="cmd", required=True)
+    b = sub.add_parser("build"); b.add_argument("run_dir", type=Path); b.add_argument("--out", type=Path, required=True)
+    s = sub.add_parser("serve"); s.add_argument("directory", type=Path); s.add_argument("--port", type=int, default=8765)
+    y = sub.add_parser("sync"); y.add_argument("directory", type=Path)
+    h = sub.add_parser("review-human-input"); h.add_argument("directory", type=Path); h.add_argument("--out", type=Path, required=True)
+    a = p.parse_args()
+    if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out)["nodes"])}, ensure_ascii=False))
+    elif a.cmd == "serve": ThreadingHTTPServer(("127.0.0.1", a.port), partial(SimpleHTTPRequestHandler, directory=a.directory)).serve_forever()
+    elif a.cmd == "sync": print(json.dumps(sync_web_api(a.directory), ensure_ascii=False))
+    else: print(json.dumps(impact_report(a.directory, a.out), ensure_ascii=False))
+
+
+if __name__ == "__main__": main()
