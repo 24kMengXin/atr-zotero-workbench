@@ -72,7 +72,11 @@ def main() -> None:
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "serve": ThreadingHTTPServer(("127.0.0.1", a.port), partial(SimpleHTTPRequestHandler, directory=a.directory)).serve_forever()
     elif a.cmd == "sync": print(json.dumps(sync_web_api(a.directory), ensure_ascii=False))
-    else: print(json.dumps(impact_report(a.directory, a.out), ensure_ascii=False))
+    else:
+        report = impact_report(a.directory)
+        a.out.parent.mkdir(parents=True, exist_ok=True)
+        a.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(json.dumps({"written": str(a.out), "affected": len(report["affected"])}, ensure_ascii=False))
 
 
 if __name__ == "__main__": main()

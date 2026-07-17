@@ -23,13 +23,38 @@ def impact_report(output: Path) -> dict[str, Any]:
     affected = []
     for event in latest.values():
         source = event.get("atr_source_id"); start = by_source.get(source)
-        questions, queue, seen = [], deque([start] if start else []), {start} if start else set()
+        questions, paths = [], {}
+        queue, seen = deque([start] if start else []), {start} if start else set()
+        if start:
+            paths[start] = [start]
         while queue:
             current = queue.popleft()
-            if nodes[current]["kind"] == "research_question": questions.append(nodes[current]["label"])
+            if nodes[current]["kind"] == "research_question":
+                questions.append(current)
             for neighbor in adjacency[current]:
-                if neighbor not in seen: seen.add(neighbor); queue.append(neighbor)
-        affected.append({"event": event, "affected_research_questions": questions,
-                         "codex_next_action": "请人工审阅该批注；若它挑战来源边界，创建新的 immutable ATR evidence artifact，再由 owner 决定是否重做 route/claim review。"})
+                if neighbor not in seen:
+                    seen.add(neighbor)
+                    paths[neighbor] = paths[current] + [neighbor]
+                    queue.append(neighbor)
+        question_paths = [
+            {
+                "question": nodes[node_id]["label"],
+                "tension_id": nodes[node_id]["data"].get("tension_id"),
+                "distance_from_annotated_source": len(paths[node_id]) - 1,
+                "path": [{"id": item, "label": nodes[item]["label"], "kind": nodes[item]["kind"]} for item in paths[node_id]],
+            }
+            for node_id in questions
+        ]
+        question_paths.sort(key=lambda item: (item["distance_from_annotated_source"], item["question"]))
+        nearest_distance = question_paths[0]["distance_from_annotated_source"] if question_paths else None
+        nearest = [item for item in question_paths if item["distance_from_annotated_source"] == nearest_distance]
+        affected.append({
+            "event": event,
+            "annotation_source_id": source,
+            "source_found_in_projection": bool(start),
+            "nearest_research_branches": nearest,
+            "all_affected_research_questions": question_paths,
+            "codex_next_action": "请人工审阅该批注；若它挑战来源边界，创建新的 immutable ATR evidence artifact，再由 owner 决定是否重做 route/claim review。保留既有节点和边作为历史投影，不自动清退文献或改写 ATR lifecycle。",
+        })
     return {"schema_version":"0.1", "projection": "derived-human-input-review", "events_seen":len(events),
             "latest_notes":len(latest), "affected":affected}

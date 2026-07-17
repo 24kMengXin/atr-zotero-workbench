@@ -87,7 +87,7 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     for tension in run.frontier.get("frontier_tensions", []):
         tid = tension["tension_id"]
         nodes.append(_node(f"question:{tid}", "research_question", tension["question"],
-                           source="ATR frontier-map（问题，不是论文结论）",
+                           tension_id=tid, source="ATR frontier-map（问题，不是论文结论）",
                            explanations=tension.get("competing_explanations", []),
                            freshness=tension.get("freshness", "")))
         edge("concept:domain", f"question:{tid}", "contains_question")
