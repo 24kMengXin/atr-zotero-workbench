@@ -29,6 +29,14 @@ python -m atr_zotero_workbench serve ./output/multilingual
 ./scripts/build_zotero_plugin.sh
 ```
 
+日常开发不应重复安装 XPI。请先建立独立 Zotero profile，并使用源码侧载：
+
+```bash
+./scripts/link_zotero_dev.sh /absolute/path/to/a-development-profile
+```
+
+完整的调试、验证与发布门禁见[插件开发守则](docs/zotero-plugin-development.md)；日常 profile 仅用于候选 XPI 的最终烟测。
+
 在 Zotero 中选择「工具 → 插件 → 齿轮 → Install Add-on From File…」，选择
 `dist/atr-zotero-workbench.xpi`，并确认启用。之后在「工具 → 打开 ATR Research Workbench」查看图谱。
 

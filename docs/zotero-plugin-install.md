@@ -6,7 +6,7 @@
 
 构建脚本会先执行 `scripts/validate_zotero_plugin.py`：检查官方要求的 manifest 字段、更新清单、bootstrapped 生命周期、Zotero 9 工具菜单 ID 与 XPI 根目录内容。这让大部分结构性错误在启动 Zotero 前失败。
 
-真正的客户端验证仍应使用独立的开发 profile：官方推荐通过与插件 ID 同名的 extension proxy file 从源码加载插件，并用 `-ZoteroDebugText` 查看运行时错误。日常 Zotero profile 只用于候选版本的最终 smoke test。
+真正的客户端验证仍应使用独立的开发 profile：通过与插件 ID 同名的 extension proxy file 从源码加载插件，并用 `-ZoteroDebugText`、Run JavaScript 与 Error Console 定位运行时错误。日常 Zotero profile 只用于候选版本的最终 smoke test。可直接运行 `./scripts/link_zotero_dev.sh /absolute/path/to/a-development-profile`；完整流程见[插件开发守则](zotero-plugin-development.md)。
 
 ## 安装
 
