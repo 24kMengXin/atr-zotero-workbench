@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "ATR Research Workbench",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Visualize ATR evidence and relay human Zotero annotations to the research workbench.",
   "homepage_url": "https://github.com/24kMengXin/atr-zotero-workbench",
   "author": "24kMengXin",
   "applications": {
     "zotero": {
       "id": "atr-zotero-workbench@24kmengxin.github.io",
+      "update_url": "https://raw.githubusercontent.com/24kMengXin/atr-zotero-workbench/main/zotero-plugin/update.json",
       "strict_min_version": "6.999",
       "strict_max_version": "100.*"
     }
