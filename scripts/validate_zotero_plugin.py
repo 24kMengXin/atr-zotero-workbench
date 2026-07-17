@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "zotero-plugin"
 ADDON_ID = "atr-zotero-workbench@24kmengxin.github.io"
 REQUIRED_ROOT_FILES = {"manifest.json", "bootstrap.js", "prefs.js", "atr-zotero-workbench.js", "update.json"}
+REQUIRED_PACKAGED_FILES = REQUIRED_ROOT_FILES | {"workbench/index.html"}
 
 
 def fail(message: str) -> None:
@@ -52,12 +53,16 @@ def validate_source() -> None:
         fail("legacy menu_toolsPopup must not be used")
     if "window.Zotero_Tabs.add" not in runtime:
         fail("workbench tab must be mounted through the current window")
+    if 'createXULElement("browser")' not in runtime:
+        fail("workbench tab must use a Zotero content browser")
+    if 'this.rootURI + "workbench/index.html"' not in runtime:
+        fail("workbench must load its bundled dashboard through rootURI")
 
 
 def validate_xpi(path: Path) -> None:
     with zipfile.ZipFile(path) as archive:
         names = set(archive.namelist())
-        missing = REQUIRED_ROOT_FILES - names
+        missing = REQUIRED_PACKAGED_FILES - names
         if missing:
             fail(f"XPI lacks required root files: {sorted(missing)}")
         packaged = json.loads(archive.read("manifest.json"))

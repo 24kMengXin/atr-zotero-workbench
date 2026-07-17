@@ -57,11 +57,20 @@ var ATRZoteroWorkbench = {
   removeFromWindow(window) { for (let id of this.addedElementIDs) window.document.getElementById(id)?.remove(); },
   removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
   openWorkbench(window) {
-    let index = "file://" + this.workspace + "/index.html";
     let tab = window.Zotero_Tabs.add({ type: "atr-zotero-workbench", title: "ATR Research Workbench", data: {}, select: true });
-    let frame = window.document.createElement("iframe");
-    frame.setAttribute("src", index); frame.style.width = "100%"; frame.style.height = "100%"; frame.style.border = "0";
-    tab.container.appendChild(frame);
+    // A Zotero tab is XUL chrome, not a regular web document.  Use the same
+    // native content-browser pattern as Zotero's own reader instead of an
+    // HTML iframe: iframe content can be silently blocked here and produces a
+    // blank tab.  The page is bundled in the XPI, so it also avoids file://
+    // permissions for a workspace outside the add-on.
+    let browser = window.document.createXULElement("browser");
+    browser.id = "atr-zotero-workbench-browser-" + tab.id;
+    browser.setAttribute("type", "content");
+    browser.setAttribute("flex", "1");
+    browser.setAttribute("remote", "false");
+    browser.setAttribute("disableglobalhistory", "true");
+    browser.setAttribute("src", this.rootURI + "workbench/index.html");
+    tab.container.appendChild(browser);
   },
   hooks: {
     async onStartup({ id, rootURI }) {
