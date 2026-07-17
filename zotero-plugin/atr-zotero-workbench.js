@@ -1,4 +1,4 @@
-/* global IOUtils, PathUtils, Zotero_Tabs */
+/* global IOUtils, PathUtils */
 var ATRZoteroWorkbench = {
   id: null, rootURI: null, observerID: null, addedElementIDs: [],
   // This path deliberately matches the repo's generated workbench output. It is a user-visible pref.
@@ -40,19 +40,40 @@ var ATRZoteroWorkbench = {
   addToWindow(window) {
     let doc = window.document;
     if (doc.getElementById("atr-zotero-workbench-open")) return;
+    // Zotero 9 uses this exact, case-sensitive ID. `menu_toolsPopup` is from
+    // older examples and is not present in the current client.
+    let toolsPopup = doc.getElementById("menu_ToolsPopup");
+    if (!toolsPopup) {
+      this.log("Tools menu is not ready yet; skipping this window");
+      return;
+    }
     let item = doc.createXULElement("menuitem");
     item.id = "atr-zotero-workbench-open"; item.setAttribute("label", "打开 ATR Research Workbench");
     item.addEventListener("command", () => this.openWorkbench(window));
-    doc.getElementById("menu_toolsPopup").appendChild(item); this.addedElementIDs.push(item.id);
+    toolsPopup.appendChild(item); this.addedElementIDs.push(item.id);
+    this.log("Tools menu item added");
   },
   addToAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.addToWindow(win); },
   removeFromWindow(window) { for (let id of this.addedElementIDs) window.document.getElementById(id)?.remove(); },
   removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
   openWorkbench(window) {
     let index = "file://" + this.workspace + "/index.html";
-    let tab = Zotero_Tabs.add({ type: "atr-zotero-workbench", title: "ATR Research Workbench", data: {}, select: true });
+    let tab = window.Zotero_Tabs.add({ type: "atr-zotero-workbench", title: "ATR Research Workbench", data: {}, select: true });
     let frame = window.document.createElement("iframe");
     frame.setAttribute("src", index); frame.style.width = "100%"; frame.style.height = "100%"; frame.style.border = "0";
     tab.container.appendChild(frame);
+  },
+  hooks: {
+    async onStartup({ id, rootURI }) {
+      ATRZoteroWorkbench.init({ id, rootURI });
+      ATRZoteroWorkbench.addToAllWindows();
+      ATRZoteroWorkbench.startObserving();
+    },
+    async onMainWindowLoad(window) { ATRZoteroWorkbench.addToWindow(window); },
+    async onMainWindowUnload(window) { ATRZoteroWorkbench.removeFromWindow(window); },
+    async onShutdown() {
+      ATRZoteroWorkbench.stopObserving();
+      ATRZoteroWorkbench.removeFromAllWindows();
+    }
   }
 };

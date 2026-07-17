@@ -1,17 +1,32 @@
 var ATRZoteroWorkbench;
 
-function install() { Zotero.debug("ATR Workbench: installed"); }
-async function startup({ id, version, rootURI }) {
-  Services.scriptloader.loadSubScript(rootURI + "atr-zotero-workbench.js");
-  ATRZoteroWorkbench.init({ id, version, rootURI });
-  ATRZoteroWorkbench.addToAllWindows();
-  ATRZoteroWorkbench.startObserving();
+function install() {}
+
+// Follow the lifecycle used by Zotero's Make It Red example and current
+// production plugins: wait for Zotero, then run plugin code in an explicit
+// sandbox context. This also makes errors show up in Zotero's debug output.
+async function startup({ id, version, resourceURI, rootURI }) {
+  await Zotero.initializationPromise;
+  if (!rootURI) rootURI = resourceURI.spec;
+
+  const ctx = { Zotero, Services, IOUtils, PathUtils, Components, rootURI };
+  ctx._globalThis = ctx;
+  Services.scriptloader.loadSubScript(rootURI + "atr-zotero-workbench.js", ctx);
+  ATRZoteroWorkbench = ctx.ATRZoteroWorkbench;
+  await ATRZoteroWorkbench.hooks.onStartup({ id, version, rootURI });
 }
-function onMainWindowLoad({ window }) { ATRZoteroWorkbench.addToWindow(window); }
-function onMainWindowUnload({ window }) { ATRZoteroWorkbench.removeFromWindow(window); }
-function shutdown() {
-  ATRZoteroWorkbench.stopObserving();
-  ATRZoteroWorkbench.removeFromAllWindows();
+
+async function onMainWindowLoad({ window }) {
+  await ATRZoteroWorkbench?.hooks.onMainWindowLoad(window);
+}
+
+async function onMainWindowUnload({ window }) {
+  await ATRZoteroWorkbench?.hooks.onMainWindowUnload(window);
+}
+
+async function shutdown() {
+  await ATRZoteroWorkbench?.hooks.onShutdown();
   ATRZoteroWorkbench = undefined;
 }
-function uninstall() { Zotero.debug("ATR Workbench: uninstalled"); }
+
+function uninstall() {}
