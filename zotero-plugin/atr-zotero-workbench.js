@@ -61,7 +61,7 @@ var ATRZoteroWorkbench = {
     // registration hook. Open the registered chrome page in a plugin window,
     // which is the stable extension UI path and avoids an empty tab surface.
     let dialog = window.openDialog(
-      "chrome://atr-zotero-workbench/content/workbench/index.html",
+      "chrome://atr-zotero-workbench/content/workbench.xhtml",
       "atr-zotero-workbench",
       "chrome,dialog=no,resizable,centerscreen,width=1280,height=820"
     );
