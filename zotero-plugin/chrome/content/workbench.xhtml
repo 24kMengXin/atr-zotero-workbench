@@ -7,11 +7,30 @@
   width="1280"
   height="820"
   orient="vertical">
-  <!-- openDialog() requires a XUL/XHTML top-level document. The dashboard
-       itself stays ordinary content HTML inside Zotero's native browser. -->
-  <browser
-    id="atr-zotero-workbench-dashboard"
-    type="content"
-    flex="1"
-    src="chrome://atr-zotero-workbench/content/workbench/index.html" />
+  <!-- openDialog() requires a XUL/XHTML top-level document. The status strip
+       makes a failed content navigation observable rather than transparent. -->
+  <vbox flex="1" style="background: #f5f7fb; color: #172033;">
+    <hbox style="background: #122a43; color: white; padding: 14px 18px;">
+      <label value="ATR × Zotero Research Workbench" style="font-size: 16px; font-weight: bold;" />
+      <spacer flex="1" />
+      <label id="load-status" value="正在加载研究投影…" />
+    </hbox>
+    <browser
+      id="atr-zotero-workbench-dashboard"
+      type="content"
+      flex="1"
+      transparent="false"
+      disableglobalhistory="true"
+      src="chrome://atr-zotero-workbench/content/workbench/index.html" />
+  </vbox>
+  <script><![CDATA[
+    const browser = document.getElementById("atr-zotero-workbench-dashboard");
+    const status = document.getElementById("load-status");
+    browser.addEventListener("load", () => {
+      status.value = "研究投影已加载";
+    });
+    browser.addEventListener("error", () => {
+      status.value = "研究投影加载失败：请在开发 profile 查看 Error Console";
+    });
+  ]]></script>
 </window>
