@@ -65,10 +65,9 @@ var ATRZoteroWorkbench = {
     // permissions for a workspace outside the add-on.
     let browser = window.document.createXULElement("browser");
     browser.id = "atr-zotero-workbench-browser-" + tab.id;
+    browser.setAttribute("class", "reader");
     browser.setAttribute("type", "content");
     browser.setAttribute("flex", "1");
-    browser.setAttribute("remote", "false");
-    browser.setAttribute("disableglobalhistory", "true");
     browser.setAttribute("src", "chrome://atr-zotero-workbench/content/workbench/index.html");
     tab.container.appendChild(browser);
   },
