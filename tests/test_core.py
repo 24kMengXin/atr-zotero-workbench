@@ -38,6 +38,22 @@ class BuildTest(unittest.TestCase):
             relation = next(edge['relation'] for edge in graph['edges'] if edge['target'] == 'paper:C1')
             self.assertEqual(relation, 'inspires_context')
 
+    def test_changed_projection_archives_previous_graph_without_deleting_it(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
+            source = {'source_id':'P1','title':'Version one','url':'https://e.org','kind':'PRIMARY_BENCHMARK_PAPER','supports':'x','does_not_support':'y'}
+            (run/'evidence'/'sources.jsonl').write_text(json.dumps(source)+'\n')
+            (run/'knowledge'/'frontier-map.json').write_text(json.dumps({'domain':'NLP'}))
+            (run/'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            out = tmp_path/'out'; build(run, out)
+            source['title'] = 'Version two'
+            (run/'evidence'/'sources.jsonl').write_text(json.dumps(source)+'\n')
+            graph = build(run, out)
+            snapshot = graph['history']['previous_projection']
+            self.assertTrue(snapshot)
+            previous = json.loads((out/'history'/'projections'/f'{snapshot}.json').read_text())
+            self.assertEqual(next(node for node in previous['nodes'] if node['id']=='paper:P1')['label'], 'Version one')
+
     def test_sync_refuses_without_explicit_credentials(self):
         import os
         old = {key: os.environ.pop(key, None) for key in ('ZOTERO_LIBRARY_TYPE','ZOTERO_LIBRARY_ID','ZOTERO_API_KEY')}

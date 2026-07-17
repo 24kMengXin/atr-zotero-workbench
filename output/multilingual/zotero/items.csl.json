@@ -7,7 +7,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MAPS-2026",
-      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MAPS-2026\nEvidence boundary recorded in reading card."
   },
@@ -19,7 +20,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-XWEB-2025",
-      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-XWEB-2025\nEvidence boundary recorded in reading card."
   },
@@ -31,7 +33,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MPRGUI-2026",
-      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MPRGUI-2026\nEvidence boundary recorded in reading card."
   },
@@ -43,7 +46,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TALE-2024",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TALE-2024\nEvidence boundary recorded in reading card."
   },
@@ -55,7 +59,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TOKENIZER-EQUITY-2026",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TOKENIZER-EQUITY-2026\nEvidence boundary recorded in reading card."
   },
@@ -67,7 +72,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-ULTRATOOL-2024",
-      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-ULTRATOOL-2024\nEvidence boundary recorded in reading card."
   },
@@ -79,7 +85,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TCI-2026",
-      "atr-source-kind:PRIMARY_WORKSHOP_PAPER"
+      "atr-source-kind:PRIMARY_WORKSHOP_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TCI-2026\nEvidence boundary recorded in reading card."
   },
@@ -91,7 +98,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MASSIVE-AGENTS-2025",
-      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MASSIVE-AGENTS-2025\nEvidence boundary recorded in reading card."
   },
@@ -103,7 +111,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MLCL-2026",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
   },
@@ -115,7 +124,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TOKEN-ARBITRAGE-2026",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TOKEN-ARBITRAGE-2026\nEvidence boundary recorded in reading card."
   },
@@ -127,7 +137,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-PETROV-2023",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-PETROV-2023\nEvidence boundary recorded in reading card."
   },
@@ -139,7 +150,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-WEGMANN-2025",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-WEGMANN-2025\nEvidence boundary recorded in reading card."
   },
@@ -151,7 +163,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TTS-MT-2026",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TTS-MT-2026\nEvidence boundary recorded in reading card."
   },
@@ -163,7 +176,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-AGENTABSTAIN-2026",
-      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE"
+      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-AGENTABSTAIN-2026\nEvidence boundary recorded in reading card."
   },
@@ -175,7 +189,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MULTIAGENTX-2026",
-      "atr-source-kind:OFFICIAL_OPEN_SOURCE_BENCHMARK"
+      "atr-source-kind:OFFICIAL_OPEN_SOURCE_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MULTIAGENTX-2026\nEvidence boundary recorded in reading card."
   },
@@ -187,7 +202,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-MULTIPRAGEVAL-2024",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-MULTIPRAGEVAL-2024\nEvidence boundary recorded in reading card."
   },
@@ -199,7 +215,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-PUB-2024",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-PUB-2024\nEvidence boundary recorded in reading card."
   },
@@ -211,7 +228,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-IGAC-2026",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-IGAC-2026\nEvidence boundary recorded in reading card."
   },
@@ -223,7 +241,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-CONCEPT-AMBIGUITY-2026",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-CONCEPT-AMBIGUITY-2026\nEvidence boundary recorded in reading card."
   },
@@ -235,7 +254,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-CLARIFYMT-2025",
-      "atr-source-kind:PRIMARY_PREPRINT"
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-CLARIFYMT-2025\nEvidence boundary recorded in reading card."
   },
@@ -247,7 +267,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-CLARIFYBENCH-2026",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-CLARIFYBENCH-2026\nEvidence boundary recorded in reading card."
   },
@@ -259,7 +280,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-WHEN2CALL-2025",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-WHEN2CALL-2025\nEvidence boundary recorded in reading card."
   },
@@ -271,7 +293,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-INDIRECTREQUESTS-2025",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-INDIRECTREQUESTS-2025\nEvidence boundary recorded in reading card."
   },
@@ -283,7 +306,8 @@
     "keyword": [
       "ATR",
       "atr-source-id:SRC-TOOLSAFE-2026",
-      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
     ],
     "note": "ATR source ID: SRC-TOOLSAFE-2026\nEvidence boundary recorded in reading card."
   }

@@ -21,6 +21,7 @@ MVP 从已有 `frontier-map` 的 tensions 创建问题节点；每个问题都�
 - ATR v2: `atr.sqlite` + immutable artifact ID 是权威；工作台生成可重建 JSON/HTML 投影。
 - 历史 v1: 目录是只读审计材料。本 MVP 兼容 `sources.jsonl` 与 `frontier-map.json`，并报告缺失的 claims/edges/observability。
 - Zotero: Zotero 本身是书目、附件和人的批注权威。工作台不读取或写入本地 SQLite；写入只走显式配置的 Web API。
+- 每次派生图出现语义变化时，上一份 `graph.json` 会追加存入 `history/projections/`，并登记于 `history/index.json`。历史快照不会被新投影删除；它们用于复盘旧的证据链和总结偏差，不会反过来改写 ATR 权威状态。
 
 ## MVP 验收标准
 

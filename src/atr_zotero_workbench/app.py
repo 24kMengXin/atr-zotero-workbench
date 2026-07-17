@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .core import load_legacy_run, project_graph
 from .human_input import impact_report
+from .history import archive_previous_projection
 from .zotero import export_bundle, sync_web_api
 
 
@@ -54,6 +55,7 @@ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.quer
 def build(run_dir: Path, out: Path) -> dict:
     graph = project_graph(load_legacy_run(run_dir))
     out.mkdir(parents=True, exist_ok=True)
+    graph["history"] = archive_previous_projection(out, graph)
     encoded = json.dumps(graph, ensure_ascii=False).replace("</", "<\\/")
     (out / "graph.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "index.html").write_text(HTML.replace("__GRAPH_DATA__", encoded), encoding="utf-8")
