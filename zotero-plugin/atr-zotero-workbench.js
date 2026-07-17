@@ -69,7 +69,7 @@ var ATRZoteroWorkbench = {
     browser.setAttribute("flex", "1");
     browser.setAttribute("remote", "false");
     browser.setAttribute("disableglobalhistory", "true");
-    browser.setAttribute("src", this.rootURI + "workbench/index.html");
+    browser.setAttribute("src", "chrome://atr-zotero-workbench/content/workbench/index.html");
     tab.container.appendChild(browser);
   },
   hooks: {
