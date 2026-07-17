@@ -5,6 +5,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from .core import load_legacy_run, project_graph
 from .zotero import export_bundle, sync_web_api
+from .human_input import impact_report
 
 HTML = '''<!doctype html><meta charset="utf-8"><title>ATR Research Workbench</title><style>
 body{margin:0;font:14px system-ui;color:#19212b;background:#f6f8fb}header{padding:16px 22px;background:#152b42;color:white}main{display:grid;grid-template-columns:1fr 340px;height:calc(100vh - 68px)}svg{width:100%;height:100%;background:white}.edge{stroke:#aab6c2;stroke-width:1.4}.node{cursor:pointer;stroke:white;stroke-width:2}.paper{fill:#3478b9}.concept{fill:#7b61a8}.research_question{fill:#ca6f1e}.evidence_boundary{fill:#4a9e85}.run{fill:#374151}aside{padding:18px;overflow:auto;border-left:1px solid #d5dde5}h2{margin-top:0}.tag{display:inline-block;padding:2px 7px;background:#e8eef5;border-radius:10px;margin:2px}a{color:#075da8}</style><header><b>ATR × Zotero Research Workbench</b><span id="meta"></span></header><main><svg id="g"></svg><aside id="detail"><h2>选择一个节点</h2><p>蓝色：文献；紫色：概念；橙色：研究问题；绿色：证据边界。</p></aside></main><script>
@@ -19,9 +20,14 @@ def main() -> None:
     b=sub.add_parser('build'); b.add_argument('run_dir',type=Path); b.add_argument('--out',type=Path,required=True)
     s=sub.add_parser('serve'); s.add_argument('directory',type=Path); s.add_argument('--port',type=int,default=8765)
     y=sub.add_parser('sync'); y.add_argument('directory',type=Path)
+    h=sub.add_parser('review-human-input'); h.add_argument('directory',type=Path); h.add_argument('--out',type=Path)
     a=p.parse_args()
     if a.cmd=='build': print(json.dumps({"built":str(a.out),"nodes":len(build(a.run_dir,a.out)['nodes'])},ensure_ascii=False))
     elif a.cmd=='serve':
         with ThreadingHTTPServer(('127.0.0.1',a.port),partial(SimpleHTTPRequestHandler,directory=str(a.directory))) as server: print(f'http://127.0.0.1:{a.port}'); server.serve_forever()
-    else: print(json.dumps(sync_web_api(json.loads((a.directory/'graph.json').read_text()),a.directory/'zotero'/'sync-audit.json'),ensure_ascii=False))
+    elif a.cmd=='sync': print(json.dumps(sync_web_api(json.loads((a.directory/'graph.json').read_text()),a.directory/'zotero'/'sync-audit.json'),ensure_ascii=False))
+    else:
+        report=impact_report(a.directory)
+        if a.out: a.out.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+        print(json.dumps(report,ensure_ascii=False))
 if __name__=='__main__': main()

@@ -29,3 +29,7 @@ MVP 先从已有 `frontier-map` 的 tensions 创建问题节点；每个问题�
 3. 每个研究问题连接回具体的 `frontier_map` tension 和锚定 source IDs。
 4. 不配置 key 时不能对 Zotero 产生任何写操作。
 5. 有效 Web API key 时，以 collection + item + child note 的批次写入；响应写入同步审计日志。
+
+## Zotero 插件交互（MVP 已实现）
+
+插件在 Tools 菜单提供“打开 ATR Research Workbench”，在 Zotero 内的自定义 Tab 显示当前生成的图谱。它观察 note item 的新增/修改，把一份不可变的事件副本写入 `output/<run>/human-input/inbox.jsonl`。`review-human-input` 以 source ID 反查最靠近的研究问题，并产出交给 Codex/ATR owner 的更新报告；它不会自动转换 lifecycle 或覆盖既有线路。

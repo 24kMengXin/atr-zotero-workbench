@@ -21,6 +21,26 @@ python -m atr_zotero_workbench serve ./output/multilingual
 
 打开终端显示的本地地址。点击节点可查看来源、证据边界和建议的人工阅读问题。
 
+## Zotero 7 插件
+
+构建 XPI：
+
+```bash
+./scripts/build_zotero_plugin.sh
+```
+
+在 Zotero 中选择「工具 → 插件 → 齿轮 → Install Add-on From File…」，选择
+`dist/atr-zotero-workbench.xpi`，并确认启用。之后在「工具 → 打开 ATR Research Workbench」查看图谱。
+
+修改 Zotero 中由本工具生成的阅读卡/笔记，会追加到
+`output/multilingual/human-input/inbox.jsonl`。回到 Codex 后运行：
+
+```bash
+python -m atr_zotero_workbench review-human-input output/multilingual --out output/multilingual/human-input/impact-report.json
+```
+
+该命令以 `ATR source ID` 反查受影响的研究问题；它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
+
 导入 `output/multilingual/zotero/items.csl.json` 到 Zotero；`reading-cards/` 中的文件是与每篇文献对应的人工阅读/注释起点。
 
 如需写入 Zotero Web API（需要用户明确配置有写入权限的 API key）：
