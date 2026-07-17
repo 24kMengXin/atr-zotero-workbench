@@ -8,7 +8,7 @@
     "zotero": {
       "id": "atr-zotero-workbench@24kmengxin.github.io",
       "strict_min_version": "6.999",
-      "strict_max_version": "100.*"
+      "strict_max_version": "9.*"
     }
   }
 }

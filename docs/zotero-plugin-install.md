@@ -1,6 +1,6 @@
 # Zotero 插件：构建、安装与验证
 
-`zotero-plugin/` 是 Zotero 7+ bootstrapped extension，使用 manifest v2、`bootstrap.js` 生命周期钩子和 `Zotero.Notifier` 的 item 通知。兼容范围为 6.999–100.*，以覆盖本机当前 Zotero 9。它没有、也不得直接写 Zotero SQLite。
+`zotero-plugin/` 是 Zotero 7+ bootstrapped extension，使用 manifest v2、`bootstrap.js` 生命周期钩子和 `Zotero.Notifier` 的 item 通知。当前发行包显式兼容 6.999–9.*，覆盖本机 Zotero 9.0.6。它没有、也不得直接写 Zotero SQLite。
 
 ## 安装
 
