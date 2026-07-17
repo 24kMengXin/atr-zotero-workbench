@@ -1,6 +1,12 @@
 # Zotero 插件：构建、安装与验证
 
-`zotero-plugin/` 是 Zotero 7+ bootstrapped extension，使用 manifest v2、`bootstrap.js` 生命周期钩子和 `Zotero.Notifier` 的 item 通知。当前发行包显式兼容 6.999–9.*，覆盖本机 Zotero 9.0.6。它没有、也不得直接写 Zotero SQLite。
+`zotero-plugin/` 是 Zotero 7+ bootstrapped extension，使用 manifest v2、`bootstrap.js` 生命周期钩子和 `Zotero.Notifier` 的 item 通知。当前发行包的已测范围以 Zotero 9.0.x 为基线；它没有、也不得直接写 Zotero SQLite。
+
+## 验证层级
+
+构建脚本会先执行 `scripts/validate_zotero_plugin.py`：检查官方要求的 manifest 字段、更新清单、bootstrapped 生命周期、Zotero 9 工具菜单 ID 与 XPI 根目录内容。这让大部分结构性错误在启动 Zotero 前失败。
+
+真正的客户端验证仍应使用独立的开发 profile：官方推荐通过与插件 ID 同名的 extension proxy file 从源码加载插件，并用 `-ZoteroDebugText` 查看运行时错误。日常 Zotero profile 只用于候选版本的最终 smoke test。
 
 ## 安装
 
