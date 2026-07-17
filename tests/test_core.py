@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from atr_zotero_workbench.app import build
+from atr_zotero_workbench.zotero import sync_web_api
 
 class BuildTest(unittest.TestCase):
     def test_build_v1_projection(self):
@@ -15,3 +16,13 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(len(graph['nodes']), 6)
             self.assertTrue((tmp_path/'out'/'zotero'/'items.csl.json').exists())
             self.assertIn('缺少可用的 evidence/claims.jsonl', graph['diagnostics'])
+
+    def test_sync_refuses_without_explicit_credentials(self):
+        import os
+        old = {key: os.environ.pop(key, None) for key in ('ZOTERO_LIBRARY_TYPE','ZOTERO_LIBRARY_ID','ZOTERO_API_KEY')}
+        try:
+            with self.assertRaisesRegex(RuntimeError, 'Refusing Zotero write'):
+                sync_web_api({'run': 'r', 'nodes': []}, Path('/tmp/unused-audit.json'))
+        finally:
+            for key, value in old.items():
+                if value is not None: os.environ[key] = value
