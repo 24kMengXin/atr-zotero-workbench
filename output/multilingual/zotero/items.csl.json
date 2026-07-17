@@ -1,0 +1,290 @@
+[
+  {
+    "id": "SRC-MAPS-2026",
+    "type": "article-journal",
+    "title": "MAPS: A Multilingual Benchmark for Agent Performance and Security",
+    "URL": "https://aclanthology.org/2026.findings-eacl.42/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MAPS-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+    ],
+    "note": "ATR source ID: SRC-MAPS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XWEB-2025",
+    "type": "article-journal",
+    "title": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+    "URL": "https://aclanthology.org/2025.findings-acl.988/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XWEB-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+    ],
+    "note": "ATR source ID: SRC-XWEB-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MPRGUI-2026",
+    "type": "article-journal",
+    "title": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+    "URL": "https://aclanthology.org/2026.acl-long.1375/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MPRGUI-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+    ],
+    "note": "ATR source ID: SRC-MPRGUI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TALE-2024",
+    "type": "article-journal",
+    "title": "Token-Budget-Aware LLM Reasoning",
+    "URL": "https://arxiv.org/abs/2412.18547",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TALE-2024",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-TALE-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKENIZER-EQUITY-2026",
+    "type": "article-journal",
+    "title": "Equity with Efficiency: An Empirical Study of Tokenizers for Multilingual Large Language Models",
+    "URL": "https://arxiv.org/abs/2606.15044",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKENIZER-EQUITY-2026",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-TOKENIZER-EQUITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ULTRATOOL-2024",
+    "type": "article-journal",
+    "title": "Planning, Creation, Usage: Benchmarking LLMs for Comprehensive Tool Utilization in Real-World Complex Scenarios",
+    "URL": "https://aclanthology.org/2024.findings-acl.259/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ULTRATOOL-2024",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+    ],
+    "note": "ATR source ID: SRC-ULTRATOOL-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TCI-2026",
+    "type": "article-journal",
+    "title": "Token Cost Inequality: Measuring Tokenization Disparities Across Scripts in Roman Urdu and Urdu",
+    "URL": "https://aclanthology.org/2026.gem-main.54.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TCI-2026",
+      "atr-source-kind:PRIMARY_WORKSHOP_PAPER"
+    ],
+    "note": "ATR source ID: SRC-TCI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MASSIVE-AGENTS-2025",
+    "type": "article-journal",
+    "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.1099.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MASSIVE-AGENTS-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER"
+    ],
+    "note": "ATR source ID: SRC-MASSIVE-AGENTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-2026",
+    "type": "article-journal",
+    "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+    "URL": "https://arxiv.org/abs/2601.05366",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-2026",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKEN-ARBITRAGE-2026",
+    "type": "article-journal",
+    "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
+    "URL": "https://arxiv.org/abs/2606.03618",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKEN-ARBITRAGE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-TOKEN-ARBITRAGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PETROV-2023",
+    "type": "article-journal",
+    "title": "Language Model Tokenizers Introduce Unfairness Between Languages",
+    "URL": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/74bb24dca8334adce292883b4b651eda-Abstract-Conference.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PETROV-2023",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-PETROV-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WEGMANN-2025",
+    "type": "article-journal",
+    "title": "Tokenization is Sensitive to Language Variation",
+    "URL": "https://aclanthology.org/2025.findings-acl.572/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WEGMANN-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-WEGMANN-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TTS-MT-2026",
+    "type": "article-journal",
+    "title": "Test-Time Scaling of Reasoning Models for Machine Translation",
+    "URL": "https://aclanthology.org/2026.eacl-long.133/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TTS-MT-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-TTS-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTABSTAIN-2026",
+    "type": "article-journal",
+    "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+    "URL": "https://agentabstain.github.io/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE"
+    ],
+    "note": "ATR source ID: SRC-AGENTABSTAIN-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTX-2026",
+    "type": "article-journal",
+    "title": "MultiAgent-X: Multilingual Agentic Function-Calling Benchmark",
+    "URL": "https://github.com/Saurabh-66/MultiAgent-X-Multilingual-Agentic-Function-Calling-Benchmark",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTX-2026",
+      "atr-source-kind:OFFICIAL_OPEN_SOURCE_BENCHMARK"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTX-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIPRAGEVAL-2024",
+    "type": "article-journal",
+    "title": "MultiPragEval: Multilingual Pragmatic Evaluation of Large Language Models",
+    "URL": "https://arxiv.org/abs/2406.07736",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIPRAGEVAL-2024",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-MULTIPRAGEVAL-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PUB-2024",
+    "type": "article-journal",
+    "title": "PUB: A Pragmatics Understanding Benchmark for Assessing LLMs' Pragmatics Capabilities",
+    "URL": "https://arxiv.org/abs/2401.07078",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PUB-2024",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-PUB-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-IGAC-2026",
+    "type": "article-journal",
+    "title": "Intent-Governed Tool Authorization for AI Agents",
+    "URL": "https://arxiv.org/abs/2606.22916",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-IGAC-2026",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-IGAC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONCEPT-AMBIGUITY-2026",
+    "type": "article-journal",
+    "title": "Concept based Ambiguity Resolution in LLMs",
+    "URL": "https://proceedings.mlr.press/v328/hu26b.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONCEPT-AMBIGUITY-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-CONCEPT-AMBIGUITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLARIFYMT-2025",
+    "type": "article-journal",
+    "title": "ClarifyMT-Bench: Benchmarking and Improving Multi-Turn Clarification for Conversational Large Language Models",
+    "URL": "https://arxiv.org/abs/2512.21120",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLARIFYMT-2025",
+      "atr-source-kind:PRIMARY_PREPRINT"
+    ],
+    "note": "ATR source ID: SRC-CLARIFYMT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLARIFYBENCH-2026",
+    "type": "article-journal",
+    "title": "Structured Uncertainty guided Clarification for LLM Agents",
+    "URL": "https://aclanthology.org/2026.findings-acl.2028.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLARIFYBENCH-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-CLARIFYBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WHEN2CALL-2025",
+    "type": "article-journal",
+    "title": "When2Call: When (not) to Call Tools",
+    "URL": "https://aclanthology.org/2025.naacl-long.174.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WHEN2CALL-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-WHEN2CALL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INDIRECTREQUESTS-2025",
+    "type": "article-journal",
+    "title": "Making Task-Oriented Dialogue Datasets More Natural by Synthetically Generating Indirect User Requests",
+    "URL": "https://aclanthology.org/2025.coling-main.696/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INDIRECTREQUESTS-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-INDIRECTREQUESTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLSAFE-2026",
+    "type": "article-journal",
+    "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based Agents via Step-Level Detection",
+    "URL": "https://aclanthology.org/2026.findings-acl.1850.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLSAFE-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER"
+    ],
+    "note": "ATR source ID: SRC-TOOLSAFE-2026\nEvidence boundary recorded in reading card."
+  }
+]
