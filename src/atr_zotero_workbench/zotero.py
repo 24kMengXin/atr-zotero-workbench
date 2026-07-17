@@ -14,8 +14,10 @@ def export_bundle(graph: dict, out: Path) -> None:
     for node in graph["nodes"]:
         if node["kind"] != "paper": continue
         data = node["data"]; sid = data["source_id"]
-        items.append({"id": sid, "type": "article-journal", "title": node["label"], "URL": data["url"],
-                      "keyword": ["ATR", "atr-source-id:" + sid, "atr-source-kind:" + data["source_kind"]],
+        item_type = "article-journal" if data.get("source_layer") == "scholarly_evidence" else "webpage"
+        items.append({"id": sid, "type": item_type, "title": node["label"], "URL": data["url"],
+                      "keyword": ["ATR", "atr-source-id:" + sid, "atr-source-kind:" + data["source_kind"],
+                                  "atr-source-layer:" + data.get("source_layer", "source_needs_review")],
                       "note": f"ATR source ID: {sid}\nEvidence boundary recorded in reading card."})
         (cards / f"{sid}.md").write_text(
             f"# {node['label']}\n\nATR source ID: `{sid}`\n\n## 来源支持的内容\n\n{data['supports']}\n\n"

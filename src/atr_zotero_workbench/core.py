@@ -46,6 +46,21 @@ def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
     return {"id": node_id, "kind": kind, "label": label, "data": data}
 
 
+def _source_layer(source_kind: str) -> str:
+    """Keep contextual inspiration distinct from scholarly evidence.
+
+    The legacy ledger has a free-text `kind`, so this is deliberately a
+    conservative classification. Unknown material remains a source requiring
+    human review rather than being promoted to academic evidence.
+    """
+    kind = source_kind.upper()
+    if any(token in kind for token in ("BLOG", "NEWS", "MAGAZINE", "REPORT", "WHITEPAPER", "SOCIAL")):
+        return "contextual_inspiration"
+    if any(token in kind for token in ("PAPER", "BENCHMARK", "PREPRINT", "CONFERENCE", "JOURNAL")):
+        return "scholarly_evidence"
+    return "source_needs_review"
+
+
 def project_graph(run: LegacyRun) -> dict[str, Any]:
     nodes: list[dict[str, Any]] = []
     edges: list[dict[str, Any]] = []
@@ -59,10 +74,13 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     edge(f"run:{run_id}", "concept:domain", "explores")
     for source in run.sources:
         sid = source["source_id"]
+        source_kind = source.get("kind", "")
+        source_layer = _source_layer(source_kind)
         nodes.append(_node(f"paper:{sid}", "paper", source.get("title", sid), source_id=sid,
-                           url=source.get("url", ""), source_kind=source.get("kind", ""),
+                           url=source.get("url", ""), source_kind=source_kind, source_layer=source_layer,
                            supports=source.get("supports", ""), does_not_support=source.get("does_not_support", "")))
-        edge("concept:domain", f"paper:{sid}", "has_evidence")
+        edge("concept:domain", f"paper:{sid}",
+             "has_evidence" if source_layer == "scholarly_evidence" else "inspires_context")
         nodes.append(_node(f"evidence:{sid}", "evidence_boundary", f"{sid} 的证据边界",
                            supports=source.get("supports", ""), does_not_support=source.get("does_not_support", "")))
         edge(f"paper:{sid}", f"evidence:{sid}", "states_boundary")

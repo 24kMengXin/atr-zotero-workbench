@@ -10,7 +10,7 @@ class BuildTest(unittest.TestCase):
     def test_build_v1_projection(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run=tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
-            (run/'evidence'/'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PRIMARY','supports':'x','does_not_support':'y'})+'\n')
+            (run/'evidence'/'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PRIMARY_BENCHMARK_PAPER','supports':'x','does_not_support':'y'})+'\n')
             (run/'knowledge'/'frontier-map.json').write_text(json.dumps({'domain':'NLP','frontier_tensions':[{'tension_id':'Q1','question':'Why?','anchor_source_ids':['P1'],'dimensions':['tokens']}]}))
             (run/'run-state.json').write_text(json.dumps({'run_id':'r','active_stage':'LANDSCAPE'}))
             graph=build(run,tmp_path/'out')
@@ -23,6 +23,20 @@ class BuildTest(unittest.TestCase):
             self.assertIn('<html lang="zh-CN"><head>', dashboard)
             self.assertIn('</body></html>', dashboard)
             self.assertNotIn("fetch('graph.json')", dashboard)
+            source = next(node for node in graph['nodes'] if node['id'] == 'paper:P1')
+            self.assertEqual(source['data']['source_layer'], 'scholarly_evidence')
+
+    def test_contextual_source_is_not_promoted_to_scholarly_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
+            (run/'evidence'/'sources.jsonl').write_text(json.dumps({'source_id':'C1','title':'Policy report','url':'https://e.org','kind':'WHITEPAPER','supports':'context','does_not_support':'proof'})+'\n')
+            (run/'knowledge'/'frontier-map.json').write_text(json.dumps({'domain':'NLP'}))
+            (run/'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path/'out')
+            source = next(node for node in graph['nodes'] if node['id'] == 'paper:C1')
+            self.assertEqual(source['data']['source_layer'], 'contextual_inspiration')
+            relation = next(edge['relation'] for edge in graph['edges'] if edge['target'] == 'paper:C1')
+            self.assertEqual(relation, 'inspires_context')
 
     def test_sync_refuses_without_explicit_credentials(self):
         import os
