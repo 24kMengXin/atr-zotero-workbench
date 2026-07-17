@@ -32,7 +32,7 @@ python -m atr_zotero_workbench serve ./output/multilingual
 日常开发不应重复安装 XPI。请先建立独立 Zotero profile，并使用源码侧载：
 
 ```bash
-./scripts/link_zotero_dev.sh /absolute/path/to/a-development-profile
+./scripts/link_zotero_dev.sh /absolute/path/to/a-development-profile /absolute/path/to/a-development-data-dir
 ```
 
 完整的调试、验证与发布门禁见[插件开发守则](docs/zotero-plugin-development.md)；日常 profile 仅用于候选 XPI 的最终烟测。

@@ -9,21 +9,24 @@
 | 独立开发 profile | 源码侧载、功能调试、开发者工具 | 不导入或修改日常文献库 |
 | 日常 profile | 已构建 XPI 的一次最终烟测 | 不用于逐次调试，不手改 `extensions.json` |
 
-开发 profile 应是专用的空 profile，路径可在 Zotero Profile Manager 中确认。不要把本机的主 profile 传给下面脚本。
+开发 profile 应是专用的空 profile，路径可在 Zotero Profile Manager 中确认；它还必须对应一个**独立的空 data directory**。Zotero 可能沿用主 profile 的数据目录偏好，因此只隔离 profile 不足以保护日常文献库。不要把本机的主 profile 或日常 data directory 传给下面脚本。
 
 ## 一次性配置：源码 proxy file
 
 Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”侧载源码。执行：
 
 ```bash
-./scripts/link_zotero_dev.sh /absolute/path/to/a-development-profile
+./scripts/link_zotero_dev.sh \
+  /absolute/path/to/a-development-profile \
+  /absolute/path/to/a-development-data-dir
 ```
 
 该命令会：
 
 1. 构建派生仪表盘，保证 `chrome/content/workbench/` 有当前页面；
 2. 在开发 profile 的 `extensions/atr-zotero-workbench@24kmengxin.github.io` 写入 `zotero-plugin/` 的绝对路径；
-3. 不安装 XPI、不修改日常 profile，也不碰 Zotero SQLite。
+3. 在该 profile 的 `user.js` 固定独立 data directory；
+4. 不安装 XPI、不修改日常 profile，也不碰日常 Zotero SQLite。
 
 重启使用该 profile 的 Zotero 后，插件会直接从 `zotero-plugin/` 加载。改动 JS、bootstrap、manifest 或 XUL/chrome 资源后，重启**开发实例**即可；只有仪表盘生成逻辑或输入数据变化时，需要重新运行该脚本（或 `./scripts/build_zotero_plugin.sh`）以更新打包的派生 HTML。
 

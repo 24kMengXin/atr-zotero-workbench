@@ -20,6 +20,8 @@ class BuildTest(unittest.TestCase):
             dashboard = (tmp_path/'out'/'index.html').read_text()
             self.assertIn('研究问题地图', dashboard)
             self.assertIn('const data=', dashboard)
+            self.assertIn('<html lang="zh-CN"><head>', dashboard)
+            self.assertIn('</body></html>', dashboard)
             self.assertNotIn("fetch('graph.json')", dashboard)
 
     def test_sync_refuses_without_explicit_credentials(self):

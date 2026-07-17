@@ -12,6 +12,7 @@ from .zotero import export_bundle, sync_web_api
 # The graph is embedded at build time so the page works in Zotero's file:// tab
 # without relying on fetch() permissions.
 HTML = r'''<!doctype html>
+<html lang="zh-CN"><head>
 <meta charset="utf-8"><title>ATR Research Workbench</title>
 <style>
 :root{--ink:#172033;--muted:#64748b;--line:#d9e2ec;--paper:#276fbf;--question:#bc5b12;--concept:#7858a6;--bg:#f5f7fb}
@@ -25,7 +26,7 @@ main{display:grid;grid-template-columns:minmax(520px,1fr) 360px;height:calc(100v
 .paper{width:100%;text-align:left;margin:0 0 8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;color:var(--ink)}.paper:hover{border-color:#7aa7d7}.paper strong{display:block}.paper small{color:var(--muted)}
 .tag{display:inline-block;border-radius:12px;padding:3px 8px;margin:2px;background:#edf2f7;color:#425466;font-size:12px}h2{margin:0 0 10px;font-size:19px}h3{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:18px 0 5px}p{line-height:1.5}.empty{color:var(--muted);padding:22px}.warning{background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:10px;margin-top:12px}
 @media(max-width:800px){main{grid-template-columns:1fr;height:auto;min-height:calc(100vh - 61px)}aside{border-left:0;border-top:1px solid var(--line)}.metrics{grid-template-columns:1fr}.tabs{flex-wrap:wrap}}
-</style>
+</style></head><body>
 <header><b>ATR × Zotero Research Workbench</b><span id="meta"></span></header>
 <main><section><div class="metrics" id="metrics"></div><div class="tabs"><button class="active" data-view="questions">研究问题地图</button><button data-view="papers">文献与证据边界</button></div><div id="view"></div></section><aside id="detail"><h2>从研究问题开始</h2><p>默认视图只显示研究问题、其所需概念与锚定文献，避免把全部证据节点挤成一团。</p></aside></main>
 <script>
@@ -46,7 +47,7 @@ function renderQuestions(){let qs=data.nodes.filter(n=>n.kind==='research_questi
  let wrap=document.createElement('div');wrap.innerHTML='<div class="legend"><i class="question-dot"></i>研究问题 <i class="concept-dot"></i>所需概念</div>';wrap.append(svg);if(data.diagnostics?.length){let d=document.createElement('div');d.className='warning';d.textContent='数据完整性提示：'+data.diagnostics.join('；');wrap.append(d)}$('#view').replaceChildren(wrap)}
 function renderPapers(){let wrap=document.createElement('div');wrap.innerHTML='<p class="legend">选择一篇文献，可在右侧查看其支持范围与不支持的结论。证据边界不会作为独立节点堆叠显示。</p>';for(const n of data.nodes.filter(n=>n.kind==='paper'))wrap.append(button(n));$('#view').replaceChildren(wrap)}
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x===b));(b.dataset.view==='questions'?renderQuestions:renderPapers)()});renderMetrics();renderQuestions();
-</script>'''
+</script></body></html>'''
 
 
 def build(run_dir: Path, out: Path) -> dict:
