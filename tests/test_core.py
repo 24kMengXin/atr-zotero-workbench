@@ -17,6 +17,10 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(len(graph['nodes']), 6)
             self.assertTrue((tmp_path/'out'/'zotero'/'items.csl.json').exists())
             self.assertIn('缺少可用的 evidence/claims.jsonl', graph['diagnostics'])
+            dashboard = (tmp_path/'out'/'index.html').read_text()
+            self.assertIn('研究问题地图', dashboard)
+            self.assertIn('const data=', dashboard)
+            self.assertNotIn("fetch('graph.json')", dashboard)
 
     def test_sync_refuses_without_explicit_credentials(self):
         import os
