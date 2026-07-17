@@ -57,19 +57,15 @@ var ATRZoteroWorkbench = {
   removeFromWindow(window) { for (let id of this.addedElementIDs) window.document.getElementById(id)?.remove(); },
   removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
   openWorkbench(window) {
-    let tab = window.Zotero_Tabs.add({ type: "atr-zotero-workbench", title: "ATR Research Workbench", data: {}, select: true });
-    // A Zotero tab is XUL chrome, not a regular web document.  Use the same
-    // native content-browser pattern as Zotero's own reader instead of an
-    // HTML iframe: iframe content can be silently blocked here and produces a
-    // blank tab.  The page is bundled in the XPI, so it also avoids file://
-    // permissions for a workspace outside the add-on.
-    let browser = window.document.createXULElement("browser");
-    browser.id = "atr-zotero-workbench-browser-" + tab.id;
-    browser.setAttribute("class", "reader");
-    browser.setAttribute("type", "content");
-    browser.setAttribute("flex", "1");
-    browser.setAttribute("src", "chrome://atr-zotero-workbench/content/workbench/index.html");
-    tab.container.appendChild(browser);
+    // Third-party tab containers in Zotero 9 do not expose a supported page
+    // registration hook. Open the registered chrome page in a plugin window,
+    // which is the stable extension UI path and avoids an empty tab surface.
+    let dialog = window.openDialog(
+      "chrome://atr-zotero-workbench/content/workbench/index.html",
+      "atr-zotero-workbench",
+      "chrome,dialog=no,resizable,centerscreen,width=1280,height=820"
+    );
+    dialog.focus();
   },
   hooks: {
     async onStartup({ id, rootURI }) {

@@ -51,10 +51,8 @@ def validate_source() -> None:
         fail("plugin must target Zotero 9's menu_ToolsPopup")
     if re.search(r'getElementById\(["\']menu_toolsPopup["\']\)', runtime):
         fail("legacy menu_toolsPopup must not be used")
-    if "window.Zotero_Tabs.add" not in runtime:
-        fail("workbench tab must be mounted through the current window")
-    if 'createXULElement("browser")' not in runtime:
-        fail("workbench tab must use a Zotero content browser")
+    if "window.openDialog(" not in runtime:
+        fail("workbench must open through Zotero's plugin-window API")
     if 'chrome://atr-zotero-workbench/content/workbench/index.html' not in runtime:
         fail("workbench must load its dashboard through the registered chrome URI")
     if "registerChrome" not in bootstrap:
