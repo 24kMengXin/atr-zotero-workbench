@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+"""Prepare a reproducible, repository-local Zotero smoke environment."""
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RUNTIME = ROOT / ".runtime" / "zotero-smoke"
+
+
+def write_smoke_pdf(path: Path) -> None:
+    """Write one valid page for a local UI code-path test, not research evidence."""
+    stream = b"BT /F1 18 Tf 72 720 Td (ATR repository-local Reader smoke fixture) Tj ET\n"
+    objects = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>",
+        f"<< /Length {len(stream)} >>\nstream\n".encode() + stream + b"endstream",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    ]
+    body = bytearray(b"%PDF-1.4\n")
+    offsets = [0]
+    for index, obj in enumerate(objects, 1):
+        offsets.append(len(body))
+        body.extend(f"{index} 0 obj\n".encode())
+        body.extend(obj + b"\nendobj\n")
+    xref = len(body)
+    body.extend(f"xref\n0 {len(objects) + 1}\n".encode())
+    body.extend(b"0000000000 65535 f \n")
+    for offset in offsets[1:]:
+        body.extend(f"{offset:010d} 00000 n \n".encode())
+    body.extend(f"trailer\n<< /Size {len(objects) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode())
+    path.write_bytes(body)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--reset", action="store_true", help="replace only .runtime/zotero-smoke")
+    parser.add_argument("--run-key", help="explicit registered run to copy; defaults to active_run")
+    args = parser.parse_args()
+    if RUNTIME.exists():
+        if not args.reset:
+            raise SystemExit(f"smoke runtime already exists: {RUNTIME}; pass --reset to replace it")
+        shutil.rmtree(RUNTIME)
+
+    source_registry = json.loads((ROOT / "output" / "runs.json").read_text(encoding="utf-8"))
+    selected_key = args.run_key or source_registry["active_run"]
+    selected = next((row for row in source_registry["runs"] if row["key"] == selected_key), None)
+    if not selected:
+        available = ", ".join(row["key"] for row in source_registry["runs"])
+        raise SystemExit(f"unknown --run-key {selected_key!r}; available: {available}")
+    source_workspace = Path(selected["workspace"])
+    workspace = RUNTIME / "workspace"
+    profile = RUNTIME / "profile"
+    data = RUNTIME / "data"
+    (workspace / "zotero").mkdir(parents=True)
+    profile.mkdir(parents=True)
+    shutil.copy2(source_workspace / "graph.json", workspace / "graph.json")
+    shutil.copy2(source_workspace / "zotero" / "native-projection.json", workspace / "zotero" / "native-projection.json")
+    pdf_path = workspace / "reader-smoke-fixture.pdf"
+    write_smoke_pdf(pdf_path)
+
+    registry = {
+        "schema_version": "0.2",
+        "projection": "atr-workbench-run-registry",
+        "selection_policy": "EXPLICIT_ACTIVATION_ONLY",
+        "runs": [{
+            "key": "smoke-current",
+            "label": "Repository-local Zotero smoke fixture",
+            "run_id": selected["run_id"],
+            "run_dir": str(workspace),
+            "workspace": str(workspace),
+            "controller_kind": selected["controller_kind"],
+            "authority_path": str(RUNTIME / "fixture-only-no-controller.sqlite"),
+            "authority_scope": "TEST_FIXTURE_ONLY",
+            "view_role": "CURRENT_RUN",
+        }],
+        "active_run": "smoke-current",
+        "selection": {
+            "mode": "EXPLICIT",
+            "selected_key": "smoke-current",
+            "reason": "Repository-local disposable Zotero runtime smoke fixture.",
+        },
+    }
+    registry_path = RUNTIME / "registry.json"
+    registry_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2), encoding="utf-8")
+    subprocess.run([str(ROOT / "scripts" / "link_zotero_dev.sh"), str(profile), str(data)], check=True)
+    with (profile / "user.js").open("a", encoding="utf-8") as handle:
+        handle.write(f'user_pref("extensions.atr-zotero-workbench.registry", {json.dumps(str(registry_path))});\n')
+        handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeTestOnStartup", true);\n')
+        handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", true);\n')
+        handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", true);\n')
+        handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokePDFPath", {json.dumps(str(pdf_path))});\n')
+    metadata = {
+        "source_active_run": source_registry["active_run"],
+        "selected_run_key": selected_key,
+        "source_workspace": str(source_workspace),
+        "runtime": str(RUNTIME),
+        "safety_boundary": "REPOSITORY_LOCAL_GITIGNORED_DISPOSABLE_PROFILE_AND_DATA",
+    }
+    (RUNTIME / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(RUNTIME)
+
+
+if __name__ == "__main__":
+    main()

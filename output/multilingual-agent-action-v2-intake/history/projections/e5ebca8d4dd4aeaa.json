@@ -1,0 +1,1251 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "multilingual-agent-action-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T08:38:27.964880+00:00",
+      "kind": "atr_v2_transition",
+      "id": "V2-MIGRATE-INTAKE",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577"
+      ]
+    },
+    {
+      "at": "2026-07-18T08:38:27.997460+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-KMAP-1",
+      "label": "附件 · migration-knowledge-navigation（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5"
+      ]
+    },
+    {
+      "at": "2026-07-18T08:42:21.831723+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-PROBLEM-1",
+      "label": "附件 · migration-problem-formulation（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024"
+      ]
+    },
+    {
+      "at": "2026-07-18T10:27:29.359963+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-KMAP-2",
+      "label": "附件 · v2-knowledge-navigation（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b"
+      ]
+    },
+    {
+      "at": "2026-07-18T10:27:29.394940+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-OPPORTUNITY-1",
+      "label": "附件 · v2-opportunity-context（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec"
+      ]
+    },
+    {
+      "at": "2026-07-18T10:27:29.448023+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-PROBLEM-2",
+      "label": "附件 · v2-problem-formulation（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:multilingual-agent-action-v2-intake",
+      "kind": "run",
+      "label": "multilingual-agent-action-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "multilingual-action-topic",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:multilingual-action-topic",
+      "kind": "atr_v2_subject",
+      "label": "multilingual-action-topic",
+      "data": {
+        "subject_id": "multilingual-action-topic",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T08:38:27.964745+00:00",
+        "updated_at": "2026-07-18T08:38:27.964844+00:00",
+        "subject_kind": "direction"
+      }
+    },
+    {
+      "id": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "kind": "atr_v2_artifact",
+      "label": "historical-program-baseline · 720bde5221c5",
+      "data": {
+        "artifact_id": "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "artifact_kind": "historical-program-baseline",
+        "digest": "720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "original_name": "historical-program-baseline.json",
+        "created_at": "2026-07-18T08:38:27.883232+00:00",
+        "metadata": {
+          "source_path": "/private/tmp/atr-v2-migration-inputs/historical-program-baseline.json",
+          "declared_scope": "read-only v0.9 continuation provenance"
+        },
+        "artifact_type": "historical-program-baseline",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "kind": "atr_v2_artifact",
+      "label": "knowledge-map · ab9d58d55207",
+      "data": {
+        "artifact_id": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "artifact_kind": "knowledge-map",
+        "digest": "ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "original_name": "knowledge-map.json",
+        "created_at": "2026-07-18T08:38:27.931122+00:00",
+        "metadata": {
+          "source_path": "/private/tmp/atr-v2-migration-inputs/knowledge-map.json",
+          "declared_scope": "source-grounded migration knowledge navigation"
+        },
+        "artifact_type": "knowledge-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:SRC-MASSIVE-AGENTS-2025",
+      "kind": "paper",
+      "label": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "data": {
+        "source_id": "SRC-MASSIVE-AGENTS-2025",
+        "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "该论文在 52 种语言上以严格 AST 准确率评估多语言 function calling，并报告英语到目标语言的显著分数差异。",
+        "does_not_support": "它不证明单个分数差异完全来自能力，也不记录每个题目的执行值约定。",
+        "does_not_establish": ""
+      }
+    },
+    {
+      "id": "evidence:SRC-MASSIVE-AGENTS-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MASSIVE-AGENTS-2025 的证据边界",
+      "data": {
+        "supports": "该论文在 52 种语言上以严格 AST 准确率评估多语言 function calling，并报告英语到目标语言的显著分数差异。",
+        "does_not_support": "它不证明单个分数差异完全来自能力，也不记录每个题目的执行值约定。"
+      }
+    },
+    {
+      "id": "paper:SRC-MLCL-2026",
+      "kind": "paper",
+      "label": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "data": {
+        "source_id": "SRC-MLCL-2026",
+        "url": "https://aclanthology.org/2026.acl-long.2039/",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "在英语不变的执行值约定下，参数值语言失配可在意图与工具选择正确时仍造成 tool-call 失败。",
+        "does_not_support": "它不证明合成 benchmark 的 provenance 失败，也不提供原始与归一化分数变化。",
+        "does_not_establish": ""
+      }
+    },
+    {
+      "id": "evidence:SRC-MLCL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLCL-2026 的证据边界",
+      "data": {
+        "supports": "在英语不变的执行值约定下，参数值语言失配可在意图与工具选择正确时仍造成 tool-call 失败。",
+        "does_not_support": "它不证明合成 benchmark 的 provenance 失败，也不提供原始与归一化分数变化。"
+      }
+    },
+    {
+      "id": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "kind": "concept_map",
+      "label": "多语言 Agent 行动归因与接口契约",
+      "data": {
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "",
+        "does_not_establish": "这是一份导航性的、部分来源支撑的概念图，不是完整的 NLP/LLM/Agent 本体，也不证明任何模型的真实世界可靠性。"
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "kind": "knowledge_concept",
+      "label": "LLM agent action",
+      "data": {
+        "concept_id": "agent_action",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "LLM agent 通过结构化 function call 调用外部工具；评估需要区分行动决策与执行所用表示。",
+        "source_ids": [
+          "SRC-MLCL-2026",
+          "SRC-MASSIVE-AGENTS-2025"
+        ],
+        "does_not_establish": "它不定义普适 agent 架构，也不证明任何模型可靠。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "kind": "knowledge_concept",
+      "label": "Structured tool calling",
+      "data": {
+        "concept_id": "structured_tool_calling",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "模型在接口 schema 或执行约定下选择函数并提供参数。",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "schema 合规不等于语义正确的现实行动。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "kind": "knowledge_concept",
+      "label": "Semantic action selection",
+      "data": {
+        "concept_id": "semantic_action_selection",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "在参数实现前理解请求并选择恰当工具的上游决策。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "正确选择不证明调用可执行。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "kind": "knowledge_concept",
+      "label": "Executable value convention",
+      "data": {
+        "concept_id": "executable_value_convention",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "后端对每个参数值所期望的语言、格式、标识符或规范表示。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "它不是天然 English-only，也不表明某个未经检查 API 的具体要求。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "kind": "knowledge_concept",
+      "label": "Multilingual parameter realization",
+      "data": {
+        "concept_id": "multilingual_parameter_realization",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "用户语言中的参数值可在语义上恰当，但违反语言不变的执行约定。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "该失败模式不量化所有语言、工具或平台的发生率。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "kind": "knowledge_concept",
+      "label": "Evaluation attribution",
+      "data": {
+        "concept_id": "evaluation_attribution",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "将严格结构化分数与可能产生该分数的行动选择、值约定、schema 验证或 benchmark 构造原因区分开来。",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "分数差本身不能识别某个 item 的具体原因。",
+        "depth": null
+      }
+    },
+    {
+      "id": "artifact:sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+      "kind": "atr_v2_artifact",
+      "label": "problem-case · 41f3c05a23fb",
+      "data": {
+        "artifact_id": "sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+        "artifact_kind": "problem-case",
+        "digest": "41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+        "original_name": "problem-case.json",
+        "created_at": "2026-07-18T08:42:21.793166+00:00",
+        "metadata": {
+          "source_path": "/private/tmp/atr-v2-migration-inputs/problem-case.json",
+          "declared_scope": "source-grounded historical problem formulation pending human review"
+        },
+        "artifact_type": "problem-case",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_problem:PC-multilingual-action-attribution.v1",
+      "kind": "research_problem",
+      "label": "在多语言结构化工具调用中，同一严格参数失配何时反映真实行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时只是评测或接口契约未显式记录？",
+      "data": {
+        "problem_id": "PC-multilingual-action-attribution.v1",
+        "decision_owner": "agent platform implementer or multilingual benchmark evaluator",
+        "worlds": [
+          "W1：用户语言改变语义 grounding 或工具/参数选择；即使执行值约定明确，局部错误归因不会显著改变。",
+          "W2：意图和工具选择保持正确，但用户语言中的参数实现违反了固定可执行约定；明确 contract 与 action oracle 会分离该错误类。",
+          "W3：严格分数差异主要来自项级 gold、翻译或 validator policy 未被记录；在独立可执行 oracle 下不保留相同归因。"
+        ],
+        "discriminator": "一个 revision-pinned item 同时公开工具 schema、gold value、每参数可执行值约定与 validator policy，并与独立 action oracle 和盲审 policy 判断对照。",
+        "falsifier": "在冻结项目、明确每个参数的可执行约定、使用独立 action oracle 和盲审 policy 判断后，严格失配不能比单一行动能力解释提供更好的可复核区分；此时应 park 或转为 benchmark documentation，而非再造评分器。",
+        "scope": "仅限已有来源描述的多语言结构化工具调用、严格结构评分与接口执行约定；不是部署伤害或所有 agent 的普遍结论。",
+        "does_not_establish": "这不是已通过 problem/claim gate 的 proposal，不量化任一解释的频率，也不预设 contract-aware 判断必然优于严格评分。"
+      }
+    },
+    {
+      "id": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "kind": "paper",
+      "label": "Model Context Protocol schema-convergence record",
+      "data": {
+        "source_id": "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+        "source_kind": "PRIMARY_WORKFLOW",
+        "source_layer": "source_needs_review",
+        "locator": "issue abstract/motivation and 2025-11-25 specification changelog, as recorded in the continuation source ledger",
+        "provenance": "sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Clients and servers had diverged over JSON Schema dialect and validation behavior; the specification later recorded convergence and tool execution errors as a correction path.",
+        "does_not_support": "It provides no multilingual model result or deployment-harm estimate.",
+        "does_not_establish": "It provides no multilingual model result or deployment-harm estimate."
+      }
+    },
+    {
+      "id": "evidence:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MCP-SCHEMA-CONVERGENCE-2026 的证据边界",
+      "data": {
+        "supports": "",
+        "does_not_support": "It provides no multilingual model result or deployment-harm estimate."
+      }
+    },
+    {
+      "id": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "kind": "atr_v2_artifact",
+      "label": "knowledge-map · b39cec79b6d0",
+      "data": {
+        "artifact_id": "sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+        "artifact_kind": "knowledge-map",
+        "digest": "b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+        "original_name": "knowledge-map.v2.json",
+        "created_at": "2026-07-18T10:27:29.232122+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/v2-alignment-inputs/knowledge-map.v2.json",
+          "declared_scope": "strict v2 source-grounded knowledge navigation"
+        },
+        "artifact_type": "knowledge-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "kind": "concept_map",
+      "label": "Multilingual structured tool execution and action attribution",
+      "data": {
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "",
+        "does_not_establish": "Parent-child placement is a navigation structure, not proof of a causal mechanism or a complete field ontology. Every definition remains limited to its listed sources."
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "kind": "knowledge_concept",
+      "label": "LLM agent action",
+      "data": {
+        "concept_id": "agent_action",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "An LLM agent invokes external tools through structured function calls; evaluation must distinguish the action decision from the representation used to execute it.",
+        "source_ids": [
+          "SRC-MLCL-2026",
+          "SRC-MASSIVE-AGENTS-2025"
+        ],
+        "does_not_establish": "This map does not define a universal agent architecture or prove any model's real-world reliability.",
+        "depth": 0
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "kind": "knowledge_concept",
+      "label": "Structured tool calling",
+      "data": {
+        "concept_id": "structured_tool_calling",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "A model produces a structured call that selects a function and supplies arguments under an interface schema or execution convention.",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+        ],
+        "does_not_establish": "Schema conformance alone does not prove that the requested real-world action is semantically correct.",
+        "depth": 1
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "kind": "knowledge_concept",
+      "label": "Semantic action selection",
+      "data": {
+        "concept_id": "semantic_action_selection",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "The upstream decision to understand the request and select an appropriate tool before argument realization.",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "A correct selection does not establish a valid executable call.",
+        "depth": 2
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "kind": "knowledge_concept",
+      "label": "Executable value convention",
+      "data": {
+        "concept_id": "executable_value_convention",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "The language, format, identifier, or normalized representation that a backend expects for each argument value.",
+        "source_ids": [
+          "SRC-MLCL-2026",
+          "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+        ],
+        "does_not_establish": "A convention is not inherently English-only, and this map does not establish which convention any uninspected API requires.",
+        "depth": 2
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "kind": "knowledge_concept",
+      "label": "Multilingual parameter realization",
+      "data": {
+        "concept_id": "multilingual_parameter_realization",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "A user-language parameter value can be semantically appropriate while violating a language-invariant execution convention.",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "The observed MLCL failure mode does not quantify prevalence across all languages, tools, or platforms.",
+        "depth": 3
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "kind": "knowledge_concept",
+      "label": "Evaluation attribution",
+      "data": {
+        "concept_id": "evaluation_attribution",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "The task of separating a strict structured score from the distinct causes that can produce it: action selection, value convention, schema validation, or benchmark construction.",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "A score gap alone does not identify which cause is responsible for any individual item.",
+        "depth": 1
+      }
+    },
+    {
+      "id": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "kind": "atr_v2_artifact",
+      "label": "opportunity-map · cc7cbe9fb577",
+      "data": {
+        "artifact_id": "sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+        "artifact_kind": "opportunity-map",
+        "digest": "cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+        "original_name": "opportunity-map.v2.json",
+        "created_at": "2026-07-18T10:27:29.282152+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/v2-alignment-inputs/opportunity-map.v2.json",
+          "declared_scope": "strict v2 real-world inspiration; no gap certificate"
+        },
+        "artifact_type": "opportunity-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "opportunity_map:OPP-multilingual-action-contract.v1",
+      "kind": "opportunity_map",
+      "label": "Pressure-led framing for language-conditioned structured tool execution; it is not a claim that any benchmark defect or deployment harm is already established.",
+      "data": {
+        "map_id": "OPP-multilingual-action-contract.v1",
+        "searched_through": "2026-07-18",
+        "created_at": "2026-07-18T09:00:00+00:00",
+        "valid_until": "2026-08-17T09:00:00+00:00",
+        "does_not_establish": "The signals motivate a bounded review question; they do not certify novelty, prevalence, deployment harm, or a lifecycle transition."
+      }
+    },
+    {
+      "id": "real_world_tension:OPPC-execution-contract-visibility",
+      "kind": "real_world_tension",
+      "label": "A tool call may have the right intent and selected tool while violating an execution convention in an argument value; separately, protocol implementers have needed to converge schema-validation behavior across clients and servers.",
+      "data": {
+        "tension_id": "OPPC-execution-contract-visibility",
+        "actor": "agent platform implementer or evaluator",
+        "incumbent_practice": "Treat structured-tool validation and a strict multilingual score as an adequate proxy for correct action.",
+        "material_consequence": "Without a declared value and validator contract, an evaluator or platform owner cannot tell whether a strict failure should be repaired as semantic action, interface realization, or validation interoperability.",
+        "candidate_construct": "an explicit, inspectable action contract that separates semantic intent, executable value convention, and validator interpretation",
+        "alternative_explanations": [
+          "The observed multilingual error is mainly upstream semantic grounding, so a contract layer adds little explanatory value.",
+          "The error is mainly a language-conditioned value/interface mismatch after action selection, and its interpretation depends on an unexposed contract."
+        ],
+        "translation_status": "ROUTE_TO_R0",
+        "does_not_establish": "Neither signal establishes a benchmark-wide defect, a deployment-harm estimate, or a generally effective contract intervention."
+      }
+    },
+    {
+      "id": "artifact:sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+      "kind": "atr_v2_artifact",
+      "label": "problem-case · 7901a834b7ba",
+      "data": {
+        "artifact_id": "sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+        "artifact_kind": "problem-case",
+        "digest": "7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+        "original_name": "problem-case.v2.json",
+        "created_at": "2026-07-18T10:27:29.319957+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/v2-alignment-inputs/problem-case.v2.json",
+          "declared_scope": "strict v2 problem formulation pending owner review"
+        },
+        "artifact_type": "problem-case",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "kind": "research_problem",
+      "label": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "data": {
+        "problem_id": "RQ-multilingual-action-attribution.v1",
+        "decision_owner": null,
+        "worlds": [
+          "W1：上游行动能力损失：改变用户语言改变了语义 grounding 或工具/参数选择；即使执行值约定被明确，局部错误归因不会显著改变。",
+          "W2：下游接口实现失配：意图和工具选择保持正确，但用户语言的参数实现违反了固定可执行约定；显式 contract 与 action oracle 会分离出该错误类。",
+          "W3：测量解释失配：严格分数的差异主要来自项级 gold、翻译或 validator policy 的未记录；在独立可执行 oracle 下不保留相同归因。"
+        ],
+        "discriminator": "一个 revision-pinned item 同时公开工具 schema、gold value、每参数可执行值约定与 validator policy，并与独立 action oracle 和盲审 policy 判断对照。",
+        "falsifier": "在冻结项目、明确每个参数的可执行约定、使用独立 action oracle 和盲审 policy 判断后，严格失配无法比单一 action-capability 解释提供更好的可复核区分；此时该问题卡应 park 或转为基准文档改进，而不是再造新评分器。",
+        "scope": "仅限已有来源描述的多语言结构化工具调用、严格结构评分与接口执行约定；不是部署伤害或所有 agent 的普遍结论。",
+        "does_not_establish": "This is a review-bound problem case, not a passed claim, proposal, prevalence estimate, or deployment-harm finding."
+      }
+    },
+    {
+      "id": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "kind": "paper",
+      "label": "g1 R4 posterior review after contract-provenance decision study",
+      "data": {
+        "source_id": "SRC-G1-R4-NEGATIVE-2026",
+        "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+        "source_kind": "AUDITED_LOCAL_REVIEW",
+        "source_layer": "source_needs_review",
+        "locator": "NOT_YET_VERIFIED_IN_ZOTERO",
+        "provenance": "sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "A broad claim that multilingual parameter-value mismatch is novel collides with MLCL; a benchmark-wide hidden-policy/ranking claim lacks the necessary item-level provenance and human calibration.",
+        "does_not_support": "It does not refute a narrower, separately reviewed study of a different mechanism or a documented execution contract.",
+        "does_not_establish": "It does not refute a narrower, separately reviewed study of a different mechanism or a documented execution contract."
+      }
+    },
+    {
+      "id": "evidence:SRC-G1-R4-NEGATIVE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-G1-R4-NEGATIVE-2026 的证据边界",
+      "data": {
+        "supports": "A broad claim that multilingual parameter-value mismatch is novel collides with MLCL; a benchmark-wide hidden-policy/ranking claim lacks the necessary item-level provenance and human calibration.",
+        "does_not_support": "It does not refute a narrower, separately reviewed study of a different mechanism or a documented execution contract."
+      }
+    },
+    {
+      "id": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "kind": "paper",
+      "label": "MLCL code/dataset availability audit",
+      "data": {
+        "source_id": "SRC-MLCL-RELEASE-AUDIT-2026",
+        "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+        "source_kind": "RELEASE_ACCESS_AUDIT",
+        "source_layer": "source_needs_review",
+        "locator": "NOT_YET_VERIFIED_IN_ZOTERO",
+        "provenance": "sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "The ACL paper provides an English-only contract and manual-verification description, but the cited anonymous repository cannot currently be accessed or revision-pinned without a reviewer session.",
+        "does_not_support": "Release inaccessibility does not invalidate the paper's reported findings or prove that no author archive exists elsewhere.",
+        "does_not_establish": "Release inaccessibility does not invalidate the paper's reported findings or prove that no author archive exists elsewhere."
+      }
+    },
+    {
+      "id": "evidence:SRC-MLCL-RELEASE-AUDIT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLCL-RELEASE-AUDIT-2026 的证据边界",
+      "data": {
+        "supports": "The ACL paper provides an English-only contract and manual-verification description, but the cited anonymous repository cannot currently be accessed or revision-pinned without a reviewer session.",
+        "does_not_support": "Release inaccessibility does not invalidate the paper's reported findings or prove that no author archive exists elsewhere."
+      }
+    },
+    {
+      "id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "kind": "derived_research_question",
+      "label": "是否能取得一个 revision-pinned 的多语言工具调用 item，使工具/意图选择、每参数的可执行值约定与 validator policy 可以被同一位阅读者逐项核对？",
+      "data": {
+        "question_id": "DQ-frozen-item-contract",
+        "status": "R2_REVIEW_TASK",
+        "smallest_discriminator": "一个公开、可 revision-pin 的 item 及其工具 schema、gold value、value-language convention 和 validator policy；否则该问题保持为资产/文档缺口。",
+        "does_not_establish": "即使找到该 item，也不证明 W1、W2 或 W3 在总体中的频率或因果占比。",
+        "parent_problem_id": "RQ-multilingual-action-attribution.v1"
+      }
+    },
+    {
+      "id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "kind": "derived_research_question",
+      "label": "在冻结并可执行的 item 上，独立 action oracle 与盲审 multilingual policy 是否会把同一严格 AST 失配分别归到语义行动、接口值约定或测量解释？",
+      "data": {
+        "question_id": "DQ-independent-action-oracle",
+        "status": "R2_REVIEW_TASK",
+        "smallest_discriminator": "一份事先定义的 action-oracle judgement 与盲审 policy adjudication，在不重写 gold 的前提下与 strict score 对照。",
+        "does_not_establish": "这不是已设计完成的实验，也不预设 contract-aware 判断必然优于严格评分。",
+        "parent_problem_id": "RQ-multilingual-action-attribution.v1"
+      }
+    },
+    {
+      "id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "kind": "derived_research_question",
+      "label": "若当前公开资产不能同时满足可复核 item contract 与独立 action oracle，应该继续把该家族作为能力研究，还是明确停放并转为 benchmark documentation program？",
+      "data": {
+        "question_id": "DQ-route-or-park",
+        "status": "R2_OWNER_DECISION",
+        "smallest_discriminator": "Zotero 人工阅读反馈确认 source locator 与 paper role 后，对 item-contract audit 的缺口作出显式 owner disposition。",
+        "does_not_establish": "停放或转向文档计划不等于来源无价值，也不删除原有文献和历史链路。",
+        "parent_problem_id": "RQ-multilingual-action-attribution.v1"
+      }
+    },
+    {
+      "id": "transition:V2-MIGRATE-INTAKE",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "V2-MIGRATE-INTAKE",
+        "subject_id": "multilingual-action-topic",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T08:38:27.964880+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-KMAP-1",
+      "kind": "atr_v2_attachment",
+      "label": "migration-knowledge-navigation · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "V2-ATTACH-KMAP-1",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "role": "migration-knowledge-navigation",
+        "note": "Migrated source-grounded concept map; navigation only, not a lifecycle or claim decision.",
+        "created_at": "2026-07-18T08:38:27.997460+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-PROBLEM-1",
+      "kind": "atr_v2_attachment",
+      "label": "migration-problem-formulation · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "V2-ATTACH-PROBLEM-1",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+        "role": "migration-problem-formulation",
+        "note": "Migrated bounded problem case for human Zotero verification; it does not promote a claim or transition the v2 subject.",
+        "created_at": "2026-07-18T08:42:21.831723+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-KMAP-2",
+      "kind": "atr_v2_attachment",
+      "label": "v2-knowledge-navigation · v0",
+      "data": {
+        "seq": 3,
+        "attachment_id": "V2-ATTACH-KMAP-2",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+        "role": "v2-knowledge-navigation",
+        "note": "Superseding strict-contract navigation attachment; no lifecycle change and old digest retained.",
+        "created_at": "2026-07-18T10:27:29.359963+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-OPPORTUNITY-1",
+      "kind": "atr_v2_attachment",
+      "label": "v2-opportunity-context · v0",
+      "data": {
+        "seq": 4,
+        "attachment_id": "V2-ATTACH-OPPORTUNITY-1",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+        "role": "v2-opportunity-context",
+        "note": "Typed real-world inspiration attachment; not a novelty or gap certificate and no lifecycle change.",
+        "created_at": "2026-07-18T10:27:29.394940+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-PROBLEM-2",
+      "kind": "atr_v2_attachment",
+      "label": "v2-problem-formulation · v0",
+      "data": {
+        "seq": 5,
+        "attachment_id": "V2-ATTACH-PROBLEM-2",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+        "role": "v2-problem-formulation",
+        "note": "Strict-contract problem case with paper roles and derived questions; pending owner review and no lifecycle change.",
+        "created_at": "2026-07-18T10:27:29.448023+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "subject:multilingual-action-topic",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MASSIVE-AGENTS-2025",
+      "target": "evidence:SRC-MASSIVE-AGENTS-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLCL-2026",
+      "target": "evidence:SRC-MLCL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "relation": "materializes_knowledge_map",
+      "data": {}
+    },
+    {
+      "source": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "relation": "roots_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+      "target": "research_problem:PC-multilingual-action-attribution.v1",
+      "relation": "materializes_problem_case",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "paper result summarized in continuation source ledger; original locator still requires Zotero reading",
+        "observation": "Parameter-value language mismatch can fail after correct intent and tool selection under an English-invariant execution convention.",
+        "problem_posture": null,
+        "resolves": "",
+        "leaves_unresolved": "",
+        "does_not_establish": "It does not quantify prevalence across languages/tools or audit benchmark provenance."
+      }
+    },
+    {
+      "source": "research_problem:PC-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "paper result summarized in continuation source ledger; original locator still requires Zotero reading",
+        "observation": "A 52-language benchmark reports strict AST score gaps but not an item-level independent action oracle or each executable value convention.",
+        "problem_posture": null,
+        "resolves": "",
+        "leaves_unresolved": "",
+        "does_not_establish": "A strict score gap cannot itself distinguish W1, W2, and W3."
+      }
+    },
+    {
+      "source": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "target": "evidence:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "issue abstract/motivation and 2025-11-25 specification changelog, as recorded in the continuation source ledger",
+        "observation": "Clients and servers had diverged over JSON Schema dialect and validation behavior; the specification later recorded convergence and tool execution errors as a correction path.",
+        "problem_posture": null,
+        "resolves": "",
+        "leaves_unresolved": "",
+        "does_not_establish": "It provides no multilingual model result or deployment-harm estimate."
+      }
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "target": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "relation": "materializes_knowledge_map",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "target": "opportunity_map:OPP-multilingual-action-contract.v1",
+      "relation": "materializes_opportunity_map",
+      "data": {}
+    },
+    {
+      "source": "opportunity_map:OPP-multilingual-action-contract.v1",
+      "target": "real_world_tension:OPPC-execution-contract-visibility",
+      "relation": "clusters_real_world_tension",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:OPPC-execution-contract-visibility",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:OPPC-execution-contract-visibility",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+      "target": "research_problem:RQ-multilingual-action-attribution.v1",
+      "relation": "materializes_problem_case",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "target": "evidence:SRC-G1-R4-NEGATIVE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "NOT_YET_VERIFIED_IN_ZOTERO",
+        "observation": "A broad claim that multilingual parameter-value mismatch is novel collides with MLCL; a benchmark-wide hidden-policy/ranking claim lacks the necessary item-level provenance and human calibration.",
+        "problem_posture": "CONTEXT_ONLY",
+        "resolves": "No problem-resolution role is established; this source is retained only because an explicit derived question cites it.",
+        "leaves_unresolved": "Its exact relevance and locator require Zotero review.",
+        "does_not_establish": "It does not refute a narrower, separately reviewed study of a different mechanism or a documented execution contract."
+      }
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "paper result summarized in continuation source ledger; original locator still requires Zotero reading",
+        "observation": "A 52-language benchmark reports strict AST score gaps but not an item-level independent action oracle or each executable value convention.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "在 52 种语言的大规模函数调用设置中量化严格 AST 表现差异。",
+        "leaves_unresolved": "严格差异在每个 item 上应归因给语义行动、接口值约定还是评测构造。",
+        "does_not_establish": "It does not establish that an individual score gap is wholly a capability difference or document every item-level execution convention."
+      }
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "issue abstract/motivation and 2025-11-25 specification changelog, as recorded in the continuation source ledger",
+        "observation": "Clients and servers had diverged over JSON Schema dialect and validation behavior; the specification later recorded convergence and tool execution errors as a correction path.",
+        "problem_posture": "CONTEXT_ONLY",
+        "resolves": "显示 schema validation 的解释本身需要协议层显式约定。",
+        "leaves_unresolved": "该协议经验如何映射到多语言参数值与 agent 行动评测。",
+        "does_not_establish": "It provides no multilingual evaluation, no evidence about natural-language parameter values, and no estimate of user harm. It only establishes that executable interface interpretation is a live interoperability concern."
+      }
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "paper result summarized in continuation source ledger; original locator still requires Zotero reading",
+        "observation": "Parameter-value language mismatch can fail after correct intent and tool selection under an English-invariant execution convention.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "给出一种在意图与工具选择正确后仍可出现失败的、可定位的参数值语言机制。",
+        "leaves_unresolved": "项级 benchmark provenance、该机制在其他语言/工具的频率，以及严格评分是否会改变归因。",
+        "does_not_establish": "It does not establish synthetic benchmark provenance failures or raw-versus-normalized score changes."
+      }
+    },
+    {
+      "source": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "target": "evidence:SRC-MLCL-RELEASE-AUDIT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "NOT_YET_VERIFIED_IN_ZOTERO",
+        "observation": "The ACL paper provides an English-only contract and manual-verification description, but the cited anonymous repository cannot currently be accessed or revision-pinned without a reviewer session.",
+        "problem_posture": "CONTEXT_ONLY",
+        "resolves": "No problem-resolution role is established; this source is retained only because an explicit derived question cites it.",
+        "leaves_unresolved": "Its exact relevance and locator require Zotero review.",
+        "does_not_establish": "Release inaccessibility does not invalidate the paper's reported findings or prove that no author archive exists elsewhere."
+      }
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "target": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "target": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "research_problem:RQ-multilingual-action-attribution.v1",
+      "target": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "target": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "target": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "transition:V2-MIGRATE-INTAKE",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:V2-MIGRATE-INTAKE",
+      "target": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-KMAP-1",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-KMAP-1",
+      "target": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-PROBLEM-1",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-PROBLEM-1",
+      "target": "artifact:sha256:41f3c05a23fb060cc24fdbfce2ccb77d47310a8e93b0418b09e892189c70e024",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-KMAP-2",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-KMAP-2",
+      "target": "artifact:sha256:b39cec79b6d037f087d5fab09f17dae78b2424bfaea30c87ba9747c3eb64652b",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-OPPORTUNITY-1",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-OPPORTUNITY-1",
+      "target": "artifact:sha256:cc7cbe9fb5772c083cd7b67ec4a3836c571bfdfddb5c28adfa236019bb55aeec",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-PROBLEM-2",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-PROBLEM-2",
+      "target": "artifact:sha256:7901a834b7bad9ac4240eb619af5bfc5c7465ede3588b39865cfd0572e4f626a",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "5dcaa97e0ccf5a2c",
+        "archived_at": "2026-07-18T08:42:28.823423+00:00",
+        "path": "history/projections/5dcaa97e0ccf5a2c.json",
+        "run": "multilingual-agent-action-v2-intake",
+        "node_count": 17,
+        "edge_count": 27
+      },
+      {
+        "id": "231cec2de9f0a66a",
+        "archived_at": "2026-07-18T10:27:49.303808+00:00",
+        "path": "history/projections/231cec2de9f0a66a.json",
+        "run": "multilingual-agent-action-v2-intake",
+        "node_count": 22,
+        "edge_count": 35
+      }
+    ],
+    "previous_projection": "231cec2de9f0a66a"
+  }
+}

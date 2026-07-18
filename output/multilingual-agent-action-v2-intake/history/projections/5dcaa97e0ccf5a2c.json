@@ -1,0 +1,443 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "multilingual-agent-action-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T08:38:27.964880+00:00",
+      "kind": "atr_v2_transition",
+      "id": "V2-MIGRATE-INTAKE",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577"
+      ]
+    },
+    {
+      "at": "2026-07-18T08:38:27.997460+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "V2-ATTACH-KMAP-1",
+      "label": "附件 · migration-knowledge-navigation（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:multilingual-agent-action-v2-intake",
+      "kind": "run",
+      "label": "multilingual-agent-action-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "multilingual-action-topic",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:multilingual-action-topic",
+      "kind": "atr_v2_subject",
+      "label": "multilingual-action-topic",
+      "data": {
+        "subject_id": "multilingual-action-topic",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T08:38:27.964745+00:00",
+        "updated_at": "2026-07-18T08:38:27.964844+00:00",
+        "subject_kind": "direction"
+      }
+    },
+    {
+      "id": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "kind": "atr_v2_artifact",
+      "label": "historical-program-baseline · 720bde5221c5",
+      "data": {
+        "artifact_id": "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "artifact_kind": "historical-program-baseline",
+        "digest": "720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "original_name": "historical-program-baseline.json",
+        "created_at": "2026-07-18T08:38:27.883232+00:00",
+        "metadata": {
+          "source_path": "/private/tmp/atr-v2-migration-inputs/historical-program-baseline.json",
+          "declared_scope": "read-only v0.9 continuation provenance"
+        },
+        "artifact_type": "historical-program-baseline",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "kind": "atr_v2_artifact",
+      "label": "knowledge-map · ab9d58d55207",
+      "data": {
+        "artifact_id": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "artifact_kind": "knowledge-map",
+        "digest": "ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "original_name": "knowledge-map.json",
+        "created_at": "2026-07-18T08:38:27.931122+00:00",
+        "metadata": {
+          "source_path": "/private/tmp/atr-v2-migration-inputs/knowledge-map.json",
+          "declared_scope": "source-grounded migration knowledge navigation"
+        },
+        "artifact_type": "knowledge-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:SRC-MASSIVE-AGENTS-2025",
+      "kind": "paper",
+      "label": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "data": {
+        "source_id": "SRC-MASSIVE-AGENTS-2025",
+        "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "supports": "该论文在 52 种语言上以严格 AST 准确率评估多语言 function calling，并报告英语到目标语言的显著分数差异。",
+        "does_not_support": "它不证明单个分数差异完全来自能力，也不记录每个题目的执行值约定。",
+        "does_not_establish": ""
+      }
+    },
+    {
+      "id": "evidence:SRC-MASSIVE-AGENTS-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MASSIVE-AGENTS-2025 的证据边界",
+      "data": {
+        "supports": "该论文在 52 种语言上以严格 AST 准确率评估多语言 function calling，并报告英语到目标语言的显著分数差异。",
+        "does_not_support": "它不证明单个分数差异完全来自能力，也不记录每个题目的执行值约定。"
+      }
+    },
+    {
+      "id": "paper:SRC-MLCL-2026",
+      "kind": "paper",
+      "label": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "data": {
+        "source_id": "SRC-MLCL-2026",
+        "url": "https://aclanthology.org/2026.acl-long.2039/",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "supports": "在英语不变的执行值约定下，参数值语言失配可在意图与工具选择正确时仍造成 tool-call 失败。",
+        "does_not_support": "它不证明合成 benchmark 的 provenance 失败，也不提供原始与归一化分数变化。",
+        "does_not_establish": ""
+      }
+    },
+    {
+      "id": "evidence:SRC-MLCL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLCL-2026 的证据边界",
+      "data": {
+        "supports": "在英语不变的执行值约定下，参数值语言失配可在意图与工具选择正确时仍造成 tool-call 失败。",
+        "does_not_support": "它不证明合成 benchmark 的 provenance 失败，也不提供原始与归一化分数变化。"
+      }
+    },
+    {
+      "id": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "kind": "concept_map",
+      "label": "多语言 Agent 行动归因与接口契约",
+      "data": {
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "",
+        "does_not_establish": "这是一份导航性的、部分来源支撑的概念图，不是完整的 NLP/LLM/Agent 本体，也不证明任何模型的真实世界可靠性。"
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "kind": "knowledge_concept",
+      "label": "LLM agent action",
+      "data": {
+        "concept_id": "agent_action",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "LLM agent 通过结构化 function call 调用外部工具；评估需要区分行动决策与执行所用表示。",
+        "source_ids": [
+          "SRC-MLCL-2026",
+          "SRC-MASSIVE-AGENTS-2025"
+        ],
+        "does_not_establish": "它不定义普适 agent 架构，也不证明任何模型可靠。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "kind": "knowledge_concept",
+      "label": "Structured tool calling",
+      "data": {
+        "concept_id": "structured_tool_calling",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "模型在接口 schema 或执行约定下选择函数并提供参数。",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "schema 合规不等于语义正确的现实行动。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "kind": "knowledge_concept",
+      "label": "Semantic action selection",
+      "data": {
+        "concept_id": "semantic_action_selection",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "在参数实现前理解请求并选择恰当工具的上游决策。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "正确选择不证明调用可执行。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "kind": "knowledge_concept",
+      "label": "Executable value convention",
+      "data": {
+        "concept_id": "executable_value_convention",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "后端对每个参数值所期望的语言、格式、标识符或规范表示。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "它不是天然 English-only，也不表明某个未经检查 API 的具体要求。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "kind": "knowledge_concept",
+      "label": "Multilingual parameter realization",
+      "data": {
+        "concept_id": "multilingual_parameter_realization",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "用户语言中的参数值可在语义上恰当，但违反语言不变的执行约定。",
+        "source_ids": [
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "该失败模式不量化所有语言、工具或平台的发生率。",
+        "depth": null
+      }
+    },
+    {
+      "id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "kind": "knowledge_concept",
+      "label": "Evaluation attribution",
+      "data": {
+        "concept_id": "evaluation_attribution",
+        "map_id": "KMAP-multilingual-action-contract.v1",
+        "definition": "将严格结构化分数与可能产生该分数的行动选择、值约定、schema 验证或 benchmark 构造原因区分开来。",
+        "source_ids": [
+          "SRC-MASSIVE-AGENTS-2025",
+          "SRC-MLCL-2026"
+        ],
+        "does_not_establish": "分数差本身不能识别某个 item 的具体原因。",
+        "depth": null
+      }
+    },
+    {
+      "id": "transition:V2-MIGRATE-INTAKE",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "V2-MIGRATE-INTAKE",
+        "subject_id": "multilingual-action-topic",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T08:38:27.964880+00:00"
+      }
+    },
+    {
+      "id": "attachment:V2-ATTACH-KMAP-1",
+      "kind": "atr_v2_attachment",
+      "label": "migration-knowledge-navigation · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "V2-ATTACH-KMAP-1",
+        "subject_id": "multilingual-action-topic",
+        "subject_version": 0,
+        "artifact_id": "sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+        "role": "migration-knowledge-navigation",
+        "note": "Migrated source-grounded concept map; navigation only, not a lifecycle or claim decision.",
+        "created_at": "2026-07-18T08:38:27.997460+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "subject:multilingual-action-topic",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:multilingual-agent-action-v2-intake",
+      "target": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MASSIVE-AGENTS-2025",
+      "target": "evidence:SRC-MASSIVE-AGENTS-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLCL-2026",
+      "target": "evidence:SRC-MLCL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "target": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "relation": "materializes_knowledge_map",
+      "data": {}
+    },
+    {
+      "source": "knowledge_map:KMAP-multilingual-action-contract.v1",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "relation": "roots_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "target": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "target": "paper:SRC-MASSIVE-AGENTS-2025",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "transition:V2-MIGRATE-INTAKE",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:V2-MIGRATE-INTAKE",
+      "target": "artifact:sha256:720bde5221c50cddd0a20fd8d1ab55de77de4c942e96940d130ac36ab535f577",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:multilingual-action-topic",
+      "target": "attachment:V2-ATTACH-KMAP-1",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:V2-ATTACH-KMAP-1",
+      "target": "artifact:sha256:ab9d58d5520734de1ef5216078ebf73a43c91cbe45e474720a4f305a4da91dc5",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [],
+    "previous_projection": null
+  }
+}

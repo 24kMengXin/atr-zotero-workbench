@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "5dcaa97e0ccf5a2c",
+      "archived_at": "2026-07-18T08:42:28.823423+00:00",
+      "path": "history/projections/5dcaa97e0ccf5a2c.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 17,
+      "edge_count": 27
+    },
+    {
+      "id": "231cec2de9f0a66a",
+      "archived_at": "2026-07-18T10:27:49.303808+00:00",
+      "path": "history/projections/231cec2de9f0a66a.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 22,
+      "edge_count": 35
+    },
+    {
+      "id": "e5ebca8d4dd4aeaa",
+      "archived_at": "2026-07-18T10:29:53.763886+00:00",
+      "path": "history/projections/e5ebca8d4dd4aeaa.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 45,
+      "edge_count": 73
+    },
+    {
+      "id": "0f7050c9478e8f9f",
+      "archived_at": "2026-07-18T10:30:29.243026+00:00",
+      "path": "history/projections/0f7050c9478e8f9f.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 45,
+      "edge_count": 94
+    },
+    {
+      "id": "e39b26da13bb8348",
+      "archived_at": "2026-07-18T10:31:12.512463+00:00",
+      "path": "history/projections/e39b26da13bb8348.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 51,
+      "edge_count": 114
+    }
+  ]
+}

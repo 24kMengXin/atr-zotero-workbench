@@ -1,0 +1,1936 @@
+{
+  "schema_version": "0.1",
+  "projection": "atr-zotero-native-map",
+  "run": "2026-07-18-multilingual-agent-action-continuation",
+  "source_graph_projection": "derived-read-only",
+  "topic": {
+    "title": "2026-07-18-multilingual-agent-action-continuation",
+    "marker": "ATR Topic Run: 2026-07-18-multilingual-agent-action-continuation"
+  },
+  "collections": {
+    "root": "ATR · 2026-07-18-multilingual-agent-action-continuation",
+    "overview": "01 · Topic 与演化",
+    "knowledge": "02 · 知识体系",
+    "research": "03 · 研究问题与断言",
+    "sources": "04 · 来源阅读",
+    "history": "05 · 历史版本",
+    "research_tensions": "01 · 现实世界张力",
+    "research_frontier": "02 · 前沿研究问题",
+    "research_current": "03 · 当前问题卡",
+    "research_claims": "04 · 待审查断言"
+  },
+  "objects": [
+    {
+      "object_id": "topic:2026-07-18-multilingual-agent-action-continuation",
+      "object_kind": "topic_note",
+      "graph_node_id": null,
+      "atr_id": "2026-07-18-multilingual-agent-action-continuation",
+      "title": "2026-07-18-multilingual-agent-action-continuation",
+      "marker": "ATR Topic Run: 2026-07-18-multilingual-agent-action-continuation",
+      "collection_role": "OVERVIEW",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "source:SRC-AGENTABSTAIN-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AGENTABSTAIN-2026",
+      "atr_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "marker": "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AGENTABSTAIN-2026"
+      ],
+      "url": "https://agentabstain.github.io/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "atr_id": "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "title": "Model Context Protocol schema-convergence record",
+      "marker": "atr-source-id:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ],
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-AGENTSENTRY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AGENTSENTRY-2026",
+      "atr_id": "SRC-AGENTSENTRY-2026",
+      "title": "AgentSentry: Mitigating Indirect Prompt Injection in LLM Agents via Temporal Causal Diagnostics and Context Purification",
+      "marker": "atr-source-id:SRC-AGENTSENTRY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AGENTSENTRY-2026"
+      ],
+      "url": "https://arxiv.org/abs/2602.22724",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "atr_id": "SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "title": "Arabic Prompts with English Tools: A Benchmark",
+      "marker": "atr-source-id:SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ARABIC-ENGLISH-TOOLS-2026"
+      ],
+      "url": "https://arxiv.org/abs/2601.05101",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+      "atr_id": "SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+      "title": "Audit of code link associated with Arabic Prompts with English Tools",
+      "marker": "atr-source-id:SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ARABIC-TOOLS-CODE-MISMATCH-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+      "atr_id": "SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+      "title": "Corrected release audit of Arabic Prompts with English Tools",
+      "marker": "atr-source-id:SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+      "atr_id": "SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+      "title": "Arabic Tools Gorilla invariant-identifier audit",
+      "marker": "atr-source-id:SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-BENCHMAX-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-BENCHMAX-2025",
+      "atr_id": "SRC-BENCHMAX-2025",
+      "title": "BenchMAX: A Comprehensive Multilingual Evaluation Suite",
+      "marker": "atr-source-id:SRC-BENCHMAX-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-BENCHMAX-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-emnlp.909/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-BENCHMAX-CODE-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-BENCHMAX-CODE-AUDIT-2026",
+      "atr_id": "SRC-BENCHMAX-CODE-AUDIT-2026",
+      "title": "BenchMAX Nexus task static audit",
+      "marker": "atr-source-id:SRC-BENCHMAX-CODE-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-BENCHMAX-CODE-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-BENCHMAX-REPO-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-BENCHMAX-REPO-2026",
+      "atr_id": "SRC-BENCHMAX-REPO-2026",
+      "title": "CONE-MT/BenchMAX",
+      "marker": "atr-source-id:SRC-BENCHMAX-REPO-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-BENCHMAX-REPO-2026"
+      ],
+      "url": "https://github.com/CONE-MT/BenchMAX",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-CIA-ACL-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-CIA-ACL-2025",
+      "atr_id": "SRC-CIA-ACL-2025",
+      "title": "Cross Lingual Auto Evaluation: A Comprehensive Framework for Multilingual LLM Evaluation",
+      "marker": "atr-source-id:SRC-CIA-ACL-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-CIA-ACL-2025"
+      ],
+      "url": "https://aclanthology.org/2025.acl-long.1419.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-CLARIFYBENCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-CLARIFYBENCH-2026",
+      "atr_id": "SRC-CLARIFYBENCH-2026",
+      "title": "Structured Uncertainty guided Clarification for LLM Agents",
+      "marker": "atr-source-id:SRC-CLARIFYBENCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-CLARIFYBENCH-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-acl.2028.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-CLARIFYMT-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-CLARIFYMT-2025",
+      "atr_id": "SRC-CLARIFYMT-2025",
+      "title": "ClarifyMT-Bench: Benchmarking and Improving Multi-Turn Clarification for Conversational Large Language Models",
+      "marker": "atr-source-id:SRC-CLARIFYMT-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-CLARIFYMT-2025"
+      ],
+      "url": "https://arxiv.org/abs/2512.21120",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-CONCEPT-AMBIGUITY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-CONCEPT-AMBIGUITY-2026",
+      "atr_id": "SRC-CONCEPT-AMBIGUITY-2026",
+      "title": "Concept based Ambiguity Resolution in LLMs",
+      "marker": "atr-source-id:SRC-CONCEPT-AMBIGUITY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-CONCEPT-AMBIGUITY-2026"
+      ],
+      "url": "https://proceedings.mlr.press/v328/hu26b.html",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-CONSTRAINT-TAX-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-CONSTRAINT-TAX-2026",
+      "atr_id": "SRC-CONSTRAINT-TAX-2026",
+      "title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
+      "marker": "atr-source-id:SRC-CONSTRAINT-TAX-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-CONSTRAINT-TAX-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.25605",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-DIFFUSION-CONSTRAINT-FC-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-DIFFUSION-CONSTRAINT-FC-2026",
+      "atr_id": "SRC-DIFFUSION-CONSTRAINT-FC-2026",
+      "title": "Constrained Decoding for Diffusion Language Models via Efficient Inference over Finite Automata",
+      "marker": "atr-source-id:SRC-DIFFUSION-CONSTRAINT-FC-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-DIFFUSION-CONSTRAINT-FC-2026"
+      ],
+      "url": "https://arxiv.org/abs/2607.07026",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-FUNCTIONAL-EVAL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-FUNCTIONAL-EVAL-2026",
+      "atr_id": "SRC-FUNCTIONAL-EVAL-2026",
+      "title": "Multi-lingual Functional Evaluation for Large Language Models",
+      "marker": "atr-source-id:SRC-FUNCTIONAL-EVAL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-FUNCTIONAL-EVAL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-acl.1731/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-G1-R4-NEGATIVE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "atr_id": "SRC-G1-R4-NEGATIVE-2026",
+      "title": "g1 R4 posterior review after contract-provenance decision study",
+      "marker": "atr-source-id:SRC-G1-R4-NEGATIVE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-G3-ARCHITECTURE-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-G3-ARCHITECTURE-AUDIT-2026",
+      "atr_id": "SRC-G3-ARCHITECTURE-AUDIT-2026",
+      "title": "g3 modular transfer architecture and collision audit",
+      "marker": "atr-source-id:SRC-G3-ARCHITECTURE-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-G3-ARCHITECTURE-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-GAIA-LILT-MELLM-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GAIA-LILT-MELLM-2026",
+      "atr_id": "SRC-GAIA-LILT-MELLM-2026",
+      "title": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark beyond Translation",
+      "marker": "atr-source-id:SRC-GAIA-LILT-MELLM-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GAIA-LILT-MELLM-2026"
+      ],
+      "url": "https://aclanthology.org/2026.mellm-1.13.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-GAIA-LILT-TECHNICAL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GAIA-LILT-TECHNICAL-2026",
+      "atr_id": "SRC-GAIA-LILT-TECHNICAL-2026",
+      "title": "Beyond Translation: Announcing GAIA-v2-LILT",
+      "marker": "atr-source-id:SRC-GAIA-LILT-TECHNICAL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GAIA-LILT-TECHNICAL-2026"
+      ],
+      "url": "https://lilt.com/blog/multilingual-agent-benchmark-gaia-v2-lilt",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-GAIA-V2-LILT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GAIA-V2-LILT-2026",
+      "atr_id": "SRC-GAIA-V2-LILT-2026",
+      "title": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark",
+      "marker": "atr-source-id:SRC-GAIA-V2-LILT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GAIA-V2-LILT-2026"
+      ],
+      "url": "https://aclanthology.org/2026.mellm-1.13.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-GAMING-TOOL-PREFERENCES-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GAMING-TOOL-PREFERENCES-2025",
+      "atr_id": "SRC-GAMING-TOOL-PREFERENCES-2025",
+      "title": "Gaming Tool Preferences in Agentic LLMs",
+      "marker": "atr-source-id:SRC-GAMING-TOOL-PREFERENCES-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GAMING-TOOL-PREFERENCES-2025"
+      ],
+      "url": "https://arxiv.org/abs/2505.18135",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+      "atr_id": "SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+      "title": "Multilingual agents — Dialogflow ES",
+      "marker": "atr-source-id:SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026"
+      ],
+      "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-multilingual",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-IGAC-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-IGAC-2026",
+      "atr_id": "SRC-IGAC-2026",
+      "title": "Intent-Governed Tool Authorization for AI Agents",
+      "marker": "atr-source-id:SRC-IGAC-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-IGAC-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.22916",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-INDIRECTREQUESTS-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-INDIRECTREQUESTS-2025",
+      "atr_id": "SRC-INDIRECTREQUESTS-2025",
+      "title": "Making Task-Oriented Dialogue Datasets More Natural by Synthetically Generating Indirect User Requests",
+      "marker": "atr-source-id:SRC-INDIRECTREQUESTS-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-INDIRECTREQUESTS-2025"
+      ],
+      "url": "https://aclanthology.org/2025.coling-main.696/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-INJECAGENT-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-INJECAGENT-2024",
+      "atr_id": "SRC-INJECAGENT-2024",
+      "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "marker": "atr-source-id:SRC-INJECAGENT-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-INJECAGENT-2024"
+      ],
+      "url": "https://aclanthology.org/2024.findings-acl.624/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ITC-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ITC-2026",
+      "atr_id": "SRC-ITC-2026",
+      "title": "Enhancing Tool Calling in LLMs with the International Tool Calling Dataset",
+      "marker": "atr-source-id:SRC-ITC-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ITC-2026"
+      ],
+      "url": "https://arxiv.org/pdf/2603.05515",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ITC-RELEASE-ACCESS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ITC-RELEASE-ACCESS-2026",
+      "atr_id": "SRC-ITC-RELEASE-ACCESS-2026",
+      "title": "ITC release accessibility check",
+      "marker": "atr-source-id:SRC-ITC-RELEASE-ACCESS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ITC-RELEASE-ACCESS-2026"
+      ],
+      "url": "https://anonymous.4open.science/r/International-Tool-Calling-ITC-dataset-FAF4/",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-ITC-RELEASE-ACCESS-2026-07-17",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ITC-RELEASE-ACCESS-2026-07-17",
+      "atr_id": "SRC-ITC-RELEASE-ACCESS-2026-07-17",
+      "title": "ITC advertised release recheck (2026-07-17)",
+      "marker": "atr-source-id:SRC-ITC-RELEASE-ACCESS-2026-07-17",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ITC-RELEASE-ACCESS-2026-07-17"
+      ],
+      "url": "https://anonymous.4open.science/r/International-Tool-Calling-ITC-dataset-FAF4/",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+      "atr_id": "SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+      "title": "Effects of Tool Description Language on Language Model’s Tool Calling in Korean Dialogue",
+      "marker": "atr-source-id:SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025"
+      ],
+      "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12131535",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-LANGUAGE-PREFERENCE-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-LANGUAGE-PREFERENCE-2025",
+      "atr_id": "SRC-LANGUAGE-PREFERENCE-2025",
+      "title": "Investigating Language Preference of Multilingual RAG Systems",
+      "marker": "atr-source-id:SRC-LANGUAGE-PREFERENCE-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-LANGUAGE-PREFERENCE-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-acl.295/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-LLM-JUDGE-CHALLENGES-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-LLM-JUDGE-CHALLENGES-2026",
+      "atr_id": "SRC-LLM-JUDGE-CHALLENGES-2026",
+      "title": "Challenges and Recommendations for LLMs-as-a-Judge in Multilingual Settings and Low-Resource Languages",
+      "marker": "atr-source-id:SRC-LLM-JUDGE-CHALLENGES-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-LLM-JUDGE-CHALLENGES-2026"
+      ],
+      "url": "https://arxiv.org/abs/2607.02235",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+      "atr_id": "SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+      "title": "LLM-as-judge instrument boundary for synthetic action provenance",
+      "marker": "atr-source-id:SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-LONGFUNCEVAL-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-LONGFUNCEVAL-2025",
+      "atr_id": "SRC-LONGFUNCEVAL-2025",
+      "title": "LongFuncEval: Measuring the effectiveness of long context models for function calling",
+      "marker": "atr-source-id:SRC-LONGFUNCEVAL-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-LONGFUNCEVAL-2025"
+      ],
+      "url": "https://arxiv.org/abs/2505.10570",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MAPS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MAPS-2026",
+      "atr_id": "SRC-MAPS-2026",
+      "title": "MAPS: A Multilingual Benchmark for Agent Performance and Security",
+      "marker": "atr-source-id:SRC-MAPS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MAPS-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-eacl.42/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MAPS-EACL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MAPS-EACL-2026",
+      "atr_id": "SRC-MAPS-EACL-2026",
+      "title": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+      "marker": "atr-source-id:SRC-MAPS-EACL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MAPS-EACL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-eacl.42.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MASSIVE-AGENTS-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MASSIVE-AGENTS-2025",
+      "atr_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "marker": "atr-source-id:SRC-MASSIVE-AGENTS-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+      "atr_id": "SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+      "title": "MASSIVE-Agents release trace audit",
+      "marker": "atr-source-id:SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MCP-AGENTBENCH-AAAI-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MCP-AGENTBENCH-AAAI-2026",
+      "atr_id": "SRC-MCP-AGENTBENCH-AAAI-2026",
+      "title": "MCP-AgentBench: Evaluating Real-World Language Agent Performance with MCP-Mediated Tools",
+      "marker": "atr-source-id:SRC-MCP-AGENTBENCH-AAAI-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MCP-AGENTBENCH-AAAI-2026"
+      ],
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/40347",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "atr_id": "SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly!",
+      "marker": "atr-source-id:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MCP-DESCRIPTION-SMELLS-2026"
+      ],
+      "url": "https://arxiv.org/abs/2602.14878",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MEMERAG-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MEMERAG-2025",
+      "atr_id": "SRC-MEMERAG-2025",
+      "title": "MEMERAG: A Multilingual End-to-End Meta-Evaluation Benchmark for Retrieval Augmented Generation",
+      "marker": "atr-source-id:SRC-MEMERAG-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MEMERAG-2025"
+      ],
+      "url": "https://aclanthology.org/2025.acl-long.1101/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MLCL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MLCL-2026",
+      "atr_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "marker": "atr-source-id:SRC-MLCL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MLCL-RELEASE-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "atr_id": "SRC-MLCL-RELEASE-AUDIT-2026",
+      "title": "MLCL code/dataset availability audit",
+      "marker": "atr-source-id:SRC-MLCL-RELEASE-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MPRGUI-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MPRGUI-2026",
+      "atr_id": "SRC-MPRGUI-2026",
+      "title": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+      "marker": "atr-source-id:SRC-MPRGUI-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MPRGUI-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.1375/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MRAG-CONTEXT-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MRAG-CONTEXT-2025",
+      "atr_id": "SRC-MRAG-CONTEXT-2025",
+      "title": "On the Consistency of Multilingual Context Utilization in Retrieval-Augmented Generation",
+      "marker": "atr-source-id:SRC-MRAG-CONTEXT-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MRAG-CONTEXT-2025"
+      ],
+      "url": "https://arxiv.org/abs/2504.00597",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+      "atr_id": "SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+      "title": "Configure multilingual agents in Dynamics 365 Contact Center",
+      "marker": "atr-source-id:SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026"
+      ],
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-multilingual-agents",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MTM-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MTM-2026",
+      "atr_id": "SRC-MTM-2026",
+      "title": "Disentangling Language Roles in Multilingual LLM Task Execution",
+      "marker": "atr-source-id:SRC-MTM-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MTM-2026"
+      ],
+      "url": "https://arxiv.org/abs/2605.27649",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MUBENCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MUBENCH-2026",
+      "atr_id": "SRC-MUBENCH-2026",
+      "title": "MuBench: Assessment of Multilingual Capabilities of Large Language Models Across 61 Languages",
+      "marker": "atr-source-id:SRC-MUBENCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MUBENCH-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-acl.794/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MULTIAGENTX-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTIAGENTX-2026",
+      "atr_id": "SRC-MULTIAGENTX-2026",
+      "title": "MultiAgent-X: Multilingual Agentic Function-Calling Benchmark",
+      "marker": "atr-source-id:SRC-MULTIAGENTX-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTIAGENTX-2026"
+      ],
+      "url": "https://github.com/Saurabh-66/MultiAgent-X-Multilingual-Agentic-Function-Calling-Benchmark",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MULTIAGENTX-REPO-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTIAGENTX-REPO-2026",
+      "atr_id": "SRC-MULTIAGENTX-REPO-2026",
+      "title": "MultiAgent-X: Multilingual Agentic Function-Calling Benchmark",
+      "marker": "atr-source-id:SRC-MULTIAGENTX-REPO-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTIAGENTX-REPO-2026"
+      ],
+      "url": "https://github.com/Saurabh-66/MultiAgent-X-Multilingual-Agentic-Function-Calling-Benchmark",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+      "atr_id": "SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+      "title": "MultiAgent-X provenance and evaluator static audit",
+      "marker": "atr-source-id:SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTIAGENTX-STATIC-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+      "atr_id": "SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+      "title": "MultiAgent-X provenance/comparability static audit v2",
+      "marker": "atr-source-id:SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+      "atr_id": "SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+      "title": "Multilingual Prompt Localization for Agent-as-a-Judge: Language and Backbone Sensitivity in Requirement-Level Evaluation",
+      "marker": "atr-source-id:SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTILINGUAL-AGENT-JUDGE-2026"
+      ],
+      "url": "https://arxiv.org/abs/2604.04532",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MULTILINGUAL-JUDGE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTILINGUAL-JUDGE-2026",
+      "atr_id": "SRC-MULTILINGUAL-JUDGE-2026",
+      "title": "Multilingual Prompt Localization for Agent-as-a-Judge: Language and Backbone Sensitivity in Requirement-Level Evaluation",
+      "marker": "atr-source-id:SRC-MULTILINGUAL-JUDGE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTILINGUAL-JUDGE-2026"
+      ],
+      "url": "https://arxiv.org/abs/2604.04532",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+      "atr_id": "SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+      "title": "How Reliable is Multilingual LLM-as-a-Judge?",
+      "marker": "atr-source-id:SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-emnlp.587/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MULTIPRAGEVAL-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MULTIPRAGEVAL-2024",
+      "atr_id": "SRC-MULTIPRAGEVAL-2024",
+      "title": "MultiPragEval: Multilingual Pragmatic Evaluation of Large Language Models",
+      "marker": "atr-source-id:SRC-MULTIPRAGEVAL-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MULTIPRAGEVAL-2024"
+      ],
+      "url": "https://arxiv.org/abs/2406.07736",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MUTANT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MUTANT-2026",
+      "atr_id": "SRC-MUTANT-2026",
+      "title": "MUTANT: A Recipe for Multilingual Tokenizer Design",
+      "marker": "atr-source-id:SRC-MUTANT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MUTANT-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.2146/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-PARAMDELTA-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-PARAMDELTA-2026",
+      "atr_id": "SRC-PARAMDELTA-2026",
+      "title": "A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAMΔ Integration into Upcycled MoE",
+      "marker": "atr-source-id:SRC-PARAMDELTA-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-PARAMDELTA-2026"
+      ],
+      "url": "https://arxiv.org/abs/2605.18083",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-PETROV-2023",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-PETROV-2023",
+      "atr_id": "SRC-PETROV-2023",
+      "title": "Language Model Tokenizers Introduce Unfairness Between Languages",
+      "marker": "atr-source-id:SRC-PETROV-2023",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-PETROV-2023"
+      ],
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/74bb24dca8334adce292883b4b651eda-Abstract-Conference.html",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+      "atr_id": "SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+      "title": "Phase-A native audit authorization brief",
+      "marker": "atr-source-id:SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-PHASE-A-AUTHORIZATION-BRIEF-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-PHASE-A-PROTOCOL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-PHASE-A-PROTOCOL-2026",
+      "atr_id": "SRC-PHASE-A-PROTOCOL-2026",
+      "title": "Two-phase human-anchored provenance audit protocol",
+      "marker": "atr-source-id:SRC-PHASE-A-PROTOCOL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-PHASE-A-PROTOCOL-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-POLYWORKBENCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-POLYWORKBENCH-2026",
+      "atr_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "marker": "atr-source-id:SRC-POLYWORKBENCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-POLYWORKBENCH-2026"
+      ],
+      "url": "https://arxiv.org/abs/2607.06008",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-PUB-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-PUB-2024",
+      "atr_id": "SRC-PUB-2024",
+      "title": "PUB: A Pragmatics Understanding Benchmark for Assessing LLMs' Pragmatics Capabilities",
+      "marker": "atr-source-id:SRC-PUB-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-PUB-2024"
+      ],
+      "url": "https://arxiv.org/abs/2401.07078",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-RAG-FAITHFULNESS-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-RAG-FAITHFULNESS-2024",
+      "atr_id": "SRC-RAG-FAITHFULNESS-2024",
+      "title": "Correctness is not Faithfulness in RAG Attributions",
+      "marker": "atr-source-id:SRC-RAG-FAITHFULNESS-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-RAG-FAITHFULNESS-2024"
+      ],
+      "url": "https://arxiv.org/abs/2412.18004",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-RAGTIME-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-RAGTIME-2025",
+      "atr_id": "SRC-RAGTIME-2025",
+      "title": "TREC RAGTIME 2025",
+      "marker": "atr-source-id:SRC-RAGTIME-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-RAGTIME-2025"
+      ],
+      "url": "https://trec-ragtime.github.io/2025.html",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-SCHEMA-KEY-WORDING-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-SCHEMA-KEY-WORDING-2026",
+      "atr_id": "SRC-SCHEMA-KEY-WORDING-2026",
+      "title": "Schema Key Wording as an Instruction Channel in Structured Generation under Constrained Decoding",
+      "marker": "atr-source-id:SRC-SCHEMA-KEY-WORDING-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-SCHEMA-KEY-WORDING-2026"
+      ],
+      "url": "https://arxiv.org/abs/2604.14862",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+      "atr_id": "SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+      "title": "Focused collision review of multilingual tool-schema wording candidate",
+      "marker": "atr-source-id:SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-T03-TAXONOMY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-T03-TAXONOMY-2026",
+      "atr_id": "SRC-T03-TAXONOMY-2026",
+      "title": "Cross-lingual tool-use taxonomy and gap map",
+      "marker": "atr-source-id:SRC-T03-TAXONOMY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-T03-TAXONOMY-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-TALE-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TALE-2024",
+      "atr_id": "SRC-TALE-2024",
+      "title": "Token-Budget-Aware LLM Reasoning",
+      "marker": "atr-source-id:SRC-TALE-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TALE-2024"
+      ],
+      "url": "https://arxiv.org/abs/2412.18547",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TCI-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TCI-2026",
+      "atr_id": "SRC-TCI-2026",
+      "title": "Token Cost Inequality: Measuring Tokenization Disparities Across Scripts in Roman Urdu and Urdu",
+      "marker": "atr-source-id:SRC-TCI-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TCI-2026"
+      ],
+      "url": "https://aclanthology.org/2026.gem-main.54.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TICKETBENCH-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TICKETBENCH-2025",
+      "atr_id": "SRC-TICKETBENCH-2025",
+      "title": "Ticket-Bench: A Kickoff for Multilingual and Regionalized Agent Evaluation",
+      "marker": "atr-source-id:SRC-TICKETBENCH-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TICKETBENCH-2025"
+      ],
+      "url": "https://arxiv.org/abs/2509.14477",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOKEN-ARBITRAGE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOKEN-ARBITRAGE-2026",
+      "atr_id": "SRC-TOKEN-ARBITRAGE-2026",
+      "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
+      "marker": "atr-source-id:SRC-TOKEN-ARBITRAGE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOKEN-ARBITRAGE-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.03618",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOKEN-TAX-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOKEN-TAX-2026",
+      "atr_id": "SRC-TOKEN-TAX-2026",
+      "title": "The Token Tax: Systematic Bias in Multilingual Tokenization",
+      "marker": "atr-source-id:SRC-TOKEN-TAX-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOKEN-TAX-2026"
+      ],
+      "url": "https://aclanthology.org/2026.africanlp-main.10/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOKENIZER-EQUITY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOKENIZER-EQUITY-2026",
+      "atr_id": "SRC-TOKENIZER-EQUITY-2026",
+      "title": "Equity with Efficiency: An Empirical Study of Tokenizers for Multilingual Large Language Models",
+      "marker": "atr-source-id:SRC-TOKENIZER-EQUITY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOKENIZER-EQUITY-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.15044",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOKLENS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOKLENS-2026",
+      "atr_id": "SRC-TOKLENS-2026",
+      "title": "TokLens: A Multilingual Lens on Tokenizer Quality for LLMs",
+      "marker": "atr-source-id:SRC-TOKLENS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOKLENS-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-srw.18/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOL-IRRELEVANCE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOL-IRRELEVANCE-2026",
+      "atr_id": "SRC-TOOL-IRRELEVANCE-2026",
+      "title": "Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations",
+      "marker": "atr-source-id:SRC-TOOL-IRRELEVANCE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOL-IRRELEVANCE-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.1473/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOL-STEERABILITY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOL-STEERABILITY-2026",
+      "atr_id": "SRC-TOOL-STEERABILITY-2026",
+      "title": "Tool Calling is Linearly Readable and Steerable in Language Models",
+      "marker": "atr-source-id:SRC-TOOL-STEERABILITY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOL-STEERABILITY-2026"
+      ],
+      "url": "https://arxiv.org/abs/2605.07990",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOLBENCH-X-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLBENCH-X-2026",
+      "atr_id": "SRC-TOOLBENCH-X-2026",
+      "title": "Beyond Function Calling: Benchmarking Tool-Using Agents under Tool-Environment Unreliability",
+      "marker": "atr-source-id:SRC-TOOLBENCH-X-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLBENCH-X-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.25819",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+      "atr_id": "SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+      "title": "ToolBench-X advertised repository audit",
+      "marker": "atr-source-id:SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17"
+      ],
+      "url": "https://github.com/Foreverskyou/ToolBench-X",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-TOOLDIAL-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLDIAL-2025",
+      "atr_id": "SRC-TOOLDIAL-2025",
+      "title": "ToolDial: Multi-turn Dialogue Generation Method for Tool-Augmented Language Models",
+      "marker": "atr-source-id:SRC-TOOLDIAL-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLDIAL-2025"
+      ],
+      "url": "https://arxiv.org/abs/2503.00564",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+      "atr_id": "SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+      "title": "ToolDial observation-language static audit",
+      "marker": "atr-source-id:SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLDIAL-OBSERVATION-AUDIT-2026"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-TOOLGEN-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLGEN-2025",
+      "atr_id": "SRC-TOOLGEN-2025",
+      "title": "ToolGen: Unified Tool Retrieval and Calling via Generation",
+      "marker": "atr-source-id:SRC-TOOLGEN-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLGEN-2025"
+      ],
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b646bdebeb87dfafe2c6f77a63b564e1-Abstract-Conference.html",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TOOLSAFE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TOOLSAFE-2026",
+      "atr_id": "SRC-TOOLSAFE-2026",
+      "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based Agents via Step-Level Detection",
+      "marker": "atr-source-id:SRC-TOOLSAFE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TOOLSAFE-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-acl.1850.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TRANSLATION-ERRORS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TRANSLATION-ERRORS-2026",
+      "atr_id": "SRC-TRANSLATION-ERRORS-2026",
+      "title": "Quantifying the Impact of Translation Errors on Multilingual LLM Evaluation",
+      "marker": "atr-source-id:SRC-TRANSLATION-ERRORS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TRANSLATION-ERRORS-2026"
+      ],
+      "url": "https://arxiv.org/abs/2605.24904",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TRANSLATION-ERRORS-EVAL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TRANSLATION-ERRORS-EVAL-2026",
+      "atr_id": "SRC-TRANSLATION-ERRORS-EVAL-2026",
+      "title": "Quantifying the Impact of Translation Errors on Multilingual LLM Evaluation",
+      "marker": "atr-source-id:SRC-TRANSLATION-ERRORS-EVAL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TRANSLATION-ERRORS-EVAL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.1916/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TRUST-ASYMMETRY-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TRUST-ASYMMETRY-2026",
+      "atr_id": "SRC-TRUST-ASYMMETRY-2026",
+      "title": "Same Payload, Different Channel: Measuring Trust Asymmetry in Tool-Using Language Models",
+      "marker": "atr-source-id:SRC-TRUST-ASYMMETRY-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TRUST-ASYMMETRY-2026"
+      ],
+      "url": "https://www.catalyzex.com/paper/same-payload-different-channel-measuring",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TSCG-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TSCG-2026",
+      "atr_id": "SRC-TSCG-2026",
+      "title": "TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments",
+      "marker": "atr-source-id:SRC-TSCG-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TSCG-2026"
+      ],
+      "url": "https://arxiv.org/abs/2605.04107",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-TTS-MT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-TTS-MT-2026",
+      "atr_id": "SRC-TTS-MT-2026",
+      "title": "Test-Time Scaling of Reasoning Models for Machine Translation",
+      "marker": "atr-source-id:SRC-TTS-MT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-TTS-MT-2026"
+      ],
+      "url": "https://aclanthology.org/2026.eacl-long.133/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ULTRATOOL-2024",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ULTRATOOL-2024",
+      "atr_id": "SRC-ULTRATOOL-2024",
+      "title": "Planning, Creation, Usage: Benchmarking LLMs for Comprehensive Tool Utilization in Real-World Complex Scenarios",
+      "marker": "atr-source-id:SRC-ULTRATOOL-2024",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ULTRATOOL-2024"
+      ],
+      "url": "https://aclanthology.org/2024.findings-acl.259/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-VLLM-TOOL-DOCS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-VLLM-TOOL-DOCS-2026",
+      "atr_id": "SRC-VLLM-TOOL-DOCS-2026",
+      "title": "vLLM Tool Calling documentation",
+      "marker": "atr-source-id:SRC-VLLM-TOOL-DOCS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-VLLM-TOOL-DOCS-2026"
+      ],
+      "url": "https://docs.vllm.ai/en/stable/features/tool_calling/",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-WEGMANN-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-WEGMANN-2025",
+      "atr_id": "SRC-WEGMANN-2025",
+      "title": "Tokenization is Sensitive to Language Variation",
+      "marker": "atr-source-id:SRC-WEGMANN-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-WEGMANN-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-acl.572/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-WHEN2CALL-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-WHEN2CALL-2025",
+      "atr_id": "SRC-WHEN2CALL-2025",
+      "title": "When2Call: When (not) to Call Tools",
+      "marker": "atr-source-id:SRC-WHEN2CALL-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-WHEN2CALL-2025"
+      ],
+      "url": "https://aclanthology.org/2025.naacl-long.174.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-XBCP-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XBCP-2026",
+      "atr_id": "SRC-XBCP-2026",
+      "title": "Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus",
+      "marker": "atr-source-id:SRC-XBCP-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XBCP-2026"
+      ],
+      "url": "https://arxiv.org/abs/2606.15345",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-XMRC-RETRIEVAL-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XMRC-RETRIEVAL-2025",
+      "atr_id": "SRC-XMRC-RETRIEVAL-2025",
+      "title": "Understanding LLMs' Cross-Lingual Context Retrieval: How Good It Is And Where It Comes From",
+      "marker": "atr-source-id:SRC-XMRC-RETRIEVAL-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XMRC-RETRIEVAL-2025"
+      ],
+      "url": "https://aclanthology.org/2025.emnlp-main.1161/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-XQ-MEVAL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XQ-MEVAL-2026",
+      "atr_id": "SRC-XQ-MEVAL-2026",
+      "title": "XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics",
+      "marker": "atr-source-id:SRC-XQ-MEVAL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XQ-MEVAL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.findings-acl.1846/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-XRAG-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XRAG-2025",
+      "atr_id": "SRC-XRAG-2025",
+      "title": "XRAG: Cross-lingual Retrieval-Augmented Generation",
+      "marker": "atr-source-id:SRC-XRAG-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XRAG-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-emnlp.849.pdf",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-XRAG-PRACTICE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XRAG-PRACTICE-2026",
+      "atr_id": "SRC-XRAG-PRACTICE-2026",
+      "title": "RAG over religious source texts with verse-level citations",
+      "marker": "atr-source-id:SRC-XRAG-PRACTICE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XRAG-PRACTICE-2026"
+      ],
+      "url": "https://www.reddit.com/r/Rag/comments/1u16kk3/rag_over_religious_source_texts_with_verselevel/",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-XWEB-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-XWEB-2025",
+      "atr_id": "SRC-XWEB-2025",
+      "title": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+      "marker": "atr-source-id:SRC-XWEB-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-XWEB-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-acl.988/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-g1-posterior",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-posterior",
+      "atr_id": "SRC-g1-posterior",
+      "title": "g1 isolated posterior collision review",
+      "marker": "atr-source-id:SRC-g1-posterior",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-posterior"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-posterior-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-posterior-20260716",
+      "atr_id": "SRC-g1-posterior-20260716",
+      "title": "Fresh posterior review after R4V O+",
+      "marker": "atr-source-id:SRC-g1-posterior-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-posterior-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-r4v-o-plus",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-r4v-o-plus",
+      "atr_id": "SRC-g1-r4v-o-plus",
+      "title": "R4V contract-provenance decision study O+ verdict",
+      "marker": "atr-source-id:SRC-g1-r4v-o-plus",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-r4v-o-plus"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-candidate-screen-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-candidate-screen-20260716",
+      "atr_id": "SRC-g1-ranking-delta-candidate-screen-20260716",
+      "title": "Manual primary-document candidate screen for contract completeness",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-candidate-screen-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-candidate-screen-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-contract-protocol-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-contract-protocol-20260716",
+      "atr_id": "SRC-g1-ranking-delta-contract-protocol-20260716",
+      "title": "Non-authorizing contract-completeness audit protocol",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-contract-protocol-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-contract-protocol-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-gpu-calibration-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-gpu-calibration-20260716",
+      "atr_id": "SRC-g1-ranking-delta-gpu-calibration-20260716",
+      "title": "Historical GH200 generation-throughput calibration and ranking-delta GPU estimate",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-gpu-calibration-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-gpu-calibration-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-llm-jury-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-llm-jury-20260716",
+      "atr_id": "SRC-g1-ranking-delta-llm-jury-20260716",
+      "title": "Blinded isolated LLM contract-jury record",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-llm-jury-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-llm-jury-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-problem-card-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-problem-card-20260716",
+      "atr_id": "SRC-g1-ranking-delta-problem-card-20260716",
+      "title": "Producer Research Problem Card for multilingual tool-use evaluation attribution",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-problem-card-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-problem-card-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-r4-posterior-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-r4-posterior-20260716",
+      "atr_id": "SRC-g1-ranking-delta-r4-posterior-20260716",
+      "title": "Producer R4 posterior collision review: MLCL, BenchMAX construction, and LLM-judge boundary",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-r4-posterior-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-r4-posterior-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-ranking-delta-versioned-schema-20260716",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-ranking-delta-versioned-schema-20260716",
+      "atr_id": "SRC-g1-ranking-delta-versioned-schema-20260716",
+      "title": "Read-only inspection of the frozen NexusRaven standardized API schema",
+      "marker": "atr-source-id:SRC-g1-ranking-delta-versioned-schema-20260716",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-ranking-delta-versioned-schema-20260716"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-reframe",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-reframe",
+      "atr_id": "SRC-g1-reframe",
+      "title": "Contract-provenance scoped reframe review",
+      "marker": "atr-source-id:SRC-g1-reframe",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-reframe"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-g1-smoke",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-g1-smoke",
+      "atr_id": "SRC-g1-smoke",
+      "title": "g1 smoke-test final verdict",
+      "marker": "atr-source-id:SRC-g1-smoke",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-g1-smoke"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-survey-t03",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-survey-t03",
+      "atr_id": "SRC-survey-t03",
+      "title": "Cross-lingual tool-use survey corpus and synthesis",
+      "marker": "atr-source-id:SRC-survey-t03",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-survey-t03"
+      ],
+      "url": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:CTX-AUTOGEN-MCP-ADAPTER-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:CTX-AUTOGEN-MCP-ADAPTER-2025",
+      "atr_id": "CTX-AUTOGEN-MCP-ADAPTER-2025",
+      "title": "AutoGen MCP adapter bug: valid tool schema is converted incorrectly on the client",
+      "marker": "atr-source-id:CTX-AUTOGEN-MCP-ADAPTER-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "CTX-AUTOGEN-MCP-ADAPTER-2025"
+      ],
+      "url": "https://github.com/microsoft/autogen/issues/6906",
+      "source_layer": "contextual_inspiration"
+    },
+    {
+      "object_id": "source:CTX-GITHUB-MCP-DEBUGGING-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:CTX-GITHUB-MCP-DEBUGGING-2026",
+      "atr_id": "CTX-GITHUB-MCP-DEBUGGING-2026",
+      "title": "GitHub MCP server debugging guide",
+      "marker": "atr-source-id:CTX-GITHUB-MCP-DEBUGGING-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "CTX-GITHUB-MCP-DEBUGGING-2026"
+      ],
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/troubleshooting/mcp-debugging",
+      "source_layer": "contextual_inspiration"
+    },
+    {
+      "object_id": "question:question:FT-role-versus-interface",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-role-versus-interface",
+      "atr_id": "FT-role-versus-interface",
+      "title": "When multilingual tool calls fail, is the binding bottleneck language understanding/action selection, or satisfying a language-conditioned execution interface after the action is already understood?",
+      "marker": "ATR Research Question Node: question:FT-role-versus-interface",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "CTX-AUTOGEN-MCP-ADAPTER-2025",
+        "CTX-GITHUB-MCP-DEBUGGING-2026",
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026",
+        "SRC-MTM-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-language-role-versus-setting-label",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-language-role-versus-setting-label",
+      "atr_id": "FT-language-role-versus-setting-label",
+      "title": "Are multilingual reliability losses determined by a language's structural role (instruction, content, response/value, schema), rather than by a coarse 'non-English' setting label?",
+      "marker": "ATR Research Question Node: question:FT-language-role-versus-setting-label",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MTM-2026",
+        "SRC-T03-TAXONOMY-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-measurement-versus-capability",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-measurement-versus-capability",
+      "atr_id": "FT-measurement-versus-capability",
+      "title": "When a strict multilingual function-call score falls, what evidence permits attribution to agent action capability rather than to the benchmark's translation, gold-value, or undocumented interface policy?",
+      "marker": "ATR Research Question Node: question:FT-measurement-versus-capability",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "CTX-AUTOGEN-MCP-ADAPTER-2025",
+        "CTX-GITHUB-MCP-DEBUGGING-2026",
+        "SRC-BENCHMAX-2025",
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MULTIAGENTX-STATIC-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-constraint-syntax-versus-semantics",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-constraint-syntax-versus-semantics",
+      "atr_id": "FT-constraint-syntax-versus-semantics",
+      "title": "Do output constraints improve syntactic validity while changing the semantic or language correctness of multilingual argument values, and under what explicitly declared interface convention?",
+      "marker": "ATR Research Question Node: question:FT-constraint-syntax-versus-semantics",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-CONSTRAINT-TAX-2026",
+        "SRC-DIFFUSION-CONSTRAINT-FC-2026",
+        "SRC-MLCL-2026",
+        "SRC-MTM-2026",
+        "SRC-T03-TAXONOMY-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-schema-language-versus-instruction-content",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-schema-language-versus-instruction-content",
+      "atr_id": "FT-schema-language-versus-instruction-content",
+      "title": "When tool-schema wording changes function-calling behavior, is the operative variable the natural language of the schema, or the instruction signal and semantic quality carried by schema text?",
+      "marker": "ATR Research Question Node: question:FT-schema-language-versus-instruction-content",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-ARABIC-ENGLISH-TOOLS-2026",
+        "SRC-SCHEMA-KEY-WORDING-2026",
+        "SRC-TSCG-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-tokenization-cost-versus-action-prediction",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-tokenization-cost-versus-action-prediction",
+      "atr_id": "FT-tokenization-cost-versus-action-prediction",
+      "title": "Can intrinsic tokenizer disparity predict a distinct multilingual tool-action failure before evaluation, or is it only a broad correlate of resource, pretraining coverage, and generic downstream performance?",
+      "marker": "ATR Research Question Node: question:FT-tokenization-cost-versus-action-prediction",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MUTANT-2026",
+        "SRC-TOKEN-TAX-2026",
+        "SRC-TOKLENS-2026"
+      ]
+    },
+    {
+      "object_id": "question:question:FT-component-composition-versus-interpolation",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "question:FT-component-composition-versus-interpolation",
+      "atr_id": "FT-component-composition-versus-interpolation",
+      "title": "When a multilingual capability is claimed to transfer through model merging, does the experiment compose two independently learned compatible components, or only interpolate a base checkpoint with its own task-SFT derivative?",
+      "marker": "ATR Research Question Node: question:FT-component-composition-versus-interpolation",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-G3-ARCHITECTURE-AUDIT-2026",
+        "SRC-PARAMDELTA-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "parent_graph_node_id": null,
+      "atr_id": "agent_action",
+      "title": "LLM agent action",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "atr_id": "structured_tool_calling",
+      "title": "Structured tool calling",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "atr_id": "semantic_action_selection",
+      "title": "Semantic action selection",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "atr_id": "executable_value_convention",
+      "title": "Executable value convention",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "atr_id": "multilingual_parameter_realization",
+      "title": "Multilingual parameter realization",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "atr_id": "evaluation_attribution",
+      "title": "Evaluation attribution",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "tension:real_world_tension:OPPC-execution-contract-visibility",
+      "object_kind": "tension_note",
+      "graph_node_id": "real_world_tension:OPPC-execution-contract-visibility",
+      "atr_id": "real_world_tension:OPPC-execution-contract-visibility",
+      "title": "A tool call may have the right intent and selected tool while violating an execution convention in an argument value; separately, protocol implementers have needed to converge schema-validation behavior across clients and servers.",
+      "marker": "ATR Tension Node: real_world_tension:OPPC-execution-contract-visibility",
+      "review_role": "REAL_WORLD_INSPIRATION_REVIEW_TARGET",
+      "collection_role": "RESEARCH_TENSION",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:RQ-multilingual-action-attribution.v1:knowledge/research-problem-cards/RQ-multilingual-action-attribution.draft.json",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1:knowledge/research-problem-cards/RQ-multilingual-action-attribution.draft.json",
+      "atr_id": "RQ-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "marker": "ATR Problem ID: RQ-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:RQ-multilingual-action-attribution.v1:knowledge/research-problem-cards/RQ-multilingual-action-attribution.draft.json",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:RQ-multilingual-action-attribution.v1",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "RQ-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "marker": "ATR Problem ID: RQ-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:RQ-multilingual-action-attribution.v1",
+      "review_role": "CURRENT_REVIEW_TARGET",
+      "collection_role": "RESEARCH_CURRENT",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-frozen-item-contract",
+      "title": "是否能取得一个 revision-pinned 的多语言工具调用 item，使工具/意图选择、每参数的可执行值约定与 validator policy 可以被同一位阅读者逐项核对？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-independent-action-oracle",
+      "title": "在冻结并可执行的 item 上，独立 action oracle 与盲审 multilingual policy 是否会把同一严格 AST 失配分别归到语义行动、接口值约定或测量解释？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-route-or-park",
+      "title": "若当前公开资产不能同时满足可复核 item contract 与独立 action oracle，应该继续把该家族作为能力研究，还是明确停放并转为 benchmark documentation program？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    }
+  ],
+  "feedback_contract": {
+    "accepted_events": [
+      "human_note_modified",
+      "human_annotation_modified"
+    ],
+    "target_priority": [
+      "claim",
+      "research_problem",
+      "research_question",
+      "real_world_tension",
+      "source",
+      "knowledge",
+      "topic"
+    ],
+    "lifecycle_effect": "REVIEW_INPUT_ONLY",
+    "history_policy": "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES"
+  }
+}

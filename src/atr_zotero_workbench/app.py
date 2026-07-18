@@ -6,11 +6,11 @@ from pathlib import Path
 from typing import Optional
 
 from .core import load_legacy_run, project_graph
-from .human_input import impact_report, materialize_review_packets, refresh_review_queue, record_review_disposition, attach_review_packet_to_v2
+from .human_input import impact_report, materialize_review_packets, refresh_review_queue, record_review_disposition, attach_review_packet_to_v2, attach_review_assessment_to_v2
 from .history import archive_previous_projection
 from .programs import project_program
 from .runs import register_run
-from .zotero import export_bundle, sync_web_api
+from .zotero import export_bundle, export_native_projection, sync_web_api
 
 
 # The graph is embedded at build time so the page works in Zotero's file:// tab
@@ -59,7 +59,7 @@ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.quer
 </script></body></html>'''
 
 
-def build(run_dir: Path, out: Path, registry: Optional[Path] = None, run_key: Optional[str] = None, label: Optional[str] = None) -> dict:
+def build(run_dir: Path, out: Path, registry: Optional[Path] = None, run_key: Optional[str] = None, label: Optional[str] = None, activate: bool = False, view_role: Optional[str] = None) -> dict:
     graph = project_graph(load_legacy_run(run_dir))
     out.mkdir(parents=True, exist_ok=True)
     graph["history"] = archive_previous_projection(out, graph)
@@ -68,11 +68,11 @@ def build(run_dir: Path, out: Path, registry: Optional[Path] = None, run_key: Op
     (out / "index.html").write_text(HTML.replace("__GRAPH_DATA__", encoded), encoding="utf-8")
     export_bundle(graph, out)
     if registry:
-        register_run(registry, key=run_key or out.name, label=label or graph["run"], run_dir=run_dir, output=out, graph=graph)
+        register_run(registry, key=run_key or out.name, label=label or graph["run"], run_dir=run_dir, output=out, graph=graph, activate=activate, view_role=view_role)
     return graph
 
 
-def build_program(catalog: Path, program_key: str, out: Path, registry: Optional[Path] = None, label: Optional[str] = None) -> dict:
+def build_program(catalog: Path, program_key: str, out: Path, registry: Optional[Path] = None, label: Optional[str] = None, activate: bool = False, view_role: Optional[str] = None) -> dict:
     graph = project_program(catalog, program_key)
     out.mkdir(parents=True, exist_ok=True)
     graph["history"] = archive_previous_projection(out, graph)
@@ -81,23 +81,25 @@ def build_program(catalog: Path, program_key: str, out: Path, registry: Optional
     (out / "index.html").write_text(HTML.replace("__GRAPH_DATA__", encoded), encoding="utf-8")
     export_bundle(graph, out)
     if registry:
-        register_run(registry, key=program_key, label=label or graph["program"]["label"], run_dir=catalog, output=out, graph=graph)
+        register_run(registry, key=program_key, label=label or graph["program"]["label"], run_dir=catalog, output=out, graph=graph, activate=activate, view_role=view_role)
     return graph
 
 
 def main() -> None:
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
-    b = sub.add_parser("build"); b.add_argument("run_dir", type=Path); b.add_argument("--out", type=Path, required=True); b.add_argument("--registry", type=Path); b.add_argument("--run-key"); b.add_argument("--label")
-    pbuild = sub.add_parser("build-program"); pbuild.add_argument("catalog", type=Path); pbuild.add_argument("--program", required=True); pbuild.add_argument("--out", type=Path, required=True); pbuild.add_argument("--registry", type=Path); pbuild.add_argument("--label")
+    b = sub.add_parser("build"); b.add_argument("run_dir", type=Path); b.add_argument("--out", type=Path, required=True); b.add_argument("--registry", type=Path); b.add_argument("--run-key"); b.add_argument("--label"); b.add_argument("--activate", action="store_true"); b.add_argument("--view-role")
+    pbuild = sub.add_parser("build-program"); pbuild.add_argument("catalog", type=Path); pbuild.add_argument("--program", required=True); pbuild.add_argument("--out", type=Path, required=True); pbuild.add_argument("--registry", type=Path); pbuild.add_argument("--label"); pbuild.add_argument("--activate", action="store_true"); pbuild.add_argument("--view-role")
     s = sub.add_parser("serve"); s.add_argument("directory", type=Path); s.add_argument("--port", type=int, default=8765)
     y = sub.add_parser("sync"); y.add_argument("directory", type=Path)
     h = sub.add_parser("review-human-input"); h.add_argument("directory", type=Path); h.add_argument("--out", type=Path, required=True)
     d = sub.add_parser("record-review-disposition"); d.add_argument("directory", type=Path); d.add_argument("--run-dir", type=Path, required=True); d.add_argument("--packet", required=True); d.add_argument("--disposition", required=True); d.add_argument("--rationale", required=True); d.add_argument("--owner", required=True)
     a2 = sub.add_parser("attach-review-to-v2"); a2.add_argument("directory", type=Path); a2.add_argument("--v2-run-dir", type=Path, required=True); a2.add_argument("--disposition-ledger", type=Path, required=True); a2.add_argument("--packet", required=True); a2.add_argument("--subject", required=True); a2.add_argument("--expected-version", type=int, required=True); a2.add_argument("--atrctl", type=Path, required=True)
+    a3 = sub.add_parser("attach-review-assessment-to-v2"); a3.add_argument("directory", type=Path); a3.add_argument("--v2-run-dir", type=Path, required=True); a3.add_argument("--assessment", type=Path, required=True); a3.add_argument("--subject", required=True); a3.add_argument("--expected-version", type=int, required=True); a3.add_argument("--atrctl", type=Path, required=True)
+    nm = sub.add_parser("refresh-native-map"); nm.add_argument("directory", type=Path)
     a = p.parse_args()
-    if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label)["nodes"])}, ensure_ascii=False))
-    elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label)["nodes"])}, ensure_ascii=False))
+    if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
+    elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "serve": ThreadingHTTPServer(("127.0.0.1", a.port), partial(SimpleHTTPRequestHandler, directory=a.directory)).serve_forever()
     elif a.cmd == "sync": print(json.dumps(sync_web_api(a.directory), ensure_ascii=False))
     elif a.cmd == "review-human-input":
@@ -109,8 +111,13 @@ def main() -> None:
         print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"], "new_review_packets": len(packets["written"])}, ensure_ascii=False))
     elif a.cmd == "record-review-disposition":
         print(json.dumps(record_review_disposition(a.directory, a.run_dir, a.packet, a.disposition, a.rationale, a.owner), ensure_ascii=False))
-    else:
+    elif a.cmd == "attach-review-to-v2":
         print(json.dumps(attach_review_packet_to_v2(a.directory, a.v2_run_dir, a.packet, a.subject, a.expected_version, a.atrctl, a.disposition_ledger), ensure_ascii=False))
+    elif a.cmd == "attach-review-assessment-to-v2":
+        print(json.dumps(attach_review_assessment_to_v2(a.directory, a.v2_run_dir, a.assessment, a.subject, a.expected_version, a.atrctl), ensure_ascii=False))
+    else:
+        graph = json.loads((a.directory / "graph.json").read_text(encoding="utf-8"))
+        print(json.dumps({"written": str(export_native_projection(graph, a.directory))}, ensure_ascii=False))
 
 
 if __name__ == "__main__": main()

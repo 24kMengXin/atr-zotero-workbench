@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "ATR Research Workbench",
-  "version": "0.4.13",
-  "description": "Visualize ATR evidence and relay human Zotero annotations to the research workbench.",
+  "version": "0.5.0",
+  "description": "Project ATR topics into native Zotero collections, Reader tabs, Note tabs, and item panes.",
   "homepage_url": "https://github.com/24kMengXin/atr-zotero-workbench",
   "author": "24kMengXin",
   "applications": {

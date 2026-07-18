@@ -1,11 +1,16 @@
 # ATR Zotero Research Workbench
 
-把 ATR 研究运行中的可审计证据转成一个供研究者阅读、批注与讨论的知识/问题图谱，并以 Zotero 为文献与阅读批注的归档层。
+把 ATR topic 投影成 Zotero 原生 Collection、Reader tab、Note tab 与 Item Pane 上下文，让研究者在原生阅读/标注流程中核对证据并把反馈送回 ATR。
 
-当前代码仍是历史 run 的只读原型，**不是**最终的共同研究工作台。下一阶段以 [产品契约](docs/reframed-product-contract.md) 为准：最小单元将从“论文卡片”升级为带原文定位的可核查断言，并把人的结构化阅读判断送入 ATR 的显式复审流程。
+当前插件不再提供覆盖 Zotero 主界面的独立 dashboard。交互决策见[原生 Zotero 方案比较](docs/native-zotero-interaction-decision.md)：ATR 负责语义与 provenance，Zotero 原生对象负责阅读、标注和笔记。
 
 ## MVP（已实现）
 
+- 把 topic 投影为 Zotero 原生 Collection 树：知识概念按显式 `specializes_concept` 嵌套；现实张力、前沿问题、当前问题卡、细粒度问题和待审查断言形成研究问题森林
+- 每个知识/研究节点都有独立原生 Note，并在同一 Collection 中复用其显式关联文献；历史问题版本保留在「历史版本」，不会被当前版本覆盖
+- 「Topic 与演化」中同时保留人的 Topic Note 与由真实 ATR timeline 生成的只读过程 Note；缺失历史不会被补造
+- Item Pane 可直接选择 `支持 / 需要限定 / 反驳 / 尚不能判断 / 提出新问题`，判断写回对应原生 Note 后只进入 review inbox
+- Note marker 精确指向 graph node；Reader annotation 先映射 source，再只沿显式 source-decision 边找到最近受影响对象，生成 review-only packet
 - 只读导入旧式 ATR v1 run（`evidence/sources.jsonl`、`knowledge/frontier-map.json`、`run-state.json`）
 - 输出浏览器内的交互图谱：流程阶段、概念、现实世界研究问题、文献证据以及它们的可追溯关系
 - 导出 Zotero 可导入的 CSL-JSON；同时生成每篇文献的阅读提示 Markdown，明确区分“来源原话支持的内容”和“尚未解决的问题”
@@ -37,7 +42,7 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 
 打开终端显示的本地地址。点击节点可查看来源、证据边界和建议的人工阅读问题。
 
-## Zotero 7 插件
+## Zotero 9 插件
 
 构建 XPI：
 
@@ -54,7 +59,7 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 完整的调试、验证与发布门禁见[插件开发守则](docs/zotero-plugin-development.md)；日常 profile 仅用于候选 XPI 的最终烟测。
 
 在 Zotero 中选择「工具 → 插件 → 齿轮 → Install Add-on From File…」，选择
-`dist/atr-zotero-workbench.xpi`，并确认启用。之后在「工具 → 打开 ATR Research Workbench」查看图谱。
+`dist/atr-zotero-workbench.xpi`，并确认启用。之后从「工具 → ATR Research」选择 topic。插件会定位对应的原生 Collection，并在 Note tab 打开 topic note；文献从 Collection 或右侧 ATR section 进入原生 Reader tab。
 
 每次升级 XPI 都须在 Zotero 的「Install Add-on From File…」中重新选择该 XPI，然后**完全退出并重启 Zotero**；直接覆盖 profile 内的 `.xpi` 文件不会更新 Zotero 已注册的扩展版本。可在重启前后只读检查候选包和实际注册版本是否一致：
 
@@ -64,7 +69,7 @@ python3 scripts/check_installed_plugin_version.py \
   '/Users/zone/Library/Application Support/Zotero/Profiles/e1tzdljc.default'
 ```
 
-若面板无法渲染，它会在 Zotero 内显示所读取的 workspace 和具体错误，并把同一诊断追加到该 workspace 的 `plugin-runtime.jsonl`。
+同步、Reader/Note tab 打开和失败诊断会追加到该 workspace 的 `plugin-runtime.jsonl`。
 
 修改 Zotero 中由本工具生成的阅读卡/笔记，会追加到
 `output/multilingual/human-input/inbox.jsonl`。回到 Codex 后运行：
@@ -103,6 +108,23 @@ python -m atr_zotero_workbench attach-review-to-v2 \
 ```
 
 接着由研究 owner 基于这份 attachment 单独作者化 review artifact；只有该 artifact 满足 v2 transition 的类型契约时，`atrctl transition` 才可能变更 lifecycle。
+
+独立 reviewer 完成人的反馈复核后，用单独作者化的
+`human-review-assessment` 记录“保留哪些对象、重审哪些对象、还需哪类
+artifact”，再交给 v2：
+
+```bash
+python -m atr_zotero_workbench attach-review-assessment-to-v2 \
+  output/current-topic \
+  --v2-run-dir /path/to/v2-run \
+  --assessment /path/to/human-review-assessment.json \
+  --subject SUBJECT --expected-version N \
+  --atrctl /path/to/auto-research-harness/v2/atrctl.py
+```
+
+assessment 仍不改变 lifecycle。插件把它显示为
+`03 · 研究问题与断言/05 · 共创复核` 下的原生只读 Note，并提供回到被保留
+来源或待重写问题节点的按钮。旧节点、旧边和旧文献不会因复核而移走。
 
 导入 `output/multilingual/zotero/items.csl.json` 到 Zotero；`reading-cards/` 中的文件是与每篇文献对应的人工阅读/注释起点。
 

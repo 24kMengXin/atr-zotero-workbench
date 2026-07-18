@@ -1,5 +1,4 @@
 var ATRZoteroWorkbench;
-var ATRZoteroWorkbenchChromeHandle;
 
 function install() {}
 
@@ -9,17 +8,6 @@ function install() {}
 async function startup({ id, version, resourceURI, rootURI }) {
   await Zotero.initializationPromise;
   if (!rootURI) rootURI = resourceURI.spec;
-
-  // Register bundled HTML as chrome content. A content browser in Zotero does
-  // not reliably load arbitrary add-on-root URIs, while chrome:// is the
-  // supported route used by established Zotero 9 extensions.
-  const aomStartup = Components.classes[
-    "@mozilla.org/addons/addon-manager-startup;1"
-  ].getService(Components.interfaces.amIAddonManagerStartup);
-  ATRZoteroWorkbenchChromeHandle = aomStartup.registerChrome(
-    Services.io.newURI(rootURI + "manifest.json"),
-    [["content", "atr-zotero-workbench", rootURI + "chrome/content/"]]
-  );
 
   const ctx = { Zotero, Services, IOUtils, PathUtils, Components, rootURI };
   ctx._globalThis = ctx;
@@ -39,8 +27,6 @@ async function onMainWindowUnload({ window }) {
 async function shutdown() {
   await ATRZoteroWorkbench?.hooks.onShutdown();
   ATRZoteroWorkbench = undefined;
-  ATRZoteroWorkbenchChromeHandle?.destruct();
-  ATRZoteroWorkbenchChromeHandle = undefined;
 }
 
 function uninstall() {}

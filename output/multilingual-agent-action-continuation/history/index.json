@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "838ca2f2b3f31921",
+      "archived_at": "2026-07-18T07:36:26.147118+00:00",
+      "path": "history/projections/838ca2f2b3f31921.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 274,
+      "edge_count": 391
+    },
+    {
+      "id": "4e0f744c5d8f25a1",
+      "archived_at": "2026-07-18T07:37:17.708571+00:00",
+      "path": "history/projections/4e0f744c5d8f25a1.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 278,
+      "edge_count": 397
+    },
+    {
+      "id": "8539aff2a02c6525",
+      "archived_at": "2026-07-18T07:40:45.081245+00:00",
+      "path": "history/projections/8539aff2a02c6525.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 278,
+      "edge_count": 397
+    },
+    {
+      "id": "8962db4f6db4b140",
+      "archived_at": "2026-07-18T07:43:48.560751+00:00",
+      "path": "history/projections/8962db4f6db4b140.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 279,
+      "edge_count": 401
+    },
+    {
+      "id": "8ec8c7b3bec35859",
+      "archived_at": "2026-07-18T07:46:27.178968+00:00",
+      "path": "history/projections/8ec8c7b3bec35859.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 286,
+      "edge_count": 418
+    },
+    {
+      "id": "99d7b6b24c63a417",
+      "archived_at": "2026-07-18T07:55:52.144047+00:00",
+      "path": "history/projections/99d7b6b24c63a417.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 287,
+      "edge_count": 425
+    },
+    {
+      "id": "bf5948e41230bfe3",
+      "archived_at": "2026-07-18T07:57:59.871829+00:00",
+      "path": "history/projections/bf5948e41230bfe3.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 287,
+      "edge_count": 425
+    },
+    {
+      "id": "6e643a8ae93131d3",
+      "archived_at": "2026-07-18T07:59:30.094086+00:00",
+      "path": "history/projections/6e643a8ae93131d3.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 290,
+      "edge_count": 431
+    },
+    {
+      "id": "cd029e892669a23e",
+      "archived_at": "2026-07-18T08:03:51.073085+00:00",
+      "path": "history/projections/cd029e892669a23e.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 295,
+      "edge_count": 446
+    },
+    {
+      "id": "e79a8c9d2e7835aa",
+      "archived_at": "2026-07-18T08:17:59.143454+00:00",
+      "path": "history/projections/e79a8c9d2e7835aa.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 296,
+      "edge_count": 454
+    },
+    {
+      "id": "6c83445d7aa4f582",
+      "archived_at": "2026-07-18T08:19:57.908120+00:00",
+      "path": "history/projections/6c83445d7aa4f582.json",
+      "run": "2026-07-18-multilingual-agent-action-continuation",
+      "node_count": 300,
+      "edge_count": 462
+    }
+  ]
+}

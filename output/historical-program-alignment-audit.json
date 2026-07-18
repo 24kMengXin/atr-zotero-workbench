@@ -1,0 +1,1047 @@
+{
+  "schema_version": "0.1",
+  "artifact_type": "historical-program-alignment-audit",
+  "catalog": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/multilingual-programs.json",
+  "policy": {
+    "historical_runs_are_read_only": true,
+    "programs_are_derived_organizing_views": true,
+    "no_branch_is_deleted_or_promoted_without_source_review": true
+  },
+  "summary": {
+    "program_count": 6,
+    "run_count": 28,
+    "runs_with_integrity_issues": 0,
+    "runs_with_parseable_sources": 28,
+    "dispositions": {
+      "canonical_causal_branch": 1,
+      "canonical_decision_branch": 1,
+      "canonical_frontier_branch": 1,
+      "canonical_governance_branch": 1,
+      "canonical_mechanism_branch": 1,
+      "canonical_runtime_branch": 1,
+      "merge_as_adaptation_boundary": 1,
+      "merge_as_application_context": 1,
+      "merge_as_authorization_branch": 1,
+      "merge_as_coordination_branch": 1,
+      "merge_as_evaluation_branch": 1,
+      "merge_as_foundational_evidence": 1,
+      "merge_as_framework_branch": 1,
+      "merge_as_governance_branch": 1,
+      "merge_as_guardrail_branch": 1,
+      "merge_as_measurement_branch": 1,
+      "merge_as_modality_branch": 2,
+      "merge_as_policy_branch": 1,
+      "merge_as_reader_verification_branch": 1,
+      "merge_as_state_branch": 1,
+      "merge_as_testbed_branch": 1,
+      "retain_as_claim_history": 1,
+      "retain_as_data_policy_branch": 1,
+      "retain_as_exploratory_branch": 1,
+      "retain_as_landscape_branch": 1,
+      "retain_as_mechanism_branch": 1,
+      "retain_as_security_branch": 1
+    }
+  },
+  "programs": [
+    {
+      "key": "multilingual-agent-action-attribution",
+      "label": "多语言 Agent 行动归因与接口契约",
+      "root_question": "当多语言 agent 的工具调用表现下降时，如何区分真实行动能力差异、语言条件化执行接口差异与评测/本地化伪差异，并由此形成可审计的行动契约？",
+      "runs": [
+        {
+          "run": "2026-07-15-g1-reconstruction",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-15-g1-reconstruction",
+          "catalog_disposition": "retain_as_claim_history",
+          "catalog_role": "历史 claim 谱系：从解码干预重构到 contract/provenance reframe",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.6.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 13,
+            "claims": 4
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "claim_history"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-16-action-evaluation-attribution",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-16-action-evaluation-attribution",
+          "catalog_disposition": "merge_as_foundational_evidence",
+          "catalog_role": "行动评测归因的基础问题",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_FOCUSED_REVIEW"
+          },
+          "counts": {
+            "sources": 10,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-16-fks-multilingual-agent-action",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-16-fks-multilingual-agent-action",
+          "catalog_disposition": "canonical_frontier_branch",
+          "catalog_role": "主前沿图与七个张力",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 56,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": true,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-controlled-multilingual-discovery",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-controlled-multilingual-discovery",
+          "catalog_disposition": "retain_as_exploratory_branch",
+          "catalog_role": "受控反事实的探索性机制筛选",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_FOCUSED_REVIEW"
+          },
+          "counts": {
+            "sources": 24,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-agent-assurance",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-assurance",
+          "catalog_disposition": "merge_as_application_context",
+          "catalog_role": "企业工作流中的行动/本地化/恢复性归因",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.7.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 6,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": true,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-agent-evaluation-transport",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-evaluation-transport",
+          "catalog_disposition": "merge_as_measurement_branch",
+          "catalog_role": "本地化评测 transport 分支",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 7,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-evidence-provenance",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-evidence-provenance",
+          "catalog_disposition": "merge_as_reader_verification_branch",
+          "catalog_role": "跨语言证据与读者可验证 provenance",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 8,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    },
+    {
+      "key": "multilingual-agent-state-continuity",
+      "label": "多语言 Agent 状态、交互与连续性",
+      "root_question": "多语言交互中的失败何时来自持久状态、记忆、协调或界面/语音通路，而非笼统的语言能力不足？",
+      "runs": [
+        {
+          "run": "2026-07-17-code-switch-agent-control-plane",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switch-agent-control-plane",
+          "catalog_disposition": "canonical_mechanism_branch",
+          "catalog_role": "对话内语言切换后的控制平面",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.7.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 8,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": true,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-agent-memory-continuity",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-memory-continuity",
+          "catalog_disposition": "merge_as_state_branch",
+          "catalog_role": "跨语言长期记忆状态",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.7.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 9,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": true,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-agent-coordination",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-coordination",
+          "catalog_disposition": "merge_as_coordination_branch",
+          "catalog_role": "跨语言协作与委派",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_FOCUSED_REVIEW"
+          },
+          "counts": {
+            "sources": 5,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-code-switched-speech-tool-grounding",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switched-speech-tool-grounding",
+          "catalog_disposition": "merge_as_modality_branch",
+          "catalog_role": "语音转写与工具语义 grounding",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 6,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-gui-locale-attribution",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-gui-locale-attribution",
+          "catalog_disposition": "merge_as_modality_branch",
+          "catalog_role": "指令语言与界面语言/布局归因",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 4,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    },
+    {
+      "key": "multilingual-agent-authorization-safety",
+      "label": "多语言 Agent 授权与安全边界",
+      "root_question": "在多语言条件下，何时应行动、澄清或拒绝，以及安全失败究竟发生在解释、行动表征、授权边界还是适配过程？",
+      "runs": [
+        {
+          "run": "2026-07-17-multilingual-agent-abstention-calibration",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-abstention-calibration",
+          "catalog_disposition": "canonical_decision_branch",
+          "catalog_role": "行动/弃权校准",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 9,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-agent-safety-boundary",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-safety-boundary",
+          "catalog_disposition": "merge_as_guardrail_branch",
+          "catalog_role": "工具调用前的安全边界归因",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_FOCUSED_REVIEW"
+          },
+          "counts": {
+            "sources": 9,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-tool-output-injection",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-tool-output-injection",
+          "catalog_disposition": "retain_as_security_branch",
+          "catalog_role": "间接工具输出注入的语言条件化授权混淆",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 8,
+            "claims": 3
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "claim_history"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-pragmatic-action-authorization",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-pragmatic-action-authorization",
+          "catalog_disposition": "merge_as_authorization_branch",
+          "catalog_role": "语用线索下的澄清/行动契约",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 9,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-adaptation-safety",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-adaptation-safety",
+          "catalog_disposition": "merge_as_adaptation_boundary",
+          "catalog_role": "语言适配后的安全保持",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 15,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    },
+    {
+      "key": "multilingual-representation-and-data-decisions",
+      "label": "多语言表示、推理与语料决策",
+      "root_question": "语言混合、token 化和上游语料决策如何改变推理机会、评测结论与训练数据处置，而不是仅仅制造语言标签差异？",
+      "runs": [
+        {
+          "run": "2026-07-16-mt-reasoning",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-16-mt-reasoning",
+          "catalog_disposition": "retain_as_landscape_branch",
+          "catalog_role": "机器翻译中的 LLM 推理综述",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_SURVEY"
+          },
+          "counts": {
+            "sources": 102,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-reasoning-language-mixing",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-reasoning-language-mixing",
+          "catalog_disposition": "retain_as_mechanism_branch",
+          "catalog_role": "语言混合的因果作用",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_FOCUSED_REVIEW"
+          },
+          "counts": {
+            "sources": 5,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-fragmentation-assigned-compute-refresh",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-fragmentation-assigned-compute-refresh",
+          "catalog_disposition": "canonical_causal_branch",
+          "catalog_role": "token fragmentation 与推理预算的因果诊断",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 9,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-multilingual-curation-decision",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-curation-decision",
+          "catalog_disposition": "retain_as_data_policy_branch",
+          "catalog_role": "语言识别/过滤的不确定性决策",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R2_SURVEY"
+          },
+          "counts": {
+            "sources": 20,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": true,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "frontier_map"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    },
+    {
+      "key": "agent-infrastructure-and-evaluation-contracts",
+      "label": "Agent 基础设施与评测契约",
+      "root_question": "运行时注册、框架 affordance、环境漂移和技能元数据如何在模型能力之前改变 agent 的实际可用能力与评测结论？",
+      "runs": [
+        {
+          "run": "2026-07-17-agent-capability-registration",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-capability-registration",
+          "catalog_disposition": "canonical_runtime_branch",
+          "catalog_role": "provider capability registry",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 5,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-capability-contract-testbed",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-capability-contract-testbed",
+          "catalog_disposition": "merge_as_testbed_branch",
+          "catalog_role": "endpoint/runtime/request emission contract testbed",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 6,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-agent-evaluation-drift-attribution",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-evaluation-drift-attribution",
+          "catalog_disposition": "merge_as_evaluation_branch",
+          "catalog_role": "时间性 benchmark drift 归因",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 8,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-programming-language-agent-affordances",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-programming-language-agent-affordances",
+          "catalog_disposition": "merge_as_framework_branch",
+          "catalog_role": "非 Python agent framework affordance",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 6,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": false,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing opportunity_map",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-skill-capability-containment",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-skill-capability-containment",
+          "catalog_disposition": "merge_as_policy_branch",
+          "catalog_role": "动态 skill metadata 的能力边界",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 6,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    },
+    {
+      "key": "atr-research-governance",
+      "label": "ATR 自身的证据与路线治理",
+      "root_question": "自主研究系统如何以碰撞、资产失败与证据边界决定停放、重构或继续，而非把文献覆盖不足误当作新颖性？",
+      "runs": [
+        {
+          "run": "2026-07-17-epistemic-route-calibration",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-epistemic-route-calibration",
+          "catalog_disposition": "canonical_governance_branch",
+          "catalog_role": "覆盖失败与应停放 claim 的区分",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 7,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": false
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        },
+        {
+          "run": "2026-07-17-evidence-conditioned-research-exploration",
+          "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-evidence-conditioned-research-exploration",
+          "catalog_disposition": "merge_as_governance_branch",
+          "catalog_role": "由碰撞/资产失败驱动的假设 pivot",
+          "state": {
+            "schema_version": "1.0",
+            "harness_release": "0.8.0",
+            "active_stage": "R3_SEED_PORTFOLIO"
+          },
+          "counts": {
+            "sources": 11,
+            "claims": 0
+          },
+          "artifacts": {
+            "frontier_map": false,
+            "knowledge_context": false,
+            "opportunity_map": true,
+            "concept_map": false,
+            "problem_cards": 0,
+            "skill_events": true
+          },
+          "reusable_as_provenance_input": [
+            "source_ledger",
+            "recorded_process_events"
+          ],
+          "not_sufficient_for_current_continuation": [
+            "missing knowledge_context",
+            "missing concept_map",
+            "no current claim ledger"
+          ],
+          "integrity_issues": [],
+          "blocking_issues": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,511 @@
+{
+  "schema_version": "0.1",
+  "projection": "atr-zotero-native-map",
+  "run": "multilingual-agent-action-v2-intake",
+  "source_graph_projection": "derived-read-only-v2-sqlite",
+  "topic": {
+    "title": "multilingual-action-topic",
+    "marker": "ATR Topic Run: multilingual-agent-action-v2-intake"
+  },
+  "collections": {
+    "root": "ATR · multilingual-action-topic",
+    "overview": "01 · Topic 与演化",
+    "knowledge": "02 · 知识体系",
+    "research": "03 · 研究问题与断言",
+    "sources": "04 · 来源阅读",
+    "history": "05 · 历史版本",
+    "research_tensions": "01 · 现实世界张力",
+    "research_frontier": "02 · 前沿研究问题",
+    "research_current": "03 · 当前问题卡",
+    "research_claims": "04 · 待审查断言"
+  },
+  "objects": [
+    {
+      "object_id": "topic:multilingual-agent-action-v2-intake",
+      "object_kind": "topic_note",
+      "graph_node_id": "subject:multilingual-action-topic",
+      "atr_id": "multilingual-agent-action-v2-intake",
+      "title": "multilingual-action-topic",
+      "marker": "ATR Topic Run: multilingual-agent-action-v2-intake",
+      "collection_role": "OVERVIEW",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "source:SRC-MASSIVE-AGENTS-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MASSIVE-AGENTS-2025",
+      "atr_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "marker": "atr-source-id:SRC-MASSIVE-AGENTS-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025"
+      ],
+      "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-MLCL-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MLCL-2026",
+      "atr_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "marker": "atr-source-id:SRC-MLCL-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ],
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action@ab9d58d55207",
+      "parent_graph_node_id": null,
+      "atr_id": "agent_action",
+      "title": "LLM agent action",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling@ab9d58d55207",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action@ab9d58d55207",
+      "atr_id": "structured_tool_calling",
+      "title": "Structured tool calling",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection@ab9d58d55207",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling@ab9d58d55207",
+      "atr_id": "semantic_action_selection",
+      "title": "Semantic action selection",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention@ab9d58d55207",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling@ab9d58d55207",
+      "atr_id": "executable_value_convention",
+      "title": "Executable value convention",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization@ab9d58d55207",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention@ab9d58d55207",
+      "atr_id": "multilingual_parameter_realization",
+      "title": "Multilingual parameter realization",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution@ab9d58d55207",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution@ab9d58d55207",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action@ab9d58d55207",
+      "atr_id": "evaluation_attribution",
+      "title": "Evaluation attribution",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution@ab9d58d55207",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:PC-multilingual-action-attribution.v1",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:PC-multilingual-action-attribution.v1",
+      "atr_id": "PC-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时只是评测或接口契约未显式记录？",
+      "marker": "ATR Problem ID: PC-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:PC-multilingual-action-attribution.v1",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "source:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "atr_id": "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "title": "Model Context Protocol schema-convergence record",
+      "marker": "atr-source-id:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ],
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "parent_graph_node_id": null,
+      "atr_id": "agent_action",
+      "title": "LLM agent action",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "atr_id": "structured_tool_calling",
+      "title": "Structured tool calling",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "atr_id": "semantic_action_selection",
+      "title": "Semantic action selection",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:semantic_action_selection",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:structured_tool_calling",
+      "atr_id": "executable_value_convention",
+      "title": "Executable value convention",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:executable_value_convention",
+      "atr_id": "multilingual_parameter_realization",
+      "title": "Multilingual parameter realization",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:multilingual_parameter_realization",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "parent_graph_node_id": "knowledge_concept:KMAP-multilingual-action-contract.v1:agent_action",
+      "atr_id": "evaluation_attribution",
+      "title": "Evaluation attribution",
+      "marker": "ATR Knowledge Node: knowledge_concept:KMAP-multilingual-action-contract.v1:evaluation_attribution",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "tension:real_world_tension:OPPC-execution-contract-visibility",
+      "object_kind": "tension_note",
+      "graph_node_id": "real_world_tension:OPPC-execution-contract-visibility",
+      "atr_id": "OPPC-execution-contract-visibility",
+      "title": "A tool call may have the right intent and selected tool while violating an execution convention in an argument value; separately, protocol implementers have needed to converge schema-validation behavior across clients and servers.",
+      "marker": "ATR Tension Node: real_world_tension:OPPC-execution-contract-visibility",
+      "review_role": "REAL_WORLD_INSPIRATION_REVIEW_TARGET",
+      "collection_role": "RESEARCH_TENSION",
+      "linked_source_ids": [
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "atr_id": "RQ-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "marker": "ATR Problem ID: RQ-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "source:SRC-G1-R4-NEGATIVE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-G1-R4-NEGATIVE-2026",
+      "atr_id": "SRC-G1-R4-NEGATIVE-2026",
+      "title": "g1 R4 posterior review after contract-provenance decision study",
+      "marker": "atr-source-id:SRC-G1-R4-NEGATIVE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026"
+      ],
+      "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-MLCL-RELEASE-AUDIT-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-MLCL-RELEASE-AUDIT-2026",
+      "atr_id": "SRC-MLCL-RELEASE-AUDIT-2026",
+      "title": "MLCL code/dataset availability audit",
+      "marker": "atr-source-id:SRC-MLCL-RELEASE-AUDIT-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ],
+      "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@7901a834b7ba",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@7901a834b7ba",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "atr_id": "DQ-frozen-item-contract",
+      "title": "是否能取得一个 revision-pinned 的多语言工具调用 item，使工具/意图选择、每参数的可执行值约定与 validator policy 可以被同一位阅读者逐项核对？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@7901a834b7ba",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@7901a834b7ba",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@7901a834b7ba",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "atr_id": "DQ-independent-action-oracle",
+      "title": "在冻结并可执行的 item 上，独立 action oracle 与盲审 multilingual policy 是否会把同一严格 AST 失配分别归到语义行动、接口值约定或测量解释？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@7901a834b7ba",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@7901a834b7ba",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@7901a834b7ba",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@7901a834b7ba",
+      "atr_id": "DQ-route-or-park",
+      "title": "若当前公开资产不能同时满足可复核 item contract 与独立 action oracle，应该继续把该家族作为能力研究，还是明确停放并转为 benchmark documentation program？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@7901a834b7ba",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "atr_id": "RQ-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "marker": "ATR Problem ID: RQ-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@96f92371635e",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@96f92371635e",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "atr_id": "DQ-frozen-item-contract",
+      "title": "是否能取得一个 revision-pinned 的多语言工具调用 item，使工具/意图选择、每参数的可执行值约定与 validator policy 可以被同一位阅读者逐项核对？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract@96f92371635e",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@96f92371635e",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@96f92371635e",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "atr_id": "DQ-independent-action-oracle",
+      "title": "在冻结并可执行的 item 上，独立 action oracle 与盲审 multilingual policy 是否会把同一严格 AST 失配分别归到语义行动、接口值约定或测量解释？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle@96f92371635e",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@96f92371635e",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@96f92371635e",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1@96f92371635e",
+      "atr_id": "DQ-route-or-park",
+      "title": "若当前公开资产不能同时满足可复核 item contract 与独立 action oracle，应该继续把该家族作为能力研究，还是明确停放并转为 benchmark documentation program？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park@96f92371635e",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:RQ-multilingual-action-attribution.v1",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "RQ-multilingual-action-attribution.v1",
+      "title": "在多语言结构化工具调用中，同一严格参数失配何时反映真实的语义行动能力损失，何时反映已正确选择行动后的语言条件化可执行值约定失配，何时又只是评测或接口契约未被显式记录？",
+      "marker": "ATR Problem ID: RQ-multilingual-action-attribution.v1 | ATR Graph Node: research_problem:RQ-multilingual-action-attribution.v1",
+      "review_role": "CURRENT_REVIEW_TARGET",
+      "collection_role": "RESEARCH_CURRENT",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-frozen-item-contract",
+      "title": "是否能取得一个 revision-pinned 的多语言工具调用 item，使工具/意图选择、每参数的可执行值约定与 validator policy 可以被同一位阅读者逐项核对？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-frozen-item-contract",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-independent-action-oracle",
+      "title": "在冻结并可执行的 item 上，独立 action oracle 与盲审 multilingual policy 是否会把同一严格 AST 失配分别归到语义行动、接口值约定或测量解释？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-independent-action-oracle",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MCP-SCHEMA-CONVERGENCE-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "parent_graph_node_id": "research_problem:RQ-multilingual-action-attribution.v1",
+      "atr_id": "DQ-route-or-park",
+      "title": "若当前公开资产不能同时满足可复核 item contract 与独立 action oracle，应该继续把该家族作为能力研究，还是明确停放并转为 benchmark documentation program？",
+      "marker": "ATR Derived Question Node: derived_question:RQ-multilingual-action-attribution.v1:DQ-route-or-park",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-G1-R4-NEGATIVE-2026",
+        "SRC-MLCL-RELEASE-AUDIT-2026"
+      ]
+    }
+  ],
+  "feedback_contract": {
+    "accepted_events": [
+      "human_note_modified",
+      "human_annotation_modified"
+    ],
+    "target_priority": [
+      "claim",
+      "research_problem",
+      "research_question",
+      "real_world_tension",
+      "source",
+      "knowledge",
+      "topic"
+    ],
+    "lifecycle_effect": "REVIEW_INPUT_ONLY",
+    "history_policy": "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES"
+  }
+}

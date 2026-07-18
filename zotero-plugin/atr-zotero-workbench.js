@@ -1,756 +1,1593 @@
 /* global IOUtils, PathUtils */
 var ATRZoteroWorkbench = {
-  id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay", workspaceOverride: null, activeRunName: null, activeCollectionID: null,
-  // This path deliberately matches the repo's generated workbench output. It is a user-visible pref.
-  defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual-agent-action-continuation",
-  defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
-  init({ id, rootURI }) { this.id = id; this.rootURI = rootURI; },
-  log(message) { Zotero.debug("ATR Workbench: " + message); },
-  get configuredWorkspace() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true); },
-  get workspace() { return this.workspaceOverride || this.configuredWorkspace || this.defaultWorkspace; },
-  get registryPath() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.registry", true) || this.defaultRegistry; },
-  inboxPath() { return PathUtils.join(this.workspace, "human-input", "inbox.jsonl"); },
-  // Keep the trace beside graph.json: that directory is created by the ATR
-  // build, so a diagnostic must not depend on an extra directory API call.
-  runtimeLogPath() { return PathUtils.join(this.workspace, "plugin-runtime.jsonl"); },
-  async appendWorkspaceLine(path, line) {
-    await Zotero.File.createDirectoryIfMissingAsync(PathUtils.parent(path), { ignoreExisting: true });
-    let existing = "";
-    try { existing = await Zotero.File.getContentsAsync(path); } catch (_) { /* new audit file */ }
-    await Zotero.File.putContentsAsync(path, existing + line + "\n");
-  },
-  async appendRuntimeStatus(stage, details = {}) {
-    let record = { schema_version: "0.1", component: "zotero_plugin", stage, at: new Date().toISOString(), ...details };
-    this.log(stage + ": " + JSON.stringify(details));
-    try {
-      await this.appendWorkspaceLine(this.runtimeLogPath(), JSON.stringify(record));
-    } catch (error) { this.log("could not write runtime status: " + error); }
-  },
-  async appendHumanInput(record) {
-    try {
-      await this.appendWorkspaceLine(this.inboxPath(), JSON.stringify(record));
-    } catch (error) { this.log("could not write human input: " + error); }
-  },
-  async readJsonLines(path) {
-    try {
-      return (await Zotero.File.getContentsAsync(path)).split("\n")
-        .filter(line => line.trim()).map(line => JSON.parse(line));
-    } catch (_) { return []; }
-  },
-  async readJsonFile(path, fallback = {}) {
-    try { return JSON.parse(await Zotero.File.getContentsAsync(path)); } catch (_) { return fallback; }
-  },
-  async loadRunRegistry() {
-    try {
-      let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
-      return (registry.runs || []).filter(run => run.key && run.workspace);
-    } catch (_) { return []; }
-  },
-  async resolveWorkspace(registeredRuns) {
-    if (this.workspaceOverride) return this.workspaceOverride;
-    // A researcher-set workspace always wins. Without one, honor the
-    // registry's active run instead of accidentally reopening the historical
-    // default after a new continuation has been built.
-    if (this.configuredWorkspace) return this.configuredWorkspace;
-    try {
-      let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
-      let active = (registry.runs || []).find(run => run.key === registry.active_run && run.workspace);
-      if (active) return active.workspace;
-    } catch (_) { /* registry is optional */ }
-    return registeredRuns[0]?.workspace || this.defaultWorkspace;
-  },
-  plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
-  htmlEscape(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); },
-  async ensureRunCollection() {
-    let libraryID = Zotero.Libraries.userLibraryID;
-    let name = "ATR · " + (this.activeRunName || "未命名 run");
-    let collection = (Zotero.Collections.getByLibrary(libraryID) || []).find(item => item.name === name);
-    if (!collection) {
-      collection = new Zotero.Collection(); collection.libraryID = libraryID; collection.name = name;
-      await collection.saveTx();
-      await this.appendRuntimeStatus("run_collection_created", { collection_id: collection.id, collection_name: name });
-    }
-    this.activeCollectionID = collection.id;
-    return collection;
-  },
-  async sourceItem(source) {
-    let sourceID = source.data?.source_id;
-    let search = new Zotero.Search();
-    search.libraryID = Zotero.Libraries.userLibraryID;
-    search.addCondition("tag", "is", "atr-source-id:" + sourceID);
-    let ids = await search.search();
-    let existing = ids.length ? Zotero.Items.get(ids[0]) : null;
-    if (existing) {
-      let collection = await this.ensureRunCollection();
-      if (!(existing.getCollections?.() || []).includes(collection.id)) { existing.addToCollection(collection.id); await existing.saveTx(); }
-      return existing;
-    }
-    let item = new Zotero.Item(source.data?.source_layer === "scholarly_evidence" ? "journalArticle" : "webpage");
-    item.setField("title", source.label); item.setField("url", source.data?.url || "");
-    item.setField("extra", "ATR source ID: " + sourceID);
-    item.addTag("ATR"); item.addTag("atr-source-id:" + sourceID);
-    let collection = await this.ensureRunCollection(); item.addToCollection(collection.id);
-    await item.saveTx();
-    return item;
-  },
-  async openReviewNote(source, window) {
-    let sourceID = source.data?.source_id, item = await this.sourceItem(source);
-    let marker = "ATR Review Source ID: " + sourceID;
-    let existing = (item.getNotes?.() || []).map(id => Zotero.Items.get(id))
-      .find(note => note?.getNote().includes(marker));
-    if (existing) { window.ZoteroPane.selectItem(existing.id); return existing; }
-    let note = new Zotero.Item("note"); note.parentItemID = item.id;
-    note.setNote("<h1>我的 ATR 阅读反馈</h1><p>" + marker + "</p>"
-      + "<p>ATR Review Stance: PENDING</p>"
-      + "<p>ATR Source Locator: 请填写页码、章节、高亮或段落定位</p>"
-      + "<h2>来源支持的内容</h2><p>" + this.htmlEscape(source.data?.supports) + "</p>"
-      + "<h2>来源不支持 / 不能推出的内容</h2><p>" + this.htmlEscape(source.data?.does_not_support) + "</p>"
-      + "<h2>我的阅读与反驳</h2><p>请在这里写下你核对原文后的判断。</p>");
-    await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
-  },
-  async setSourceReviewStance(source, stance, window) {
-    let note = await this.openReviewNote(source, window);
-    let html = note.getNote(), replacement = "ATR Review Stance: " + stance;
-    if (/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.test(this.plainNote(html))) {
-      html = html.replace(/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/, replacement);
-    } else {
-      html = "<p>" + replacement + "</p>" + html;
-    }
-    note.setNote(html); await note.saveTx(); window.ZoteroPane.selectItem(note.id);
-    return note;
-  },
-  async openClaimReviewNote(claim, window) {
-    let claimID = claim.data?.claim_id;
-    if (!claimID) throw new Error("claim node has no stable claim_id");
-    let marker = "ATR Claim ID: " + claimID;
-    let search = new Zotero.Search();
-    search.libraryID = Zotero.Libraries.userLibraryID;
-    search.addCondition("note", "contains", marker);
-    let ids = await search.search();
-    let existing = ids.map(id => Zotero.Items.get(id)).find(item => item?.isNote?.() && item.getNote().includes(marker));
-    if (existing) { window.ZoteroPane.selectItem(existing.id); return existing; }
-    let note = new Zotero.Item("note");
-    note.setNote("<h1>我的 ATR 断言审查</h1><p>" + marker + "</p>"
-      + "<p>ATR Review Stance: PENDING</p>"
-      + "<p>ATR Source Locator: 请填写你核对的原文页码、章节、高亮或段落定位</p>"
-      + "<h2>AI 提出的可核查断言</h2><p>" + this.htmlEscape(claim.label) + "</p>"
-      + "<h2>适用条件</h2><p>" + this.htmlEscape(JSON.stringify(claim.data?.conditions || {})) + "</p>"
-      + "<h2>我的原文定位与判断</h2><p>请将 PENDING 改为 SUPPORTS / QUALIFIES / CHALLENGES / UNSURE / NEW_QUESTION，并写下原文位置、摘录与理由。</p>");
-    await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
-  },
-  async setClaimReviewStance(claim, stance, window) {
-    let note = await this.openClaimReviewNote(claim, window);
-    let html = note.getNote();
-    let replacement = "ATR Review Stance: " + stance;
-    if (/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.test(this.plainNote(html))) {
-      html = html.replace(/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/, replacement);
-    } else {
-      html = "<p>" + replacement + "</p>" + html;
-    }
-    note.setNote(html); await note.saveTx(); window.ZoteroPane.selectItem(note.id);
-    return note;
-  },
-  async noteChanged(ids, extraData) {
-    for (let id of ids) {
-      let item = Zotero.Items.get(id);
-      if (!item || !item.isNote()) continue;
-      let parent = item.parentItemID ? Zotero.Items.get(item.parentItemID) : null;
-      let parentExtra = parent ? parent.getField("extra") : "";
-      let noteHTML = item.getNote(), noteText = this.plainNote(noteHTML);
-      let source = /ATR source ID:\s*([^\s<]+)/.exec(parentExtra)?.[1]
-        || /ATR Source ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
-      let claim = /ATR Claim ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
-      let stance = /ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.exec(noteText)?.[1] || "UNSPECIFIED";
-      let locator = /ATR Source Locator:\s*([^<]+)/.exec(noteText)?.[1]?.trim() || null;
-      // Never copy arbitrary Zotero notes into an ATR workspace. A feedback
-      // event exists only when the researcher explicitly works in a marked
-      // source/claim review note created or adopted for this purpose.
-      if (!source && !claim) continue;
-      await this.appendHumanInput({
-        schema_version: "0.1", event: "human_note_modified", at: new Date().toISOString(),
-        zotero_note_key: item.key, zotero_parent_key: parent?.key || null, atr_source_id: source,
-        atr_claim_id: claim, review_stance: stance, source_locator: locator, note_html: noteHTML, notifier: extraData?.[id] || null
-      });
-    }
-  },
-  startObserving() {
-    if (this.observerID) return;
-    this.observerID = Zotero.Notifier.registerObserver({
-      notify: (event, type, ids, extraData) => {
-        if (type === "item" && event === "modify") this.noteChanged(ids, extraData);
-      }
-    }, ["item"], "atr-zotero-workbench");
-    this.log("annotation observer started");
-  },
-  stopObserving() { if (this.observerID) Zotero.Notifier.unregisterObserver(this.observerID); this.observerID = null; },
-  addToWindow(window) {
-    let doc = window.document;
-    if (doc.getElementById("atr-zotero-workbench-open")) return;
-    // Zotero 9 uses this exact, case-sensitive ID. `menu_toolsPopup` is from
-    // older examples and is not present in the current client.
-    let toolsPopup = doc.getElementById("menu_ToolsPopup");
-    if (!toolsPopup) {
-      this.log("Tools menu is not ready yet; skipping this window");
-      return;
-    }
-    let item = doc.createXULElement("menuitem");
-    item.id = "atr-zotero-workbench-open"; item.setAttribute("label", "打开 ATR Research Workbench");
-    item.addEventListener("command", () => this.openWorkbench(window));
-    toolsPopup.appendChild(item); this.addedElementIDs.push(item.id);
-    this.log("Tools menu item added");
-  },
-  addToAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.addToWindow(win); },
-  removeFromWindow(window) {
-    for (let id of this.addedElementIDs) window.document.getElementById(id)?.remove();
-    window.document.getElementById(this.overlayID)?.remove();
-  },
-  removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
-  renderRelationshipMap(doc, nodes, edges, onNode) {
-    const ns = "http://www.w3.org/2000/svg", create = name => doc.createElementNS(ns, name);
-    let svg = create("svg"); svg.setAttribute("viewBox", "0 0 960 330"); svg.setAttribute("width", "100%"); svg.setAttribute("height", "330");
-    svg.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;margin:8px 0");
-    let by = Object.fromEntries(nodes.map(node => [node.id, node]));
-    let lanes = [
-      ["research_question", 150, "前沿问题", "#bc5b12"], ["claim", 365, "可审查断言", "#28796c"],
-      ["real_world_tension", 600, "现实张力", "#d38418"], ["research_problem", 810, "问题卡", "#9b4f96"],
-    ];
-    let selected = [], positions = new Map();
-    let root = nodes.find(node => node.kind === "research_program") || nodes.find(node => node.kind === "run");
-    let isProgram = root?.kind === "research_program";
-    if (root) { selected.push(root); positions.set(root.id, [480, 34]); }
-    if (isProgram) {
-      let branchRuns = nodes.filter(node => node.kind === "run").slice(0, 7);
-      branchRuns.forEach((node, index) => { selected.push(node); positions.set(node.id, [100 + index * 126, 94]); });
-      for (let branch of branchRuns) {
-        let prefix = branch.id.slice(0, branch.id.lastIndexOf(":run:"));
-        let domain = nodes.find(node => node.kind === "concept" && node.id === prefix + ":concept:domain");
-        if (domain) { selected.push(domain); positions.set(domain.id, positions.get(branch.id).map((value, i) => i ? value + 45 : value)); }
-      }
-    } else {
-      let domain = nodes.find(node => node.id === "concept:domain");
-      if (domain) { selected.push(domain); positions.set(domain.id, [480, 106]); }
-    }
-    for (let [kind, x, heading] of lanes) {
-      let title = create("text"); title.setAttribute("x", x); title.setAttribute("y", "78"); title.setAttribute("text-anchor", "middle"); title.setAttribute("font-size", "12"); title.setAttribute("fill", "#64748b"); title.textContent = heading; svg.append(title);
-      let items = nodes.filter(node => node.kind === kind).slice(0, 4);
-      items.forEach((node, index) => { selected.push(node); positions.set(node.id, [x, (isProgram ? 185 : 150) + index * 48]); });
-    }
-    let selectedIDs = new Set(selected.map(node => node.id));
-    for (let edge of edges) {
-      if (!selectedIDs.has(edge.source) || !selectedIDs.has(edge.target)) continue;
-      let [x1, y1] = positions.get(edge.source), [x2, y2] = positions.get(edge.target), line = create("line");
-      line.setAttribute("x1", x1); line.setAttribute("y1", y1); line.setAttribute("x2", x2); line.setAttribute("y2", y2); line.setAttribute("stroke", "#bac7d4"); line.setAttribute("stroke-width", "1.4"); svg.append(line);
-    }
-    for (let node of selected) {
-      let [x, y] = positions.get(node.id), lane = lanes.find(row => row[0] === node.kind), color = lane ? lane[3] : (node.kind === "concept" ? "#7858a6" : "#374151");
-      let group = create("g"), circle = create("circle"), text = create("text"); circle.setAttribute("cx", x); circle.setAttribute("cy", y); circle.setAttribute("r", node.kind === "run" ? "12" : "10"); circle.setAttribute("fill", color); circle.setAttribute("stroke", "#fff"); circle.setAttribute("stroke-width", "2");
-      text.setAttribute("x", x); text.setAttribute("y", y + 22); text.setAttribute("text-anchor", "middle"); text.setAttribute("font-size", "10"); text.setAttribute("fill", "#172033"); text.textContent = String(node.label || "").slice(0, 18) + (String(node.label || "").length > 18 ? "…" : "");
-      group.setAttribute("style", "cursor:pointer"); group.append(circle, text); group.addEventListener("click", () => onNode(node)); svg.append(group);
-    }
-    if (!selected.some(node => node.kind !== "run")) { let empty = create("text"); empty.setAttribute("x", "480"); empty.setAttribute("y", "180"); empty.setAttribute("text-anchor", "middle"); empty.setAttribute("fill", "#64748b"); empty.textContent = "当前 run 尚无可画出的研究对象；不会补造节点。"; svg.append(empty); }
-    return svg;
-  },
-  renderWorkspaceFailure(body, meta, workspace, error) {
-    meta.setAttribute("value", "工作台未完成渲染（诊断已保留）");
-    let card = xul("vbox");
-    card.setAttribute("style", "background:#fff1f2;border:1px solid #e58b99;border-radius:8px;padding:14px;margin:8px 0;color:#7f1d1d");
-    card.append(
-      label("无法渲染 ATR Research Workbench", "font-size:18px;font-weight:bold"),
-      label("这不会影响 Zotero 文献库、你的笔记或 ATR 历史记录。", "white-space:normal;margin-top:5px"),
-      label("尝试读取的 workspace：" + workspace, "white-space:normal;margin-top:8px"),
-      label("错误：" + String(error), "white-space:normal;margin-top:5px"),
-      label("检查该目录下是否有 graph.json；若刚替换 XPI，请完全退出并重启 Zotero，然后从“工具 → 打开 ATR Research Workbench”重试。详细事件会写入该 workspace 的 plugin-runtime.jsonl。", "white-space:normal;margin-top:8px;color:#475569")
-    );
-    body.append(card);
-  },
-  async openWorkbench(window) {
-    let doc = window.document;
-    doc.getElementById(this.overlayID)?.remove();
-    let registeredRuns = await this.loadRunRegistry();
-    let selectedWorkspace = await this.resolveWorkspace(registeredRuns);
-    // Keep every note, queue and history operation within the same run that
-    // rendered this overlay. This is in-memory selection only; it does not
-    // overwrite a researcher's persisted workspace preference.
-    this.workspaceOverride = selectedWorkspace;
-    await this.appendRuntimeStatus("open_requested", { window_uri: String(window.location), workspace: selectedWorkspace });
-    let xul = name => doc.createXULElement(name);
-    let label = (value, style = "") => {
-      let node = xul("label"); node.setAttribute("value", String(value ?? ""));
-      if (style) node.setAttribute("style", style);
-      return node;
-    };
-    let host = xul("vbox");
-    host.id = this.overlayID;
-    host.setAttribute("flex", "1");
-    host.setAttribute("style", "background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28);min-width:0;min-height:0;z-index:1000");
-    let header = xul("hbox");
-    header.setAttribute("align", "center");
-    header.setAttribute("style", "background:#122a43;color:#fff;padding:14px 18px");
-    header.append(label("ATR × Zotero Research Workbench", "font-size:16px;font-weight:bold"));
-    let meta = label("正在读取研究投影…", "opacity:.8;margin-left:12px");
-    meta.setAttribute("flex", "1"); header.append(meta);
-    if (registeredRuns.length > 1) {
-      let picker = xul("menulist"), choices = xul("menupopup");
-      let current = registeredRuns.find(run => run.workspace === selectedWorkspace) || registeredRuns[0];
-      picker.setAttribute("label", current.label || current.key);
-      for (let run of registeredRuns) {
-        let choice = xul("menuitem"); choice.setAttribute("label", run.label || run.key); choice.setAttribute("value", run.workspace);
-        choice.addEventListener("command", async () => {
-          this.workspaceOverride = run.workspace;
-          await this.appendRuntimeStatus("run_selected", { run_key: run.key, workspace: run.workspace });
-          await this.openWorkbench(window);
-        });
-        choices.append(choice);
-      }
-      picker.append(choices); header.append(picker);
-    }
-    let close = xul("button"); close.setAttribute("label", "关闭");
-    header.append(close); host.append(header);
-    let body = xul("scrollbox");
-    body.setAttribute("orient", "vertical"); body.setAttribute("flex", "1");
-    body.setAttribute("style", "padding:18px;overflow:auto;min-width:0;min-height:0"); host.append(body);
-    // Zotero's own transient views live in this stack. Appending to the
-    // document root creates an out-of-layout XUL node and can appear blank.
-    let stack = doc.getElementById("zotero-pane-stack");
-    if (!stack) {
-      let error = new Error("Zotero pane stack is unavailable");
-      await this.appendRuntimeStatus("mount_failed", { error: String(error) });
-      throw error;
-    }
-    stack.appendChild(host);
-    await this.appendRuntimeStatus("overlay_mounted", {
-      mount_id: stack.id, overlay_present: !!doc.getElementById(this.overlayID)
-    });
-    close.addEventListener("command", () => host.remove());
-    try {
-      let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(selectedWorkspace, "graph.json")));
-      this.activeRunName = graph.run || "unknown run"; this.activeCollectionID = null;
-      let nodes = graph.nodes || [], edges = graph.edges || [];
-      await this.appendRuntimeStatus("projection_loaded", {
-        run: graph.run || null, node_count: nodes.length, edge_count: edges.length
-      });
-      let by = Object.fromEntries(nodes.map(node => [node.id, node]));
-      let questions = nodes.filter(node => node.kind === "research_question");
-      let papers = nodes.filter(node => node.kind === "paper");
-      let claims = nodes.filter(node => node.kind === "claim");
-      let evidenceAudits = nodes.filter(node => node.kind === "evidence_audit");
-      let knowledgeContexts = nodes.filter(node => node.kind === "knowledge_context");
-      let knowledgeSteps = nodes.filter(node => node.kind === "knowledge_step");
-      let conceptMaps = nodes.filter(node => node.kind === "concept_map");
-      let knowledgeConcepts = nodes.filter(node => node.kind === "knowledge_concept");
-      let landscapeBriefs = nodes.filter(node => node.kind === "landscape_brief");
-      let realWorldTensions = nodes.filter(node => node.kind === "real_world_tension");
-      let researchProblems = nodes.filter(node => node.kind === "research_problem");
-      let humanReviewDispositions = nodes.filter(node => node.kind === "human_review_disposition");
-      let gateNodes = nodes.filter(node => node.kind === "gate");
-      let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
-      let v2Subjects = nodes.filter(node => node.kind === "atr_v2_subject");
-      let v2Artifacts = nodes.filter(node => node.kind === "atr_v2_artifact");
-      let v2Transitions = nodes.filter(node => node.kind === "atr_v2_transition");
-      let v2Attachments = nodes.filter(node => node.kind === "atr_v2_attachment");
-      let timeline = Array.isArray(graph.timeline) ? graph.timeline : [];
-      let runNode = nodes.find(node => node.kind === "run");
-      let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
-      let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
-      let reviewEvents = await this.readJsonLines(this.inboxPath());
-      let reviewQueue = await this.readJsonFile(PathUtils.join(selectedWorkspace, "human-input", "review-queue.json"), { items: [] });
-      let queuedByNote = new Map((reviewQueue.items || []).map(item => [item.event?.zotero_note_key, item]));
-      let latestReviews = new Map();
-      for (let event of reviewEvents) if (event.event === "human_note_modified") latestReviews.set(event.zotero_note_key, event);
-      meta.setAttribute("value", `${graph.run || "unknown run"} · 派生只读投影`);
-      let metrics = xul("hbox"); metrics.setAttribute("style", "margin-bottom:16px");
-      for (let [count, title] of [[questions.length,"前沿问题"],[claims.length,"可审查断言"],[realWorldTensions.length,"现实张力"],[researchProblems.length,"问题卡"],[(graph.history?.snapshots || []).length,"历史快照"]]) {
-        let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:12px;margin-right:10px;min-width:130px");
-        card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
-      }
-      body.append(metrics, label("从问题向知识展开", "font-size:20px;font-weight:bold;margin-bottom:10px"));
-      let mapBox = xul("vbox"); mapBox.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:16px");
-      mapBox.append(label("研究关系图", "font-size:18px;font-weight:bold"), label("只绘制当前投影中存在的节点与显式关系；点击节点可在下方查看其边界。", "white-space:normal;color:#64748b;margin-top:4px"));
-      mapBox.append(this.renderRelationshipMap(doc, nodes, edges, node => {
-        meta.setAttribute("value", node.kind + " · " + node.label);
-      }));
-      body.append(mapBox);
-      let lifecycleBox = xul("vbox"); lifecycleBox.setAttribute("style", "background:#eaf2fb;border:1px solid #8baed1;border-radius:8px;padding:14px;margin-bottom:16px");
-      lifecycleBox.append(label("ATR 运行过程", "font-size:18px;font-weight:bold"));
-      lifecycleBox.append(label("当前阶段：" + (runNode?.data?.stage || "未记录") + " · 状态：" + (runNode?.data?.status || "未记录"), "white-space:normal"));
-      lifecycleBox.append(label("下一步：" + (runNode?.data?.next_action || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
-      if (graph.projection === "derived-read-only-v2-sqlite") {
-        let active = v2Subjects.find(subject => subject.data?.active) || v2Subjects[0];
-        lifecycleBox.append(label("v2 SQLite authority · 当前 subject：" + (active?.label || "未记录") + " · version " + (active?.data?.version ?? "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
-        lifecycleBox.append(label("已记录事务：" + v2Transitions.length + "；immutable artifacts：" + v2Artifacts.length + "；不推进 lifecycle 的附件：" + v2Attachments.length, "white-space:normal;color:#365b7b"));
-      }
-      let stageContract = runNode?.data?.stage_contract || {};
-      if (stageContract.mode) {
-        lifecycleBox.append(label("已记录知识路线：" + stageContract.mode + " · 退出条件：" + (stageContract.exit_condition || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
-        lifecycleBox.append(label("本阶段必须补齐：" + (stageContract.required_artifacts || []).join(" · "), "white-space:normal;color:#365b7b"));
-        let policy = stageContract.family_policy || {};
-        lifecycleBox.append(label("候选预算：同时最多 " + (policy.max_live_candidates ?? "未记录") + " 个；总计最多 " + (policy.max_total_candidates_before_pivot ?? "未记录") + " 个后必须 pivot。", "white-space:normal;color:#365b7b"));
-      }
-      if (gateNodes.length) lifecycleBox.append(label("质量门：" + gateNodes.map(gate => gate.label).join(" · "), "white-space:normal;color:#365b7b"));
-      else if (graph.projection !== "derived-read-only-v2-sqlite") lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
-      if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
-      else if (graph.projection !== "derived-read-only-v2-sqlite") lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
-      body.append(lifecycleBox);
-      let auditBox = xul("vbox"); auditBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
-      auditBox.append(label("冻结 item 与执行契约审计", "font-size:18px;font-weight:bold"));
-      auditBox.append(label("这里区分“论文提出了什么”与“是否真的有可复核的 item、契约和 action oracle”。缺失资产会保留为阻断证据，而不被摘要补齐。", "white-space:normal;color:#475569;margin:5px 0"));
-      if (!evidenceAudits.length) auditBox.append(label("本阶段尚无 item-contract audit。", "white-space:normal;color:#64748b"));
-      for (let audit of evidenceAudits) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label(audit.label, "font-weight:bold;white-space:normal"));
-        row.append(label("资产状态：" + (audit.data?.access_status || "未记录") + "；契约可见性：" + (audit.data?.item_contract_visibility || "未记录"), "white-space:normal"));
-        row.append(label("独立 action oracle：" + (audit.data?.independent_action_oracle || "未记录"), "white-space:normal"));
-        row.append(label("不能说明：" + (audit.data?.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
-        row.append(label("下一步：" + (audit.data?.next_required_action || "未记录"), "white-space:normal;color:#365b7b"));
-        auditBox.append(row);
-      }
-      body.append(auditBox);
-      let timelineBox = xul("vbox"); timelineBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
-      timelineBox.append(label("研究演化时间线", "font-size:18px;font-weight:bold"));
-      timelineBox.append(label("只包含 ATR artifact 自身带时间戳的动作、断言与地图；没有记录时间的对象不会被伪装成过程事件。", "white-space:normal;color:#475569;margin:5px 0"));
-      if (!timeline.length) timelineBox.append(label("当前 run 未提供可排序的时间戳 artifact。", "white-space:normal;color:#64748b"));
-      for (let item of timeline) {
-        let row = xul("vbox"); row.setAttribute("style", "border-left:3px solid #64748b;padding:4px 8px;margin:4px 0;background:#fff");
-        row.append(label(String(item.at || "未记录时间") + " · " + String(item.kind || "artifact"), "font-size:12px;color:#64748b"), label(item.label || item.id || "未命名 artifact", "white-space:normal"));
-        timelineBox.append(row);
-      }
-      body.append(timelineBox);
-      let historyBox = xul("vbox"); historyBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
-      historyBox.append(label("历史投影比较", "font-size:18px;font-weight:bold"));
-      historyBox.append(label("旧投影是只读快照；比较只说明图谱对象和连线何时进入或退出投影，不会删除旧来源或把变化解释成科学结论。", "white-space:normal;color:#475569;margin:5px 0"));
-      let snapshots = graph.history?.snapshots || [];
-      if (!snapshots.length) historyBox.append(label("尚无较早投影快照。", "white-space:normal;color:#64748b"));
-      for (let snapshot of [...snapshots].reverse()) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label(snapshot.id + " · " + (snapshot.archived_at || "未记录时间"), "font-weight:bold"), label("当时 " + (snapshot.node_count || 0) + " 节点 / " + (snapshot.edge_count || 0) + " 连线", "white-space:normal;color:#475569"));
-        let compare = xul("button"); compare.setAttribute("label", "与当前投影比较");
-        compare.addEventListener("command", async () => {
-          let historical = await this.readJsonFile(PathUtils.join(this.workspace, snapshot.path), null);
-          if (!historical?.nodes || !historical?.edges) { row.append(label("无法读取该历史快照。", "white-space:normal;color:#b42318")); return; }
-          let oldNodes = new Set(historical.nodes.map(node => node.id)), oldEdges = new Set(historical.edges.map(edge => edge.source + "→" + edge.relation + "→" + edge.target));
-          let currentEdges = new Set(edges.map(edge => edge.source + "→" + edge.relation + "→" + edge.target));
-          let addedNodes = nodes.filter(node => !oldNodes.has(node.id)), removedNodes = historical.nodes.filter(node => !by[node.id]);
-          let addedEdges = [...currentEdges].filter(id => !oldEdges.has(id)).length, removedEdges = [...oldEdges].filter(id => !currentEdges.has(id)).length;
-          let result = xul("vbox"); result.setAttribute("style", "margin-top:6px;border-left:3px solid #64748b;padding-left:8px");
-          result.append(label("当前新增节点 " + addedNodes.length + "，历史中不再出现节点 " + removedNodes.length + "；新增连线 " + addedEdges + "，历史连线未在当前出现 " + removedEdges + "。", "white-space:normal"));
-          result.append(label("新增节点：" + (addedNodes.slice(0, 8).map(node => node.label).join(" · ") || "无"), "white-space:normal;color:#475569"));
-          result.append(label("旧快照独有节点：" + (removedNodes.slice(0, 8).map(node => node.label).join(" · ") || "无"), "white-space:normal;color:#475569"));
-          row.append(result); meta.setAttribute("value", "正在比较历史投影 " + snapshot.id);
-        });
-        row.append(compare); historyBox.append(row);
-      }
-      body.append(historyBox);
-      let briefBox = xul("vbox"); briefBox.setAttribute("style", "background:#eef4ff;border:1px solid #90add6;border-radius:8px;padding:14px;margin-bottom:16px");
-      briefBox.append(label("已读证据的景观简报", "font-size:18px;font-weight:bold"));
-      briefBox.append(label("这是 AI 对已检查来源的暂时综合，不是 claim；请逐篇打开来源阅读，再通过阅读笔记反馈。它会同时显示未证实边界与最小下一判别。", "white-space:normal;color:#365b7b;margin:5px 0"));
-      if (!landscapeBriefs.length) briefBox.append(label("尚无 landscape brief；插件不会把来源清单伪装成综合结论。", "white-space:normal;color:#64748b"));
-      for (let brief of landscapeBriefs) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        let sources = edges.filter(edge => edge.source === brief.id && edge.relation === "inspects_explicit_source").map(edge => by[edge.target]).filter(Boolean);
-        row.append(label(brief.label, "font-weight:bold;white-space:normal"));
-        row.append(label("状态：" + (brief.data?.disposition || "UNSPECIFIED") + " · " + (brief.data?.immutable ? "immutable artifact" : "非 immutable artifact"), "white-space:normal;color:#365b7b"));
-        row.append(label("张力：" + (brief.data?.observed_tension || "未记录"), "white-space:normal;color:#365b7b;margin-top:3px"));
-        row.append(label("还不能证明：" + (brief.data?.sources_do_not_establish || []).join(" · "), "white-space:normal;color:#64748b;margin-top:3px"));
-        row.append(label("最小下一判别：" + (brief.data?.smallest_next_discriminator || "未记录"), "white-space:normal;color:#365b7b;margin-top:3px"));
-        for (let source of sources) {
-          let review = xul("button"); review.setAttribute("label", "阅读来源：" + source.label);
-          review.addEventListener("command", async () => {
-            let note = await this.openReviewNote(source, window);
-            meta.setAttribute("value", "已定位景观简报的来源笔记 · " + note.key);
-          });
-          row.append(review);
-        }
-        briefBox.append(row);
-      }
-      body.append(briefBox);
-      let claimBox = xul("vbox"); claimBox.setAttribute("style", "background:#f8f1e7;border:1px solid #d7ae73;border-radius:8px;padding:14px;margin-bottom:16px");
-      claimBox.append(label("等待你审查的 ATR 断言", "font-size:18px;font-weight:bold"));
-      claimBox.append(label("断言不是论文结论。请先核对原始材料，再在专属笔记中选择支持、限定、反驳、不确定或提出问题。你的判断只会生成待审查输入，不会自动修改 ATR 路线。", "white-space:normal;color:#765526;margin:5px 0"));
-      if (!claims.length) claimBox.append(label("当前 run 没有可用的 claim ledger；插件不会把论文标题或 AI 摘要伪造为断言。", "white-space:normal;color:#64748b"));
-      for (let claim of claims) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label(claim.label, "font-weight:bold;white-space:normal"));
-        row.append(label("状态：" + (claim.data?.status || "未记录") + " · 版本：" + (claim.data?.version ?? "未记录"), "white-space:normal;color:#765526;margin-top:3px"));
-        let restrictions = claim.data?.forbidden_claims || [];
-        if (restrictions.length) row.append(label("不能声称：" + restrictions.join(" · "), "white-space:normal;color:#64748b;margin-top:3px"));
-        let review = xul("button"); review.setAttribute("label", "建立 / 打开我的断言审查");
-        review.addEventListener("command", async () => {
-          try {
-            let note = await this.openClaimReviewNote(claim, window);
-            meta.setAttribute("value", "已定位断言审查笔记 · " + note.key);
-            await this.appendRuntimeStatus("claim_review_note_opened", { claim_id: claim.data?.claim_id, note_key: note.key });
-          } catch (error) {
-            this.log("could not open claim review note: " + error);
-            meta.setAttribute("value", "无法建立断言审查笔记：" + error);
-            await this.appendRuntimeStatus("claim_review_note_failed", { claim_id: claim.data?.claim_id, error: String(error) });
-          }
-        });
-        let stancePicker = xul("menulist"), stanceChoices = xul("menupopup");
-        stancePicker.setAttribute("value", "PENDING"); stancePicker.setAttribute("label", "选择我的立场");
-        for (let [value, title] of [["PENDING", "尚未判断"], ["SUPPORTS", "支持"], ["QUALIFIES", "需要限定"], ["CHALLENGES", "反驳 / 挑战"], ["UNSURE", "证据不足"], ["NEW_QUESTION", "提出新问题"]]) {
-          let choice = xul("menuitem"); choice.setAttribute("value", value); choice.setAttribute("label", title); stanceChoices.append(choice);
-        }
-        stancePicker.append(stanceChoices);
-        let record = xul("button"); record.setAttribute("label", "记录我的立场并打开笔记");
-        record.addEventListener("command", async () => {
-          let stance = stancePicker.value || "PENDING";
-          try {
-            let note = await this.setClaimReviewStance(claim, stance, window);
-            meta.setAttribute("value", "已记录 " + stance + " · 请补充原文定位与理由");
-            await this.appendRuntimeStatus("claim_review_stance_recorded", { claim_id: claim.data?.claim_id, note_key: note.key, stance });
-          } catch (error) {
-            this.log("could not record claim review stance: " + error);
-            meta.setAttribute("value", "无法记录立场：" + error);
-            await this.appendRuntimeStatus("claim_review_stance_failed", { claim_id: claim.data?.claim_id, error: String(error) });
-          }
-        });
-        row.append(review, stancePicker, record); claimBox.append(row);
-      }
-      body.append(claimBox);
-      let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
-      reviewBox.append(label("你的阅读反馈", "font-size:18px;font-weight:bold"));
-      reviewBox.append(label("在 Zotero 的 ATR 阅读卡（子笔记）中写下判断；这里只展示事件副本，不会自动改写研究路线或删除旧线。", "white-space:normal;color:#365b47;margin:5px 0"));
-      if (!latestReviews.size) {
-        reviewBox.append(label("尚无已捕获的批注。先导入/同步 ATR 阅读卡，再在对应子笔记保存你的判断。", "white-space:normal"));
-      } else {
-        for (let event of latestReviews.values()) {
-          let paper = papers.find(node => node.data?.source_id === event.atr_source_id);
-          let queued = queuedByNote.get(event.zotero_note_key);
-          let nearest = paper ? edges.filter(edge => edge.target === paper.id && edge.relation === "anchored_by")
-            .map(edge => by[edge.source]).filter(node => node?.kind === "research_question") : [];
-          let review = xul("vbox"); review.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-          let claim = claims.find(node => node.data?.claim_id === event.atr_claim_id);
-          review.append(label(claim?.label || paper?.label || event.atr_claim_id || event.atr_source_id || "未映射反馈目标", "font-weight:bold;white-space:normal"));
-          review.append(label("立场：" + (event.review_stance || "UNSPECIFIED") + " · 原文定位：" + (event.source_locator || "未填写"), "white-space:normal;color:#365b47"));
-          review.append(label("最近研究问题：" + (nearest.map(node => node.label).join(" · ") || "尚未在当前投影中找到"), "white-space:normal;color:#365b47"));
-          if (queued) {
-            let decisions = (queued.nearest_decision_objects || []).map(item => item.kind + "：" + item.label).join(" · ");
-            let problems = (queued.nearest_research_problems || []).map(item => item.problem).join(" · ");
-            review.append(label("Codex 待复审节点：" + (decisions || "尚未定位"), "white-space:normal;color:#365b47"));
-            review.append(label("最近问题卡：" + (problems || "尚未定位"), "white-space:normal;color:#365b47"));
-            review.append(label("队列状态：" + (queued.status || "未记录"), "white-space:normal;color:#365b47"));
-          } else review.append(label("尚未生成 Codex 影响队列；回到 Codex 后运行 review-human-input，不会自动改写 ATR。", "white-space:normal;color:#64748b"));
-          review.append(label(this.plainNote(event.note_html).slice(0, 420) || "（笔记内容为空）", "white-space:normal;color:#475569;margin-top:4px"));
-          reviewBox.append(review);
-        }
-      }
-      body.append(reviewBox);
-      let dispositionBox = xul("vbox"); dispositionBox.setAttribute("style", "background:#eef4ff;border:1px solid #9db8e6;border-radius:8px;padding:14px;margin-bottom:16px");
-      dispositionBox.append(label("已记录的人类反馈处置", "font-size:18px;font-weight:bold"));
-      dispositionBox.append(label("这些是 owner 对 Zotero 阅读反馈的追加式决定；它们请求复审，但本身不会改写 ATR 断言、gate、route 或历史投影。", "white-space:normal;color:#34557f;margin:5px 0"));
-      if (!humanReviewDispositions.length) dispositionBox.append(label("尚无处置记录。先在 Codex 物化 review packet，再由 owner 明确记录处理方式。", "white-space:normal;color:#64748b"));
-      for (let disposition of humanReviewDispositions) {
-        let d = disposition.data || {}, row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        let targets = edges.filter(edge => edge.source === disposition.id).map(edge => by[edge.target]).filter(Boolean).map(node => node.label).join(" · ");
-        row.append(label((d.disposition || "UNSPECIFIED") + " · " + (d.owner || "未记录 owner"), "font-weight:bold;white-space:normal"));
-        row.append(label("理由：" + (d.rationale || "未记录"), "white-space:normal"));
-        row.append(label("请求复审：" + (targets || "未映射节点") + " · " + (d.recorded_at || "未记录时间"), "white-space:normal;color:#34557f"));
-        dispositionBox.append(row);
-      }
-      body.append(dispositionBox);
-      let conceptMapBox = xul("vbox"); conceptMapBox.setAttribute("style", "background:#f7f3fb;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
-      conceptMapBox.append(label("可展开的来源知识树", "font-size:18px;font-weight:bold"));
-      conceptMapBox.append(label("概念必须有来源、定义和边界；层级只帮助你从领域到具体机制阅读，绝不自动表示因果或共识。", "white-space:normal;color:#594578;margin:5px 0"));
-      if (!conceptMaps.length) conceptMapBox.append(label("尚无 source-grounded concept map。", "white-space:normal;color:#64748b"));
-      for (let map of conceptMaps) {
-        let mapRow = xul("vbox"); mapRow.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        mapRow.append(label(map.label, "font-weight:bold;white-space:normal"), label("边界：" + (map.data?.does_not_establish || "未记录"), "white-space:normal;color:#594578"));
-        let appendConcept = (concept, level) => {
-          let row = xul("vbox"); row.setAttribute("style", "margin-left:" + (level * 18) + "px;margin-top:6px;border-left:2px solid #b8a5d5;padding-left:8px");
-          row.append(label(concept.label, "font-weight:bold;white-space:normal"), label(concept.data?.definition || "未记录定义", "white-space:normal"), label("来源：" + (concept.data?.source_ids || []).join(" · "), "white-space:normal;color:#594578"), label("不能说明：" + (concept.data?.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
-          for (let sourceId of concept.data?.source_ids || []) {
-            let source = papers.find(item => item.data?.source_id === sourceId);
-            if (!source) continue;
-            let review = xul("button"); review.setAttribute("label", "阅读：" + source.label);
-            review.addEventListener("command", async () => { let note = await this.openReviewNote(source, window); meta.setAttribute("value", "已定位概念来源笔记 · " + note.key); });
-            row.append(review);
-          }
-          mapRow.append(row);
-          let children = edges.filter(edge => edge.source === concept.id && edge.relation === "specializes_concept").map(edge => by[edge.target]).filter(Boolean);
-          if (!children.length) return;
-          let toggle = xul("button"), descendants = xul("vbox"), expanded = false;
-          descendants.setAttribute("hidden", "true");
-          toggle.setAttribute("label", "展开下一级（" + children.length + "）");
-          toggle.addEventListener("command", () => {
-            expanded = !expanded; descendants.hidden = !expanded;
-            toggle.setAttribute("label", (expanded ? "收起下一级" : "展开下一级") + "（" + children.length + "）");
-          });
-          row.append(toggle, descendants);
-          let original = mapRow;
-          // Children belong visually to their parent rather than being appended
-          // into the map root.  Temporarily direct the recursive renderer to
-          // the collapsed container, then restore the outer map container.
-          mapRow = descendants;
-          for (let child of children) appendConcept(child, level + 1);
-          mapRow = original;
-        };
-        for (let root of edges.filter(edge => edge.source === map.id && edge.relation === "roots_concept").map(edge => by[edge.target]).filter(Boolean)) appendConcept(root, 0);
-        conceptMapBox.append(mapRow);
-      }
-      body.append(conceptMapBox);
-      let knowledgeBox = xul("vbox"); knowledgeBox.setAttribute("style", "background:#f3effa;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
-      let domain = by["concept:domain"];
-      knowledgeBox.append(label("知识体系：" + (domain?.label || "未定义领域"), "font-size:18px;font-weight:bold;white-space:normal"));
-      knowledgeBox.append(label("概念与文献的连线来自当前 frontier 问题的锚定上下文，不等同于‘文献证明该概念’；具体可推出与不可推出内容仍以下方证据边界为准。", "white-space:normal;color:#594578;margin:5px 0"));
-      let concepts = nodes.filter(node => node.kind === "concept" && node.id !== "concept:domain");
-      for (let concept of concepts) {
-        let linkedPapers = edges.filter(edge => edge.source === concept.id && edge.relation === "illustrated_by_question_anchor")
-          .map(edge => by[edge.target]).filter(Boolean);
-        let conceptRow = xul("vbox"); conceptRow.setAttribute("style", "background:#fff;border-radius:6px;padding:8px;margin-top:7px");
-        conceptRow.append(label(concept.label, "font-weight:bold;white-space:normal"));
-        conceptRow.append(label("关联阅读：" + (linkedPapers.map(paper => paper.label).join(" · ") || "当前 run 未提供可追溯锚定来源"), "white-space:normal;color:#594578"));
-        knowledgeBox.append(conceptRow);
-      }
-      if (!concepts.length) knowledgeBox.append(label("当前 run 尚未显式记录概念维度，插件不会补造知识节点。", "white-space:normal"));
-      body.append(knowledgeBox);
-      let contractionBox = xul("vbox"); contractionBox.setAttribute("style", "background:#eef4ff;border:1px solid #90add6;border-radius:8px;padding:14px;margin-bottom:16px");
-      contractionBox.append(label("知识如何从前沿收缩到可审查断言", "font-size:18px;font-weight:bold"));
-      contractionBox.append(label("每一步保留不变量、排除的解释与明确引用；这不是模型自动生成的知识树。", "white-space:normal;color:#365b7b;margin:5px 0"));
-      if (!knowledgeContexts.length) contractionBox.append(label("尚无 knowledge-context artifact；当前只可查看 frontier 问题，不能声称已形成可审计的知识收缩路径。", "white-space:normal;color:#64748b"));
-      for (let context of knowledgeContexts) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label("决策节点：" + (context.data?.decision_node || "未记录"), "font-weight:bold"));
-        let steps = edges.filter(edge => edge.source === context.id && edge.relation === "contracts_to").map(edge => by[edge.target]).filter(Boolean);
-        while (steps.length) {
-          let step = steps.shift();
-          row.append(label((step.data?.layer || "步骤") + " · " + step.label, "white-space:normal;margin-top:5px"));
-          row.append(label("保留：" + (step.data?.invariant_preserved || "未记录") + "；排除：" + (step.data?.excluded_explanations || []).join(" · "), "white-space:normal;color:#365b7b"));
-          steps.push(...edges.filter(edge => edge.source === step.id && edge.relation === "contracts_to").map(edge => by[edge.target]).filter(Boolean));
-        }
-        contractionBox.append(row);
-      }
-      body.append(contractionBox);
-      for (let question of questions) {
-        let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
-        let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);
-        let inspirations = edges.filter(edge => edge.source === question.id && edge.relation === "inspired_by_context").map(edge => by[edge.target]).filter(Boolean);
-        let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:12px");
-        card.append(label(question.label, "font-size:17px;font-weight:bold;white-space:normal"), label("ATR frontier map 提出的问题，不是论文自身结论。", "color:#64748b;margin:6px 0"), label("所需概念", "font-size:13px;font-weight:bold;margin-top:8px"), label(concepts.map(node => node.label).join(" · ") || "未记录", "white-space:normal"), label("锚定来源", "font-size:13px;font-weight:bold;margin-top:8px"));
-        for (let source of anchors) {
-          let details = xul("vbox"); details.setAttribute("style", "margin:5px 0;padding:7px;background:#f7fafc;border-radius:5px");
-          details.append(label(source.label, "font-weight:bold;white-space:normal"), label("支持：" + (source.data?.supports || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
-          let review = xul("button"); review.setAttribute("label", "建立 / 打开我的阅读笔记");
-          review.addEventListener("command", async () => {
-            try {
-              let note = await this.openReviewNote(source, window);
-              meta.setAttribute("value", "已定位你的阅读笔记 · " + note.key);
-              await this.appendRuntimeStatus("review_note_opened", { source_id: source.data?.source_id, note_key: note.key });
-            } catch (error) {
-              this.log("could not open review note: " + error);
-              meta.setAttribute("value", "无法建立阅读笔记：" + error);
-              await this.appendRuntimeStatus("review_note_failed", { source_id: source.data?.source_id, error: String(error) });
-            }
-          });
-          let stancePicker = xul("menulist"), stanceChoices = xul("menupopup");
-          stancePicker.setAttribute("value", "PENDING"); stancePicker.setAttribute("label", "选择我的来源判断");
-          for (let [value, title] of [["PENDING", "尚未判断"], ["SUPPORTS", "支持"], ["QUALIFIES", "需要限定"], ["CHALLENGES", "反驳 / 挑战"], ["UNSURE", "证据不足"], ["NEW_QUESTION", "提出新问题"]]) {
-            let choice = xul("menuitem"); choice.setAttribute("value", value); choice.setAttribute("label", title); stanceChoices.append(choice);
-          }
-          stancePicker.append(stanceChoices);
-          let record = xul("button"); record.setAttribute("label", "记录来源判断并打开笔记");
-          record.addEventListener("command", async () => {
-            let stance = stancePicker.value || "PENDING";
-            try {
-              let note = await this.setSourceReviewStance(source, stance, window);
-              meta.setAttribute("value", "已记录 " + stance + " · 请补充原文定位与理由");
-              await this.appendRuntimeStatus("source_review_stance_recorded", { source_id: source.data?.source_id, note_key: note.key, stance });
-            } catch (error) {
-              this.log("could not record source review stance: " + error);
-              meta.setAttribute("value", "无法记录来源判断：" + error);
-              await this.appendRuntimeStatus("source_review_stance_failed", { source_id: source.data?.source_id, error: String(error) });
-            }
-          });
-          details.append(review, stancePicker, record);
-          card.append(details);
-        }
-        card.append(label("现实世界启发（不是学术证据）", "font-size:13px;font-weight:bold;margin-top:8px"));
-        if (!inspirations.length) card.append(label("当前 run 未记录与此问题关联的新闻、报告、博客或社媒材料。", "white-space:normal;color:#64748b"));
-        for (let source of inspirations) {
-          let inspiration = xul("vbox"); inspiration.setAttribute("style", "margin:5px 0;padding:7px;background:#fff7e6;border-radius:5px");
-          inspiration.append(label(source.label, "font-weight:bold;white-space:normal"), label("为什么值得作为启发：" + (source.data?.why_it_matters || source.data?.supports || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
-          card.append(inspiration);
-        }
-        body.append(card);
-      }
-      let worldBox = xul("vbox"); worldBox.setAttribute("style", "background:#fff7e6;border:1px solid #e3b76a;border-radius:8px;padding:14px;margin-bottom:16px");
-      worldBox.append(label("现实世界张力与研究问题", "font-size:18px;font-weight:bold"));
-      worldBox.append(label("现实材料只能提出值得解释的摩擦，不能替代学术证据或直接认证研究缺口。", "white-space:normal;color:#7a5620;margin:5px 0"));
-      if (!realWorldTensions.length) worldBox.append(label("尚无 opportunity-map artifact；当前 run 不能展示受控的现实问题链路。", "white-space:normal;color:#64748b"));
-      for (let tension of realWorldTensions) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label(tension.label, "font-weight:bold;white-space:normal"));
-        row.append(label("主体：" + (tension.data?.actor || "未记录") + " · 后果：" + (tension.data?.material_consequence || "未记录"), "white-space:normal"));
-        row.append(label("不能说明：" + (tension.data?.does_not_establish || "未记录"), "white-space:normal;color:#7a5620"));
-        worldBox.append(row);
-      }
-      if (researchProblems.length) worldBox.append(label("可审查研究问题卡", "font-size:16px;font-weight:bold;margin-top:12px"));
-      for (let problem of researchProblems) {
-        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-        row.append(label(problem.label, "font-weight:bold;white-space:normal"));
-        let worlds = (problem.data?.counterfactual_worlds || problem.data?.worlds || []).map(world => typeof world === "string" ? world : (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
-        let paperRoles = edges.filter(edge => edge.target === problem.id && edge.relation === "has_explicit_problem_role");
-        let problemSources = edges.filter(edge => edge.source === problem.id && edge.relation === "grounds_in_explicit_source_span");
-        let successor = edges.find(edge => edge.source === problem.id && edge.relation === "superseded_by_recorded_problem_version");
-        row.append(label("状态：" + (problem.data?.status || "UNSPECIFIED"), "white-space:normal;color:#7a5620"));
-        row.append(label("工件：" + (problem.data?.artifact_path || "未记录") + (problem.data?.artifact_version ? " · " + problem.data.artifact_version : ""), "white-space:normal;color:#64748b"));
-        if (successor) row.append(label("此版本已由当前记录的问题卡取代；它仍保留为历史审计证据。", "white-space:normal;color:#64748b"));
-        row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
-        row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || problem.data?.falsifier || "未记录"), "white-space:normal;color:#7a5620"));
-        let finer = edges.filter(edge => edge.source === problem.id && edge.relation === "generates_finer_review_question").map(edge => by[edge.target]).filter(Boolean);
-        if (finer.length) row.append(label("由此继续审查的细粒度问题", "font-size:13px;font-weight:bold;margin-top:7px"));
-        for (let child of finer) {
-          let d = child.data || {}, sources = edges.filter(edge => edge.source === child.id && edge.relation === "grounds_in_explicit_source").map(edge => by[edge.target]).filter(Boolean);
-          row.append(label(child.label, "font-weight:bold;white-space:normal"));
-          row.append(label("状态：" + (d.status || "PENDING_REVIEW") + "；最小判别：" + (d.smallest_discriminator || "未记录"), "white-space:normal;color:#7a5620"));
-          row.append(label("来源：" + (sources.map(source => source.label).join(" · ") || "未记录") + "；不能说明：" + (d.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
-        }
-        row.append(label("论文在此问题中的位置", "font-size:13px;font-weight:bold;margin-top:7px"));
-        for (let role of paperRoles) {
-          let paper = by[role.source], details = role.data || {};
-          row.append(label((paper?.label || role.source) + "（" + (details.posture || "OBSERVED") + "）", "font-weight:bold;white-space:normal"));
-          row.append(label("解决：" + (details.resolves || "未记录"), "white-space:normal"));
-          row.append(label("仍未解决：" + (details.leaves_unresolved || "未记录"), "white-space:normal;color:#7a5620"));
-        }
-        if (problemSources.length) row.append(label("从问题卡回到原文", "font-size:13px;font-weight:bold;margin-top:7px"));
-        for (let sourceEdge of problemSources) {
-          let source = by[sourceEdge.target], span = sourceEdge.data || {};
-          if (!source) continue;
-          let details = xul("vbox"); details.setAttribute("style", "margin:5px 0;padding:7px;background:#f7fafc;border-radius:5px");
-          details.append(label(source.label, "font-weight:bold;white-space:normal"), label("定位：" + (span.locator || source.data?.locator || "未记录") + "；记录：" + (span.observation || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
-          let review = xul("button"); review.setAttribute("label", "建立 / 打开该问题来源的阅读笔记");
-          review.addEventListener("command", async () => {
-            try { let note = await this.openReviewNote(source, window); meta.setAttribute("value", "已定位问题来源阅读笔记 · " + note.key); await this.appendRuntimeStatus("problem_source_review_note_opened", { problem_id: problem.data?.problem_id, source_id: source.data?.source_id, note_key: note.key }); }
-            catch (error) { meta.setAttribute("value", "无法建立问题来源阅读笔记：" + error); await this.appendRuntimeStatus("problem_source_review_note_failed", { problem_id: problem.data?.problem_id, source_id: source.data?.source_id, error: String(error) }); }
-          });
-          details.append(review); row.append(details);
-        }
-        worldBox.append(row);
-      }
-      body.append(worldBox);
-      if (!questions.length) body.append(label("当前 run 尚未产生 frontier tensions；插件不会凭空生成研究问题。", "white-space:normal"));
-      if (graph.diagnostics?.length) {
-        let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
-        warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
-      }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size, human_review_disposition_count: humanReviewDispositions.length, v2_subject_count: v2Subjects.length, v2_artifact_count: v2Artifacts.length, v2_transition_count: v2Transitions.length, v2_attachment_count: v2Attachments.length });
-    } catch (error) {
-      this.log("could not render workbench overlay: " + error);
-      await this.appendRuntimeStatus("render_failed", { error: String(error) });
-      this.renderWorkspaceFailure(body, meta, selectedWorkspace, error);
-    }
-  },
-  hooks: {
-    async onStartup({ id, rootURI }) {
-      ATRZoteroWorkbench.init({ id, rootURI });
-      await ATRZoteroWorkbench.appendRuntimeStatus("startup_complete", { addon_id: id, root_uri: rootURI });
-      ATRZoteroWorkbench.addToAllWindows();
-      ATRZoteroWorkbench.startObserving();
-    },
-    async onMainWindowLoad(window) { ATRZoteroWorkbench.addToWindow(window); },
-    async onMainWindowUnload(window) { ATRZoteroWorkbench.removeFromWindow(window); },
-    async onShutdown() {
-      ATRZoteroWorkbench.stopObserving();
-      ATRZoteroWorkbench.removeFromAllWindows();
-    }
-  }
+	id: null,
+	rootURI: null,
+	observerID: null,
+	sectionID: null,
+	workspaceOverride: null,
+	activeWorkspace: null,
+	activeGraph: null,
+	activeNativeMap: null,
+	activeReviewQueue: null,
+	activeRunName: null,
+	activeRunRecord: null,
+	activeCollectionID: null,
+	activeOverviewCollectionID: null,
+	activeKnowledgeCollectionID: null,
+	activeResearchCollectionID: null,
+	activeSourceCollectionID: null,
+	activeHistoryCollectionID: null,
+	lastHumanInput: new Map(),
+	suppressedNotifierItemIDs: new Set(),
+	writeQueues: new Map(),
+	defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual-agent-action-continuation",
+	defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
+
+	init({ id, rootURI }) {
+		this.id = id;
+		this.rootURI = rootURI;
+	},
+
+	log(message) {
+		Zotero.debug("ATR Workbench: " + message);
+	},
+
+	get configuredWorkspace() {
+		return Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true);
+	},
+
+	get registryPath() {
+		return Zotero.Prefs.get("extensions.atr-zotero-workbench.registry", true)
+			|| this.defaultRegistry;
+	},
+
+	inboxPath() {
+		return PathUtils.join(this.activeWorkspace || this.defaultWorkspace, "human-input", "inbox.jsonl");
+	},
+
+	runtimeLogPath() {
+		return PathUtils.join(this.activeWorkspace || this.defaultWorkspace, "plugin-runtime.jsonl");
+	},
+
+	async appendWorkspaceLine(path, line) {
+		let previous = this.writeQueues.get(path) || Promise.resolve();
+		let current = previous.catch(() => {}).then(async () => {
+			await Zotero.File.createDirectoryIfMissingAsync(PathUtils.parent(path), {
+				ignoreExisting: true,
+			});
+			let existing = "";
+			try {
+				existing = await Zotero.File.getContentsAsync(path);
+			}
+			catch (_) {
+				// The audit file is created on first use.
+			}
+			await Zotero.File.putContentsAsync(path, existing + line + "\n");
+		});
+		this.writeQueues.set(path, current);
+		try {
+			await current;
+		}
+		finally {
+			if (this.writeQueues.get(path) === current) this.writeQueues.delete(path);
+		}
+	},
+
+	async appendRuntimeStatus(stage, details = {}) {
+		let record = {
+			schema_version: "0.2",
+			component: "zotero_native_projection",
+			stage,
+			at: new Date().toISOString(),
+			...details,
+		};
+		this.log(stage + ": " + JSON.stringify(details));
+		try {
+			await this.appendWorkspaceLine(this.runtimeLogPath(), JSON.stringify(record));
+		}
+		catch (error) {
+			this.log("could not write runtime status: " + error);
+		}
+	},
+
+	async appendHumanInput(record) {
+		let stableRecord = { ...record };
+		delete stableRecord.at;
+		delete stableRecord.notifier;
+		// Zotero's Note Editor can emit a second modify notification that only
+		// wraps/normalizes the same HTML. Formatting-only rewrites are not a new
+		// cognitive review event; text, stance, locator and ATR target changes are.
+		if (stableRecord.event === "human_note_modified" && stableRecord.note_html) {
+			stableRecord.note_html = this.plainNote(stableRecord.note_html);
+		}
+		let signature = JSON.stringify(stableRecord);
+		let key = record.zotero_note_key || record.zotero_annotation_key;
+		if (key && this.lastHumanInput.get(key) === signature) return;
+		if (key) this.lastHumanInput.set(key, signature);
+		try {
+			await this.appendWorkspaceLine(this.inboxPath(), JSON.stringify(record));
+		}
+		catch (error) {
+			this.log("could not write human input: " + error);
+		}
+	},
+
+	async readJsonFile(path, fallback = {}) {
+		try {
+			return JSON.parse(await Zotero.File.getContentsAsync(path));
+		}
+		catch (_) {
+			return fallback;
+		}
+	},
+
+	async loadRunRegistry() {
+		let registry = await this.readJsonFile(this.registryPath, { runs: [] });
+		if (registry.schema_version !== "0.2"
+			|| registry.selection_policy !== "EXPLICIT_ACTIVATION_ONLY"
+			|| registry.selection?.mode !== "EXPLICIT"
+			|| registry.selection?.selected_key !== registry.active_run) {
+			throw new Error("ATR registry 缺少 v0.2 显式 authority selection；拒绝按构建顺序猜测当前 topic");
+		}
+		for (let run of registry.runs || []) {
+			for (let field of ["controller_kind", "authority_path", "authority_scope", "view_role"]) {
+				if (!run[field]) throw new Error("ATR registry run " + run.key + " 缺少 " + field);
+			}
+		}
+		return {
+			activeRun: registry.active_run || null,
+			runs: (registry.runs || []).filter(run => run.key && run.workspace),
+			selection: registry.selection,
+		};
+	},
+
+	async defaultRun() {
+		let registry = await this.loadRunRegistry();
+		let configured = this.workspaceOverride || this.configuredWorkspace;
+		if (configured) {
+			return registry.runs.find(run => run.workspace === configured)
+				|| { key: PathUtils.filename(configured), label: PathUtils.filename(configured), workspace: configured };
+		}
+		let selected = registry.runs.find(run => run.key === registry.activeRun);
+		if (!selected) throw new Error("显式 active_run 未解析到已登记 topic");
+		return selected;
+	},
+
+	async loadProjection(run) {
+		let workspace = run?.workspace || this.defaultWorkspace;
+		let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(workspace, "graph.json")));
+		let nativeMap = JSON.parse(await IOUtils.readUTF8(PathUtils.join(workspace, "zotero", "native-projection.json")));
+		if (nativeMap.schema_version !== "0.1" || nativeMap.projection !== "atr-zotero-native-map"
+			|| nativeMap.run !== graph.run) {
+			throw new Error("native-projection.json 与 graph.json 不一致；请先重建显式 Zotero 映射");
+		}
+		let graphIDs = new Set((graph.nodes || []).map(node => node.id));
+		let sourceIDs = new Set((graph.nodes || [])
+			.filter(node => node.kind === "paper" && node.data?.source_id)
+			.map(node => node.data.source_id));
+		let objectIDs = new Set();
+		let markers = new Set();
+		let topicNotes = 0;
+		for (let object of nativeMap.objects || []) {
+			if (!object.object_id || objectIDs.has(object.object_id)) {
+				throw new Error("Zotero 映射包含空白或重复 object_id: " + object.object_id);
+			}
+			objectIDs.add(object.object_id);
+			if (!object.marker || markers.has(object.marker)) {
+				throw new Error("Zotero 映射包含空白或重复 marker: " + object.marker);
+			}
+			markers.add(object.marker);
+			if (object.object_kind === "topic_note") topicNotes++;
+			if (object.graph_node_id && !graphIDs.has(object.graph_node_id)) {
+				throw new Error("Zotero 映射引用不存在的 graph node: " + object.graph_node_id);
+			}
+			if (object.parent_graph_node_id && !graphIDs.has(object.parent_graph_node_id)) {
+				throw new Error("Zotero 映射引用不存在的 parent graph node: " + object.parent_graph_node_id);
+			}
+			for (let sourceID of object.linked_source_ids || []) {
+				if (!sourceIDs.has(sourceID)) {
+					throw new Error("Zotero 映射引用不存在的 source: " + sourceID);
+				}
+			}
+		}
+		if (topicNotes !== 1) throw new Error("Zotero 映射必须恰好包含一个 topic_note");
+		for (let role of [
+				"root", "overview", "knowledge", "research", "sources", "history",
+				"research_tensions", "research_frontier", "research_current", "research_claims", "research_reviews",
+		]) {
+			if (!nativeMap.collections?.[role]) throw new Error("Zotero 映射缺少 Collection role: " + role);
+		}
+		let accepted = nativeMap.feedback_contract?.accepted_events || [];
+		if (!accepted.includes("human_note_modified") || !accepted.includes("human_annotation_modified")) {
+			throw new Error("Zotero 映射没有声明完整的 Note/annotation feedback contract");
+		}
+		if ((nativeMap.feedback_contract?.target_priority || []).join("|") !== "claim|research_problem|research_question|real_world_tension|source|knowledge|topic") {
+			throw new Error("Zotero 映射缺少 research/source/knowledge/topic fallback feedback priority");
+		}
+		if (nativeMap.feedback_contract?.lifecycle_effect !== "REVIEW_INPUT_ONLY"
+			|| nativeMap.feedback_contract?.history_policy !== "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES") {
+			throw new Error("Zotero 映射违反 review-only 或 append-only 历史边界");
+		}
+		this.workspaceOverride = workspace;
+		this.activeWorkspace = workspace;
+		this.activeGraph = graph;
+		this.activeNativeMap = nativeMap;
+		let reviewQueue = await this.readJsonFile(
+			PathUtils.join(workspace, "human-input", "review-queue.json"),
+			{ schema_version: "0.1", projection: "codex-review-queue", items: [] },
+		);
+		if (reviewQueue.schema_version !== "0.1" || reviewQueue.projection !== "codex-review-queue"
+			|| !Array.isArray(reviewQueue.items)) {
+			await this.appendRuntimeStatus("review_queue_invalid", { workspace });
+			reviewQueue = { schema_version: "0.1", projection: "codex-review-queue", items: [] };
+		}
+		this.activeReviewQueue = reviewQueue;
+		this.activeRunName = graph.run || run?.key || "ATR Topic";
+		this.activeRunRecord = run || null;
+		this.activeCollectionID = null;
+		this.activeOverviewCollectionID = null;
+		this.activeKnowledgeCollectionID = null;
+		this.activeResearchCollectionID = null;
+		this.activeSourceCollectionID = null;
+		this.activeHistoryCollectionID = null;
+		await this.appendRuntimeStatus("projection_loaded", {
+			run: this.activeRunName,
+			node_count: (graph.nodes || []).length,
+			edge_count: (graph.edges || []).length,
+		});
+		await this.appendRuntimeStatus("review_queue_loaded", {
+			pending_count: this.pendingReviewItems().length,
+		});
+		return graph;
+	},
+
+	pendingReviewItems(graphNodeID = null, sourceID = null) {
+		return (this.activeReviewQueue?.items || []).filter(item => {
+			if (!String(item.status || "").startsWith("pending")) return false;
+			if (!graphNodeID && !sourceID) return true;
+			if (sourceID && item.annotation_source_id === sourceID) return true;
+			if (graphNodeID && item.annotation_graph_node_id === graphNodeID) return true;
+			return graphNodeID && (item.all_affected_decision_objects || [])
+				.some(decision => decision.id === graphNodeID);
+		});
+	},
+
+	plainNote(html) {
+		return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+	},
+
+	htmlEscape(value) {
+		return String(value ?? "").replace(/[&<>"']/g, char => ({
+			"&": "&amp;",
+			"<": "&lt;",
+			">": "&gt;",
+			'"': "&quot;",
+			"'": "&#39;",
+		})[char]);
+	},
+
+	topicTitle(graph = this.activeGraph) {
+		if (graph === this.activeGraph && this.activeNativeMap?.topic?.title) {
+			return this.activeNativeMap.topic.title;
+		}
+		let nodes = graph?.nodes || [];
+		let subject = nodes.find(node => node.kind === "atr_v2_subject" && node.data?.active)
+			|| nodes.find(node => node.kind === "atr_v2_subject");
+		return subject?.label || graph?.run || this.activeRunName || "ATR Topic";
+	},
+
+	async ensureTopicCollection(graph = this.activeGraph) {
+		let libraryID = Zotero.Libraries.userLibraryID;
+		let name = this.activeNativeMap?.collections?.root || "ATR · " + this.topicTitle(graph);
+		let collection = (Zotero.Collections.getByLibrary(libraryID) || [])
+			.find(candidate => candidate.name === name);
+		if (!collection) {
+			collection = new Zotero.Collection();
+			collection.libraryID = libraryID;
+			collection.name = name;
+			await collection.saveTx();
+			await this.appendRuntimeStatus("topic_collection_created", {
+				collection_id: collection.id,
+				collection_name: name,
+			});
+		}
+		this.activeCollectionID = collection.id;
+		return collection;
+	},
+
+	async ensureChildCollection(parent, name) {
+		let libraryID = Zotero.Libraries.userLibraryID;
+		let collection = (Zotero.Collections.getByLibrary(libraryID) || [])
+			.find(candidate => candidate.parentID === parent.id && candidate.name === name);
+		if (!collection) {
+			collection = new Zotero.Collection();
+			collection.libraryID = libraryID;
+			collection.parentID = parent.id;
+			collection.name = name;
+			await collection.saveTx();
+		}
+		return collection;
+	},
+
+	async ensureTopicCollections(graph = this.activeGraph) {
+		let root = await this.ensureTopicCollection(graph);
+		let overview = await this.ensureChildCollection(root, this.activeNativeMap?.collections?.overview || "01 · Topic 与演化");
+		let knowledge = await this.ensureChildCollection(root, this.activeNativeMap?.collections?.knowledge || "02 · 知识体系");
+		let research = await this.ensureChildCollection(root, this.activeNativeMap?.collections?.research || "03 · 研究问题与断言");
+		let sources = await this.ensureChildCollection(root, this.activeNativeMap?.collections?.sources || "04 · 来源阅读");
+		let history = await this.ensureChildCollection(root, this.activeNativeMap?.collections?.history || "05 · 历史版本");
+		let researchTensions = await this.ensureChildCollection(research, this.activeNativeMap?.collections?.research_tensions || "01 · 现实世界张力");
+		let researchFrontier = await this.ensureChildCollection(research, this.activeNativeMap?.collections?.research_frontier || "02 · 前沿研究问题");
+		let researchCurrent = await this.ensureChildCollection(research, this.activeNativeMap?.collections?.research_current || "03 · 当前问题卡");
+		let researchClaims = await this.ensureChildCollection(research, this.activeNativeMap?.collections?.research_claims || "04 · 待审查断言");
+		let researchReviews = await this.ensureChildCollection(research, this.activeNativeMap?.collections?.research_reviews || "05 · 共创复核");
+		this.activeOverviewCollectionID = overview.id;
+		this.activeKnowledgeCollectionID = knowledge.id;
+		this.activeResearchCollectionID = research.id;
+		this.activeSourceCollectionID = sources.id;
+		this.activeHistoryCollectionID = history.id;
+		return {
+			root, overview, knowledge, research, sources, history,
+				researchTensions, researchFrontier, researchCurrent, researchClaims, researchReviews,
+		};
+	},
+
+	async addToTopicCollection(item, collection) {
+		if (!(item.getCollections?.() || []).includes(collection.id)) {
+			item.addToCollection(collection.id);
+			if (item.isNote?.()) this.suppressedNotifierItemIDs.add(item.id);
+			try {
+				await item.saveTx();
+				await Zotero.Promise.delay(25);
+			}
+			finally {
+				this.suppressedNotifierItemIDs.delete(item.id);
+			}
+		}
+	},
+
+	async searchItems(field, value) {
+		if (!value) return [];
+		let search = new Zotero.Search();
+		search.libraryID = Zotero.Libraries.userLibraryID;
+		search.addCondition(field, "is", value);
+		let ids = await search.search();
+		return ids.length ? await Zotero.Items.getAsync(ids) : [];
+	},
+
+	async findSourceItem(source) {
+		let sourceID = source?.data?.source_id;
+		let tagged = await this.searchItems("tag", "atr-source-id:" + sourceID);
+		let existing = tagged.find(item => item.isRegularItem?.());
+		if (existing) return existing;
+
+		let candidates = [];
+		if (source?.data?.doi) candidates.push(...await this.searchItems("DOI", source.data.doi));
+		if (source?.data?.url) candidates.push(...await this.searchItems("url", source.data.url));
+		if (source?.label) candidates.push(...await this.searchItems("title", source.label));
+		existing = candidates.find(item => item.isRegularItem?.());
+		if (!existing) return null;
+
+		existing.addTag("ATR");
+		existing.addTag("atr-source-id:" + sourceID);
+		await existing.saveTx();
+		await this.appendRuntimeStatus("source_reused", {
+			source_id: sourceID,
+			item_key: existing.key,
+		});
+		return existing;
+	},
+
+	async sourceItem(source, collection = null) {
+		let sourceID = source?.data?.source_id;
+		let item = await this.findSourceItem(source);
+		if (!item) {
+			let itemType = source?.data?.source_layer === "scholarly_evidence"
+				? "journalArticle"
+				: "webpage";
+			item = new Zotero.Item(itemType);
+			item.setField("title", source?.label || sourceID || "ATR source");
+			item.setField("url", source?.data?.url || "");
+			if (itemType === "journalArticle" && source?.data?.doi) {
+				item.setField("DOI", source.data.doi);
+			}
+			item.setField("extra", "ATR source ID: " + sourceID);
+			item.addTag("ATR");
+			item.addTag("atr-source-id:" + sourceID);
+			await item.saveTx();
+			await this.appendRuntimeStatus("source_stub_created", {
+				source_id: sourceID,
+				item_key: item.key,
+			});
+		}
+		collection = collection || (await this.ensureTopicCollections()).sources;
+		await this.addToTopicCollection(item, collection);
+		return item;
+	},
+
+	markerFromNote(note) {
+		let text = this.plainNote(note?.getNote?.() || "");
+		let process = /ATR Process Run:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		let knowledge = /ATR Knowledge Node:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		let tension = /ATR Tension Node:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		let researchQuestion = /ATR Research Question Node:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		let derivedQuestion = /ATR Derived Question Node:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		let reviewAssessment = /ATR Review Assessment:\s*([^\s<]+)/.exec(text)?.[1] || null;
+		return {
+			run: /ATR Topic Run:\s*([^\s<]+)/.exec(text)?.[1] || null,
+			process,
+			source: /ATR Source ID:\s*([^\s<]+)/.exec(text)?.[1] || null,
+			claim: /ATR Claim ID:\s*([^\s<]+)/.exec(text)?.[1] || null,
+			problem: /ATR Problem ID:\s*([^\s<]+)/.exec(text)?.[1] || null,
+			knowledge,
+			tension,
+			researchQuestion,
+			derivedQuestion,
+			reviewAssessment,
+			graphNode: /ATR Graph Node:\s*([^\s<]+)/.exec(text)?.[1]
+				|| knowledge || tension || researchQuestion || derivedQuestion,
+		};
+	},
+
+	async findMarkedNote(marker) {
+		let search = new Zotero.Search();
+		search.libraryID = Zotero.Libraries.userLibraryID;
+		search.addCondition("note", "contains", marker);
+		let ids = await search.search();
+		let items = ids.length ? await Zotero.Items.getAsync(ids) : [];
+		let expected = {
+			run: /ATR Topic Run:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			process: /ATR Process Run:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			source: /ATR Source ID:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			claim: /ATR Claim ID:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			problem: /ATR Problem ID:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			knowledge: /ATR Knowledge Node:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			tension: /ATR Tension Node:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			researchQuestion: /ATR Research Question Node:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+				derivedQuestion: /ATR Derived Question Node:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+				reviewAssessment: /ATR Review Assessment:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+			graphNode: /ATR Graph Node:\s*([^\s<]+)/.exec(marker)?.[1] || null,
+		};
+		return items.find(item => {
+			if (!item.isNote?.()) return false;
+			let actual = this.markerFromNote(item);
+			for (let field of Object.keys(expected)) {
+				if (expected[field] && actual[field] !== expected[field]) return false;
+			}
+			return true;
+		}) || null;
+	},
+
+	connectedResearchLabels(source) {
+		let graph = this.activeGraph || { nodes: [], edges: [] };
+		let nodes = graph.nodes || [];
+		let edges = graph.edges || [];
+		let byID = Object.fromEntries(nodes.map(node => [node.id, node]));
+		let labels = [];
+		for (let edge of edges) {
+			if (edge.source !== source.id && edge.target !== source.id) continue;
+			let other = byID[edge.source === source.id ? edge.target : edge.source];
+			if (!["real_world_tension", "research_problem", "research_question", "derived_research_question", "claim", "knowledge_concept"].includes(other?.kind)) continue;
+			labels.push(other.label);
+		}
+		return [...new Set(labels)];
+	},
+
+	async ensureTopicNote(graph = this.activeGraph, collection = null) {
+		let run = graph?.run || this.activeRunName || "unknown";
+		let marker = "ATR Topic Run: " + run;
+		let existing = await this.findMarkedNote(marker);
+		collection = collection || (await this.ensureTopicCollections(graph)).overview;
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+
+		let nodes = graph?.nodes || [];
+		let papers = nodes.filter(node => node.kind === "paper");
+		let problems = nodes.filter(node => node.kind === "research_problem");
+		let questions = nodes.filter(node => node.kind === "research_question");
+		let subject = nodes.find(node => node.kind === "atr_v2_subject" && node.data?.active)
+			|| nodes.find(node => node.kind === "atr_v2_subject");
+		let note = new Zotero.Item("note");
+		let authority = this.activeRunRecord || {};
+		note.setNote(
+			"<h1>" + this.htmlEscape(this.topicTitle(graph)) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p><strong>ATR state:</strong> " + this.htmlEscape(subject?.data?.state || "未记录") + "</p>"
+			+ "<p><strong>视图角色:</strong> " + this.htmlEscape(authority.view_role || "未记录")
+			+ " · <strong>控制器:</strong> " + this.htmlEscape(authority.controller_kind || "未记录") + "</p>"
+			+ (authority.authority_scope === "NAVIGATION_ONLY"
+				? "<p><strong>边界:</strong> 这是历史导航视图，不是 lifecycle authority。</p>"
+				: "")
+			+ "<h2>当前研究问题</h2>"
+			+ (problems.length || questions.length
+				? "<ul>" + [...problems, ...questions].map(node => "<li>" + this.htmlEscape(node.label) + "</li>").join("") + "</ul>"
+				: "<p>当前投影尚未记录 research problem/question。</p>")
+			+ "<h2>来源阅读队列</h2>"
+			+ (papers.length
+				? "<ul>" + papers.map(node => "<li>" + this.htmlEscape(node.label) + " · " + this.htmlEscape(node.data?.source_id || "无 source id") + "</li>").join("") + "</ul>"
+				: "<p>当前投影尚未登记来源。</p>")
+			+ "<h2>我的研究笔记</h2>"
+			+ "<p>在这里综合跨文献判断；逐篇原文核对请在 Collection 中打开文献，并使用 Reader 标注或来源 review note。</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		await this.appendRuntimeStatus("topic_note_created", { run, note_key: note.key });
+		return note;
+	},
+
+	async ensureProcessNote(graph = this.activeGraph, collection = null) {
+		let run = graph?.run || this.activeRunName || "unknown";
+		let marker = "ATR Process Run: " + run;
+		collection = collection || (await this.ensureTopicCollections(graph)).overview;
+		let timeline = [...(graph?.timeline || [])]
+			.sort((left, right) => String(left.at || "").localeCompare(String(right.at || "")));
+		let diagnostics = graph?.diagnostics || [];
+		let pendingReviews = this.pendingReviewItems();
+		let eventRows = timeline.length
+			? "<ol>" + timeline.map(event => {
+				let details = [event.kind, event.id, event.review_mode ? "review=" + event.review_mode : null]
+					.filter(Boolean).join(" · ");
+				let artifacts = (event.artifact_ids || []).join("；");
+				return "<li><strong>" + this.htmlEscape(event.at || "未记录时间") + "</strong> · "
+					+ this.htmlEscape(event.label || event.kind || event.id || "未命名事件")
+					+ (details ? "<br><small>" + this.htmlEscape(details) + "</small>" : "")
+					+ (artifacts ? "<br><small>artifact: " + this.htmlEscape(artifacts) + "</small>" : "")
+					+ "</li>";
+			}).join("") + "</ol>"
+			: "<p>当前权威投影没有带时间戳的 ATR event；插件不会补造过程。</p>";
+		let diagnosticRows = diagnostics.length
+			? "<ul>" + diagnostics.map(item => "<li>" + this.htmlEscape(item) + "</li>").join("") + "</ul>"
+			: "<p>当前投影没有结构诊断。</p>";
+		let reviewRows = pendingReviews.length
+			? "<ul>" + pendingReviews.map(item => {
+				let nearest = (item.nearest_decision_objects || []).map(node => node.label).join("；");
+				return "<li><strong>" + this.htmlEscape(item.event?.review_stance || item.event?.event || "待审查输入")
+					+ "</strong> · target=" + this.htmlEscape(item.review_target_type || "unmapped")
+					+ (nearest ? "<br>最近受影响节点：" + this.htmlEscape(nearest) : "")
+					+ "<br>边界：仅请求 Codex/owner 审查，不自动改变 lifecycle。</li>";
+			}).join("") + "</ul>"
+			: "<p>当前没有由 Codex 物化的 pending review queue 项。</p>";
+		let generated =
+			"<h1>ATR 研究过程 · " + this.htmlEscape(this.topicTitle(graph)) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p><strong>只读边界：</strong>本 Note 由实际落盘的 ATR timeline 生成；它不是人的研究输入，也不会用推测补齐缺失历史。人的综合判断请写入 Topic Note 或具体节点 Note。</p>"
+			+ "<h2>实际事件与产物</h2>" + eventRows
+			+ "<h2>待审查的人类输入</h2>" + reviewRows
+			+ "<h2>当前结构缺口</h2>" + diagnosticRows;
+		let note = await this.findMarkedNote(marker);
+		if (!note) {
+			note = new Zotero.Item("note");
+			note.setNote(generated);
+			note.addToCollection(collection.id);
+			await note.saveTx();
+			await this.appendRuntimeStatus("process_note_created", { run, note_key: note.key, event_count: timeline.length });
+			return note;
+		}
+		await this.addToTopicCollection(note, collection);
+		if (this.plainNote(note.getNote()) !== this.plainNote(generated)) {
+			this.suppressedNotifierItemIDs.add(note.id);
+			try {
+				note.setNote(generated);
+				await note.saveTx();
+				await Zotero.Promise.delay(25);
+			}
+			finally {
+				this.suppressedNotifierItemIDs.delete(note.id);
+			}
+			await this.appendRuntimeStatus("process_note_refreshed", { run, note_key: note.key, event_count: timeline.length });
+		}
+		return note;
+	},
+
+	async ensureProblemNote(problem, projectionObject, collection = null) {
+		let problemID = problem?.data?.problem_id;
+		if (!problemID) throw new Error("research problem 没有稳定 problem_id");
+		let marker = projectionObject?.marker
+			|| "ATR Problem ID: " + problemID + " | ATR Graph Node: " + problem.id;
+		let existing = await this.findMarkedNote(marker);
+		collection = collection || (await this.ensureTopicCollections()).research;
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+		let graph = this.activeGraph || { nodes: [], edges: [] };
+		let byID = Object.fromEntries((graph.nodes || []).map(node => [node.id, node]));
+		let sourceLinkCandidates = (graph.edges || [])
+			.filter(edge => edge.source === problem.id || edge.target === problem.id)
+			.map(edge => ({ edge, source: byID[edge.source === problem.id ? edge.target : edge.source] }))
+			.filter(link => link.source?.kind === "paper");
+		let sourceLinkIndex = new Map();
+		let roleScore = link => ["problem_posture", "resolves", "leaves_unresolved", "does_not_establish"]
+			.filter(field => link.edge?.data?.[field]).length;
+		for (let link of sourceLinkCandidates) {
+			let previous = sourceLinkIndex.get(link.source.id);
+			if (!previous || roleScore(link) > roleScore(previous)) sourceLinkIndex.set(link.source.id, link);
+		}
+		let sourceLinks = [...sourceLinkIndex.values()];
+		let worlds = problem.data?.worlds || problem.data?.counterfactual_worlds || [];
+		let note = new Zotero.Item("note");
+		let historical = projectionObject?.review_role === "HISTORICAL_VERSION";
+		note.setNote(
+			"<h1>" + (historical ? "历史问题版本" : "研究问题") + " · " + this.htmlEscape(problem.label) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p>ATR Review Stance: " + (historical ? "HISTORICAL_REFERENCE_ONLY" : "PENDING") + "</p>"
+			+ (historical ? "<p><strong>边界：</strong>该 Note 保留已被后续版本替代的历史判断，不是当前 lifecycle target。</p>" : "")
+			+ "<h2>竞争世界</h2><ul>"
+			+ worlds.map(world => "<li>" + this.htmlEscape(typeof world === "string" ? world : (world.label || "世界") + "：" + (world.explanation || "")) + "</li>").join("")
+			+ "</ul><h2>最小判别</h2><p>" + this.htmlEscape(problem.data?.discriminator || problem.data?.smallest_discriminator || "未记录") + "</p>"
+			+ "<h2>证伪条件</h2><p>" + this.htmlEscape(problem.data?.falsifier || problem.data?.minimum_falsifier || "未记录") + "</p>"
+			+ "<h2>论文在该问题上的作用</h2><ul>" + sourceLinks.map(({ edge, source }) => {
+				let role = edge.data || {};
+				return "<li><strong>" + this.htmlEscape(source.label) + "</strong> · " + this.htmlEscape(source.data?.source_id || "")
+					+ "<br>问题姿态：" + this.htmlEscape(role.problem_posture || "未记录")
+					+ "<br>已解决：" + this.htmlEscape(role.resolves || "未记录")
+					+ "<br>仍未解决：" + this.htmlEscape(role.leaves_unresolved || "未记录")
+					+ "<br>不能推出：" + this.htmlEscape(role.does_not_establish || "未记录") + "</li>";
+			}).join("") + "</ul>"
+			+ "<h2>我的问题审查</h2><p>这里记录：问题是否值得保留、哪个世界更可信、还缺什么原文或判别证据。</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		return note;
+	},
+
+	async ensureClaimNote(claim, projectionObject, collection = null) {
+		let claimID = claim?.data?.claim_id;
+		if (!claimID) throw new Error("claim 没有稳定 claim_id");
+		let marker = projectionObject?.marker
+			|| "ATR Claim ID: " + claimID + " | ATR Graph Node: " + claim.id;
+		let existing = await this.findMarkedNote(marker);
+		collection = collection || (await this.ensureTopicCollections()).research;
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+		let note = new Zotero.Item("note");
+		let historical = projectionObject?.review_role === "HISTORICAL_VERSION";
+		note.setNote(
+			"<h1>" + (historical ? "历史断言版本" : "待审查断言") + " · " + this.htmlEscape(claim.label) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p>ATR Review Stance: " + (historical ? "HISTORICAL_REFERENCE_ONLY" : "PENDING") + "</p>"
+			+ (historical ? "<p><strong>边界：</strong>该 Note 只保留历史断言，不是当前 lifecycle target。</p>" : "")
+			+ "<p>ATR Source Locator: 请填写支持或反驳该断言的原文定位</p>"
+			+ "<h2>适用条件</h2><p>" + this.htmlEscape(JSON.stringify(claim.data?.conditions || {})) + "</p>"
+			+ "<h2>禁止外推</h2><p>" + this.htmlEscape((claim.data?.forbidden_claims || []).join("；") || "未记录") + "</p>"
+			+ "<h2>我的断言审查</h2><p>这里记录支持、限定、反驳、不确定性或新问题。</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		return note;
+	},
+
+	async ensureReviewAssessmentNote(assessment, projectionObject, collection = null) {
+		let marker = projectionObject?.marker
+			|| "ATR Review Assessment: " + assessment.data?.assessment_id + " | ATR Graph Node: " + assessment.id;
+		let existing = await this.findMarkedNote(marker);
+		collection = collection || (await this.ensureTopicCollections()).researchReviews;
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+		let data = assessment.data || {};
+		let reviewer = data.reviewer || {};
+		let evidence = data.evidence_basis || [];
+		let impact = data.impact || {};
+		let note = new Zotero.Item("note");
+		note.setNote(
+			"<h1>共创复核 · " + this.htmlEscape(data.outcome || "UNSPECIFIED") + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p><strong>只读边界：</strong>这是已落盘的独立 review artifact。请回到被影响的知识/问题/断言 Note 继续讨论，不要在这里改写复核历史。</p>"
+			+ "<h2>复核结论</h2><p>" + this.htmlEscape(data.finding || "未记录") + "</p>"
+			+ "<h2>复核者与隔离</h2><p>" + this.htmlEscape(reviewer.id || "未记录")
+			+ " · " + this.htmlEscape(reviewer.role || "未记录")
+			+ " · 与 disposition owner 隔离=" + this.htmlEscape(String(reviewer.isolated_from_disposition_owner === true)) + "</p>"
+			+ "<h2>证据依据及边界</h2><ul>" + evidence.map(row => "<li><strong>"
+				+ this.htmlEscape(row.kind || "未记录") + " · " + this.htmlEscape(row.ref || "未记录") + "</strong>"
+				+ (row.locator ? "<br>定位：" + this.htmlEscape(row.locator) : "")
+				+ "<br>观察：" + this.htmlEscape(row.observation || "未记录")
+				+ "<br>不能推出：" + this.htmlEscape(row.does_not_establish || "未记录") + "</li>").join("") + "</ul>"
+			+ "<h2>保留的对象</h2><p>" + this.htmlEscape((impact.preserve_object_ids || []).join("；") || "无") + "</p>"
+			+ "<h2>需要另写新版本的对象</h2><p>" + this.htmlEscape((impact.reconsider_object_ids || []).join("；") || "无") + "</p>"
+			+ "<h2>后续产物</h2><p>" + this.htmlEscape(data.required_followup_artifact_kind || "NONE") + "</p>"
+			+ "<h2>控制器边界</h2><p>" + this.htmlEscape(data.controller_boundary || "未记录") + "</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		return note;
+	},
+
+	researchCollectionName(object) {
+		let prefix = {
+			tension_note: "张力",
+			frontier_question_note: "前沿问题",
+			problem_note: "问题卡",
+			derived_question_note: "细粒度问题",
+			claim_note: "断言",
+			review_assessment_note: "共创复核",
+		}[object.object_kind] || "研究节点";
+		let identity = String(object.graph_node_id || object.atr_id).split(":").pop();
+		return (prefix + " · " + identity + " · " + object.title).slice(0, 180).trim();
+	},
+
+	async ensureResearchNodeNote(node, projectionObject, collection) {
+		let marker = projectionObject.marker;
+		let existing = await this.findMarkedNote(marker);
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+		let linked = (projectionObject.linked_source_ids || [])
+			.map(sourceID => this.sourceByID(sourceID)).filter(Boolean);
+		let data = node.data || {};
+		let title, sections;
+		if (node.kind === "real_world_tension") {
+			title = "现实世界张力";
+			sections = [
+				["行动者", data.actor],
+				["现行做法", data.incumbent_practice],
+				["现实后果", data.material_consequence],
+				["候选构念", data.candidate_construct],
+				["竞争解释", (data.alternative_explanations || []).join("；")],
+				["不能推出", data.does_not_establish],
+			];
+		}
+		else if (node.kind === "research_question") {
+			title = "前沿研究问题";
+			sections = [
+				["竞争解释", (data.explanations || []).join("；")],
+				["刷新条件", data.freshness],
+				["来源属性", data.source],
+			];
+		}
+		else {
+			title = "细粒度研究问题";
+			sections = [
+				["状态", data.status],
+				["最小判别", data.smallest_discriminator],
+				["不能推出", data.does_not_establish],
+			];
+		}
+		let note = new Zotero.Item("note");
+		note.setNote(
+			"<h1>" + title + " · " + this.htmlEscape(node.label) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p>ATR Review Stance: PENDING</p>"
+			+ sections.map(([heading, value]) => "<h2>" + this.htmlEscape(heading) + "</h2><p>"
+				+ this.htmlEscape(value || "未记录") + "</p>").join("")
+			+ "<h2>关联原始来源</h2><ul>"
+			+ linked.map(source => "<li>" + this.htmlEscape(source.label) + " · "
+				+ this.htmlEscape(source.data?.source_id || "") + "</li>").join("")
+			+ "</ul><h2>我的审查与追问</h2>"
+			+ "<p>请核对来源、限定当前表述，并记录支持、反驳、不确定性或新的细粒度问题。</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		return note;
+	},
+
+	async ensureResearchProjection(graph, collections, sourceItemsByID) {
+		let supportedKinds = new Set([
+			"tension_note", "frontier_question_note", "problem_note",
+			"derived_question_note", "claim_note", "review_assessment_note",
+		]);
+		let objects = (this.activeNativeMap?.objects || [])
+			.filter(object => supportedKinds.has(object.object_kind));
+		let byGraphID = Object.fromEntries(objects.map(object => [object.graph_node_id, object]));
+		let graphNodes = Object.fromEntries((graph.nodes || []).map(node => [node.id, node]));
+		let createdCollections = new Map();
+		let visiting = new Set();
+		let notes = [];
+		let ensureObject = async object => {
+			if (createdCollections.has(object.graph_node_id)) return createdCollections.get(object.graph_node_id);
+			if (visiting.has(object.graph_node_id)) throw new Error("research collection hierarchy contains a cycle: " + object.graph_node_id);
+			visiting.add(object.graph_node_id);
+			let parent;
+			if (object.review_role === "HISTORICAL_VERSION") parent = collections.history;
+			else if (object.object_kind === "tension_note") parent = collections.researchTensions;
+			else if (object.object_kind === "frontier_question_note") parent = collections.researchFrontier;
+			else if (object.object_kind === "claim_note") parent = collections.researchClaims;
+			else if (object.object_kind === "review_assessment_note") parent = collections.researchReviews;
+			else parent = collections.researchCurrent;
+			if (object.object_kind === "derived_question_note"
+				&& object.parent_graph_node_id && byGraphID[object.parent_graph_node_id]) {
+				parent = await ensureObject(byGraphID[object.parent_graph_node_id]);
+			}
+			let collection = await this.ensureChildCollection(parent, this.researchCollectionName(object));
+			createdCollections.set(object.graph_node_id, collection);
+			visiting.delete(object.graph_node_id);
+			let node = graphNodes[object.graph_node_id];
+			if (node) {
+				let note;
+				if (object.object_kind === "problem_note") note = await this.ensureProblemNote(node, object, collection);
+				else if (object.object_kind === "claim_note") note = await this.ensureClaimNote(node, object, collection);
+				else if (object.object_kind === "review_assessment_note") note = await this.ensureReviewAssessmentNote(node, object, collection);
+				else note = await this.ensureResearchNodeNote(node, object, collection);
+				notes.push(note);
+			}
+			for (let sourceID of object.linked_source_ids || []) {
+				let item = sourceItemsByID.get(sourceID);
+				if (item) await this.addToTopicCollection(item, collection);
+			}
+			return collection;
+		};
+		for (let object of objects) await ensureObject(object);
+		return { collectionCount: createdCollections.size, notes };
+	},
+
+	async ensureKnowledgeNote(node, projectionObject, collection) {
+		let marker = projectionObject.marker;
+		let existing = await this.findMarkedNote(marker);
+		if (existing) {
+			await this.addToTopicCollection(existing, collection);
+			return existing;
+		}
+		let linked = (projectionObject.linked_source_ids || [])
+			.map(sourceID => this.sourceByID(sourceID)).filter(Boolean);
+		let note = new Zotero.Item("note");
+		let historical = projectionObject?.review_role === "HISTORICAL_VERSION";
+		note.setNote(
+			"<h1>" + (historical ? "历史知识版本" : "知识节点") + " · " + this.htmlEscape(node.label) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p>ATR Review Stance: " + (historical ? "HISTORICAL_REFERENCE_ONLY" : "PENDING") + "</p>"
+			+ (historical ? "<p><strong>边界：</strong>该 Note 保留被新 artifact 替代的知识图版本，不是当前 review target。</p>" : "")
+			+ "<h2>定义</h2><p>" + this.htmlEscape(node.data?.definition || "尚未记录可审查定义") + "</p>"
+			+ "<h2>适用边界</h2><p>" + this.htmlEscape(node.data?.does_not_establish || node.data?.does_not_support || "尚未记录禁止外推边界") + "</p>"
+			+ "<h2>关联原始来源</h2><ul>"
+			+ linked.map(source => "<li>" + this.htmlEscape(source.label) + " · " + this.htmlEscape(source.data?.source_id || "") + "</li>").join("")
+			+ "</ul><h2>我的理解与追问</h2>"
+			+ "<p>请用自己的语言重述概念、记录不理解之处，并指出哪一篇原文支持或挑战当前定义。</p>"
+		);
+		note.addToCollection(collection.id);
+		await note.saveTx();
+		return note;
+	},
+
+	knowledgeCollectionName(object) {
+		let identity = String(object.graph_node_id || object.atr_id).split(":").pop();
+		return ("知识 · " + identity + " · " + object.title).slice(0, 180).trim();
+	},
+
+	async ensureKnowledgeProjection(graph, collections, sourceItemsByID) {
+		let objects = (this.activeNativeMap?.objects || []).filter(object => object.object_kind === "knowledge_note");
+		let byGraphID = Object.fromEntries(objects.map(object => [object.graph_node_id, object]));
+		let graphNodes = Object.fromEntries((graph.nodes || []).map(node => [node.id, node]));
+		let createdCollections = new Map();
+		let visiting = new Set();
+		let notes = [];
+		let ensureObject = async object => {
+			if (createdCollections.has(object.graph_node_id)) return createdCollections.get(object.graph_node_id);
+			if (visiting.has(object.graph_node_id)) throw new Error("knowledge collection hierarchy contains a cycle: " + object.graph_node_id);
+			visiting.add(object.graph_node_id);
+			let parent = object.review_role === "HISTORICAL_VERSION" ? collections.history : collections.knowledge;
+			if (object.parent_graph_node_id && byGraphID[object.parent_graph_node_id]) {
+				parent = await ensureObject(byGraphID[object.parent_graph_node_id]);
+			}
+			let collection = await this.ensureChildCollection(parent, this.knowledgeCollectionName(object));
+			createdCollections.set(object.graph_node_id, collection);
+			visiting.delete(object.graph_node_id);
+			let node = graphNodes[object.graph_node_id];
+			if (node) notes.push(await this.ensureKnowledgeNote(node, object, collection));
+			for (let sourceID of object.linked_source_ids || []) {
+				let item = sourceItemsByID.get(sourceID);
+				if (item) await this.addToTopicCollection(item, collection);
+			}
+			return collection;
+		};
+		for (let object of objects) await ensureObject(object);
+		return { collectionCount: createdCollections.size, notes };
+	},
+
+	async ensureSourceReviewNote(source, item = null) {
+		let sourceID = source?.data?.source_id;
+		let marker = "ATR Source ID: " + sourceID;
+		let existing = await this.findMarkedNote(marker);
+		if (existing) return existing;
+		item = item || await this.sourceItem(source);
+		let note = new Zotero.Item("note");
+		note.parentItemID = item.id;
+		note.setNote(
+			"<h1>ATR 来源核对 · " + this.htmlEscape(source?.label || sourceID) + "</h1>"
+			+ "<p>" + this.htmlEscape(marker) + "</p>"
+			+ "<p>ATR Review Stance: PENDING</p>"
+			+ "<p>ATR Source Locator: 请填写页码、章节、高亮或段落定位</p>"
+			+ "<h2>ATR 当前记录的支持边界</h2><p>" + this.htmlEscape(source?.data?.supports || "未记录") + "</p>"
+			+ "<h2>不能由该来源推出</h2><p>" + this.htmlEscape(source?.data?.does_not_support || source?.data?.does_not_establish || "未记录") + "</p>"
+			+ "<h2>我的原文核对</h2><p>请写下摘录、定位、限定条件、反例或新问题。</p>"
+		);
+		await note.saveTx();
+		await this.appendRuntimeStatus("source_review_note_created", {
+			source_id: sourceID,
+			note_key: note.key,
+		});
+		return note;
+	},
+
+	async openNativeNote(note) {
+		let editor = await Zotero.Notes.open(note.id, null, {
+			openInWindow: false,
+			allowDuplicate: false,
+		});
+		await this.appendRuntimeStatus("native_note_tab_opened", {
+			note_key: note.key,
+		});
+		return editor;
+	},
+
+	async openSourceInReader(source, item = null) {
+		item = item || await this.sourceItem(source);
+		let annotation = item.isAnnotation?.() ? item : null;
+		let attachment = annotation
+			? Zotero.Items.get(annotation.parentItemID)
+			: item.isAttachment?.() ? item : await item.getBestAttachment();
+		if (!attachment) {
+			throw new Error("该 Zotero 条目还没有可在 Reader 中打开的附件。请先为条目添加 PDF/EPUB。 ");
+		}
+		let location = annotation ? { annotationID: annotation.key } : null;
+		await Zotero.Reader.open(attachment.id, location, {
+			openInWindow: false,
+			allowDuplicate: false,
+		});
+		await this.appendRuntimeStatus("native_reader_tab_opened", {
+			source_id: source?.data?.source_id,
+			item_key: item.key,
+			attachment_key: attachment.key,
+			annotation_key: annotation?.key || null,
+		});
+		if (annotation) {
+			await this.appendRuntimeStatus("native_reader_annotation_opened", {
+				source_id: source?.data?.source_id,
+				attachment_key: attachment.key,
+				annotation_key: annotation.key,
+			});
+		}
+		return attachment;
+	},
+
+	async syncTopic(graph = this.activeGraph) {
+		let collections = await this.ensureTopicCollections(graph);
+		let collection = collections.root;
+		let note = await this.ensureTopicNote(graph, collections.overview);
+		let processNote = await this.ensureProcessNote(graph, collections.overview);
+		await this.addToTopicCollection(note, collection);
+		await this.addToTopicCollection(processNote, collection);
+		let byID = Object.fromEntries((graph?.nodes || []).map(node => [node.id, node]));
+		let sources = (this.activeNativeMap?.objects || [])
+			.filter(object => object.object_kind === "source_item")
+			.map(object => byID[object.graph_node_id])
+			.filter(Boolean);
+		let items = [];
+		let sourceItemsByID = new Map();
+		for (let source of sources) {
+			let item = await this.sourceItem(source, collections.sources);
+			items.push(item);
+			sourceItemsByID.set(source.data?.source_id, item);
+		}
+		let knowledge = await this.ensureKnowledgeProjection(graph, collections, sourceItemsByID);
+		let research = await this.ensureResearchProjection(graph, collections, sourceItemsByID);
+		await this.appendRuntimeStatus("native_topic_synced", {
+			collection_id: collection.id,
+			note_key: note.key,
+			process_note_key: processNote.key,
+			source_count: items.length,
+			research_collection_count: research.collectionCount,
+			research_note_count: research.notes.length,
+			knowledge_collection_count: knowledge.collectionCount,
+			knowledge_note_count: knowledge.notes.length,
+		});
+		return {
+			collection, note, processNote, sources, items,
+			decisionNotes: research.notes,
+			researchNotes: research.notes,
+			knowledgeNotes: knowledge.notes,
+			collections,
+		};
+	},
+
+	async openTopic(run, window) {
+		try {
+			let graph = await this.loadProjection(run || await this.defaultRun());
+			let synced = await this.syncTopic(graph);
+			let { collection, note } = synced;
+			window.Zotero_Tabs.select("zotero-pane");
+			await window.ZoteroPane.collectionsView.selectCollection(collection.id);
+			await this.openNativeNote(note);
+			return synced;
+		}
+		catch (error) {
+			this.log("could not open native topic: " + error);
+			await this.appendRuntimeStatus("native_topic_open_failed", { error: String(error) });
+			Services.prompt.alert(window, "ATR Research", "无法打开 ATR Topic：\n" + error);
+		}
+	},
+
+	sourceIDFromItem(item) {
+		if (!item) return null;
+		let current = item;
+		if (current.isAnnotation?.()) current = Zotero.Items.get(current.parentItemID);
+		if (current?.isAttachment?.() && current.parentItemID) current = Zotero.Items.get(current.parentItemID);
+		if (current?.isNote?.() && current.parentItemID) current = Zotero.Items.get(current.parentItemID);
+		let tag = (current?.getTags?.() || []).map(entry => entry.tag)
+			.find(value => value.startsWith("atr-source-id:"));
+		if (tag) return tag.slice("atr-source-id:".length);
+		return /ATR source ID:\s*([^\s]+)/.exec(current?.getField?.("extra") || "")?.[1] || null;
+	},
+
+	sourceByID(sourceID) {
+		return (this.activeGraph?.nodes || [])
+			.find(node => node.kind === "paper" && node.data?.source_id === sourceID) || null;
+	},
+
+	hasATRContext(item) {
+		if (!item) return false;
+		if (this.sourceIDFromItem(item)) return true;
+		if (item.isNote?.()) {
+			let marker = this.markerFromNote(item);
+			return !!(marker.run || marker.process || marker.source || marker.claim || marker.problem || marker.knowledge
+				|| marker.tension || marker.researchQuestion || marker.derivedQuestion);
+		}
+		return false;
+	},
+
+	htmlElement(doc, name, text = null) {
+		let element = doc.createElementNS("http://www.w3.org/1999/xhtml", name);
+		if (text !== null) element.textContent = text;
+		return element;
+	},
+
+	appendPaneText(doc, body, text, strong = false) {
+		let paragraph = this.htmlElement(doc, "p", text);
+		paragraph.style.margin = "6px 0";
+		paragraph.style.whiteSpace = "normal";
+		if (strong) paragraph.style.fontWeight = "600";
+		body.append(paragraph);
+		return paragraph;
+	},
+
+	appendPaneButton(doc, body, label, callback, primary = false) {
+		let button = this.htmlElement(doc, "button", label);
+		button.type = "button";
+		button.style.margin = "4px 6px 4px 0";
+		button.style.padding = "5px 9px";
+		if (primary) button.style.fontWeight = "600";
+		button.addEventListener("click", async () => {
+			button.disabled = true;
+			try {
+				await callback();
+			}
+			catch (error) {
+				Services.prompt.alert(doc.defaultView, "ATR Research", String(error));
+			}
+			finally {
+				button.disabled = false;
+			}
+		});
+		body.append(button);
+		return button;
+	},
+
+	async setReviewStance(note, stance) {
+		let html = note.getNote();
+		let line = "ATR Review Stance: " + stance;
+		if (/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING|HISTORICAL_REFERENCE_ONLY)/.test(html)) {
+			html = html.replace(
+				/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING|HISTORICAL_REFERENCE_ONLY)/,
+				line,
+			);
+		}
+		else {
+			html = "<p>" + line + "</p>" + html;
+		}
+		note.setNote(html);
+		await note.saveTx();
+		await Zotero.Promise.delay(50);
+		await this.appendRuntimeStatus("human_review_stance_selected", {
+			note_key: note.key,
+			stance,
+		});
+		return note;
+	},
+
+	appendReviewStanceButtons(doc, body, noteProvider) {
+		this.appendPaneText(doc, body, "我的判断（只生成待审查输入）：", true);
+		for (let [label, stance] of [
+			["支持", "SUPPORTS"],
+			["需要限定", "QUALIFIES"],
+			["反驳", "CHALLENGES"],
+			["尚不能判断", "UNSURE"],
+			["提出新问题", "NEW_QUESTION"],
+		]) {
+			this.appendPaneButton(doc, body, label, async () => {
+				let note = await noteProvider();
+				await this.setReviewStance(note, stance);
+				await this.openNativeNote(note);
+			});
+		}
+	},
+
+	appendPendingReviewSummary(doc, body, graphNodeID = null, sourceID = null) {
+		let items = this.pendingReviewItems(graphNodeID, sourceID);
+		if (!items.length) return;
+		this.appendPaneText(doc, body, "待 Codex/owner 审查的人类输入：" + items.length, true);
+		let nearest = [...new Set(items.flatMap(item =>
+			(item.nearest_decision_objects || []).map(node => node.label)
+		))].slice(0, 3);
+		if (nearest.length) this.appendPaneText(doc, body, "最近受影响节点：" + nearest.join("；"));
+		this.appendPaneText(doc, body, "这些输入尚未改变 ATR lifecycle 或历史路线。");
+	},
+
+	async ensureActiveGraph() {
+		if (this.activeGraph) return this.activeGraph;
+		return this.loadProjection(await this.defaultRun());
+	},
+
+	async renderItemPane({ doc, body, item, setSectionSummary }) {
+		body.replaceChildren();
+		await this.ensureActiveGraph();
+		let marker = item.isNote?.() ? this.markerFromNote(item) : {};
+		let decisionNode = marker.graphNode
+			? (this.activeGraph.nodes || []).find(node => node.id === marker.graphNode)
+			: marker.problem
+				? (this.activeGraph.nodes || []).find(node => node.kind === "research_problem" && node.data?.problem_id === marker.problem)
+				: marker.claim
+					? (this.activeGraph.nodes || []).find(node => node.kind === "claim" && node.data?.claim_id === marker.claim)
+					: null;
+		let sourceID = marker.source || this.sourceIDFromItem(item);
+		let source = sourceID ? this.sourceByID(sourceID) : null;
+		let nativeObject = decisionNode
+			? (this.activeNativeMap?.objects || []).find(object => object.graph_node_id === decisionNode.id)
+			: null;
+
+		if (marker.process) {
+			setSectionSummary("ATR 实际研究过程 · " + this.topicTitle());
+			this.appendPaneText(doc, body, this.topicTitle(), true);
+			this.appendPaneText(doc, body, "已记录事件：" + (this.activeGraph.timeline || []).length);
+			this.appendPaneText(doc, body, "该 Note 只投影实际落盘事件，不补造缺失历史。");
+			this.appendPendingReviewSummary(doc, body);
+			this.appendPaneButton(doc, body, "打开 Topic Note 写综合判断", async () => {
+				await this.openNativeNote(await this.ensureTopicNote());
+			}, true);
+			return;
+		}
+
+		if (marker.reviewAssessment && decisionNode?.kind === "human_review_assessment") {
+			setSectionSummary("共创复核 · " + (decisionNode.data?.outcome || "UNSPECIFIED"));
+			this.appendPaneText(doc, body, decisionNode.data?.finding || "未记录复核结论", true);
+			this.appendPaneText(doc, body, "后续产物：" + (decisionNode.data?.required_followup_artifact_kind || "NONE"));
+			this.appendPaneText(doc, body, "该复核不会自行改变 lifecycle；旧节点和旧边继续作为历史保留。");
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let targets = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id
+					&& ["preserves_object_after_review", "requests_new_version_after_review"].includes(edge.relation))
+				.map(edge => byID[edge.target]).filter(Boolean);
+			for (let target of targets) {
+				if (target.kind === "paper") {
+					this.appendPaneButton(doc, body, "阅读 · " + target.label, () => this.openSourceInReader(target));
+					continue;
+				}
+				let object = (this.activeNativeMap?.objects || []).find(candidate => candidate.graph_node_id === target.id);
+				if (object?.marker) this.appendPaneButton(doc, body, "打开 · " + target.label, async () => {
+					let targetNote = await this.findMarkedNote(object.marker);
+					if (targetNote) await this.openNativeNote(targetNote);
+				});
+			}
+			this.appendPaneButton(doc, body, "打开实际研究过程", async () => this.openNativeNote(await this.ensureProcessNote()), true);
+			return;
+		}
+
+		if (marker.run) {
+			setSectionSummary("ATR Topic · " + this.topicTitle());
+			this.appendPaneText(doc, body, this.topicTitle(), true);
+			let subject = (this.activeGraph.nodes || [])
+				.find(node => node.kind === "atr_v2_subject" && node.data?.active);
+			this.appendPaneText(doc, body, "当前阶段：" + (subject?.data?.state || "未记录"));
+			this.appendPendingReviewSummary(doc, body);
+			this.appendPaneButton(doc, body, "打开实际研究过程", async () => {
+				await this.openNativeNote(await this.ensureProcessNote());
+			}, true);
+			this.appendPaneButton(doc, body, "定位 Topic Collection", async () => {
+				let collection = await this.ensureTopicCollection();
+				let win = Zotero.getMainWindow();
+				win.Zotero_Tabs.select("zotero-pane");
+				await win.ZoteroPane.collectionsView.selectCollection(collection.id);
+			}, true);
+			let firstSource = (this.activeGraph.nodes || [])
+				.find(node => node.kind === "paper" && node.data?.source_id);
+			if (firstSource) {
+				this.appendPaneButton(doc, body, "打开第一篇来源", () => this.openSourceInReader(firstSource));
+			}
+			return;
+		}
+
+		if (decisionNode?.kind === "knowledge_concept") {
+			setSectionSummary("知识节点 · " + decisionNode.label);
+			this.appendPaneText(doc, body, decisionNode.label, true);
+			this.appendPaneText(doc, body, "定义：" + (decisionNode.data?.definition || "尚未记录可审查定义"));
+			this.appendPaneText(doc, body, "不能推出：" + (decisionNode.data?.does_not_establish || "尚未记录边界"));
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let linkedSources = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id || edge.target === decisionNode.id)
+				.map(edge => byID[edge.source === decisionNode.id ? edge.target : edge.source])
+				.filter(node => node?.kind === "paper");
+			for (let linked of linkedSources.slice(0, 8)) {
+				this.appendPaneButton(doc, body, "阅读 · " + linked.label, () => this.openSourceInReader(linked));
+			}
+			this.appendPendingReviewSummary(doc, body, decisionNode.id);
+			if (item.isNote?.() && nativeObject?.review_role !== "HISTORICAL_VERSION") {
+				this.appendReviewStanceButtons(doc, body, async () => item);
+			}
+			this.appendPaneButton(doc, body, "打开 Topic Note", async () => this.openNativeNote(await this.ensureTopicNote()));
+			return;
+		}
+
+		if (["real_world_tension", "research_question", "derived_research_question"].includes(decisionNode?.kind)) {
+			let typeLabel = {
+				real_world_tension: "现实世界张力",
+				research_question: "前沿研究问题",
+				derived_research_question: "细粒度研究问题",
+			}[decisionNode.kind];
+			setSectionSummary(typeLabel + " · " + decisionNode.label);
+			this.appendPaneText(doc, body, decisionNode.label, true);
+			if (decisionNode.kind === "real_world_tension") {
+				this.appendPaneText(doc, body, "行动者：" + (decisionNode.data?.actor || "未记录"));
+				this.appendPaneText(doc, body, "现实后果：" + (decisionNode.data?.material_consequence || "未记录"));
+				this.appendPaneText(doc, body, "不能推出：" + (decisionNode.data?.does_not_establish || "未记录"));
+			}
+			else if (decisionNode.kind === "research_question") {
+				this.appendPaneText(doc, body, "竞争解释：" + ((decisionNode.data?.explanations || []).join("；") || "未记录"));
+				this.appendPaneText(doc, body, "刷新条件：" + (decisionNode.data?.freshness || "未记录"));
+			}
+			else {
+				this.appendPaneText(doc, body, "最小判别：" + (decisionNode.data?.smallest_discriminator || "未记录"));
+				this.appendPaneText(doc, body, "不能推出：" + (decisionNode.data?.does_not_establish || "未记录"));
+			}
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let linkedSources = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id || edge.target === decisionNode.id)
+				.map(edge => byID[edge.source === decisionNode.id ? edge.target : edge.source])
+				.filter(node => node?.kind === "paper");
+			for (let linked of linkedSources.slice(0, 8)) {
+				this.appendPaneButton(doc, body, "阅读 · " + linked.label, () => this.openSourceInReader(linked));
+			}
+			this.appendPendingReviewSummary(doc, body, decisionNode.id);
+			if (item.isNote?.() && nativeObject?.review_role !== "HISTORICAL_VERSION") {
+				this.appendReviewStanceButtons(doc, body, async () => item);
+			}
+			this.appendPaneButton(doc, body, "打开 Topic Note", async () => this.openNativeNote(await this.ensureTopicNote()));
+			return;
+		}
+
+		if (decisionNode) {
+			let isProblem = decisionNode.kind === "research_problem";
+			setSectionSummary((isProblem ? "研究问题" : "待审查断言") + " · " + decisionNode.label);
+			this.appendPaneText(doc, body, decisionNode.label, true);
+			if (isProblem) {
+				this.appendPaneText(doc, body, "最小判别：" + (decisionNode.data?.discriminator || decisionNode.data?.smallest_discriminator || "未记录"));
+				this.appendPaneText(doc, body, "证伪条件：" + (decisionNode.data?.falsifier || decisionNode.data?.minimum_falsifier || "未记录"));
+			}
+			else {
+				this.appendPaneText(doc, body, "状态：" + (decisionNode.data?.status || "未记录"));
+				this.appendPaneText(doc, body, "禁止外推：" + ((decisionNode.data?.forbidden_claims || []).join("；") || "未记录"));
+			}
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let linkedSources = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id || edge.target === decisionNode.id)
+				.map(edge => byID[edge.source === decisionNode.id ? edge.target : edge.source])
+				.filter(node => node?.kind === "paper");
+			for (let linked of linkedSources.slice(0, 5)) {
+				this.appendPaneButton(doc, body, "阅读 · " + linked.label, () => this.openSourceInReader(linked));
+			}
+			this.appendPendingReviewSummary(doc, body, decisionNode.id);
+			if (item.isNote?.() && nativeObject?.review_role !== "HISTORICAL_VERSION") {
+				this.appendReviewStanceButtons(doc, body, async () => item);
+			}
+			this.appendPaneButton(doc, body, "打开 Topic Note", async () => this.openNativeNote(await this.ensureTopicNote()));
+			return;
+		}
+
+		if (!source) {
+			setSectionSummary("当前条目没有 ATR 来源映射");
+			this.appendPaneText(doc, body, "当前条目带有 ATR marker，但不在当前 topic 投影中。历史映射不会被自动改写。");
+			return;
+		}
+
+		setSectionSummary(sourceID + " · " + source.label);
+		this.appendPaneText(doc, body, source.label, true);
+		this.appendPaneText(doc, body, "来源支持：" + (source.data?.supports || "未记录"));
+		this.appendPaneText(doc, body, "不能推出：" + (source.data?.does_not_support || source.data?.does_not_establish || "未记录"));
+		let related = this.connectedResearchLabels(source).slice(0, 4);
+		if (related.length) {
+			this.appendPaneText(doc, body, "关联问题/断言：" + related.join(" · "));
+		}
+		this.appendPendingReviewSummary(doc, body, null, sourceID);
+		let readerTarget = item;
+		let sourceItem = item;
+		if (sourceItem.isAnnotation?.() && sourceItem.parentItemID) {
+			let attachment = Zotero.Items.get(sourceItem.parentItemID);
+			if (attachment?.parentItemID) sourceItem = Zotero.Items.get(attachment.parentItemID);
+		}
+		if (sourceItem.isNote?.() && sourceItem.parentItemID) sourceItem = Zotero.Items.get(sourceItem.parentItemID);
+		if (sourceItem.isAttachment?.() && sourceItem.parentItemID) sourceItem = Zotero.Items.get(sourceItem.parentItemID);
+		this.appendPaneButton(doc, body, item.isAnnotation?.() ? "定位到这条高亮" : "阅读文献", () => this.openSourceInReader(source, readerTarget), true);
+		this.appendPaneButton(doc, body, "打开来源 Review Note", async () => {
+			let note = await this.ensureSourceReviewNote(source, sourceItem);
+			await this.openNativeNote(note);
+		});
+		this.appendReviewStanceButtons(doc, body, async () => this.ensureSourceReviewNote(source, sourceItem));
+		this.appendPaneButton(doc, body, "打开 Topic Note", async () => {
+			let note = await this.ensureTopicNote();
+			await this.openNativeNote(note);
+		});
+	},
+
+	async registerItemPane() {
+		if (this.sectionID) return;
+		this.sectionID = Zotero.ItemPaneManager.registerSection({
+			paneID: "atr-research-context",
+			pluginID: this.id,
+			header: {
+				l10nID: "atr-item-pane-header",
+				icon: "chrome://zotero/skin/16/universal/book.svg",
+			},
+			sidenav: {
+				l10nID: "atr-item-pane-sidenav",
+				icon: "chrome://zotero/skin/20/universal/save.svg",
+			},
+			onItemChange: ({ item, setEnabled }) => {
+				setEnabled(this.hasATRContext(item));
+				return true;
+			},
+			onRender: ({ body }) => {
+				body.replaceChildren();
+			},
+			onAsyncRender: props => this.renderItemPane(props),
+		});
+		this.log("native item pane section registered: " + this.sectionID);
+		await this.appendRuntimeStatus("native_item_pane_registered", {
+			pane_id: this.sectionID,
+		});
+	},
+
+	unregisterItemPane() {
+		if (!this.sectionID) return;
+		Zotero.ItemPaneManager.unregisterSection(this.sectionID);
+		this.sectionID = null;
+	},
+
+	async noteChanged(item, extraData) {
+		if (this.suppressedNotifierItemIDs.has(item.id)) return;
+		let noteHTML = item.getNote();
+		let noteText = this.plainNote(noteHTML);
+		let marker = this.markerFromNote(item);
+		if (marker.reviewAssessment) return;
+		if (!marker.run && !marker.source && !marker.claim && !marker.problem && !marker.knowledge
+			&& !marker.tension && !marker.researchQuestion && !marker.derivedQuestion) return;
+		let stance = /ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING|HISTORICAL_REFERENCE_ONLY)/
+			.exec(noteText)?.[1] || "UNSPECIFIED";
+		let locator = /ATR Source Locator:\s*([^<]*)<\/p>/i.exec(noteHTML)?.[1]?.trim() || null;
+		await this.appendHumanInput({
+			schema_version: "0.2",
+			event: "human_note_modified",
+			at: new Date().toISOString(),
+			atr_run: marker.run,
+			atr_source_id: marker.source,
+			atr_claim_id: marker.claim,
+			atr_problem_id: marker.problem,
+			atr_knowledge_node_id: marker.knowledge,
+			atr_tension_node_id: marker.tension,
+			atr_research_question_node_id: marker.researchQuestion,
+			atr_derived_question_node_id: marker.derivedQuestion,
+			atr_research_node_id: marker.tension || marker.researchQuestion || marker.derivedQuestion,
+			atr_graph_node_id: marker.graphNode,
+			review_stance: stance,
+			source_locator: locator,
+			zotero_note_key: item.key,
+			zotero_parent_key: item.parentItem?.key || null,
+			note_html: noteHTML,
+			notifier: extraData || null,
+		});
+	},
+
+	async annotationChanged(item, extraData) {
+		let sourceID = this.sourceIDFromItem(item);
+		if (!sourceID) return;
+		await this.appendHumanInput({
+			schema_version: "0.2",
+			event: "human_annotation_modified",
+			at: new Date().toISOString(),
+			atr_source_id: sourceID,
+			zotero_annotation_key: item.key,
+			zotero_attachment_key: item.parentItem?.key || null,
+			annotation_type: item.annotationType || null,
+			annotation_text: item.annotationText || null,
+			annotation_comment: item.annotationComment || null,
+			annotation_color: item.annotationColor || null,
+			annotation_page_label: item.annotationPageLabel || null,
+			annotation_position: item.annotationPosition || null,
+			notifier: extraData || null,
+		});
+	},
+
+	startObserving() {
+		if (this.observerID) return;
+		this.observerID = Zotero.Notifier.registerObserver({
+			notify: (event, type, ids, extraData) => {
+				if (type !== "item" || !["add", "modify"].includes(event)) return;
+				for (let id of ids) {
+					let item = Zotero.Items.get(id);
+					if (event === "modify" && item?.isNote?.()) {
+						this.noteChanged(item, extraData?.[id]).catch(error => this.log("note observer failed: " + error));
+					}
+					else if (item?.isAnnotation?.()) {
+						this.annotationChanged(item, { event, detail: extraData?.[id] })
+							.catch(error => this.log("annotation observer failed: " + error));
+					}
+				}
+			},
+		}, ["item"], "atr-zotero-native-projection");
+		this.log("native note/annotation observer started");
+	},
+
+	stopObserving() {
+		if (this.observerID) Zotero.Notifier.unregisterObserver(this.observerID);
+		this.observerID = null;
+	},
+
+	async addToWindow(window) {
+		let doc = window.document;
+		window.MozXULElement.insertFTLIfNeeded("atr-mainWindow.ftl");
+		if (doc.getElementById("atr-zotero-workbench-menu")) return;
+		let toolsPopup = doc.getElementById("menu_ToolsPopup");
+		if (!toolsPopup) {
+			this.log("Tools menu is not ready yet; skipping this window");
+			return;
+		}
+		let menu = doc.createXULElement("menu");
+		menu.id = "atr-zotero-workbench-menu";
+		menu.setAttribute("label", "ATR Research");
+		let popup = doc.createXULElement("menupopup");
+		let registry;
+		try {
+			registry = await this.loadRunRegistry();
+		}
+		catch (error) {
+			let item = doc.createXULElement("menuitem");
+			item.setAttribute("label", "配置错误 · 查看详情");
+			item.addEventListener("command", () => Services.prompt.alert(window, "ATR Research", String(error)));
+			popup.append(item);
+			menu.append(popup);
+			toolsPopup.append(menu);
+			this.log("native topic menu added in degraded mode: " + error);
+			await this.appendRuntimeStatus("native_topic_menu_degraded", { error: String(error) });
+			return;
+		}
+		let runs = registry.runs.length ? registry.runs : [await this.defaultRun()];
+		runs.sort((left, right) => Number(right.key === registry.activeRun) - Number(left.key === registry.activeRun));
+		for (let run of runs) {
+			let item = doc.createXULElement("menuitem");
+			let roleLabel = {
+				CURRENT_RUN: "当前权威",
+				HISTORICAL_NAVIGATION: "历史导航",
+				LEGACY_CONTINUATION: "迁移链",
+				LEGACY_EXPLORATION: "历史探索",
+				LEGACY_RUN: "旧版 run",
+			}[run.view_role] || run.view_role;
+			item.setAttribute("label", roleLabel + " · " + (run.label || run.key));
+			item.addEventListener("command", () => this.openTopic(run, window));
+			popup.append(item);
+		}
+		menu.append(popup);
+		toolsPopup.append(menu);
+		this.log("native topic menu added");
+		await this.appendRuntimeStatus("native_topic_menu_added", {
+			run_count: runs.length,
+			active_run: registry.activeRun,
+		});
+	},
+
+	async addToAllWindows() {
+		for (let window of Zotero.getMainWindows()) {
+			if (window.ZoteroPane) await this.addToWindow(window);
+		}
+	},
+
+	removeFromWindow(window) {
+		window.document.getElementById("atr-zotero-workbench-menu")?.remove();
+	},
+
+	removeFromAllWindows() {
+		for (let window of Zotero.getMainWindows()) {
+			if (window.ZoteroPane) this.removeFromWindow(window);
+		}
+	},
+
+	hooks: {
+		async onStartup({ id, rootURI }) {
+			ATRZoteroWorkbench.init({ id, rootURI });
+			try {
+				ATRZoteroWorkbench.activeWorkspace = (await ATRZoteroWorkbench.defaultRun()).workspace;
+			}
+			catch (error) {
+				ATRZoteroWorkbench.log("startup registry unavailable; entering degraded mode: " + error);
+			}
+			await ATRZoteroWorkbench.appendRuntimeStatus("startup_complete", {
+				addon_id: id,
+				root_uri: rootURI,
+			});
+			await ATRZoteroWorkbench.addToAllWindows();
+			await ATRZoteroWorkbench.registerItemPane();
+			ATRZoteroWorkbench.startObserving();
+			if (Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokeTestOnStartup", true)) {
+				let window = Zotero.getMainWindow();
+				if (!window) throw new Error("development smoke test requires a main Zotero window");
+				await ATRZoteroWorkbench.appendRuntimeStatus("dev_smoke_test_started");
+				let synced = await ATRZoteroWorkbench.openTopic(await ATRZoteroWorkbench.defaultRun(), window);
+				let currentProblemObject = (ATRZoteroWorkbench.activeNativeMap?.objects || [])
+					.find(object => object.object_kind === "problem_note"
+						&& object.review_role !== "HISTORICAL_VERSION");
+				if (synced && Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", true)) {
+					let reviewNote = currentProblemObject
+						? await ATRZoteroWorkbench.findMarkedNote(currentProblemObject.marker)
+						: synced.decisionNotes?.[0];
+					if (!reviewNote) throw new Error("development feedback smoke test requires a decision Note");
+					await ATRZoteroWorkbench.setReviewStance(reviewNote, "QUALIFIES");
+					await ATRZoteroWorkbench.appendRuntimeStatus("dev_smoke_feedback_saved", {
+						note_key: reviewNote.key,
+						review_stance: "QUALIFIES",
+					});
+				}
+				if (synced && Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", true)) {
+					let pdfPath = Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokePDFPath", true);
+					let preferredSourceID = currentProblemObject?.linked_source_ids?.[0];
+					let sourceIndex = preferredSourceID
+						? synced.sources.findIndex(source => source.data?.source_id === preferredSourceID)
+						: 0;
+					if (sourceIndex < 0) sourceIndex = 0;
+					let source = synced.sources?.[sourceIndex];
+					let sourceItem = synced.items?.[sourceIndex];
+					if (!pdfPath || !source || !sourceItem) {
+						throw new Error("development Reader smoke test requires a PDF path and mapped source");
+					}
+					let attachment = await Zotero.Attachments.importFromFile({
+						file: pdfPath,
+						parentItemID: sourceItem.id,
+						title: "ATR repository-local Reader smoke fixture",
+					});
+					await ATRZoteroWorkbench.openSourceInReader(source, sourceItem);
+					let annotation = await Zotero.Annotations.saveFromJSON(attachment, {
+						key: Zotero.DataObjectUtilities.generateKey(),
+						type: "highlight",
+						text: "ATR Reader smoke source span",
+						comment: "ATR Reader smoke review comment",
+						color: "#ffd400",
+						pageLabel: "1",
+						sortIndex: "00000|000000|00000",
+						position: { pageIndex: 0, rects: [[72, 700, 300, 720]] },
+					});
+					await Zotero.Promise.delay(250);
+					await ATRZoteroWorkbench.openSourceInReader(source, annotation);
+					await ATRZoteroWorkbench.appendRuntimeStatus("dev_smoke_reader_annotation_saved", {
+						annotation_key: annotation.key,
+						attachment_key: attachment.key,
+						source_id: source.data?.source_id,
+					});
+				}
+			}
+		},
+
+		async onMainWindowLoad(window) {
+			await ATRZoteroWorkbench.addToWindow(window);
+		},
+
+		async onMainWindowUnload(window) {
+			ATRZoteroWorkbench.removeFromWindow(window);
+		},
+
+		async onShutdown() {
+			ATRZoteroWorkbench.stopObserving();
+			ATRZoteroWorkbench.unregisterItemPane();
+			ATRZoteroWorkbench.removeFromAllWindows();
+		},
+	},
 };

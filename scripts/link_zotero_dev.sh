@@ -19,8 +19,8 @@ if [[ ! -d "$profile" ]]; then
 fi
 mkdir -p "$data_dir"
 
-# The generated dashboard is part of the development add-on too. Building it
-# first keeps the source proxy and release package on the same artifact.
+# Validate and package once before linking so the source tree and candidate XPI
+# are checked against the same native-Zotero contracts.
 bash "$root/scripts/build_zotero_plugin.sh" >/dev/null
 
 mkdir -p "$profile/extensions"
@@ -32,6 +32,8 @@ printf '%s\n' "$root/zotero-plugin" > "$proxy"
 # this development-only profile always selects an empty, separate database.
 printf '%s\n' \
   '// Managed by atr-zotero-workbench/scripts/link_zotero_dev.sh' \
+  '// This profile is disposable and dedicated to source-side-loaded extensions.' \
+  'user_pref("extensions.autoDisableScopes", 0);' \
   'user_pref("extensions.zotero.useDataDir", true);' \
   "user_pref(\"extensions.zotero.dataDir\", \"$data_dir\");" \
   > "$profile/user.js"

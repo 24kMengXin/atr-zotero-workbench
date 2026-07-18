@@ -169,6 +169,34 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         edge(f"run:{run.run_id}", node_id, "tracks_subject")
     known_artifacts: set[str] = set()
     known_sources: set[str] = set()
+
+    def entity_key(artifact: dict[str, Any]) -> tuple[str, str] | None:
+        payload = artifact.get("payload", {})
+        kind = str(payload.get("artifact_type") or artifact.get("kind") or "")
+        if kind == "knowledge-map":
+            return kind, str(payload.get("map_id") or artifact["artifact_id"])
+        if kind == "opportunity-map":
+            return kind, str(payload.get("map_id") or artifact["artifact_id"])
+        if kind == "problem-case":
+            return kind, str(payload.get("problem_id") or artifact["artifact_id"])
+        return None
+
+    latest_artifact: dict[tuple[str, str], dict[str, Any]] = {}
+    for candidate in run.artifacts:
+        key = entity_key(candidate)
+        if key and (key not in latest_artifact or (
+            str(candidate.get("created_at", "")), candidate["artifact_id"]
+        ) > (
+            str(latest_artifact[key].get("created_at", "")), latest_artifact[key]["artifact_id"]
+        )):
+            latest_artifact[key] = candidate
+
+    def versioned(base: str, artifact: dict[str, Any]) -> tuple[str, bool]:
+        key = entity_key(artifact)
+        historical = bool(key and latest_artifact.get(key, {}).get("artifact_id") != artifact["artifact_id"])
+        suffix = "@" + artifact["digest"][:12] if historical else ""
+        return base + suffix, historical
+
     def source_node(source: dict[str, Any], *, provenance: str) -> str | None:
         source_id = source.get("source_id")
         if not source_id:
@@ -182,6 +210,7 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             nodes.append(_node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
                                url=source.get("url", ""), source_kind=kind, source_layer=layer,
                                locator=source.get("locator", ""), provenance=provenance,
+                               source_function=source.get("source_function"), observed_at=source.get("observed_at"),
                                supports=source.get("supports", source.get("claim", source.get("observation", ""))),
                                does_not_support=source.get("does_not_support", source.get("does_not_establish", "")),
                                does_not_establish=source.get("does_not_establish", "")))
@@ -206,33 +235,115 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                     edge(f"artifact:{artifact_id}", node_id, "records_explicit_source")
         if artifact["kind"] == "knowledge-map" or payload.get("artifact_type") == "knowledge-map":
             map_id = str(payload.get("map_id") or artifact_id)
-            map_node = f"knowledge_map:{map_id}"
-            nodes.append(_node(map_node, "concept_map", str(payload.get("topic") or payload.get("scope") or map_id), map_id=map_id, definition=payload.get("definition", ""), does_not_establish=payload.get("does_not_establish", "")))
+            map_node, historical = versioned(f"knowledge_map:{map_id}", artifact)
+            nodes.append(_node(map_node, "concept_map", str(payload.get("topic") or payload.get("scope") or map_id), map_id=map_id, definition=payload.get("definition", ""), does_not_establish=payload.get("does_not_establish", ""), artifact_id=artifact_id, historical_version=historical))
             edge(f"artifact:{artifact_id}", map_node, "materializes_knowledge_map")
+            if historical:
+                edge(map_node, f"knowledge_map:{map_id}", "superseded_by_knowledge_map_version")
             concepts = [item for item in payload.get("concepts", []) if isinstance(item, dict) and item.get("concept_id")]
             concept_ids = {str(item["concept_id"]) for item in concepts}
+            latest_concept_ids = {
+                str(item["concept_id"])
+                for item in latest_artifact[("knowledge-map", map_id)].get("payload", {}).get("concepts", [])
+                if isinstance(item, dict) and item.get("concept_id")
+            }
             for concept in concepts:
-                concept_id = str(concept["concept_id"]); concept_node = f"knowledge_concept:{map_id}:{concept_id}"
-                nodes.append(_node(concept_node, "knowledge_concept", str(concept.get("label") or concept_id), concept_id=concept_id, map_id=map_id, definition=concept.get("definition", ""), source_ids=concept.get("source_ids", []), does_not_establish=concept.get("does_not_establish", ""), depth=concept.get("depth")))
+                concept_id = str(concept["concept_id"])
+                concept_node, _ = versioned(f"knowledge_concept:{map_id}:{concept_id}", artifact)
+                nodes.append(_node(concept_node, "knowledge_concept", str(concept.get("label") or concept_id), concept_id=concept_id, map_id=map_id, definition=concept.get("definition", ""), source_ids=concept.get("source_ids", []), does_not_establish=concept.get("does_not_establish", ""), depth=concept.get("depth"), artifact_id=artifact_id, historical_version=historical))
                 parent = concept.get("parent_id")
-                edge(f"knowledge_concept:{map_id}:{parent}" if str(parent) in concept_ids else map_node, concept_node, "specializes_concept" if str(parent) in concept_ids else "roots_concept")
+                parent_node = versioned(f"knowledge_concept:{map_id}:{parent}", artifact)[0] if str(parent) in concept_ids else map_node
+                edge(parent_node, concept_node, "specializes_concept" if str(parent) in concept_ids else "roots_concept")
+                if historical and concept_id in latest_concept_ids:
+                    edge(concept_node, f"knowledge_concept:{map_id}:{concept_id}", "superseded_by_knowledge_map_version")
                 for source_id in concept.get("source_ids", []):
                     if str(source_id) in known_sources:
                         edge(concept_node, f"paper:{source_id}", "defines_with_explicit_source")
+        if artifact["kind"] == "opportunity-map" or payload.get("artifact_type") == "opportunity-map":
+            map_id = str(payload.get("map_id") or artifact_id)
+            map_node, historical = versioned(f"opportunity_map:{map_id}", artifact)
+            nodes.append(_node(map_node, "opportunity_map", str(payload.get("scope") or map_id),
+                               map_id=map_id, searched_through=payload.get("searched_through"),
+                               created_at=payload.get("created_at"), valid_until=payload.get("valid_until"),
+                               does_not_establish=payload.get("does_not_establish", ""),
+                               artifact_id=artifact_id, historical_version=historical))
+            edge(f"artifact:{artifact_id}", map_node, "materializes_opportunity_map")
+            if historical:
+                edge(map_node, f"opportunity_map:{map_id}", "superseded_by_opportunity_map_version")
+            latest_tension_ids = {
+                str(item["tension_id"])
+                for item in latest_artifact[("opportunity-map", map_id)].get("payload", {}).get("tension_clusters", [])
+                if isinstance(item, dict) and item.get("tension_id")
+            }
+            for tension in payload.get("tension_clusters", []):
+                if not isinstance(tension, dict) or not tension.get("tension_id"):
+                    continue
+                tension_id = str(tension["tension_id"])
+                tension_node, _ = versioned(f"real_world_tension:{tension_id}", artifact)
+                nodes.append(_node(
+                    tension_node, "real_world_tension", str(tension.get("label") or tension_id),
+                    tension_id=tension_id, actor=tension.get("actor"),
+                    incumbent_practice=tension.get("incumbent_practice"),
+                    material_consequence=tension.get("material_consequence"),
+                    candidate_construct=tension.get("candidate_construct"),
+                    alternative_explanations=tension.get("alternative_explanations", []),
+                    translation_status=tension.get("translation_status"),
+                    does_not_establish=tension.get("does_not_establish", ""),
+                    artifact_id=artifact_id, historical_version=historical,
+                ))
+                edge(map_node, tension_node, "clusters_real_world_tension")
+                if historical and tension_id in latest_tension_ids:
+                    edge(tension_node, f"real_world_tension:{tension_id}", "superseded_by_opportunity_map_version")
+                for source_id in tension.get("source_ids", []):
+                    if str(source_id) in known_sources:
+                        edge(tension_node, f"paper:{source_id}", "grounded_in_explicit_signal")
         if artifact["kind"] == "problem-case" or payload.get("artifact_type") == "problem-case":
             problem_id = str(payload.get("problem_id") or artifact_id)
             label = str(payload.get("research_question") or payload.get("tension") or payload.get("question") or problem_id)
-            problem_node = f"research_problem:{problem_id}"
+            problem_node, historical = versioned(f"research_problem:{problem_id}", artifact)
             nodes.append(_node(problem_node, "research_problem", label, problem_id=problem_id,
                                decision_owner=payload.get("decision_owner"), worlds=payload.get("worlds", payload.get("counterfactual_worlds", [])),
                                discriminator=payload.get("discriminator", ""), falsifier=payload.get("falsifier", ""),
-                               scope=payload.get("scope", ""), does_not_establish=payload.get("does_not_establish", "")))
+                               scope=payload.get("scope", ""), does_not_establish=payload.get("does_not_establish", ""),
+                               artifact_id=artifact_id, historical_version=historical))
             edge(f"artifact:{artifact_id}", problem_node, "materializes_problem_case")
+            if historical:
+                edge(problem_node, f"research_problem:{problem_id}", "superseded_by_recorded_problem_version")
+            supersedes_problem_id = payload.get("supersedes_problem_id")
+            if supersedes_problem_id and str(supersedes_problem_id) != problem_id:
+                edge(f"research_problem:{supersedes_problem_id}", problem_node,
+                     "superseded_by_recorded_problem_version")
             for span in payload.get("source_spans", []):
                 if isinstance(span, dict):
                     node_id = source_node(span, provenance=artifact_id)
                     if node_id:
-                        edge(problem_node, node_id, "grounds_in_explicit_source_span", locator=span.get("locator", ""), observation=span.get("observation", ""))
+                        edge(problem_node, node_id, "grounds_in_explicit_source_span",
+                             locator=span.get("locator", ""), observation=span.get("observation", ""),
+                             problem_posture=span.get("problem_posture"), resolves=span.get("resolves", ""),
+                             leaves_unresolved=span.get("leaves_unresolved", ""),
+                             does_not_establish=span.get("does_not_establish", ""))
+            declared_problem_sources = {
+                str(span.get("source_id")) for span in payload.get("source_spans", [])
+                if isinstance(span, dict) and span.get("source_id")
+            }
+            for question in payload.get("derived_questions", []):
+                if not isinstance(question, dict) or not question.get("question_id"):
+                    continue
+                question_id = str(question["question_id"])
+                question_node, _ = versioned(f"derived_question:{problem_id}:{question_id}", artifact)
+                nodes.append(_node(
+                    question_node, "derived_research_question",
+                    str(question.get("question") or question_id), question_id=question_id,
+                    status=question.get("status", "REVIEW_TASK"),
+                    smallest_discriminator=question.get("smallest_discriminator", ""),
+                    does_not_establish=question.get("does_not_establish", ""),
+                    parent_problem_id=problem_id,
+                    artifact_id=artifact_id, historical_version=historical,
+                ))
+                edge(problem_node, question_node, "generates_finer_review_question")
+                for source_id in question.get("source_ids", []):
+                    if str(source_id) in declared_problem_sources and str(source_id) in known_sources:
+                        edge(question_node, f"paper:{source_id}", "cites_explicit_source")
     timeline: list[dict[str, Any]] = []
     for event in run.events:
         node_id = f"transition:{event['event_id']}"
@@ -264,6 +375,35 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             problem_id = problem.get("problem_id") if isinstance(problem, dict) else None
             if problem_id and any(node["id"] == f"research_problem:{problem_id}" for node in nodes):
                 edge(node_id, f"research_problem:{problem_id}", "requests_reconsideration_of_problem")
+    for artifact in run.artifacts:
+        payload = artifact.get("payload", {})
+        if payload.get("artifact_type") != "human-review-assessment":
+            continue
+        assessment_id = str(payload.get("assessment_id") or artifact["artifact_id"])
+        node_id = f"human_review_assessment:{assessment_id}"
+        nodes.append(_node(
+            node_id, "human_review_assessment",
+            f"共创复核 · {payload.get('outcome', 'UNSPECIFIED')}",
+            assessment_id=assessment_id, packet_id=payload.get("packet_id"),
+            disposition_id=payload.get("disposition_id"), reviewed_at=payload.get("reviewed_at"),
+            reviewer=payload.get("reviewer", {}), finding=payload.get("finding", ""),
+            outcome=payload.get("outcome"), evidence_basis=payload.get("evidence_basis", []),
+            impact=payload.get("impact", {}),
+            required_followup_artifact_kind=payload.get("required_followup_artifact_kind"),
+            controller_boundary=payload.get("controller_boundary"),
+            v2_artifact_id=artifact["artifact_id"],
+        ))
+        edge(f"artifact:{artifact['artifact_id']}", node_id, "materializes_isolated_human_review_assessment")
+        disposition_node = f"human_review:{payload.get('disposition_id')}"
+        if any(node["id"] == disposition_node for node in nodes):
+            edge(disposition_node, node_id, "reviewed_by_isolated_assessment")
+        impact = payload.get("impact", {})
+        for target in impact.get("preserve_object_ids", []):
+            if any(node["id"] == str(target) for node in nodes):
+                edge(node_id, str(target), "preserves_object_after_review")
+        for target in impact.get("reconsider_object_ids", []):
+            if any(node["id"] == str(target) for node in nodes):
+                edge(node_id, str(target), "requests_new_version_after_review")
     timeline.sort(key=lambda item: str(item["at"]))
     return {"schema_version": "0.2", "projection": "derived-read-only-v2-sqlite", "run": run.run_id, "diagnostics": run.gaps, "timeline": timeline, "nodes": nodes, "edges": edges}
 

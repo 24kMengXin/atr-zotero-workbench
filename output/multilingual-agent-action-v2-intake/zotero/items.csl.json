@@ -1,0 +1,67 @@
+[
+  {
+    "id": "SRC-MASSIVE-AGENTS-2025",
+    "type": "article-journal",
+    "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.1099/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MASSIVE-AGENTS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MASSIVE-AGENTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-2026",
+    "type": "article-journal",
+    "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+    "URL": "https://aclanthology.org/2026.acl-long.2039/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+    "type": "webpage",
+    "title": "Model Context Protocol schema-convergence record",
+    "URL": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "atr-source-kind:PRIMARY_WORKFLOW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MCP-SCHEMA-CONVERGENCE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-G1-R4-NEGATIVE-2026",
+    "type": "webpage",
+    "title": "g1 R4 posterior review after contract-provenance decision study",
+    "URL": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-G1-R4-NEGATIVE-2026",
+      "atr-source-kind:AUDITED_LOCAL_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-G1-R4-NEGATIVE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-RELEASE-AUDIT-2026",
+    "type": "webpage",
+    "title": "MLCL code/dataset availability audit",
+    "URL": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-RELEASE-AUDIT-2026",
+      "atr-source-kind:RELEASE_ACCESS_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MLCL-RELEASE-AUDIT-2026\nEvidence boundary recorded in reading card."
+  }
+]

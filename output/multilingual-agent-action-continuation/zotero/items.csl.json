@@ -1,0 +1,1484 @@
+[
+  {
+    "id": "SRC-AGENTABSTAIN-2026",
+    "type": "article-journal",
+    "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+    "URL": "https://agentabstain.github.io/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTABSTAIN-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-SCHEMA-CONVERGENCE-2026",
+    "type": "webpage",
+    "title": "Model Context Protocol schema-convergence record",
+    "URL": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-SCHEMA-CONVERGENCE-2026",
+      "atr-source-kind:PRIMARY_WORKFLOW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MCP-SCHEMA-CONVERGENCE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTSENTRY-2026",
+    "type": "article-journal",
+    "title": "AgentSentry: Mitigating Indirect Prompt Injection in LLM Agents via Temporal Causal Diagnostics and Context Purification",
+    "URL": "https://arxiv.org/abs/2602.22724",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTSENTRY-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTSENTRY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ARABIC-ENGLISH-TOOLS-2026",
+    "type": "article-journal",
+    "title": "Arabic Prompts with English Tools: A Benchmark",
+    "URL": "https://arxiv.org/abs/2601.05101",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ARABIC-ENGLISH-TOOLS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+    "type": "webpage",
+    "title": "Audit of code link associated with Arabic Prompts with English Tools",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ARABIC-TOOLS-CODE-MISMATCH-2026",
+      "atr-source-kind:STATIC_REPOSITORY_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ARABIC-TOOLS-CODE-MISMATCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+    "type": "webpage",
+    "title": "Corrected release audit of Arabic Prompts with English Tools",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026",
+      "atr-source-kind:STATIC_REPOSITORY_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ARABIC-TOOLS-CORRECTED-ASSET-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+    "type": "webpage",
+    "title": "Arabic Tools Gorilla invariant-identifier audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026",
+      "atr-source-kind:STATIC_CODE_AND_DATA_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ARABIC-TOOLS-IDENTIFIER-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BENCHMAX-2025",
+    "type": "article-journal",
+    "title": "BenchMAX: A Comprehensive Multilingual Evaluation Suite",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.909/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BENCHMAX-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-BENCHMAX-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BENCHMAX-CODE-AUDIT-2026",
+    "type": "webpage",
+    "title": "BenchMAX Nexus task static audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BENCHMAX-CODE-AUDIT-2026",
+      "atr-source-kind:STATIC_CODE_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-BENCHMAX-CODE-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BENCHMAX-REPO-2026",
+    "type": "webpage",
+    "title": "CONE-MT/BenchMAX",
+    "URL": "https://github.com/CONE-MT/BenchMAX",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BENCHMAX-REPO-2026",
+      "atr-source-kind:PRIMARY_REPOSITORY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-BENCHMAX-REPO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CIA-ACL-2025",
+    "type": "article-journal",
+    "title": "Cross Lingual Auto Evaluation: A Comprehensive Framework for Multilingual LLM Evaluation",
+    "URL": "https://aclanthology.org/2025.acl-long.1419.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CIA-ACL-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER_AND_RELEASED_SUITE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CIA-ACL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLARIFYBENCH-2026",
+    "type": "article-journal",
+    "title": "Structured Uncertainty guided Clarification for LLM Agents",
+    "URL": "https://aclanthology.org/2026.findings-acl.2028.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLARIFYBENCH-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CLARIFYBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLARIFYMT-2025",
+    "type": "article-journal",
+    "title": "ClarifyMT-Bench: Benchmarking and Improving Multi-Turn Clarification for Conversational Large Language Models",
+    "URL": "https://arxiv.org/abs/2512.21120",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLARIFYMT-2025",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CLARIFYMT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONCEPT-AMBIGUITY-2026",
+    "type": "article-journal",
+    "title": "Concept based Ambiguity Resolution in LLMs",
+    "URL": "https://proceedings.mlr.press/v328/hu26b.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONCEPT-AMBIGUITY-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CONCEPT-AMBIGUITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONSTRAINT-TAX-2026",
+    "type": "article-journal",
+    "title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
+    "URL": "https://arxiv.org/abs/2606.25605",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONSTRAINT-TAX-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CONSTRAINT-TAX-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DIFFUSION-CONSTRAINT-FC-2026",
+    "type": "article-journal",
+    "title": "Constrained Decoding for Diffusion Language Models via Efficient Inference over Finite Automata",
+    "URL": "https://arxiv.org/abs/2607.07026",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DIFFUSION-CONSTRAINT-FC-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DIFFUSION-CONSTRAINT-FC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FUNCTIONAL-EVAL-2026",
+    "type": "article-journal",
+    "title": "Multi-lingual Functional Evaluation for Large Language Models",
+    "URL": "https://aclanthology.org/2026.findings-acl.1731/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FUNCTIONAL-EVAL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FUNCTIONAL-EVAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-G1-R4-NEGATIVE-2026",
+    "type": "webpage",
+    "title": "g1 R4 posterior review after contract-provenance decision study",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-G1-R4-NEGATIVE-2026",
+      "atr-source-kind:AUDITED_LOCAL_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-G1-R4-NEGATIVE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-G3-ARCHITECTURE-AUDIT-2026",
+    "type": "webpage",
+    "title": "g3 modular transfer architecture and collision audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-G3-ARCHITECTURE-AUDIT-2026",
+      "atr-source-kind:AUDITED_LOCAL_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-G3-ARCHITECTURE-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GAIA-LILT-MELLM-2026",
+    "type": "article-journal",
+    "title": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark beyond Translation",
+    "URL": "https://aclanthology.org/2026.mellm-1.13.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GAIA-LILT-MELLM-2026",
+      "atr-source-kind:PRIMARY_PAPER_AND_PUBLIC_DATASET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GAIA-LILT-MELLM-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GAIA-LILT-TECHNICAL-2026",
+    "type": "webpage",
+    "title": "Beyond Translation: Announcing GAIA-v2-LILT",
+    "URL": "https://lilt.com/blog/multilingual-agent-benchmark-gaia-v2-lilt",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GAIA-LILT-TECHNICAL-2026",
+      "atr-source-kind:TECHNICAL_COMMUNITY_RELEASE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-GAIA-LILT-TECHNICAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GAIA-V2-LILT-2026",
+    "type": "article-journal",
+    "title": "GAIA-v2-LILT: Multilingual Adaptation of Agent Benchmark",
+    "URL": "https://aclanthology.org/2026.mellm-1.13.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GAIA-V2-LILT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GAIA-V2-LILT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GAMING-TOOL-PREFERENCES-2025",
+    "type": "article-journal",
+    "title": "Gaming Tool Preferences in Agentic LLMs",
+    "URL": "https://arxiv.org/abs/2505.18135",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GAMING-TOOL-PREFERENCES-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GAMING-TOOL-PREFERENCES-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+    "type": "webpage",
+    "title": "Multilingual agents — Dialogflow ES",
+    "URL": "https://docs.cloud.google.com/dialogflow/es/docs/agents-multilingual",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-GOOGLE-DIALOGFLOW-MULTILINGUAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-IGAC-2026",
+    "type": "article-journal",
+    "title": "Intent-Governed Tool Authorization for AI Agents",
+    "URL": "https://arxiv.org/abs/2606.22916",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-IGAC-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-IGAC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INDIRECTREQUESTS-2025",
+    "type": "article-journal",
+    "title": "Making Task-Oriented Dialogue Datasets More Natural by Synthetically Generating Indirect User Requests",
+    "URL": "https://aclanthology.org/2025.coling-main.696/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INDIRECTREQUESTS-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INDIRECTREQUESTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INJECAGENT-2024",
+    "type": "article-journal",
+    "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+    "URL": "https://aclanthology.org/2024.findings-acl.624/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INJECAGENT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INJECAGENT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ITC-2026",
+    "type": "article-journal",
+    "title": "Enhancing Tool Calling in LLMs with the International Tool Calling Dataset",
+    "URL": "https://arxiv.org/pdf/2603.05515",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ITC-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ITC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ITC-RELEASE-ACCESS-2026",
+    "type": "webpage",
+    "title": "ITC release accessibility check",
+    "URL": "https://anonymous.4open.science/r/International-Tool-Calling-ITC-dataset-FAF4/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ITC-RELEASE-ACCESS-2026",
+      "atr-source-kind:RELEASE_ACCESS_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ITC-RELEASE-ACCESS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ITC-RELEASE-ACCESS-2026-07-17",
+    "type": "webpage",
+    "title": "ITC advertised release recheck (2026-07-17)",
+    "URL": "https://anonymous.4open.science/r/International-Tool-Calling-ITC-dataset-FAF4/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ITC-RELEASE-ACCESS-2026-07-17",
+      "atr-source-kind:RELEASE_ACCESS_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ITC-RELEASE-ACCESS-2026-07-17\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+    "type": "article-journal",
+    "title": "Effects of Tool Description Language on Language Model’s Tool Calling in Korean Dialogue",
+    "URL": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12131535",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-KOREAN-TOOL-DESCRIPTION-LANGUAGE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANGUAGE-PREFERENCE-2025",
+    "type": "article-journal",
+    "title": "Investigating Language Preference of Multilingual RAG Systems",
+    "URL": "https://aclanthology.org/2025.findings-acl.295/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANGUAGE-PREFERENCE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANGUAGE-PREFERENCE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-JUDGE-CHALLENGES-2026",
+    "type": "webpage",
+    "title": "Challenges and Recommendations for LLMs-as-a-Judge in Multilingual Settings and Low-Resource Languages",
+    "URL": "https://arxiv.org/abs/2607.02235",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-JUDGE-CHALLENGES-2026",
+      "atr-source-kind:PRIMARY_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLM-JUDGE-CHALLENGES-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+    "type": "webpage",
+    "title": "LLM-as-judge instrument boundary for synthetic action provenance",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026",
+      "atr-source-kind:AUDITED_LOCAL_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLM-JUDGE-INSTRUMENT-DECISION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LONGFUNCEVAL-2025",
+    "type": "article-journal",
+    "title": "LongFuncEval: Measuring the effectiveness of long context models for function calling",
+    "URL": "https://arxiv.org/abs/2505.10570",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LONGFUNCEVAL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LONGFUNCEVAL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MAPS-2026",
+    "type": "article-journal",
+    "title": "MAPS: A Multilingual Benchmark for Agent Performance and Security",
+    "URL": "https://aclanthology.org/2026.findings-eacl.42/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MAPS-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MAPS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MAPS-EACL-2026",
+    "type": "article-journal",
+    "title": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+    "URL": "https://aclanthology.org/2026.findings-eacl.42.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MAPS-EACL-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER_AND_RELEASED_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MAPS-EACL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MASSIVE-AGENTS-2025",
+    "type": "article-journal",
+    "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.1099/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MASSIVE-AGENTS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MASSIVE-AGENTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+    "type": "webpage",
+    "title": "MASSIVE-Agents release trace audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026",
+      "atr-source-kind:RELEASE_TRACE_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MASSIVE-AGENTS-RELEASE-TRACE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-AGENTBENCH-AAAI-2026",
+    "type": "article-journal",
+    "title": "MCP-AgentBench: Evaluating Real-World Language Agent Performance with MCP-Mediated Tools",
+    "URL": "https://ojs.aaai.org/index.php/AAAI/article/view/40347",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-AGENTBENCH-AAAI-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCP-AGENTBENCH-AAAI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-DESCRIPTION-SMELLS-2026",
+    "type": "article-journal",
+    "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly!",
+    "URL": "https://arxiv.org/abs/2602.14878",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCP-DESCRIPTION-SMELLS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MEMERAG-2025",
+    "type": "article-journal",
+    "title": "MEMERAG: A Multilingual End-to-End Meta-Evaluation Benchmark for Retrieval Augmented Generation",
+    "URL": "https://aclanthology.org/2025.acl-long.1101/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MEMERAG-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MEMERAG-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-2026",
+    "type": "article-journal",
+    "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+    "URL": "https://aclanthology.org/2026.acl-long.2039/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-RELEASE-AUDIT-2026",
+    "type": "webpage",
+    "title": "MLCL code/dataset availability audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-RELEASE-AUDIT-2026",
+      "atr-source-kind:RELEASE_ACCESS_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MLCL-RELEASE-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MPRGUI-2026",
+    "type": "article-journal",
+    "title": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+    "URL": "https://aclanthology.org/2026.acl-long.1375/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MPRGUI-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MPRGUI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MRAG-CONTEXT-2025",
+    "type": "article-journal",
+    "title": "On the Consistency of Multilingual Context Utilization in Retrieval-Augmented Generation",
+    "URL": "https://arxiv.org/abs/2504.00597",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MRAG-CONTEXT-2025",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MRAG-CONTEXT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+    "type": "webpage",
+    "title": "Configure multilingual agents in Dynamics 365 Contact Center",
+    "URL": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-multilingual-agents",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MS-MULTILINGUAL-CONTACT-CENTER-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MTM-2026",
+    "type": "article-journal",
+    "title": "Disentangling Language Roles in Multilingual LLM Task Execution",
+    "URL": "https://arxiv.org/abs/2605.27649",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MTM-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MTM-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MUBENCH-2026",
+    "type": "article-journal",
+    "title": "MuBench: Assessment of Multilingual Capabilities of Large Language Models Across 61 Languages",
+    "URL": "https://aclanthology.org/2026.findings-acl.794/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MUBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MUBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTX-2026",
+    "type": "article-journal",
+    "title": "MultiAgent-X: Multilingual Agentic Function-Calling Benchmark",
+    "URL": "https://github.com/Saurabh-66/MultiAgent-X-Multilingual-Agentic-Function-Calling-Benchmark",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTX-2026",
+      "atr-source-kind:OFFICIAL_OPEN_SOURCE_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTX-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTX-REPO-2026",
+    "type": "webpage",
+    "title": "MultiAgent-X: Multilingual Agentic Function-Calling Benchmark",
+    "URL": "https://github.com/Saurabh-66/MultiAgent-X-Multilingual-Agentic-Function-Calling-Benchmark",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTX-REPO-2026",
+      "atr-source-kind:PRIMARY_REPOSITORY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTX-REPO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+    "type": "webpage",
+    "title": "MultiAgent-X provenance and evaluator static audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTX-STATIC-AUDIT-2026",
+      "atr-source-kind:STATIC_CODE_AND_DATA_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTX-STATIC-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+    "type": "webpage",
+    "title": "MultiAgent-X provenance/comparability static audit v2",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026",
+      "atr-source-kind:STATIC_CODE_AND_DATA_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTX-STATIC-AUDIT-V2-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+    "type": "article-journal",
+    "title": "Multilingual Prompt Localization for Agent-as-a-Judge: Language and Backbone Sensitivity in Requirement-Level Evaluation",
+    "URL": "https://arxiv.org/abs/2604.04532",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-AGENT-JUDGE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-AGENT-JUDGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-JUDGE-2026",
+    "type": "article-journal",
+    "title": "Multilingual Prompt Localization for Agent-as-a-Judge: Language and Backbone Sensitivity in Requirement-Level Evaluation",
+    "URL": "https://arxiv.org/abs/2604.04532",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-JUDGE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_RELEASED_RESULTS",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-JUDGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+    "type": "article-journal",
+    "title": "How Reliable is Multilingual LLM-as-a-Judge?",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.587/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-JUDGE-RELIABILITY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIPRAGEVAL-2024",
+    "type": "article-journal",
+    "title": "MultiPragEval: Multilingual Pragmatic Evaluation of Large Language Models",
+    "URL": "https://arxiv.org/abs/2406.07736",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIPRAGEVAL-2024",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTIPRAGEVAL-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MUTANT-2026",
+    "type": "article-journal",
+    "title": "MUTANT: A Recipe for Multilingual Tokenizer Design",
+    "URL": "https://aclanthology.org/2026.acl-long.2146/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MUTANT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MUTANT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PARAMDELTA-2026",
+    "type": "article-journal",
+    "title": "A Data-Efficient Path to Multilingual LLMs: Language Expansion via Post-training PARAMΔ Integration into Upcycled MoE",
+    "URL": "https://arxiv.org/abs/2605.18083",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PARAMDELTA-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PARAMDELTA-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PETROV-2023",
+    "type": "article-journal",
+    "title": "Language Model Tokenizers Introduce Unfairness Between Languages",
+    "URL": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/74bb24dca8334adce292883b4b651eda-Abstract-Conference.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PETROV-2023",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PETROV-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+    "type": "webpage",
+    "title": "Phase-A native audit authorization brief",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PHASE-A-AUTHORIZATION-BRIEF-2026",
+      "atr-source-kind:LOCAL_AUTHORIZATION_BRIEF",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-PHASE-A-AUTHORIZATION-BRIEF-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PHASE-A-PROTOCOL-2026",
+    "type": "webpage",
+    "title": "Two-phase human-anchored provenance audit protocol",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PHASE-A-PROTOCOL-2026",
+      "atr-source-kind:LOCAL_PROTOCOL",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-PHASE-A-PROTOCOL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-POLYWORKBENCH-2026",
+    "type": "article-journal",
+    "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+    "URL": "https://arxiv.org/abs/2607.06008",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-POLYWORKBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-POLYWORKBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PUB-2024",
+    "type": "article-journal",
+    "title": "PUB: A Pragmatics Understanding Benchmark for Assessing LLMs' Pragmatics Capabilities",
+    "URL": "https://arxiv.org/abs/2401.07078",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PUB-2024",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PUB-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RAG-FAITHFULNESS-2024",
+    "type": "article-journal",
+    "title": "Correctness is not Faithfulness in RAG Attributions",
+    "URL": "https://arxiv.org/abs/2412.18004",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RAG-FAITHFULNESS-2024",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RAG-FAITHFULNESS-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RAGTIME-2025",
+    "type": "webpage",
+    "title": "TREC RAGTIME 2025",
+    "URL": "https://trec-ragtime.github.io/2025.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RAGTIME-2025",
+      "atr-source-kind:SHARED_TASK",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-RAGTIME-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SCHEMA-KEY-WORDING-2026",
+    "type": "article-journal",
+    "title": "Schema Key Wording as an Instruction Channel in Structured Generation under Constrained Decoding",
+    "URL": "https://arxiv.org/abs/2604.14862",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SCHEMA-KEY-WORDING-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SCHEMA-KEY-WORDING-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+    "type": "webpage",
+    "title": "Focused collision review of multilingual tool-schema wording candidate",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026",
+      "atr-source-kind:AUDITED_LOCAL_REVIEW",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-SCHEMA-WORDING-FOCUSED-REVIEW-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-T03-TAXONOMY-2026",
+    "type": "webpage",
+    "title": "Cross-lingual tool-use taxonomy and gap map",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-T03-TAXONOMY-2026",
+      "atr-source-kind:AUDITED_LOCAL_SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-T03-TAXONOMY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TALE-2024",
+    "type": "article-journal",
+    "title": "Token-Budget-Aware LLM Reasoning",
+    "URL": "https://arxiv.org/abs/2412.18547",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TALE-2024",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TALE-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TCI-2026",
+    "type": "article-journal",
+    "title": "Token Cost Inequality: Measuring Tokenization Disparities Across Scripts in Roman Urdu and Urdu",
+    "URL": "https://aclanthology.org/2026.gem-main.54.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TCI-2026",
+      "atr-source-kind:PRIMARY_WORKSHOP_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TCI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TICKETBENCH-2025",
+    "type": "article-journal",
+    "title": "Ticket-Bench: A Kickoff for Multilingual and Regionalized Agent Evaluation",
+    "URL": "https://arxiv.org/abs/2509.14477",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TICKETBENCH-2025",
+      "atr-source-kind:PRIMARY_PAPER_AND_ACCESS_AUDIT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TICKETBENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKEN-ARBITRAGE-2026",
+    "type": "article-journal",
+    "title": "Cross-Lingual Token Arbitrage: Optimizing Code Agent Context Windows via Local LLM Preprocessing",
+    "URL": "https://arxiv.org/abs/2606.03618",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKEN-ARBITRAGE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKEN-ARBITRAGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKEN-TAX-2026",
+    "type": "article-journal",
+    "title": "The Token Tax: Systematic Bias in Multilingual Tokenization",
+    "URL": "https://aclanthology.org/2026.africanlp-main.10/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKEN-TAX-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKEN-TAX-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKENIZER-EQUITY-2026",
+    "type": "article-journal",
+    "title": "Equity with Efficiency: An Empirical Study of Tokenizers for Multilingual Large Language Models",
+    "URL": "https://arxiv.org/abs/2606.15044",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKENIZER-EQUITY-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKENIZER-EQUITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKLENS-2026",
+    "type": "article-journal",
+    "title": "TokLens: A Multilingual Lens on Tokenizer Quality for LLMs",
+    "URL": "https://aclanthology.org/2026.acl-srw.18/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKLENS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKLENS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOL-IRRELEVANCE-2026",
+    "type": "article-journal",
+    "title": "Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations",
+    "URL": "https://aclanthology.org/2026.acl-long.1473/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOL-IRRELEVANCE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOL-IRRELEVANCE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOL-STEERABILITY-2026",
+    "type": "article-journal",
+    "title": "Tool Calling is Linearly Readable and Steerable in Language Models",
+    "URL": "https://arxiv.org/abs/2605.07990",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOL-STEERABILITY-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOL-STEERABILITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLBENCH-X-2026",
+    "type": "article-journal",
+    "title": "Beyond Function Calling: Benchmarking Tool-Using Agents under Tool-Environment Unreliability",
+    "URL": "https://arxiv.org/abs/2606.25819",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLBENCH-X-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOLBENCH-X-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+    "type": "webpage",
+    "title": "ToolBench-X advertised repository audit",
+    "URL": "https://github.com/Foreverskyou/ToolBench-X",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17",
+      "atr-source-kind:RELEASE_ACCESS_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-TOOLBENCH-X-RELEASE-AUDIT-2026-07-17\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLDIAL-2025",
+    "type": "article-journal",
+    "title": "ToolDial: Multi-turn Dialogue Generation Method for Tool-Augmented Language Models",
+    "URL": "https://arxiv.org/abs/2503.00564",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLDIAL-2025",
+      "atr-source-kind:PRIMARY_PAPER_AND_RELEASE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOLDIAL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+    "type": "webpage",
+    "title": "ToolDial observation-language static audit",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLDIAL-OBSERVATION-AUDIT-2026",
+      "atr-source-kind:STATIC_CODE_AND_DATA_AUDIT",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-TOOLDIAL-OBSERVATION-AUDIT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLGEN-2025",
+    "type": "article-journal",
+    "title": "ToolGen: Unified Tool Retrieval and Calling via Generation",
+    "URL": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b646bdebeb87dfafe2c6f77a63b564e1-Abstract-Conference.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLGEN-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOLGEN-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLSAFE-2026",
+    "type": "article-journal",
+    "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based Agents via Step-Level Detection",
+    "URL": "https://aclanthology.org/2026.findings-acl.1850.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLSAFE-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOLSAFE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRANSLATION-ERRORS-2026",
+    "type": "article-journal",
+    "title": "Quantifying the Impact of Translation Errors on Multilingual LLM Evaluation",
+    "URL": "https://arxiv.org/abs/2605.24904",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRANSLATION-ERRORS-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRANSLATION-ERRORS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRANSLATION-ERRORS-EVAL-2026",
+    "type": "article-journal",
+    "title": "Quantifying the Impact of Translation Errors on Multilingual LLM Evaluation",
+    "URL": "https://aclanthology.org/2026.acl-long.1916/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRANSLATION-ERRORS-EVAL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRANSLATION-ERRORS-EVAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRUST-ASYMMETRY-2026",
+    "type": "article-journal",
+    "title": "Same Payload, Different Channel: Measuring Trust Asymmetry in Tool-Using Language Models",
+    "URL": "https://www.catalyzex.com/paper/same-payload-different-channel-measuring",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRUST-ASYMMETRY-2026",
+      "atr-source-kind:PRIMARY_PAPER_DISCOVERY",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRUST-ASYMMETRY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TSCG-2026",
+    "type": "article-journal",
+    "title": "TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments",
+    "URL": "https://arxiv.org/abs/2605.04107",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TSCG-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TSCG-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TTS-MT-2026",
+    "type": "article-journal",
+    "title": "Test-Time Scaling of Reasoning Models for Machine Translation",
+    "URL": "https://aclanthology.org/2026.eacl-long.133/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TTS-MT-2026",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TTS-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ULTRATOOL-2024",
+    "type": "article-journal",
+    "title": "Planning, Creation, Usage: Benchmarking LLMs for Comprehensive Tool Utilization in Real-World Complex Scenarios",
+    "URL": "https://aclanthology.org/2024.findings-acl.259/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ULTRATOOL-2024",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ULTRATOOL-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-VLLM-TOOL-DOCS-2026",
+    "type": "webpage",
+    "title": "vLLM Tool Calling documentation",
+    "URL": "https://docs.vllm.ai/en/stable/features/tool_calling/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-VLLM-TOOL-DOCS-2026",
+      "atr-source-kind:OFFICIAL_IMPLEMENTATION_DOC",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-VLLM-TOOL-DOCS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WEGMANN-2025",
+    "type": "article-journal",
+    "title": "Tokenization is Sensitive to Language Variation",
+    "URL": "https://aclanthology.org/2025.findings-acl.572/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WEGMANN-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-WEGMANN-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WHEN2CALL-2025",
+    "type": "article-journal",
+    "title": "When2Call: When (not) to Call Tools",
+    "URL": "https://aclanthology.org/2025.naacl-long.174.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WHEN2CALL-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-WHEN2CALL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XBCP-2026",
+    "type": "article-journal",
+    "title": "Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus",
+    "URL": "https://arxiv.org/abs/2606.15345",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XBCP-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XBCP-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XMRC-RETRIEVAL-2025",
+    "type": "article-journal",
+    "title": "Understanding LLMs' Cross-Lingual Context Retrieval: How Good It Is And Where It Comes From",
+    "URL": "https://aclanthology.org/2025.emnlp-main.1161/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XMRC-RETRIEVAL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XMRC-RETRIEVAL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XQ-MEVAL-2026",
+    "type": "article-journal",
+    "title": "XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics",
+    "URL": "https://aclanthology.org/2026.findings-acl.1846/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XQ-MEVAL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XQ-MEVAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XRAG-2025",
+    "type": "article-journal",
+    "title": "XRAG: Cross-lingual Retrieval-Augmented Generation",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.849.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XRAG-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XRAG-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XRAG-PRACTICE-2026",
+    "type": "webpage",
+    "title": "RAG over religious source texts with verse-level citations",
+    "URL": "https://www.reddit.com/r/Rag/comments/1u16kk3/rag_over_religious_source_texts_with_verselevel/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XRAG-PRACTICE-2026",
+      "atr-source-kind:COMMUNITY_TECHNICAL_DISCUSSION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-XRAG-PRACTICE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XWEB-2025",
+    "type": "article-journal",
+    "title": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+    "URL": "https://aclanthology.org/2025.findings-acl.988/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XWEB-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XWEB-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-posterior",
+    "type": "webpage",
+    "title": "g1 isolated posterior collision review",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-posterior",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-posterior\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-posterior-20260716",
+    "type": "webpage",
+    "title": "Fresh posterior review after R4V O+",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-posterior-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-posterior-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-r4v-o-plus",
+    "type": "webpage",
+    "title": "R4V contract-provenance decision study O+ verdict",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-r4v-o-plus",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-r4v-o-plus\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-candidate-screen-20260716",
+    "type": "webpage",
+    "title": "Manual primary-document candidate screen for contract completeness",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-candidate-screen-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-candidate-screen-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-contract-protocol-20260716",
+    "type": "webpage",
+    "title": "Non-authorizing contract-completeness audit protocol",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-contract-protocol-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-contract-protocol-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-gpu-calibration-20260716",
+    "type": "webpage",
+    "title": "Historical GH200 generation-throughput calibration and ranking-delta GPU estimate",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-gpu-calibration-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-gpu-calibration-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-llm-jury-20260716",
+    "type": "webpage",
+    "title": "Blinded isolated LLM contract-jury record",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-llm-jury-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-llm-jury-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-problem-card-20260716",
+    "type": "webpage",
+    "title": "Producer Research Problem Card for multilingual tool-use evaluation attribution",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-problem-card-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-problem-card-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-r4-posterior-20260716",
+    "type": "webpage",
+    "title": "Producer R4 posterior collision review: MLCL, BenchMAX construction, and LLM-judge boundary",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-r4-posterior-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-r4-posterior-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-ranking-delta-versioned-schema-20260716",
+    "type": "webpage",
+    "title": "Read-only inspection of the frozen NexusRaven standardized API schema",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-ranking-delta-versioned-schema-20260716",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-ranking-delta-versioned-schema-20260716\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-reframe",
+    "type": "webpage",
+    "title": "Contract-provenance scoped reframe review",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-reframe",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-reframe\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-g1-smoke",
+    "type": "webpage",
+    "title": "g1 smoke-test final verdict",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-g1-smoke",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-g1-smoke\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-survey-t03",
+    "type": "webpage",
+    "title": "Cross-lingual tool-use survey corpus and synthesis",
+    "URL": "",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-survey-t03",
+      "atr-source-kind:",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-survey-t03\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "CTX-AUTOGEN-MCP-ADAPTER-2025",
+    "type": "webpage",
+    "title": "AutoGen MCP adapter bug: valid tool schema is converted incorrectly on the client",
+    "URL": "https://github.com/microsoft/autogen/issues/6906",
+    "keyword": [
+      "ATR",
+      "atr-source-id:CTX-AUTOGEN-MCP-ADAPTER-2025",
+      "atr-source-kind:MAINTAINER_ISSUE",
+      "atr-source-layer:contextual_inspiration"
+    ],
+    "note": "ATR source ID: CTX-AUTOGEN-MCP-ADAPTER-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "CTX-GITHUB-MCP-DEBUGGING-2026",
+    "type": "webpage",
+    "title": "GitHub MCP server debugging guide",
+    "URL": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/troubleshooting/mcp-debugging",
+    "keyword": [
+      "ATR",
+      "atr-source-id:CTX-GITHUB-MCP-DEBUGGING-2026",
+      "atr-source-kind:TECHNICAL_PRACTICE_GUIDE",
+      "atr-source-layer:contextual_inspiration"
+    ],
+    "note": "ATR source ID: CTX-GITHUB-MCP-DEBUGGING-2026\nEvidence boundary recorded in reading card."
+  }
+]

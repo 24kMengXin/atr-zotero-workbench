@@ -87,17 +87,17 @@ ATR controller 仍是唯一可以推进 lifecycle 的系统。来自 Zotero 的�
 
 ## 当前实现与仍未完成的验收证据（2026-07-18）
 
-`graph.json`、XUL overlay 和 legacy/v0.9 adapter 已不再只是论文列表：它们能投影 source-grounded concept tree、现实张力、问题卡、细粒度 review question、item-contract audit、时间戳 artifact、历史 projection snapshot、Zotero source/claim stance、immutable human-review-packet 与 owner disposition。历史问题卡版本也会保留并显示其替代关系。
+`graph.json` 与 legacy/v0.9 adapter 已不再只是论文列表：它们能投影 source-grounded concept tree、现实张力、问题卡、细粒度 review question、item-contract audit、时间戳 artifact、历史 projection snapshot、Zotero source/claim stance、immutable human-review-packet、owner disposition 与隔离 `human-review-assessment`。历史问题卡版本也会保留并显示其替代关系。Zotero 插件不再把这些对象铺成 XUL overlay；它将 topic/source 映射到原生 Collection、Reader、Note 与 Item Pane，并在「Topic 与演化」中生成一份只依据真实 timeline 的过程 Note，在「共创复核」中显示独立 reviewer 的结论、保留对象与待另写版本对象。Item Pane 提供五种 typed stance，但任何 stance 仍只产生 review input。完整图谱继续作为 ATR 的可审计派生投影保留。
 
 但这些能力不等于完成上述 MVP。当前证据与缺口如下：
 
 | 验收对象 | 当前证据 | 仍缺什么，因而不能宣称完成 |
 | --- | --- | --- |
 | topic → 实际过程 | v0.9 harness 记录 gate/stage；新 `run_instrumented.py` 以后会记录真实 Codex execution attempt（声明 skill 与实际 skill invocation 分开） | 当前 multilingual continuation 迁移前没有原生 skill-event，不能倒灌伪历史；尚需一个从新 topic 开始的端到端真实 run |
-| 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射，source/claim note 有 locator 与 stance 字段，阅读条目归入 per-run collection | 尚未验证对 PDF annotation/highlight 的精确 deep link；现有 continuation 仍待真实阅读者填写 locator |
-| 人的反馈回流 | note modify → review queue → immutable packet → append-only owner disposition，并显示最近问题/claim/路线影响；harness 对已存在的 disposition ledger 验证唯一 packet/decision、允许处置与非授权边界 | owner disposition 只请求 controller review，尚未有 controller 原生消费并记录新的 route/claim artifact 的真实案例 |
+| 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射；隔离 Zotero 9 smoke 已验证 114 个 source ID → 109 个去重条目、Reader PDF 打开、原生 highlight/comment/page/position 捕获，并映射到距离 1 的最近问题 | 尚未实现从 ATR 侧反向打开某条既有 annotation 的精确 Reader deep link；真实研究来源仍需阅读者填写/核对 locator |
+| 人的反馈回流 | Item Pane 五种判断 → Note typed stance → review queue → immutable packet → append-only owner disposition → isolated assessment；三阶段隔离 smoke 已验证 `QUALIFIES`、Reader annotation、最近节点回显，以及 `05 · 共创复核` 原生 Note。assessment 明确保留来源、请求 evidence review，且 clone stage/version 不变 | 已证明代码路径，但仍缺真实人的处置后另行产出新 collision/route/claim artifact 并形成 current/history 分支的学术案例 |
 | 知识与现实问题图 | concept map、opportunity map、问题卡与论文 role/细粒度问题均有 source IDs 和不成立边界；contextual sources 独立分层 | 不是完整领域 ontology；现实材料不提供部署影响估计或 gap certificate |
 | 历史保留 | 图投影快照、历史问题卡版本与 supersession relation 均可比较 | 尚未提供任意两个分支的完整并排互动比较；原始 artifact 的版本化仍依赖 harness 的 append-only政策 |
-| Zotero 运行时 | XPI 有 manifest/contract/static validation；失败时显示 workspace 诊断；独立 profile 已确认 Zotero 识别源码侧载版本 | 日常 profile 仍注册 0.3.8 而非候选 0.4.x；必须先通过 Zotero UI 重新安装候选 XPI，才能进行菜单、挂载、note notifier 的真实验收 |
+| Zotero 运行时 | repo-local 隔离 profile 已在 Zotero 9.0.6 验证菜单、Item Pane 注册、21 份 Note、Reader tab、annotation、6 个知识 Collection、13 个研究 Collection、过程 Note、论文问题角色与 typed stance；构建前仍执行 manifest/contract/static validation | 尚未在日常 profile 安装并人工走查候选 XPI；隔离 profile 的 PASS 不能替代用户日常库中的最终体验验收 |
 
-因此下一次系统改动的优先级不是继续美化图，而是：完成候选 XPI 的真实安装/开发 profile 启用验证；随后用一条真实 Zotero 阅读反馈驱动 controller 的明确复审决定，并保留全过程 artifact。
+因此剩余运行时门禁不再是“代码能否在 Zotero 启动”，而是：安装候选 XPI 到日常 profile 后，由真实研究者走查 Collection/Note/Reader/Item Pane 的阅读体验，并完成一次“人的处置 → controller 新 review artifact → 保留/分叉路线”的端到端共创循环。通过前不能宣称完整目标完成。

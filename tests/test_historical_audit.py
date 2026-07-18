@@ -7,6 +7,10 @@ from pathlib import Path
 
 from scripts.audit_historical_programs import audit
 
+_REPO_TEST_TMP = Path(__file__).resolve().parents[1] / ".runtime" / "tests"
+_REPO_TEST_TMP.mkdir(parents=True, exist_ok=True)
+tempfile.tempdir = str(_REPO_TEST_TMP)
+
 
 class HistoricalAuditTest(unittest.TestCase):
     def test_keeps_history_read_only_and_reports_missing_current_artifacts(self):
