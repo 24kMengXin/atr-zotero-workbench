@@ -109,6 +109,17 @@ class BuildTest(unittest.TestCase):
                                                         'claim_count': 1, 'recorded_stage': 'R2_FOCUSED_REVIEW',
                                                         'alignment_disposition': 'LEGACY_MAP_INPUT_ONLY'}]}]},
             },
+            {
+                'artifact_id': 'sha256:m', 'digest': 'm' * 64, 'kind': 'legacy-mapping-index',
+                'original_name': 'mapping.json', 'created_at': '2026-01-04', 'metadata_json': '{}',
+                'payload': {'artifact_type': 'legacy-mapping-index', 'mapping_id': 'map-v1',
+                            'summary': {'manifest_count': 2, 'run_count': 1},
+                            'policy': 'review only',
+                            'manifests': [
+                                {'run_id': 'old-a', 'decision': 'REUSE_AFTER_SOURCE_REVERIFICATION'},
+                                {'run_id': 'old-a', 'decision': 'RETAIN_AS_LEGACY_STATE_SNAPSHOT'},
+                            ]},
+            },
         ]
         run = V2Run(Path('/r'), 'portfolio-run',
                     [{'subject_id': 'portfolio:P', 'kind': 'portfolio', 'state': 'INTAKE', 'version': 0,
@@ -122,12 +133,21 @@ class BuildTest(unittest.TestCase):
         self.assertTrue(any(edge['relation'] == 'retains_legacy_branch_as_input' for edge in graph['edges']))
         legacy = next(node for node in graph['nodes'] if node['id'] == 'legacy_run:old-a')
         self.assertEqual(legacy['data']['recorded_stage'], 'R2_FOCUSED_REVIEW')
+        self.assertEqual(legacy['data']['legacy_mapping_status'], 'LEGACY_MAPPED')
+        self.assertEqual(legacy['data']['mapped_artifact_count'], 2)
+        self.assertNotIn('no LEGACY_MAPPED artifact manifests', legacy['data']['missing_for_current'])
+        self.assertTrue(any(node['kind'] == 'legacy_mapping_audit' for node in graph['nodes']))
+        self.assertTrue(any(edge['relation'] == 'maps_exact_consumed_artifacts' for edge in graph['edges']))
         program = next(node for node in graph['nodes'] if node['id'] == 'research_program:A')
         self.assertEqual(program['data']['posterior_disposition'], 'REFRAME')
         self.assertEqual(program['data']['surviving_boundary'], 'one pinned contrast')
         self.assertEqual(program['data']['owner_review_status'], 'PENDING_HUMAN_OWNER_REVIEW')
         self.assertEqual(program['data']['collision_review_artifact_id'], 'COL-A')
         self.assertTrue(any(edge['relation'] == 'summarizes_child_collision_review' for edge in graph['edges']))
+        projection = native_projection(graph)
+        self.assertTrue(any(obj['object_kind'] == 'alignment_audit_note'
+                            and obj['graph_node_id'].startswith('legacy_mapping:')
+                            for obj in projection['objects']))
 
     def test_registry_review_finds_pending_feedback_across_topics(self):
         with tempfile.TemporaryDirectory() as tmp:

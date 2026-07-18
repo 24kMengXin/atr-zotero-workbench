@@ -452,6 +452,43 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                     reusable=branch.get("reusable", []), missing_for_current=branch.get("missing_for_current", []),
                 )
                 edge(program_node, legacy_node, "retains_legacy_branch_as_input")
+        if artifact_type in {"legacy-mapping-index", "legacy-program-mapping-index"}:
+            program_key = payload.get("program_key")
+            mapping_id = str(payload.get("mapping_id") or artifact_id)
+            scope = str(program_key or "portfolio")
+            mapping_node = ensure_node(
+                f"legacy_mapping:{mapping_id}:{scope}", "legacy_mapping_audit",
+                "逐项历史消费映射 · " + scope,
+                mapping_id=mapping_id, program_key=program_key,
+                current_run_id=payload.get("current_run_id"),
+                summary=payload.get("summary", {}), policy=payload.get("policy", ""),
+                conformance="LEGACY_MAPPED", artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", mapping_node, "materializes_exact_legacy_consumption")
+            if program_key:
+                program_node = ensure_node(
+                    f"research_program:{program_key}", "research_program", str(program_key),
+                    program_key=program_key,
+                )
+                edge(program_node, mapping_node, "declares_legacy_consumption_boundary")
+            manifests_by_run: dict[str, list[dict[str, Any]]] = {}
+            for row in payload.get("manifests", []):
+                if isinstance(row, dict) and row.get("run_id"):
+                    manifests_by_run.setdefault(str(row["run_id"]), []).append(row)
+            for legacy_id, rows in sorted(manifests_by_run.items()):
+                decisions = sorted({str(row.get("decision")) for row in rows if row.get("decision")})
+                legacy_node = ensure_node(
+                    f"legacy_run:{legacy_id}", "legacy_research_run", legacy_id,
+                    mapped_artifact_count=len(rows), legacy_mapping_status="LEGACY_MAPPED",
+                    mapped_decisions=decisions, mapping_id=mapping_id,
+                    mapping_boundary="Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state.",
+                )
+                legacy_record = next(item for item in nodes if item["id"] == legacy_node)
+                legacy_record["data"]["missing_for_current"] = [
+                    gap for gap in legacy_record["data"].get("missing_for_current", [])
+                    if gap != "no LEGACY_MAPPED artifact manifests"
+                ]
+                edge(mapping_node, legacy_node, "maps_exact_consumed_artifacts", manifest_count=len(rows))
         if artifact_type == "historical-alignment-summary":
             audit_node = ensure_node(
                 f"alignment_audit:{payload.get('audit_digest', artifact_id)}", "historical_alignment_audit",

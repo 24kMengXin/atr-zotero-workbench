@@ -3,9 +3,9 @@
     "atr-zotero-workbench@24kmengxin.github.io": {
       "updates": [
         {
-          "version": "0.6.5",
-          "update_link": "https://github.com/24kMengXin/atr-zotero-workbench/releases/download/v0.6.5/atr-zotero-workbench.xpi",
-          "update_hash": "sha256:9d1b3f1a80cf82da1f1d550ed7d89b35ebc6772dd228db6253cdc8d1dd8cf63d",
+          "version": "0.6.6",
+          "update_link": "https://github.com/24kMengXin/atr-zotero-workbench/releases/download/v0.6.6/atr-zotero-workbench.xpi",
+          "update_hash": "sha256:ce5df85d328b115e337d92be1a23cb3d3b5cc4db6d87b85d2d9ac6d423eaa829",
           "applications": {
             "zotero": {
               "strict_min_version": "6.999",

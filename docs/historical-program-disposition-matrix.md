@@ -7,19 +7,19 @@
 - 覆盖 6 个 program、28 个历史 run；当前 checker 结构通过 28/28。
 - 共 391 条来源记录、358 个唯一 source ID、326 个唯一 URL、352 个唯一标题；source ID 重复行 33 条，进入 Zotero 前必须去重。
 - access status 已声明 0/391；带定位的全文已检查记录 0/391。因此这些来源目前只能按 metadata/abstract 历史输入处理，不能声称已经下载、阅读或核实全文。
-- 只有 2/28 个 run 含任意 artifact manifest；没有 manifest 的材料只能 `LEGACY_MAPPED`，不能作为新 run 的 canonical 模板。
+- 28/28 个 run 的当前消费路径已有 manifest；其中逐项 sidecar 共 164 个。它们全部是 `LEGACY_MAPPED`，不能作为新 run 的 canonical 模板。
 - 28 个 run 全部归为 `LEGACY_MAP_INPUT_ONLY`：没有发现需要物理删除的 JSON 损坏，但旧 stage、gate、claim 和 route 全部退出 current 权威；清退发生在当前投影与授权层，不破坏历史目录。
 
-## 六个 program 的弹性骨架缺口
+## 六个 program 的历史输入剩余限制
 
 | Program | 历史 run | 来源记录 | 成为 current v2 链前必须补齐 |
 | --- | ---: | ---: | --- |
-| `multilingual-agent-action-attribution` | 7 | 124 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
-| `multilingual-agent-state-continuity` | 5 | 32 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
-| `multilingual-agent-authorization-safety` | 5 | 50 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
-| `multilingual-representation-and-data-decisions` | 4 | 136 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
-| `agent-infrastructure-and-evaluation-contracts` | 5 | 31 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
-| `atr-research-governance` | 2 | 18 | new program-level v2 intake and topic route；source access/fulltext re-verification with Zotero attachment state；LEGACY_MAPPED manifests for every consumed artifact；fresh source-grounded FKS/knowledge context；opportunity decision (map or NO_ADMISSIBLE_SIGNAL)；current claim/problem versions only after their independent gates |
+| `multilingual-agent-action-attribution` | 7 | 124 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
+| `multilingual-agent-state-continuity` | 5 | 32 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
+| `multilingual-agent-authorization-safety` | 5 | 50 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
+| `multilingual-representation-and-data-decisions` | 4 | 136 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
+| `agent-infrastructure-and-evaluation-contracts` | 5 | 31 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
+| `atr-research-governance` | 2 | 18 | source access/fulltext re-verification with Zotero attachment state；fresh source-grounded semantic review for every reused historical interpretation；current claim/problem versions only after their independent gates |
 
 ## 28 个 run 的逐项归位
 

@@ -922,7 +922,23 @@ var ATRZoteroWorkbench = {
 				["当前归位", data.alignment_disposition],
 				["整合动作", data.integration_action],
 				["来源 / claim", String(data.source_count || 0) + " / " + String(data.claim_count || 0)],
+				["逐项历史消费映射", data.legacy_mapping_status
+					? data.legacy_mapping_status + " · " + String(data.mapped_artifact_count || 0) + " 个 artifact"
+					: "尚无逐项 sidecar"],
+				["映射用途", (data.mapped_decisions || []).join("；")],
+				["映射边界", data.mapping_boundary],
 				["成为 current 尚缺", (data.missing_for_current || []).join("；")],
+			];
+		}
+		else if (node.kind === "legacy_mapping_audit") {
+			title = "逐项历史消费映射";
+			sections = [
+				["映射 ID", data.mapping_id],
+				["Program", data.program_key || "portfolio"],
+				["逐项摘要", JSON.stringify(data.summary || {})],
+				["当前 child", data.current_run_id],
+				["约束", data.policy],
+				["符合性", data.conformance],
 			];
 		}
 		else if (node.kind === "historical_alignment_audit") {
@@ -2024,7 +2040,8 @@ var ATRZoteroWorkbench = {
 			}
 			let title = doc.createElementNS(svgNS, "title");
 			title.textContent = node.label + (node.data?.recorded_stage ? " · " + node.data.recorded_stage : "")
-				+ (node.data?.alignment_disposition ? " · " + node.data.alignment_disposition : "");
+				+ (node.data?.alignment_disposition ? " · " + node.data.alignment_disposition : "")
+				+ (node.data?.mapped_artifact_count ? " · LEGACY_MAPPED×" + node.data.mapped_artifact_count : "");
 			group.append(title); group.addEventListener("click", () => openNode(node));
 			group.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") openNode(node); });
 			svg.append(group);
@@ -2037,9 +2054,11 @@ var ATRZoteroWorkbench = {
 			for (let branch of branches.get(program.id) || []) addNode(branch, 7, "#94a3b8");
 		}
 		parent.append(svg);
+		let mappedArtifacts = [...branches.values()].flat()
+			.reduce((total, branch) => total + Number(branch.data?.mapped_artifact_count || 0), 0);
 		this.appendPaneText(doc, parent, `1 个 portfolio · ${programs.length} 个独立 program authority · ${
 			[...branches.values()].reduce((total, rows) => total + rows.length, 0)
-		} 条只读历史 branch。橙色=REFRAME，紫色=NEEDS_EVIDENCE；这些是 worker 输出而不是 gate。点击 program 进入对应 Zotero topic；点击灰色历史节点打开只读导航 Note。`);
+		} 条只读历史 branch · ${mappedArtifacts} 个逐项 LEGACY_MAPPED sidecar。橙色=REFRAME，紫色=NEEDS_EVIDENCE；这些是 worker 输出而不是 gate。点击 program 进入对应 Zotero topic；点击灰色历史节点打开只读导航 Note。`);
 		let reviewDetails = this.htmlElement(doc, "details");
 		reviewDetails.style.margin = "8px 0";
 		let pending = programs.filter(program =>

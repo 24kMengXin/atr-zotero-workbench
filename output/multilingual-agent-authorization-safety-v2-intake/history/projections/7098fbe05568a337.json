@@ -112,15 +112,6 @@
       "artifact_ids": [
         "sha256:e5d58279955cea8649423c3b1f5ddcdf8d1529f9cb00e216e21fbd42891b0c66"
       ]
-    },
-    {
-      "at": "2026-07-18T23:17:57.597282+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "label": "附件 · LEGACY_MAPPING_INDEX_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b"
-      ]
     }
   ],
   "nodes": [
@@ -220,21 +211,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 6,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -257,19 +237,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 4,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -292,20 +263,10 @@
           "missing knowledge_context",
           "missing opportunity_map",
           "missing concept_map",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_CLAIM_HISTORY",
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -328,21 +289,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 6,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -366,20 +316,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -3353,41 +3293,6 @@
       }
     },
     {
-      "id": "artifact:sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-      "kind": "atr_v2_artifact",
-      "label": "legacy-mapping-index · 6eb43701000c",
-      "data": {
-        "artifact_id": "sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-        "artifact_kind": "legacy-mapping-index",
-        "digest": "6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-        "original_name": "multilingual-agent-authorization-safety.legacy-mapping-index.json",
-        "created_at": "2026-07-18T23:17:57.555827+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/programs/multilingual-agent-authorization-safety.legacy-mapping-index.json",
-          "declared_scope": "explicit historical artifact sidecars; review and navigation only"
-        },
-        "artifact_type": "legacy-program-mapping-index",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "kind": "legacy_mapping_audit",
-      "label": "逐项历史消费映射 · multilingual-agent-authorization-safety",
-      "data": {
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "program_key": "multilingual-agent-authorization-safety",
-        "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "summary": {
-          "manifest_count": 26,
-          "run_count": 5
-        },
-        "policy": "Review/navigation input only; no legacy claim or lifecycle state is promoted.",
-        "conformance": "LEGACY_MAPPED",
-        "artifact_id": "sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3567,21 +3472,6 @@
         "role": "SOURCE_REVIEWED_KNOWLEDGE_MAP_V1_1",
         "note": "Located source-review upgrade of the provisional knowledge scaffold; no lifecycle effect.",
         "created_at": "2026-07-18T22:04:50.538900+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "kind": "atr_v2_attachment",
-      "label": "LEGACY_MAPPING_INDEX_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 12,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-LEGACY-MAPPING-INDEX-V1",
-        "subject_id": "program:multilingual-agent-authorization-safety",
-        "subject_version": 0,
-        "artifact_id": "sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-        "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
-        "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
-        "created_at": "2026-07-18T23:17:57.597282+00:00"
       }
     }
   ],
@@ -4770,64 +4660,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-      "target": "artifact:sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "relation": "materializes_exact_legacy_consumption",
-      "data": {}
-    },
-    {
-      "source": "research_program:multilingual-agent-authorization-safety",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "relation": "declares_legacy_consumption_boundary",
-      "data": {}
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "target": "legacy_run:2026-07-17-multilingual-adaptation-safety",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "target": "legacy_run:2026-07-17-multilingual-agent-abstention-calibration",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 6
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "target": "legacy_run:2026-07-17-multilingual-agent-safety-boundary",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 4
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "target": "legacy_run:2026-07-17-multilingual-pragmatic-action-authorization",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 6
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-authorization-safety",
-      "target": "legacy_run:2026-07-17-multilingual-tool-output-injection",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
       "source": "reality_signal_gap:ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-DCS-001.v1",
       "target": "paper:SRC-AGENTABSTAIN-2026",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -4982,18 +4814,6 @@
       "target": "artifact:sha256:e5d58279955cea8649423c3b1f5ddcdf8d1529f9cb00e216e21fbd42891b0c66",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-authorization-safety",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "target": "artifact:sha256:6eb43701000cff449778f8a464bb6ca568f1b1aa0748b5a18f58d4d33c07b89b",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -5077,24 +4897,8 @@
         "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
         "node_count": 145,
         "edge_count": 217
-      },
-      {
-        "id": "7098fbe05568a337",
-        "archived_at": "2026-07-18T23:23:13.640605+00:00",
-        "path": "history/projections/7098fbe05568a337.json",
-        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "node_count": 146,
-        "edge_count": 220
-      },
-      {
-        "id": "407981d09909256f",
-        "archived_at": "2026-07-18T23:25:30.683686+00:00",
-        "path": "history/projections/407981d09909256f.json",
-        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "node_count": 149,
-        "edge_count": 230
       }
     ],
-    "previous_projection": "407981d09909256f"
+    "previous_projection": "e1fd6da92f1e42a4"
   }
 }

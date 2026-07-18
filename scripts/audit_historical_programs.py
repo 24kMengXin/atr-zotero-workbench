@@ -73,7 +73,9 @@ def _harness_result(script: Path, path: Path) -> dict[str, Any] | None:
     return body
 
 
-def audit_run(path: Path, disposition: str, role: str, harness_root: Path | None = None) -> dict[str, Any]:
+def audit_run(path: Path, disposition: str, role: str, harness_root: Path | None = None,
+              legacy_mappings: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    legacy_mappings = legacy_mappings or []
     sources, issues = json_rows(path / "evidence" / "sources.jsonl")
     source_rows = load_json_rows(path / "evidence" / "sources.jsonl")
     claims, claim_issues = json_rows(path / "evidence" / "claims.jsonl")
@@ -93,8 +95,10 @@ def audit_run(path: Path, disposition: str, role: str, harness_root: Path | None
         "concept_map": (path / "knowledge" / "concept-map.json").exists(),
         "problem_cards": len(list((path / "knowledge" / "research-problem-cards").glob("*.json"))) if (path / "knowledge" / "research-problem-cards").exists() else 0,
         "skill_events": (path / "observability" / "skill-events.jsonl").exists() and bool((path / "observability" / "skill-events.jsonl").read_text(encoding="utf-8").strip()),
-        "artifact_manifests": len(list(path.rglob("artifact-manifest.json"))),
+        "inline_artifact_manifests": len(list(path.rglob("artifact-manifest.json"))),
+        "legacy_mapped_sidecars": len(legacy_mappings),
     }
+    artifacts["artifact_manifests"] = artifacts["inline_artifact_manifests"] + artifacts["legacy_mapped_sidecars"]
     source_access = {
         "records": sources,
         "with_doi": sum(bool(row.get("doi")) for row in source_rows),
@@ -155,6 +159,7 @@ def audit_run(path: Path, disposition: str, role: str, harness_root: Path | None
         "counts": {"sources": sources, "claims": claims}, "artifacts": artifacts, "source_access": source_access,
         "reusable_as_provenance_input": reuse, "not_sufficient_for_current_continuation": noncurrent,
         "artifact_dispositions": artifact_dispositions,
+        "legacy_mapped_sidecars": legacy_mappings,
         "alignment_disposition": alignment_disposition,
         "program_integration_action": integration_action,
         "harness_structural_check": structural,
@@ -163,15 +168,26 @@ def audit_run(path: Path, disposition: str, role: str, harness_root: Path | None
     }
 
 
-def audit(catalog_path: Path, harness_root: Path | None = None) -> dict[str, Any]:
+def audit(catalog_path: Path, harness_root: Path | None = None,
+          legacy_mapping_index: Path | None = None) -> dict[str, Any]:
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    mappings_by_run: dict[str, list[dict[str, Any]]] = {}
+    mapping_summary = None
+    if legacy_mapping_index:
+        mapping = json.loads(legacy_mapping_index.read_text(encoding="utf-8"))
+        mapping_summary = mapping.get("summary", {})
+        for row in mapping.get("manifests", []):
+            mappings_by_run.setdefault(str(row.get("run_id")), []).append(row)
     programs = []
     all_runs = []
     for program in catalog.get("programs", []):
         rows = []
         for branch in program.get("branches", []):
             path = (catalog_path.parent / branch["run"]).resolve()
-            rows.append(audit_run(path, branch.get("disposition", "UNSPECIFIED"), branch.get("role", ""), harness_root))
+            rows.append(audit_run(
+                path, branch.get("disposition", "UNSPECIFIED"), branch.get("role", ""), harness_root,
+                mappings_by_run.get(path.name, []),
+            ))
         all_runs.extend(rows)
         programs.append({"key": program["key"], "label": program["label"], "root_question": program["root_question"], "runs": rows})
     disposition_counts = Counter(row["catalog_disposition"] for row in all_runs)
@@ -183,7 +199,8 @@ def audit(catalog_path: Path, harness_root: Path | None = None) -> dict[str, Any
     unique_titles = {str(row.get("title", "")).strip() for row in all_source_rows if row.get("title")}
     return {
         "schema_version": "0.2", "artifact_type": "historical-program-alignment-audit", "catalog": str(catalog_path.resolve()),
-        "policy": catalog.get("policy", {}), "summary": {
+        "policy": catalog.get("policy", {}), "legacy_mapping_index": str(legacy_mapping_index.resolve()) if legacy_mapping_index else None,
+        "legacy_mapping_summary": mapping_summary, "summary": {
             "program_count": len(programs), "run_count": len(all_runs),
             "runs_with_integrity_issues": sum(bool(row["integrity_issues"]) for row in all_runs),
             "runs_with_parseable_sources": sum(row["counts"]["sources"] > 0 for row in all_runs),
@@ -195,6 +212,7 @@ def audit(catalog_path: Path, harness_root: Path | None = None) -> dict[str, Any
             "source_records_with_access_status": sum(row["source_access"]["with_access_status"] for row in all_runs),
             "source_records_declared_fulltext_inspected": sum(row["source_access"]["declared_fulltext_inspected"] for row in all_runs),
             "runs_with_legacy_manifests": sum(row["artifacts"]["artifact_manifests"] > 0 for row in all_runs),
+            "legacy_mapped_sidecar_count": sum(row["artifacts"]["legacy_mapped_sidecars"] for row in all_runs),
             "structurally_valid_under_current_checker": sum(bool((row["harness_structural_check"] or {}).get("pass")) for row in all_runs),
             "alignment_dispositions": dict(sorted(Counter(row["alignment_disposition"] for row in all_runs).items())),
             "dispositions": dict(sorted(disposition_counts.items())),
@@ -204,12 +222,11 @@ def audit(catalog_path: Path, harness_root: Path | None = None) -> dict[str, Any
                 "program": program["key"],
                 "historical_runs": len(program["runs"]),
                 "source_records": sum(row["counts"]["sources"] for row in program["runs"]),
-                "required_before_current_v2_chain": [
-                    "new program-level v2 intake and topic route",
-                    "source access/fulltext re-verification with Zotero attachment state",
+                "required_before_current_v2_chain": ([
                     "LEGACY_MAPPED manifests for every consumed artifact",
-                    "fresh source-grounded FKS/knowledge context",
-                    "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+                ] if any(not row["artifacts"]["legacy_mapped_sidecars"] for row in program["runs"]) else []) + [
+                    "source access/fulltext re-verification with Zotero attachment state",
+                    "fresh source-grounded semantic review for every reused historical interpretation",
                     "current claim/problem versions only after their independent gates",
                 ],
             }
@@ -231,10 +248,10 @@ def markdown_report(report: dict[str, Any]) -> str:
         f"- 覆盖 {s['program_count']} 个 program、{s['run_count']} 个历史 run；当前 checker 结构通过 {s['structurally_valid_under_current_checker']}/{s['run_count']}。",
         f"- 共 {s['source_records']} 条来源记录、{s['unique_source_ids']} 个唯一 source ID、{s['unique_source_urls']} 个唯一 URL、{s['unique_source_titles']} 个唯一标题；source ID 重复行 {s['duplicate_source_id_rows']} 条，进入 Zotero 前必须去重。",
         f"- access status 已声明 {s['source_records_with_access_status']}/{s['source_records']}；带定位的全文已检查记录 {s['source_records_declared_fulltext_inspected']}/{s['source_records']}。因此这些来源目前只能按 metadata/abstract 历史输入处理，不能声称已经下载、阅读或核实全文。",
-        f"- 只有 {s['runs_with_legacy_manifests']}/{s['run_count']} 个 run 含任意 artifact manifest；没有 manifest 的材料只能 `LEGACY_MAPPED`，不能作为新 run 的 canonical 模板。",
+        f"- {s['runs_with_legacy_manifests']}/{s['run_count']} 个 run 的当前消费路径已有 manifest；其中逐项 sidecar 共 {s['legacy_mapped_sidecar_count']} 个。它们全部是 `LEGACY_MAPPED`，不能作为新 run 的 canonical 模板。",
         "- 28 个 run 全部归为 `LEGACY_MAP_INPUT_ONLY`：没有发现需要物理删除的 JSON 损坏，但旧 stage、gate、claim 和 route 全部退出 current 权威；清退发生在当前投影与授权层，不破坏历史目录。",
         "",
-        "## 六个 program 的弹性骨架缺口",
+        "## 六个 program 的历史输入剩余限制",
         "",
         "| Program | 历史 run | 来源记录 | 成为 current v2 链前必须补齐 |",
         "| --- | ---: | ---: | --- |",
@@ -283,9 +300,14 @@ def main() -> None:
     parser.add_argument("catalog", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--harness-root", type=Path)
+    parser.add_argument("--legacy-mapping-index", type=Path)
     parser.add_argument("--markdown-out", type=Path)
     args = parser.parse_args()
-    report = audit(args.catalog, args.harness_root.resolve() if args.harness_root else None)
+    report = audit(
+        args.catalog,
+        args.harness_root.resolve() if args.harness_root else None,
+        args.legacy_mapping_index.resolve() if args.legacy_mapping_index else None,
+    )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.markdown_out:

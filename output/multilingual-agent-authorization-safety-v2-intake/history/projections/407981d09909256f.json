@@ -220,6 +220,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -257,6 +258,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -292,6 +294,7 @@
           "missing knowledge_context",
           "missing opportunity_map",
           "missing concept_map",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -328,6 +331,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -366,6 +370,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -5085,16 +5090,8 @@
         "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
         "node_count": 146,
         "edge_count": 220
-      },
-      {
-        "id": "407981d09909256f",
-        "archived_at": "2026-07-18T23:25:30.683686+00:00",
-        "path": "history/projections/407981d09909256f.json",
-        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "node_count": 149,
-        "edge_count": 230
       }
     ],
-    "previous_projection": "407981d09909256f"
+    "previous_projection": "7098fbe05568a337"
   }
 }

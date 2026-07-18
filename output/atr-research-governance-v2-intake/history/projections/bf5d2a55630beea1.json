@@ -112,15 +112,6 @@
       "artifact_ids": [
         "sha256:0eced7b576571ec417fb7c86cbebdf426c7b189f8cbaea8fd918bc029893e00f"
       ]
-    },
-    {
-      "at": "2026-07-18T23:17:57.452236+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "label": "附件 · LEGACY_MAPPING_INDEX_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240"
-      ]
     }
   ],
   "nodes": [
@@ -219,20 +210,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -255,21 +236,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 6,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -1958,41 +1928,6 @@
       }
     },
     {
-      "id": "artifact:sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-      "kind": "atr_v2_artifact",
-      "label": "legacy-mapping-index · 3bb9c1ba00bf",
-      "data": {
-        "artifact_id": "sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-        "artifact_kind": "legacy-mapping-index",
-        "digest": "3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-        "original_name": "atr-research-governance.legacy-mapping-index.json",
-        "created_at": "2026-07-18T23:17:57.416215+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/programs/atr-research-governance.legacy-mapping-index.json",
-          "declared_scope": "explicit historical artifact sidecars; review and navigation only"
-        },
-        "artifact_type": "legacy-program-mapping-index",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
-      "kind": "legacy_mapping_audit",
-      "label": "逐项历史消费映射 · atr-research-governance",
-      "data": {
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "program_key": "atr-research-governance",
-        "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
-        "summary": {
-          "manifest_count": 11,
-          "run_count": 2
-        },
-        "policy": "Review/navigation input only; no legacy claim or lifecycle state is promoted.",
-        "conformance": "LEGACY_MAPPED",
-        "artifact_id": "sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -2172,21 +2107,6 @@
         "role": "SOURCE_REVIEWED_KNOWLEDGE_MAP_V1_1",
         "note": "Located source-review upgrade of the provisional knowledge scaffold; no lifecycle effect.",
         "created_at": "2026-07-18T22:04:51.004057+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "kind": "atr_v2_attachment",
-      "label": "LEGACY_MAPPING_INDEX_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 12,
-        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-LEGACY-MAPPING-INDEX-V1",
-        "subject_id": "program:atr-research-governance",
-        "subject_version": 0,
-        "artifact_id": "sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-        "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
-        "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
-        "created_at": "2026-07-18T23:17:57.452236+00:00"
       }
     }
   ],
@@ -3070,40 +2990,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-atr-research-governance-v2-intake",
-      "target": "artifact:sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
-      "relation": "materializes_exact_legacy_consumption",
-      "data": {}
-    },
-    {
-      "source": "research_program:atr-research-governance",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
-      "relation": "declares_legacy_consumption_boundary",
-      "data": {}
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
-      "target": "legacy_run:2026-07-17-epistemic-route-calibration",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
-      "target": "legacy_run:2026-07-17-evidence-conditioned-research-exploration",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 6
-      }
-    },
-    {
       "source": "reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
       "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -3264,18 +3150,6 @@
       "target": "artifact:sha256:0eced7b576571ec417fb7c86cbebdf426c7b189f8cbaea8fd918bc029893e00f",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:atr-research-governance",
-      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "target": "artifact:sha256:3bb9c1ba00bf60914ea021d45e5afd90f16d5e5b441b51ab6b86362e60da3240",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -3359,24 +3233,8 @@
         "run": "2026-07-19-atr-research-governance-v2-intake",
         "node_count": 86,
         "edge_count": 165
-      },
-      {
-        "id": "bf5d2a55630beea1",
-        "archived_at": "2026-07-18T23:23:13.450862+00:00",
-        "path": "history/projections/bf5d2a55630beea1.json",
-        "run": "2026-07-19-atr-research-governance-v2-intake",
-        "node_count": 87,
-        "edge_count": 169
-      },
-      {
-        "id": "556bb36beff6a365",
-        "archived_at": "2026-07-18T23:25:30.508722+00:00",
-        "path": "history/projections/556bb36beff6a365.json",
-        "run": "2026-07-19-atr-research-governance-v2-intake",
-        "node_count": 90,
-        "edge_count": 176
       }
     ],
-    "previous_projection": "556bb36beff6a365"
+    "previous_projection": "c8d95196c6647ec0"
   }
 }

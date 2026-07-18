@@ -140,6 +140,7 @@ def validate_source() -> None:
         "mini_graph_count", "appendPortfolioGraph",
         'aria-label", "ATR portfolio 到 program 与历史分支总览图', "portfolio_graph_count",
         "runForProgramNode", "openProgramNode", 'interaction: "PORTFOLIO_TO_NATIVE_TOPIC_TAB"',
+        '"逐项历史消费映射"', "LEGACY_MAPPED×", "mappedArtifacts",
         "openProgramReviewNode", 'interaction: "PORTFOLIO_TO_CHILD_COLLISION_REVIEW_NOTE"',
         "待我的 owner review · ${pending.length}", '"进入 child 并开始 owner review"',
     ):

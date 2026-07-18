@@ -1109,6 +1109,17 @@
         "SRC-ARBOR-2026",
         "SRC-LLM-AUDIT-TRAILS-2026"
       ]
+    },
+    {
+      "object_id": "legacy-mapping-audit:legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
+      "atr_id": "multilingual-aaai-legacy-consumption-v1",
+      "title": "逐项历史消费映射 · atr-research-governance",
+      "marker": "ATR Alignment Audit Node: legacy_mapping:multilingual-aaai-legacy-consumption-v1:atr-research-governance",
+      "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
+      "collection_role": "HISTORY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

@@ -4209,6 +4209,17 @@
         "SRC-MASSIVE-AGENTS-2025",
         "SRC-UNITOOLCALL-2026"
       ]
+    },
+    {
+      "object_id": "legacy-mapping-audit:legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-action-attribution",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-action-attribution",
+      "atr_id": "multilingual-aaai-legacy-consumption-v1",
+      "title": "逐项历史消费映射 · multilingual-agent-action-attribution",
+      "marker": "ATR Alignment Audit Node: legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-action-attribution",
+      "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
+      "collection_role": "HISTORY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

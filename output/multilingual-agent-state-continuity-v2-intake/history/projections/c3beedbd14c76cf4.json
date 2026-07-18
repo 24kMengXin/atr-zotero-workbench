@@ -221,6 +221,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -260,6 +261,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -298,6 +300,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -334,6 +337,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -370,6 +374,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -4425,16 +4430,8 @@
         "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
         "node_count": 117,
         "edge_count": 213
-      },
-      {
-        "id": "c3beedbd14c76cf4",
-        "archived_at": "2026-07-18T23:25:30.758230+00:00",
-        "path": "history/projections/c3beedbd14c76cf4.json",
-        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "node_count": 120,
-        "edge_count": 223
       }
     ],
-    "previous_projection": "c3beedbd14c76cf4"
+    "previous_projection": "ae2ce4fa05a4a96b"
   }
 }

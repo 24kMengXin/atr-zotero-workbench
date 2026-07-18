@@ -404,6 +404,14 @@ def native_projection(graph: dict) -> dict:
                 "review_role": "IMMUTABLE_MIGRATION_BOUNDARY", "collection_role": "HISTORY",
                 "linked_source_ids": [],
             })
+        elif node.get("kind") == "legacy_mapping_audit":
+            objects.append({
+                "object_id": f"legacy-mapping-audit:{node['id']}", "object_kind": "alignment_audit_note",
+                "graph_node_id": node["id"], "atr_id": data.get("mapping_id") or node["id"],
+                "title": node.get("label"), "marker": f"ATR Alignment Audit Node: {node['id']}",
+                "review_role": "IMMUTABLE_MIGRATION_BOUNDARY", "collection_role": "HISTORY",
+                "linked_source_ids": [],
+            })
     projection = {
         "schema_version": "0.1",
         "projection": "atr-zotero-native-map",

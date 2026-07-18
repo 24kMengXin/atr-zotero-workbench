@@ -112,15 +112,6 @@
       "artifact_ids": [
         "sha256:100af2aaba09b2468ca39d564cbe7a883e1023036a8ba5087e30eed1becf2006"
       ]
-    },
-    {
-      "at": "2026-07-18T23:17:57.379056+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "label": "附件 · LEGACY_MAPPING_INDEX_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3"
-      ]
     }
   ],
   "nodes": [
@@ -219,20 +210,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -254,20 +235,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -290,21 +261,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 6,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -328,20 +288,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -364,21 +314,10 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 6,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_R0_5_INPUT_ONLY",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -2679,41 +2618,6 @@
       }
     },
     {
-      "id": "artifact:sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-      "kind": "atr_v2_artifact",
-      "label": "legacy-mapping-index · 45f93a52e727",
-      "data": {
-        "artifact_id": "sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-        "artifact_kind": "legacy-mapping-index",
-        "digest": "45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-        "original_name": "agent-infrastructure-and-evaluation-contracts.legacy-mapping-index.json",
-        "created_at": "2026-07-18T23:17:57.346047+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/programs/agent-infrastructure-and-evaluation-contracts.legacy-mapping-index.json",
-          "declared_scope": "explicit historical artifact sidecars; review and navigation only"
-        },
-        "artifact_type": "legacy-program-mapping-index",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "kind": "legacy_mapping_audit",
-      "label": "逐项历史消费映射 · agent-infrastructure-and-evaluation-contracts",
-      "data": {
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "program_key": "agent-infrastructure-and-evaluation-contracts",
-        "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "summary": {
-          "manifest_count": 27,
-          "run_count": 5
-        },
-        "policy": "Review/navigation input only; no legacy claim or lifecycle state is promoted.",
-        "conformance": "LEGACY_MAPPED",
-        "artifact_id": "sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -2893,21 +2797,6 @@
         "role": "SOURCE_REVIEWED_KNOWLEDGE_MAP_V1_1",
         "note": "Located source-review upgrade of the provisional knowledge scaffold; no lifecycle effect.",
         "created_at": "2026-07-18T22:04:50.884086+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "kind": "atr_v2_attachment",
-      "label": "LEGACY_MAPPING_INDEX_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 12,
-        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-LEGACY-MAPPING-INDEX-V1",
-        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
-        "subject_version": 0,
-        "artifact_id": "sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-        "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
-        "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
-        "created_at": "2026-07-18T23:17:57.379056+00:00"
       }
     }
   ],
@@ -4049,64 +3938,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-      "target": "artifact:sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "relation": "materializes_exact_legacy_consumption",
-      "data": {}
-    },
-    {
-      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "relation": "declares_legacy_consumption_boundary",
-      "data": {}
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_run:2026-07-17-agent-capability-registration",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_run:2026-07-17-agent-evaluation-drift-attribution",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 6
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_run:2026-07-17-capability-contract-testbed",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_run:2026-07-17-programming-language-agent-affordances",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:agent-infrastructure-and-evaluation-contracts",
-      "target": "legacy_run:2026-07-17-skill-capability-containment",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 6
-      }
-    },
-    {
       "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
       "target": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "relation": "records_transition",
@@ -4249,18 +4080,6 @@
       "target": "artifact:sha256:100af2aaba09b2468ca39d564cbe7a883e1023036a8ba5087e30eed1becf2006",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
-      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "target": "artifact:sha256:45f93a52e7275703999d9191be04c8a49357be13c3480d20f16fe6916077fbb3",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4336,24 +4155,8 @@
         "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
         "node_count": 104,
         "edge_count": 171
-      },
-      {
-        "id": "5cea7b3df5feb9d4",
-        "archived_at": "2026-07-18T23:23:13.365580+00:00",
-        "path": "history/projections/5cea7b3df5feb9d4.json",
-        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "node_count": 113,
-        "edge_count": 207
-      },
-      {
-        "id": "f1e2960472022a74",
-        "archived_at": "2026-07-18T23:25:30.420722+00:00",
-        "path": "history/projections/f1e2960472022a74.json",
-        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "node_count": 116,
-        "edge_count": 217
       }
     ],
-    "previous_projection": "f1e2960472022a74"
+    "previous_projection": "46087f504669d890"
   }
 }

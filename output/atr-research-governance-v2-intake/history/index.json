@@ -80,6 +80,22 @@
       "run": "2026-07-19-atr-research-governance-v2-intake",
       "node_count": 86,
       "edge_count": 165
+    },
+    {
+      "id": "bf5d2a55630beea1",
+      "archived_at": "2026-07-18T23:23:13.450862+00:00",
+      "path": "history/projections/bf5d2a55630beea1.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 87,
+      "edge_count": 169
+    },
+    {
+      "id": "556bb36beff6a365",
+      "archived_at": "2026-07-18T23:25:30.508722+00:00",
+      "path": "history/projections/556bb36beff6a365.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 90,
+      "edge_count": 176
     }
   ]
 }

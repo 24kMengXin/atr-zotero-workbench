@@ -29,3 +29,26 @@ class HistoricalAuditTest(unittest.TestCase):
             self.assertEqual(row["artifact_dispositions"][0]["decision"], "REUSE_AFTER_SOURCE_REVERIFICATION")
             self.assertEqual(report["summary"]["source_records_with_access_status"], 0)
             self.assertEqual((run / "evidence" / "sources.jsonl").read_text(), '{"source_id":"P1"}\n')
+
+    def test_sidecar_index_closes_only_the_manifest_gap(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); catalog_dir = root / "catalog"; catalog_dir.mkdir(); run = root / "run"
+            (run / "evidence").mkdir(parents=True); (run / "evidence" / "sources.jsonl").write_text('{"source_id":"P1"}\n')
+            (run / "run-state.json").write_text(json.dumps({"schema_version":"1.0", "active_stage":"R0_INTAKE"}))
+            catalog_path = catalog_dir / "catalog.json"
+            catalog_path.write_text(json.dumps({"programs":[{"key":"p","label":"P","root_question":"Q","branches":[{"run":"../run"}]}]}))
+            mapping_path = root / "mapping.json"
+            mapping_path.write_text(json.dumps({
+                "summary":{"manifest_count":2,"run_count":1},
+                "manifests":[
+                    {"run_id":"run","artifact_id":"A1","original_path":"run/evidence/sources.jsonl"},
+                    {"run_id":"run","artifact_id":"A2","original_path":"run/run-state.json"},
+                ],
+            }))
+            report = audit(catalog_path, legacy_mapping_index=mapping_path)
+            row = report["programs"][0]["runs"][0]
+            self.assertEqual(report["summary"]["runs_with_legacy_manifests"], 1)
+            self.assertEqual(report["summary"]["legacy_mapped_sidecar_count"], 2)
+            self.assertEqual(row["artifacts"]["legacy_mapped_sidecars"], 2)
+            self.assertNotIn("no LEGACY_MAPPED artifact manifests", row["not_sufficient_for_current_continuation"])
+            self.assertIn("source access/fulltext state undeclared", row["not_sufficient_for_current_continuation"])

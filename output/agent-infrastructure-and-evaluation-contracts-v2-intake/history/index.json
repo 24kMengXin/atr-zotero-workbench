@@ -72,6 +72,22 @@
       "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "node_count": 104,
       "edge_count": 171
+    },
+    {
+      "id": "5cea7b3df5feb9d4",
+      "archived_at": "2026-07-18T23:23:13.365580+00:00",
+      "path": "history/projections/5cea7b3df5feb9d4.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 113,
+      "edge_count": 207
+    },
+    {
+      "id": "f1e2960472022a74",
+      "archived_at": "2026-07-18T23:25:30.420722+00:00",
+      "path": "history/projections/f1e2960472022a74.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 116,
+      "edge_count": 217
     }
   ]
 }

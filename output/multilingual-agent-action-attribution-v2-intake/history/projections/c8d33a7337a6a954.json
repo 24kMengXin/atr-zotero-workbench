@@ -256,6 +256,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -329,6 +330,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -365,6 +367,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -401,6 +404,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -438,6 +442,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -8829,16 +8834,8 @@
         "run": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
         "node_count": 268,
         "edge_count": 347
-      },
-      {
-        "id": "c8d33a7337a6a954",
-        "archived_at": "2026-07-18T23:25:30.592620+00:00",
-        "path": "history/projections/c8d33a7337a6a954.json",
-        "run": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
-        "node_count": 271,
-        "edge_count": 359
       }
     ],
-    "previous_projection": "c8d33a7337a6a954"
+    "previous_projection": "9893b1598d3c9798"
   }
 }

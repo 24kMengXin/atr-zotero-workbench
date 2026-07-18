@@ -112,15 +112,6 @@
       "artifact_ids": [
         "sha256:5a35f5e454799bbb1057d20dff0a2f3f883969ea41e96080c851c648c8c58657"
       ]
-    },
-    {
-      "at": "2026-07-18T23:17:57.739789+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "label": "附件 · LEGACY_MAPPING_INDEX_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b"
-      ]
     }
   ],
   "nodes": [
@@ -220,19 +211,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 4,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -256,20 +238,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -293,20 +265,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -330,20 +292,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -7744,41 +7696,6 @@
       }
     },
     {
-      "id": "artifact:sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-      "kind": "atr_v2_artifact",
-      "label": "legacy-mapping-index · a7b610aa4b62",
-      "data": {
-        "artifact_id": "sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-        "artifact_kind": "legacy-mapping-index",
-        "digest": "a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-        "original_name": "multilingual-representation-and-data-decisions.legacy-mapping-index.json",
-        "created_at": "2026-07-18T23:17:57.704254+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/programs/multilingual-representation-and-data-decisions.legacy-mapping-index.json",
-          "declared_scope": "explicit historical artifact sidecars; review and navigation only"
-        },
-        "artifact_type": "legacy-program-mapping-index",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "kind": "legacy_mapping_audit",
-      "label": "逐项历史消费映射 · multilingual-representation-and-data-decisions",
-      "data": {
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "program_key": "multilingual-representation-and-data-decisions",
-        "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "summary": {
-          "manifest_count": 19,
-          "run_count": 4
-        },
-        "policy": "Review/navigation input only; no legacy claim or lifecycle state is promoted.",
-        "conformance": "LEGACY_MAPPED",
-        "artifact_id": "sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -7958,21 +7875,6 @@
         "role": "SOURCE_REVIEWED_KNOWLEDGE_MAP_V1_1",
         "note": "Located source-review upgrade of the provisional knowledge scaffold; no lifecycle effect.",
         "created_at": "2026-07-18T22:04:50.766187+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "kind": "atr_v2_attachment",
-      "label": "LEGACY_MAPPING_INDEX_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 12,
-        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-LEGACY-MAPPING-INDEX-V1",
-        "subject_id": "program:multilingual-representation-and-data-decisions",
-        "subject_version": 0,
-        "artifact_id": "sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-        "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
-        "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
-        "created_at": "2026-07-18T23:17:57.739789+00:00"
       }
     }
   ],
@@ -10374,56 +10276,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-      "target": "artifact:sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "relation": "materializes_exact_legacy_consumption",
-      "data": {}
-    },
-    {
-      "source": "research_program:multilingual-representation-and-data-decisions",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "relation": "declares_legacy_consumption_boundary",
-      "data": {}
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "target": "legacy_run:2026-07-16-mt-reasoning",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 4
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "target": "legacy_run:2026-07-17-fragmentation-assigned-compute-refresh",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "target": "legacy_run:2026-07-17-multilingual-curation-decision",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-representation-and-data-decisions",
-      "target": "legacy_run:2026-07-17-multilingual-reasoning-language-mixing",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
       "source": "subject:program:multilingual-representation-and-data-decisions",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "relation": "records_transition",
@@ -10566,18 +10418,6 @@
       "target": "artifact:sha256:5a35f5e454799bbb1057d20dff0a2f3f883969ea41e96080c851c648c8c58657",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-representation-and-data-decisions",
-      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "target": "artifact:sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -10653,24 +10493,8 @@
         "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
         "node_count": 319,
         "edge_count": 388
-      },
-      {
-        "id": "e8b050be3c58e7eb",
-        "archived_at": "2026-07-18T23:23:13.872394+00:00",
-        "path": "history/projections/e8b050be3c58e7eb.json",
-        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "node_count": 328,
-        "edge_count": 419
-      },
-      {
-        "id": "e56b2e437af7fc13",
-        "archived_at": "2026-07-18T23:25:30.944949+00:00",
-        "path": "history/projections/e56b2e437af7fc13.json",
-        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "node_count": 331,
-        "edge_count": 428
       }
     ],
-    "previous_projection": "e56b2e437af7fc13"
+    "previous_projection": "1a8d2c0969675d7e"
   }
 }

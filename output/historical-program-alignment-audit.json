@@ -7,6 +7,50 @@
     "programs_are_derived_organizing_views": true,
     "no_branch_is_deleted_or_promoted_without_source_review": true
   },
+  "legacy_mapping_index": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/legacy-mapping-index.json",
+  "legacy_mapping_summary": {
+    "by_program": {
+      "agent-infrastructure-and-evaluation-contracts": 27,
+      "atr-research-governance": 11,
+      "multilingual-agent-action-attribution": 54,
+      "multilingual-agent-authorization-safety": 26,
+      "multilingual-agent-state-continuity": 27,
+      "multilingual-representation-and-data-decisions": 19
+    },
+    "by_run": {
+      "2026-07-15-g1-reconstruction": 5,
+      "2026-07-16-action-evaluation-attribution": 4,
+      "2026-07-16-fks-multilingual-agent-action": 24,
+      "2026-07-16-mt-reasoning": 4,
+      "2026-07-17-agent-capability-registration": 5,
+      "2026-07-17-agent-evaluation-drift-attribution": 6,
+      "2026-07-17-capability-contract-testbed": 5,
+      "2026-07-17-code-switch-agent-control-plane": 7,
+      "2026-07-17-code-switched-speech-tool-grounding": 5,
+      "2026-07-17-controlled-multilingual-discovery": 5,
+      "2026-07-17-epistemic-route-calibration": 5,
+      "2026-07-17-evidence-conditioned-research-exploration": 6,
+      "2026-07-17-fragmentation-assigned-compute-refresh": 5,
+      "2026-07-17-multilingual-adaptation-safety": 5,
+      "2026-07-17-multilingual-agent-abstention-calibration": 6,
+      "2026-07-17-multilingual-agent-assurance": 6,
+      "2026-07-17-multilingual-agent-coordination": 4,
+      "2026-07-17-multilingual-agent-evaluation-transport": 5,
+      "2026-07-17-multilingual-agent-memory-continuity": 7,
+      "2026-07-17-multilingual-agent-safety-boundary": 4,
+      "2026-07-17-multilingual-curation-decision": 5,
+      "2026-07-17-multilingual-evidence-provenance": 5,
+      "2026-07-17-multilingual-gui-locale-attribution": 4,
+      "2026-07-17-multilingual-pragmatic-action-authorization": 6,
+      "2026-07-17-multilingual-reasoning-language-mixing": 5,
+      "2026-07-17-multilingual-tool-output-injection": 5,
+      "2026-07-17-programming-language-agent-affordances": 5,
+      "2026-07-17-skill-capability-containment": 6
+    },
+    "manifest_count": 164,
+    "program_count": 6,
+    "run_count": 28
+  },
   "summary": {
     "program_count": 6,
     "run_count": 28,
@@ -19,7 +63,8 @@
     "duplicate_source_id_rows": 33,
     "source_records_with_access_status": 0,
     "source_records_declared_fulltext_inspected": 0,
-    "runs_with_legacy_manifests": 2,
+    "runs_with_legacy_manifests": 28,
+    "legacy_mapped_sidecar_count": 164,
     "structurally_valid_under_current_checker": 28,
     "alignment_dispositions": {
       "LEGACY_MAP_INPUT_ONLY": 28
@@ -60,11 +105,8 @@
       "historical_runs": 7,
       "source_records": 124,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     },
@@ -73,11 +115,8 @@
       "historical_runs": 5,
       "source_records": 32,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     },
@@ -86,11 +125,8 @@
       "historical_runs": 5,
       "source_records": 50,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     },
@@ -99,11 +135,8 @@
       "historical_runs": 4,
       "source_records": 136,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     },
@@ -112,11 +145,8 @@
       "historical_runs": 5,
       "source_records": 31,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     },
@@ -125,11 +155,8 @@
       "historical_runs": 2,
       "source_records": 18,
       "required_before_current_v2_chain": [
-        "new program-level v2 intake and topic route",
         "source access/fulltext re-verification with Zotero attachment state",
-        "LEGACY_MAPPED manifests for every consumed artifact",
-        "fresh source-grounded FKS/knowledge context",
-        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "fresh source-grounded semantic review for every reused historical interpretation",
         "current claim/problem versions only after their independent gates"
       ]
     }
@@ -161,7 +188,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 9
+            "inline_artifact_manifests": 9,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 14
           },
           "source_access": {
             "records": 13,
@@ -208,6 +237,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-15-g1-reconstruction-R3-MAN-001.v1",
+              "content_digest": "sha256:ef0de1bb8840dc703d6afaecad213cc5a544a48e88fb714fdd121e20f4447717",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-15-g1-reconstruction/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-15-g1-reconstruction",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-15-g1-reconstruction"
+            },
+            {
+              "artifact_id": "ARH-2026-07-15-g1-reconstruction-R3-MAN-002.v1",
+              "content_digest": "sha256:dfbbb5608501c1dfad4483bbc670133d5e7b0241720e0ef333a146cd078db6ab",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-15-g1-reconstruction/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-15-g1-reconstruction/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-15-g1-reconstruction"
+            },
+            {
+              "artifact_id": "ARH-2026-07-15-g1-reconstruction-R3-SRC-003.v1",
+              "content_digest": "sha256:e7cf19bb5985fb2d26ca2411f7a2e6f7cc370281a726f3ad8f9bfbc0c03690b5",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-15-g1-reconstruction/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-15-g1-reconstruction/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-15-g1-reconstruction"
+            },
+            {
+              "artifact_id": "ARH-2026-07-15-g1-reconstruction-R3-MAN-004.v1",
+              "content_digest": "sha256:8701a0fd4ddd2869b5b24cdcd03a38396441dd0f031e567f459929a0860d9d2f",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-15-g1-reconstruction/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-15-g1-reconstruction/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-15-g1-reconstruction"
+            },
+            {
+              "artifact_id": "ARH-2026-07-15-g1-reconstruction-R3-CLM-005.v1",
+              "content_digest": "sha256:4795c375d7d08e5db4bedc46c0b0bc9171c536336537e24c12e7061b505ebfa6",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_CLAIM_HISTORY",
+              "manifest_path": "2026-07-15-g1-reconstruction/evidence-claims-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-15-g1-reconstruction/evidence/claims.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-15-g1-reconstruction"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -264,7 +345,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 4,
+            "artifact_manifests": 4
           },
           "source_access": {
             "records": 10,
@@ -283,7 +366,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -307,6 +389,48 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-16-action-evaluation-attribution-R2-MAN-001.v1",
+              "content_digest": "sha256:b81367a6b1594c313ef0cb145b3aaf5076487ac106e723e5de4700fb475ed070",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-16-action-evaluation-attribution/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-16-action-evaluation-attribution",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-action-evaluation-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-action-evaluation-attribution-R2-MAN-002.v1",
+              "content_digest": "sha256:2ffee319493e87662b2e6e451bfcf200faaa27ce33581cbe2c3511a37855bdb7",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-16-action-evaluation-attribution/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-16-action-evaluation-attribution/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-action-evaluation-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-action-evaluation-attribution-R2-SRC-003.v1",
+              "content_digest": "sha256:8764fcd3927e3f10e849e2bd3d7996cfc5857fd294ed73955a49c85d46f09b6d",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-16-action-evaluation-attribution/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-action-evaluation-attribution/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-action-evaluation-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-action-evaluation-attribution-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-16-action-evaluation-attribution/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-action-evaluation-attribution/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-action-evaluation-attribution"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -378,7 +502,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 1
+            "inline_artifact_manifests": 1,
+            "legacy_mapped_sidecars": 24,
+            "artifact_manifests": 25
           },
           "source_access": {
             "records": 56,
@@ -430,6 +556,248 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAN-001.v1",
+              "content_digest": "sha256:921134ab052ef67549901294cbdb2552b3147a9e660f2a9cbb6934777e11f3fb",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAN-002.v1",
+              "content_digest": "sha256:d305f33367fe15fa133bb89f696b6a496ec20acfa33ecaf0cc28e5bf50504d02",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-SRC-003.v1",
+              "content_digest": "sha256:49e54cbd3b7a66d918d873445a71bb4f8c9aeb17ce953b042eccc769fbffa320",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-005.v1",
+              "content_digest": "sha256:7ffc9a595cc7c1259c8ce7adef343f1e1312a1ced7118036a61788279800b9c5",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-006.v1",
+              "content_digest": "sha256:855723a5e6dcb6b366ecaa509792819a4ffa475f1240657119b7b95776302006",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-abstention-language-kill-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-abstention-language-kill.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-007.v1",
+              "content_digest": "sha256:72360b9b38bd225f5c4a588b129436893a07d57585f6767e50a06926052923c7",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-catalog-retrieval-wait-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-catalog-retrieval-wait.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-008.v1",
+              "content_digest": "sha256:2cbae3d40edfc16f9070093a339363f4feddc0cf85c1c2ebff76a69544b5d0ac",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-catalog-retrieval-wait-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-catalog-retrieval-wait.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-009.v1",
+              "content_digest": "sha256:0c364e325a6943dd08b4540a23a495f03ddac22e32ffe092dffb221043a36dea",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-channel-trust-language-kill-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-channel-trust-language-kill.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-010.v1",
+              "content_digest": "sha256:fdbcca2373434e2655fc144b78841266e0f303e9edbd551f36e5c4f9cc0b667b",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-direction-route-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-direction-route.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-011.v1",
+              "content_digest": "sha256:c7115525d6e5cd3b97e1a996dccf4cf9d972ba9c561f6ca8ebc035177855f21e",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-direction-wait-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-direction-wait.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-012.v1",
+              "content_digest": "sha256:3b4b9e48ed0e7cd7dd637b13bfa9adb1b94e7afbfa1a98b5999e1d2aa94e9e96",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-g3-kill-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-g3-kill.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-013.v1",
+              "content_digest": "sha256:5e69a181004953774bd5acdc849e718fcef19c32a456d6210f2fe90f07a7ff3e",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-identifier-boundary-focused-review-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-identifier-boundary-focused-review.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-014.v1",
+              "content_digest": "sha256:a4177d1fc041cc9c4457b32837826ee3e2ffd23036a22bf2a9a9b92c78d1b532",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-identifier-boundary-kill-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-identifier-boundary-kill.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-015.v1",
+              "content_digest": "sha256:882ea31ffdd426140caeb891e828bc7bb9c9b9be8f5ac8d179fac851adb0c4db",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-observation-language-focused-review-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-observation-language-focused-review.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-016.v1",
+              "content_digest": "sha256:0d8827002dbcc095ab5f0586b086d1b9761b4453edfbc9c72fbcb98e66b35402",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-observation-language-wait-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-observation-language-wait.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-017.v1",
+              "content_digest": "sha256:ccae34e121318be8856d2ea695a21f3ee32b3593e486ade8d39a19e2b6ef8470",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-recovery-hazard-wait-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-recovery-hazard-wait.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-018.v1",
+              "content_digest": "sha256:2ef3da2c5b2ed5b300fd68a047a75ee323fa9531f5b4bc394f004a4167f8c3e2",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-schema-wording-focused-review-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-schema-wording-focused-review.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-019.v1",
+              "content_digest": "sha256:a599b36502019fe231246da671d6bb1bfe3eac26abf4ea3bb1a251880d4dac84",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-schema-wording-kill-v3-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-schema-wording-kill.v3.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-020.v1",
+              "content_digest": "sha256:74ca4b1a0babb9a9fb7c43ec7680f3d9a98c47f2b5eb527a564b904b7e3bd952",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-synthetic-provenance-pause-v3-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-synthetic-provenance-pause.v3.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-021.v1",
+              "content_digest": "sha256:79dd1a5511f28221f79111f1a4a19e6b3b8767f56e8a4d33b99471ec963015d1",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-synthetic-provenance-program-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-synthetic-provenance-program.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-022.v1",
+              "content_digest": "sha256:0e63cba5baf8ef5285a355faf74ff6db6c296d705e2f7ddccb0627c092696e70",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-synthetic-provenance-program-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-synthetic-provenance-program.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-023.v1",
+              "content_digest": "sha256:8dd6330bfb924d3b68e36dc3ad45a24e49d92cbe91cee37c176e040f56bdbe17",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-token-budget-focused-review-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-token-budget-focused-review.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-fks-multilingual-agent-action-R3-MAP-024.v1",
+              "content_digest": "sha256:1ab82203d06a9c3a97e5e54aaab9b2ab35858848209a7edc568ffdfaecdc4f64",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-16-fks-multilingual-agent-action/knowledge-knowledge-context-token-budget-wait-v2-json.artifact-manifest.json",
+              "original_path": "2026-07-16-fks-multilingual-agent-action/knowledge/knowledge-context-token-budget-wait.v2.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-16-fks-multilingual-agent-action"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -490,7 +858,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 24,
@@ -510,7 +880,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -539,6 +908,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-controlled-multilingual-discovery-R2-MAN-001.v1",
+              "content_digest": "sha256:467f8ab1e3f78177f1138121bafe9a33cc0d0bd49f55fbc62c6ab39d359ca825",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-controlled-multilingual-discovery/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-controlled-multilingual-discovery",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-controlled-multilingual-discovery"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-controlled-multilingual-discovery-R2-MAN-002.v1",
+              "content_digest": "sha256:2d94bfaa4dd86be0d749b095fb1b88f5c3960e750ad145368759caf8743a7d57",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-controlled-multilingual-discovery/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-controlled-multilingual-discovery/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-controlled-multilingual-discovery"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-controlled-multilingual-discovery-R2-SRC-003.v1",
+              "content_digest": "sha256:bcd02b89c73e058c50583e166ba90e847ad7b34dae9b63c7e0311947fcc4dbf6",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-controlled-multilingual-discovery/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-controlled-multilingual-discovery/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-controlled-multilingual-discovery"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-controlled-multilingual-discovery-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-controlled-multilingual-discovery/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-controlled-multilingual-discovery/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-controlled-multilingual-discovery"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-controlled-multilingual-discovery-R2-MAP-005.v1",
+              "content_digest": "sha256:2a1c88869e22a8047cad433d0ed3af8e4bc8302d6381775dbadfbadb27b3cb69",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-controlled-multilingual-discovery/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-controlled-multilingual-discovery/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-controlled-multilingual-discovery"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -606,7 +1027,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 6,
@@ -625,7 +1048,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -659,6 +1081,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-MAN-001.v1",
+              "content_digest": "sha256:c841491f4aca126cd683e7e0db3dc4d21b74e462f88ece33da83e93a2f760a15",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-MAN-002.v1",
+              "content_digest": "sha256:a485aeb19cb65d3cbe6a292fb105a532bf636c760c0ba21e91bfde0128cedfdf",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-SRC-003.v1",
+              "content_digest": "sha256:8eef7869c3b56b889ce4678393390ab8a729d9023bf27fa0005e95649b83f0e0",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-MAP-005.v1",
+              "content_digest": "sha256:30128b155b1d4f198655d92f0338fd99ad8dbb06eb4fcd6ad1a2e9f2d5d88bd6",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-assurance-R3-MAP-006.v1",
+              "content_digest": "sha256:6be35f50ab1264434c622c436074e9f4bbede648058a30d988d284a8d4136664",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-17-multilingual-agent-assurance/knowledge-knowledge-context-assurance-r2-park-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-assurance/knowledge/knowledge-context-assurance-r2-park.v1.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-assurance"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -719,7 +1203,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 7,
@@ -737,7 +1223,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -766,6 +1251,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-evaluation-transport-R3-MAN-001.v1",
+              "content_digest": "sha256:95e631eff1e3d5cf2c2c7e0fc3700a8f172d886e622da7b929d5c6aea8dc2c7c",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-evaluation-transport/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-evaluation-transport",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-evaluation-transport"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-evaluation-transport-R3-MAN-002.v1",
+              "content_digest": "sha256:d1819c43e992b179381a33c8398115bf7837f9748be6d0d19dd00fdbbfd44f5d",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-evaluation-transport/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-evaluation-transport/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-evaluation-transport"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-evaluation-transport-R3-SRC-003.v1",
+              "content_digest": "sha256:4040bc41b1a8cdb85f6a45c6889c641e792f526feb53648b27a978c9223f7694",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-evaluation-transport/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-evaluation-transport/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-evaluation-transport"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-evaluation-transport-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-evaluation-transport/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-evaluation-transport/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-evaluation-transport"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-evaluation-transport-R3-OCM-005.v1",
+              "content_digest": "sha256:7a56e32b99fceb5d6e8c40bf3fe11c16fe5a346898c2d5ab5f3bedfd774c9431",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-evaluation-transport/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-evaluation-transport/knowledge/opportunity-map.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-agent-evaluation-transport"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -826,7 +1363,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 8,
@@ -846,7 +1385,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -875,6 +1413,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-evidence-provenance-R3-MAN-001.v1",
+              "content_digest": "sha256:e8ec31d75e7af6ad5665c39c1f0d5af716cbf7ebad5e05e26d9344f2e27a284a",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-evidence-provenance/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-evidence-provenance",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-evidence-provenance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-evidence-provenance-R3-MAN-002.v1",
+              "content_digest": "sha256:c55be590adad26e3026cdcc4775ee52c03215f5c26368729aae526b69800df29",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-evidence-provenance/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-evidence-provenance/run-state.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-evidence-provenance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-evidence-provenance-R3-SRC-003.v1",
+              "content_digest": "sha256:40066caec95349169b38e1605ebd7eb0c0c0bb0ac045e7fb7f6674e676d82ff0",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-evidence-provenance/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-evidence-provenance/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-evidence-provenance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-evidence-provenance-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-evidence-provenance/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-evidence-provenance/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-evidence-provenance"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-evidence-provenance-R3-MAP-005.v1",
+              "content_digest": "sha256:4b0e3b63eede06beed07aa7565a2e4614647ea63c10a95c72bda897b1b47479e",
+              "current_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-multilingual-evidence-provenance/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-evidence-provenance/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-action-attribution",
+              "run_id": "2026-07-17-multilingual-evidence-provenance"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -942,7 +1532,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 7,
+            "artifact_manifests": 7
           },
           "source_access": {
             "records": 8,
@@ -962,7 +1554,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1001,6 +1592,78 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAN-001.v1",
+              "content_digest": "sha256:e6cb0c897db0bc4fb236ef3243363eb9bfc2e2c3561583c28f78156e04cb4c7d",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAN-002.v1",
+              "content_digest": "sha256:46729846d5392c35f034a9c1d38dc77434fcc7524702143bc03b46aef92685a4",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/run-state.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-SRC-003.v1",
+              "content_digest": "sha256:2d04a601da941efde1b98a888ddc1ce94a3e8c55729418d4aba95f733125acf0",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAP-005.v1",
+              "content_digest": "sha256:f369680fb52ca2e0a2df07532877fe274ef964785733a7a46dbe8fdcb2481935",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAP-006.v1",
+              "content_digest": "sha256:9c43bd91d976de8db1d4fc6a2c6162cb74d94fd2ba76aad40075f7e149c884e4",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/knowledge-knowledge-context-code-switch-control-r2-park-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/knowledge/knowledge-context-code-switch-control-r2-park.v1.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switch-agent-control-plane-R3-MAN-007.v1",
+              "content_digest": "sha256:642e99215e2fba2b9f7d2503f0d9246916e60279cf73f0b554d28184fd091315",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-code-switch-agent-control-plane/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switch-agent-control-plane/observability/skill-events.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switch-agent-control-plane"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1063,7 +1726,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 7,
+            "artifact_manifests": 7
           },
           "source_access": {
             "records": 9,
@@ -1083,7 +1748,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1122,6 +1786,78 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAN-001.v1",
+              "content_digest": "sha256:024c7e9f120e931e0174e7b4cb1ffc54b5d33d764675d1feb106cdaf7eb47826",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAN-002.v1",
+              "content_digest": "sha256:04595312ad3f7feed1bd104e00c0f623b384f11cadcf9c2410a58d281e3c3f42",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/run-state.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-SRC-003.v1",
+              "content_digest": "sha256:4afd50844fdf987c9ede1683eef44a22ac58543122304cfeb188f276fde895e7",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAP-005.v1",
+              "content_digest": "sha256:52313fdcc9a6f2634837854c8342e26a6c2afd521416a9980f13be33ab250cec",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAP-006.v1",
+              "content_digest": "sha256:ab194940ba4f97310747e754116051e3abace5d2e16766afe8c7516bdad8e00c",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/knowledge-knowledge-context-memory-continuity-r2-park-v1-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/knowledge/knowledge-context-memory-continuity-r2-park.v1.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-memory-continuity-R3-MAN-007.v1",
+              "content_digest": "sha256:a34ad59c92b136541afdcbf3c413519590ea8131729506dd8ddac1255dc80ae2",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-multilingual-agent-memory-continuity/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-memory-continuity/observability/skill-events.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-memory-continuity"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1184,7 +1920,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 4,
+            "artifact_manifests": 4
           },
           "source_access": {
             "records": 5,
@@ -1203,7 +1941,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1227,6 +1964,48 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-coordination-R2-MAN-001.v1",
+              "content_digest": "sha256:162cf014d4410f99d9086ad9c0e4663d243433ffc0dde2fc7aa42792e15eb435",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-coordination/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-coordination",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-coordination"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-coordination-R2-MAN-002.v1",
+              "content_digest": "sha256:b63f03ed9b60898941ce8ae6d9e6e1b1795265ecb7efcfcea171daeece9b851c",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-coordination/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-coordination/run-state.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-coordination"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-coordination-R2-SRC-003.v1",
+              "content_digest": "sha256:42c8e942c17ea68c53e58efc3f6f59d7223b82bdb9977f742f15efe82310ec92",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-coordination/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-coordination/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-coordination"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-coordination-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-coordination/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-coordination/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-agent-coordination"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1293,7 +2072,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 6,
@@ -1313,7 +2094,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1342,6 +2122,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-code-switched-speech-tool-grounding-R3-MAN-001.v1",
+              "content_digest": "sha256:d2ddc426c5d4cfea20dded1d06cd9d2085cd5d2c8aaac03bf65c7bf82f2c56ae",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-code-switched-speech-tool-grounding/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switched-speech-tool-grounding",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switched-speech-tool-grounding"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switched-speech-tool-grounding-R3-MAN-002.v1",
+              "content_digest": "sha256:963186d0cb22faba63657f0a0a5ad9e0fdba154357e8ab643376c456bdbf3e61",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-code-switched-speech-tool-grounding/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switched-speech-tool-grounding/run-state.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switched-speech-tool-grounding"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switched-speech-tool-grounding-R3-SRC-003.v1",
+              "content_digest": "sha256:4dc4451b4f842fc168bb3ce3bf06245739c919263ca6a7016689875b1932237d",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-code-switched-speech-tool-grounding/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switched-speech-tool-grounding/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switched-speech-tool-grounding"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switched-speech-tool-grounding-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-code-switched-speech-tool-grounding/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switched-speech-tool-grounding/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switched-speech-tool-grounding"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-code-switched-speech-tool-grounding-R3-MAN-005.v1",
+              "content_digest": "sha256:8928873f134f785102afc650b49763bbe1ddfe670ec83921f0052e94382a44f5",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-code-switched-speech-tool-grounding/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-code-switched-speech-tool-grounding/observability/skill-events.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-code-switched-speech-tool-grounding"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1404,7 +2236,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 4,
+            "artifact_manifests": 4
           },
           "source_access": {
             "records": 4,
@@ -1423,7 +2257,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1447,6 +2280,48 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-gui-locale-attribution-R3-MAN-001.v1",
+              "content_digest": "sha256:74a51867f1d20bc04432859cc2fc03b50b5485d5f2251c323009e308b9c3f015",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-gui-locale-attribution/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-gui-locale-attribution",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-gui-locale-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-gui-locale-attribution-R3-MAN-002.v1",
+              "content_digest": "sha256:796cc0d2307cff32e0837aad6d58bae16cf353d1dc08c2ed6fcbbaa3e1a1a283",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-gui-locale-attribution/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-gui-locale-attribution/run-state.json",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-gui-locale-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-gui-locale-attribution-R3-SRC-003.v1",
+              "content_digest": "sha256:ba085c2ba0a78bdc8d1cd7d99b0e165e0b0e6fc95564f84dbfaba10b254ad5f3",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-gui-locale-attribution/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-gui-locale-attribution/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-gui-locale-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-gui-locale-attribution-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-gui-locale-attribution/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-gui-locale-attribution/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-state-continuity",
+              "run_id": "2026-07-17-multilingual-gui-locale-attribution"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1514,7 +2389,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 9,
@@ -1533,7 +2410,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1567,6 +2443,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-MAN-001.v1",
+              "content_digest": "sha256:d16852fa50e034a183e059c03777a66b360ce3f6acd7eb1bcc0aaad6cd0404a2",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-MAN-002.v1",
+              "content_digest": "sha256:f38f6592df54dcc44fb5d23b3545e98d37eaae688bd77eb348b961b7bda7c6dc",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration/run-state.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-SRC-003.v1",
+              "content_digest": "sha256:bf587bd532b02c7038eec501e4b7532b17792f6e58d07aa7a92f973eb04ba45a",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-OCM-005.v1",
+              "content_digest": "sha256:576bc240a38951d3174463f466db9bc4b977709c899ae8b4c5d992ec6349a28b",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration/knowledge/opportunity-map.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-abstention-calibration-R3-MAN-006.v1",
+              "content_digest": "sha256:0f88b1640705a1e64bfc161a35fb36f4263c494e6a7796750c7815354e7bb556",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-multilingual-agent-abstention-calibration/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-abstention-calibration/observability/skill-events.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-abstention-calibration"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1627,7 +2565,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 4,
+            "artifact_manifests": 4
           },
           "source_access": {
             "records": 9,
@@ -1646,7 +2586,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1670,6 +2609,48 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-safety-boundary-R2-MAN-001.v1",
+              "content_digest": "sha256:86a13db40327ec938131397b738965d43b43b67a0aaddb4a242cc1ff3cba73bb",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-agent-safety-boundary/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-safety-boundary",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-safety-boundary"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-safety-boundary-R2-MAN-002.v1",
+              "content_digest": "sha256:64724b6b08f2c53ad1446f3803ec3b192155d3ca68ffe162c1bf6168a8b7fff9",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-agent-safety-boundary/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-safety-boundary/run-state.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-safety-boundary"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-safety-boundary-R2-SRC-003.v1",
+              "content_digest": "sha256:b300d78c7037d785235a3f3de436a86990785014aca711c0bbb92fed7ac8c6a4",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-agent-safety-boundary/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-safety-boundary/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-safety-boundary"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-agent-safety-boundary-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-agent-safety-boundary/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-agent-safety-boundary/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-agent-safety-boundary"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1736,7 +2717,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 8,
@@ -1755,7 +2738,6 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1784,6 +2766,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-tool-output-injection-R3-MAN-001.v1",
+              "content_digest": "sha256:c075bcf79d26fceb98928aa673cca3c158b33ff74570653e254581eecb71e6c4",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-tool-output-injection/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-tool-output-injection",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-tool-output-injection"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-tool-output-injection-R3-MAN-002.v1",
+              "content_digest": "sha256:5c90f34cdc8a6f375cefd578a512aeb18402c35b26b4f715de5479e3f43ed7cf",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-tool-output-injection/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-tool-output-injection/run-state.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-tool-output-injection"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-tool-output-injection-R3-SRC-003.v1",
+              "content_digest": "sha256:0606426a11d0a797548efdb5bd1fdd8996f0fe33241d5b9fbcb3a813fdc2fb76",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-tool-output-injection/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-tool-output-injection/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-tool-output-injection"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-tool-output-injection-R3-MAN-004.v1",
+              "content_digest": "sha256:0ef31203ffd80dd0fff6ed931a0a937e99362e8e42201d0639e30ae2f87e165c",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-tool-output-injection/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-tool-output-injection/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-tool-output-injection"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-tool-output-injection-R3-CLM-005.v1",
+              "content_digest": "sha256:129f99064d4c0a30bc2ee802edd8006d1d7c7e4ddb5819382fa026e6a6d6e0ce",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_CLAIM_HISTORY",
+              "manifest_path": "2026-07-17-multilingual-tool-output-injection/evidence-claims-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-tool-output-injection/evidence/claims.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-tool-output-injection"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1840,7 +2874,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 9,
@@ -1859,7 +2895,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -1893,6 +2928,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-MAN-001.v1",
+              "content_digest": "sha256:1dd6c412abddacbbdb5fe2849b60b2cfe591fd5c2fea9c6bca518173fec116fe",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-MAN-002.v1",
+              "content_digest": "sha256:3e9015c1150dbbb306f48015804b76d88aa903c01c2e1d1019ae7148daeaaeec",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization/run-state.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-SRC-003.v1",
+              "content_digest": "sha256:502c7165b3430d4e34202cfb312bfc443096eac1dc43b4340ab69f20d861bfe4",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-OCM-005.v1",
+              "content_digest": "sha256:2d71ee8ad1ddfc488d71433cb28a7834cf525a715b972ff80ef89b5a756e9c5f",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization/knowledge/opportunity-map.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-pragmatic-action-authorization-R3-MAN-006.v1",
+              "content_digest": "sha256:3245c535f59cd86d40ad83fb7242c6459d74bfcb38cd116424750b8d05e2a4cc",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-multilingual-pragmatic-action-authorization/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-pragmatic-action-authorization/observability/skill-events.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-pragmatic-action-authorization"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -1953,7 +3050,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 15,
@@ -1973,7 +3072,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2002,6 +3100,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-adaptation-safety-R3-MAN-001.v1",
+              "content_digest": "sha256:efe0f2307b7c62b182fb393bac038b2ed55d11685204bfc0e3e137d663d32a59",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-adaptation-safety/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-adaptation-safety",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-adaptation-safety"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-adaptation-safety-R3-MAN-002.v1",
+              "content_digest": "sha256:d1f6ef331746e869c27374010ae393490383c9e8eeadcd2b941f465d5d13cef2",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-adaptation-safety/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-adaptation-safety/run-state.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-adaptation-safety"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-adaptation-safety-R3-SRC-003.v1",
+              "content_digest": "sha256:b51e5ff1a54963bb3c201b8f1fbbab5953f8e1ec1ee283ac4b66834cb9eeb6d9",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-adaptation-safety/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-adaptation-safety/evidence/sources.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-adaptation-safety"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-adaptation-safety-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-adaptation-safety/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-adaptation-safety/evidence/edges.jsonl",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-adaptation-safety"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-adaptation-safety-R3-MAP-005.v1",
+              "content_digest": "sha256:92430dce91e7e35882fd9d9a81e50f36e474c489147f885c643cab1ae2899c9e",
+              "current_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-multilingual-adaptation-safety/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-adaptation-safety/knowledge/frontier-map.json",
+              "program_key": "multilingual-agent-authorization-safety",
+              "run_id": "2026-07-17-multilingual-adaptation-safety"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2069,7 +3219,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 4,
+            "artifact_manifests": 4
           },
           "source_access": {
             "records": 102,
@@ -2088,7 +3240,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2112,6 +3263,48 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-16-mt-reasoning-R2-MAN-001.v1",
+              "content_digest": "sha256:08f4aa594e6077d771b5e3b5172532e6290b21f317d98020cfc828e3b3ead68a",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-16-mt-reasoning/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-16-mt-reasoning",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-16-mt-reasoning"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-mt-reasoning-R2-MAN-002.v1",
+              "content_digest": "sha256:5293a2dbb45ac4a9ac89aa1875943b6526f6d20b86f56dfe3ae2cb722e671cb1",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-16-mt-reasoning/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-16-mt-reasoning/run-state.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-16-mt-reasoning"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-mt-reasoning-R2-SRC-003.v1",
+              "content_digest": "sha256:c56430b21515f35c40052a8ce552f5ac15b54d9acbb1c90c0e05a2e4bbf84845",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-16-mt-reasoning/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-mt-reasoning/evidence/sources.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-16-mt-reasoning"
+            },
+            {
+              "artifact_id": "ARH-2026-07-16-mt-reasoning-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-16-mt-reasoning/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-16-mt-reasoning/evidence/edges.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-16-mt-reasoning"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2179,7 +3372,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 5,
@@ -2199,7 +3394,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2228,6 +3422,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-reasoning-language-mixing-R2-MAN-001.v1",
+              "content_digest": "sha256:e5d6129b33cacd4d4d71e021694bf1d47f5616760a59e6fbcacffab12394bc2f",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-reasoning-language-mixing/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-reasoning-language-mixing",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-reasoning-language-mixing"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-reasoning-language-mixing-R2-MAN-002.v1",
+              "content_digest": "sha256:eeeef553b2cccb36134618980bf220a38f59b55a8e99920cbe9d109cf6fa57f9",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-reasoning-language-mixing/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-reasoning-language-mixing/run-state.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-reasoning-language-mixing"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-reasoning-language-mixing-R2-SRC-003.v1",
+              "content_digest": "sha256:59a7f8643d15ea30a05159a8e1560bfdec94015b9ca8e689b871b95f4a194266",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-reasoning-language-mixing/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-reasoning-language-mixing/evidence/sources.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-reasoning-language-mixing"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-reasoning-language-mixing-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-reasoning-language-mixing/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-reasoning-language-mixing/evidence/edges.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-reasoning-language-mixing"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-reasoning-language-mixing-R2-MAN-005.v1",
+              "content_digest": "sha256:cfe2c9be246ce952ba9a065693b9c8a8f1fd37c33701528ec362cc6f9c9583fb",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-multilingual-reasoning-language-mixing/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-reasoning-language-mixing/observability/skill-events.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-reasoning-language-mixing"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2296,7 +3542,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 9,
@@ -2316,7 +3564,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2345,6 +3592,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-fragmentation-assigned-compute-refresh-R3-MAN-001.v1",
+              "content_digest": "sha256:9c499254a3b8aa6eaf829e28fe6f328522aba5f50f8d40f0928344c85d554350",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-fragmentation-assigned-compute-refresh/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-fragmentation-assigned-compute-refresh",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-fragmentation-assigned-compute-refresh"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-fragmentation-assigned-compute-refresh-R3-MAN-002.v1",
+              "content_digest": "sha256:761d842d9a8fcea4a862dea52bc0257c7b58a9ec9c4cdbd8aee22cf9048b406d",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-fragmentation-assigned-compute-refresh/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-fragmentation-assigned-compute-refresh/run-state.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-fragmentation-assigned-compute-refresh"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-fragmentation-assigned-compute-refresh-R3-SRC-003.v1",
+              "content_digest": "sha256:f203a22e892a070d79e100486edb1a38790a6357feef8d5badd7b3afe001503b",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-fragmentation-assigned-compute-refresh/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-fragmentation-assigned-compute-refresh/evidence/sources.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-fragmentation-assigned-compute-refresh"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-fragmentation-assigned-compute-refresh-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-fragmentation-assigned-compute-refresh/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-fragmentation-assigned-compute-refresh/evidence/edges.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-fragmentation-assigned-compute-refresh"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-fragmentation-assigned-compute-refresh-R3-MAP-005.v1",
+              "content_digest": "sha256:0f372dbaa764d9a7d405c50d3ce36904277aaa7987c7918a144bbf04baf1abf9",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-fragmentation-assigned-compute-refresh/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-fragmentation-assigned-compute-refresh/knowledge/frontier-map.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-fragmentation-assigned-compute-refresh"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2405,7 +3704,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 20,
@@ -2425,7 +3726,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2454,6 +3754,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-curation-decision-R2-MAN-001.v1",
+              "content_digest": "sha256:7e4a41c017752cfc13004d59a0f6a9427d7842f908f90a3ed311518b1f8b45f1",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-multilingual-curation-decision/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-curation-decision",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-curation-decision"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-curation-decision-R2-MAN-002.v1",
+              "content_digest": "sha256:07919df89a840d25ec44a8934d84ed5b7acad37d8393f877d7379600de4b456f",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-multilingual-curation-decision/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-curation-decision/run-state.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-curation-decision"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-curation-decision-R2-SRC-003.v1",
+              "content_digest": "sha256:c98455166846547be636b5823faf684eeac8c274a8784c1b87a23b3bc465e13a",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-multilingual-curation-decision/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-curation-decision/evidence/sources.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-curation-decision"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-curation-decision-R2-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-multilingual-curation-decision/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-curation-decision/evidence/edges.jsonl",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-curation-decision"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-multilingual-curation-decision-R2-MAP-005.v1",
+              "content_digest": "sha256:bf3f92fd353d7fee9b5557c8f44cf934409c6d148469cb5ce33e4f74f4bce1e1",
+              "current_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "manifest_path": "2026-07-17-multilingual-curation-decision/knowledge-frontier-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-multilingual-curation-decision/knowledge/frontier-map.json",
+              "program_key": "multilingual-representation-and-data-decisions",
+              "run_id": "2026-07-17-multilingual-curation-decision"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2525,7 +3877,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 5,
@@ -2543,7 +3897,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2572,6 +3925,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-agent-capability-registration-R3-MAN-001.v1",
+              "content_digest": "sha256:1ff1129f048e516c927ff1094b7c17fb18b4cbc5678f6ba5ed42074208719d71",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-agent-capability-registration/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-capability-registration",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-capability-registration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-capability-registration-R3-MAN-002.v1",
+              "content_digest": "sha256:0132ce510ae457fca093128d4fc16c682a258cabe400a08fdcfef40f846e5aff",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-agent-capability-registration/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-capability-registration/run-state.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-capability-registration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-capability-registration-R3-SRC-003.v1",
+              "content_digest": "sha256:64395a182e98a0d986acf2e6bedcaef5c61e4d0ad47c1c48f84a76ce39708d15",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-agent-capability-registration/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-capability-registration/evidence/sources.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-capability-registration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-capability-registration-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-agent-capability-registration/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-capability-registration/evidence/edges.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-capability-registration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-capability-registration-R3-OCM-005.v1",
+              "content_digest": "sha256:5cc82c56886b4b9fddaca70db3928b45844edac604fc930cff14d6bc9d3802f5",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-agent-capability-registration/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-capability-registration/knowledge/opportunity-map.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-capability-registration"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2632,7 +4037,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 6,
@@ -2650,7 +4057,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2679,6 +4085,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-capability-contract-testbed-R3-MAN-001.v1",
+              "content_digest": "sha256:adf03537b528a2fa65a58e5ceeae14924d65c189d70938be945d04ad37799f4a",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-capability-contract-testbed/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-capability-contract-testbed",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-capability-contract-testbed"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-capability-contract-testbed-R3-MAN-002.v1",
+              "content_digest": "sha256:aff1410ab614980fbe3683c4086af840e0772380842b249be2f7ce15b20ed3ac",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-capability-contract-testbed/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-capability-contract-testbed/run-state.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-capability-contract-testbed"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-capability-contract-testbed-R3-SRC-003.v1",
+              "content_digest": "sha256:e36cb99344597950d272f2272505245c2725dcdc2c3558ade0bb1dc70cca695f",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-capability-contract-testbed/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-capability-contract-testbed/evidence/sources.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-capability-contract-testbed"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-capability-contract-testbed-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-capability-contract-testbed/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-capability-contract-testbed/evidence/edges.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-capability-contract-testbed"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-capability-contract-testbed-R3-OCM-005.v1",
+              "content_digest": "sha256:7d37e2a615a40cbb848038775cbb2bddc50a90fbb5e488a4cc03cfa6e4ae4d43",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-capability-contract-testbed/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-capability-contract-testbed/knowledge/opportunity-map.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-capability-contract-testbed"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2739,7 +4197,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 8,
@@ -2758,7 +4218,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2792,6 +4251,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-MAN-001.v1",
+              "content_digest": "sha256:1f839e7b3e62656fbd6cc1fc8c6767f533a04dd497c2fb4923bde830a0a1266c",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-MAN-002.v1",
+              "content_digest": "sha256:4b29349540aa4cfc3257de166c01ec3073a053a60c822fe1433598db9fcd7804",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution/run-state.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-SRC-003.v1",
+              "content_digest": "sha256:6622f48b2dbd746a22b08c69ba5878199386732cd55264dd6f167663ae59a25c",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution/evidence/sources.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution/evidence/edges.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-OCM-005.v1",
+              "content_digest": "sha256:6a9213d31a2963d3aceb70c0dff94cf08626ebfe92b51b94c2a6013e406ebd99",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution/knowledge/opportunity-map.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-agent-evaluation-drift-attribution-R3-MAN-006.v1",
+              "content_digest": "sha256:e6040a38560e5caf7a1b24d8083fe09152f3c70d845db8bb2dded05bdb052dc1",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-agent-evaluation-drift-attribution/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-agent-evaluation-drift-attribution/observability/skill-events.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-agent-evaluation-drift-attribution"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2852,7 +4373,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 6,
@@ -2872,7 +4395,6 @@
             "missing opportunity_map",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -2901,6 +4423,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-programming-language-agent-affordances-R3-MAN-001.v1",
+              "content_digest": "sha256:371642b99efbf52bc7e87fee0d0c99d80b98fbda6d6c31e719483bb17aa9d8c4",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-programming-language-agent-affordances/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-programming-language-agent-affordances",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-programming-language-agent-affordances"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-programming-language-agent-affordances-R3-MAN-002.v1",
+              "content_digest": "sha256:6e30eb27b131a92d770343d6432e94ea6b4e5e07b522fee369e42efab9df73d0",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-programming-language-agent-affordances/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-programming-language-agent-affordances/run-state.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-programming-language-agent-affordances"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-programming-language-agent-affordances-R3-SRC-003.v1",
+              "content_digest": "sha256:f3895dbd1558ccbd3be72ae905adcd06b36d5c7b0e439f6f84578b91a40aea6d",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-programming-language-agent-affordances/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-programming-language-agent-affordances/evidence/sources.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-programming-language-agent-affordances"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-programming-language-agent-affordances-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-programming-language-agent-affordances/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-programming-language-agent-affordances/evidence/edges.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-programming-language-agent-affordances"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-programming-language-agent-affordances-R3-MAN-005.v1",
+              "content_digest": "sha256:19dd0cda8b60451697d01456911b720e577c2e55cd41a450492e22c4e5aba5a2",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-programming-language-agent-affordances/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-programming-language-agent-affordances/observability/skill-events.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-programming-language-agent-affordances"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -2963,7 +4537,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 6,
@@ -2982,7 +4558,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -3016,6 +4591,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-MAN-001.v1",
+              "content_digest": "sha256:8625e22f8390887f60abfb3efcbfd066f7180c8a5945f35be35a02dae83ebb75",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-skill-capability-containment/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-MAN-002.v1",
+              "content_digest": "sha256:ea87e7b5f88cb2fb299446254b8bd9543f38a8f8608f4a0f8e668a5f45fd08f2",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-skill-capability-containment/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment/run-state.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-SRC-003.v1",
+              "content_digest": "sha256:c0918d2c39d9a8243e2cad20e3916ea04eea8fbbfbf4aec7a4cdcc7a290bc5da",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-skill-capability-containment/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment/evidence/sources.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-skill-capability-containment/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment/evidence/edges.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-OCM-005.v1",
+              "content_digest": "sha256:cbd5755ec8d1d259f09287ca5100f3213cee7ca899d396e664a596a3528fe735",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-skill-capability-containment/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment/knowledge/opportunity-map.json",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-skill-capability-containment-R3-MAN-006.v1",
+              "content_digest": "sha256:03d9fe23551adac9efa1046f372ae14d927f7d1c919d5c9bfc7e29c195a82077",
+              "current_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-skill-capability-containment/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-skill-capability-containment/observability/skill-events.jsonl",
+              "program_key": "agent-infrastructure-and-evaluation-contracts",
+              "run_id": "2026-07-17-skill-capability-containment"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -3083,7 +4720,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": false,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 5,
+            "artifact_manifests": 5
           },
           "source_access": {
             "records": 7,
@@ -3101,7 +4740,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -3130,6 +4768,58 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-epistemic-route-calibration-R3-MAN-001.v1",
+              "content_digest": "sha256:74905eaed36ad626e0e81da227e4e08b70ea4181e04216203045125482d0ad9a",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-epistemic-route-calibration/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-epistemic-route-calibration",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-epistemic-route-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-epistemic-route-calibration-R3-MAN-002.v1",
+              "content_digest": "sha256:89f5b20885ad5108ebb0105a73a2dbb458a0ec7b0c17c76b3802b2310f0f71e0",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-epistemic-route-calibration/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-epistemic-route-calibration/run-state.json",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-epistemic-route-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-epistemic-route-calibration-R3-SRC-003.v1",
+              "content_digest": "sha256:1f479d5d6042510e693f12f19ec277d064384eda357dbce8e3e5809ea767cf46",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-epistemic-route-calibration/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-epistemic-route-calibration/evidence/sources.jsonl",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-epistemic-route-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-epistemic-route-calibration-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-epistemic-route-calibration/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-epistemic-route-calibration/evidence/edges.jsonl",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-epistemic-route-calibration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-epistemic-route-calibration-R3-OCM-005.v1",
+              "content_digest": "sha256:9a84115d5e250d76a183bb59295ea6a57f43b61551733d7fe841cccca99acc79",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-epistemic-route-calibration/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-epistemic-route-calibration/knowledge/opportunity-map.json",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-epistemic-route-calibration"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
@@ -3190,7 +4880,9 @@
             "concept_map": false,
             "problem_cards": 0,
             "skill_events": true,
-            "artifact_manifests": 0
+            "inline_artifact_manifests": 0,
+            "legacy_mapped_sidecars": 6,
+            "artifact_manifests": 6
           },
           "source_access": {
             "records": 11,
@@ -3209,7 +4901,6 @@
             "missing knowledge_context",
             "missing concept_map",
             "no current claim ledger",
-            "no LEGACY_MAPPED artifact manifests",
             "source access/fulltext state undeclared",
             "no source declared FULLTEXT_INSPECTED with locator"
           ],
@@ -3243,6 +4934,68 @@
               "artifact": "unclassified prose/code/results",
               "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
               "boundary": "not consumed automatically"
+            }
+          ],
+          "legacy_mapped_sidecars": [
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-MAN-001.v1",
+              "content_digest": "sha256:d9ea2858d274f67e1446e7217b3ea44cace0ff9b7a8c942cd86a993994dc83dc",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "STRUCTURAL_INTEGRITY_INPUT_ONLY",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/run-snapshot.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-MAN-002.v1",
+              "content_digest": "sha256:3349af4298983c9fb37ba81e6384c4d654b12afa1712e9ce774e1647a0fc2145",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/run-state-json.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration/run-state.json",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-SRC-003.v1",
+              "content_digest": "sha256:148a2770ca398d0a9ee7de772ed9f2b1111e21f0914dc944e1b66de02c503918",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/evidence-sources-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration/evidence/sources.jsonl",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-MAN-004.v1",
+              "content_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/evidence-edges-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration/evidence/edges.jsonl",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-OCM-005.v1",
+              "content_digest": "sha256:12a08b7d7b9a13aec35d6181a015216728b20b916af1bf10c53f8d9d75d7a71e",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/knowledge-opportunity-map-json.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration/knowledge/opportunity-map.json",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
+            },
+            {
+              "artifact_id": "ARH-2026-07-17-evidence-conditioned-research-exploration-R3-MAN-006.v1",
+              "content_digest": "sha256:5961933113408829be35334b7723b73bbcedcc6c623206607cc4f5fb8f5cbecb",
+              "current_run_id": "2026-07-19-atr-research-governance-v2-intake",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "manifest_path": "2026-07-17-evidence-conditioned-research-exploration/observability-skill-events-jsonl.artifact-manifest.json",
+              "original_path": "2026-07-17-evidence-conditioned-research-exploration/observability/skill-events.jsonl",
+              "program_key": "atr-research-governance",
+              "run_id": "2026-07-17-evidence-conditioned-research-exploration"
             }
           ],
           "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",

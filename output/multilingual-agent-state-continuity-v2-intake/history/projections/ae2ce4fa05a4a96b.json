@@ -112,15 +112,6 @@
       "artifact_ids": [
         "sha256:a00107d02c997968edeb72ea15ecaa52260862960f37a8182e994efaa0a026b1"
       ]
-    },
-    {
-      "at": "2026-07-18T23:17:57.668419+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "label": "附件 · LEGACY_MAPPING_INDEX_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4"
-      ]
     }
   ],
   "nodes": [
@@ -221,22 +212,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 7,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -260,22 +239,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 7,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -298,19 +265,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 4,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -334,20 +292,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 5,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "RETAIN_AS_PROCESS_HISTORY",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -370,19 +318,10 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
-        ],
-        "mapped_artifact_count": 4,
-        "legacy_mapping_status": "LEGACY_MAPPED",
-        "mapped_decisions": [
-          "RETAIN_AS_LEGACY_PROVENANCE",
-          "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
-          "REUSE_AFTER_SOURCE_REVERIFICATION",
-          "STRUCTURAL_INTEGRITY_INPUT_ONLY"
-        ],
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "mapping_boundary": "Byte-level sidecars record only declared consumption; they do not promote legacy interpretations or lifecycle state."
+        ]
       }
     },
     {
@@ -2722,41 +2661,6 @@
       }
     },
     {
-      "id": "artifact:sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-      "kind": "atr_v2_artifact",
-      "label": "legacy-mapping-index · 17ec5dec9ab1",
-      "data": {
-        "artifact_id": "sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-        "artifact_kind": "legacy-mapping-index",
-        "digest": "17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-        "original_name": "multilingual-agent-state-continuity.legacy-mapping-index.json",
-        "created_at": "2026-07-18T23:17:57.634166+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/multilingual-aaai/alignment/legacy-mapped-v1/programs/multilingual-agent-state-continuity.legacy-mapping-index.json",
-          "declared_scope": "explicit historical artifact sidecars; review and navigation only"
-        },
-        "artifact_type": "legacy-program-mapping-index",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "kind": "legacy_mapping_audit",
-      "label": "逐项历史消费映射 · multilingual-agent-state-continuity",
-      "data": {
-        "mapping_id": "multilingual-aaai-legacy-consumption-v1",
-        "program_key": "multilingual-agent-state-continuity",
-        "current_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "summary": {
-          "manifest_count": 27,
-          "run_count": 5
-        },
-        "policy": "Review/navigation input only; no legacy claim or lifecycle state is promoted.",
-        "conformance": "LEGACY_MAPPED",
-        "artifact_id": "sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -2936,21 +2840,6 @@
         "role": "SOURCE_REVIEWED_KNOWLEDGE_MAP_V1_1",
         "note": "Located source-review upgrade of the provisional knowledge scaffold; no lifecycle effect.",
         "created_at": "2026-07-18T22:04:50.647950+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "kind": "atr_v2_attachment",
-      "label": "LEGACY_MAPPING_INDEX_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 12,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-LEGACY-MAPPING-INDEX-V1",
-        "subject_id": "program:multilingual-agent-state-continuity",
-        "subject_version": 0,
-        "artifact_id": "sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-        "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
-        "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
-        "created_at": "2026-07-18T23:17:57.668419+00:00"
       }
     }
   ],
@@ -4130,64 +4019,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
-      "target": "artifact:sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "relation": "materializes_exact_legacy_consumption",
-      "data": {}
-    },
-    {
-      "source": "research_program:multilingual-agent-state-continuity",
-      "target": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "relation": "declares_legacy_consumption_boundary",
-      "data": {}
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "target": "legacy_run:2026-07-17-code-switch-agent-control-plane",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 7
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "target": "legacy_run:2026-07-17-code-switched-speech-tool-grounding",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 5
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "target": "legacy_run:2026-07-17-multilingual-agent-coordination",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 4
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "target": "legacy_run:2026-07-17-multilingual-agent-memory-continuity",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 7
-      }
-    },
-    {
-      "source": "legacy_mapping:multilingual-aaai-legacy-consumption-v1:multilingual-agent-state-continuity",
-      "target": "legacy_run:2026-07-17-multilingual-gui-locale-attribution",
-      "relation": "maps_exact_consumed_artifacts",
-      "data": {
-        "manifest_count": 4
-      }
-    },
-    {
       "source": "subject:program:multilingual-agent-state-continuity",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "relation": "records_transition",
@@ -4330,18 +4161,6 @@
       "target": "artifact:sha256:a00107d02c997968edeb72ea15ecaa52260862960f37a8182e994efaa0a026b1",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-state-continuity",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-LEGACY-MAPPING-INDEX-V1",
-      "target": "artifact:sha256:17ec5dec9ab17ec2d579373768d970fd9b1a600139209d579f3a4261e44ce4b4",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4417,24 +4236,8 @@
         "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
         "node_count": 108,
         "edge_count": 182
-      },
-      {
-        "id": "ae2ce4fa05a4a96b",
-        "archived_at": "2026-07-18T23:23:13.715263+00:00",
-        "path": "history/projections/ae2ce4fa05a4a96b.json",
-        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "node_count": 117,
-        "edge_count": 213
-      },
-      {
-        "id": "c3beedbd14c76cf4",
-        "archived_at": "2026-07-18T23:25:30.758230+00:00",
-        "path": "history/projections/c3beedbd14c76cf4.json",
-        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "node_count": 120,
-        "edge_count": 223
       }
     ],
-    "previous_projection": "c3beedbd14c76cf4"
+    "previous_projection": "d11b7674a49f2a42"
   }
 }

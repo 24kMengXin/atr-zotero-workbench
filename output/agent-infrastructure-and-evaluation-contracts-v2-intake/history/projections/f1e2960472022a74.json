@@ -219,6 +219,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -254,6 +255,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -290,6 +292,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -328,6 +331,7 @@
           "missing opportunity_map",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -364,6 +368,7 @@
           "missing knowledge_context",
           "missing concept_map",
           "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
           "source access/fulltext state undeclared",
           "no source declared FULLTEXT_INSPECTED with locator"
         ],
@@ -4344,16 +4349,8 @@
         "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
         "node_count": 113,
         "edge_count": 207
-      },
-      {
-        "id": "f1e2960472022a74",
-        "archived_at": "2026-07-18T23:25:30.420722+00:00",
-        "path": "history/projections/f1e2960472022a74.json",
-        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "node_count": 116,
-        "edge_count": 217
       }
     ],
-    "previous_projection": "f1e2960472022a74"
+    "previous_projection": "5cea7b3df5feb9d4"
   }
 }

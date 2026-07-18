@@ -32,6 +32,22 @@
       "run": "2026-07-19-multilingual-program-portfolio-v2",
       "node_count": 48,
       "edge_count": 61
+    },
+    {
+      "id": "43ea75dd407d659f",
+      "archived_at": "2026-07-18T23:23:13.791881+00:00",
+      "path": "history/projections/43ea75dd407d659f.json",
+      "run": "2026-07-19-multilingual-program-portfolio-v2",
+      "node_count": 48,
+      "edge_count": 61
+    },
+    {
+      "id": "a7c34690c94534ba",
+      "archived_at": "2026-07-18T23:25:30.849817+00:00",
+      "path": "history/projections/a7c34690c94534ba.json",
+      "run": "2026-07-19-multilingual-program-portfolio-v2",
+      "node_count": 51,
+      "edge_count": 93
     }
   ]
 }
