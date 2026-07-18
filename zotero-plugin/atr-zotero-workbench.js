@@ -205,6 +205,7 @@ var ATRZoteroWorkbench = {
       for (let question of questions) {
         let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
         let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);
+        let inspirations = edges.filter(edge => edge.source === question.id && edge.relation === "inspired_by_context").map(edge => by[edge.target]).filter(Boolean);
         let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:12px");
         card.append(label(question.label, "font-size:17px;font-weight:bold;white-space:normal"), label("ATR frontier map 提出的问题，不是论文自身结论。", "color:#64748b;margin:6px 0"), label("所需概念", "font-size:13px;font-weight:bold;margin-top:8px"), label(concepts.map(node => node.label).join(" · ") || "未记录", "white-space:normal"), label("锚定来源", "font-size:13px;font-weight:bold;margin-top:8px"));
         for (let source of anchors) {
@@ -224,6 +225,13 @@ var ATRZoteroWorkbench = {
           });
           details.append(review);
           card.append(details);
+        }
+        card.append(label("现实世界启发（不是学术证据）", "font-size:13px;font-weight:bold;margin-top:8px"));
+        if (!inspirations.length) card.append(label("当前 run 未记录与此问题关联的新闻、报告、博客或社媒材料。", "white-space:normal;color:#64748b"));
+        for (let source of inspirations) {
+          let inspiration = xul("vbox"); inspiration.setAttribute("style", "margin:5px 0;padding:7px;background:#fff7e6;border-radius:5px");
+          inspiration.append(label(source.label, "font-weight:bold;white-space:normal"), label("为什么值得作为启发：" + (source.data?.why_it_matters || source.data?.supports || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
+          card.append(inspiration);
         }
         body.append(card);
       }

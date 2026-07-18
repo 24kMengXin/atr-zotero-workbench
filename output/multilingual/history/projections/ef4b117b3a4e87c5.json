@@ -39,10 +39,7 @@
         "source_kind": "PRIMARY_BENCHMARK_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Across 805 tasks translated into 11 languages, agent performance and security degrade outside English; the reported severity varies by task and correlates with the amount of translated input.",
-        "does_not_support": "The correlation does not identify tokenization, reasoning budget, translation quality, or a causal mechanism; translation-derived instances are not evidence about native user behavior.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "The correlation does not identify tokenization, reasoning budget, translation quality, or a causal mechanism; translation-derived instances are not evidence about native user behavior."
       }
     },
     {
@@ -64,10 +61,7 @@
         "source_kind": "PRIMARY_BENCHMARK_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Multilingual planning and interaction can be evaluated in a web environment, and cross-lingual alignment has been tested as an intervention.",
-        "does_not_support": "It does not isolate representation length from semantic, cultural, interface, or translation differences, nor establish a reasoning-budget mechanism.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not isolate representation length from semantic, cultural, interface, or translation differences, nor establish a reasoning-budget mechanism."
       }
     },
     {
@@ -89,10 +83,7 @@
         "source_kind": "PRIMARY_BENCHMARK_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "The authors identify lack of strictly aligned cross-lingual environments and fine-grained diagnostics as obstacles to attributing multilingual GUI-agent failures; their aligned evaluation finds reasoning-intensive gaps.",
-        "does_not_support": "A GUI-specific aligned environment does not establish that token count explains other agent failures or that a formal-world diagnostic transports to natural languages.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "A GUI-specific aligned environment does not establish that token count explains other agent failures or that a formal-world diagnostic transports to natural languages."
       }
     },
     {
@@ -114,10 +105,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "Reasoning behavior changes when prompts impose different token budgets, and the authors motivate dynamic budgeting by problem complexity.",
-        "does_not_support": "It does not study multilingual representation length, tool agents, or a fairness/equal-opportunity interpretation of a fixed budget.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not study multilingual representation length, tool agents, or a fairness/equal-opportunity interpretation of a fixed budget."
       }
     },
     {
@@ -139,10 +127,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "Tokenizer compression parity and downstream multilingual performance can trade off, motivating representation efficiency as a measurable multilingual systems property.",
-        "does_not_support": "It does not test agentic reasoning under fixed output budgets or demonstrate a causal representation-budget allocation mechanism.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not test agentic reasoning under fixed output budgets or demonstrate a causal representation-budget allocation mechanism."
       }
     },
     {
@@ -164,10 +149,7 @@
         "source_kind": "PRIMARY_BENCHMARK_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Tool-use evaluations can be misleading when built only from simple synthesized queries; multi-step planning and real-world complexity matter to the capability being measured.",
-        "does_not_support": "It does not invalidate controlled synthetic mechanism diagnostics when their scope is explicitly formal and their oracle is deterministic.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not invalidate controlled synthetic mechanism diagnostics when their scope is explicitly formal and their oracle is deterministic."
       }
     },
     {
@@ -189,10 +171,7 @@
         "source_kind": "PRIMARY_WORKSHOP_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Aligned Urdu/Roman-Urdu comparisons measure token cost, fragmentation, and fixed-budget input retention across cl100k, mT5, and ByT5; tokenization disparity is tokenizer-dependent and token cost alone does not explain retention.",
-        "does_not_support": "It does not run an LLM reasoning or agent-action task, allocate output/thinking budgets, or establish a remedy for end-to-end multilingual agent performance.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not run an LLM reasoning or agent-action task, allocate output/thinking budgets, or establish a remedy for end-to-end multilingual agent performance."
       }
     },
     {
@@ -214,10 +193,7 @@
         "source_kind": "PRIMARY_BENCHMARK_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "The benchmark contains 47,020 samples over 52 languages, 55 functions and 286 arguments; it reports substantial AST-accuracy variation and includes prompt-language and latency ablations.",
-        "does_not_support": "It does not identify a token-budget mechanism, separate all semantic realization effects from tokenization, or test representation-aware budget allocation.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not identify a token-budget mechanism, separate all semantic realization effects from tokenization, or test representation-aware budget allocation."
       }
     },
     {
@@ -239,10 +215,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "MLCL is a diagnostic benchmark for controlled multilingual tool-calling robustness across Chinese, Hindi and Igbo.",
-        "does_not_support": "Its existence does not establish the causal role of input/output token budgets, and its preprint status requires a full-text collision check before any decisive claim reduction.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "Its existence does not establish the causal role of input/output token budgets, and its preprint status requires a full-text collision check before any decisive claim reduction."
       }
     },
     {
@@ -264,10 +237,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "On a multilingual coding benchmark, a translation-and-structural-rewriting middleware reduces prompt tokens and reports mostly preserved task accuracy; it explicitly identifies prompt representation as a systems variable.",
-        "does_not_support": "It changes language and prompt structure jointly, uses an unreviewed benchmark proxy, and states that some translations lack native-speaker audit; it neither isolates a budget mechanism nor supplies a general agent claim.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It changes language and prompt structure jointly, uses an unreviewed benchmark proxy, and states that some translations lack native-speaker audit; it neither isolates a budget mechanism nor supplies a general agent claim."
       }
     },
     {
@@ -289,10 +259,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Semantically translated text can differ sharply in tokenizer length (reported up to 15x), affecting cost, latency and usable context before model inference.",
-        "does_not_support": "It does not test LLM agents, tool calls, controlled output reasoning budgets, or an intervention that makes agent decisions representation-invariant.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not test LLM agents, tool calls, controlled output reasoning budgets, or an intervention that makes agent decisions representation-invariant."
       }
     },
     {
@@ -314,10 +281,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Tokenizer design choices can affect downstream performance differently for semantic versus form-sensitive tasks, so token counts cannot be treated as a complete mechanism.",
-        "does_not_support": "It does not study multilingual agents or fixed inference-budget allocation.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not study multilingual agents or fixed inference-budget allocation."
       }
     },
     {
@@ -339,10 +303,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Across 12 reasoning models, extra inference-time computation has task- and workflow-dependent effects in MT; forced reasoning can degrade direct translation while post-editing can benefit.",
-        "does_not_support": "It does not study representation-length parity, tokenization, tool use, or a cross-language allocation policy.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not study representation-length parity, tokenization, tool use, or a cross-language allocation policy."
       }
     },
     {
@@ -364,10 +325,7 @@
         "source_kind": "PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
         "source_layer": "scholarly_evidence",
         "supports": "Paired executable tasks can give an independent act-versus-abstain oracle; the release reports 263 paired tasks in 42 environments and a best paired score of 59.5% across 17 frontier models.",
-        "does_not_support": "It does not test multilingual or pragmatic realization effects, and does not establish that a language-specific wording difference changes authorization behavior.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not test multilingual or pragmatic realization effects, and does not establish that a language-specific wording difference changes authorization behavior."
       }
     },
     {
@@ -389,10 +347,7 @@
         "source_kind": "OFFICIAL_OPEN_SOURCE_BENCHMARK",
         "source_layer": "scholarly_evidence",
         "supports": "The released synthetic culturally grounded dataset includes ambiguous and multi-turn-clarification categories, including cases where an agent must request clarification before acting.",
-        "does_not_support": "Repository documentation alone is not a peer-reviewed novelty verdict or proof of native-language pragmatic validity; its provided labels do not by themselves establish a paired authorization-state causal oracle.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "Repository documentation alone is not a peer-reviewed novelty verdict or proof of native-language pragmatic validity; its provided labels do not by themselves establish a paired authorization-state causal oracle."
       }
     },
     {
@@ -414,10 +369,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "Multilingual pragmatic inference can be evaluated across English, German, Korean and Chinese using Gricean conversational-maxim categories.",
-        "does_not_support": "It does not measure tool actions, authorization, clarification policies, or real consequences of a pragmatic misinterpretation.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not measure tool actions, authorization, clarification policies, or real consequences of a pragmatic misinterpretation."
       }
     },
     {
@@ -439,10 +391,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "LLMs show task-sensitive gaps on implicature, presupposition, reference and deixis; pragmatic understanding is not reducible to literal semantics.",
-        "does_not_support": "It is not multilingual agent evaluation and supplies no executable authorization/action oracle.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It is not multilingual agent evaluation and supplies no executable authorization/action oracle."
       }
     },
     {
@@ -464,10 +413,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "A static credential can authorize a tool while the current user request does not justify the specific effect; the paper formalizes server-side monotone intent narrowing and fail-closed handling of ambiguity.",
-        "does_not_support": "It does not study cross-lingual pragmatics or empirically show whether equivalent authorization states receive different agent decisions by language realization.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not study cross-lingual pragmatics or empirically show whether equivalent authorization states receive different agent decisions by language realization."
       }
     },
     {
@@ -489,10 +435,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Ambiguous text-to-structured-data mapping, including agentic tool calling, can be detected and improved through a missing-concept formulation.",
-        "does_not_support": "It does not cover multilingual pragmatic realization, authorization state, or a paired execute-versus-clarify action oracle.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It does not cover multilingual pragmatic realization, authorization state, or a paired execute-versus-clarify action oracle."
       }
     },
     {
@@ -514,10 +457,7 @@
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "supports": "LLMs exhibit under-clarification bias in complex multi-turn ambiguity; the benchmark separates ambiguity types and user behaviors.",
-        "does_not_support": "It is open-domain rather than multilingual tool authorization, uses partly LLM-authored data and LLM judging, and has no deterministic tool-effect oracle.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It is open-domain rather than multilingual tool authorization, uses partly LLM-authored data and LLM judging, and has no deterministic tool-effect oracle."
       }
     },
     {
@@ -539,10 +479,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "ClarifyBench operationalizes execute-versus-ask decisions in multi-turn tool use, with a user simulator, ground-truth tool calls, explicit/ambiguous/infeasible requests, and a structured uncertainty method.",
-        "does_not_support": "The paper contains no multilingual, indirect-request, or authorization treatment; it therefore neither validates nor leaves novel any multilingual pragmatic-authorization composition by itself.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "The paper contains no multilingual, indirect-request, or authorization treatment; it therefore neither validates nor leaves novel any multilingual pragmatic-authorization composition by itself."
       }
     },
     {
@@ -564,10 +501,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Tool-use evaluation must distinguish call, ask-follow-up, and non-tool actions; the authors explicitly restrict their synthetic benchmark to English and call multilingual analogues a future direction.",
-        "does_not_support": "An English-only future-work statement is not evidence that a multilingual extension is novel, important, or a sufficient paper contribution.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "An English-only future-work statement is not evidence that a multilingual extension is novel, important, or a sufficient paper contribution."
       }
     },
     {
@@ -589,10 +523,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Indirect user requests are a concrete pragmatic construct and can be generated with an LLM pipeline under explicit linguistic criteria for task-oriented dialogue evaluation.",
-        "does_not_support": "It is not an agent tool-execution, authorization, or multilingual evaluation and provides no action-state oracle.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "It is not an agent tool-execution, authorization, or multilingual evaluation and provides no action-state oracle."
       }
     },
     {
@@ -614,10 +545,7 @@
         "source_kind": "PRIMARY_CONFERENCE_PAPER",
         "source_layer": "scholarly_evidence",
         "supports": "Safety-relevant tool invocation can be evaluated before execution using interaction history, user request, tool specification, and an unsafe-action label.",
-        "does_not_support": "Its threat patterns are malicious requests, prompt injection, harmful tools, and risky arguments rather than pragmatic authorization invariance or multilingual realization.",
-        "why_it_matters": "",
-        "keywords": [],
-        "related_tension_ids": []
+        "does_not_support": "Its threat patterns are malicious requests, prompt injection, harmful tools, and risky arguments rather than pragmatic authorization invariance or multilingual realization."
       }
     },
     {
@@ -1411,16 +1339,8 @@
         "run": "2026-07-17-controlled-multilingual-discovery",
         "node_count": 62,
         "edge_count": 67
-      },
-      {
-        "id": "ef4b117b3a4e87c5",
-        "archived_at": "2026-07-18T00:36:41.978796+00:00",
-        "path": "history/projections/ef4b117b3a4e87c5.json",
-        "run": "2026-07-17-controlled-multilingual-discovery",
-        "node_count": 62,
-        "edge_count": 97
       }
     ],
-    "previous_projection": "ef4b117b3a4e87c5"
+    "previous_projection": "ea522762f4ca78b9"
   }
 }

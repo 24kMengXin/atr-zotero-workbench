@@ -39,20 +39,30 @@ def load_legacy_run(path: Path) -> LegacyRun:
         target = path / relative
         if not target.exists() or not target.read_text(encoding="utf-8").strip():
             gaps.append(f"缺少可用的 {relative}")
-    return LegacyRun(path, read_jsonl(required), frontier, state, gaps)
+    sources = read_jsonl(required)
+    # Real-world material is intentionally held outside the scholarly ledger.
+    # Agents or researchers add only source-grounded rows here; the projection
+    # retains its different epistemic role all the way to the Zotero UI.
+    contextual_path = path / "evidence" / "contextual-sources.jsonl"
+    for source in read_jsonl(contextual_path):
+        source.setdefault("source_layer", "contextual_inspiration")
+        sources.append(source)
+    return LegacyRun(path, sources, frontier, state, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
     return {"id": node_id, "kind": kind, "label": label, "data": data}
 
 
-def _source_layer(source_kind: str) -> str:
+def _source_layer(source_kind: str, declared: str | None = None) -> str:
     """Keep contextual inspiration distinct from scholarly evidence.
 
     The legacy ledger has a free-text `kind`, so this is deliberately a
     conservative classification. Unknown material remains a source requiring
     human review rather than being promoted to academic evidence.
     """
+    if declared in {"scholarly_evidence", "contextual_inspiration", "source_needs_review"}:
+        return declared
     kind = source_kind.upper()
     if any(token in kind for token in ("BLOG", "NEWS", "MAGAZINE", "REPORT", "WHITEPAPER", "SOCIAL")):
         return "contextual_inspiration"
@@ -77,10 +87,12 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     for source in run.sources:
         sid = source["source_id"]
         source_kind = source.get("kind", "")
-        source_layer = _source_layer(source_kind)
+        source_layer = _source_layer(source_kind, source.get("source_layer"))
         nodes.append(_node(f"paper:{sid}", "paper", source.get("title", sid), source_id=sid,
                            url=source.get("url", ""), source_kind=source_kind, source_layer=source_layer,
-                           supports=source.get("supports", ""), does_not_support=source.get("does_not_support", "")))
+                           supports=source.get("supports", ""), does_not_support=source.get("does_not_support", ""),
+                           why_it_matters=source.get("why_it_matters", ""), keywords=source.get("keywords", []),
+                           related_tension_ids=source.get("related_tension_ids", [])))
         edge("concept:domain", f"paper:{sid}",
              "has_evidence" if source_layer == "scholarly_evidence" else "inspires_context")
         nodes.append(_node(f"evidence:{sid}", "evidence_boundary", f"{sid} 的证据边界",
@@ -110,5 +122,11 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                 for cid in concept_ids:
                     edge(cid, f"paper:{sid}", "illustrated_by_question_anchor",
                          tension_id=tid, attribution="derived_question_context")
+        for source in run.sources:
+            if tid in source.get("related_tension_ids", []) and source.get("source_id"):
+                sid = source["source_id"]
+                if _source_layer(source.get("kind", ""), source.get("source_layer")) == "contextual_inspiration":
+                    edge(f"question:{tid}", f"paper:{sid}", "inspired_by_context",
+                         attribution="contextual_inspiration", why_it_matters=source.get("why_it_matters", ""))
     return {"schema_version": "0.1", "projection": "derived-read-only", "run": run_id,
             "diagnostics": run.gaps, "nodes": nodes, "edges": edges}

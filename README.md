@@ -65,3 +65,5 @@ python -m atr_zotero_workbench sync ./output/multilingual
 这不是另一个 ATR controller：它不改研究生命周期、不判定科学结论，也不直接读取/写入 Zotero 的本地 SQLite。每个图谱结点都有 `source_id`、文件路径或 ATR artifact ID；推断性问题显式标为 `research_question`，不会伪装成论文结论。
 
 详见 [MVP 设计](docs/mvp-design.md)、[迁移审计](docs/legacy-run-audit.md) 和 [开发/插件调研](docs/zotero-integration.md)。
+
+若要把经人工核验的新闻、行业报告、技术博客或社媒观察接入某个研究问题，使用独立的 [现实世界灵感 ledger](docs/contextual-inspiration-ledger.md)；它始终和学术证据分层呈现。

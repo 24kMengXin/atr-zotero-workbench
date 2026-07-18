@@ -64,6 +64,8 @@ def validate_source() -> None:
         fail("workbench must visibly distinguish concept-to-reading context links")
     if "建立 / 打开我的阅读笔记" not in runtime or 'event === "modify"' not in runtime:
         fail("workbench must provide an explicit human-review note entry point")
+    if "现实世界启发（不是学术证据）" not in runtime or "inspired_by_context" not in runtime:
+        fail("workbench must keep real-world inspiration separate from scholarly evidence")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

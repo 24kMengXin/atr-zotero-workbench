@@ -41,6 +41,19 @@ class BuildTest(unittest.TestCase):
             relation = next(edge['relation'] for edge in graph['edges'] if edge['target'] == 'paper:C1')
             self.assertEqual(relation, 'inspires_context')
 
+    def test_contextual_ledger_connects_to_question_without_becoming_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
+            (run/'evidence'/'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER','supports':'x','does_not_support':'y'})+'\n')
+            (run/'evidence'/'contextual-sources.jsonl').write_text(json.dumps({'source_id':'C1','title':'Public report','url':'https://c.org','kind':'REPORT','supports':'observation','does_not_support':'causal proof','why_it_matters':'exposes deployment friction','related_tension_ids':['Q1']})+'\n')
+            (run/'knowledge'/'frontier-map.json').write_text(json.dumps({'domain':'NLP','frontier_tensions':[{'tension_id':'Q1','question':'Why?','anchor_source_ids':['P1']}]}))
+            (run/'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path/'out')
+            source = next(node for node in graph['nodes'] if node['id'] == 'paper:C1')
+            self.assertEqual(source['data']['source_layer'], 'contextual_inspiration')
+            link = next(edge for edge in graph['edges'] if edge['relation'] == 'inspired_by_context')
+            self.assertEqual((link['source'], link['target']), ('question:Q1', 'paper:C1'))
+
     def test_changed_projection_archives_previous_graph_without_deleting_it(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
