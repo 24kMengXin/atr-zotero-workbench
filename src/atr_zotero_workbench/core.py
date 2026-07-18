@@ -314,7 +314,7 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         problem_id = str(problem.get("problem_id", "unknown"))
         problem_node = f"research_problem:{problem_id}"
         nodes.append(_node(problem_node, "research_problem", problem.get("research_question", problem_id),
-                           problem_id=problem_id, claim_version=problem.get("claim_version"),
+                           problem_id=problem_id, status=problem.get("status", "UNSPECIFIED"), claim_version=problem.get("claim_version"),
                            construct_of_interest=problem.get("construct_of_interest"), status_quo=problem.get("status_quo"),
                            confounded_observation=problem.get("confounded_observation"),
                            counterfactual_worlds=problem.get("counterfactual_worlds", []),
@@ -329,6 +329,12 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
             for source_id in layer.get("sources", []):
                 if source_id in known_paper_ids:
                     edge(problem_node, f"paper:{source_id}", "grounds_in_explicit_evidence_layer", evidence_kind=layer.get("kind"))
+        for role in problem.get("paper_roles", []):
+            source_id = role.get("source_id")
+            if source_id in known_paper_ids:
+                edge(f"paper:{source_id}", problem_node, "has_explicit_problem_role",
+                     posture=role.get("posture", "OBSERVED"), resolves=role.get("resolves", ""),
+                     leaves_unresolved=role.get("leaves_unresolved", ""))
     timeline: list[dict[str, Any]] = []
     for event in run.skill_events:
         if event.get("timestamp"):

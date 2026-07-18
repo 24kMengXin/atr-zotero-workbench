@@ -509,8 +509,17 @@ var ATRZoteroWorkbench = {
         let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
         row.append(label(problem.label, "font-weight:bold;white-space:normal"));
         let worlds = (problem.data?.counterfactual_worlds || []).map(world => (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
+        let paperRoles = edges.filter(edge => edge.target === problem.id && edge.relation === "has_explicit_problem_role");
+        row.append(label("状态：" + (problem.data?.status || "UNSPECIFIED"), "white-space:normal;color:#7a5620"));
         row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
         row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || "未记录"), "white-space:normal;color:#7a5620"));
+        row.append(label("论文在此问题中的位置", "font-size:13px;font-weight:bold;margin-top:7px"));
+        for (let role of paperRoles) {
+          let paper = by[role.source], details = role.data || {};
+          row.append(label((paper?.label || role.source) + "（" + (details.posture || "OBSERVED") + "）", "font-weight:bold;white-space:normal"));
+          row.append(label("解决：" + (details.resolves || "未记录"), "white-space:normal"));
+          row.append(label("仍未解决：" + (details.leaves_unresolved || "未记录"), "white-space:normal;color:#7a5620"));
+        }
         worldBox.append(row);
       }
       body.append(worldBox);

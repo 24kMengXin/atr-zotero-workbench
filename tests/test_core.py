@@ -214,6 +214,21 @@ class BuildTest(unittest.TestCase):
             self.assertTrue(explicit)
             self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in explicit))
 
+    def test_research_problem_preserves_explicit_paper_roles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','kind':'PAPER'}) + '\n')
+            problem = {'problem_id':'RQ-1','status':'DRAFT_R0_NEEDS_OWNER_REVIEW','research_question':'A sufficiently long, method-free question that preserves multiple possible explanations for the observed mismatch.','paper_roles':[{'source_id':'P1','posture':'OBJECTIVE_DIAGNOSTIC','resolves':'localizes a mechanism','leaves_unresolved':'does not establish prevalence'},{'source_id':'MISSING','posture':'OBJECTIVE','resolves':'must not link','leaves_unresolved':'must not link'}]}
+            (run / 'knowledge' / 'research-problem-cards' / 'RQ-1.json').write_text(json.dumps(problem))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            node = next(node for node in graph['nodes'] if node['kind'] == 'research_problem')
+            self.assertEqual(node['data']['status'], 'DRAFT_R0_NEEDS_OWNER_REVIEW')
+            role = next(edge for edge in graph['edges'] if edge['relation'] == 'has_explicit_problem_role')
+            self.assertEqual((role['source'], role['target']), ('paper:P1', 'research_problem:RQ-1'))
+            self.assertEqual(role['data']['leaves_unresolved'], 'does not establish prevalence')
+            self.assertFalse(any(edge['source'] == 'paper:MISSING' for edge in graph['edges']))
+
     def test_projects_landscape_brief_with_explicit_source_locators(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()
