@@ -194,6 +194,24 @@ class BuildTest(unittest.TestCase):
             self.assertIn('OPEN_CLAIM_REVIEW', packet['required_owner_decision']['allowed_dispositions'])
             self.assertEqual(materialize_review_packets(out)['existing'], 1)
 
+    def test_owner_disposition_is_append_only_and_projects_back_to_the_claim(self):
+        from atr_zotero_workbench.human_input import record_review_disposition
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); out = root / 'out'; run = root / 'run'; (out / 'human-input' / 'review-packets').mkdir(parents=True); (run / 'evidence').mkdir(parents=True); (run / 'decisions').mkdir()
+            packet = {'packet_id':'HRP-a', 'review':{'target_type':'claim','claim_id':'C1','source_id':'P1','source_locator':'p. 3'}, 'impact':{'all_affected_research_questions':[{'tension_id':'Q1'}], 'related_claims':[], 'all_affected_research_problems':[]}, 'required_owner_decision':{'allowed_dispositions':['OPEN_CLAIM_REVIEW']}}
+            (out / 'human-input' / 'review-packets' / 'HRP-a.json').write_text(json.dumps(packet))
+            decision = record_review_disposition(out, run, 'HRP-a', 'OPEN_CLAIM_REVIEW', 'The locator challenges the scope.', 'researcher')
+            self.assertEqual(decision['disposition'], 'OPEN_CLAIM_REVIEW')
+            with self.assertRaises(ValueError): record_review_disposition(out, run, 'HRP-a', 'OPEN_CLAIM_REVIEW', 'Repeat.', 'researcher')
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','kind':'PAPER'}) + '\n')
+            (run / 'evidence' / 'claims.jsonl').write_text(json.dumps({'claim_id':'C1','text':'Claim'}) + '\n')
+            (run / 'knowledge').mkdir(); (run / 'knowledge' / 'frontier-map.json').write_text(json.dumps({'domain':'NLP','frontier_tensions':[{'tension_id':'Q1','question':'Why?','anchor_source_ids':['P1'],'dimensions':[]}]}))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, root / 'built')
+            node = next(node for node in graph['nodes'] if node['kind'] == 'human_review_disposition')
+            self.assertEqual(node['data']['disposition'], 'OPEN_CLAIM_REVIEW')
+            self.assertTrue(any(edge['source'] == node['id'] and edge['target'] == 'claim:C1' for edge in graph['edges']))
+
     def test_projects_existing_harness_knowledge_and_problem_artifacts_without_inference(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)

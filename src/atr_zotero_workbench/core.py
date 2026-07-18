@@ -32,6 +32,7 @@ class LegacyRun:
     concept_map: dict[str, Any]
     opportunity_map: dict[str, Any]
     research_problems: list[dict[str, Any]]
+    human_review_dispositions: list[dict[str, Any]]
     gaps: list[str]
 
 
@@ -67,6 +68,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         # its R2 continuation without silently collapsing two different states.
         problem["_artifact_path"] = str(problem_path.relative_to(path))
         research_problems.append(problem)
+    human_review_dispositions = read_jsonl(path / "decisions" / "human-review-dispositions.jsonl")
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -90,7 +92,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路")
     if not research_problems:
         gaps.append("当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, item_contract_audits, knowledge_contexts, landscape_briefs, concept_map, opportunity_map, research_problems, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, item_contract_audits, knowledge_contexts, landscape_briefs, concept_map, opportunity_map, research_problems, human_review_dispositions, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -379,6 +381,29 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                 edge(f"paper:{source_id}", problem_node, "has_explicit_problem_role",
                      posture=role.get("posture", "OBSERVED"), resolves=role.get("resolves", ""),
                      leaves_unresolved=role.get("leaves_unresolved", ""))
+    for disposition in run.human_review_dispositions:
+        decision_id = str(disposition.get("decision_id", "unknown"))
+        node_id = f"human_review:{decision_id}"
+        nodes.append(_node(node_id, "human_review_disposition", f"人类反馈处置 · {disposition.get('disposition', 'UNSPECIFIED')}",
+                           decision_id=decision_id, packet_id=disposition.get("packet_id"), owner=disposition.get("owner"),
+                           disposition=disposition.get("disposition"), rationale=disposition.get("rationale"),
+                           recorded_at=disposition.get("recorded_at"), controller_boundary=disposition.get("controller_boundary")))
+        edge(f"run:{run_id}", node_id, "records_human_review_disposition")
+        target = disposition.get("review_target", {})
+        claim_id, source_id = target.get("claim_id"), target.get("source_id")
+        if claim_id in known_claim_ids:
+            edge(node_id, f"claim:{claim_id}", "disposes_review_of_claim")
+        if source_id in known_paper_ids:
+            edge(node_id, f"paper:{source_id}", "disposes_review_of_source")
+        affected_ids = disposition.get("affected_node_ids", {})
+        for tension_id in affected_ids.get("research_questions", []):
+            question_id = f"question:{tension_id}"
+            if any(node["id"] == question_id for node in nodes):
+                edge(node_id, question_id, "requests_reconsideration_of_question")
+        for problem_id in affected_ids.get("research_problems", []):
+            problem_id = f"research_problem:{problem_id}"
+            if any(node["id"] == problem_id for node in nodes):
+                edge(node_id, problem_id, "requests_reconsideration_of_problem")
     timeline: list[dict[str, Any]] = []
     for event in run.skill_events:
         if event.get("timestamp"):

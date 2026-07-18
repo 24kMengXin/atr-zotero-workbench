@@ -299,6 +299,7 @@ var ATRZoteroWorkbench = {
       let landscapeBriefs = nodes.filter(node => node.kind === "landscape_brief");
       let realWorldTensions = nodes.filter(node => node.kind === "real_world_tension");
       let researchProblems = nodes.filter(node => node.kind === "research_problem");
+      let humanReviewDispositions = nodes.filter(node => node.kind === "human_review_disposition");
       let gateNodes = nodes.filter(node => node.kind === "gate");
       let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
       let timeline = Array.isArray(graph.timeline) ? graph.timeline : [];
@@ -483,6 +484,19 @@ var ATRZoteroWorkbench = {
         }
       }
       body.append(reviewBox);
+      let dispositionBox = xul("vbox"); dispositionBox.setAttribute("style", "background:#eef4ff;border:1px solid #9db8e6;border-radius:8px;padding:14px;margin-bottom:16px");
+      dispositionBox.append(label("已记录的人类反馈处置", "font-size:18px;font-weight:bold"));
+      dispositionBox.append(label("这些是 owner 对 Zotero 阅读反馈的追加式决定；它们请求复审，但本身不会改写 ATR 断言、gate、route 或历史投影。", "white-space:normal;color:#34557f;margin:5px 0"));
+      if (!humanReviewDispositions.length) dispositionBox.append(label("尚无处置记录。先在 Codex 物化 review packet，再由 owner 明确记录处理方式。", "white-space:normal;color:#64748b"));
+      for (let disposition of humanReviewDispositions) {
+        let d = disposition.data || {}, row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        let targets = edges.filter(edge => edge.source === disposition.id).map(edge => by[edge.target]).filter(Boolean).map(node => node.label).join(" · ");
+        row.append(label((d.disposition || "UNSPECIFIED") + " · " + (d.owner || "未记录 owner"), "font-weight:bold;white-space:normal"));
+        row.append(label("理由：" + (d.rationale || "未记录"), "white-space:normal"));
+        row.append(label("请求复审：" + (targets || "未映射节点") + " · " + (d.recorded_at || "未记录时间"), "white-space:normal;color:#34557f"));
+        dispositionBox.append(row);
+      }
+      body.append(dispositionBox);
       let conceptMapBox = xul("vbox"); conceptMapBox.setAttribute("style", "background:#f7f3fb;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
       conceptMapBox.append(label("可展开的来源知识树", "font-size:18px;font-weight:bold"));
       conceptMapBox.append(label("概念必须有来源、定义和边界；层级只帮助你从领域到具体机制阅读，绝不自动表示因果或共识。", "white-space:normal;color:#594578;margin:5px 0"));
@@ -610,7 +624,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size, human_review_disposition_count: humanReviewDispositions.length });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });

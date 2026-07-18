@@ -67,6 +67,18 @@ python -m atr_zotero_workbench review-human-input output/multilingual-agent-acti
 
 该命令以 `ATR source ID` 反查受影响的 research question、问题卡、断言与最近决策节点，并写入插件会读取的 `review-queue.json`。它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
 
+由研究 owner 读完 packet 后，才可记录一次不可变的处置；这会把“需要复审什么”追加回 ATR run，并在下一次构建时显示在图中：
+
+```bash
+python -m atr_zotero_workbench record-review-disposition \
+  output/multilingual-agent-action-continuation \
+  --run-dir /path/to/atr-run \
+  --packet HRP-... --disposition OPEN_ROUTE_REVIEW \
+  --rationale "说明具体哪一处原文定位改变了什么解释" --owner "researcher"
+```
+
+允许的处置仅为接受为复审输入、要求澄清、开启 claim/route review 或不改变 lifecycle。该命令不会替代 ATR controller 记录后续的 route/gate 决定。
+
 导入 `output/multilingual/zotero/items.csl.json` 到 Zotero；`reading-cards/` 中的文件是与每篇文献对应的人工阅读/注释起点。
 
 如需写入 Zotero Web API（需要用户明确配置有写入权限的 API key）：

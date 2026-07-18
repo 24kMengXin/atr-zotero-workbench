@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json
 import hashlib
+import datetime as dt
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
@@ -218,3 +219,66 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
         path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
         written.append(str(path))
     return {"schema_version": "0.2", "artifact_type": "human-review-packet-batch", "written": written, "existing": existing}
+
+
+OWNER_DISPOSITIONS = {
+    "ACCEPT_AS_REVIEW_INPUT", "REQUEST_CLARIFICATION", "OPEN_CLAIM_REVIEW",
+    "OPEN_ROUTE_REVIEW", "NO_LIFECYCLE_CHANGE",
+}
+
+
+def record_review_disposition(output: Path, run_dir: Path, packet_id: str, disposition: str,
+                              rationale: str, owner: str) -> dict[str, Any]:
+    """Append an owner decision for one immutable Zotero review packet.
+
+    This is the deliberately narrow bridge back into ATR.  It records what
+    should be reconsidered, but never edits claims, gates, routes, sources, or
+    old projections.  The controller must make any later lifecycle transition
+    through its own append-only route/gate ledgers.
+    """
+    if disposition not in OWNER_DISPOSITIONS:
+        raise ValueError(f"unsupported disposition: {disposition}")
+    if not rationale.strip() or not owner.strip():
+        raise ValueError("--rationale and --owner must be non-empty")
+    packet_path = output / "human-input" / "review-packets" / f"{packet_id}.json"
+    if not packet_path.exists():
+        raise ValueError(f"review packet not found: {packet_id}")
+    packet_bytes = packet_path.read_bytes()
+    packet = json.loads(packet_bytes)
+    allowed = packet.get("required_owner_decision", {}).get("allowed_dispositions", [])
+    if disposition not in allowed:
+        raise ValueError(f"packet does not permit disposition: {disposition}")
+    ledger = run_dir / "decisions" / "human-review-dispositions.jsonl"
+    existing = _rows(ledger)
+    if any(row.get("packet_id") == packet_id for row in existing):
+        raise ValueError(f"packet already has an immutable owner disposition: {packet_id}")
+    impact = packet.get("impact", {})
+    review = packet.get("review", {})
+    decision_id = "HRD-" + hashlib.sha256((packet_id + "\0" + disposition + "\0" + rationale).encode()).hexdigest()[:16]
+    record = {
+        "schema_version": "0.1", "artifact_type": "human-review-disposition",
+        "decision_id": decision_id, "packet_id": packet_id,
+        "packet_sha256": hashlib.sha256(packet_bytes).hexdigest(),
+        "recorded_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "owner": owner, "disposition": disposition, "rationale": rationale,
+        "review_target": {"target_type": review.get("target_type"), "claim_id": review.get("claim_id"), "source_id": review.get("source_id"), "source_locator": review.get("source_locator")},
+        "affected_node_ids": {
+            "research_questions": [item.get("tension_id") for item in impact.get("all_affected_research_questions", []) if item.get("tension_id")],
+            "claims": [item.get("claim_id") for item in impact.get("related_claims", []) if item.get("claim_id")],
+            "research_problems": [item.get("problem_id") for item in impact.get("all_affected_research_problems", []) if item.get("problem_id")],
+        },
+        "controller_boundary": "This disposition is an ATR review input only. It does not itself modify a claim, route, gate, source record, lifecycle state, or historical projection.",
+    }
+    ledger.parent.mkdir(parents=True, exist_ok=True)
+    with ledger.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+    queue_path = output / "human-input" / "review-queue.json"
+    if queue_path.exists():
+        queue = json.loads(queue_path.read_text(encoding="utf-8"))
+        event_id = packet_id.removeprefix("HRP-")
+        for item in queue.get("items", []):
+            if item.get("id") == event_id:
+                item["status"] = "owner_disposition_recorded"
+                item.setdefault("disposition_history", []).append({"decision_id": decision_id, "disposition": disposition, "recorded_at": record["recorded_at"]})
+        queue_path.write_text(json.dumps(queue, ensure_ascii=False, indent=2), encoding="utf-8")
+    return record
