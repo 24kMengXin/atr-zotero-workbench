@@ -137,7 +137,9 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
 
     run_id = run.run_state.get("run_id", run.path.name)
     nodes.append(_node(f"run:{run_id}", "run", run_id, stage=run.run_state.get("active_stage"),
-                       status=run.run_state.get("status"), next_action=run.run_state.get("next_action"), gaps=run.gaps))
+                       status=run.run_state.get("status"), next_action=run.run_state.get("next_action"),
+                       topic_route_package_path=run.run_state.get("topic_route_package_path"),
+                       stage_contract=run.run_state.get("stage_contract", {}), gaps=run.gaps))
     for gate_id, status in run.run_state.get("gates", {}).items():
         nodes.append(_node(f"gate:{gate_id}", "gate", f"{gate_id} · {status}", gate_id=gate_id, status=status))
         edge(f"run:{run_id}", f"gate:{gate_id}", "tracks_gate")

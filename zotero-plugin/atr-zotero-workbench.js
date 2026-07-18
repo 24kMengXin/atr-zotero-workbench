@@ -326,6 +326,13 @@ var ATRZoteroWorkbench = {
       lifecycleBox.append(label("ATR 运行过程", "font-size:18px;font-weight:bold"));
       lifecycleBox.append(label("当前阶段：" + (runNode?.data?.stage || "未记录") + " · 状态：" + (runNode?.data?.status || "未记录"), "white-space:normal"));
       lifecycleBox.append(label("下一步：" + (runNode?.data?.next_action || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
+      let stageContract = runNode?.data?.stage_contract || {};
+      if (stageContract.mode) {
+        lifecycleBox.append(label("已记录知识路线：" + stageContract.mode + " · 退出条件：" + (stageContract.exit_condition || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
+        lifecycleBox.append(label("本阶段必须补齐：" + (stageContract.required_artifacts || []).join(" · "), "white-space:normal;color:#365b7b"));
+        let policy = stageContract.family_policy || {};
+        lifecycleBox.append(label("候选预算：同时最多 " + (policy.max_live_candidates ?? "未记录") + " 个；总计最多 " + (policy.max_total_candidates_before_pivot ?? "未记录") + " 个后必须 pivot。", "white-space:normal;color:#365b7b"));
+      }
       if (gateNodes.length) lifecycleBox.append(label("质量门：" + gateNodes.map(gate => gate.label).join(" · "), "white-space:normal;color:#365b7b"));
       else lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
       if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
