@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 /zotero-plugin/chrome/content/workbench/index.html
 /output/*/plugin-runtime.jsonl
+/output/*/human-input/

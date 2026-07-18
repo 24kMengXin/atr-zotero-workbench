@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from atr_zotero_workbench.app import build
 from atr_zotero_workbench.zotero import sync_web_api
-from atr_zotero_workbench.human_input import impact_report
+from atr_zotero_workbench.human_input import impact_report, refresh_review_queue
 
 class BuildTest(unittest.TestCase):
     def test_build_v1_projection(self):
@@ -91,3 +91,8 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(item['nearest_research_branches'][0]['tension_id'], 'Q1')
             self.assertEqual(item['nearest_research_branches'][0]['distance_from_annotated_source'], 1)
             self.assertEqual([part['id'] for part in item['nearest_research_branches'][0]['path']], ['paper:P1', 'question:Q1'])
+            queue = refresh_review_queue(out)
+            self.assertEqual(queue['new_items'], 1)
+            self.assertEqual(queue['items'][0]['status'], 'pending_human_and_codex_review')
+            self.assertEqual(queue['items'][0]['nearest_research_branches'][0]['question'], 'Why?')
+            self.assertEqual(refresh_review_queue(out)['new_items'], 0)

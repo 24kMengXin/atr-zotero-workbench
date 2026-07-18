@@ -5,7 +5,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from .core import load_legacy_run, project_graph
-from .human_input import impact_report
+from .human_input import impact_report, refresh_review_queue
 from .history import archive_previous_projection
 from .zotero import export_bundle, sync_web_api
 
@@ -78,7 +78,8 @@ def main() -> None:
         report = impact_report(a.directory)
         a.out.parent.mkdir(parents=True, exist_ok=True)
         a.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(json.dumps({"written": str(a.out), "affected": len(report["affected"])}, ensure_ascii=False))
+        queue = refresh_review_queue(a.directory)
+        print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"]}, ensure_ascii=False))
 
 
 if __name__ == "__main__": main()

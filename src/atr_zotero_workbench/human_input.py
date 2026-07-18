@@ -1,6 +1,7 @@
 """Consume, never delete, human annotation events emitted by the Zotero companion."""
 from __future__ import annotations
 import json
+import hashlib
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
@@ -58,3 +59,43 @@ def impact_report(output: Path) -> dict[str, Any]:
         })
     return {"schema_version":"0.1", "projection": "derived-human-input-review", "events_seen":len(events),
             "latest_notes":len(latest), "affected":affected}
+
+
+def refresh_review_queue(output: Path) -> dict[str, Any]:
+    """Append newly observed human-review impacts to a durable Codex queue.
+
+    The queue is advisory: a human/Codex owner must explicitly decide whether
+    a review changes an ATR claim or route. Existing entries and their statuses
+    are retained, so later note edits never erase an earlier line of thought.
+    """
+    report = impact_report(output)
+    path = output / "human-input" / "review-queue.json"
+    existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {
+        "schema_version": "0.1", "projection": "codex-review-queue", "items": []
+    }
+    items = existing.setdefault("items", [])
+    known = {item["id"] for item in items}
+    added = 0
+    for affected in report["affected"]:
+        event = affected["event"]
+        raw = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        item_id = hashlib.sha256(raw.encode()).hexdigest()[:16]
+        if item_id in known:
+            continue
+        items.append({
+            "id": item_id,
+            "status": "pending_human_and_codex_review",
+            "observed_at": event.get("at"),
+            "annotation_source_id": affected["annotation_source_id"],
+            "source_found_in_projection": affected["source_found_in_projection"],
+            "nearest_research_branches": affected["nearest_research_branches"],
+            "all_affected_research_questions": affected["all_affected_research_questions"],
+            "recommended_next_action": affected["codex_next_action"],
+            "event": event,
+        })
+        known.add(item_id); added += 1
+    existing["latest_refresh_events_seen"] = report["events_seen"]
+    existing["new_items"] = added
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
+    return existing
