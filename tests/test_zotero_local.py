@@ -8,6 +8,7 @@ from atr_zotero_workbench.zotero_local import (
     LocalZoteroAPI, pull_local_feedback, pull_registry_feedback,
     snapshot_local_feedback, snapshot_registry_feedback,
 )
+from atr_zotero_workbench.human_input import impact_report
 
 
 class FakeAPI(LocalZoteroAPI):
@@ -55,8 +56,8 @@ class ZoteroLocalFeedbackTest(unittest.TestCase):
         root = Path(temp.name)
         (root / "graph.json").write_text(json.dumps({
             "run": "run-1", "nodes": [
-                {"id": "knowledge:K1", "kind": "knowledge_concept", "data": {}},
-                {"id": "paper:SRC-1", "kind": "paper", "data": {"source_id": "SRC-1"}},
+                {"id": "knowledge:K1", "kind": "knowledge_concept", "label": "K1", "data": {}},
+                {"id": "paper:SRC-1", "kind": "paper", "label": "P1", "data": {"source_id": "SRC-1"}},
             ], "edges": [],
         }), encoding="utf-8")
         return temp, root
@@ -80,6 +81,9 @@ class ZoteroLocalFeedbackTest(unittest.TestCase):
         self.assertEqual(next(row for row in rows if row["event"] == "human_note_modified")["review_stance"], "QUALIFIES")
         annotation = next(row for row in rows if row["event"] == "human_annotation_modified")
         self.assertEqual(annotation["zotero_open_uri"], "zotero://open-pdf/library/items/ATT1?page=2&annotation=A1")
+        impact = impact_report(workspace)
+        self.assertEqual(impact["latest_feedback_objects"], 2)
+        self.assertEqual({row["review_target_type"] for row in impact["affected"]}, {"knowledge", "source"})
         self.assertEqual(pull_local_feedback(workspace, api)["events_appended"], 0)
 
     def test_new_mapped_annotation_after_baseline_is_feedback(self):
