@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ATR Research Workbench",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Project ATR topics into native Zotero collections, Reader tabs, Note tabs, and item panes.",
   "homepage_url": "https://github.com/24kMengXin/atr-zotero-workbench",
   "author": "24kMengXin",

@@ -103,6 +103,13 @@ def validate_source() -> None:
         fail("plugin must capture user/group-aware Codex-to-Reader annotation deep links at event time")
     if "ensureReadableAttachment" not in runtime or "Zotero.Attachments.importFromURL" not in runtime or "source_pdf_imported" not in runtime:
         fail("plugin must import an explicitly mapped open PDF on first read instead of leaving a metadata-only item")
+    if ("Zotero.Attachments.addAvailableFile" not in runtime
+            or "Zotero.Attachments.canFindFileForItem" not in runtime
+            or "source_available_file_attached" not in runtime
+            or "source_available_file_lookup_failed" not in runtime
+            or 'fulltext_state: "FULLTEXT_ATTACHED"' not in runtime
+            or "用 Zotero 查找可用 PDF" not in runtime):
+        fail("plugin must use Zotero's native available-file resolver and expose unresolved full-text state")
     if "review-queue.json" not in runtime or "pendingReviewItems" not in runtime:
         fail("plugin must display the Codex-derived pending review queue without mutating lifecycle")
     if ("ATR Topic Run:" not in runtime or "ATR Process Run:" not in runtime or "ATR Source ID:" not in runtime

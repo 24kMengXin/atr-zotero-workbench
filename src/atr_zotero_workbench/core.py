@@ -209,7 +209,8 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             kind = str(source.get("kind") or source.get("source_kind") or "UNSPECIFIED")
             layer = _source_layer(kind, source.get("source_layer"))
             paper_node = _node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
-                               url=source.get("url", ""), pdf_url=source.get("pdf_url", ""),
+                               doi=source.get("doi", ""), url=source.get("url", ""), pdf_url=source.get("pdf_url", ""),
+                               access_status=source.get("access_status", ""), access_route=source.get("access_route", ""),
                                source_kind=kind, source_layer=layer,
                                locator=source.get("locator", ""), provenance=provenance,
                                source_function=source.get("source_function"), observed_at=source.get("observed_at"),
@@ -228,7 +229,7 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             # the shared Zotero source node to gain a non-interpretive locator
             # that an earlier record did not yet know.
             paper_data = projected_source_nodes[source_id]["data"]
-            for field in ("url", "pdf_url"):
+            for field in ("doi", "url", "pdf_url", "access_status", "access_route"):
                 if not paper_data.get(field) and source.get(field):
                     paper_data[field] = source[field]
         return node_id

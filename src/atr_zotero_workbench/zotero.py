@@ -176,8 +176,11 @@ def native_projection(graph: dict) -> dict:
                 "marker": f"atr-source-id:{data['source_id']}",
                 "collection_role": "SOURCES",
                 "linked_source_ids": [data["source_id"]],
+                "doi": data.get("doi"),
                 "url": data.get("url"),
                 "pdf_url": data.get("pdf_url"),
+                "access_status": data.get("access_status"),
+                "access_route": data.get("access_route"),
                 "source_layer": data.get("source_layer"),
             })
         elif node.get("kind") == "research_problem" and data.get("problem_id"):

@@ -133,6 +133,12 @@ python3 scripts/prepare_zotero_smoke.py --reset
 python3 scripts/verify_zotero_smoke.py
 ```
 
+要单独验证 DOI-only 条目经过 Zotero 原生 available-file resolver，而不是回退到
+artifact 的 `pdf_url`，使用
+`python3 scripts/prepare_zotero_smoke.py --reset --native-resolver --run-key human-ai-scholarly-coreading`，
+再运行同一启动与 verifier 命令。该模式只在 repo-local graph 副本中移除候选
+`pdf_url`，不会改写权威 artifact 或日常 Zotero 库。
+
 第一阶段 verifier 会从真实 Note/Reader 事件物化 repo-local `review-queue.json`。要验证该队列重新进入 Zotero 后能显示最近受影响节点，使用同一隔离 profile 再启动一次，等待 topic 同步完成后退出，再运行：
 
 ```bash

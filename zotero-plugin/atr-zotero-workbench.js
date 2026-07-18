@@ -356,6 +356,19 @@ var ATRZoteroWorkbench = {
 		return ids.length ? await Zotero.Items.getAsync(ids) : [];
 	},
 
+	doiFromSource(source) {
+		let declared = String(source?.data?.doi || "").trim();
+		if (declared) return declared.replace(/^doi:\s*/i, "");
+		let match = /^https?:\/\/(?:dx\.)?doi\.org\/(.+)$/i.exec(String(source?.data?.url || "").trim());
+		if (!match) return "";
+		try {
+			return decodeURIComponent(match[1]);
+		}
+		catch (_) {
+			return match[1];
+		}
+	},
+
 	async findSourceItem(source) {
 		let sourceID = source?.data?.source_id;
 		let tagged = await this.searchItems("tag", "atr-source-id:" + sourceID);
@@ -363,7 +376,8 @@ var ATRZoteroWorkbench = {
 		if (existing) return existing;
 
 		let candidates = [];
-		if (source?.data?.doi) candidates.push(...await this.searchItems("DOI", source.data.doi));
+		let doi = this.doiFromSource(source);
+		if (doi) candidates.push(...await this.searchItems("DOI", doi));
 		if (source?.data?.url) candidates.push(...await this.searchItems("url", source.data.url));
 		if (source?.label) candidates.push(...await this.searchItems("title", source.label));
 		existing = candidates.find(item => item.isRegularItem?.());
@@ -389,8 +403,9 @@ var ATRZoteroWorkbench = {
 			item = new Zotero.Item(itemType);
 			item.setField("title", source?.label || sourceID || "ATR source");
 			item.setField("url", source?.data?.url || "");
-			if (itemType === "journalArticle" && source?.data?.doi) {
-				item.setField("DOI", source.data.doi);
+			let doi = this.doiFromSource(source);
+			if (itemType === "journalArticle" && doi) {
+				item.setField("DOI", doi);
 			}
 			item.setField("extra", "ATR source ID: " + sourceID);
 			item.addTag("ATR");
@@ -920,44 +935,100 @@ var ATRZoteroWorkbench = {
 	async ensureReadableAttachment(source, item) {
 		if (item.isAttachment?.()) return item;
 		let existing = await item.getBestAttachment();
-		if (existing) return existing;
+		if (existing) {
+			await this.appendRuntimeStatus("source_fulltext_ready", {
+				source_id: source?.data?.source_id,
+				item_key: item.key,
+				attachment_key: existing.key,
+				access_route: "EXISTING_ZOTERO_ATTACHMENT",
+				fulltext_state: "FULLTEXT_ATTACHED",
+			});
+			return existing;
+		}
 		let pdfURL = source?.data?.pdf_url;
-		if (!pdfURL) return null;
-		if (!/^https:\/\/[^\s]+$/i.test(pdfURL)) {
+		if (pdfURL && !/^https:\/\/[^\s]+$/i.test(pdfURL)) {
 			throw new Error("来源的开放 PDF URL 不是受支持的 HTTPS 地址。");
 		}
 		let importKey = item.libraryID + ":" + item.key;
 		if (!this.pendingSourceImports.has(importKey)) {
 			let pending = (async () => {
-				await this.appendRuntimeStatus("source_pdf_import_started", {
+				if (pdfURL) {
+					await this.appendRuntimeStatus("source_pdf_import_started", {
+						source_id: source?.data?.source_id,
+						item_key: item.key,
+						pdf_url: pdfURL,
+					});
+					try {
+						let attachment = await Zotero.Attachments.importFromURL({
+							libraryID: item.libraryID,
+							url: pdfURL,
+							parentItemID: item.id,
+							title: "Open-access full text",
+							contentType: "application/pdf",
+							renameIfAllowedType: true,
+						});
+						await this.appendRuntimeStatus("source_pdf_imported", {
+							source_id: source?.data?.source_id,
+							item_key: item.key,
+							attachment_key: attachment.key,
+							access_route: "EXPLICIT_OPEN_PDF_URL",
+							fulltext_state: "FULLTEXT_ATTACHED",
+						});
+						return attachment;
+					}
+					catch (error) {
+						await this.appendRuntimeStatus("source_pdf_import_failed", {
+							source_id: source?.data?.source_id,
+							item_key: item.key,
+							error: String(error),
+						});
+						throw error;
+					}
+				}
+
+				if (!Zotero.Attachments.canFindFileForItem(item)) {
+					await this.appendRuntimeStatus("source_available_file_not_eligible", {
+						source_id: source?.data?.source_id,
+						item_key: item.key,
+						fulltext_state: "METADATA_ONLY",
+					});
+					return null;
+				}
+				await this.appendRuntimeStatus("source_available_file_lookup_started", {
 					source_id: source?.data?.source_id,
 					item_key: item.key,
-					pdf_url: pdfURL,
+					doi: this.doiFromSource(source) || null,
+					access_route: "ZOTERO_NATIVE_AVAILABLE_FILE",
 				});
+				let attachment;
 				try {
-					let attachment = await Zotero.Attachments.importFromURL({
-						libraryID: item.libraryID,
-						url: pdfURL,
-						parentItemID: item.id,
-						title: "Open-access full text",
-						contentType: "application/pdf",
-						renameIfAllowedType: true,
-					});
-					await this.appendRuntimeStatus("source_pdf_imported", {
-						source_id: source?.data?.source_id,
-						item_key: item.key,
-						attachment_key: attachment.key,
-					});
-					return attachment;
+					attachment = await Zotero.Attachments.addAvailableFile(item);
 				}
 				catch (error) {
-					await this.appendRuntimeStatus("source_pdf_import_failed", {
+					await this.appendRuntimeStatus("source_available_file_lookup_failed", {
 						source_id: source?.data?.source_id,
 						item_key: item.key,
+						fulltext_state: "ACCESS_REQUIRED",
 						error: String(error),
 					});
 					throw error;
 				}
+				if (!attachment) {
+					await this.appendRuntimeStatus("source_available_file_not_found", {
+						source_id: source?.data?.source_id,
+						item_key: item.key,
+						fulltext_state: "ACCESS_REQUIRED",
+					});
+					return null;
+				}
+				await this.appendRuntimeStatus("source_available_file_attached", {
+					source_id: source?.data?.source_id,
+					item_key: item.key,
+					attachment_key: attachment.key,
+					access_route: "ZOTERO_NATIVE_AVAILABLE_FILE",
+					fulltext_state: "FULLTEXT_ATTACHED",
+				});
+				return attachment;
 			})();
 			this.pendingSourceImports.set(importKey, pending);
 		}
@@ -976,7 +1047,7 @@ var ATRZoteroWorkbench = {
 			? Zotero.Items.get(annotation.parentItemID)
 			: await this.ensureReadableAttachment(source, item);
 		if (!attachment) {
-			throw new Error("该 Zotero 条目没有附件，ATR 来源也未声明可按需导入的开放 PDF。请先为条目添加 PDF/EPUB。");
+			throw new Error("Zotero 没有找到当前访问条件下可用的全文。该条目仍只是书目记录；请通过机构访问、开放仓储/作者稿，或把你已有的 PDF 添加为附件后再阅读。");
 		}
 		let location = annotation ? { annotationID: annotation.key } : null;
 		await Zotero.Reader.open(attachment.id, location, {
@@ -1363,7 +1434,24 @@ var ATRZoteroWorkbench = {
 		}
 		if (sourceItem.isNote?.() && sourceItem.parentItemID) sourceItem = Zotero.Items.get(sourceItem.parentItemID);
 		if (sourceItem.isAttachment?.() && sourceItem.parentItemID) sourceItem = Zotero.Items.get(sourceItem.parentItemID);
-		this.appendPaneButton(doc, body, item.isAnnotation?.() ? "定位到这条高亮" : "阅读文献", () => this.openSourceInReader(source, readerTarget), true);
+		let attached = sourceItem?.getBestAttachment ? await sourceItem.getBestAttachment() : null;
+		let canResolve = sourceItem && !attached && Zotero.Attachments.canFindFileForItem(sourceItem);
+		let fulltextStatus = attached
+			? "全文：已附加到 Zotero"
+			: source.data?.pdf_url
+				? "全文：明确开放 PDF，点击后下载并附加"
+				: canResolve
+					? "全文：尚未附加，点击后由 Zotero 查找可用 PDF"
+					: "全文：仅书目信息，需要机构访问或手工添加 PDF";
+		this.appendPaneText(doc, body, fulltextStatus, true);
+		let readLabel = item.isAnnotation?.()
+			? "定位到这条高亮"
+			: attached
+				? "阅读已下载全文"
+				: source.data?.pdf_url
+					? "下载并阅读开放全文"
+					: "用 Zotero 查找可用 PDF";
+		this.appendPaneButton(doc, body, readLabel, () => this.openSourceInReader(source, readerTarget), true);
 		this.appendPaneButton(doc, body, "打开来源 Review Note", async () => {
 			let note = await this.ensureSourceReviewNote(source, sourceItem);
 			await this.openNativeNote(note);
@@ -1631,12 +1719,13 @@ var ATRZoteroWorkbench = {
 				}
 				if (synced && Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", true)) {
 					let pdfPath = Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokePDFPath", true);
+					let nativeResolver = Zotero.Prefs.get("extensions.atr-zotero-workbench.devSmokeNativeResolver", true);
 					let preferredSourceID = currentProblemObject?.linked_source_ids?.[0];
 					let sourceIndex = preferredSourceID
 						? synced.sources.findIndex(source => source.data?.source_id === preferredSourceID)
 						: 0;
 					if (sourceIndex < 0) sourceIndex = 0;
-					if (!pdfPath && !synced.sources?.[sourceIndex]?.data?.pdf_url) {
+					if (!pdfPath && !nativeResolver && !synced.sources?.[sourceIndex]?.data?.pdf_url) {
 						sourceIndex = synced.sources.findIndex(source => source.data?.pdf_url);
 					}
 					let source = synced.sources?.[sourceIndex];
@@ -1652,7 +1741,7 @@ var ATRZoteroWorkbench = {
 						})
 						: await ATRZoteroWorkbench.ensureReadableAttachment(source, sourceItem);
 					if (!attachment) {
-						throw new Error("development Reader smoke test requires a local fixture or source pdf_url");
+						throw new Error("development Reader smoke test could not acquire a readable attachment");
 					}
 					await ATRZoteroWorkbench.openSourceInReader(source, sourceItem);
 					let annotation = await Zotero.Annotations.saveFromJSON(attachment, {

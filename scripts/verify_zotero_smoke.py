@@ -36,11 +36,17 @@ def main() -> None:
     if missing:
         raise SystemExit(f"missing runtime stages: {missing}")
     remote_pdf = metadata.get("reader_fixture_mode") == "MAPPED_REMOTE_PDF_ON_DEMAND"
+    native_resolver = metadata.get("reader_fixture_mode") == "ZOTERO_NATIVE_AVAILABLE_FILE"
     imported_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_imported"), None)
     if remote_pdf:
         started_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_import_started"), None)
         if not started_pdf or not imported_pdf or not str(started_pdf.get("pdf_url", "")).startswith("https://"):
             raise SystemExit("remote-PDF smoke did not prove an explicit on-demand HTTPS import")
+    resolved_pdf = next((row for row in runtime if row.get("stage") == "source_available_file_attached"), None)
+    if native_resolver:
+        started_lookup = next((row for row in runtime if row.get("stage") == "source_available_file_lookup_started"), None)
+        if not started_lookup or not resolved_pdf or not started_lookup.get("doi"):
+            raise SystemExit("native-resolver smoke did not prove a DOI lookup and attached available file")
 
     events = rows(WORKSPACE / "human-input" / "inbox.jsonl")
     projected_run = json.loads((WORKSPACE / "graph.json").read_text(encoding="utf-8"))["run"]
@@ -68,6 +74,8 @@ def main() -> None:
         raise SystemExit("Reader did not reopen the exact captured annotation via annotationID")
     if remote_pdf and imported_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
         raise SystemExit("Reader annotation was not created on the on-demand imported attachment")
+    if native_resolver and resolved_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
+        raise SystemExit("Reader annotation was not created on the native-resolver attachment")
     impact = impact_report(WORKSPACE)
     if impact.get("ignored_event_count"):
         raise SystemExit(f"smoke generated non-cognitive feedback events: {impact['ignored_events']}")
@@ -227,6 +235,7 @@ def main() -> None:
         "reader_deep_link": deep_link,
         "reader_fixture_mode": metadata.get("reader_fixture_mode"),
         "remote_pdf_import_verified": remote_pdf,
+        "native_available_file_verified": native_resolver,
         "knowledge_collection_count": knowledge_count,
         "knowledge_hierarchy_verified": True,
         "research_collection_count": len(research_objects),

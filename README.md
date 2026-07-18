@@ -69,7 +69,7 @@ python3 scripts/check_installed_plugin_version.py \
   '/Users/zone/Library/Application Support/Zotero/Profiles/e1tzdljc.default'
 ```
 
-对于 ATR source 明确声明的 HTTPS `pdf_url`，插件不会后台批量下载。只有在你点击“阅读文献”且条目还没有可读附件时，才调用 Zotero 原生 attachment API 按需导入全文并直接打开 Reader；成功和失败都会写入 runtime log。`pdf_url` 只是阅读定位，不代表开放许可、成功获取、人工已读或证据支持。
+插件不会后台批量下载。点击来源时，它先复用 Zotero 已有附件；其次导入 ATR 明确声明的 HTTPS 开放 `pdf_url`；只有 DOI/落地页时，再调用 Zotero 原生 **Find Available File** 解析器，在你当前的开放获取与机构访问环境中查找、附加并打开全文。找不到就明确保留为书目记录并提示机构访问、开放仓储/作者稿或手工添加 PDF。成功和失败都会写入 runtime log；DOI、URL 或已附加文件都不代表人工已读或证据支持。
 
 同步、Reader/Note tab 打开和失败诊断会追加到该 workspace 的 `plugin-runtime.jsonl`。
 
