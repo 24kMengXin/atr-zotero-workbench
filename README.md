@@ -56,6 +56,8 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 在 Zotero 中选择「工具 → 插件 → 齿轮 → Install Add-on From File…」，选择
 `dist/atr-zotero-workbench.xpi`，并确认启用。之后在「工具 → 打开 ATR Research Workbench」查看图谱。
 
+每次替换 XPI 后须**完全退出并重启 Zotero**；运行中的 Firefox/Zotero 不会热加载打包后的插件。若面板无法渲染，它会在 Zotero 内显示所读取的 workspace 和具体错误，并把同一诊断追加到该 workspace 的 `plugin-runtime.jsonl`。
+
 修改 Zotero 中由本工具生成的阅读卡/笔记，会追加到
 `output/multilingual/human-input/inbox.jsonl`。回到 Codex 后运行：
 

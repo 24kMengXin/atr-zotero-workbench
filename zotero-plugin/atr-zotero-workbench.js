@@ -222,6 +222,19 @@ var ATRZoteroWorkbench = {
     if (!selected.some(node => node.kind !== "run")) { let empty = create("text"); empty.setAttribute("x", "480"); empty.setAttribute("y", "180"); empty.setAttribute("text-anchor", "middle"); empty.setAttribute("fill", "#64748b"); empty.textContent = "当前 run 尚无可画出的研究对象；不会补造节点。"; svg.append(empty); }
     return svg;
   },
+  renderWorkspaceFailure(body, meta, workspace, error) {
+    meta.setAttribute("value", "工作台未完成渲染（诊断已保留）");
+    let card = xul("vbox");
+    card.setAttribute("style", "background:#fff1f2;border:1px solid #e58b99;border-radius:8px;padding:14px;margin:8px 0;color:#7f1d1d");
+    card.append(
+      label("无法渲染 ATR Research Workbench", "font-size:18px;font-weight:bold"),
+      label("这不会影响 Zotero 文献库、你的笔记或 ATR 历史记录。", "white-space:normal;margin-top:5px"),
+      label("尝试读取的 workspace：" + workspace, "white-space:normal;margin-top:8px"),
+      label("错误：" + String(error), "white-space:normal;margin-top:5px"),
+      label("检查该目录下是否有 graph.json；若刚替换 XPI，请完全退出并重启 Zotero，然后从“工具 → 打开 ATR Research Workbench”重试。详细事件会写入该 workspace 的 plugin-runtime.jsonl。", "white-space:normal;margin-top:8px;color:#475569")
+    );
+    body.append(card);
+  },
   async openWorkbench(window) {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
@@ -241,7 +254,7 @@ var ATRZoteroWorkbench = {
     let host = xul("vbox");
     host.id = this.overlayID;
     host.setAttribute("flex", "1");
-    host.setAttribute("style", "background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28)");
+    host.setAttribute("style", "background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28);min-width:0;min-height:0;z-index:1000");
     let header = xul("hbox");
     header.setAttribute("align", "center");
     header.setAttribute("style", "background:#122a43;color:#fff;padding:14px 18px");
@@ -267,7 +280,7 @@ var ATRZoteroWorkbench = {
     header.append(close); host.append(header);
     let body = xul("scrollbox");
     body.setAttribute("orient", "vertical"); body.setAttribute("flex", "1");
-    body.setAttribute("style", "padding:18px;overflow:auto"); host.append(body);
+    body.setAttribute("style", "padding:18px;overflow:auto;min-width:0;min-height:0"); host.append(body);
     // Zotero's own transient views live in this stack. Appending to the
     // document root creates an out-of-layout XUL node and can appear blank.
     let stack = doc.getElementById("zotero-pane-stack");
@@ -628,7 +641,7 @@ var ATRZoteroWorkbench = {
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });
-      body.append(label("无法读取工作台投影：" + error, "white-space:normal;color:#b42318"));
+      this.renderWorkspaceFailure(body, meta, selectedWorkspace, error);
     }
   },
   hooks: {
