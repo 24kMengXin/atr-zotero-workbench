@@ -67,6 +67,19 @@ def load_v2_run(path: Path) -> V2Run:
         attachments = [dict(row) for row in conn.execute("SELECT seq,attachment_id,subject_id,subject_version,artifact_id,role,note,created_at FROM attachments ORDER BY seq")]
     finally:
         conn.close()
+    for artifact in artifacts:
+        body_dir = path / "artifacts" / artifact["digest"]
+        bodies = list(body_dir.glob("body.*")) if body_dir.is_dir() else []
+        artifact["payload"] = {}
+        # JSON is a readable artifact body, never a second authority.  We only
+        # project it when the registered immutable body itself declares JSON.
+        if len(bodies) == 1 and bodies[0].suffix.lower() == ".json":
+            try:
+                parsed = json.loads(bodies[0].read_text(encoding="utf-8"))
+                if isinstance(parsed, dict):
+                    artifact["payload"] = parsed
+            except (OSError, json.JSONDecodeError):
+                artifact["payload"] = {"_projection_error": "registered JSON artifact cannot be read"}
     gaps = []
     if len([item for item in subjects if item.get("active")]) != 1:
         gaps.append("ATR v2 run 必须恰有一个 active subject；当前 SQLite 投影不满足该约束")
@@ -155,12 +168,71 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         nodes.append(_node(node_id, "atr_v2_subject", subject["subject_id"], **subject_data))
         edge(f"run:{run.run_id}", node_id, "tracks_subject")
     known_artifacts: set[str] = set()
+    known_sources: set[str] = set()
+    def source_node(source: dict[str, Any], *, provenance: str) -> str | None:
+        source_id = source.get("source_id")
+        if not source_id:
+            return None
+        source_id = str(source_id)
+        node_id = f"paper:{source_id}"
+        if source_id not in known_sources:
+            known_sources.add(source_id)
+            kind = str(source.get("kind") or source.get("source_kind") or "UNSPECIFIED")
+            layer = _source_layer(kind, source.get("source_layer"))
+            nodes.append(_node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
+                               url=source.get("url", ""), source_kind=kind, source_layer=layer,
+                               locator=source.get("locator", ""), provenance=provenance,
+                               supports=source.get("supports", source.get("claim", source.get("observation", ""))),
+                               does_not_support=source.get("does_not_support", source.get("does_not_establish", "")),
+                               does_not_establish=source.get("does_not_establish", "")))
+            nodes.append(_node(f"evidence:{source_id}", "evidence_boundary", f"{source_id} 的证据边界",
+                               supports=source.get("supports", source.get("claim", "")),
+                               does_not_support=source.get("does_not_support", source.get("does_not_establish", ""))))
+            edge(node_id, f"evidence:{source_id}", "states_boundary")
+        return node_id
     for artifact in run.artifacts:
         artifact_id = artifact["artifact_id"]
         known_artifacts.add(artifact_id)
         metadata = json.loads(artifact["metadata_json"]) if artifact.get("metadata_json") else {}
-        nodes.append(_node(f"artifact:{artifact_id}", "atr_v2_artifact", f"{artifact['kind']} · {artifact_id.removeprefix('sha256:')[:12]}", artifact_id=artifact_id, artifact_kind=artifact["kind"], digest=artifact["digest"], original_name=artifact["original_name"], created_at=artifact["created_at"], metadata=metadata))
+        payload = artifact.get("payload", {})
+        nodes.append(_node(f"artifact:{artifact_id}", "atr_v2_artifact", f"{artifact['kind']} · {artifact_id.removeprefix('sha256:')[:12]}", artifact_id=artifact_id, artifact_kind=artifact["kind"], digest=artifact["digest"], original_name=artifact["original_name"], created_at=artifact["created_at"], metadata=metadata, artifact_type=payload.get("artifact_type"), projection_error=payload.get("_projection_error")))
         edge(f"run:{run.run_id}", f"artifact:{artifact_id}", "registers_immutable_artifact")
+        # Knowledge artifacts must carry their own source metadata.  A source
+        # ID alone is not enough to invent a Zotero/document edge.
+        for source in payload.get("sources", []):
+            if isinstance(source, dict):
+                node_id = source_node(source, provenance=artifact_id)
+                if node_id:
+                    edge(f"artifact:{artifact_id}", node_id, "records_explicit_source")
+        if artifact["kind"] == "knowledge-map" or payload.get("artifact_type") == "knowledge-map":
+            map_id = str(payload.get("map_id") or artifact_id)
+            map_node = f"knowledge_map:{map_id}"
+            nodes.append(_node(map_node, "concept_map", str(payload.get("topic") or payload.get("scope") or map_id), map_id=map_id, definition=payload.get("definition", ""), does_not_establish=payload.get("does_not_establish", "")))
+            edge(f"artifact:{artifact_id}", map_node, "materializes_knowledge_map")
+            concepts = [item for item in payload.get("concepts", []) if isinstance(item, dict) and item.get("concept_id")]
+            concept_ids = {str(item["concept_id"]) for item in concepts}
+            for concept in concepts:
+                concept_id = str(concept["concept_id"]); concept_node = f"knowledge_concept:{map_id}:{concept_id}"
+                nodes.append(_node(concept_node, "knowledge_concept", str(concept.get("label") or concept_id), concept_id=concept_id, map_id=map_id, definition=concept.get("definition", ""), source_ids=concept.get("source_ids", []), does_not_establish=concept.get("does_not_establish", ""), depth=concept.get("depth")))
+                parent = concept.get("parent_id")
+                edge(f"knowledge_concept:{map_id}:{parent}" if str(parent) in concept_ids else map_node, concept_node, "specializes_concept" if str(parent) in concept_ids else "roots_concept")
+                for source_id in concept.get("source_ids", []):
+                    if str(source_id) in known_sources:
+                        edge(concept_node, f"paper:{source_id}", "defines_with_explicit_source")
+        if artifact["kind"] == "problem-case" or payload.get("artifact_type") == "problem-case":
+            problem_id = str(payload.get("problem_id") or artifact_id)
+            label = str(payload.get("research_question") or payload.get("tension") or payload.get("question") or problem_id)
+            problem_node = f"research_problem:{problem_id}"
+            nodes.append(_node(problem_node, "research_problem", label, problem_id=problem_id,
+                               decision_owner=payload.get("decision_owner"), worlds=payload.get("worlds", payload.get("counterfactual_worlds", [])),
+                               discriminator=payload.get("discriminator", ""), falsifier=payload.get("falsifier", ""),
+                               scope=payload.get("scope", ""), does_not_establish=payload.get("does_not_establish", "")))
+            edge(f"artifact:{artifact_id}", problem_node, "materializes_problem_case")
+            for span in payload.get("source_spans", []):
+                if isinstance(span, dict):
+                    node_id = source_node(span, provenance=artifact_id)
+                    if node_id:
+                        edge(problem_node, node_id, "grounds_in_explicit_source_span", locator=span.get("locator", ""), observation=span.get("observation", ""))
     timeline: list[dict[str, Any]] = []
     for event in run.events:
         node_id = f"transition:{event['event_id']}"
