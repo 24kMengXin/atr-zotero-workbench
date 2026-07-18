@@ -59,19 +59,31 @@ var ATRZoteroWorkbench = {
     window.document.getElementById(this.overlayID)?.remove();
   },
   removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
-  escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
-  },
   async openWorkbench(window) {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
-    let host = doc.createElement("div");
+    let xul = name => doc.createXULElement(name);
+    let label = (value, style = "") => {
+      let node = xul("label"); node.setAttribute("value", String(value ?? ""));
+      if (style) node.setAttribute("style", style);
+      return node;
+    };
+    let host = xul("vbox");
     host.id = this.overlayID;
-    host.style.cssText = "position:fixed;inset:58px 18px 18px 220px;z-index:100000;background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28);font:14px system-ui,-apple-system,sans-serif;overflow:auto";
-    host.innerHTML = "<div style='position:sticky;top:0;display:flex;align-items:center;gap:12px;padding:14px 18px;background:#122a43;color:#fff;z-index:1'><b style='font-size:16px'>ATR × Zotero Research Workbench</b><span id='atr-workbench-meta' style='opacity:.8;flex:1'></span><button id='atr-workbench-close' style='padding:5px 10px'>关闭</button></div><div id='atr-workbench-body' style='padding:18px'></div>";
+    host.setAttribute("style", "position:fixed;top:58px;right:18px;bottom:18px;left:220px;z-index:100000;background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28)");
+    let header = xul("hbox");
+    header.setAttribute("align", "center");
+    header.setAttribute("style", "background:#122a43;color:#fff;padding:14px 18px");
+    header.append(label("ATR × Zotero Research Workbench", "font-size:16px;font-weight:bold"));
+    let meta = label("正在读取研究投影…", "opacity:.8;margin-left:12px");
+    meta.setAttribute("flex", "1"); header.append(meta);
+    let close = xul("button"); close.setAttribute("label", "关闭");
+    header.append(close); host.append(header);
+    let body = xul("scrollbox");
+    body.setAttribute("orient", "vertical"); body.setAttribute("flex", "1");
+    body.setAttribute("style", "padding:18px;overflow:auto"); host.append(body);
     doc.documentElement.appendChild(host);
-    doc.getElementById("atr-workbench-close").addEventListener("click", () => host.remove());
-    let body = doc.getElementById("atr-workbench-body");
+    close.addEventListener("command", () => host.remove());
     try {
       let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(this.workspace, "graph.json")));
       let nodes = graph.nodes || [], edges = graph.edges || [];
@@ -80,18 +92,33 @@ var ATRZoteroWorkbench = {
       let papers = nodes.filter(node => node.kind === "paper");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
-      doc.getElementById("atr-workbench-meta").textContent = `${graph.run || "unknown run"} · 派生只读投影`;
-      let cards = `<div style='display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px'>${[[questions.length,"研究问题"],[scholarly,"学术证据"],[contextual,"现实灵感"],[(graph.history?.snapshots || []).length,"历史快照"]].map(([n,label]) => `<div style='background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:12px'><b style='display:block;font-size:24px'>${n}</b><span>${label}</span></div>`).join("")}</div>`;
-      let questionCards = questions.map(question => {
+      meta.setAttribute("value", `${graph.run || "unknown run"} · 派生只读投影`);
+      let metrics = xul("hbox"); metrics.setAttribute("style", "margin-bottom:16px");
+      for (let [count, title] of [[questions.length,"研究问题"],[scholarly,"学术证据"],[contextual,"现实灵感"],[(graph.history?.snapshots || []).length,"历史快照"]]) {
+        let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:12px;margin-right:10px;min-width:130px");
+        card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
+      }
+      body.append(metrics, label("从问题向知识展开", "font-size:20px;font-weight:bold;margin-bottom:10px"));
+      for (let question of questions) {
         let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
         let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);
-        return `<section style='background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:12px'><h2 style='margin:0 0 8px;font-size:17px'>${this.escapeHTML(question.label)}</h2><p style='color:#64748b'>ATR frontier map 提出的问题，不是论文自身结论。</p><h3 style='font-size:13px;margin:12px 0 4px'>所需概念</h3><p>${concepts.map(node => `<span style='display:inline-block;background:#edf2f7;border-radius:12px;padding:3px 8px;margin:2px'>${this.escapeHTML(node.label)}</span>`).join("") || "未记录"}</p><h3 style='font-size:13px;margin:12px 0 4px'>锚定来源</h3>${anchors.map(node => `<details style='margin:6px 0'><summary>${this.escapeHTML(node.label)}</summary><p><b>支持：</b>${this.escapeHTML(node.data?.supports || "未记录")}</p><p><b>不能推出：</b>${this.escapeHTML(node.data?.does_not_support || "未记录")}</p></details>`).join("") || "未记录"}</section>`;
-      }).join("");
-      let diagnostics = (graph.diagnostics || []).map(item => `<li>${this.escapeHTML(item)}</li>`).join("");
-      body.innerHTML = cards + "<h1 style='font-size:20px'>从问题向知识展开</h1>" + (questionCards || "<p>当前 run 尚未产生 frontier tensions；插件不会凭空生成研究问题。</p>") + (diagnostics ? `<section style='background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px'><b>数据完整性提示</b><ul>${diagnostics}</ul></section>` : "");
+        let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:12px");
+        card.append(label(question.label, "font-size:17px;font-weight:bold;white-space:normal"), label("ATR frontier map 提出的问题，不是论文自身结论。", "color:#64748b;margin:6px 0"), label("所需概念", "font-size:13px;font-weight:bold;margin-top:8px"), label(concepts.map(node => node.label).join(" · ") || "未记录", "white-space:normal"), label("锚定来源", "font-size:13px;font-weight:bold;margin-top:8px"));
+        for (let source of anchors) {
+          let details = xul("vbox"); details.setAttribute("style", "margin:5px 0;padding:7px;background:#f7fafc;border-radius:5px");
+          details.append(label(source.label, "font-weight:bold;white-space:normal"), label("支持：" + (source.data?.supports || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
+          card.append(details);
+        }
+        body.append(card);
+      }
+      if (!questions.length) body.append(label("当前 run 尚未产生 frontier tensions；插件不会凭空生成研究问题。", "white-space:normal"));
+      if (graph.diagnostics?.length) {
+        let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
+        warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
+      }
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
-      body.textContent = "无法读取工作台投影：" + error;
+      body.append(label("无法读取工作台投影：" + error, "white-space:normal;color:#b42318"));
     }
   },
   hooks: {
