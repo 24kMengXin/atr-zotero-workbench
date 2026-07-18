@@ -111,6 +111,7 @@ Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”�
 - XPI 可解压且只包含启动脚本、manifest、偏好和 Fluent 资源；
 - 新建/干净 profile 可安装、启用、显示 topic 菜单和 ATR Item Pane section；
 - 用一条实际 Zotero Note 修改和一条 Reader annotation 验证 `human-input/inbox.jsonl` 事件桥；
+- 用 Zotero local API 验证 snapshot → 人类输入区/annotation 差量 → 同一 inbox；不得直读正在运行的 SQLite，也不得把重新投影的生成区改动当成人类反馈；
 - 验证 Collection 归属等 Note 元数据变化不会进入认知反馈；每条接受事件携带 `input_origin=ZOTERO_NOTIFIER`；
 - 验证 annotation 事件中的 `zotero_open_uri` 同时包含 attachment key、PDF page 和 annotation key，且 user/group scope 在事件发生时解析；
 

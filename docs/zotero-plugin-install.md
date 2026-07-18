@@ -22,6 +22,7 @@
 2. Zotero：工具 → 插件 → 齿轮 → **Install Add-on From File…**。
 3. 选择 `dist/atr-zotero-workbench.xpi`，在插件列表确认 “ATR Research Workbench” 为启用状态。
 4. 不要以覆盖 profile 中同名 `.xpi` 文件代替安装：Zotero 会继续注册旧版本。使用 `scripts/check_installed_plugin_version.py dist/atr-zotero-workbench.xpi <profile-dir>` 核对候选版本与注册版本相同，再完全重启 Zotero。
+   该命令也会读取 `extensions.update.autoUpdateDefault` 与插件的 `applyBackgroundUpdates`。如果显示 `BACKGROUND_UPDATES_DISABLED_BY_PROFILE_DEFAULT`，说明更新清单并未失效，而是该插件正在跟随一个已关闭的全局自动更新设置；应通过 Zotero 的插件管理器安装/检查更新，不能修改 `extensions.json` 冒充升级。
 5. 重启 Zotero 后，从「工具 → ATR Research」选择标记为“当前权威”的 topic。插件会创建/定位原生 Collection，并打开原生 Topic Note tab。
 
 ## 验证人工输入桥

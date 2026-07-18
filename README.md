@@ -78,6 +78,25 @@ python3 scripts/check_installed_plugin_version.py \
 `output/<topic>/human-input/inbox.jsonl`。回到 Codex 后优先扫描显式 registry，
 一次找出所有 topic 中尚待复核的修改及其最近决策节点：
 
+插件 notifier 是低延迟入口；Zotero 自带的只读 local API 是可恢复补偿入口。
+在当前投影导入 Zotero 后、开始人工阅读前，先建立明确基线：
+
+```bash
+python -m atr_zotero_workbench zotero-local-snapshot output/<topic>
+```
+
+回到 Codex 后拉取差量：
+
+```bash
+python -m atr_zotero_workbench zotero-local-pull output/<topic>
+```
+
+该通道只请求 `http://127.0.0.1:23119/api/users/0`，不读取或写入 Zotero
+SQLite。它只比较 ATR Note 中以“我的…”开头的人类输入区、typed stance/route
+control，以及已经映射到 ATR source 的 annotation；AI 重新生成定义或布局不会
+冒充人的认知变化。首次 pull 没有显式 snapshot 会直接拒绝。检测到的差量仍只
+append 到同一个 inbox，并标为 `ZOTERO_LOCAL_API_POLL` / `REVIEW_INPUT_ONLY`。
+
 ```bash
 python -m atr_zotero_workbench review-registry output/runs.json \
   --out output/codex-inbox-summary.json

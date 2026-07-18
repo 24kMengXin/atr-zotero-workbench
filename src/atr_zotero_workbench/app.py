@@ -11,6 +11,7 @@ from .history import archive_previous_projection
 from .programs import project_program
 from .runs import register_run
 from .zotero import export_bundle, export_native_projection, sync_web_api
+from .zotero_local import pull_local_feedback, snapshot_local_feedback
 
 
 # The graph is embedded at build time so the page works in Zotero's file:// tab
@@ -98,6 +99,8 @@ def main() -> None:
     a2 = sub.add_parser("attach-review-to-v2"); a2.add_argument("directory", type=Path); a2.add_argument("--v2-run-dir", type=Path, required=True); a2.add_argument("--disposition-ledger", type=Path, required=True); a2.add_argument("--packet", required=True); a2.add_argument("--subject", required=True); a2.add_argument("--expected-version", type=int, required=True); a2.add_argument("--atrctl", type=Path, required=True)
     a3 = sub.add_parser("attach-review-assessment-to-v2"); a3.add_argument("directory", type=Path); a3.add_argument("--v2-run-dir", type=Path, required=True); a3.add_argument("--assessment", type=Path, required=True); a3.add_argument("--subject", required=True); a3.add_argument("--expected-version", type=int, required=True); a3.add_argument("--atrctl", type=Path, required=True)
     nm = sub.add_parser("refresh-native-map"); nm.add_argument("directory", type=Path)
+    zls = sub.add_parser("zotero-local-snapshot"); zls.add_argument("directory", type=Path)
+    zlp = sub.add_parser("zotero-local-pull"); zlp.add_argument("directory", type=Path)
     a = p.parse_args()
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
@@ -119,6 +122,10 @@ def main() -> None:
         print(json.dumps(attach_review_packet_to_v2(a.directory, a.v2_run_dir, a.packet, a.subject, a.expected_version, a.atrctl, a.disposition_ledger), ensure_ascii=False))
     elif a.cmd == "attach-review-assessment-to-v2":
         print(json.dumps(attach_review_assessment_to_v2(a.directory, a.v2_run_dir, a.assessment, a.subject, a.expected_version, a.atrctl), ensure_ascii=False))
+    elif a.cmd == "zotero-local-snapshot":
+        print(json.dumps(snapshot_local_feedback(a.directory), ensure_ascii=False))
+    elif a.cmd == "zotero-local-pull":
+        print(json.dumps(pull_local_feedback(a.directory), ensure_ascii=False))
     else:
         graph = json.loads((a.directory / "graph.json").read_text(encoding="utf-8"))
         print(json.dumps({"written": str(export_native_projection(graph, a.directory))}, ensure_ascii=False))
