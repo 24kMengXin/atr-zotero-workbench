@@ -95,6 +95,7 @@ class BuildTest(unittest.TestCase):
             problem = next(node for node in graph['nodes'] if node['id'] == 'research_problem:PC-1')
             self.assertEqual(problem['data']['discriminator'], 'A contrastive trace')
             self.assertTrue(any(edge['relation'] == 'grounds_in_explicit_source_span' and edge['target'] == 'paper:P2' for edge in graph['edges']))
+            self.assertIn('ATR v2：知识与现实问题链路', (root / 'out' / 'index.html').read_text())
             attachment = next(item for item in graph['timeline'] if item['kind'] == 'atr_v2_attachment')
             self.assertIn('不改变 lifecycle', attachment['label'])
 
