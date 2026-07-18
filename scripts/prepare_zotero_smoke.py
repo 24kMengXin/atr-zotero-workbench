@@ -46,6 +46,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--reset", action="store_true", help="replace only .runtime/zotero-smoke")
     parser.add_argument("--run-key", help="explicit registered run to copy; defaults to active_run")
+    parser.add_argument("--remote-pdf", action="store_true", help="exercise a mapped source pdf_url instead of the local fixture")
     args = parser.parse_args()
     if RUNTIME.exists():
         if not args.reset:
@@ -72,7 +73,8 @@ def main() -> None:
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
     export_native_projection(graph, workspace)
     pdf_path = workspace / "reader-smoke-fixture.pdf"
-    write_smoke_pdf(pdf_path)
+    if not args.remote_pdf:
+        write_smoke_pdf(pdf_path)
 
     registry = {
         "schema_version": "0.2",
@@ -104,12 +106,14 @@ def main() -> None:
         handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeTestOnStartup", true);\n')
         handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", true);\n')
         handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", true);\n')
-        handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokePDFPath", {json.dumps(str(pdf_path))});\n')
+        if not args.remote_pdf:
+            handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokePDFPath", {json.dumps(str(pdf_path))});\n')
     metadata = {
         "source_active_run": source_registry["active_run"],
         "selected_run_key": selected_key,
         "source_workspace": str(source_workspace),
         "runtime": str(RUNTIME),
+        "reader_fixture_mode": "MAPPED_REMOTE_PDF_ON_DEMAND" if args.remote_pdf else "REPOSITORY_LOCAL_SYNTHETIC_PDF",
         "safety_boundary": "REPOSITORY_LOCAL_GITIGNORED_DISPOSABLE_PROFILE_AND_DATA",
     }
     (RUNTIME / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")

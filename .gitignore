@@ -5,4 +5,5 @@ __pycache__/
 /output/*/plugin-runtime.jsonl
 /output/*/human-input/
 /output/runs.json
+/output/human-ai-scholarly-coreading/
 /.runtime/

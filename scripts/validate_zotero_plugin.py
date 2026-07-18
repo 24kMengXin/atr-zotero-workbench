@@ -99,6 +99,8 @@ def validate_source() -> None:
         fail("plugin must reopen a selected native annotation at its exact Reader location")
     if "zotero://open-pdf/" not in runtime or "getGroupIDFromLibraryID" not in runtime or "zotero_open_uri" not in runtime:
         fail("plugin must capture user/group-aware Codex-to-Reader annotation deep links at event time")
+    if "ensureReadableAttachment" not in runtime or "Zotero.Attachments.importFromURL" not in runtime or "source_pdf_imported" not in runtime:
+        fail("plugin must import an explicitly mapped open PDF on first read instead of leaving a metadata-only item")
     if "review-queue.json" not in runtime or "pendingReviewItems" not in runtime:
         fail("plugin must display the Codex-derived pending review queue without mutating lifecycle")
     if ("ATR Topic Run:" not in runtime or "ATR Process Run:" not in runtime or "ATR Source ID:" not in runtime

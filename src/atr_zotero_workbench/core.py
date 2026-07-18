@@ -169,6 +169,7 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         edge(f"run:{run.run_id}", node_id, "tracks_subject")
     known_artifacts: set[str] = set()
     known_sources: set[str] = set()
+    projected_source_nodes: dict[str, dict[str, Any]] = {}
 
     def entity_key(artifact: dict[str, Any]) -> tuple[str, str] | None:
         payload = artifact.get("payload", {})
@@ -207,17 +208,29 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             known_sources.add(source_id)
             kind = str(source.get("kind") or source.get("source_kind") or "UNSPECIFIED")
             layer = _source_layer(kind, source.get("source_layer"))
-            nodes.append(_node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
-                               url=source.get("url", ""), source_kind=kind, source_layer=layer,
+            paper_node = _node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
+                               url=source.get("url", ""), pdf_url=source.get("pdf_url", ""),
+                               source_kind=kind, source_layer=layer,
                                locator=source.get("locator", ""), provenance=provenance,
                                source_function=source.get("source_function"), observed_at=source.get("observed_at"),
                                supports=source.get("supports", source.get("claim", source.get("observation", ""))),
                                does_not_support=source.get("does_not_support", source.get("does_not_establish", "")),
-                               does_not_establish=source.get("does_not_establish", "")))
+                               does_not_establish=source.get("does_not_establish", ""))
+            nodes.append(paper_node)
+            projected_source_nodes[source_id] = paper_node
             nodes.append(_node(f"evidence:{source_id}", "evidence_boundary", f"{source_id} 的证据边界",
                                supports=source.get("supports", source.get("claim", "")),
                                does_not_support=source.get("does_not_support", source.get("does_not_establish", ""))))
             edge(node_id, f"evidence:{source_id}", "states_boundary")
+        else:
+            # One bibliographic source can occur in several immutable artifact
+            # versions.  Preserve those artifact/edge histories, while allowing
+            # the shared Zotero source node to gain a non-interpretive locator
+            # that an earlier record did not yet know.
+            paper_data = projected_source_nodes[source_id]["data"]
+            for field in ("url", "pdf_url"):
+                if not paper_data.get(field) and source.get(field):
+                    paper_data[field] = source[field]
         return node_id
     for artifact in run.artifacts:
         artifact_id = artifact["artifact_id"]
@@ -520,7 +533,8 @@ def project_graph(run: LegacyRun | V2Run) -> dict[str, Any]:
         source_kind = source.get("kind", "")
         source_layer = _source_layer(source_kind, source.get("source_layer"))
         nodes.append(_node(f"paper:{sid}", "paper", source.get("title", sid), source_id=sid,
-                           url=source.get("url", ""), source_kind=source_kind, source_layer=source_layer,
+                           url=source.get("url", ""), pdf_url=source.get("pdf_url", ""),
+                           source_kind=source_kind, source_layer=source_layer,
                            supports=source.get("supports", ""), does_not_support=source.get("does_not_support", ""),
                            why_it_matters=source.get("why_it_matters", ""), keywords=source.get("keywords", []),
                            related_tension_ids=source.get("related_tension_ids", [])))

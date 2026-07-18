@@ -22,6 +22,7 @@ def rows(path: Path) -> list[dict]:
 
 def main() -> None:
     runtime = rows(WORKSPACE / "plugin-runtime.jsonl")
+    metadata = json.loads((RUNTIME / "metadata.json").read_text(encoding="utf-8"))
     stages = {row.get("stage") for row in runtime}
     required = {
         "startup_complete", "native_topic_menu_added", "native_item_pane_registered",
@@ -34,6 +35,12 @@ def main() -> None:
     missing = sorted(required - stages)
     if missing:
         raise SystemExit(f"missing runtime stages: {missing}")
+    remote_pdf = metadata.get("reader_fixture_mode") == "MAPPED_REMOTE_PDF_ON_DEMAND"
+    imported_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_imported"), None)
+    if remote_pdf:
+        started_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_import_started"), None)
+        if not started_pdf or not imported_pdf or not str(started_pdf.get("pdf_url", "")).startswith("https://"):
+            raise SystemExit("remote-PDF smoke did not prove an explicit on-demand HTTPS import")
 
     events = rows(WORKSPACE / "human-input" / "inbox.jsonl")
     if any(event.get("atr_run") and not event.get("atr_problem_id") for event in events):
@@ -54,6 +61,8 @@ def main() -> None:
     annotation_open = next((row for row in runtime if row.get("stage") == "native_reader_annotation_opened"), None)
     if not annotation_open or annotation_open.get("annotation_key") != annotation_events[0].get("zotero_annotation_key"):
         raise SystemExit("Reader did not reopen the exact captured annotation via annotationID")
+    if remote_pdf and imported_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
+        raise SystemExit("Reader annotation was not created on the on-demand imported attachment")
     impact = impact_report(WORKSPACE)
     annotation_impact = next(
         row for row in impact["affected"]
@@ -209,6 +218,8 @@ def main() -> None:
         "review_packet_count": len(packets),
         "review_queue_count": len(review_queue["items"]),
         "reader_deep_link": deep_link,
+        "reader_fixture_mode": metadata.get("reader_fixture_mode"),
+        "remote_pdf_import_verified": remote_pdf,
         "knowledge_collection_count": knowledge_count,
         "knowledge_hierarchy_verified": True,
         "research_collection_count": len(research_objects),

@@ -135,7 +135,7 @@ class BuildTest(unittest.TestCase):
             old_knowledge_body = run / 'artifacts' / 'oldk'; old_knowledge_body.mkdir(parents=True)
             (old_knowledge_body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','map_id':'KM-1','topic':'Old auditable agents map','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER'}],'concepts':[{'concept_id':'auditability','label':'Old auditability definition','definition':'Earlier definition','source_ids':['P1']}]}))
             body = run / 'artifacts' / 'abc'; body.mkdir(parents=True)
-            (body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','map_id':'KM-1','topic':'Auditable agents','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER','does_not_establish':'not a general guarantee'}],'concepts':[{'concept_id':'auditability','label':'Auditability','definition':'Traceable review','source_ids':['P1']},{'concept_id':'action','label':'Action attribution','parent_id':'auditability','source_ids':['P1']}]}))
+            (body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','map_id':'KM-1','topic':'Auditable agents','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','pdf_url':'https://e.org/paper.pdf','kind':'PAPER','does_not_establish':'not a general guarantee'}],'concepts':[{'concept_id':'auditability','label':'Auditability','definition':'Traceable review','source_ids':['P1']},{'concept_id':'action','label':'Action attribution','parent_id':'auditability','source_ids':['P1']}]}))
             opportunity_body = run / 'artifacts' / 'jkl'; opportunity_body.mkdir(parents=True)
             (opportunity_body / 'body.json').write_text(json.dumps({
                 'artifact_type':'opportunity-map','map_id':'OM-1','scope':'Human review of agent actions',
@@ -185,6 +185,10 @@ class BuildTest(unittest.TestCase):
             self.assertTrue(any(edge['source'] == assessment['id'] and edge['target'] == 'research_problem:PC-1' and edge['relation'] == 'requests_new_version_after_review' for edge in graph['edges']))
             self.assertIn('ATR v2：知识与现实问题链路', (root / 'out' / 'index.html').read_text())
             native = json.loads((root / 'out' / 'zotero' / 'native-projection.json').read_text())
+            p1 = next(node for node in graph['nodes'] if node['id'] == 'paper:P1')
+            self.assertEqual(p1['data']['pdf_url'], 'https://e.org/paper.pdf')
+            p1_object = next(obj for obj in native['objects'] if obj['object_id'] == 'source:P1')
+            self.assertEqual(p1_object['pdf_url'], 'https://e.org/paper.pdf')
             problem_object = next(obj for obj in native['objects'] if obj['object_kind'] == 'problem_note' and obj['review_role'] == 'CURRENT_REVIEW_TARGET')
             self.assertEqual(problem_object['marker'], 'ATR Problem ID: PC-1 | ATR Graph Node: research_problem:PC-1')
             self.assertEqual(problem_object['linked_source_ids'], ['P2'])

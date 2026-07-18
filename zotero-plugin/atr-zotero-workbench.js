@@ -20,6 +20,7 @@ var ATRZoteroWorkbench = {
 	lastHumanInput: new Map(),
 	suppressedNotifierItemIDs: new Set(),
 	writeQueues: new Map(),
+	pendingSourceImports: new Map(),
 	defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual-agent-action-continuation",
 	defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
 
@@ -916,14 +917,66 @@ var ATRZoteroWorkbench = {
 		return editor;
 	},
 
+	async ensureReadableAttachment(source, item) {
+		if (item.isAttachment?.()) return item;
+		let existing = await item.getBestAttachment();
+		if (existing) return existing;
+		let pdfURL = source?.data?.pdf_url;
+		if (!pdfURL) return null;
+		if (!/^https:\/\/[^\s]+$/i.test(pdfURL)) {
+			throw new Error("来源的开放 PDF URL 不是受支持的 HTTPS 地址。");
+		}
+		let importKey = item.libraryID + ":" + item.key;
+		if (!this.pendingSourceImports.has(importKey)) {
+			let pending = (async () => {
+				await this.appendRuntimeStatus("source_pdf_import_started", {
+					source_id: source?.data?.source_id,
+					item_key: item.key,
+					pdf_url: pdfURL,
+				});
+				try {
+					let attachment = await Zotero.Attachments.importFromURL({
+						libraryID: item.libraryID,
+						url: pdfURL,
+						parentItemID: item.id,
+						title: "Open-access full text",
+						contentType: "application/pdf",
+						renameIfAllowedType: true,
+					});
+					await this.appendRuntimeStatus("source_pdf_imported", {
+						source_id: source?.data?.source_id,
+						item_key: item.key,
+						attachment_key: attachment.key,
+					});
+					return attachment;
+				}
+				catch (error) {
+					await this.appendRuntimeStatus("source_pdf_import_failed", {
+						source_id: source?.data?.source_id,
+						item_key: item.key,
+						error: String(error),
+					});
+					throw error;
+				}
+			})();
+			this.pendingSourceImports.set(importKey, pending);
+		}
+		try {
+			return await this.pendingSourceImports.get(importKey);
+		}
+		finally {
+			this.pendingSourceImports.delete(importKey);
+		}
+	},
+
 	async openSourceInReader(source, item = null) {
 		item = item || await this.sourceItem(source);
 		let annotation = item.isAnnotation?.() ? item : null;
 		let attachment = annotation
 			? Zotero.Items.get(annotation.parentItemID)
-			: item.isAttachment?.() ? item : await item.getBestAttachment();
+			: await this.ensureReadableAttachment(source, item);
 		if (!attachment) {
-			throw new Error("该 Zotero 条目还没有可在 Reader 中打开的附件。请先为条目添加 PDF/EPUB。 ");
+			throw new Error("该 Zotero 条目没有附件，ATR 来源也未声明可按需导入的开放 PDF。请先为条目添加 PDF/EPUB。");
 		}
 		let location = annotation ? { annotationID: annotation.key } : null;
 		await Zotero.Reader.open(attachment.id, location, {
@@ -1571,16 +1624,24 @@ var ATRZoteroWorkbench = {
 						? synced.sources.findIndex(source => source.data?.source_id === preferredSourceID)
 						: 0;
 					if (sourceIndex < 0) sourceIndex = 0;
+					if (!pdfPath && !synced.sources?.[sourceIndex]?.data?.pdf_url) {
+						sourceIndex = synced.sources.findIndex(source => source.data?.pdf_url);
+					}
 					let source = synced.sources?.[sourceIndex];
 					let sourceItem = synced.items?.[sourceIndex];
-					if (!pdfPath || !source || !sourceItem) {
-						throw new Error("development Reader smoke test requires a PDF path and mapped source");
+					if (!source || !sourceItem) {
+						throw new Error("development Reader smoke test requires a mapped source");
 					}
-					let attachment = await Zotero.Attachments.importFromFile({
-						file: pdfPath,
-						parentItemID: sourceItem.id,
-						title: "ATR repository-local Reader smoke fixture",
-					});
+					let attachment = pdfPath
+						? await Zotero.Attachments.importFromFile({
+							file: pdfPath,
+							parentItemID: sourceItem.id,
+							title: "ATR repository-local Reader smoke fixture",
+						})
+						: await ATRZoteroWorkbench.ensureReadableAttachment(source, sourceItem);
+					if (!attachment) {
+						throw new Error("development Reader smoke test requires a local fixture or source pdf_url");
+					}
 					await ATRZoteroWorkbench.openSourceInReader(source, sourceItem);
 					let annotation = await Zotero.Annotations.saveFromJSON(attachment, {
 						key: Zotero.DataObjectUtilities.generateKey(),

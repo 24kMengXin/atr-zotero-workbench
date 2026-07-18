@@ -177,6 +177,7 @@ def native_projection(graph: dict) -> dict:
                 "collection_role": "SOURCES",
                 "linked_source_ids": [data["source_id"]],
                 "url": data.get("url"),
+                "pdf_url": data.get("pdf_url"),
                 "source_layer": data.get("source_layer"),
             })
         elif node.get("kind") == "research_problem" and data.get("problem_id"):
