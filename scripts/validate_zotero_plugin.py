@@ -53,6 +53,8 @@ def validate_source() -> None:
         fail("legacy menu_toolsPopup must not be used")
     if "IOUtils.readUTF8" not in runtime or 'getElementById("zotero-pane-stack")' not in runtime:
         fail("workbench must render its projection in Zotero's main window")
+    if "plugin-runtime.jsonl" not in runtime or "overlay_mounted" not in runtime:
+        fail("workbench must emit a runtime mount record for development verification")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

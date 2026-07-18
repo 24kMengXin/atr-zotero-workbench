@@ -7,6 +7,15 @@ var ATRZoteroWorkbench = {
   log(message) { Zotero.debug("ATR Workbench: " + message); },
   get workspace() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true) || this.defaultWorkspace; },
   inboxPath() { return PathUtils.join(this.workspace, "human-input", "inbox.jsonl"); },
+  runtimeLogPath() { return PathUtils.join(this.workspace, "observability", "plugin-runtime.jsonl"); },
+  async appendRuntimeStatus(stage, details = {}) {
+    let record = { schema_version: "0.1", component: "zotero_plugin", stage, at: new Date().toISOString(), ...details };
+    this.log(stage + ": " + JSON.stringify(details));
+    try {
+      await IOUtils.makeDirectory(PathUtils.parent(this.runtimeLogPath()), { ignoreExisting: true });
+      await IOUtils.writeUTF8(this.runtimeLogPath(), JSON.stringify(record) + "\n", { mode: "append" });
+    } catch (error) { this.log("could not write runtime status: " + error); }
+  },
   async appendHumanInput(record) {
     try {
       await IOUtils.makeDirectory(PathUtils.parent(this.inboxPath()), { ignoreExisting: true });
@@ -62,6 +71,7 @@ var ATRZoteroWorkbench = {
   async openWorkbench(window) {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
+    await this.appendRuntimeStatus("open_requested", { window_uri: String(window.location) });
     let xul = name => doc.createXULElement(name);
     let label = (value, style = "") => {
       let node = xul("label"); node.setAttribute("value", String(value ?? ""));
@@ -86,12 +96,22 @@ var ATRZoteroWorkbench = {
     // Zotero's own transient views live in this stack. Appending to the
     // document root creates an out-of-layout XUL node and can appear blank.
     let stack = doc.getElementById("zotero-pane-stack");
-    if (!stack) throw new Error("Zotero pane stack is unavailable");
+    if (!stack) {
+      let error = new Error("Zotero pane stack is unavailable");
+      await this.appendRuntimeStatus("mount_failed", { error: String(error) });
+      throw error;
+    }
     stack.appendChild(host);
+    await this.appendRuntimeStatus("overlay_mounted", {
+      mount_id: stack.id, overlay_present: !!doc.getElementById(this.overlayID)
+    });
     close.addEventListener("command", () => host.remove());
     try {
       let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(this.workspace, "graph.json")));
       let nodes = graph.nodes || [], edges = graph.edges || [];
+      await this.appendRuntimeStatus("projection_loaded", {
+        run: graph.run || null, node_count: nodes.length, edge_count: edges.length
+      });
       let by = Object.fromEntries(nodes.map(node => [node.id, node]));
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
@@ -121,8 +141,10 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
+      await this.appendRuntimeStatus("render_failed", { error: String(error) });
       body.append(label("无法读取工作台投影：" + error, "white-space:normal;color:#b42318"));
     }
   },
