@@ -2,11 +2,12 @@
 var ATRZoteroWorkbench = {
   id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay", workspaceOverride: null,
   // This path deliberately matches the repo's generated workbench output. It is a user-visible pref.
-  defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual",
+  defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual-agent-action-continuation",
   defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
   init({ id, rootURI }) { this.id = id; this.rootURI = rootURI; },
   log(message) { Zotero.debug("ATR Workbench: " + message); },
-  get workspace() { return this.workspaceOverride || Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true) || this.defaultWorkspace; },
+  get configuredWorkspace() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true); },
+  get workspace() { return this.workspaceOverride || this.configuredWorkspace || this.defaultWorkspace; },
   get registryPath() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.registry", true) || this.defaultRegistry; },
   inboxPath() { return PathUtils.join(this.workspace, "human-input", "inbox.jsonl"); },
   // Keep the trace beside graph.json: that directory is created by the ATR
@@ -44,6 +45,19 @@ var ATRZoteroWorkbench = {
       let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
       return (registry.runs || []).filter(run => run.key && run.workspace);
     } catch (_) { return []; }
+  },
+  async resolveWorkspace(registeredRuns) {
+    if (this.workspaceOverride) return this.workspaceOverride;
+    // A researcher-set workspace always wins. Without one, honor the
+    // registry's active run instead of accidentally reopening the historical
+    // default after a new continuation has been built.
+    if (this.configuredWorkspace) return this.configuredWorkspace;
+    try {
+      let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
+      let active = (registry.runs || []).find(run => run.key === registry.active_run && run.workspace);
+      if (active) return active.workspace;
+    } catch (_) { /* registry is optional */ }
+    return registeredRuns[0]?.workspace || this.defaultWorkspace;
   },
   plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
   htmlEscape(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); },
@@ -212,7 +226,12 @@ var ATRZoteroWorkbench = {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
     let registeredRuns = await this.loadRunRegistry();
-    await this.appendRuntimeStatus("open_requested", { window_uri: String(window.location) });
+    let selectedWorkspace = await this.resolveWorkspace(registeredRuns);
+    // Keep every note, queue and history operation within the same run that
+    // rendered this overlay. This is in-memory selection only; it does not
+    // overwrite a researcher's persisted workspace preference.
+    this.workspaceOverride = selectedWorkspace;
+    await this.appendRuntimeStatus("open_requested", { window_uri: String(window.location), workspace: selectedWorkspace });
     let xul = name => doc.createXULElement(name);
     let label = (value, style = "") => {
       let node = xul("label"); node.setAttribute("value", String(value ?? ""));
@@ -231,7 +250,7 @@ var ATRZoteroWorkbench = {
     meta.setAttribute("flex", "1"); header.append(meta);
     if (registeredRuns.length > 1) {
       let picker = xul("menulist"), choices = xul("menupopup");
-      let current = registeredRuns.find(run => run.workspace === this.workspace) || registeredRuns[0];
+      let current = registeredRuns.find(run => run.workspace === selectedWorkspace) || registeredRuns[0];
       picker.setAttribute("label", current.label || current.key);
       for (let run of registeredRuns) {
         let choice = xul("menuitem"); choice.setAttribute("label", run.label || run.key); choice.setAttribute("value", run.workspace);
@@ -263,7 +282,7 @@ var ATRZoteroWorkbench = {
     });
     close.addEventListener("command", () => host.remove());
     try {
-      let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(this.workspace, "graph.json")));
+      let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(selectedWorkspace, "graph.json")));
       let nodes = graph.nodes || [], edges = graph.edges || [];
       await this.appendRuntimeStatus("projection_loaded", {
         run: graph.run || null, node_count: nodes.length, edge_count: edges.length
@@ -286,7 +305,7 @@ var ATRZoteroWorkbench = {
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
       let reviewEvents = await this.readJsonLines(this.inboxPath());
-      let reviewQueue = await this.readJsonFile(PathUtils.join(this.workspace, "human-input", "review-queue.json"), { items: [] });
+      let reviewQueue = await this.readJsonFile(PathUtils.join(selectedWorkspace, "human-input", "review-queue.json"), { items: [] });
       let queuedByNote = new Map((reviewQueue.items || []).map(item => [item.event?.zotero_note_key, item]));
       let latestReviews = new Map();
       for (let event of reviewEvents) if (event.event === "human_note_modified") latestReviews.set(event.zotero_note_key, event);
