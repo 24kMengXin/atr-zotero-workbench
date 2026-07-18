@@ -33,6 +33,8 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 
 关于旧 v1 frontier 投影与当前 harness v0.9 lifecycle 投影的边界，见 [ATR adapter 说明](docs/atr-v09-adapter.md)。
 
+`multilingual-aaai` 的 28 个历史 run 可先用 [历史对齐审计](docs/historical-alignment-audit.md) 全量清点；该脚本只报告可复用输入与缺失链路，不会修改旧目录。
+
 打开终端显示的本地地址。点击节点可查看来源、证据边界和建议的人工阅读问题。
 
 ## Zotero 7 插件
