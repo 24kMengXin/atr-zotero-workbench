@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 .DS_Store
 /zotero-plugin/chrome/content/workbench/index.html
+/output/*/plugin-runtime.jsonl

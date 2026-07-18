@@ -70,6 +70,8 @@ Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”�
 
 3. 为运行时路径加 `Zotero.debug("ATR Workbench: ...")`，在「帮助 → 输出日志排错 → 查看输出文件」查看；异常用 `Zotero.log` 并在「工具 → 开发者 → Error Console」检查。不要用 `console.log` 作为插件日志。
 
+   工作台还会把结构化运行轨迹追加到 `output/<run>/plugin-runtime.jsonl`：一次正常打开应依次有 `startup_complete`、`open_requested`、`overlay_mounted`、`projection_loaded`、`render_completed`。这是运行时诊断文件，不提交版本库；它既能证明实际 DOM 挂载和投影读取，也不会写入 Zotero 的本地数据库。
+
 4. 在提交说明或 PR 描述中记录本次探针的返回值、相关日志时间段和是否有 Error Console 错误。没有这三项时，状态只能是“未验证”，不能写“已修复”。
 
 5. 只有一个完整用户流程在开发 profile 中通过后，才构建 XPI，并在日常 profile 中做一次安装/启用/菜单可见/核心 UI 可见的烟测。
