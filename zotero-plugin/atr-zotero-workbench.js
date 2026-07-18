@@ -181,6 +181,8 @@ var ATRZoteroWorkbench = {
       let by = Object.fromEntries(nodes.map(node => [node.id, node]));
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
+      let gateNodes = nodes.filter(node => node.kind === "gate");
+      let runNode = nodes.find(node => node.kind === "run");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
       let reviewEvents = await this.readJsonLines(this.inboxPath());
@@ -193,6 +195,13 @@ var ATRZoteroWorkbench = {
         card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
       }
       body.append(metrics, label("从问题向知识展开", "font-size:20px;font-weight:bold;margin-bottom:10px"));
+      let lifecycleBox = xul("vbox"); lifecycleBox.setAttribute("style", "background:#eaf2fb;border:1px solid #8baed1;border-radius:8px;padding:14px;margin-bottom:16px");
+      lifecycleBox.append(label("ATR 运行过程", "font-size:18px;font-weight:bold"));
+      lifecycleBox.append(label("当前阶段：" + (runNode?.data?.stage || "未记录") + " · 状态：" + (runNode?.data?.status || "未记录"), "white-space:normal"));
+      lifecycleBox.append(label("下一步：" + (runNode?.data?.next_action || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
+      if (gateNodes.length) lifecycleBox.append(label("质量门：" + gateNodes.map(gate => gate.label).join(" · "), "white-space:normal;color:#365b7b"));
+      else lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
+      body.append(lifecycleBox);
       let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
       reviewBox.append(label("你的阅读反馈", "font-size:18px;font-weight:bold"));
       reviewBox.append(label("在 Zotero 的 ATR 阅读卡（子笔记）中写下判断；这里只展示事件副本，不会自动改写研究路线或删除旧线。", "white-space:normal;color:#365b47;margin:5px 0"));

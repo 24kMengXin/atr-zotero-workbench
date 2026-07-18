@@ -29,6 +29,8 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 
 工作台只显示这个 registry 中已登记的 run；它不会扫描或自动采纳未审计目录。
 
+关于旧 v1 frontier 投影与当前 harness v0.9 lifecycle 投影的边界，见 [ATR adapter 说明](docs/atr-v09-adapter.md)。
+
 打开终端显示的本地地址。点击节点可查看来源、证据边界和建议的人工阅读问题。
 
 ## Zotero 7 插件

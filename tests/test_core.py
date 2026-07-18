@@ -42,6 +42,20 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(record['label'], 'Topic A')
             self.assertEqual(Path(record['workspace']), out.resolve())
 
+    def test_v09_run_without_frontier_stays_honest_and_shows_lifecycle(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True)
+            (run/'evidence'/'sources.jsonl').write_text('')
+            (run/'intake.json').write_text(json.dumps({'initial_question':'How should agents be audited?'}))
+            (run/'run-state.json').write_text(json.dumps({'schema_version':'1.0','run_id':'v09','active_stage':'R1_LANDSCAPE','status':'running','next_action':'Collect primary sources','gates':{'G0-INTAKE':'PASS','G2-EVIDENCE':'PENDING'}}))
+            graph = build(run, tmp_path/'out')
+            domain = next(node for node in graph['nodes'] if node['id']=='concept:domain')
+            self.assertEqual(domain['label'], 'How should agents be audited?')
+            gate = next(node for node in graph['nodes'] if node['id']=='gate:G0-INTAKE')
+            self.assertEqual(gate['data']['status'], 'PASS')
+            self.assertEqual(sum(node['kind']=='paper' for node in graph['nodes']), 0)
+            self.assertTrue(any('不生成研究问题' in item for item in graph['diagnostics']))
+
     def test_contextual_source_is_not_promoted_to_scholarly_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()

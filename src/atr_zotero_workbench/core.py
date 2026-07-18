@@ -23,6 +23,7 @@ class LegacyRun:
     sources: list[dict[str, Any]]
     frontier: dict[str, Any]
     run_state: dict[str, Any]
+    intake: dict[str, Any]
     gaps: list[str]
 
 
@@ -34,6 +35,8 @@ def load_legacy_run(path: Path) -> LegacyRun:
     frontier = json.loads(frontier_path.read_text(encoding="utf-8")) if frontier_path.exists() else {}
     state_path = path / "run-state.json"
     state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
+    intake_path = path / "intake.json"
+    intake = json.loads(intake_path.read_text(encoding="utf-8")) if intake_path.exists() else {}
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -47,7 +50,11 @@ def load_legacy_run(path: Path) -> LegacyRun:
     for source in read_jsonl(contextual_path):
         source.setdefault("source_layer", "contextual_inspiration")
         sources.append(source)
-    return LegacyRun(path, sources, frontier, state, gaps)
+    if state.get("schema_version") == "1.0" and not frontier:
+        gaps.append("当前 ATR v0.9 run 尚无 knowledge/frontier-map.json；只展示 intake 与生命周期，不生成研究问题")
+    if not sources:
+        gaps.append("当前 run 的 evidence/sources.jsonl 为空；不生成文献或证据结论")
+    return LegacyRun(path, sources, frontier, state, intake, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -80,8 +87,12 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         edges.append({"source": source, "target": target, "relation": relation, "data": data})
 
     run_id = run.run_state.get("run_id", run.path.name)
-    nodes.append(_node(f"run:{run_id}", "run", run_id, stage=run.run_state.get("active_stage"), gaps=run.gaps))
-    domain = run.frontier.get("domain", "未定义领域")
+    nodes.append(_node(f"run:{run_id}", "run", run_id, stage=run.run_state.get("active_stage"),
+                       status=run.run_state.get("status"), next_action=run.run_state.get("next_action"), gaps=run.gaps))
+    for gate_id, status in run.run_state.get("gates", {}).items():
+        nodes.append(_node(f"gate:{gate_id}", "gate", f"{gate_id} · {status}", gate_id=gate_id, status=status))
+        edge(f"run:{run_id}", f"gate:{gate_id}", "tracks_gate")
+    domain = run.frontier.get("domain") or run.intake.get("initial_question") or "未定义领域"
     nodes.append(_node("concept:domain", "concept", domain, scope=run.frontier.get("scope", "")))
     edge(f"run:{run_id}", "concept:domain", "explores")
     for source in run.sources:

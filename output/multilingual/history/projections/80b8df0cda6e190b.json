@@ -14,157 +14,11 @@
       "label": "2026-07-17-controlled-multilingual-discovery",
       "data": {
         "stage": "R2_FOCUSED_REVIEW",
-        "status": "running",
-        "next_action": "Execute FOCUSED_REVIEW knowledge-build plan; do not generate a new candidate outside the recorded family policy.",
         "gaps": [
           "缺少可用的 evidence/claims.jsonl",
           "缺少可用的 evidence/edges.jsonl",
           "缺少可用的 observability/skill-events.jsonl"
         ]
-      }
-    },
-    {
-      "id": "gate:G0-INTAKE",
-      "kind": "gate",
-      "label": "G0-INTAKE · PENDING",
-      "data": {
-        "gate_id": "G0-INTAKE",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G1-ROUTE",
-      "kind": "gate",
-      "label": "G1-ROUTE · PENDING",
-      "data": {
-        "gate_id": "G1-ROUTE",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G2-EVIDENCE",
-      "kind": "gate",
-      "label": "G2-EVIDENCE · PENDING",
-      "data": {
-        "gate_id": "G2-EVIDENCE",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G3-SEED",
-      "kind": "gate",
-      "label": "G3-SEED · PENDING",
-      "data": {
-        "gate_id": "G3-SEED",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G3M-MOTIVATION",
-      "kind": "gate",
-      "label": "G3M-MOTIVATION · PENDING",
-      "data": {
-        "gate_id": "G3M-MOTIVATION",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G3Q-PROBLEM",
-      "kind": "gate",
-      "label": "G3Q-PROBLEM · PENDING",
-      "data": {
-        "gate_id": "G3Q-PROBLEM",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G4-CLAIM",
-      "kind": "gate",
-      "label": "G4-CLAIM · PENDING",
-      "data": {
-        "gate_id": "G4-CLAIM",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G4V-PREPROPOSAL",
-      "kind": "gate",
-      "label": "G4V-PREPROPOSAL · PENDING",
-      "data": {
-        "gate_id": "G4V-PREPROPOSAL",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G5-PROPOSAL",
-      "kind": "gate",
-      "label": "G5-PROPOSAL · PENDING",
-      "data": {
-        "gate_id": "G5-PROPOSAL",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G5D-EXPERIMENT-DESIGN",
-      "kind": "gate",
-      "label": "G5D-EXPERIMENT-DESIGN · PENDING",
-      "data": {
-        "gate_id": "G5D-EXPERIMENT-DESIGN",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G6-SERVER",
-      "kind": "gate",
-      "label": "G6-SERVER · PENDING",
-      "data": {
-        "gate_id": "G6-SERVER",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G7-EXECUTION",
-      "kind": "gate",
-      "label": "G7-EXECUTION · PENDING",
-      "data": {
-        "gate_id": "G7-EXECUTION",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G8-RESULT",
-      "kind": "gate",
-      "label": "G8-RESULT · PENDING",
-      "data": {
-        "gate_id": "G8-RESULT",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G8R-REFRAME",
-      "kind": "gate",
-      "label": "G8R-REFRAME · PENDING",
-      "data": {
-        "gate_id": "G8R-REFRAME",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:G9-PAPER",
-      "kind": "gate",
-      "label": "G9-PAPER · PENDING",
-      "data": {
-        "gate_id": "G9-PAPER",
-        "status": "PENDING"
-      }
-    },
-    {
-      "id": "gate:GF-COMPLETE",
-      "kind": "gate",
-      "label": "GF-COMPLETE · PENDING",
-      "data": {
-        "gate_id": "GF-COMPLETE",
-        "status": "PENDING"
       }
     },
     {
@@ -869,102 +723,6 @@
   "edges": [
     {
       "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G0-INTAKE",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G1-ROUTE",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G2-EVIDENCE",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G3-SEED",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G3M-MOTIVATION",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G3Q-PROBLEM",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G4-CLAIM",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G4V-PREPROPOSAL",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G5-PROPOSAL",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G5D-EXPERIMENT-DESIGN",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G6-SERVER",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G7-EXECUTION",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G8-RESULT",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G8R-REFRAME",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:G9-PAPER",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
-      "target": "gate:GF-COMPLETE",
-      "relation": "tracks_gate",
-      "data": {}
-    },
-    {
-      "source": "run:2026-07-17-controlled-multilingual-discovery",
       "target": "concept:domain",
       "relation": "explores",
       "data": {}
@@ -1661,16 +1419,8 @@
         "run": "2026-07-17-controlled-multilingual-discovery",
         "node_count": 62,
         "edge_count": 97
-      },
-      {
-        "id": "80b8df0cda6e190b",
-        "archived_at": "2026-07-18T00:45:02.931008+00:00",
-        "path": "history/projections/80b8df0cda6e190b.json",
-        "run": "2026-07-17-controlled-multilingual-discovery",
-        "node_count": 62,
-        "edge_count": 97
       }
     ],
-    "previous_projection": "80b8df0cda6e190b"
+    "previous_projection": "ef4b117b3a4e87c5"
   }
 }
