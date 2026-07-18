@@ -229,6 +229,18 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(role['data']['leaves_unresolved'], 'does not establish prevalence')
             self.assertFalse(any(edge['source'] == 'paper:MISSING' for edge in graph['edges']))
 
+    def test_source_review_identifies_nearest_research_problem_for_codex(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {'nodes':[{'id':'paper:P1','kind':'paper','label':'Paper','data':{'source_id':'P1'}},{'id':'research_problem:R1','kind':'research_problem','label':'Which mechanism?','data':{'problem_id':'R1','status':'DRAFT_R0_NEEDS_OWNER_REVIEW'}}], 'edges':[{'source':'paper:P1','target':'research_problem:R1','relation':'has_explicit_problem_role','data':{}}]}
+            (out / 'graph.json').write_text(json.dumps(graph))
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps({'event':'human_note_modified','zotero_note_key':'N1','atr_source_id':'P1','review_stance':'CHALLENGES'}) + '\n')
+            item = impact_report(out)['affected'][0]
+            self.assertEqual(item['nearest_research_problems'][0]['problem_id'], 'R1')
+            self.assertEqual(item['nearest_research_problems'][0]['distance_from_review_target'], 1)
+            queue = refresh_review_queue(out)
+            self.assertEqual(queue['items'][0]['nearest_research_problems'][0]['problem_id'], 'R1')
+
     def test_projects_landscape_brief_with_explicit_source_locators(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()

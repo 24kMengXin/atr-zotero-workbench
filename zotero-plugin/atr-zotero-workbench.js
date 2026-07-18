@@ -36,6 +36,9 @@ var ATRZoteroWorkbench = {
         .filter(line => line.trim()).map(line => JSON.parse(line));
     } catch (_) { return []; }
   },
+  async readJsonFile(path, fallback = {}) {
+    try { return JSON.parse(await Zotero.File.getContentsAsync(path)); } catch (_) { return fallback; }
+  },
   async loadRunRegistry() {
     try {
       let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
@@ -283,6 +286,8 @@ var ATRZoteroWorkbench = {
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
       let reviewEvents = await this.readJsonLines(this.inboxPath());
+      let reviewQueue = await this.readJsonFile(PathUtils.join(this.workspace, "human-input", "review-queue.json"), { items: [] });
+      let queuedByNote = new Map((reviewQueue.items || []).map(item => [item.event?.zotero_note_key, item]));
       let latestReviews = new Map();
       for (let event of reviewEvents) if (event.event === "human_note_modified") latestReviews.set(event.zotero_note_key, event);
       meta.setAttribute("value", `${graph.run || "unknown run"} · 派生只读投影`);
@@ -392,6 +397,7 @@ var ATRZoteroWorkbench = {
       } else {
         for (let event of latestReviews.values()) {
           let paper = papers.find(node => node.data?.source_id === event.atr_source_id);
+          let queued = queuedByNote.get(event.zotero_note_key);
           let nearest = paper ? edges.filter(edge => edge.target === paper.id && edge.relation === "anchored_by")
             .map(edge => by[edge.source]).filter(node => node?.kind === "research_question") : [];
           let review = xul("vbox"); review.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
@@ -399,6 +405,13 @@ var ATRZoteroWorkbench = {
           review.append(label(claim?.label || paper?.label || event.atr_claim_id || event.atr_source_id || "未映射反馈目标", "font-weight:bold;white-space:normal"));
           review.append(label("立场：" + (event.review_stance || "UNSPECIFIED") + " · 原文定位：" + (event.source_locator || "未填写"), "white-space:normal;color:#365b47"));
           review.append(label("最近研究问题：" + (nearest.map(node => node.label).join(" · ") || "尚未在当前投影中找到"), "white-space:normal;color:#365b47"));
+          if (queued) {
+            let decisions = (queued.nearest_decision_objects || []).map(item => item.kind + "：" + item.label).join(" · ");
+            let problems = (queued.nearest_research_problems || []).map(item => item.problem).join(" · ");
+            review.append(label("Codex 待复审节点：" + (decisions || "尚未定位"), "white-space:normal;color:#365b47"));
+            review.append(label("最近问题卡：" + (problems || "尚未定位"), "white-space:normal;color:#365b47"));
+            review.append(label("队列状态：" + (queued.status || "未记录"), "white-space:normal;color:#365b47"));
+          } else review.append(label("尚未生成 Codex 影响队列；回到 Codex 后运行 review-human-input，不会自动改写 ATR。", "white-space:normal;color:#64748b"));
           review.append(label(this.plainNote(event.note_html).slice(0, 420) || "（笔记内容为空）", "white-space:normal;color:#475569;margin-top:4px"));
           reviewBox.append(review);
         }

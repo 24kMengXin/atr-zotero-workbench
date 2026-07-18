@@ -58,12 +58,12 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 `output/multilingual/human-input/inbox.jsonl`。回到 Codex 后运行：
 
 ```bash
-python -m atr_zotero_workbench review-human-input output/multilingual --out output/multilingual/human-input/impact-report.json
+python -m atr_zotero_workbench review-human-input output/multilingual-agent-action-continuation --out output/multilingual-agent-action-continuation/human-input/impact-report.json
 ```
 
 该命令还会追加 `human-input/review-queue.json`，并把每条显式的 Zotero 反馈物化为 `human-input/review-packets/HRP-*.json`。后者是供 ATR controller/owner 审查的不可变输入，包含 claim/source target、立场、原文定位和影响路径；它不会自动重写 ATR 结论、生命周期或历史图谱。
 
-该命令以 `ATR source ID` 反查受影响的研究问题；它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
+该命令以 `ATR source ID` 反查受影响的 research question、问题卡、断言与最近决策节点，并写入插件会读取的 `review-queue.json`。它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
 
 导入 `output/multilingual/zotero/items.csl.json` 到 Zotero；`reading-cards/` 中的文件是与每篇文献对应的人工阅读/注释起点。
 

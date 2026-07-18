@@ -30,7 +30,7 @@ def impact_report(output: Path) -> dict[str, Any]:
         # claim review.
         start = by_claim.get(claim) or by_source.get(source)
         target_type = "claim" if by_claim.get(claim) else ("source" if by_source.get(source) else "unmapped")
-        questions, claims, decision_objects, paths = [], [], [], {}
+        questions, claims, research_problems, decision_objects, paths = [], [], [], [], {}
         queue, seen = deque([start] if start else []), {start} if start else set()
         if start:
             paths[start] = [start]
@@ -40,6 +40,8 @@ def impact_report(output: Path) -> dict[str, Any]:
                 questions.append(current)
             if nodes[current]["kind"] == "claim" and current != start:
                 claims.append(current)
+            if nodes[current]["kind"] == "research_problem":
+                research_problems.append(current)
             if nodes[current]["kind"] in {"claim", "research_question", "real_world_tension", "research_problem"}:
                 decision_objects.append(current)
             for neighbor in adjacency[current]:
@@ -69,6 +71,19 @@ def impact_report(output: Path) -> dict[str, Any]:
             for node_id in claims
         ]
         claim_paths.sort(key=lambda item: (item["distance_from_review_target"], item["claim"]))
+        problem_paths = [
+            {
+                "problem": nodes[node_id]["label"],
+                "problem_id": nodes[node_id]["data"].get("problem_id"),
+                "status": nodes[node_id]["data"].get("status", "UNSPECIFIED"),
+                "distance_from_review_target": len(paths[node_id]) - 1,
+                "path": [{"id": item, "label": nodes[item]["label"], "kind": nodes[item]["kind"]} for item in paths[node_id]],
+            }
+            for node_id in dict.fromkeys(research_problems)
+        ]
+        problem_paths.sort(key=lambda item: (item["distance_from_review_target"], item["problem"]))
+        nearest_problem_distance = problem_paths[0]["distance_from_review_target"] if problem_paths else None
+        nearest_problems = [item for item in problem_paths if item["distance_from_review_target"] == nearest_problem_distance]
         decision_paths = [
             {
                 "kind": nodes[node_id]["kind"],
@@ -91,6 +106,8 @@ def impact_report(output: Path) -> dict[str, Any]:
             "nearest_research_branches": nearest,
             "all_affected_research_questions": question_paths,
             "related_claims": claim_paths,
+            "nearest_research_problems": nearest_problems,
+            "all_affected_research_problems": problem_paths,
             "nearest_decision_objects": nearest_decision_objects,
             "all_affected_decision_objects": decision_paths,
             "codex_next_action": "请人工审阅该反馈；若它挑战断言或来源边界，创建新的 immutable ATR human-review-packet，再由 owner 决定是否重做 route/claim review。保留既有节点和边作为历史投影，不自动清退文献或改写 ATR lifecycle。",
@@ -131,6 +148,8 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
             "nearest_research_branches": affected["nearest_research_branches"],
             "all_affected_research_questions": affected["all_affected_research_questions"],
             "related_claims": affected["related_claims"],
+            "nearest_research_problems": affected["nearest_research_problems"],
+            "all_affected_research_problems": affected["all_affected_research_problems"],
             "nearest_decision_objects": affected["nearest_decision_objects"],
             "all_affected_decision_objects": affected["all_affected_decision_objects"],
             "recommended_next_action": affected["codex_next_action"],
@@ -186,6 +205,8 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
                 "nearest_research_branches": affected["nearest_research_branches"],
                 "all_affected_research_questions": affected["all_affected_research_questions"],
                 "related_claims": affected["related_claims"],
+                "nearest_research_problems": affected["nearest_research_problems"],
+                "all_affected_research_problems": affected["all_affected_research_problems"],
                 "nearest_decision_objects": affected["nearest_decision_objects"],
                 "all_affected_decision_objects": affected["all_affected_decision_objects"],
             },
