@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from atr_zotero_workbench.app import build
 from atr_zotero_workbench.zotero import sync_web_api
-from atr_zotero_workbench.human_input import impact_report, refresh_review_queue
+from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue
 
 class BuildTest(unittest.TestCase):
     def test_build_v1_projection(self):
@@ -166,3 +166,25 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(item['review_target_type'], 'claim')
             self.assertEqual(item['annotation_claim_id'], 'C1')
             self.assertEqual(item['nearest_research_branches'][0]['question'], 'Why?')
+
+    def test_review_packet_is_immutable_and_requires_owner_decision(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {
+                'nodes': [
+                    {'id':'claim:C1','kind':'claim','label':'Test claim','data':{'claim_id':'C1'}},
+                    {'id':'question:Q1','kind':'research_question','label':'Why?','data':{'tension_id':'Q1'}},
+                ],
+                'edges': [{'source':'claim:C1','target':'question:Q1','relation':'raises_question','data':{}}],
+            }
+            (out / 'graph.json').write_text(json.dumps(graph))
+            event = {'event':'human_note_modified','at':'2026-01-01T00:00:00Z','zotero_note_key':'N1','atr_claim_id':'C1','review_stance':'CHALLENGES','source_locator':'p. 7, para. 2','note_html':'<p>reason</p>'}
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps(event) + '\n')
+            result = materialize_review_packets(out)
+            self.assertEqual(len(result['written']), 1)
+            packet = json.loads(Path(result['written'][0]).read_text())
+            self.assertEqual(packet['review']['stance'], 'CHALLENGES')
+            self.assertEqual(packet['review']['source_locator'], 'p. 7, para. 2')
+            self.assertEqual(packet['status'], 'PENDING_ATR_OWNER_REVIEW')
+            self.assertIn('OPEN_CLAIM_REVIEW', packet['required_owner_decision']['allowed_dispositions'])
+            self.assertEqual(materialize_review_packets(out)['existing'], 1)

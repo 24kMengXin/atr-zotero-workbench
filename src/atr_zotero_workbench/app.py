@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 from .core import load_legacy_run, project_graph
-from .human_input import impact_report, refresh_review_queue
+from .human_input import impact_report, materialize_review_packets, refresh_review_queue
 from .history import archive_previous_projection
 from .runs import register_run
 from .zotero import export_bundle, sync_web_api
@@ -84,7 +84,8 @@ def main() -> None:
         a.out.parent.mkdir(parents=True, exist_ok=True)
         a.out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         queue = refresh_review_queue(a.directory)
-        print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"]}, ensure_ascii=False))
+        packets = materialize_review_packets(a.directory)
+        print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"], "new_review_packets": len(packets["written"])}, ensure_ascii=False))
 
 
 if __name__ == "__main__": main()

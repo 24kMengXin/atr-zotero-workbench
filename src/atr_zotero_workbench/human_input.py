@@ -123,3 +123,56 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding="utf-8")
     return existing
+
+
+def materialize_review_packets(output: Path) -> dict[str, Any]:
+    """Materialize immutable ATR inputs from explicit Zotero review events.
+
+    This is intentionally a one-way preparation step, not a controller call.
+    A packet says what a researcher reviewed and what branch it may affect; an
+    ATR owner/controller must still record a separate disposition before any
+    claim, gate, or route can change.
+    """
+    report = impact_report(output)
+    directory = output / "human-input" / "review-packets"
+    directory.mkdir(parents=True, exist_ok=True)
+    written, existing = [], 0
+    for affected in report["affected"]:
+        event = affected["event"]
+        raw = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        packet_id = "HRP-" + hashlib.sha256(raw.encode()).hexdigest()[:16]
+        path = directory / f"{packet_id}.json"
+        if path.exists():
+            existing += 1
+            continue
+        packet = {
+            "schema_version": "0.2",
+            "artifact_type": "human-review-packet",
+            "packet_id": packet_id,
+            "status": "PENDING_ATR_OWNER_REVIEW",
+            "created_from": {
+                "zotero_note_key": event.get("zotero_note_key"),
+                "observed_at": event.get("at"),
+                "notifier": event.get("notifier"),
+            },
+            "review": {
+                "target_type": affected["review_target_type"],
+                "claim_id": affected["annotation_claim_id"],
+                "source_id": affected["annotation_source_id"],
+                "source_locator": event.get("source_locator"),
+                "stance": event.get("review_stance", "UNSPECIFIED"),
+                "note_html": event.get("note_html", ""),
+            },
+            "impact": {
+                "nearest_research_branches": affected["nearest_research_branches"],
+                "all_affected_research_questions": affected["all_affected_research_questions"],
+                "related_claims": affected["related_claims"],
+            },
+            "required_owner_decision": {
+                "allowed_dispositions": ["ACCEPT_AS_REVIEW_INPUT", "REQUEST_CLARIFICATION", "OPEN_CLAIM_REVIEW", "OPEN_ROUTE_REVIEW", "NO_LIFECYCLE_CHANGE"],
+                "invariant": "This packet cannot itself modify a claim, ATR lifecycle, gate, source record, or historical projection.",
+            },
+        }
+        path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
+        written.append(str(path))
+    return {"schema_version": "0.2", "artifact_type": "human-review-packet-batch", "written": written, "existing": existing}

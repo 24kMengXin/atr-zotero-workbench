@@ -53,7 +53,7 @@ def validate_source() -> None:
         fail("legacy menu_toolsPopup must not be used")
     if "IOUtils.readUTF8" not in runtime or 'getElementById("zotero-pane-stack")' not in runtime:
         fail("workbench must render its projection in Zotero's main window")
-    for stage in ("startup_complete", "overlay_mounted", "projection_loaded", "render_completed", "render_failed", "review_note_opened"):
+    for stage in ("startup_complete", "overlay_mounted", "projection_loaded", "render_completed", "render_failed", "review_note_opened", "claim_review_stance_recorded"):
         if stage not in runtime:
             fail(f"workbench must emit runtime stage {stage!r} for development verification")
     if "Zotero.File.createDirectoryIfMissingAsync" not in runtime or "Zotero.File.putContentsAsync" not in runtime:
@@ -64,7 +64,7 @@ def validate_source() -> None:
         fail("workbench must visibly distinguish concept-to-reading context links")
     if "建立 / 打开我的阅读笔记" not in runtime or 'event === "modify"' not in runtime:
         fail("workbench must provide an explicit human-review note entry point")
-    if "ATR Claim ID:" not in runtime or "ATR Review Stance:" not in runtime or "openClaimReviewNote" not in runtime:
+    if "ATR Claim ID:" not in runtime or "ATR Review Stance:" not in runtime or "ATR Source Locator:" not in runtime or "openClaimReviewNote" not in runtime:
         fail("workbench must support claim-scoped, structured human reviews")
     if "if (!source && !claim) continue;" not in runtime:
         fail("workbench must not capture unrelated Zotero notes")

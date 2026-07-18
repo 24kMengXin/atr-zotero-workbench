@@ -68,6 +68,7 @@ var ATRZoteroWorkbench = {
     let note = new Zotero.Item("note"); note.parentItemID = item.id;
     note.setNote("<h1>我的 ATR 阅读反馈</h1><p>" + marker + "</p>"
       + "<p>ATR Review Stance: PENDING</p>"
+      + "<p>ATR Source Locator: 请填写页码、章节、高亮或段落定位</p>"
       + "<h2>来源支持的内容</h2><p>" + this.htmlEscape(source.data?.supports) + "</p>"
       + "<h2>来源不支持 / 不能推出的内容</h2><p>" + this.htmlEscape(source.data?.does_not_support) + "</p>"
       + "<h2>我的阅读与反驳</h2><p>请在这里写下你核对原文后的判断。</p>");
@@ -86,10 +87,23 @@ var ATRZoteroWorkbench = {
     let note = new Zotero.Item("note");
     note.setNote("<h1>我的 ATR 断言审查</h1><p>" + marker + "</p>"
       + "<p>ATR Review Stance: PENDING</p>"
+      + "<p>ATR Source Locator: 请填写你核对的原文页码、章节、高亮或段落定位</p>"
       + "<h2>AI 提出的可核查断言</h2><p>" + this.htmlEscape(claim.label) + "</p>"
       + "<h2>适用条件</h2><p>" + this.htmlEscape(JSON.stringify(claim.data?.conditions || {})) + "</p>"
       + "<h2>我的原文定位与判断</h2><p>请将 PENDING 改为 SUPPORTS / QUALIFIES / CHALLENGES / UNSURE / NEW_QUESTION，并写下原文位置、摘录与理由。</p>");
     await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
+  },
+  async setClaimReviewStance(claim, stance, window) {
+    let note = await this.openClaimReviewNote(claim, window);
+    let html = note.getNote();
+    let replacement = "ATR Review Stance: " + stance;
+    if (/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.test(this.plainNote(html))) {
+      html = html.replace(/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/, replacement);
+    } else {
+      html = "<p>" + replacement + "</p>" + html;
+    }
+    note.setNote(html); await note.saveTx(); window.ZoteroPane.selectItem(note.id);
+    return note;
   },
   async noteChanged(ids, extraData) {
     for (let id of ids) {
@@ -102,6 +116,7 @@ var ATRZoteroWorkbench = {
         || /ATR Source ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
       let claim = /ATR Claim ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
       let stance = /ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.exec(noteText)?.[1] || "UNSPECIFIED";
+      let locator = /ATR Source Locator:\s*([^<]+)/.exec(noteText)?.[1]?.trim() || null;
       // Never copy arbitrary Zotero notes into an ATR workspace. A feedback
       // event exists only when the researcher explicitly works in a marked
       // source/claim review note created or adopted for this purpose.
@@ -109,7 +124,7 @@ var ATRZoteroWorkbench = {
       await this.appendHumanInput({
         schema_version: "0.1", event: "human_note_modified", at: new Date().toISOString(),
         zotero_note_key: item.key, zotero_parent_key: parent?.key || null, atr_source_id: source,
-        atr_claim_id: claim, review_stance: stance, note_html: noteHTML, notifier: extraData?.[id] || null
+        atr_claim_id: claim, review_stance: stance, source_locator: locator, note_html: noteHTML, notifier: extraData?.[id] || null
       });
     }
   },
@@ -255,7 +270,26 @@ var ATRZoteroWorkbench = {
             await this.appendRuntimeStatus("claim_review_note_failed", { claim_id: claim.data?.claim_id, error: String(error) });
           }
         });
-        row.append(review); claimBox.append(row);
+        let stancePicker = xul("menulist"), stanceChoices = xul("menupopup");
+        stancePicker.setAttribute("value", "PENDING"); stancePicker.setAttribute("label", "选择我的立场");
+        for (let [value, title] of [["PENDING", "尚未判断"], ["SUPPORTS", "支持"], ["QUALIFIES", "需要限定"], ["CHALLENGES", "反驳 / 挑战"], ["UNSURE", "证据不足"], ["NEW_QUESTION", "提出新问题"]]) {
+          let choice = xul("menuitem"); choice.setAttribute("value", value); choice.setAttribute("label", title); stanceChoices.append(choice);
+        }
+        stancePicker.append(stanceChoices);
+        let record = xul("button"); record.setAttribute("label", "记录我的立场并打开笔记");
+        record.addEventListener("command", async () => {
+          let stance = stancePicker.value || "PENDING";
+          try {
+            let note = await this.setClaimReviewStance(claim, stance, window);
+            meta.setAttribute("value", "已记录 " + stance + " · 请补充原文定位与理由");
+            await this.appendRuntimeStatus("claim_review_stance_recorded", { claim_id: claim.data?.claim_id, note_key: note.key, stance });
+          } catch (error) {
+            this.log("could not record claim review stance: " + error);
+            meta.setAttribute("value", "无法记录立场：" + error);
+            await this.appendRuntimeStatus("claim_review_stance_failed", { claim_id: claim.data?.claim_id, error: String(error) });
+          }
+        });
+        row.append(review, stancePicker, record); claimBox.append(row);
       }
       body.append(claimBox);
       let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
