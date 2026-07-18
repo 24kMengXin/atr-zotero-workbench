@@ -249,6 +249,20 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(role['data']['leaves_unresolved'], 'does not establish prevalence')
             self.assertFalse(any(edge['source'] == 'paper:MISSING' for edge in graph['edges']))
 
+    def test_research_problem_projects_explicit_finer_review_questions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); run = root / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','kind':'PAPER'}) + '\n')
+            problem = {'problem_id':'RQ-1','research_question':'How can a review distinguish two source-grounded mechanisms?','derived_questions':[{'question_id':'DQ-1','question':'Can a frozen item distinguish the two mechanisms?','status':'R2_REVIEW_TASK','smallest_discriminator':'a contract-bearing item','does_not_establish':'not a claim','source_ids':['P1','MISSING']}]} 
+            (run / 'knowledge' / 'research-problem-cards' / 'RQ-1.json').write_text(json.dumps(problem))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, root / 'out')
+            child = next(node for node in graph['nodes'] if node['kind'] == 'derived_research_question')
+            self.assertEqual(child['data']['status'], 'R2_REVIEW_TASK')
+            self.assertTrue(any(edge['relation'] == 'generates_finer_review_question' for edge in graph['edges']))
+            self.assertTrue(any(edge['source'] == child['id'] and edge['target'] == 'paper:P1' for edge in graph['edges']))
+            self.assertFalse(any(edge['source'] == child['id'] and edge['target'] == 'paper:MISSING' for edge in graph['edges']))
+
     def test_research_problem_retains_draft_alongside_its_current_version(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)

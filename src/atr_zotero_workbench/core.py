@@ -382,6 +382,19 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                 edge(f"paper:{source_id}", problem_node, "has_explicit_problem_role",
                      posture=role.get("posture", "OBSERVED"), resolves=role.get("resolves", ""),
                      leaves_unresolved=role.get("leaves_unresolved", ""))
+        # A problem can explicitly decompose into smaller review questions.
+        # These are navigation/review nodes, never inferred candidates or claims.
+        for child in problem.get("derived_questions", []):
+            child_id = str(child.get("question_id", "unknown"))
+            child_node = f"derived_question:{problem_id}:{child_id}"
+            nodes.append(_node(child_node, "derived_research_question", child.get("question", child_id),
+                               question_id=child_id, status=child.get("status", "PENDING_REVIEW"),
+                               smallest_discriminator=child.get("smallest_discriminator"),
+                               does_not_establish=child.get("does_not_establish"), parent_problem_id=problem_id))
+            edge(problem_node, child_node, "generates_finer_review_question")
+            for source_id in child.get("source_ids", []):
+                if source_id in known_paper_ids:
+                    edge(child_node, f"paper:{source_id}", "grounds_in_explicit_source")
     for disposition in run.human_review_dispositions:
         decision_id = str(disposition.get("decision_id", "unknown"))
         node_id = f"human_review:{decision_id}"

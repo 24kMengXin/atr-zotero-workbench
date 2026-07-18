@@ -686,6 +686,14 @@ var ATRZoteroWorkbench = {
         if (successor) row.append(label("此版本已由当前记录的问题卡取代；它仍保留为历史审计证据。", "white-space:normal;color:#64748b"));
         row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
         row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || "未记录"), "white-space:normal;color:#7a5620"));
+        let finer = edges.filter(edge => edge.source === problem.id && edge.relation === "generates_finer_review_question").map(edge => by[edge.target]).filter(Boolean);
+        if (finer.length) row.append(label("由此继续审查的细粒度问题", "font-size:13px;font-weight:bold;margin-top:7px"));
+        for (let child of finer) {
+          let d = child.data || {}, sources = edges.filter(edge => edge.source === child.id && edge.relation === "grounds_in_explicit_source").map(edge => by[edge.target]).filter(Boolean);
+          row.append(label(child.label, "font-weight:bold;white-space:normal"));
+          row.append(label("状态：" + (d.status || "PENDING_REVIEW") + "；最小判别：" + (d.smallest_discriminator || "未记录"), "white-space:normal;color:#7a5620"));
+          row.append(label("来源：" + (sources.map(source => source.label).join(" · ") || "未记录") + "；不能说明：" + (d.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
+        }
         row.append(label("论文在此问题中的位置", "font-size:13px;font-weight:bold;margin-top:7px"));
         for (let role of paperRoles) {
           let paper = by[role.source], details = role.data || {};
