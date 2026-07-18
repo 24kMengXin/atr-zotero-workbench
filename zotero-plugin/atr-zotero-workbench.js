@@ -28,6 +28,13 @@ var ATRZoteroWorkbench = {
       await this.appendWorkspaceLine(this.inboxPath(), JSON.stringify(record));
     } catch (error) { this.log("could not write human input: " + error); }
   },
+  async readJsonLines(path) {
+    try {
+      return (await Zotero.File.getContentsAsync(path)).split("\n")
+        .filter(line => line.trim()).map(line => JSON.parse(line));
+    } catch (_) { return []; }
+  },
+  plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
   async noteChanged(ids, extraData) {
     for (let id of ids) {
       let item = Zotero.Items.get(id);
@@ -123,6 +130,9 @@ var ATRZoteroWorkbench = {
       let papers = nodes.filter(node => node.kind === "paper");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
+      let reviewEvents = await this.readJsonLines(this.inboxPath());
+      let latestReviews = new Map();
+      for (let event of reviewEvents) if (event.event === "human_note_modified") latestReviews.set(event.zotero_note_key, event);
       meta.setAttribute("value", `${graph.run || "unknown run"} · 派生只读投影`);
       let metrics = xul("hbox"); metrics.setAttribute("style", "margin-bottom:16px");
       for (let [count, title] of [[questions.length,"研究问题"],[scholarly,"学术证据"],[contextual,"现实灵感"],[(graph.history?.snapshots || []).length,"历史快照"]]) {
@@ -130,6 +140,24 @@ var ATRZoteroWorkbench = {
         card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
       }
       body.append(metrics, label("从问题向知识展开", "font-size:20px;font-weight:bold;margin-bottom:10px"));
+      let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
+      reviewBox.append(label("你的阅读反馈", "font-size:18px;font-weight:bold"));
+      reviewBox.append(label("在 Zotero 的 ATR 阅读卡（子笔记）中写下判断；这里只展示事件副本，不会自动改写研究路线或删除旧线。", "white-space:normal;color:#365b47;margin:5px 0"));
+      if (!latestReviews.size) {
+        reviewBox.append(label("尚无已捕获的批注。先导入/同步 ATR 阅读卡，再在对应子笔记保存你的判断。", "white-space:normal"));
+      } else {
+        for (let event of latestReviews.values()) {
+          let paper = papers.find(node => node.data?.source_id === event.atr_source_id);
+          let nearest = paper ? edges.filter(edge => edge.target === paper.id && edge.relation === "anchored_by")
+            .map(edge => by[edge.source]).filter(node => node?.kind === "research_question") : [];
+          let review = xul("vbox"); review.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+          review.append(label(paper?.label || event.atr_source_id || "未映射来源", "font-weight:bold;white-space:normal"));
+          review.append(label("最近研究问题：" + (nearest.map(node => node.label).join(" · ") || "尚未在当前投影中找到"), "white-space:normal;color:#365b47"));
+          review.append(label(this.plainNote(event.note_html).slice(0, 420) || "（笔记内容为空）", "white-space:normal;color:#475569;margin-top:4px"));
+          reviewBox.append(review);
+        }
+      }
+      body.append(reviewBox);
       for (let question of questions) {
         let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
         let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);
@@ -147,7 +175,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, human_review_count: latestReviews.size });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });
