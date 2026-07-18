@@ -9,6 +9,7 @@ small smoke test in an isolated Zotero development profile.
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 import sys
 import zipfile
@@ -22,7 +23,7 @@ REQUIRED_ROOT_FILES = {
     "manifest.json", "bootstrap.js", "prefs.js", "atr-zotero-workbench.js",
     "update.json", "companion.xhtml",
 }
-REQUIRED_PACKAGED_FILES = REQUIRED_ROOT_FILES | {
+REQUIRED_PACKAGED_FILES = (REQUIRED_ROOT_FILES - {"update.json"}) | {
     "locale/en-US/atr-mainWindow.ftl",
     "locale/zh-CN/atr-mainWindow.ftl",
 }
@@ -44,8 +45,21 @@ def validate_source() -> None:
         fail("manifest add-on ID differs from the canonical ID")
 
     update = json.loads((PLUGIN / "update.json").read_text(encoding="utf-8"))
-    if not isinstance(update.get("addons", {}).get(ADDON_ID, {}).get("updates"), list):
+    updates = update.get("addons", {}).get(ADDON_ID, {}).get("updates")
+    if not isinstance(updates, list):
         fail("update.json must provide an updates list for this add-on ID")
+    matching = [entry for entry in updates if entry.get("version") == manifest.get("version")]
+    if len(matching) != 1:
+        fail("update.json must provide exactly one entry for the current manifest version")
+    entry = matching[0]
+    if not re.fullmatch(r"https://[^\s]+\.xpi", entry.get("update_link", "")):
+        fail("current update entry must use an HTTPS .xpi update_link")
+    if not re.fullmatch(r"sha256:[0-9a-f]{64}", entry.get("update_hash", "")):
+        fail("current update entry must provide a lowercase sha256 update_hash")
+    update_zotero = entry.get("applications", {}).get("zotero", {})
+    for field in ("strict_min_version", "strict_max_version"):
+        if update_zotero.get(field) != zotero.get(field):
+            fail(f"update entry applications.zotero.{field} must match manifest.json")
 
     bootstrap = (PLUGIN / "bootstrap.js").read_text(encoding="utf-8")
     for hook in ("startup", "shutdown", "install", "uninstall", "onMainWindowLoad", "onMainWindowUnload"):
@@ -231,6 +245,12 @@ def validate_xpi(path: Path) -> None:
         source = json.loads((PLUGIN / "manifest.json").read_text(encoding="utf-8"))
         if packaged != source:
             fail("XPI manifest differs from source manifest")
+    update = json.loads((PLUGIN / "update.json").read_text(encoding="utf-8"))
+    current = next(entry for entry in update["addons"][ADDON_ID]["updates"]
+                   if entry["version"] == source["version"])
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    if current["update_hash"] != f"sha256:{digest}":
+        fail("update.json hash differs from the built XPI")
 
 
 def main() -> None:

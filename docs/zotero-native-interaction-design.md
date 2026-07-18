@@ -13,6 +13,7 @@
 ## 从现有 Zotero 交互提炼的原则
 
 - **Better Notes：同一份 Note，多种原生容器。** 深度写作使用 Note tab；阅读时使用 Reader 右侧的 note editor。入口随任务变化，笔记对象不复制。
+- **Better Notes relation：图属于 Note 的上下文 section。** 图通过 `ItemPaneManager.registerSection()` 嵌在可折叠右栏，并把节点点击路由回真正的 Zotero Note；ATR 采用相同的信息层级，不让图成为第二套内容系统。
 - **PDF Translate：短时动作贴近选区和 Reader。** 高频、低承诺操作不应要求离开当前文献。
 - **Ethereal Style：图是定位器。** 图节点负责返回 Zotero 条目、Reader 或 Note，不取代条目树和阅读器。
 - **Zotero 7+：使用官方 Item Pane section。** 研究上下文属于可折叠 section；不手工注入独立主页面。
@@ -32,7 +33,7 @@
 
 1. 在 portfolio 的蓝色 program 节点上单击，插件按 `child_run_id` 打开对应 topic Collection 与 Zotero Note tab；不会把 program 误当成只读说明 Note。
 2. 在 Note tab 中写综合理解，同时从右侧 ATR section 展开过程、知识、问题或当前对象。
-3. 单击 paper 节点打开 Zotero Reader tab；选择「原文 + 右栏笔记」把同一来源 Note 作为可编辑 section 放进 Reader 的 Item Pane，并与 ATR section 并存。
+3. 单击 paper 节点打开 Zotero Reader tab；选择「阅读原文并记录我的理解」后，右栏同时拥有两个原生可折叠 section：同一来源 Note 的编辑器，以及跟随当前对象的 ATR 局部图。图节点只负责定位回 Reader/Note。
 4. 只有需要三者同时可见时，在已经打开 Reader + Note 后选择「便携显示 ATR 定位」；关闭镜像不影响任何 Note、annotation 或 ATR 投影。
 
 ### 同时共读增强模式
