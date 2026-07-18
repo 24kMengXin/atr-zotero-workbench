@@ -158,6 +158,21 @@ var ATRZoteroWorkbench = {
         }
       }
       body.append(reviewBox);
+      let knowledgeBox = xul("vbox"); knowledgeBox.setAttribute("style", "background:#f3effa;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
+      let domain = by["concept:domain"];
+      knowledgeBox.append(label("知识体系：" + (domain?.label || "未定义领域"), "font-size:18px;font-weight:bold;white-space:normal"));
+      knowledgeBox.append(label("概念与文献的连线来自当前 frontier 问题的锚定上下文，不等同于‘文献证明该概念’；具体可推出与不可推出内容仍以下方证据边界为准。", "white-space:normal;color:#594578;margin:5px 0"));
+      let concepts = nodes.filter(node => node.kind === "concept" && node.id !== "concept:domain");
+      for (let concept of concepts) {
+        let linkedPapers = edges.filter(edge => edge.source === concept.id && edge.relation === "illustrated_by_question_anchor")
+          .map(edge => by[edge.target]).filter(Boolean);
+        let conceptRow = xul("vbox"); conceptRow.setAttribute("style", "background:#fff;border-radius:6px;padding:8px;margin-top:7px");
+        conceptRow.append(label(concept.label, "font-weight:bold;white-space:normal"));
+        conceptRow.append(label("关联阅读：" + (linkedPapers.map(paper => paper.label).join(" · ") || "当前 run 未提供可追溯锚定来源"), "white-space:normal;color:#594578"));
+        knowledgeBox.append(conceptRow);
+      }
+      if (!concepts.length) knowledgeBox.append(label("当前 run 尚未显式记录概念维度，插件不会补造知识节点。", "white-space:normal"));
+      body.append(knowledgeBox);
       for (let question of questions) {
         let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
         let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);

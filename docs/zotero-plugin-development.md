@@ -51,7 +51,7 @@ Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”�
    ./scripts/build_zotero_plugin.sh
    ```
 
-   后者会验证 manifest、更新清单、全部生命周期 hook、菜单 ID、chrome 注册和 XPI 内容。
+   后者先从 `ATR_RUN_DIR`（未设置时为当前 multilingual legacy run）重建 `ATR_WORKBENCH_OUT`（未设置时为 `output/multilingual`），再验证 manifest、更新清单、全部生命周期 hook、菜单 ID、chrome 注册和 XPI 内容。因此图谱语义变更不会被旧的派生 HTML 静默遮蔽。
 
 2. 只在开发 profile 重新加载插件/重启 Zotero，并从「工具 → 开发者 → Run JavaScript」执行小而可观察的探针；异步代码应 `return` 结果。每次只验证一个断言，例如：
 

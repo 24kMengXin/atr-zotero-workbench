@@ -986,151 +986,16 @@
       "data": {}
     },
     {
-      "source": "concept:language surface",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:task/environment alignment",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:reasoning demand",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:input and output representation",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:agent action oracle",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
       "source": "question:FT-ATTRIBUTION-20260718",
       "target": "paper:SRC-XWEB-2025",
       "relation": "anchored_by",
       "data": {}
     },
     {
-      "source": "concept:language surface",
-      "target": "paper:SRC-XWEB-2025",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:task/environment alignment",
-      "target": "paper:SRC-XWEB-2025",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:reasoning demand",
-      "target": "paper:SRC-XWEB-2025",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:input and output representation",
-      "target": "paper:SRC-XWEB-2025",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:agent action oracle",
-      "target": "paper:SRC-XWEB-2025",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
       "source": "question:FT-ATTRIBUTION-20260718",
       "target": "paper:SRC-MPRGUI-2026",
       "relation": "anchored_by",
       "data": {}
-    },
-    {
-      "source": "concept:language surface",
-      "target": "paper:SRC-MPRGUI-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:task/environment alignment",
-      "target": "paper:SRC-MPRGUI-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:reasoning demand",
-      "target": "paper:SRC-MPRGUI-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:input and output representation",
-      "target": "paper:SRC-MPRGUI-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:agent action oracle",
-      "target": "paper:SRC-MPRGUI-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-ATTRIBUTION-20260718",
-        "attribution": "derived_question_context"
-      }
     },
     {
       "source": "concept:domain",
@@ -1175,151 +1040,16 @@
       "data": {}
     },
     {
-      "source": "concept:tokenizer compression",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:prompt/input length",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:output/reasoning allowance",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:semantic invariance",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:deterministic exact-answer oracle",
-      "target": "paper:SRC-MAPS-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
       "source": "question:FT-BUDGET-20260718",
       "target": "paper:SRC-TALE-2024",
       "relation": "anchored_by",
       "data": {}
     },
     {
-      "source": "concept:tokenizer compression",
-      "target": "paper:SRC-TALE-2024",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:prompt/input length",
-      "target": "paper:SRC-TALE-2024",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:output/reasoning allowance",
-      "target": "paper:SRC-TALE-2024",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:semantic invariance",
-      "target": "paper:SRC-TALE-2024",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:deterministic exact-answer oracle",
-      "target": "paper:SRC-TALE-2024",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
       "source": "question:FT-BUDGET-20260718",
       "target": "paper:SRC-TOKENIZER-EQUITY-2026",
       "relation": "anchored_by",
       "data": {}
-    },
-    {
-      "source": "concept:tokenizer compression",
-      "target": "paper:SRC-TOKENIZER-EQUITY-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:prompt/input length",
-      "target": "paper:SRC-TOKENIZER-EQUITY-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:output/reasoning allowance",
-      "target": "paper:SRC-TOKENIZER-EQUITY-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:semantic invariance",
-      "target": "paper:SRC-TOKENIZER-EQUITY-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
-    },
-    {
-      "source": "concept:deterministic exact-answer oracle",
-      "target": "paper:SRC-TOKENIZER-EQUITY-2026",
-      "relation": "illustrated_by_question_anchor",
-      "data": {
-        "tension_id": "FT-BUDGET-20260718",
-        "attribution": "derived_question_context"
-      }
     }
   ],
   "history": {
@@ -1331,16 +1061,8 @@
         "run": "2026-07-17-controlled-multilingual-discovery",
         "node_count": 62,
         "edge_count": 67
-      },
-      {
-        "id": "ea522762f4ca78b9",
-        "archived_at": "2026-07-18T00:31:21.928361+00:00",
-        "path": "history/projections/ea522762f4ca78b9.json",
-        "run": "2026-07-17-controlled-multilingual-discovery",
-        "node_count": 62,
-        "edge_count": 67
       }
     ],
-    "previous_projection": "ea522762f4ca78b9"
+    "previous_projection": "d8e154a5c5ccefce"
   }
 }

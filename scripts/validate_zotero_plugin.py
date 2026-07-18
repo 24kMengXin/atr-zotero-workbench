@@ -60,6 +60,8 @@ def validate_source() -> None:
         fail("workbench audit writes must use Zotero's file API")
     if "你的阅读反馈" not in runtime or "human_note_modified" not in runtime:
         fail("workbench must visibly connect captured human notes to the projection")
+    if "知识体系：" not in runtime or "illustrated_by_question_anchor" not in runtime:
+        fail("workbench must visibly distinguish concept-to-reading context links")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

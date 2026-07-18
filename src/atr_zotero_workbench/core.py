@@ -65,6 +65,8 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     nodes: list[dict[str, Any]] = []
     edges: list[dict[str, Any]] = []
     def edge(source: str, target: str, relation: str, **data: Any) -> None:
+        if any(item["source"] == source and item["target"] == target and item["relation"] == relation for item in edges):
+            return
         edges.append({"source": source, "target": target, "relation": relation, "data": data})
 
     run_id = run.run_state.get("run_id", run.path.name)
@@ -91,13 +93,22 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                            explanations=tension.get("competing_explanations", []),
                            freshness=tension.get("freshness", "")))
         edge("concept:domain", f"question:{tid}", "contains_question")
+        concept_ids = []
         for dim in tension.get("dimensions", []):
             cid = f"concept:{dim}"
             if not any(item["id"] == cid for item in nodes):
                 nodes.append(_node(cid, "concept", dim))
             edge(f"question:{tid}", cid, "requires_concept")
+            concept_ids.append(cid)
         for sid in tension.get("anchor_source_ids", []):
             if any(item["id"] == f"paper:{sid}" for item in nodes):
                 edge(f"question:{tid}", f"paper:{sid}", "anchored_by")
+                # This is deliberately a question-scoped association, not a
+                # claim that the source establishes the concept. It lets the
+                # knowledge view link a concept to the reading that made it
+                # relevant while preserving the source's evidence boundary.
+                for cid in concept_ids:
+                    edge(cid, f"paper:{sid}", "illustrated_by_question_anchor",
+                         tension_id=tid, attribution="derived_question_context")
     return {"schema_version": "0.1", "projection": "derived-read-only", "run": run_id,
             "diagnostics": run.gaps, "nodes": nodes, "edges": edges}

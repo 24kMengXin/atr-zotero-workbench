@@ -25,6 +25,9 @@ class BuildTest(unittest.TestCase):
             self.assertNotIn("fetch('graph.json')", dashboard)
             source = next(node for node in graph['nodes'] if node['id'] == 'paper:P1')
             self.assertEqual(source['data']['source_layer'], 'scholarly_evidence')
+            association = next(edge for edge in graph['edges'] if edge['relation'] == 'illustrated_by_question_anchor')
+            self.assertEqual((association['source'], association['target']), ('concept:tokens', 'paper:P1'))
+            self.assertEqual(association['data']['attribution'], 'derived_question_context')
 
     def test_contextual_source_is_not_promoted_to_scholarly_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
