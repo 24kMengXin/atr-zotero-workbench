@@ -61,6 +61,33 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(sum(node['kind']=='paper' for node in graph['nodes']), 0)
             self.assertTrue(any('不生成研究问题' in item for item in graph['diagnostics']))
 
+    def test_v2_sqlite_run_projects_authority_not_derived_json(self):
+        import sqlite3
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); run = root / 'v2'; run.mkdir()
+            conn = sqlite3.connect(run / 'atr.sqlite')
+            conn.executescript('''
+                CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+                CREATE TABLE subjects (subject_id TEXT PRIMARY KEY, kind TEXT, state TEXT, version INTEGER, active INTEGER, created_at TEXT, updated_at TEXT);
+                CREATE TABLE artifacts (artifact_id TEXT PRIMARY KEY, digest TEXT, kind TEXT, original_name TEXT, created_at TEXT, metadata_json TEXT);
+                CREATE TABLE events (seq INTEGER PRIMARY KEY, event_id TEXT, subject_id TEXT, from_state TEXT, to_state TEXT, expected_version INTEGER, artifact_id TEXT, review_mode TEXT, note TEXT, created_at TEXT);
+                CREATE TABLE attachments (seq INTEGER PRIMARY KEY, attachment_id TEXT, subject_id TEXT, subject_version INTEGER, artifact_id TEXT, role TEXT, note TEXT, created_at TEXT);
+            ''')
+            artifact = 'sha256:abc'; conn.execute('INSERT INTO meta VALUES (?,?)', ('run_id', 'v2-demo'))
+            conn.execute('INSERT INTO subjects VALUES (?,?,?,?,?,?,?)', ('topic-1', 'direction', 'LANDSCAPE', 1, 1, '2026-01-01T00:00:00Z', '2026-01-02T00:00:00Z'))
+            conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', (artifact, 'abc', 'human-review-packet', 'packet.json', '2026-01-01T00:00:00Z', '{}'))
+            conn.execute('INSERT INTO events VALUES (?,?,?,?,?,?,?,?,?,?)', (1, 'E1', 'topic-1', 'INTAKE', 'LANDSCAPE', 0, artifact, 'human', 'landscape', '2026-01-01T00:00:00Z'))
+            conn.execute('INSERT INTO attachments VALUES (?,?,?,?,?,?,?,?)', (1, 'A1', 'topic-1', 1, artifact, 'human-review-input', 'approved packet', '2026-01-02T00:00:00Z')); conn.commit(); conn.close()
+            # A stale v2 derived cache must not be read as authority.
+            (run / 'state.json').write_text(json.dumps({'subjects':[{'state':'PAPER'}]}))
+            graph = build(run, root / 'out')
+            run_node = next(node for node in graph['nodes'] if node['kind'] == 'run')
+            self.assertEqual(run_node['data']['stage'], 'LANDSCAPE')
+            self.assertEqual(graph['projection'], 'derived-read-only-v2-sqlite')
+            self.assertTrue(any(node['kind'] == 'atr_v2_attachment' for node in graph['nodes']))
+            attachment = next(item for item in graph['timeline'] if item['kind'] == 'atr_v2_attachment')
+            self.assertIn('不改变 lifecycle', attachment['label'])
+
     def test_contextual_source_is_not_promoted_to_scholarly_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()

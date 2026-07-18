@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -36,7 +37,45 @@ class LegacyRun:
     gaps: list[str]
 
 
-def load_legacy_run(path: Path) -> LegacyRun:
+@dataclass
+class V2Run:
+    """Read-only ATR v2 projection input.
+
+    `atr.sqlite` is authoritative; state.json/events.jsonl are deliberately
+    not used as input because v2 declares them rebuildable exports.
+    """
+    path: Path
+    run_id: str
+    subjects: list[dict[str, Any]]
+    artifacts: list[dict[str, Any]]
+    events: list[dict[str, Any]]
+    attachments: list[dict[str, Any]]
+    gaps: list[str]
+
+
+def load_v2_run(path: Path) -> V2Run:
+    database = path / "atr.sqlite"
+    if not database.is_file():
+        raise ValueError(f"Not an ATR v2 run: missing {database}")
+    conn = sqlite3.connect(database)
+    conn.row_factory = sqlite3.Row
+    try:
+        meta = {row["key"]: row["value"] for row in conn.execute("SELECT key,value FROM meta")}
+        subjects = [dict(row) for row in conn.execute("SELECT subject_id,kind,state,version,active,created_at,updated_at FROM subjects ORDER BY subject_id")]
+        artifacts = [dict(row) for row in conn.execute("SELECT artifact_id,digest,kind,original_name,created_at,metadata_json FROM artifacts ORDER BY created_at,artifact_id")]
+        events = [dict(row) for row in conn.execute("SELECT seq,event_id,subject_id,from_state,to_state,expected_version,artifact_id,review_mode,note,created_at FROM events ORDER BY seq")]
+        attachments = [dict(row) for row in conn.execute("SELECT seq,attachment_id,subject_id,subject_version,artifact_id,role,note,created_at FROM attachments ORDER BY seq")]
+    finally:
+        conn.close()
+    gaps = []
+    if len([item for item in subjects if item.get("active")]) != 1:
+        gaps.append("ATR v2 run 必须恰有一个 active subject；当前 SQLite 投影不满足该约束")
+    return V2Run(path, meta.get("run_id", path.name), subjects, artifacts, events, attachments, gaps)
+
+
+def load_legacy_run(path: Path) -> LegacyRun | V2Run:
+    if (path / "atr.sqlite").is_file():
+        return load_v2_run(path)
     required = path / "evidence" / "sources.jsonl"
     if not required.exists():
         raise ValueError(f"Not a supported ATR v1 run: missing {required}")
@@ -99,6 +138,48 @@ def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
     return {"id": node_id, "kind": kind, "label": label, "data": data}
 
 
+def project_v2_graph(run: V2Run) -> dict[str, Any]:
+    """Project v2's SQLite authority without treating its exports as input."""
+    nodes: list[dict[str, Any]] = []
+    edges: list[dict[str, Any]] = []
+    def edge(source: str, target: str, relation: str, **data: Any) -> None:
+        if not any(item["source"] == source and item["target"] == target and item["relation"] == relation for item in edges):
+            edges.append({"source": source, "target": target, "relation": relation, "data": data})
+
+    active = next((subject for subject in run.subjects if subject.get("active")), None)
+    nodes.append(_node(f"run:{run.run_id}", "run", run.run_id, controller="ATR v2 SQLite", active_subject_id=active.get("subject_id") if active else None, stage=active.get("state") if active else None, gaps=run.gaps))
+    for subject in run.subjects:
+        node_id = f"subject:{subject['subject_id']}"
+        subject_data = dict(subject)
+        subject_data["subject_kind"] = subject_data.pop("kind")
+        nodes.append(_node(node_id, "atr_v2_subject", subject["subject_id"], **subject_data))
+        edge(f"run:{run.run_id}", node_id, "tracks_subject")
+    known_artifacts: set[str] = set()
+    for artifact in run.artifacts:
+        artifact_id = artifact["artifact_id"]
+        known_artifacts.add(artifact_id)
+        metadata = json.loads(artifact["metadata_json"]) if artifact.get("metadata_json") else {}
+        nodes.append(_node(f"artifact:{artifact_id}", "atr_v2_artifact", f"{artifact['kind']} · {artifact_id.removeprefix('sha256:')[:12]}", artifact_id=artifact_id, artifact_kind=artifact["kind"], digest=artifact["digest"], original_name=artifact["original_name"], created_at=artifact["created_at"], metadata=metadata))
+        edge(f"run:{run.run_id}", f"artifact:{artifact_id}", "registers_immutable_artifact")
+    timeline: list[dict[str, Any]] = []
+    for event in run.events:
+        node_id = f"transition:{event['event_id']}"
+        nodes.append(_node(node_id, "atr_v2_transition", f"{event.get('from_state') or '∅'} → {event['to_state']}", **event))
+        edge(f"subject:{event['subject_id']}", node_id, "records_transition")
+        if event["artifact_id"] in known_artifacts:
+            edge(node_id, f"artifact:{event['artifact_id']}", "authorized_by_immutable_artifact")
+        timeline.append({"at": event["created_at"], "kind": "atr_v2_transition", "id": event["event_id"], "label": f"{event.get('from_state') or '∅'} → {event['to_state']}", "review_mode": event["review_mode"], "artifact_ids": [event["artifact_id"]]})
+    for attachment in run.attachments:
+        node_id = f"attachment:{attachment['attachment_id']}"
+        nodes.append(_node(node_id, "atr_v2_attachment", f"{attachment['role']} · v{attachment['subject_version']}", **attachment))
+        edge(f"subject:{attachment['subject_id']}", node_id, "attaches_evidence_without_transition")
+        if attachment["artifact_id"] in known_artifacts:
+            edge(node_id, f"artifact:{attachment['artifact_id']}", "attaches_immutable_artifact")
+        timeline.append({"at": attachment["created_at"], "kind": "atr_v2_attachment", "id": attachment["attachment_id"], "label": f"附件 · {attachment['role']}（不改变 lifecycle）", "artifact_ids": [attachment["artifact_id"]]})
+    timeline.sort(key=lambda item: str(item["at"]))
+    return {"schema_version": "0.2", "projection": "derived-read-only-v2-sqlite", "run": run.run_id, "diagnostics": run.gaps, "timeline": timeline, "nodes": nodes, "edges": edges}
+
+
 def _source_layer(source_kind: str, declared: str | None = None) -> str:
     """Keep contextual inspiration distinct from scholarly evidence.
 
@@ -136,7 +217,9 @@ def _explicit_claim_source_ids(claim: dict[str, Any]) -> list[str]:
     return list(dict.fromkeys(ids))
 
 
-def project_graph(run: LegacyRun) -> dict[str, Any]:
+def project_graph(run: LegacyRun | V2Run) -> dict[str, Any]:
+    if isinstance(run, V2Run):
+        return project_v2_graph(run)
     nodes: list[dict[str, Any]] = []
     edges: list[dict[str, Any]] = []
     def edge(source: str, target: str, relation: str, **data: Any) -> None:
