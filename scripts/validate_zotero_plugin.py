@@ -56,6 +56,8 @@ def validate_source() -> None:
     for stage in ("startup_complete", "overlay_mounted", "projection_loaded", "render_completed", "render_failed"):
         if stage not in runtime:
             fail(f"workbench must emit runtime stage {stage!r} for development verification")
+    if "Zotero.File.createDirectoryIfMissingAsync" not in runtime or "Zotero.File.putContentsAsync" not in runtime:
+        fail("workbench audit writes must use Zotero's file API")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

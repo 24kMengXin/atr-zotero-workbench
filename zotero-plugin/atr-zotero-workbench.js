@@ -10,17 +10,22 @@ var ATRZoteroWorkbench = {
   // Keep the trace beside graph.json: that directory is created by the ATR
   // build, so a diagnostic must not depend on an extra directory API call.
   runtimeLogPath() { return PathUtils.join(this.workspace, "plugin-runtime.jsonl"); },
+  async appendWorkspaceLine(path, line) {
+    await Zotero.File.createDirectoryIfMissingAsync(PathUtils.parent(path), { ignoreExisting: true });
+    let existing = "";
+    try { existing = await Zotero.File.getContentsAsync(path); } catch (_) { /* new audit file */ }
+    await Zotero.File.putContentsAsync(path, existing + line + "\n");
+  },
   async appendRuntimeStatus(stage, details = {}) {
     let record = { schema_version: "0.1", component: "zotero_plugin", stage, at: new Date().toISOString(), ...details };
     this.log(stage + ": " + JSON.stringify(details));
     try {
-      await IOUtils.writeUTF8(this.runtimeLogPath(), JSON.stringify(record) + "\n", { mode: "append" });
+      await this.appendWorkspaceLine(this.runtimeLogPath(), JSON.stringify(record));
     } catch (error) { this.log("could not write runtime status: " + error); }
   },
   async appendHumanInput(record) {
     try {
-      await IOUtils.makeDirectory(PathUtils.parent(this.inboxPath()), { ignoreExisting: true });
-      await IOUtils.writeUTF8(this.inboxPath(), JSON.stringify(record) + "\n", { mode: "append" });
+      await this.appendWorkspaceLine(this.inboxPath(), JSON.stringify(record));
     } catch (error) { this.log("could not write human input: " + error); }
   },
   async noteChanged(ids, extraData) {
