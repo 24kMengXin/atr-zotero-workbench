@@ -271,6 +271,8 @@ var ATRZoteroWorkbench = {
       let claims = nodes.filter(node => node.kind === "claim");
       let knowledgeContexts = nodes.filter(node => node.kind === "knowledge_context");
       let knowledgeSteps = nodes.filter(node => node.kind === "knowledge_step");
+      let conceptMaps = nodes.filter(node => node.kind === "concept_map");
+      let knowledgeConcepts = nodes.filter(node => node.kind === "knowledge_concept");
       let landscapeBriefs = nodes.filter(node => node.kind === "landscape_brief");
       let realWorldTensions = nodes.filter(node => node.kind === "real_world_tension");
       let researchProblems = nodes.filter(node => node.kind === "research_problem");
@@ -402,6 +404,30 @@ var ATRZoteroWorkbench = {
         }
       }
       body.append(reviewBox);
+      let conceptMapBox = xul("vbox"); conceptMapBox.setAttribute("style", "background:#f7f3fb;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
+      conceptMapBox.append(label("可展开的来源知识树", "font-size:18px;font-weight:bold"));
+      conceptMapBox.append(label("概念必须有来源、定义和边界；层级只帮助你从领域到具体机制阅读，绝不自动表示因果或共识。", "white-space:normal;color:#594578;margin:5px 0"));
+      if (!conceptMaps.length) conceptMapBox.append(label("尚无 source-grounded concept map。", "white-space:normal;color:#64748b"));
+      for (let map of conceptMaps) {
+        let mapRow = xul("vbox"); mapRow.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        mapRow.append(label(map.label, "font-weight:bold;white-space:normal"), label("边界：" + (map.data?.does_not_establish || "未记录"), "white-space:normal;color:#594578"));
+        let appendConcept = (concept, level) => {
+          let row = xul("vbox"); row.setAttribute("style", "margin-left:" + (level * 18) + "px;margin-top:6px;border-left:2px solid #b8a5d5;padding-left:8px");
+          row.append(label(concept.label, "font-weight:bold;white-space:normal"), label(concept.data?.definition || "未记录定义", "white-space:normal"), label("来源：" + (concept.data?.source_ids || []).join(" · "), "white-space:normal;color:#594578"), label("不能说明：" + (concept.data?.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
+          for (let sourceId of concept.data?.source_ids || []) {
+            let source = papers.find(item => item.data?.source_id === sourceId);
+            if (!source) continue;
+            let review = xul("button"); review.setAttribute("label", "阅读：" + source.label);
+            review.addEventListener("command", async () => { let note = await this.openReviewNote(source, window); meta.setAttribute("value", "已定位概念来源笔记 · " + note.key); });
+            row.append(review);
+          }
+          mapRow.append(row);
+          for (let child of edges.filter(edge => edge.source === concept.id && edge.relation === "specializes_concept").map(edge => by[edge.target]).filter(Boolean)) appendConcept(child, level + 1);
+        };
+        for (let root of edges.filter(edge => edge.source === map.id && edge.relation === "roots_concept").map(edge => by[edge.target]).filter(Boolean)) appendConcept(root, 0);
+        conceptMapBox.append(mapRow);
+      }
+      body.append(conceptMapBox);
       let knowledgeBox = xul("vbox"); knowledgeBox.setAttribute("style", "background:#f3effa;border:1px solid #b8a5d5;border-radius:8px;padding:14px;margin-bottom:16px");
       let domain = by["concept:domain"];
       knowledgeBox.append(label("知识体系：" + (domain?.label || "未定义领域"), "font-size:18px;font-weight:bold;white-space:normal"));
@@ -493,7 +519,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });

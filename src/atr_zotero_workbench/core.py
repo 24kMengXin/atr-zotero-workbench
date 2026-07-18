@@ -28,6 +28,7 @@ class LegacyRun:
     claims: list[dict[str, Any]]
     knowledge_contexts: list[dict[str, Any]]
     landscape_briefs: list[dict[str, Any]]
+    concept_map: dict[str, Any]
     opportunity_map: dict[str, Any]
     research_problems: list[dict[str, Any]]
     gaps: list[str]
@@ -51,6 +52,8 @@ def load_legacy_run(path: Path) -> LegacyRun:
     landscape_briefs = []
     for brief_path in sorted((path / "knowledge").glob("landscape-brief*.json")) if (path / "knowledge").exists() else []:
         landscape_briefs.append(json.loads(brief_path.read_text(encoding="utf-8")))
+    concept_map_path = path / "knowledge" / "concept-map.json"
+    concept_map = json.loads(concept_map_path.read_text(encoding="utf-8")) if concept_map_path.exists() else {}
     opportunity_path = path / "knowledge" / "opportunity-map.json"
     opportunity_map = json.loads(opportunity_path.read_text(encoding="utf-8")) if opportunity_path.exists() else {}
     research_problems = []
@@ -80,7 +83,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路")
     if not research_problems:
         gaps.append("当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, landscape_briefs, opportunity_map, research_problems, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, landscape_briefs, concept_map, opportunity_map, research_problems, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -263,6 +266,30 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
             if source_id in known_paper_ids:
                 edge(brief_node, f"paper:{source_id}", "inspects_explicit_source",
                      locator=source.get("locator", ""), observation=source.get("observation", ""))
+    if run.concept_map:
+        map_id = str(run.concept_map.get("map_id", "unknown"))
+        map_node = f"concept_map:{map_id}"
+        nodes.append(_node(map_node, "concept_map", run.concept_map.get("scope", map_id),
+                           map_id=map_id, status=run.concept_map.get("status", "UNSPECIFIED"),
+                           created_at=run.concept_map.get("created_at"),
+                           does_not_establish=run.concept_map.get("does_not_establish", "")))
+        edge(f"run:{run_id}", map_node, "records_concept_map")
+        declared_concepts = {str(item.get("concept_id")) for item in run.concept_map.get("concepts", []) if item.get("concept_id")}
+        for item in run.concept_map.get("concepts", []):
+            concept_id = str(item.get("concept_id", "unknown"))
+            node_id = f"knowledge_concept:{map_id}:{concept_id}"
+            nodes.append(_node(node_id, "knowledge_concept", item.get("label", concept_id),
+                               concept_id=concept_id, map_id=map_id, definition=item.get("definition", ""),
+                               source_ids=item.get("source_ids", []), does_not_establish=item.get("does_not_establish", ""),
+                               depth=item.get("depth")))
+            parent_id = item.get("parent_id")
+            if parent_id and str(parent_id) in declared_concepts:
+                edge(f"knowledge_concept:{map_id}:{parent_id}", node_id, "specializes_concept")
+            else:
+                edge(map_node, node_id, "roots_concept")
+            for source_id in item.get("source_ids", []):
+                if source_id in known_paper_ids:
+                    edge(node_id, f"paper:{source_id}", "defines_with_explicit_source")
     if run.opportunity_map:
         map_id = str(run.opportunity_map.get("map_id", "unknown"))
         opportunity_node = f"opportunity_map:{map_id}"
@@ -320,6 +347,9 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         if brief.get("created_at"):
             timeline.append({"at": brief["created_at"], "kind": "landscape_brief", "id": brief.get("brief_id") or brief.get("artifact_id") or brief["created_at"],
                              "label": f"证据景观简报 · {brief.get('disposition', 'UNSPECIFIED')}", "immutable": brief.get("immutable") is True})
+    if run.concept_map.get("created_at"):
+        timeline.append({"at": run.concept_map["created_at"], "kind": "concept_map", "id": run.concept_map.get("map_id"),
+                         "label": f"知识概念图 · {run.concept_map.get('scope', 'unknown')}", "status": run.concept_map.get("status", "UNSPECIFIED")})
     if run.opportunity_map.get("created_at"):
         timeline.append({"at": run.opportunity_map["created_at"], "kind": "opportunity_map", "id": run.opportunity_map.get("map_id"),
                          "label": f"现实机会图 · {run.opportunity_map.get('scope', 'unknown')}", "valid_until": run.opportunity_map.get("valid_until")})

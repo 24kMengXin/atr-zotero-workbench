@@ -230,6 +230,23 @@ class BuildTest(unittest.TestCase):
             self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in graph['edges']))
             self.assertEqual(graph['timeline'][-1]['kind'], 'landscape_brief')
 
+    def test_projects_source_grounded_concept_tree_without_inferred_sources(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','kind':'PAPER'}) + '\n')
+            concept_map = {'map_id':'KMAP-1','created_at':'2026-01-04T00:00:00Z','status':'PARTIAL_SOURCE_GROUNDED','scope':'A bounded map','does_not_establish':'not an ontology','concepts':[{'concept_id':'root','label':'Root','definition':'root definition','source_ids':['P1'],'does_not_establish':'not causal','depth':0},{'concept_id':'child','parent_id':'root','label':'Child','definition':'child definition','source_ids':['P1','MISSING'],'does_not_establish':'not complete','depth':1}]}
+            (run / 'knowledge' / 'concept-map.json').write_text(json.dumps(concept_map))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            root = next(node for node in graph['nodes'] if node['id'] == 'knowledge_concept:KMAP-1:root')
+            self.assertEqual(root['data']['definition'], 'root definition')
+            self.assertTrue(any(edge['relation'] == 'roots_concept' and edge['target'] == root['id'] for edge in graph['edges']))
+            self.assertTrue(any(edge['relation'] == 'specializes_concept' and edge['target'] == 'knowledge_concept:KMAP-1:child' for edge in graph['edges']))
+            source_edges = [edge for edge in graph['edges'] if edge['relation'] == 'defines_with_explicit_source']
+            self.assertEqual(len(source_edges), 2)
+            self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in source_edges))
+            self.assertTrue(any(item['kind'] == 'concept_map' for item in graph['timeline']))
+
     def test_timeline_uses_only_timestamped_artifacts_in_chronological_order(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'observability').mkdir()
