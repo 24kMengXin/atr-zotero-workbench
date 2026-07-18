@@ -26,6 +26,7 @@ class LegacyRun:
     intake: dict[str, Any]
     skill_events: list[dict[str, Any]]
     claims: list[dict[str, Any]]
+    item_contract_audits: list[dict[str, Any]]
     knowledge_contexts: list[dict[str, Any]]
     landscape_briefs: list[dict[str, Any]]
     concept_map: dict[str, Any]
@@ -46,6 +47,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
     intake = json.loads(intake_path.read_text(encoding="utf-8")) if intake_path.exists() else {}
     skill_events = read_jsonl(path / "observability" / "skill-events.jsonl")
     claims = read_jsonl(path / "evidence" / "claims.jsonl")
+    item_contract_audits = read_jsonl(path / "evidence" / "item-contract-audit.jsonl")
     knowledge_contexts = []
     for context_path in sorted((path / "knowledge").glob("knowledge-context*.json")) if (path / "knowledge").exists() else []:
         knowledge_contexts.append(json.loads(context_path.read_text(encoding="utf-8")))
@@ -83,7 +85,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路")
     if not research_problems:
         gaps.append("当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, landscape_briefs, concept_map, opportunity_map, research_problems, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, item_contract_audits, knowledge_contexts, landscape_briefs, concept_map, opportunity_map, research_problems, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -175,6 +177,18 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         for source_id in _explicit_claim_source_ids(claim):
             if source_id in known_paper_ids:
                 edge(f"claim:{claim_id}", f"paper:{source_id}", "cites_explicit_source")
+    for audit in run.item_contract_audits:
+        audit_id = str(audit.get("audit_id") or audit.get("source_id") or "unknown")
+        audit_node = f"evidence_audit:{audit_id}"
+        nodes.append(_node(audit_node, "evidence_audit", audit.get("observed", audit_id),
+                           audit_id=audit_id, source_id=audit.get("source_id"), access_status=audit.get("access_status", "UNSPECIFIED"),
+                           item_contract_visibility=audit.get("item_contract_visibility", ""), independent_action_oracle=audit.get("independent_action_oracle", ""),
+                           does_not_establish=audit.get("does_not_establish", ""), disposition=audit.get("disposition", ""),
+                           next_required_action=audit.get("next_required_action", "")))
+        edge(f"run:{run_id}", audit_node, "records_evidence_audit")
+        source_id = audit.get("source_id")
+        if source_id in known_paper_ids:
+            edge(audit_node, f"paper:{source_id}", "audits_explicit_source")
     for claim in run.claims:
         claim_id, prior = claim.get("claim_id"), claim.get("supersedes")
         if claim_id and prior and str(prior) in known_claim_ids:
@@ -347,6 +361,10 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         if claim.get("recorded_at"):
             timeline.append({"at": claim["recorded_at"], "kind": "claim", "id": claim.get("claim_id"),
                              "label": _claim_text(claim), "status": claim.get("status", "UNSPECIFIED")})
+    for audit in run.item_contract_audits:
+        if audit.get("recorded_at"):
+            timeline.append({"at": audit["recorded_at"], "kind": "evidence_audit", "id": audit.get("audit_id") or audit.get("source_id"),
+                             "label": f"item-contract audit · {audit.get('disposition', 'UNSPECIFIED')}", "source_id": audit.get("source_id")})
     for context in run.knowledge_contexts:
         if context.get("created_at"):
             timeline.append({"at": context["created_at"], "kind": "knowledge_context", "id": context.get("context_id"),

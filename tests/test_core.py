@@ -258,6 +258,19 @@ class BuildTest(unittest.TestCase):
             self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in graph['edges']))
             self.assertEqual(graph['timeline'][-1]['kind'], 'landscape_brief')
 
+    def test_projects_item_contract_audit_as_missing_evidence_not_claim(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True)
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','kind':'PAPER'}) + '\n')
+            audit = {'audit_id':'ICA-1','recorded_at':'2026-01-03T00:00:00Z','source_id':'P1','access_status':'UNAVAILABLE','item_contract_visibility':'NONE','independent_action_oracle':'NONE','observed':'Release cannot be audited','does_not_establish':'no item claim','disposition':'PARK','next_required_action':'find a pinned release'}
+            (run / 'evidence' / 'item-contract-audit.jsonl').write_text(json.dumps(audit) + '\n')
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            node = next(node for node in graph['nodes'] if node['kind'] == 'evidence_audit')
+            self.assertEqual(node['data']['access_status'], 'UNAVAILABLE')
+            self.assertTrue(any(edge['relation'] == 'audits_explicit_source' and edge['target'] == 'paper:P1' for edge in graph['edges']))
+            self.assertFalse(any(node['kind'] == 'claim' for node in graph['nodes']))
+
     def test_projects_source_grounded_concept_tree_without_inferred_sources(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()

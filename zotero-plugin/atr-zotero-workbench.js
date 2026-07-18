@@ -291,6 +291,7 @@ var ATRZoteroWorkbench = {
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
       let claims = nodes.filter(node => node.kind === "claim");
+      let evidenceAudits = nodes.filter(node => node.kind === "evidence_audit");
       let knowledgeContexts = nodes.filter(node => node.kind === "knowledge_context");
       let knowledgeSteps = nodes.filter(node => node.kind === "knowledge_step");
       let conceptMaps = nodes.filter(node => node.kind === "concept_map");
@@ -338,6 +339,20 @@ var ATRZoteroWorkbench = {
       if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
       else lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
       body.append(lifecycleBox);
+      let auditBox = xul("vbox"); auditBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
+      auditBox.append(label("冻结 item 与执行契约审计", "font-size:18px;font-weight:bold"));
+      auditBox.append(label("这里区分“论文提出了什么”与“是否真的有可复核的 item、契约和 action oracle”。缺失资产会保留为阻断证据，而不被摘要补齐。", "white-space:normal;color:#475569;margin:5px 0"));
+      if (!evidenceAudits.length) auditBox.append(label("本阶段尚无 item-contract audit。", "white-space:normal;color:#64748b"));
+      for (let audit of evidenceAudits) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label(audit.label, "font-weight:bold;white-space:normal"));
+        row.append(label("资产状态：" + (audit.data?.access_status || "未记录") + "；契约可见性：" + (audit.data?.item_contract_visibility || "未记录"), "white-space:normal"));
+        row.append(label("独立 action oracle：" + (audit.data?.independent_action_oracle || "未记录"), "white-space:normal"));
+        row.append(label("不能说明：" + (audit.data?.does_not_establish || "未记录"), "white-space:normal;color:#64748b"));
+        row.append(label("下一步：" + (audit.data?.next_required_action || "未记录"), "white-space:normal;color:#365b7b"));
+        auditBox.append(row);
+      }
+      body.append(auditBox);
       let timelineBox = xul("vbox"); timelineBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
       timelineBox.append(label("研究演化时间线", "font-size:18px;font-weight:bold"));
       timelineBox.append(label("只包含 ATR artifact 自身带时间戳的动作、断言与地图；没有记录时间的对象不会被伪装成过程事件。", "white-space:normal;color:#475569;margin:5px 0"));
@@ -592,7 +607,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });
