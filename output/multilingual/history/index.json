@@ -32,6 +32,14 @@
       "run": "2026-07-17-controlled-multilingual-discovery",
       "node_count": 62,
       "edge_count": 97
+    },
+    {
+      "id": "84789653cd3f0af9",
+      "archived_at": "2026-07-18T06:45:18.917476+00:00",
+      "path": "history/projections/84789653cd3f0af9.json",
+      "run": "2026-07-17-controlled-multilingual-discovery",
+      "node_count": 78,
+      "edge_count": 113
     }
   ]
 }

@@ -224,6 +224,10 @@ var ATRZoteroWorkbench = {
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
       let claims = nodes.filter(node => node.kind === "claim");
+      let knowledgeContexts = nodes.filter(node => node.kind === "knowledge_context");
+      let knowledgeSteps = nodes.filter(node => node.kind === "knowledge_step");
+      let realWorldTensions = nodes.filter(node => node.kind === "real_world_tension");
+      let researchProblems = nodes.filter(node => node.kind === "research_problem");
       let gateNodes = nodes.filter(node => node.kind === "gate");
       let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
       let runNode = nodes.find(node => node.kind === "run");
@@ -234,7 +238,7 @@ var ATRZoteroWorkbench = {
       for (let event of reviewEvents) if (event.event === "human_note_modified") latestReviews.set(event.zotero_note_key, event);
       meta.setAttribute("value", `${graph.run || "unknown run"} · 派生只读投影`);
       let metrics = xul("hbox"); metrics.setAttribute("style", "margin-bottom:16px");
-      for (let [count, title] of [[questions.length,"研究问题"],[scholarly,"学术证据"],[contextual,"现实灵感"],[(graph.history?.snapshots || []).length,"历史快照"]]) {
+      for (let [count, title] of [[questions.length,"前沿问题"],[claims.length,"可审查断言"],[realWorldTensions.length,"现实张力"],[researchProblems.length,"问题卡"],[(graph.history?.snapshots || []).length,"历史快照"]]) {
         let card = xul("vbox"); card.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:12px;margin-right:10px;min-width:130px");
         card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
       }
@@ -325,6 +329,23 @@ var ATRZoteroWorkbench = {
       }
       if (!concepts.length) knowledgeBox.append(label("当前 run 尚未显式记录概念维度，插件不会补造知识节点。", "white-space:normal"));
       body.append(knowledgeBox);
+      let contractionBox = xul("vbox"); contractionBox.setAttribute("style", "background:#eef4ff;border:1px solid #90add6;border-radius:8px;padding:14px;margin-bottom:16px");
+      contractionBox.append(label("知识如何从前沿收缩到可审查断言", "font-size:18px;font-weight:bold"));
+      contractionBox.append(label("每一步保留不变量、排除的解释与明确引用；这不是模型自动生成的知识树。", "white-space:normal;color:#365b7b;margin:5px 0"));
+      if (!knowledgeContexts.length) contractionBox.append(label("尚无 knowledge-context artifact；当前只可查看 frontier 问题，不能声称已形成可审计的知识收缩路径。", "white-space:normal;color:#64748b"));
+      for (let context of knowledgeContexts) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label("决策节点：" + (context.data?.decision_node || "未记录"), "font-weight:bold"));
+        let steps = edges.filter(edge => edge.source === context.id && edge.relation === "contracts_to").map(edge => by[edge.target]).filter(Boolean);
+        while (steps.length) {
+          let step = steps.shift();
+          row.append(label((step.data?.layer || "步骤") + " · " + step.label, "white-space:normal;margin-top:5px"));
+          row.append(label("保留：" + (step.data?.invariant_preserved || "未记录") + "；排除：" + (step.data?.excluded_explanations || []).join(" · "), "white-space:normal;color:#365b7b"));
+          steps.push(...edges.filter(edge => edge.source === step.id && edge.relation === "contracts_to").map(edge => by[edge.target]).filter(Boolean));
+        }
+        contractionBox.append(row);
+      }
+      body.append(contractionBox);
       for (let question of questions) {
         let concepts = edges.filter(edge => edge.source === question.id && edge.relation === "requires_concept").map(edge => by[edge.target]).filter(Boolean);
         let anchors = edges.filter(edge => edge.source === question.id && edge.relation === "anchored_by").map(edge => by[edge.target]).filter(Boolean);
@@ -358,12 +379,33 @@ var ATRZoteroWorkbench = {
         }
         body.append(card);
       }
+      let worldBox = xul("vbox"); worldBox.setAttribute("style", "background:#fff7e6;border:1px solid #e3b76a;border-radius:8px;padding:14px;margin-bottom:16px");
+      worldBox.append(label("现实世界张力与研究问题", "font-size:18px;font-weight:bold"));
+      worldBox.append(label("现实材料只能提出值得解释的摩擦，不能替代学术证据或直接认证研究缺口。", "white-space:normal;color:#7a5620;margin:5px 0"));
+      if (!realWorldTensions.length) worldBox.append(label("尚无 opportunity-map artifact；当前 run 不能展示受控的现实问题链路。", "white-space:normal;color:#64748b"));
+      for (let tension of realWorldTensions) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label(tension.label, "font-weight:bold;white-space:normal"));
+        row.append(label("主体：" + (tension.data?.actor || "未记录") + " · 后果：" + (tension.data?.material_consequence || "未记录"), "white-space:normal"));
+        row.append(label("不能说明：" + (tension.data?.does_not_establish || "未记录"), "white-space:normal;color:#7a5620"));
+        worldBox.append(row);
+      }
+      if (researchProblems.length) worldBox.append(label("可审查研究问题卡", "font-size:16px;font-weight:bold;margin-top:12px"));
+      for (let problem of researchProblems) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label(problem.label, "font-weight:bold;white-space:normal"));
+        let worlds = (problem.data?.counterfactual_worlds || []).map(world => (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
+        row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
+        row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || "未记录"), "white-space:normal;color:#7a5620"));
+        worldBox.append(row);
+      }
+      body.append(worldBox);
       if (!questions.length) body.append(label("当前 run 尚未产生 frontier tensions；插件不会凭空生成研究问题。", "white-space:normal"));
       if (graph.diagnostics?.length) {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, human_review_count: latestReviews.size });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, knowledge_context_count: knowledgeContexts.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });

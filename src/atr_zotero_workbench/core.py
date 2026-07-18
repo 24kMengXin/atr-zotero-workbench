@@ -26,6 +26,9 @@ class LegacyRun:
     intake: dict[str, Any]
     skill_events: list[dict[str, Any]]
     claims: list[dict[str, Any]]
+    knowledge_contexts: list[dict[str, Any]]
+    opportunity_map: dict[str, Any]
+    research_problems: list[dict[str, Any]]
     gaps: list[str]
 
 
@@ -41,6 +44,15 @@ def load_legacy_run(path: Path) -> LegacyRun:
     intake = json.loads(intake_path.read_text(encoding="utf-8")) if intake_path.exists() else {}
     skill_events = read_jsonl(path / "observability" / "skill-events.jsonl")
     claims = read_jsonl(path / "evidence" / "claims.jsonl")
+    knowledge_contexts = []
+    for context_path in sorted((path / "knowledge").glob("knowledge-context*.json")) if (path / "knowledge").exists() else []:
+        knowledge_contexts.append(json.loads(context_path.read_text(encoding="utf-8")))
+    opportunity_path = path / "knowledge" / "opportunity-map.json"
+    opportunity_map = json.loads(opportunity_path.read_text(encoding="utf-8")) if opportunity_path.exists() else {}
+    research_problems = []
+    problem_dir = path / "knowledge" / "research-problem-cards"
+    for problem_path in sorted(problem_dir.glob("*.json")) if problem_dir.exists() else []:
+        research_problems.append(json.loads(problem_path.read_text(encoding="utf-8")))
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -58,7 +70,13 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 ATR v0.9 run 尚无 knowledge/frontier-map.json；只展示 intake 与生命周期，不生成研究问题")
     if not sources:
         gaps.append("当前 run 的 evidence/sources.jsonl 为空；不生成文献或证据结论")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, gaps)
+    if frontier and not knowledge_contexts:
+        gaps.append("当前 run 尚无 knowledge-context artifact；无法展示从前沿张力向断言/实验收缩的可审计路径")
+    if not opportunity_map:
+        gaps.append("当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路")
+    if not research_problems:
+        gaps.append("当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件")
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, opportunity_map, research_problems, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -199,5 +217,68 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                 if _source_layer(source.get("kind", ""), source.get("source_layer")) == "contextual_inspiration":
                     edge(f"question:{tid}", f"paper:{sid}", "inspired_by_context",
                          attribution="contextual_inspiration", why_it_matters=source.get("why_it_matters", ""))
+    known_questions = {node["data"].get("tension_id") for node in nodes if node["kind"] == "research_question"}
+    for context in run.knowledge_contexts:
+        context_id = str(context.get("context_id", "unknown"))
+        context_node = f"knowledge_context:{context_id}"
+        nodes.append(_node(context_node, "knowledge_context", context_id,
+                           decision_node=context.get("decision_node"), map_id=context.get("map_id"),
+                           unresolved=context.get("unresolved", []), valid_until=context.get("valid_until")))
+        edge(f"run:{run_id}", context_node, "records_knowledge_context")
+        for tension_id in context.get("frontier_tension_ids", []):
+            if tension_id in known_questions:
+                edge(f"question:{tension_id}", context_node, "selected_for_contraction")
+        previous = context_node
+        for step in context.get("contraction_path", []):
+            step_id = str(step.get("step_id", "unknown"))
+            step_node = f"knowledge_step:{context_id}:{step_id}"
+            nodes.append(_node(step_node, "knowledge_step", step.get("question", step_id),
+                               context_id=context_id, step_id=step_id, layer=step.get("layer"),
+                               invariant_preserved=step.get("invariant_preserved", ""),
+                               excluded_explanations=step.get("excluded_explanations", [])))
+            edge(previous, step_node, "contracts_to")
+            previous = step_node
+            for source_id in step.get("evidence_refs", []):
+                if source_id in known_paper_ids:
+                    edge(step_node, f"paper:{source_id}", "uses_explicit_evidence")
+    if run.opportunity_map:
+        map_id = str(run.opportunity_map.get("map_id", "unknown"))
+        opportunity_node = f"opportunity_map:{map_id}"
+        nodes.append(_node(opportunity_node, "opportunity_map", run.opportunity_map.get("scope", map_id),
+                           map_id=map_id, searched_through=run.opportunity_map.get("searched_through"),
+                           valid_until=run.opportunity_map.get("valid_until"),
+                           translation_policy=run.opportunity_map.get("translation_policy", {})))
+        edge(f"run:{run_id}", opportunity_node, "records_opportunity_map")
+        for cluster in run.opportunity_map.get("tension_clusters", []):
+            cluster_id = str(cluster.get("cluster_id", "unknown"))
+            cluster_node = f"real_world_tension:{cluster_id}"
+            nodes.append(_node(cluster_node, "real_world_tension", cluster.get("observed_tension", cluster_id),
+                               cluster_id=cluster_id, actor=cluster.get("actor"), incumbent_practice=cluster.get("incumbent_practice"),
+                               material_consequence=cluster.get("material_consequence"), candidate_construct=cluster.get("candidate_construct"),
+                               alternative_explanations=cluster.get("alternative_explanations", []),
+                               translation_status=cluster.get("translation_status"), does_not_establish=cluster.get("does_not_establish")))
+            edge(opportunity_node, cluster_node, "clusters_real_world_tension")
+            for source_id in cluster.get("signal_refs", []):
+                if source_id in known_paper_ids:
+                    edge(cluster_node, f"paper:{source_id}", "grounded_in_explicit_signal")
+    for problem in run.research_problems:
+        problem_id = str(problem.get("problem_id", "unknown"))
+        problem_node = f"research_problem:{problem_id}"
+        nodes.append(_node(problem_node, "research_problem", problem.get("research_question", problem_id),
+                           problem_id=problem_id, claim_version=problem.get("claim_version"),
+                           construct_of_interest=problem.get("construct_of_interest"), status_quo=problem.get("status_quo"),
+                           confounded_observation=problem.get("confounded_observation"),
+                           counterfactual_worlds=problem.get("counterfactual_worlds", []),
+                           decision_consequence=problem.get("decision_consequence"),
+                           minimum_falsifier=problem.get("minimum_falsifier"),
+                           contribution_boundary=problem.get("contribution_boundary", {})))
+        edge(f"run:{run_id}", problem_node, "records_research_problem")
+        claim_id = problem.get("claim_version")
+        if claim_id in known_claim_ids:
+            edge(problem_node, f"claim:{claim_id}", "tests_claim")
+        for layer in problem.get("evidence_layers", []):
+            for source_id in layer.get("sources", []):
+                if source_id in known_paper_ids:
+                    edge(problem_node, f"paper:{source_id}", "grounds_in_explicit_evidence_layer", evidence_kind=layer.get("kind"))
     return {"schema_version": "0.1", "projection": "derived-read-only", "run": run_id,
             "diagnostics": run.gaps, "nodes": nodes, "edges": edges}

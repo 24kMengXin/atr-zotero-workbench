@@ -188,3 +188,25 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(packet['status'], 'PENDING_ATR_OWNER_REVIEW')
             self.assertIn('OPEN_CLAIM_REVIEW', packet['required_owner_decision']['allowed_dispositions'])
             self.assertEqual(materialize_review_packets(out)['existing'], 1)
+
+    def test_projects_existing_harness_knowledge_and_problem_artifacts_without_inference(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER'}) + '\n')
+            (run / 'evidence' / 'claims.jsonl').write_text(json.dumps({'claim_id':'C1.v1','text':'Claim'}) + '\n')
+            (run / 'knowledge' / 'frontier-map.json').write_text(json.dumps({'domain':'NLP','frontier_tensions':[{'tension_id':'FT-1','question':'Why?','anchor_source_ids':['P1'],'dimensions':['a','b'],'competing_explanations':['x','y'],'freshness':'fresh'}]}))
+            context = {'context_id':'KCTX-1','decision_node':'CLAIM_REVIEW','map_id':'FKM-1','unresolved':['collision'], 'valid_until':None, 'frontier_tension_ids':['FT-1'], 'contraction_path':[{'step_id':'CP-1','layer':'FRONTIER_TENSION','question':'Tension','invariant_preserved':'scope','excluded_explanations':['z'],'evidence_refs':['P1']}, {'step_id':'CP-2','layer':'CLAIM','question':'Claim question','invariant_preserved':'scope','excluded_explanations':['z'],'evidence_refs':['MISSING']} ]}
+            (run / 'knowledge' / 'knowledge-context.test.json').write_text(json.dumps(context))
+            opportunity = {'map_id':'OPP-1','scope':'Deployment friction','searched_through':'2026-01-01','valid_until':'2027-01-01','translation_policy':{'no_gap_certificate':True}, 'tension_clusters':[{'cluster_id':'OT-1','observed_tension':'People cannot audit a system outcome','actor':'reviewers','incumbent_practice':'trust score','material_consequence':'bad decisions','candidate_construct':'traceability','alternative_explanations':['a','b'],'translation_status':'WATCH','does_not_establish':'not a gap','signal_refs':['P1','MISSING']}]}
+            (run / 'knowledge' / 'opportunity-map.json').write_text(json.dumps(opportunity))
+            problem = {'problem_id':'RQ-1','claim_version':'C1.v1','research_question':'How do we distinguish two explanations for a reported pattern?','construct_of_interest':'Traceability quality across decisions','status_quo':'Current studies trust a single score','confounded_observation':'The score mixes two mechanisms','counterfactual_worlds':[{'label':'W1'},{'label':'W2'}],'decision_consequence':'Model selection would change','minimum_falsifier':'No discriminating result remains after audit','contribution_boundary':{},'evidence_layers':[{'kind':'LITERATURE','sources':['P1','MISSING']} ]}
+            (run / 'knowledge' / 'research-problem-cards' / 'RQ-1.json').write_text(json.dumps(problem))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            self.assertTrue(any(node['kind'] == 'knowledge_step' for node in graph['nodes']))
+            self.assertTrue(any(node['kind'] == 'real_world_tension' for node in graph['nodes']))
+            problem_node = next(node for node in graph['nodes'] if node['kind'] == 'research_problem')
+            self.assertEqual(problem_node['data']['minimum_falsifier'], 'No discriminating result remains after audit')
+            explicit = [edge for edge in graph['edges'] if edge['relation'] in {'uses_explicit_evidence', 'grounded_in_explicit_signal', 'grounds_in_explicit_evidence_layer'}]
+            self.assertTrue(explicit)
+            self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in explicit))
