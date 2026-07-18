@@ -151,6 +151,7 @@ var ATRZoteroWorkbench = {
   hooks: {
     async onStartup({ id, rootURI }) {
       ATRZoteroWorkbench.init({ id, rootURI });
+      await ATRZoteroWorkbench.appendRuntimeStatus("startup_complete", { addon_id: id, root_uri: rootURI });
       ATRZoteroWorkbench.addToAllWindows();
       ATRZoteroWorkbench.startObserving();
     },
