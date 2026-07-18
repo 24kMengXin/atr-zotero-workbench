@@ -262,6 +262,7 @@ var ATRZoteroWorkbench = {
       let researchProblems = nodes.filter(node => node.kind === "research_problem");
       let gateNodes = nodes.filter(node => node.kind === "gate");
       let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
+      let timeline = Array.isArray(graph.timeline) ? graph.timeline : [];
       let runNode = nodes.find(node => node.kind === "run");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
@@ -290,6 +291,16 @@ var ATRZoteroWorkbench = {
       if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
       else lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
       body.append(lifecycleBox);
+      let timelineBox = xul("vbox"); timelineBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
+      timelineBox.append(label("研究演化时间线", "font-size:18px;font-weight:bold"));
+      timelineBox.append(label("只包含 ATR artifact 自身带时间戳的动作、断言与地图；没有记录时间的对象不会被伪装成过程事件。", "white-space:normal;color:#475569;margin:5px 0"));
+      if (!timeline.length) timelineBox.append(label("当前 run 未提供可排序的时间戳 artifact。", "white-space:normal;color:#64748b"));
+      for (let item of timeline) {
+        let row = xul("vbox"); row.setAttribute("style", "border-left:3px solid #64748b;padding:4px 8px;margin:4px 0;background:#fff");
+        row.append(label(String(item.at || "未记录时间") + " · " + String(item.kind || "artifact"), "font-size:12px;color:#64748b"), label(item.label || item.id || "未命名 artifact", "white-space:normal"));
+        timelineBox.append(row);
+      }
+      body.append(timelineBox);
       let claimBox = xul("vbox"); claimBox.setAttribute("style", "background:#f8f1e7;border:1px solid #d7ae73;border-radius:8px;padding:14px;margin-bottom:16px");
       claimBox.append(label("等待你审查的 ATR 断言", "font-size:18px;font-weight:bold"));
       claimBox.append(label("断言不是论文结论。请先核对原始材料，再在专属笔记中选择支持、限定、反驳、不确定或提出问题。你的判断只会生成待审查输入，不会自动修改 ATR 路线。", "white-space:normal;color:#765526;margin:5px 0"));

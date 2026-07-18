@@ -10,7 +10,6 @@
     "当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路",
     "当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件"
   ],
-  "timeline": [],
   "nodes": [
     {
       "id": "run:2026-07-17-controlled-multilingual-discovery",
@@ -1684,16 +1683,8 @@
         "run": "2026-07-17-controlled-multilingual-discovery",
         "node_count": 78,
         "edge_count": 113
-      },
-      {
-        "id": "7c215e57f7e1531c",
-        "archived_at": "2026-07-18T06:50:03.748463+00:00",
-        "path": "history/projections/7c215e57f7e1531c.json",
-        "run": "2026-07-17-controlled-multilingual-discovery",
-        "node_count": 78,
-        "edge_count": 113
       }
     ],
-    "previous_projection": "7c215e57f7e1531c"
+    "previous_projection": "84789653cd3f0af9"
   }
 }

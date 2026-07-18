@@ -210,3 +210,14 @@ class BuildTest(unittest.TestCase):
             explicit = [edge for edge in graph['edges'] if edge['relation'] in {'uses_explicit_evidence', 'grounded_in_explicit_signal', 'grounds_in_explicit_evidence_layer'}]
             self.assertTrue(explicit)
             self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in explicit))
+
+    def test_timeline_uses_only_timestamped_artifacts_in_chronological_order(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'observability').mkdir()
+            (run / 'evidence' / 'sources.jsonl').write_text('')
+            (run / 'evidence' / 'claims.jsonl').write_text(json.dumps({'claim_id':'C1.v1','text':'Claim','recorded_at':'2026-01-02T00:00:00Z'}) + '\n')
+            (run / 'observability' / 'skill-events.jsonl').write_text(json.dumps({'event_id':'SK1','skill':'discovery','event':'END','status':'SUCCEEDED','timestamp':'2026-01-01T00:00:00Z'}) + '\n')
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            self.assertEqual([item['kind'] for item in graph['timeline']], ['skill_event', 'claim'])
+            self.assertEqual(graph['timeline'][0]['id'], 'SK1')

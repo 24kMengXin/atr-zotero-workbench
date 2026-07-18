@@ -280,5 +280,23 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
             for source_id in layer.get("sources", []):
                 if source_id in known_paper_ids:
                     edge(problem_node, f"paper:{source_id}", "grounds_in_explicit_evidence_layer", evidence_kind=layer.get("kind"))
+    timeline: list[dict[str, Any]] = []
+    for event in run.skill_events:
+        if event.get("timestamp"):
+            timeline.append({"at": event["timestamp"], "kind": "skill_event", "id": event.get("event_id"),
+                             "label": f"{event.get('skill', 'unknown skill')} · {event.get('event', 'UNKNOWN')} · {event.get('status', 'UNKNOWN')}",
+                             "artifact_ids": event.get("artifact_ids", [])})
+    for claim in run.claims:
+        if claim.get("recorded_at"):
+            timeline.append({"at": claim["recorded_at"], "kind": "claim", "id": claim.get("claim_id"),
+                             "label": _claim_text(claim), "status": claim.get("status", "UNSPECIFIED")})
+    for context in run.knowledge_contexts:
+        if context.get("created_at"):
+            timeline.append({"at": context["created_at"], "kind": "knowledge_context", "id": context.get("context_id"),
+                             "label": f"知识收缩上下文 · {context.get('decision_node', 'unknown')}", "valid_until": context.get("valid_until")})
+    if run.opportunity_map.get("created_at"):
+        timeline.append({"at": run.opportunity_map["created_at"], "kind": "opportunity_map", "id": run.opportunity_map.get("map_id"),
+                         "label": f"现实机会图 · {run.opportunity_map.get('scope', 'unknown')}", "valid_until": run.opportunity_map.get("valid_until")})
+    timeline.sort(key=lambda item: str(item["at"]))
     return {"schema_version": "0.1", "projection": "derived-read-only", "run": run_id,
-            "diagnostics": run.gaps, "nodes": nodes, "edges": edges}
+            "diagnostics": run.gaps, "timeline": timeline, "nodes": nodes, "edges": edges}
