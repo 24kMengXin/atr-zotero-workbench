@@ -322,6 +322,31 @@ var ATRZoteroWorkbench = {
         timelineBox.append(row);
       }
       body.append(timelineBox);
+      let historyBox = xul("vbox"); historyBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
+      historyBox.append(label("历史投影比较", "font-size:18px;font-weight:bold"));
+      historyBox.append(label("旧投影是只读快照；比较只说明图谱对象和连线何时进入或退出投影，不会删除旧来源或把变化解释成科学结论。", "white-space:normal;color:#475569;margin:5px 0"));
+      let snapshots = graph.history?.snapshots || [];
+      if (!snapshots.length) historyBox.append(label("尚无较早投影快照。", "white-space:normal;color:#64748b"));
+      for (let snapshot of [...snapshots].reverse()) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label(snapshot.id + " · " + (snapshot.archived_at || "未记录时间"), "font-weight:bold"), label("当时 " + (snapshot.node_count || 0) + " 节点 / " + (snapshot.edge_count || 0) + " 连线", "white-space:normal;color:#475569"));
+        let compare = xul("button"); compare.setAttribute("label", "与当前投影比较");
+        compare.addEventListener("command", async () => {
+          let historical = await this.readJsonFile(PathUtils.join(this.workspace, snapshot.path), null);
+          if (!historical?.nodes || !historical?.edges) { row.append(label("无法读取该历史快照。", "white-space:normal;color:#b42318")); return; }
+          let oldNodes = new Set(historical.nodes.map(node => node.id)), oldEdges = new Set(historical.edges.map(edge => edge.source + "→" + edge.relation + "→" + edge.target));
+          let currentEdges = new Set(edges.map(edge => edge.source + "→" + edge.relation + "→" + edge.target));
+          let addedNodes = nodes.filter(node => !oldNodes.has(node.id)), removedNodes = historical.nodes.filter(node => !by[node.id]);
+          let addedEdges = [...currentEdges].filter(id => !oldEdges.has(id)).length, removedEdges = [...oldEdges].filter(id => !currentEdges.has(id)).length;
+          let result = xul("vbox"); result.setAttribute("style", "margin-top:6px;border-left:3px solid #64748b;padding-left:8px");
+          result.append(label("当前新增节点 " + addedNodes.length + "，历史中不再出现节点 " + removedNodes.length + "；新增连线 " + addedEdges + "，历史连线未在当前出现 " + removedEdges + "。", "white-space:normal"));
+          result.append(label("新增节点：" + (addedNodes.slice(0, 8).map(node => node.label).join(" · ") || "无"), "white-space:normal;color:#475569"));
+          result.append(label("旧快照独有节点：" + (removedNodes.slice(0, 8).map(node => node.label).join(" · ") || "无"), "white-space:normal;color:#475569"));
+          row.append(result); meta.setAttribute("value", "正在比较历史投影 " + snapshot.id);
+        });
+        row.append(compare); historyBox.append(row);
+      }
+      body.append(historyBox);
       let briefBox = xul("vbox"); briefBox.setAttribute("style", "background:#eef4ff;border:1px solid #90add6;border-radius:8px;padding:14px;margin-bottom:16px");
       briefBox.append(label("已读证据的景观简报", "font-size:18px;font-weight:bold"));
       briefBox.append(label("这是 AI 对已检查来源的暂时综合，不是 claim；请逐篇打开来源阅读，再通过阅读笔记反馈。它会同时显示未证实边界与最小下一判别。", "white-space:normal;color:#365b7b;margin:5px 0"));
