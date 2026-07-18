@@ -81,6 +81,8 @@ def validate_source() -> None:
     for kind in ("atr_v2_subject", "atr_v2_artifact", "atr_v2_transition", "atr_v2_attachment"):
         if kind not in runtime:
             fail(f"workbench must surface ATR v2 node kind {kind!r}")
+    if "grounds_in_explicit_source_span" not in runtime or "建立 / 打开该问题来源的阅读笔记" not in runtime:
+        fail("workbench must link v2 problem-case source spans back to Zotero reading notes")
     if "renderRelationshipMap" not in runtime or "研究关系图" not in runtime:
         fail("workbench must render an in-client research relationship map")
     if "研究演化时间线" not in runtime or "graph.timeline" not in runtime:

@@ -687,14 +687,15 @@ var ATRZoteroWorkbench = {
       for (let problem of researchProblems) {
         let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
         row.append(label(problem.label, "font-weight:bold;white-space:normal"));
-        let worlds = (problem.data?.counterfactual_worlds || []).map(world => (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
+        let worlds = (problem.data?.counterfactual_worlds || problem.data?.worlds || []).map(world => typeof world === "string" ? world : (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
         let paperRoles = edges.filter(edge => edge.target === problem.id && edge.relation === "has_explicit_problem_role");
+        let problemSources = edges.filter(edge => edge.source === problem.id && edge.relation === "grounds_in_explicit_source_span");
         let successor = edges.find(edge => edge.source === problem.id && edge.relation === "superseded_by_recorded_problem_version");
         row.append(label("状态：" + (problem.data?.status || "UNSPECIFIED"), "white-space:normal;color:#7a5620"));
         row.append(label("工件：" + (problem.data?.artifact_path || "未记录") + (problem.data?.artifact_version ? " · " + problem.data.artifact_version : ""), "white-space:normal;color:#64748b"));
         if (successor) row.append(label("此版本已由当前记录的问题卡取代；它仍保留为历史审计证据。", "white-space:normal;color:#64748b"));
         row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
-        row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || "未记录"), "white-space:normal;color:#7a5620"));
+        row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || problem.data?.falsifier || "未记录"), "white-space:normal;color:#7a5620"));
         let finer = edges.filter(edge => edge.source === problem.id && edge.relation === "generates_finer_review_question").map(edge => by[edge.target]).filter(Boolean);
         if (finer.length) row.append(label("由此继续审查的细粒度问题", "font-size:13px;font-weight:bold;margin-top:7px"));
         for (let child of finer) {
@@ -709,6 +710,19 @@ var ATRZoteroWorkbench = {
           row.append(label((paper?.label || role.source) + "（" + (details.posture || "OBSERVED") + "）", "font-weight:bold;white-space:normal"));
           row.append(label("解决：" + (details.resolves || "未记录"), "white-space:normal"));
           row.append(label("仍未解决：" + (details.leaves_unresolved || "未记录"), "white-space:normal;color:#7a5620"));
+        }
+        if (problemSources.length) row.append(label("从问题卡回到原文", "font-size:13px;font-weight:bold;margin-top:7px"));
+        for (let sourceEdge of problemSources) {
+          let source = by[sourceEdge.target], span = sourceEdge.data || {};
+          if (!source) continue;
+          let details = xul("vbox"); details.setAttribute("style", "margin:5px 0;padding:7px;background:#f7fafc;border-radius:5px");
+          details.append(label(source.label, "font-weight:bold;white-space:normal"), label("定位：" + (span.locator || source.data?.locator || "未记录") + "；记录：" + (span.observation || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
+          let review = xul("button"); review.setAttribute("label", "建立 / 打开该问题来源的阅读笔记");
+          review.addEventListener("command", async () => {
+            try { let note = await this.openReviewNote(source, window); meta.setAttribute("value", "已定位问题来源阅读笔记 · " + note.key); await this.appendRuntimeStatus("problem_source_review_note_opened", { problem_id: problem.data?.problem_id, source_id: source.data?.source_id, note_key: note.key }); }
+            catch (error) { meta.setAttribute("value", "无法建立问题来源阅读笔记：" + error); await this.appendRuntimeStatus("problem_source_review_note_failed", { problem_id: problem.data?.problem_id, source_id: source.data?.source_id, error: String(error) }); }
+          });
+          details.append(review); row.append(details);
         }
         worldBox.append(row);
       }
