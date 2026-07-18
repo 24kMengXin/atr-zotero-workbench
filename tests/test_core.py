@@ -333,6 +333,17 @@ class BuildTest(unittest.TestCase):
             self.assertEqual([item['kind'] for item in graph['timeline']], ['skill_event', 'claim'])
             self.assertEqual(graph['timeline'][0]['id'], 'SK1')
 
+    def test_timeline_labels_declared_skills_as_activity_not_execution_proof(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); run = root / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'observability').mkdir()
+            (run / 'evidence' / 'sources.jsonl').write_text('')
+            (run / 'observability' / 'skill-events.jsonl').write_text(json.dumps({'event_id':'SK-1','timestamp':'2026-01-01T00:00:00+00:00','skill':'codex-exec','event':'END','status':'SUCCEEDED','declared_skills':['posterior-review'],'activity_boundary':'declared only'}) + '\n')
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, root / 'out')
+            event = next(item for item in graph['timeline'] if item['id'] == 'SK-1')
+            self.assertIn('声明技能：posterior-review', event['label'])
+            self.assertEqual(event['activity_boundary'], 'declared only')
+
     def test_program_view_shares_sources_but_preserves_branch_claims(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); catalog_dir = tmp_path / 'catalog'; catalog_dir.mkdir()

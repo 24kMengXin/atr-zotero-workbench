@@ -160,7 +160,8 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                            f"{event.get('skill', 'unknown skill')} · {event.get('event', 'UNKNOWN')} · {event.get('status', 'UNKNOWN')}",
                            event_id=event_id, timestamp=event.get("timestamp"), skill=event.get("skill"),
                            event=event.get("event"), status=event.get("status"), invocation=event.get("invocation"),
-                           artifact_ids=event.get("artifact_ids", [])))
+                           artifact_ids=event.get("artifact_ids", []), declared_skills=event.get("declared_skills", []),
+                           activity_boundary=event.get("activity_boundary")))
         edge(f"run:{run_id}", f"skill:{event_id}", "records_skill_event")
     known_paper_ids = {source.get("source_id") for source in run.sources if source.get("source_id")}
     known_claim_ids: set[str] = set()
@@ -407,9 +408,11 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     timeline: list[dict[str, Any]] = []
     for event in run.skill_events:
         if event.get("timestamp"):
+            declared = event.get("declared_skills", [])
+            suffix = f" · 声明技能：{', '.join(declared)}" if declared else ""
             timeline.append({"at": event["timestamp"], "kind": "skill_event", "id": event.get("event_id"),
-                             "label": f"{event.get('skill', 'unknown skill')} · {event.get('event', 'UNKNOWN')} · {event.get('status', 'UNKNOWN')}",
-                             "artifact_ids": event.get("artifact_ids", [])})
+                             "label": f"{event.get('skill', 'unknown skill')} · {event.get('event', 'UNKNOWN')} · {event.get('status', 'UNKNOWN')}{suffix}",
+                             "artifact_ids": event.get("artifact_ids", []), "activity_boundary": event.get("activity_boundary")})
     for claim in run.claims:
         if claim.get("recorded_at"):
             timeline.append({"at": claim["recorded_at"], "kind": "claim", "id": claim.get("claim_id"),
