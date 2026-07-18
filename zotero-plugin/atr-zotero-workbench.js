@@ -182,6 +182,7 @@ var ATRZoteroWorkbench = {
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
       let gateNodes = nodes.filter(node => node.kind === "gate");
+      let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
       let runNode = nodes.find(node => node.kind === "run");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
       let contextual = papers.filter(node => node.data?.source_layer === "contextual_inspiration").length;
@@ -201,6 +202,8 @@ var ATRZoteroWorkbench = {
       lifecycleBox.append(label("下一步：" + (runNode?.data?.next_action || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
       if (gateNodes.length) lifecycleBox.append(label("质量门：" + gateNodes.map(gate => gate.label).join(" · "), "white-space:normal;color:#365b7b"));
       else lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
+      if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
+      else lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
       body.append(lifecycleBox);
       let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
       reviewBox.append(label("你的阅读反馈", "font-size:18px;font-weight:bold"));

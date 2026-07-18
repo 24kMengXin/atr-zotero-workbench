@@ -70,6 +70,8 @@ def validate_source() -> None:
         fail("workbench must offer registered-run switching instead of a single hard-coded topic")
     if "ATR 运行过程" not in runtime or "质量门：" not in runtime:
         fail("workbench must render an ATR lifecycle and gate state for v0.9 runs")
+    if "skill_event" not in runtime or "最近已记录的研究动作" not in runtime:
+        fail("workbench must render recorded ATR skill events as process evidence")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

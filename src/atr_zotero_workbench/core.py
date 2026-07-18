@@ -24,6 +24,7 @@ class LegacyRun:
     frontier: dict[str, Any]
     run_state: dict[str, Any]
     intake: dict[str, Any]
+    skill_events: list[dict[str, Any]]
     gaps: list[str]
 
 
@@ -37,6 +38,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
     state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
     intake_path = path / "intake.json"
     intake = json.loads(intake_path.read_text(encoding="utf-8")) if intake_path.exists() else {}
+    skill_events = read_jsonl(path / "observability" / "skill-events.jsonl")
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -54,7 +56,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 ATR v0.9 run 尚无 knowledge/frontier-map.json；只展示 intake 与生命周期，不生成研究问题")
     if not sources:
         gaps.append("当前 run 的 evidence/sources.jsonl 为空；不生成文献或证据结论")
-    return LegacyRun(path, sources, frontier, state, intake, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -92,6 +94,16 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
     for gate_id, status in run.run_state.get("gates", {}).items():
         nodes.append(_node(f"gate:{gate_id}", "gate", f"{gate_id} · {status}", gate_id=gate_id, status=status))
         edge(f"run:{run_id}", f"gate:{gate_id}", "tracks_gate")
+    for event in run.skill_events:
+        event_id = event.get("event_id")
+        if not event_id:
+            continue
+        nodes.append(_node(f"skill:{event_id}", "skill_event",
+                           f"{event.get('skill', 'unknown skill')} · {event.get('event', 'UNKNOWN')} · {event.get('status', 'UNKNOWN')}",
+                           event_id=event_id, timestamp=event.get("timestamp"), skill=event.get("skill"),
+                           event=event.get("event"), status=event.get("status"), invocation=event.get("invocation"),
+                           artifact_ids=event.get("artifact_ids", [])))
+        edge(f"run:{run_id}", f"skill:{event_id}", "records_skill_event")
     domain = run.frontier.get("domain") or run.intake.get("initial_question") or "未定义领域"
     nodes.append(_node("concept:domain", "concept", domain, scope=run.frontier.get("scope", "")))
     edge(f"run:{run_id}", "concept:domain", "explores")
