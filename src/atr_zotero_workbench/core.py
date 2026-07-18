@@ -248,6 +248,22 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         if attachment["artifact_id"] in known_artifacts:
             edge(node_id, f"artifact:{attachment['artifact_id']}", "attaches_immutable_artifact")
         timeline.append({"at": attachment["created_at"], "kind": "atr_v2_attachment", "id": attachment["attachment_id"], "label": f"附件 · {attachment['role']}（不改变 lifecycle）", "artifact_ids": [attachment["artifact_id"]]})
+    for artifact in run.artifacts:
+        payload = artifact.get("payload", {})
+        if payload.get("artifact_type") != "human-review-disposition":
+            continue
+        disposition_id = str(payload.get("disposition_id") or artifact["artifact_id"])
+        node_id = f"human_review:{disposition_id}"
+        nodes.append(_node(node_id, "human_review_disposition", f"人类反馈处置 · {payload.get('disposition', 'UNSPECIFIED')}", decision_id=disposition_id, packet_id=payload.get("packet_id"), owner=payload.get("owner"), disposition=payload.get("disposition"), rationale=payload.get("rationale"), controller_boundary=payload.get("controller_boundary"), v2_artifact_id=artifact["artifact_id"]))
+        edge(f"artifact:{artifact['artifact_id']}", node_id, "materializes_human_review_disposition")
+        target = payload.get("review", {})
+        source_id = target.get("source_id")
+        if source_id in known_sources:
+            edge(node_id, f"paper:{source_id}", "disposes_review_of_source")
+        for problem in payload.get("impact", {}).get("all_affected_research_problems", []):
+            problem_id = problem.get("problem_id") if isinstance(problem, dict) else None
+            if problem_id and any(node["id"] == f"research_problem:{problem_id}" for node in nodes):
+                edge(node_id, f"research_problem:{problem_id}", "requests_reconsideration_of_problem")
     timeline.sort(key=lambda item: str(item["at"]))
     return {"schema_version": "0.2", "projection": "derived-read-only-v2-sqlite", "run": run.run_id, "diagnostics": run.gaps, "timeline": timeline, "nodes": nodes, "edges": edges}
 
