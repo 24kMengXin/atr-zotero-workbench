@@ -160,6 +160,38 @@ var ATRZoteroWorkbench = {
     window.document.getElementById(this.overlayID)?.remove();
   },
   removeFromAllWindows() { for (let win of Zotero.getMainWindows()) if (win.ZoteroPane) this.removeFromWindow(win); },
+  renderRelationshipMap(doc, nodes, edges, onNode) {
+    const ns = "http://www.w3.org/2000/svg", create = name => doc.createElementNS(ns, name);
+    let svg = create("svg"); svg.setAttribute("viewBox", "0 0 960 330"); svg.setAttribute("width", "100%"); svg.setAttribute("height", "330");
+    svg.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;margin:8px 0");
+    let by = Object.fromEntries(nodes.map(node => [node.id, node]));
+    let lanes = [
+      ["research_question", 150, "前沿问题", "#bc5b12"], ["claim", 365, "可审查断言", "#28796c"],
+      ["real_world_tension", 600, "现实张力", "#d38418"], ["research_problem", 810, "问题卡", "#9b4f96"],
+    ];
+    let selected = [], positions = new Map();
+    let run = nodes.find(node => node.kind === "run");
+    if (run) { selected.push(run); positions.set(run.id, [480, 34]); }
+    for (let [kind, x, heading] of lanes) {
+      let title = create("text"); title.setAttribute("x", x); title.setAttribute("y", "78"); title.setAttribute("text-anchor", "middle"); title.setAttribute("font-size", "12"); title.setAttribute("fill", "#64748b"); title.textContent = heading; svg.append(title);
+      let items = nodes.filter(node => node.kind === kind).slice(0, 4);
+      items.forEach((node, index) => { selected.push(node); positions.set(node.id, [x, 116 + index * 55]); });
+    }
+    let selectedIDs = new Set(selected.map(node => node.id));
+    for (let edge of edges) {
+      if (!selectedIDs.has(edge.source) || !selectedIDs.has(edge.target)) continue;
+      let [x1, y1] = positions.get(edge.source), [x2, y2] = positions.get(edge.target), line = create("line");
+      line.setAttribute("x1", x1); line.setAttribute("y1", y1); line.setAttribute("x2", x2); line.setAttribute("y2", y2); line.setAttribute("stroke", "#bac7d4"); line.setAttribute("stroke-width", "1.4"); svg.append(line);
+    }
+    for (let node of selected) {
+      let [x, y] = positions.get(node.id), lane = lanes.find(row => row[0] === node.kind), color = lane ? lane[3] : "#374151";
+      let group = create("g"), circle = create("circle"), text = create("text"); circle.setAttribute("cx", x); circle.setAttribute("cy", y); circle.setAttribute("r", node.kind === "run" ? "12" : "10"); circle.setAttribute("fill", color); circle.setAttribute("stroke", "#fff"); circle.setAttribute("stroke-width", "2");
+      text.setAttribute("x", x); text.setAttribute("y", y + 22); text.setAttribute("text-anchor", "middle"); text.setAttribute("font-size", "10"); text.setAttribute("fill", "#172033"); text.textContent = String(node.label || "").slice(0, 18) + (String(node.label || "").length > 18 ? "…" : "");
+      group.setAttribute("style", "cursor:pointer"); group.append(circle, text); group.addEventListener("click", () => onNode(node)); svg.append(group);
+    }
+    if (!selected.some(node => node.kind !== "run")) { let empty = create("text"); empty.setAttribute("x", "480"); empty.setAttribute("y", "180"); empty.setAttribute("text-anchor", "middle"); empty.setAttribute("fill", "#64748b"); empty.textContent = "当前 run 尚无可画出的研究对象；不会补造节点。"; svg.append(empty); }
+    return svg;
+  },
   async openWorkbench(window) {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
@@ -243,6 +275,12 @@ var ATRZoteroWorkbench = {
         card.append(label(count, "font-size:24px;font-weight:bold"), label(title)); metrics.append(card);
       }
       body.append(metrics, label("从问题向知识展开", "font-size:20px;font-weight:bold;margin-bottom:10px"));
+      let mapBox = xul("vbox"); mapBox.setAttribute("style", "background:#fff;border:1px solid #d9e2ec;border-radius:8px;padding:14px;margin-bottom:16px");
+      mapBox.append(label("研究关系图", "font-size:18px;font-weight:bold"), label("只绘制当前投影中存在的节点与显式关系；点击节点可在下方查看其边界。", "white-space:normal;color:#64748b;margin-top:4px"));
+      mapBox.append(this.renderRelationshipMap(doc, nodes, edges, node => {
+        meta.setAttribute("value", node.kind + " · " + node.label);
+      }));
+      body.append(mapBox);
       let lifecycleBox = xul("vbox"); lifecycleBox.setAttribute("style", "background:#eaf2fb;border:1px solid #8baed1;border-radius:8px;padding:14px;margin-bottom:16px");
       lifecycleBox.append(label("ATR 运行过程", "font-size:18px;font-weight:bold"));
       lifecycleBox.append(label("当前阶段：" + (runNode?.data?.stage || "未记录") + " · 状态：" + (runNode?.data?.status || "未记录"), "white-space:normal"));

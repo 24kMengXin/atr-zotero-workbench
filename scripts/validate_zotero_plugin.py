@@ -76,6 +76,8 @@ def validate_source() -> None:
         fail("workbench must render an ATR lifecycle and gate state for v0.9 runs")
     if "skill_event" not in runtime or "最近已记录的研究动作" not in runtime:
         fail("workbench must render recorded ATR skill events as process evidence")
+    if "renderRelationshipMap" not in runtime or "研究关系图" not in runtime:
+        fail("workbench must render an in-client research relationship map")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 
