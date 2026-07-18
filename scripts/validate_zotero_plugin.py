@@ -53,7 +53,7 @@ def validate_source() -> None:
         fail("legacy menu_toolsPopup must not be used")
     if "IOUtils.readUTF8" not in runtime or 'getElementById("zotero-pane-stack")' not in runtime:
         fail("workbench must render its projection in Zotero's main window")
-    for stage in ("startup_complete", "overlay_mounted", "projection_loaded", "render_completed", "render_failed"):
+    for stage in ("startup_complete", "overlay_mounted", "projection_loaded", "render_completed", "render_failed", "review_note_opened"):
         if stage not in runtime:
             fail(f"workbench must emit runtime stage {stage!r} for development verification")
     if "Zotero.File.createDirectoryIfMissingAsync" not in runtime or "Zotero.File.putContentsAsync" not in runtime:
@@ -62,6 +62,8 @@ def validate_source() -> None:
         fail("workbench must visibly connect captured human notes to the projection")
     if "知识体系：" not in runtime or "illustrated_by_question_anchor" not in runtime:
         fail("workbench must visibly distinguish concept-to-reading context links")
+    if "建立 / 打开我的阅读笔记" not in runtime or 'event === "modify"' not in runtime:
+        fail("workbench must provide an explicit human-review note entry point")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 

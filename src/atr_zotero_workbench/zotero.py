@@ -45,7 +45,7 @@ def sync_web_api(graph: dict, audit_path: Path) -> dict:
         if node["kind"] == "paper":
             d = node["data"]
             records.append({"itemType":"journalArticle", "title":node["label"], "url":d["url"],
-                            "extra":f"ATR source ID: {d['source_id']}", "tags":[{"tag":"ATR"}], "collections":[collection_key]})
+                            "extra":f"ATR source ID: {d['source_id']}", "tags":[{"tag":"ATR"},{"tag":f"atr-source-id:{d['source_id']}"}], "collections":[collection_key]})
     item_result = post("/items", records) if records else {}
     notes = []
     for index, node in enumerate(n for n in graph["nodes"] if n["kind"] == "paper"):

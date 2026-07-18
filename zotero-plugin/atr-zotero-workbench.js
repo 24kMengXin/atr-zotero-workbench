@@ -35,6 +35,35 @@ var ATRZoteroWorkbench = {
     } catch (_) { return []; }
   },
   plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
+  htmlEscape(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); },
+  async sourceItem(source) {
+    let sourceID = source.data?.source_id;
+    let search = new Zotero.Search();
+    search.libraryID = Zotero.Libraries.userLibraryID;
+    search.addCondition("tag", "is", "atr-source-id:" + sourceID);
+    let ids = await search.search();
+    let existing = ids.length ? Zotero.Items.get(ids[0]) : null;
+    if (existing) return existing;
+    let item = new Zotero.Item(source.data?.source_layer === "scholarly_evidence" ? "journalArticle" : "webpage");
+    item.setField("title", source.label); item.setField("url", source.data?.url || "");
+    item.setField("extra", "ATR source ID: " + sourceID);
+    item.addTag("ATR"); item.addTag("atr-source-id:" + sourceID);
+    await item.saveTx();
+    return item;
+  },
+  async openReviewNote(source, window) {
+    let sourceID = source.data?.source_id, item = await this.sourceItem(source);
+    let marker = "ATR Review Source ID: " + sourceID;
+    let existing = (item.getNotes?.() || []).map(id => Zotero.Items.get(id))
+      .find(note => note?.getNote().includes(marker));
+    if (existing) { window.ZoteroPane.selectItem(existing.id); return existing; }
+    let note = new Zotero.Item("note"); note.parentItemID = item.id;
+    note.setNote("<h1>我的 ATR 阅读反馈</h1><p>" + marker + "</p>"
+      + "<h2>来源支持的内容</h2><p>" + this.htmlEscape(source.data?.supports) + "</p>"
+      + "<h2>来源不支持 / 不能推出的内容</h2><p>" + this.htmlEscape(source.data?.does_not_support) + "</p>"
+      + "<h2>我的阅读与反驳</h2><p>请在这里写下你核对原文后的判断。</p>");
+    await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
+  },
   async noteChanged(ids, extraData) {
     for (let id of ids) {
       let item = Zotero.Items.get(id);
@@ -53,7 +82,7 @@ var ATRZoteroWorkbench = {
     if (this.observerID) return;
     this.observerID = Zotero.Notifier.registerObserver({
       notify: (event, type, ids, extraData) => {
-        if (type === "item" && (event === "modify" || event === "add")) this.noteChanged(ids, extraData);
+        if (type === "item" && event === "modify") this.noteChanged(ids, extraData);
       }
     }, ["item"], "atr-zotero-workbench");
     this.log("annotation observer started");
@@ -181,6 +210,19 @@ var ATRZoteroWorkbench = {
         for (let source of anchors) {
           let details = xul("vbox"); details.setAttribute("style", "margin:5px 0;padding:7px;background:#f7fafc;border-radius:5px");
           details.append(label(source.label, "font-weight:bold;white-space:normal"), label("支持：" + (source.data?.supports || "未记录"), "white-space:normal"), label("不能推出：" + (source.data?.does_not_support || "未记录"), "white-space:normal;color:#64748b"));
+          let review = xul("button"); review.setAttribute("label", "建立 / 打开我的阅读笔记");
+          review.addEventListener("command", async () => {
+            try {
+              let note = await this.openReviewNote(source, window);
+              meta.setAttribute("value", "已定位你的阅读笔记 · " + note.key);
+              await this.appendRuntimeStatus("review_note_opened", { source_id: source.data?.source_id, note_key: note.key });
+            } catch (error) {
+              this.log("could not open review note: " + error);
+              meta.setAttribute("value", "无法建立阅读笔记：" + error);
+              await this.appendRuntimeStatus("review_note_failed", { source_id: source.data?.source_id, error: String(error) });
+            }
+          });
+          details.append(review);
           card.append(details);
         }
         body.append(card);
