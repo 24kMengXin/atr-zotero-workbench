@@ -80,6 +80,8 @@ class LocalZoteroAPI:
                  fetcher: Callable[[str], Any] | None = None):
         self.base_url = base_url.rstrip("/")
         self.fetcher = fetcher or self._fetch
+        self._list_cache: dict[tuple[str, str | None], list[dict[str, Any]]] = {}
+        self._item_cache: dict[str, dict[str, Any]] = {}
 
     @staticmethod
     def _fetch(url: str) -> Any:
@@ -87,13 +89,34 @@ class LocalZoteroAPI:
             return json.load(response)
 
     def list_items(self, item_type: str, *, query: str | None = None) -> list[dict[str, Any]]:
+        cache_key = (item_type, query)
+        if cache_key in self._list_cache:
+            return self._list_cache[cache_key]
         params = {"itemType": item_type, "limit": 100, "sort": "dateModified", "direction": "desc"}
         if query:
             params.update({"q": query, "qmode": "everything"})
-        return self.fetcher(self.base_url + "/items?" + urllib.parse.urlencode(params))
+        items: list[dict[str, Any]] = []
+        start = 0
+        while True:
+            page_params = {**params, "start": start}
+            page = self.fetcher(self.base_url + "/items?" + urllib.parse.urlencode(page_params))
+            if not isinstance(page, list):
+                raise ValueError("Zotero local API item list did not return a JSON array")
+            items.extend(page)
+            if len(page) < 100:
+                break
+            start += len(page)
+        self._list_cache[cache_key] = items
+        return items
 
     def item(self, key: str) -> dict[str, Any]:
-        return self.fetcher(self.base_url + "/items/" + urllib.parse.quote(key))
+        if key not in self._item_cache:
+            self._item_cache[key] = self.fetcher(self.base_url + "/items/" + urllib.parse.quote(key))
+        return self._item_cache[key]
+
+    def refresh(self) -> None:
+        self._list_cache.clear()
+        self._item_cache.clear()
 
 
 def _workspace_scope(workspace: Path) -> tuple[dict[str, Any], set[str], set[str]]:
@@ -159,6 +182,8 @@ def _cursor_path(workspace: Path) -> Path:
 def snapshot_local_feedback(workspace: Path, api: LocalZoteroAPI | None = None) -> dict[str, Any]:
     api = api or LocalZoteroAPI()
     cursor = _snapshot(api, workspace)
+    if not cursor["notes"]:
+        raise ValueError("workspace has no materialized ATR Notes in Zotero; import/open the topic before creating a feedback baseline")
     path = _cursor_path(workspace)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(cursor, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -247,3 +272,64 @@ def pull_local_feedback(workspace: Path, api: LocalZoteroAPI | None = None) -> d
     cursor_path.write_text(json.dumps(current, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"written": str(cursor_path), "events_detected": len(events),
             "events_appended": len(appended), "inbox": str(inbox)}
+
+
+def _registry_workspaces(registry_path: Path) -> list[tuple[str, Path]]:
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    if registry.get("schema_version") != "0.2" or registry.get("selection", {}).get("mode") != "EXPLICIT":
+        raise ValueError("registry must use schema 0.2 and EXPLICIT selection")
+    rows = []
+    for run in registry.get("runs", []):
+        if not run.get("key") or not run.get("workspace"):
+            raise ValueError("registry run lacks key/workspace")
+        rows.append((str(run["key"]), Path(run["workspace"])))
+    return rows
+
+
+def snapshot_registry_feedback(registry_path: Path, api: LocalZoteroAPI | None = None) -> dict[str, Any]:
+    api = api or LocalZoteroAPI()
+    topics = []
+    for key, workspace in _registry_workspaces(registry_path):
+        if not (workspace / "graph.json").is_file():
+            topics.append({"key": key, "workspace": str(workspace), "status": "MISSING_PROJECTION"})
+            continue
+        try:
+            topics.append({"key": key, "workspace": str(workspace), "status": "BASELINED",
+                           **snapshot_local_feedback(workspace, api)})
+        except ValueError as error:
+            if "no materialized ATR Notes" not in str(error):
+                raise
+            topics.append({"key": key, "workspace": str(workspace),
+                           "status": "NOT_MATERIALIZED_IN_ZOTERO", "reason": str(error)})
+    return {"schema_version": "0.1", "projection": "zotero-local-api-registry-snapshot",
+            "registry": str(registry_path.resolve()), "lifecycle_effect": "NONE",
+            "topics": topics, "counts": {
+                "registered": len(topics),
+                "baselined": sum(row["status"] == "BASELINED" for row in topics),
+                "not_materialized": sum(row["status"] == "NOT_MATERIALIZED_IN_ZOTERO" for row in topics),
+                "missing_projection": sum(row["status"] == "MISSING_PROJECTION" for row in topics),
+            }}
+
+
+def pull_registry_feedback(registry_path: Path, api: LocalZoteroAPI | None = None) -> dict[str, Any]:
+    api = api or LocalZoteroAPI()
+    api.refresh()
+    topics = []
+    for key, workspace in _registry_workspaces(registry_path):
+        if not (workspace / "graph.json").is_file():
+            topics.append({"key": key, "workspace": str(workspace), "status": "MISSING_PROJECTION"})
+        elif not _cursor_path(workspace).is_file():
+            topics.append({"key": key, "workspace": str(workspace), "status": "MISSING_BASELINE"})
+        else:
+            topics.append({"key": key, "workspace": str(workspace), "status": "PULLED",
+                           **pull_local_feedback(workspace, api)})
+    return {"schema_version": "0.1", "projection": "zotero-local-api-registry-pull",
+            "registry": str(registry_path.resolve()), "lifecycle_effect": "REVIEW_INPUT_ONLY",
+            "topics": topics, "counts": {
+                "registered": len(topics),
+                "pulled": sum(row["status"] == "PULLED" for row in topics),
+                "missing_baseline": sum(row["status"] == "MISSING_BASELINE" for row in topics),
+                "missing_projection": sum(row["status"] == "MISSING_PROJECTION" for row in topics),
+                "events_detected": sum(row.get("events_detected", 0) for row in topics),
+                "events_appended": sum(row.get("events_appended", 0) for row in topics),
+            }}

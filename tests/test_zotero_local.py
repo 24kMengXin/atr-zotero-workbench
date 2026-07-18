@@ -1,13 +1,18 @@
 import json
 import tempfile
 import unittest
+import urllib.parse
 from pathlib import Path
 
-from atr_zotero_workbench.zotero_local import LocalZoteroAPI, pull_local_feedback, snapshot_local_feedback
+from atr_zotero_workbench.zotero_local import (
+    LocalZoteroAPI, pull_local_feedback, pull_registry_feedback,
+    snapshot_local_feedback, snapshot_registry_feedback,
+)
 
 
 class FakeAPI(LocalZoteroAPI):
     def __init__(self):
+        super().__init__(fetcher=lambda _url: None)
         self.notes = [{
             "key": "N1", "version": 1, "data": {"note": (
                 "<h1>Knowledge</h1><p>ATR Knowledge Node: knowledge:K1</p>"
@@ -34,6 +39,17 @@ class FakeAPI(LocalZoteroAPI):
 
 
 class ZoteroLocalFeedbackTest(unittest.TestCase):
+    def test_local_api_paginates_beyond_one_hundred_items(self):
+        calls = []
+        def fetch(url):
+            calls.append(url)
+            start = int(urllib.parse.parse_qs(urllib.parse.urlparse(url).query)["start"][0])
+            count = 100 if start == 0 else 5 if start == 100 else 0
+            return [{"key": f"N{start + index}"} for index in range(count)]
+        api = LocalZoteroAPI(fetcher=fetch)
+        self.assertEqual(len(api.list_items("note", query="ATR")), 105)
+        self.assertEqual(len(calls), 2)
+
     def workspace(self):
         temp = tempfile.TemporaryDirectory()
         root = Path(temp.name)
@@ -97,6 +113,29 @@ class ZoteroLocalFeedbackTest(unittest.TestCase):
         self.addCleanup(temp.cleanup)
         with self.assertRaisesRegex(ValueError, "snapshot"):
             pull_local_feedback(workspace, FakeAPI())
+
+    def test_registry_snapshots_and_pulls_separate_workspaces(self):
+        temp, workspace = self.workspace()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        second = root / "second"
+        second.mkdir()
+        (second / "graph.json").write_text(json.dumps({"run": "run-2", "nodes": [], "edges": []}))
+        registry = root / "runs.json"
+        registry.write_text(json.dumps({
+            "schema_version": "0.2", "selection": {"mode": "EXPLICIT"},
+            "runs": [{"key": "one", "workspace": str(workspace)},
+                     {"key": "two", "workspace": str(second)}],
+        }))
+        api = FakeAPI()
+        result = snapshot_registry_feedback(registry, api)
+        self.assertEqual(result["counts"]["baselined"], 1)
+        self.assertEqual(result["counts"]["not_materialized"], 1)
+        api.notes[0]["version"] = 2
+        api.notes[0]["data"]["note"] = api.notes[0]["data"]["note"].replace("PENDING", "CHALLENGES")
+        pulled = pull_registry_feedback(registry, api)
+        self.assertEqual(pulled["counts"]["events_appended"], 1)
+        self.assertEqual(next(row for row in pulled["topics"] if row["key"] == "two")["status"], "MISSING_BASELINE")
 
 
 if __name__ == "__main__":

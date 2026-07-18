@@ -97,6 +97,25 @@ control，以及已经映射到 ATR source 的 annotation；AI 重新生成定�
 冒充人的认知变化。首次 pull 没有显式 snapshot 会直接拒绝。检测到的差量仍只
 append 到同一个 inbox，并标为 `ZOTERO_LOCAL_API_POLL` / `REVIEW_INPUT_ONLY`。
 
+多 topic 日常使用不需要逐目录执行。在所有当前投影已经物化到 Zotero 后运行一次：
+
+```bash
+python -m atr_zotero_workbench zotero-local-registry-snapshot output/runs.json
+```
+
+之后回到 Codex 时用一个命令拉取全部显式注册 topic，并立即刷新聚合复核队列：
+
+```bash
+python -m atr_zotero_workbench zotero-local-registry-pull output/runs.json \
+  --review-out output/codex-inbox-summary.json
+```
+
+每条 topic 保留自己的 cursor、inbox、queue 和 packet；registry 命令只编排，不会
+把 child feedback 写进 portfolio 或其他 authority。缺 projection/baseline 的 topic
+分别报告 `MISSING_PROJECTION` / `MISSING_BASELINE`；在 Zotero 中找不到该 topic 的
+任何已物化 ATR Note 时报告 `NOT_MATERIALIZED_IN_ZOTERO`，不会对空 topic 暗中建
+baseline 后吞掉第一次 annotation。local API 按页读取，不把 100 条默认页上限误当全库。
+
 ```bash
 python -m atr_zotero_workbench review-registry output/runs.json \
   --out output/codex-inbox-summary.json
