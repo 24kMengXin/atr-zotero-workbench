@@ -19,10 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "zotero-plugin"
 ADDON_ID = "atr-zotero-workbench@24kmengxin.github.io"
 REQUIRED_ROOT_FILES = {"manifest.json", "bootstrap.js", "prefs.js", "atr-zotero-workbench.js", "update.json"}
-REQUIRED_PACKAGED_FILES = REQUIRED_ROOT_FILES | {
-    "chrome/content/workbench.xhtml",
-    "chrome/content/workbench/index.html",
-}
+REQUIRED_PACKAGED_FILES = REQUIRED_ROOT_FILES | {"chrome/content/workbench/index.html"}
 
 
 def fail(message: str) -> None:
@@ -54,10 +51,8 @@ def validate_source() -> None:
         fail("plugin must target Zotero 9's menu_ToolsPopup")
     if re.search(r'getElementById\(["\']menu_toolsPopup["\']\)', runtime):
         fail("legacy menu_toolsPopup must not be used")
-    if "window.openDialog(" not in runtime:
-        fail("workbench must open through Zotero's plugin-window API")
-    if 'chrome://atr-zotero-workbench/content/workbench.xhtml' not in runtime:
-        fail("workbench must open its registered XUL chrome wrapper")
+    if "IOUtils.readUTF8" not in runtime or "doc.documentElement.appendChild(host)" not in runtime:
+        fail("workbench must render its projection in Zotero's main window")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 
