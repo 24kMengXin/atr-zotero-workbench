@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATR Zotero 原生共读布局合同</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --surface: Canvas;
+      --text: CanvasText;
+      --muted: color-mix(in srgb, CanvasText 62%, Canvas);
+      --line: color-mix(in srgb, CanvasText 18%, Canvas);
+      --soft: color-mix(in srgb, CanvasText 6%, Canvas);
+      --accent: #4f7cac;
+      --knowledge: #7858a6;
+      --problem: #bc5b12;
+      --paper: #276fbf;
+      font: 14px/1.45 system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text); background: var(--surface); }
+    button, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    .prototype { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+    .switcher { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    .switcher button, .toolbar button, .portable button {
+      border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; background: var(--surface);
+    }
+    .switcher button[aria-pressed="true"] { background: var(--accent); color: white; border-color: var(--accent); }
+    .shell { min-width: 0; display: grid; grid-template-columns: 180px minmax(320px, 1fr) minmax(260px, 330px); }
+    .library { border-right: 1px solid var(--line); padding: 10px; background: var(--soft); }
+    .library h2, .reader h2 { margin: 0 0 10px; font-size: 14px; font-weight: 600; }
+    .tree { margin: 0; padding: 0; list-style: none; }
+    .tree li { padding: 5px 7px; border-radius: 5px; }
+    .tree .active { background: color-mix(in srgb, var(--accent) 18%, Canvas); }
+    .reader { min-width: 0; padding: 12px 18px; background: color-mix(in srgb, CanvasText 3%, Canvas); }
+    .paper-page { max-width: 720px; min-height: 660px; margin: 0 auto; padding: 38px 52px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 2px 10px color-mix(in srgb, CanvasText 12%, transparent); }
+    .paper-page h1 { font: 600 20px/1.3 Georgia, serif; margin: 0 0 18px; }
+    .paper-page p { font-family: Georgia, serif; }
+    mark { background: color-mix(in srgb, #ffd400 55%, transparent); color: inherit; }
+    .context { min-width: 0; border-left: 1px solid var(--line); overflow: auto; }
+    .context-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+    .context-title strong { font-weight: 600; }
+    .toolbar { display: flex; gap: 5px; }
+    details { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; padding: 9px 11px; font-weight: 600; }
+    .section-body { padding: 0 11px 11px; }
+    textarea { width: 100%; min-height: 190px; resize: vertical; padding: 9px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface); }
+    .graph { width: 100%; height: auto; min-height: 150px; }
+    .graph line { stroke: var(--line); stroke-width: 2; }
+    .graph text { fill: var(--text); font-size: 10px; text-anchor: middle; }
+    .graph g { cursor: pointer; }
+    .legend, .status { color: var(--muted); font-size: 12px; }
+    .selected-node { margin: 6px 0 0; }
+    .portable { position: absolute; right: 350px; top: 64px; width: 300px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 10px 30px color-mix(in srgb, CanvasText 22%, transparent); }
+    .portable[hidden] { display: none; }
+    .portable header { display: flex; justify-content: space-between; align-items: center; padding: 7px 9px; border-bottom: 1px solid var(--line); }
+    .portable .section-body { padding-top: 9px; }
+    .rejected { grid-column: 2 / 4; padding: 30px; }
+    .rejected-panel { max-width: 760px; padding: 22px; border: 1px solid var(--line); border-radius: 8px; }
+    .rejected-panel h2 { margin-top: 0; }
+    .note-tab { grid-column: 2 / 4; display: grid; grid-template-columns: minmax(320px, 1fr) 300px; }
+    .note-editor { padding: 20px; }
+    .note-editor textarea { min-height: 540px; }
+    .mode[hidden] { display: none; }
+    @media (max-width: 780px) {
+      .shell { grid-template-columns: 1fr; }
+      .library { display: none; }
+      .context { border-left: 0; border-top: 1px solid var(--line); }
+      .portable { position: static; width: auto; margin: 10px; }
+      .note-tab { grid-column: 1; grid-template-columns: 1fr; }
+      .rejected { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="prototype" data-selected-contract="native-reader-two-sections">
+    <nav class="switcher" aria-label="交互方案比较">
+      <button type="button" data-mode-button="dashboard" aria-pressed="false">A 独立工作台 · 清退</button>
+      <button type="button" data-mode-button="note" aria-pressed="false">B Note 标签 · 深度综合</button>
+      <button type="button" data-mode-button="reader" aria-pressed="true">C Reader 双 section · 选定</button>
+    </nav>
+
+    <section class="shell mode" data-mode="dashboard" hidden>
+      <aside class="library"><h2>我的文库</h2></aside>
+      <div class="rejected">
+        <div class="rejected-panel">
+          <h2>独立 ATR 工作台不作为主界面</h2>
+          <p>它会复制 PDF 导航、笔记状态和研究上下文，使人的阅读与 Zotero 原始条目断开。</p>
+          <p class="status">仅保留为设计反例；不进入插件运行路径。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell mode" data-mode="note" hidden>
+      <aside class="library">
+        <h2>Multilingual Agent</h2>
+        <ul class="tree"><li class="active">综合 Note</li><li>来源 01</li><li>来源 02</li></ul>
+      </aside>
+      <div class="note-tab">
+        <article class="note-editor">
+          <h2>跨文献综合理解</h2>
+          <textarea aria-label="Zotero 综合笔记">我对多篇文献的综合判断……</textarea>
+        </article>
+        <aside class="context">
+          <div class="context-title"><strong>Note 上下文</strong></div>
+          <details open><summary>目录</summary><div class="section-body">1. 现象
+2. 证据
+3. 我的判断</div></details>
+          <details open><summary>ATR 关系定位</summary><div class="section-body">适合长篇综合；逐篇核对仍回到 Reader。</div></details>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell mode" data-mode="reader">
+      <aside class="library">
+        <h2>Multilingual Agent</h2>
+        <ul class="tree">
+          <li>01 Portfolio</li><li>02 Knowledge</li><li class="active">03 Sources · Paper 07</li><li>04 Questions</li>
+        </ul>
+      </aside>
+      <article class="reader" data-surface="zotero-reader">
+        <h2>Paper 07.pdf · Zotero Reader</h2>
+        <div class="paper-page">
+          <h1>Evaluating action attribution in multilingual agents</h1>
+          <p>Agent performance depends on representation, tool state and evaluation protocol.</p>
+          <p><mark>The observed failure cannot be attributed to language alone without controlling state continuity.</mark></p>
+          <p>……</p>
+        </div>
+      </article>
+      <aside class="context" data-surface="zotero-item-pane">
+        <div class="context-title">
+          <strong>Reader 右侧上下文</strong>
+          <div class="toolbar">
+            <button type="button" id="open-note">展开笔记</button>
+            <button type="button" id="toggle-portable">便携定位</button>
+          </div>
+        </div>
+        <details id="human-note" data-contract-section="human-note" open>
+          <summary>我的阅读笔记 · 同一份 Zotero Note</summary>
+          <div class="section-body">
+            <textarea aria-label="人的 Zotero 阅读笔记">我的理解：这段证据限定的是状态连续性，并不能直接支持语言归因。
+
+需要继续核对：实验是否控制工具权限和历史长度。</textarea>
+            <p class="status">修改通过 Zotero Note notifier 进入 REVIEW_INPUT_ONLY 队列。</p>
+          </div>
+        </details>
+        <details data-contract-section="atr-context" open>
+          <summary>ATR 定位与可视化</summary>
+          <div class="section-body">
+            <details data-atr-dock-key="knowledge" open><summary>知识定位</summary>
+              <div class="section-body">
+                <svg class="graph" viewBox="0 0 300 160" role="img" aria-label="知识节点到当前论文的局部关系图">
+                  <line x1="150" y1="78" x2="55" y2="40"></line><line x1="150" y1="78" x2="245" y2="40"></line>
+                  <line x1="150" y1="78" x2="85" y2="130"></line><line x1="150" y1="78" x2="220" y2="130"></line>
+                  <g data-node="当前论文"><circle cx="150" cy="78" r="14" fill="var(--paper)"></circle><text x="150" y="105">当前论文</text></g>
+                  <g data-node="状态连续性"><circle cx="55" cy="40" r="11" fill="var(--knowledge)"></circle><text x="55" y="22">状态连续性</text></g>
+                  <g data-node="动作归因"><circle cx="245" cy="40" r="11" fill="var(--knowledge)"></circle><text x="245" y="22">动作归因</text></g>
+                  <g data-node="现实张力"><circle cx="85" cy="130" r="11" fill="var(--problem)"></circle><text x="85" y="153">现实张力</text></g>
+                  <g data-node="研究问题"><circle cx="220" cy="130" r="11" fill="var(--problem)"></circle><text x="220" y="153">研究问题</text></g>
+                </svg>
+                <p class="selected-node">当前：<span id="selected-node">当前论文</span></p>
+              </div>
+            </details>
+            <details data-atr-dock-key="problem" open><summary>现实问题 / 研究问题</summary><div class="section-body">语言归因是否只是未控制状态连续性的表象？</div></details>
+            <details data-atr-dock-key="detail" open><summary>当前对象</summary><div class="section-body">支持：状态是混杂因素。<br>不能推出：语言本身无影响。</div></details>
+            <details data-atr-dock-key="process"><summary>项目历史 / 过程</summary><div class="section-body">旧问题与旧边保留为只读历史。</div></details>
+          </div>
+        </details>
+      </aside>
+    </section>
+
+    <aside class="portable" id="portable" data-contract-surface="portable-atr-context" hidden>
+      <header><strong>ATR 便携定位</strong><button type="button" id="close-portable">关闭</button></header>
+      <div class="section-body">
+        <details open><summary>现实问题 / 研究问题</summary><p>语言归因是否只是状态连续性混杂？</p></details>
+        <details><summary>知识定位</summary><p>状态连续性 → 当前论文 → 动作归因</p></details>
+        <p class="status">只读镜像；正文与人的 Note 仍在 Zotero。</p>
+      </div>
+    </aside>
+  </main>
+  <script>
+    const modes = document.querySelectorAll('[data-mode]');
+    document.querySelectorAll('[data-mode-button]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.modeButton;
+        modes.forEach((mode) => { mode.hidden = mode.dataset.mode !== selected; });
+        document.querySelectorAll('[data-mode-button]').forEach((candidate) => {
+          candidate.setAttribute('aria-pressed', String(candidate === button));
+        });
+      });
+    });
+    const humanNote = document.getElementById('human-note');
+    document.getElementById('open-note').addEventListener('click', () => { humanNote.open = true; });
+    const portable = document.getElementById('portable');
+    document.getElementById('toggle-portable').addEventListener('click', () => { portable.hidden = !portable.hidden; });
+    document.getElementById('close-portable').addEventListener('click', () => { portable.hidden = true; });
+    document.querySelectorAll('[data-node]').forEach((node) => {
+      node.addEventListener('click', () => { document.getElementById('selected-node').textContent = node.dataset.node; });
+    });
+  </script>
+</body>
+</html>

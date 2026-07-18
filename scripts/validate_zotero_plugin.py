@@ -147,6 +147,7 @@ def validate_source() -> None:
             fail(f"Reader/Item Pane co-reading dock is missing {dock_contract!r}")
     for co_reading_contract in (
         "openNoteBesideReader", "coReadingNote", "openSourceForCoReading", 'context.mode = "item"',
+        "openCurrentReadingNote", 'type: "openReadingNote"', 'l10nID: "atr-item-pane-open-reading-note"',
         "registerReadingNoteSection", 'bodyXHTML:', 'class="atr-reading-note-editor"',
         'interaction: "READER_WITH_FOLDABLE_NOTE_AND_ATR_SECTIONS"',
         '"阅读原文并记录我的理解"', '"在新标签深度编辑这份来源笔记"',
@@ -173,6 +174,10 @@ def validate_source() -> None:
     ):
         if companion_contract not in runtime:
             fail(f"portable co-reading companion is missing {companion_contract!r}")
+    for locale in ("en-US", "zh-CN"):
+        locale_text = (PLUGIN / "locale" / locale / "atr-mainWindow.ftl").read_text(encoding="utf-8")
+        if "atr-item-pane-open-reading-note" not in locale_text:
+            fail(f"{locale} locale must label the native reading-note section action")
     if "human_note_modified" not in runtime or "human_annotation_modified" not in runtime:
         fail("plugin must relay both explicit notes and native Reader annotations")
     if 'input_origin: "ZOTERO_NOTIFIER"' not in runtime or "ignored non-cognitive Note metadata change" not in runtime:

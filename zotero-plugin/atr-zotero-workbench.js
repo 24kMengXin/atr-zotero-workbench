@@ -1400,6 +1400,11 @@ var ATRZoteroWorkbench = {
 		return note;
 	},
 
+	async openCurrentReadingNote(item = this.companionItem) {
+		let note = await this.coReadingNote(this.companionFocusNode, item);
+		return this.openNoteBesideReader(note);
+	},
+
 	async ensureReadableAttachment(source, item) {
 		if (item.isAttachment?.()) return item;
 		let existing = await item.getBestAttachment();
@@ -2448,6 +2453,11 @@ var ATRZoteroWorkbench = {
 				icon: "chrome://zotero/skin/20/universal/save.svg",
 			},
 			sectionButtons: [{
+				type: "openReadingNote",
+				icon: "chrome://zotero/skin/16/universal/note.svg",
+				l10nID: "atr-item-pane-open-reading-note",
+				onClick: ({ item }) => this.openCurrentReadingNote(item),
+			}, {
 				type: "openCompanion",
 				icon: "chrome://zotero/skin/16/universal/open-link.svg",
 				l10nID: "atr-item-pane-open-companion",
