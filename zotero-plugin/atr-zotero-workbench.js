@@ -108,6 +108,17 @@ var ATRZoteroWorkbench = {
       + "<h2>我的阅读与反驳</h2><p>请在这里写下你核对原文后的判断。</p>");
     await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
   },
+  async setSourceReviewStance(source, stance, window) {
+    let note = await this.openReviewNote(source, window);
+    let html = note.getNote(), replacement = "ATR Review Stance: " + stance;
+    if (/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.test(this.plainNote(html))) {
+      html = html.replace(/ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/, replacement);
+    } else {
+      html = "<p>" + replacement + "</p>" + html;
+    }
+    note.setNote(html); await note.saveTx(); window.ZoteroPane.selectItem(note.id);
+    return note;
+  },
   async openClaimReviewNote(claim, window) {
     let claimID = claim.data?.claim_id;
     if (!claimID) throw new Error("claim node has no stable claim_id");
@@ -621,7 +632,26 @@ var ATRZoteroWorkbench = {
               await this.appendRuntimeStatus("review_note_failed", { source_id: source.data?.source_id, error: String(error) });
             }
           });
-          details.append(review);
+          let stancePicker = xul("menulist"), stanceChoices = xul("menupopup");
+          stancePicker.setAttribute("value", "PENDING"); stancePicker.setAttribute("label", "选择我的来源判断");
+          for (let [value, title] of [["PENDING", "尚未判断"], ["SUPPORTS", "支持"], ["QUALIFIES", "需要限定"], ["CHALLENGES", "反驳 / 挑战"], ["UNSURE", "证据不足"], ["NEW_QUESTION", "提出新问题"]]) {
+            let choice = xul("menuitem"); choice.setAttribute("value", value); choice.setAttribute("label", title); stanceChoices.append(choice);
+          }
+          stancePicker.append(stanceChoices);
+          let record = xul("button"); record.setAttribute("label", "记录来源判断并打开笔记");
+          record.addEventListener("command", async () => {
+            let stance = stancePicker.value || "PENDING";
+            try {
+              let note = await this.setSourceReviewStance(source, stance, window);
+              meta.setAttribute("value", "已记录 " + stance + " · 请补充原文定位与理由");
+              await this.appendRuntimeStatus("source_review_stance_recorded", { source_id: source.data?.source_id, note_key: note.key, stance });
+            } catch (error) {
+              this.log("could not record source review stance: " + error);
+              meta.setAttribute("value", "无法记录来源判断：" + error);
+              await this.appendRuntimeStatus("source_review_stance_failed", { source_id: source.data?.source_id, error: String(error) });
+            }
+          });
+          details.append(review, stancePicker, record);
           card.append(details);
         }
         card.append(label("现实世界启发（不是学术证据）", "font-size:13px;font-weight:bold;margin-top:8px"));
