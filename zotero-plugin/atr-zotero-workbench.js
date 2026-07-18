@@ -1,6 +1,6 @@
 /* global IOUtils, PathUtils */
 var ATRZoteroWorkbench = {
-  id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay", workspaceOverride: null,
+  id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay", workspaceOverride: null, activeRunName: null, activeCollectionID: null,
   // This path deliberately matches the repo's generated workbench output. It is a user-visible pref.
   defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual-agent-action-continuation",
   defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
@@ -61,6 +61,18 @@ var ATRZoteroWorkbench = {
   },
   plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
   htmlEscape(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]); },
+  async ensureRunCollection() {
+    let libraryID = Zotero.Libraries.userLibraryID;
+    let name = "ATR · " + (this.activeRunName || "未命名 run");
+    let collection = (Zotero.Collections.getByLibrary(libraryID) || []).find(item => item.name === name);
+    if (!collection) {
+      collection = new Zotero.Collection(); collection.libraryID = libraryID; collection.name = name;
+      await collection.saveTx();
+      await this.appendRuntimeStatus("run_collection_created", { collection_id: collection.id, collection_name: name });
+    }
+    this.activeCollectionID = collection.id;
+    return collection;
+  },
   async sourceItem(source) {
     let sourceID = source.data?.source_id;
     let search = new Zotero.Search();
@@ -68,11 +80,16 @@ var ATRZoteroWorkbench = {
     search.addCondition("tag", "is", "atr-source-id:" + sourceID);
     let ids = await search.search();
     let existing = ids.length ? Zotero.Items.get(ids[0]) : null;
-    if (existing) return existing;
+    if (existing) {
+      let collection = await this.ensureRunCollection();
+      if (!(existing.getCollections?.() || []).includes(collection.id)) { existing.addToCollection(collection.id); await existing.saveTx(); }
+      return existing;
+    }
     let item = new Zotero.Item(source.data?.source_layer === "scholarly_evidence" ? "journalArticle" : "webpage");
     item.setField("title", source.label); item.setField("url", source.data?.url || "");
     item.setField("extra", "ATR source ID: " + sourceID);
     item.addTag("ATR"); item.addTag("atr-source-id:" + sourceID);
+    let collection = await this.ensureRunCollection(); item.addToCollection(collection.id);
     await item.saveTx();
     return item;
   },
@@ -296,6 +313,7 @@ var ATRZoteroWorkbench = {
     close.addEventListener("command", () => host.remove());
     try {
       let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(selectedWorkspace, "graph.json")));
+      this.activeRunName = graph.run || "unknown run"; this.activeCollectionID = null;
       let nodes = graph.nodes || [], edges = graph.edges || [];
       await this.appendRuntimeStatus("projection_loaded", {
         run: graph.run || null, node_count: nodes.length, edge_count: edges.length

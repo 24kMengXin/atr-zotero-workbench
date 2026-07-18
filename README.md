@@ -69,6 +69,8 @@ python -m atr_zotero_workbench review-human-input output/multilingual-agent-acti
 
 该命令以 `ATR source ID` 反查受影响的 research question、问题卡、断言与最近决策节点，并写入插件会读取的 `review-queue.json`。它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
 
+从插件中首次为某篇来源“建立 / 打开我的阅读笔记”时，插件会把该条目加入本 run 的 `ATR · <run id>` collection。它以 `atr-source-id:<ID>` tag 查重；已有条目只会被**加入**该 collection，不会移动、删除或覆盖你的字段和笔记。
+
 由研究 owner 读完 packet 后，才可记录一次不可变的处置；这会把“需要复审什么”追加回 ATR run，并在下一次构建时显示在图中：
 
 ```bash
