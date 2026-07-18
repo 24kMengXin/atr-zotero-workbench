@@ -2,7 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from atr_zotero_workbench.app import build
+from atr_zotero_workbench.app import build, build_program
 from atr_zotero_workbench.zotero import sync_web_api
 from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue
 
@@ -224,3 +224,19 @@ class BuildTest(unittest.TestCase):
             graph = build(run, tmp_path / 'out')
             self.assertEqual([item['kind'] for item in graph['timeline']], ['skill_event', 'claim'])
             self.assertEqual(graph['timeline'][0]['id'], 'SK1')
+
+    def test_program_view_shares_sources_but_preserves_branch_claims(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); catalog_dir = tmp_path / 'catalog'; catalog_dir.mkdir()
+            for name, claim in [('a', 'C1.v1'), ('b', 'C2.v1')]:
+                run = tmp_path / name; (run / 'evidence').mkdir(parents=True)
+                (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Shared paper','kind':'PAPER'}) + '\n')
+                (run / 'evidence' / 'claims.jsonl').write_text(json.dumps({'claim_id':claim,'text':name + ' claim'}) + '\n')
+                (run / 'run-state.json').write_text(json.dumps({'run_id':name}))
+            catalog = {'programs':[{'key':'p','label':'Program','root_question':'A root question','branches':[{'run':'../a','role':'first','disposition':'retain'},{'run':'../b','role':'second','disposition':'retain'}]}]}
+            catalog_path = catalog_dir / 'programs.json'; catalog_path.write_text(json.dumps(catalog))
+            graph = build_program(catalog_path, 'p', tmp_path / 'out')
+            self.assertEqual(sum(node['kind'] == 'paper' for node in graph['nodes']), 1)
+            self.assertEqual(sum(node['kind'] == 'claim' for node in graph['nodes']), 2)
+            self.assertEqual(sum(edge['relation'] == 'contains_historical_branch' for edge in graph['edges']), 2)
+            self.assertEqual(graph['program']['root_question'], 'A root question')

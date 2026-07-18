@@ -170,13 +170,25 @@ var ATRZoteroWorkbench = {
       ["real_world_tension", 600, "现实张力", "#d38418"], ["research_problem", 810, "问题卡", "#9b4f96"],
     ];
     let selected = [], positions = new Map();
-    let run = nodes.find(node => node.kind === "run"), domain = nodes.find(node => node.id === "concept:domain");
-    if (run) { selected.push(run); positions.set(run.id, [480, 34]); }
-    if (domain) { selected.push(domain); positions.set(domain.id, [480, 106]); }
+    let root = nodes.find(node => node.kind === "research_program") || nodes.find(node => node.kind === "run");
+    let isProgram = root?.kind === "research_program";
+    if (root) { selected.push(root); positions.set(root.id, [480, 34]); }
+    if (isProgram) {
+      let branchRuns = nodes.filter(node => node.kind === "run").slice(0, 7);
+      branchRuns.forEach((node, index) => { selected.push(node); positions.set(node.id, [100 + index * 126, 94]); });
+      for (let branch of branchRuns) {
+        let prefix = branch.id.slice(0, branch.id.lastIndexOf(":run:"));
+        let domain = nodes.find(node => node.kind === "concept" && node.id === prefix + ":concept:domain");
+        if (domain) { selected.push(domain); positions.set(domain.id, positions.get(branch.id).map((value, i) => i ? value + 45 : value)); }
+      }
+    } else {
+      let domain = nodes.find(node => node.id === "concept:domain");
+      if (domain) { selected.push(domain); positions.set(domain.id, [480, 106]); }
+    }
     for (let [kind, x, heading] of lanes) {
       let title = create("text"); title.setAttribute("x", x); title.setAttribute("y", "78"); title.setAttribute("text-anchor", "middle"); title.setAttribute("font-size", "12"); title.setAttribute("fill", "#64748b"); title.textContent = heading; svg.append(title);
       let items = nodes.filter(node => node.kind === kind).slice(0, 4);
-      items.forEach((node, index) => { selected.push(node); positions.set(node.id, [x, 150 + index * 48]); });
+      items.forEach((node, index) => { selected.push(node); positions.set(node.id, [x, (isProgram ? 185 : 150) + index * 48]); });
     }
     let selectedIDs = new Set(selected.map(node => node.id));
     for (let edge of edges) {
@@ -185,7 +197,7 @@ var ATRZoteroWorkbench = {
       line.setAttribute("x1", x1); line.setAttribute("y1", y1); line.setAttribute("x2", x2); line.setAttribute("y2", y2); line.setAttribute("stroke", "#bac7d4"); line.setAttribute("stroke-width", "1.4"); svg.append(line);
     }
     for (let node of selected) {
-      let [x, y] = positions.get(node.id), lane = lanes.find(row => row[0] === node.kind), color = lane ? lane[3] : (node.id === "concept:domain" ? "#7858a6" : "#374151");
+      let [x, y] = positions.get(node.id), lane = lanes.find(row => row[0] === node.kind), color = lane ? lane[3] : (node.kind === "concept" ? "#7858a6" : "#374151");
       let group = create("g"), circle = create("circle"), text = create("text"); circle.setAttribute("cx", x); circle.setAttribute("cy", y); circle.setAttribute("r", node.kind === "run" ? "12" : "10"); circle.setAttribute("fill", color); circle.setAttribute("stroke", "#fff"); circle.setAttribute("stroke-width", "2");
       text.setAttribute("x", x); text.setAttribute("y", y + 22); text.setAttribute("text-anchor", "middle"); text.setAttribute("font-size", "10"); text.setAttribute("fill", "#172033"); text.textContent = String(node.label || "").slice(0, 18) + (String(node.label || "").length > 18 ? "…" : "");
       group.setAttribute("style", "cursor:pointer"); group.append(circle, text); group.addEventListener("click", () => onNode(node)); svg.append(group);

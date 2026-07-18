@@ -8,6 +8,7 @@ from typing import Optional
 from .core import load_legacy_run, project_graph
 from .human_input import impact_report, materialize_review_packets, refresh_review_queue
 from .history import archive_previous_projection
+from .programs import project_program
 from .runs import register_run
 from .zotero import export_bundle, sync_web_api
 
@@ -69,15 +70,30 @@ def build(run_dir: Path, out: Path, registry: Optional[Path] = None, run_key: Op
     return graph
 
 
+def build_program(catalog: Path, program_key: str, out: Path, registry: Optional[Path] = None, label: Optional[str] = None) -> dict:
+    graph = project_program(catalog, program_key)
+    out.mkdir(parents=True, exist_ok=True)
+    graph["history"] = archive_previous_projection(out, graph)
+    encoded = json.dumps(graph, ensure_ascii=False).replace("</", "<\\/")
+    (out / "graph.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "index.html").write_text(HTML.replace("__GRAPH_DATA__", encoded), encoding="utf-8")
+    export_bundle(graph, out)
+    if registry:
+        register_run(registry, key=program_key, label=label or graph["program"]["label"], run_dir=catalog, output=out, graph=graph)
+    return graph
+
+
 def main() -> None:
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build"); b.add_argument("run_dir", type=Path); b.add_argument("--out", type=Path, required=True); b.add_argument("--registry", type=Path); b.add_argument("--run-key"); b.add_argument("--label")
+    pbuild = sub.add_parser("build-program"); pbuild.add_argument("catalog", type=Path); pbuild.add_argument("--program", required=True); pbuild.add_argument("--out", type=Path, required=True); pbuild.add_argument("--registry", type=Path); pbuild.add_argument("--label")
     s = sub.add_parser("serve"); s.add_argument("directory", type=Path); s.add_argument("--port", type=int, default=8765)
     y = sub.add_parser("sync"); y.add_argument("directory", type=Path)
     h = sub.add_parser("review-human-input"); h.add_argument("directory", type=Path); h.add_argument("--out", type=Path, required=True)
     a = p.parse_args()
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label)["nodes"])}, ensure_ascii=False))
+    elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "serve": ThreadingHTTPServer(("127.0.0.1", a.port), partial(SimpleHTTPRequestHandler, directory=a.directory)).serve_forever()
     elif a.cmd == "sync": print(json.dumps(sync_web_api(a.directory), ensure_ascii=False))
     else:
