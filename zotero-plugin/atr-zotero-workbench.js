@@ -271,6 +271,7 @@ var ATRZoteroWorkbench = {
       let claims = nodes.filter(node => node.kind === "claim");
       let knowledgeContexts = nodes.filter(node => node.kind === "knowledge_context");
       let knowledgeSteps = nodes.filter(node => node.kind === "knowledge_step");
+      let landscapeBriefs = nodes.filter(node => node.kind === "landscape_brief");
       let realWorldTensions = nodes.filter(node => node.kind === "real_world_tension");
       let researchProblems = nodes.filter(node => node.kind === "research_problem");
       let gateNodes = nodes.filter(node => node.kind === "gate");
@@ -314,6 +315,29 @@ var ATRZoteroWorkbench = {
         timelineBox.append(row);
       }
       body.append(timelineBox);
+      let briefBox = xul("vbox"); briefBox.setAttribute("style", "background:#eef4ff;border:1px solid #90add6;border-radius:8px;padding:14px;margin-bottom:16px");
+      briefBox.append(label("已读证据的景观简报", "font-size:18px;font-weight:bold"));
+      briefBox.append(label("这是 AI 对已检查来源的暂时综合，不是 claim；请逐篇打开来源阅读，再通过阅读笔记反馈。它会同时显示未证实边界与最小下一判别。", "white-space:normal;color:#365b7b;margin:5px 0"));
+      if (!landscapeBriefs.length) briefBox.append(label("尚无 landscape brief；插件不会把来源清单伪装成综合结论。", "white-space:normal;color:#64748b"));
+      for (let brief of landscapeBriefs) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        let sources = edges.filter(edge => edge.source === brief.id && edge.relation === "inspects_explicit_source").map(edge => by[edge.target]).filter(Boolean);
+        row.append(label(brief.label, "font-weight:bold;white-space:normal"));
+        row.append(label("状态：" + (brief.data?.disposition || "UNSPECIFIED") + " · " + (brief.data?.immutable ? "immutable artifact" : "非 immutable artifact"), "white-space:normal;color:#365b7b"));
+        row.append(label("张力：" + (brief.data?.observed_tension || "未记录"), "white-space:normal;color:#365b7b;margin-top:3px"));
+        row.append(label("还不能证明：" + (brief.data?.sources_do_not_establish || []).join(" · "), "white-space:normal;color:#64748b;margin-top:3px"));
+        row.append(label("最小下一判别：" + (brief.data?.smallest_next_discriminator || "未记录"), "white-space:normal;color:#365b7b;margin-top:3px"));
+        for (let source of sources) {
+          let review = xul("button"); review.setAttribute("label", "阅读来源：" + source.label);
+          review.addEventListener("command", async () => {
+            let note = await this.openReviewNote(source, window);
+            meta.setAttribute("value", "已定位景观简报的来源笔记 · " + note.key);
+          });
+          row.append(review);
+        }
+        briefBox.append(row);
+      }
+      body.append(briefBox);
       let claimBox = xul("vbox"); claimBox.setAttribute("style", "background:#f8f1e7;border:1px solid #d7ae73;border-radius:8px;padding:14px;margin-bottom:16px");
       claimBox.append(label("等待你审查的 ATR 断言", "font-size:18px;font-weight:bold"));
       claimBox.append(label("断言不是论文结论。请先核对原始材料，再在专属笔记中选择支持、限定、反驳、不确定或提出问题。你的判断只会生成待审查输入，不会自动修改 ATR 路线。", "white-space:normal;color:#765526;margin:5px 0"));
@@ -469,7 +493,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, knowledge_context_count: knowledgeContexts.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });

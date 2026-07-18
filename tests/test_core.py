@@ -214,6 +214,22 @@ class BuildTest(unittest.TestCase):
             self.assertTrue(explicit)
             self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in explicit))
 
+    def test_projects_landscape_brief_with_explicit_source_locators(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER'}) + '\n')
+            brief = {'brief_id':'LB-1','immutable':True,'created_at':'2026-01-03T00:00:00Z','question':'Which failure locus?','disposition':'NEEDS_EVIDENCE','observed_tension':'A strict mismatch may have two causes','sources_do_not_establish':['a general defect'],'smallest_next_discriminator':'Audit frozen items','inspected_sources':[{'source_id':'P1','locator':'p. 2','observation':'Observed a localized mismatch'},{'source_id':'MISSING','locator':'p. 4','observation':'must not become an edge'}]}
+            (run / 'knowledge' / 'landscape-brief-test.json').write_text(json.dumps(brief))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            node = next(node for node in graph['nodes'] if node['kind'] == 'landscape_brief')
+            self.assertEqual(node['data']['disposition'], 'NEEDS_EVIDENCE')
+            edge = next(edge for edge in graph['edges'] if edge['relation'] == 'inspects_explicit_source')
+            self.assertEqual((edge['source'], edge['target']), ('landscape_brief:LB-1', 'paper:P1'))
+            self.assertEqual(edge['data']['locator'], 'p. 2')
+            self.assertFalse(any(edge['target'] == 'paper:MISSING' for edge in graph['edges']))
+            self.assertEqual(graph['timeline'][-1]['kind'], 'landscape_brief')
+
     def test_timeline_uses_only_timestamped_artifacts_in_chronological_order(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'observability').mkdir()

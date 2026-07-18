@@ -27,6 +27,7 @@ class LegacyRun:
     skill_events: list[dict[str, Any]]
     claims: list[dict[str, Any]]
     knowledge_contexts: list[dict[str, Any]]
+    landscape_briefs: list[dict[str, Any]]
     opportunity_map: dict[str, Any]
     research_problems: list[dict[str, Any]]
     gaps: list[str]
@@ -47,6 +48,9 @@ def load_legacy_run(path: Path) -> LegacyRun:
     knowledge_contexts = []
     for context_path in sorted((path / "knowledge").glob("knowledge-context*.json")) if (path / "knowledge").exists() else []:
         knowledge_contexts.append(json.loads(context_path.read_text(encoding="utf-8")))
+    landscape_briefs = []
+    for brief_path in sorted((path / "knowledge").glob("landscape-brief*.json")) if (path / "knowledge").exists() else []:
+        landscape_briefs.append(json.loads(brief_path.read_text(encoding="utf-8")))
     opportunity_path = path / "knowledge" / "opportunity-map.json"
     opportunity_map = json.loads(opportunity_path.read_text(encoding="utf-8")) if opportunity_path.exists() else {}
     research_problems = []
@@ -76,7 +80,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 run 尚无 opportunity-map artifact；无法展示现实情境到研究问题的受控启发链路")
     if not research_problems:
         gaps.append("当前 run 尚无 research-problem-card artifact；无法展示两种解释、可区分观测与最小证伪条件")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, opportunity_map, research_problems, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, knowledge_contexts, landscape_briefs, opportunity_map, research_problems, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -241,6 +245,24 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
             for source_id in step.get("evidence_refs", []):
                 if source_id in known_paper_ids:
                     edge(step_node, f"paper:{source_id}", "uses_explicit_evidence")
+    for brief in run.landscape_briefs:
+        brief_id = str(brief.get("brief_id") or brief.get("artifact_id") or brief.get("created_at") or "unknown")
+        brief_node = f"landscape_brief:{brief_id}"
+        nodes.append(_node(brief_node, "landscape_brief", brief.get("question", brief_id),
+                           brief_id=brief_id, disposition=brief.get("disposition"),
+                           observed_tension=brief.get("observed_tension", ""),
+                           sources_do_not_establish=brief.get("sources_do_not_establish", []),
+                           causal_fingerprint=brief.get("causal_fingerprint", {}),
+                           rival_worlds=brief.get("rival_worlds", []),
+                           smallest_next_discriminator=brief.get("smallest_next_discriminator", ""),
+                           named_missing_premise=brief.get("named_missing_premise", ""),
+                           immutable=brief.get("immutable") is True))
+        edge(f"run:{run_id}", brief_node, "records_landscape_brief")
+        for source in brief.get("inspected_sources", []):
+            source_id = source.get("source_id")
+            if source_id in known_paper_ids:
+                edge(brief_node, f"paper:{source_id}", "inspects_explicit_source",
+                     locator=source.get("locator", ""), observation=source.get("observation", ""))
     if run.opportunity_map:
         map_id = str(run.opportunity_map.get("map_id", "unknown"))
         opportunity_node = f"opportunity_map:{map_id}"
@@ -294,6 +316,10 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
         if context.get("created_at"):
             timeline.append({"at": context["created_at"], "kind": "knowledge_context", "id": context.get("context_id"),
                              "label": f"知识收缩上下文 · {context.get('decision_node', 'unknown')}", "valid_until": context.get("valid_until")})
+    for brief in run.landscape_briefs:
+        if brief.get("created_at"):
+            timeline.append({"at": brief["created_at"], "kind": "landscape_brief", "id": brief.get("brief_id") or brief.get("artifact_id") or brief["created_at"],
+                             "label": f"证据景观简报 · {brief.get('disposition', 'UNSPECIFIED')}", "immutable": brief.get("immutable") is True})
     if run.opportunity_map.get("created_at"):
         timeline.append({"at": run.opportunity_map["created_at"], "kind": "opportunity_map", "id": run.opportunity_map.get("map_id"),
                          "label": f"现实机会图 · {run.opportunity_map.get('scope', 'unknown')}", "valid_until": run.opportunity_map.get("valid_until")})
