@@ -1269,9 +1269,9 @@
       "human_inspection_state": "NOT_RECORDED",
       "content_digest": "",
       "inspection_spans": [],
-      "zotero_item_key": null,
+      "zotero_item_key": "7QYWEMTJ",
       "zotero_attachment_key": null,
-      "zotero_attachment_state": "",
+      "zotero_attachment_state": "ITEM_ONLY_NO_LOCAL_PDF",
       "zotero_snapshot_state": "",
       "local_cache_state": "",
       "local_cache_path": "",
@@ -2401,9 +2401,9 @@
       "human_inspection_state": "NOT_RECORDED",
       "content_digest": "",
       "inspection_spans": [],
-      "zotero_item_key": null,
+      "zotero_item_key": "UJG2ULAH",
       "zotero_attachment_key": null,
-      "zotero_attachment_state": "",
+      "zotero_attachment_state": "ITEM_ONLY_NO_LOCAL_PDF",
       "zotero_snapshot_state": "",
       "local_cache_state": "",
       "local_cache_path": "",
@@ -4220,6 +4220,20 @@
       "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
       "collection_role": "HISTORY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67",
+      "atr_id": "zotero_reconciliation:sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67",
+      "title": "Zotero 本地来源对账 · multilingual-agent-action-attribution",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-MAPS-2025",
+        "SRC-TALE-2024"
+      ]
     }
   ],
   "feedback_contract": {

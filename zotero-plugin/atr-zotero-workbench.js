@@ -941,6 +941,16 @@ var ATRZoteroWorkbench = {
 				["符合性", data.conformance],
 			];
 		}
+		else if (node.kind === "zotero_source_reconciliation") {
+			title = "Zotero 本地来源对账";
+			sections = [
+				["Program", data.program_key || "portfolio"],
+				["可用性摘要", JSON.stringify(data.summary || {})],
+				["读取策略", JSON.stringify(data.policy || {})],
+				["控制器边界", data.controller_boundary],
+				["不能推出", "本地书目/PDF 可用不等于全文已检查，也不构成 claim、gate 或 route。"],
+			];
+		}
 		else if (node.kind === "historical_alignment_audit") {
 			title = "历史归位审计";
 			sections = [
@@ -2338,6 +2348,25 @@ var ATRZoteroWorkbench = {
 			this.appendPaneButton(doc, body, "进入 child 并开始 owner review", () => this.openProgramReviewNode(decisionNode), true);
 			this.appendPaneButton(doc, body, "只进入 child topic", () => this.openProgramNode(decisionNode));
 			this.appendPaneText(doc, body, "owner review 输入写入 child 的碰撞复核 Note；portfolio 只负责导航，不拥有 child lifecycle。", false);
+			return;
+		}
+
+		if (decisionNode?.kind === "zotero_source_reconciliation") {
+			setSectionSummary("Zotero 来源对账 · 只读");
+			let summary = decisionNode.data?.summary || {};
+			this.appendPaneText(doc, body, "严格身份匹配：" + String(summary.exact_identity_matches || 0), true);
+			this.appendPaneText(doc, body, "Zotero 本地 PDF：" + String(summary.local_fulltext || 0));
+			this.appendPaneText(doc, body, "只有书目无本地 PDF：" + String(summary.items_without_local_fulltext || 0));
+			this.appendPaneText(doc, body, "仍需身份复核：" + String(summary.identity_review_required || summary.title_matches_requiring_review || 0));
+			this.appendPaneText(doc, body, "未在 Zotero 找到：" + String(summary.not_found || 0));
+			this.appendPaneText(doc, body, "本地可用不等于全文已检查，不会自动改变 claim、gate、route 或 lifecycle。", false);
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let linked = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id && edge.relation === "confirms_zotero_local_availability")
+				.map(edge => byID[edge.target]).filter(Boolean);
+			for (let paper of linked) {
+				this.appendPaneButton(doc, body, "打开 Zotero 来源 · " + paper.label, () => this.openSourceForCoReading(paper));
+			}
 			return;
 		}
 

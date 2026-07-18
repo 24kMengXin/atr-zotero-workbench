@@ -748,9 +748,9 @@
       "human_inspection_state": "NOT_RECORDED",
       "content_digest": "",
       "inspection_spans": [],
-      "zotero_item_key": null,
+      "zotero_item_key": "7QYWEMTJ",
       "zotero_attachment_key": null,
-      "zotero_attachment_state": "",
+      "zotero_attachment_state": "ITEM_ONLY_NO_LOCAL_PDF",
       "zotero_snapshot_state": "",
       "local_cache_state": "",
       "local_cache_path": "",
@@ -2092,6 +2092,19 @@
       "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
       "collection_role": "HISTORY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c",
+      "atr_id": "zotero_reconciliation:sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c",
+      "title": "Zotero 本地来源对账 · multilingual-agent-authorization-safety",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-MAPS-2025"
+      ]
     }
   ],
   "feedback_contract": {

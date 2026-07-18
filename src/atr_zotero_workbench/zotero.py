@@ -412,6 +412,16 @@ def native_projection(graph: dict) -> dict:
                 "review_role": "IMMUTABLE_MIGRATION_BOUNDARY", "collection_role": "HISTORY",
                 "linked_source_ids": [],
             })
+        elif node.get("kind") == "zotero_source_reconciliation":
+            objects.append({
+                "object_id": f"zotero-reconciliation:{node['id']}",
+                "object_kind": "alignment_audit_note",
+                "graph_node_id": node["id"], "atr_id": node["id"],
+                "title": node.get("label"),
+                "marker": f"ATR Alignment Audit Node: {node['id']}",
+                "collection_role": "HISTORY", "review_role": "AVAILABILITY_AUDIT_ONLY",
+                "linked_source_ids": linked_sources(node["id"]),
+            })
     projection = {
         "schema_version": "0.1",
         "projection": "atr-zotero-native-map",

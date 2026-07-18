@@ -489,6 +489,48 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                     if gap != "no LEGACY_MAPPED artifact manifests"
                 ]
                 edge(mapping_node, legacy_node, "maps_exact_consumed_artifacts", manifest_count=len(rows))
+        if artifact_type == "zotero-local-source-reconciliation":
+            program_key = payload.get("program_key")
+            scope = str(program_key or payload.get("scope") or "portfolio")
+            audit_node = ensure_node(
+                f"zotero_reconciliation:{artifact_id}", "zotero_source_reconciliation",
+                "Zotero 本地来源对账 · " + scope,
+                program_key=program_key, summary=payload.get("summary", {}),
+                policy=payload.get("policy", {}),
+                controller_boundary=payload.get("controller_boundary"), artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", audit_node, "materializes_zotero_local_availability_audit")
+            for match in payload.get("matches", []):
+                if not isinstance(match, dict) or not match.get("source_id"):
+                    continue
+                source_id = str(match["source_id"])
+                paper_node = ensure_node(
+                    f"paper:{source_id}", "paper", str(match.get("title") or source_id),
+                    source_id=source_id,
+                )
+                paper = next(item for item in nodes if item["id"] == paper_node)
+                status = str(match.get("identity_status") or "")
+                if status == "EXACT_IDENTITY_MATCH":
+                    pdfs = match.get("pdf_attachments", [])
+                    prior_fulltext_state = paper["data"].get("fulltext_state")
+                    reconciled_fulltext_state = prior_fulltext_state if prior_fulltext_state in {
+                        "FULLTEXT_INSPECTED", "BOUNDED_SPANS_INSPECTED",
+                    } else ("ATTACHED_NOT_INSPECTED" if pdfs else prior_fulltext_state)
+                    paper["data"].update({
+                        "zotero_identity_status": status,
+                        "zotero_item_key": match.get("zotero_item_key"),
+                        "zotero_attachment_state": "LOCAL_PDF_VERIFIED" if pdfs else "ITEM_ONLY_NO_LOCAL_PDF",
+                        "zotero_attachment_key": pdfs[0].get("attachment_key") if pdfs else None,
+                        "zotero_open_uri": pdfs[0].get("zotero_open_uri") if pdfs else None,
+                        "zotero_local_pdf_sha256": pdfs[0].get("sha256") if pdfs else None,
+                        "human_annotation_count": match.get("human_annotation_count", 0),
+                        "fulltext_state": reconciled_fulltext_state,
+                    })
+                    edge(audit_node, paper_node, "confirms_zotero_local_availability",
+                         local_fulltext=bool(pdfs))
+                else:
+                    edge(audit_node, paper_node, "flags_zotero_identity_candidate",
+                         identity_status=status)
         if artifact_type == "historical-alignment-summary":
             audit_node = ensure_node(
                 f"alignment_audit:{payload.get('audit_digest', artifact_id)}", "historical_alignment_audit",

@@ -1631,6 +1631,17 @@
       "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
       "collection_role": "HISTORY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca",
+      "atr_id": "zotero_reconciliation:sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca",
+      "title": "Zotero 本地来源对账 · multilingual-agent-state-continuity",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

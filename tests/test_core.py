@@ -149,6 +149,45 @@ class BuildTest(unittest.TestCase):
                             and obj['graph_node_id'].startswith('legacy_mapping:')
                             for obj in projection['objects']))
 
+    def test_zotero_reconciliation_enriches_exact_source_without_claiming_inspection(self):
+        artifacts = [{
+            'artifact_id': 'sha256:s', 'digest': 's' * 64,
+            'kind': 'source-review', 'original_name': 'source.json',
+            'created_at': '2025-12-31', 'metadata_json': '{}',
+            'payload': {'artifact_type': 'source-review', 'sources': [{
+                'source_id': 'SRC-1', 'title': 'Paper', 'fulltext_state': 'FULLTEXT_INSPECTED',
+            }]},
+        }, {
+            'artifact_id': 'sha256:z', 'digest': 'z' * 64,
+            'kind': 'zotero-local-source-reconciliation', 'original_name': 'zotero.json',
+            'created_at': '2026-01-01', 'metadata_json': '{}',
+            'payload': {
+                'artifact_type': 'zotero-local-source-reconciliation', 'program_key': 'p',
+                'summary': {'exact_identity_matches': 1, 'local_fulltext': 1, 'not_found': 9},
+                'policy': {'availability_is_not_inspection': True},
+                'controller_boundary': 'review only',
+                'matches': [{
+                    'source_id': 'SRC-1', 'title': 'Paper', 'identity_status': 'EXACT_IDENTITY_MATCH',
+                    'zotero_item_key': 'ITEM1', 'human_annotation_count': 0,
+                    'pdf_attachments': [{'attachment_key': 'PDF1',
+                        'zotero_open_uri': 'zotero://open-pdf/library/items/PDF1', 'sha256': 'a' * 64}],
+                }],
+            },
+        }]
+        run = V2Run(Path('/r'), 'run', [{'subject_id': 'program:p', 'kind': 'program',
+            'state': 'INTAKE', 'version': 0, 'active': 1, 'created_at': '2026-01-01',
+            'updated_at': '2026-01-01'}], artifacts, [], [], [])
+        graph = project_v2_graph(run)
+        paper = next(node for node in graph['nodes'] if node['id'] == 'paper:SRC-1')
+        self.assertEqual(paper['data']['zotero_attachment_state'], 'LOCAL_PDF_VERIFIED')
+        self.assertEqual(paper['data']['fulltext_state'], 'FULLTEXT_INSPECTED')
+        self.assertTrue(any(node['kind'] == 'zotero_source_reconciliation' for node in graph['nodes']))
+        self.assertTrue(any(edge['relation'] == 'confirms_zotero_local_availability' for edge in graph['edges']))
+        projection = native_projection(graph)
+        self.assertTrue(any(obj['object_kind'] == 'alignment_audit_note'
+                            and obj['review_role'] == 'AVAILABILITY_AUDIT_ONLY'
+                            for obj in projection['objects']))
+
     def test_registry_review_finds_pending_feedback_across_topics(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

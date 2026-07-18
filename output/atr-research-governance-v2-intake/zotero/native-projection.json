@@ -1120,6 +1120,17 @@
       "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
       "collection_role": "HISTORY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917",
+      "atr_id": "zotero_reconciliation:sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917",
+      "title": "Zotero 本地来源对账 · atr-research-governance",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

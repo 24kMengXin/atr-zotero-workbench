@@ -13,6 +13,7 @@ from .runs import register_run
 from .zotero import export_bundle, export_native_projection, sync_web_api
 from .zotero_local import (pull_local_feedback, pull_registry_feedback,
                            snapshot_local_feedback, snapshot_registry_feedback)
+from .zotero_reconcile import reconcile_sources, write_reconciliation, write_reconciliation_markdown
 
 
 # The graph is embedded at build time so the page works in Zotero's file:// tab
@@ -104,6 +105,7 @@ def main() -> None:
     zlp = sub.add_parser("zotero-local-pull"); zlp.add_argument("directory", type=Path)
     zlrs = sub.add_parser("zotero-local-registry-snapshot"); zlrs.add_argument("registry", type=Path)
     zlrp = sub.add_parser("zotero-local-registry-pull"); zlrp.add_argument("registry", type=Path); zlrp.add_argument("--review-out", type=Path)
+    zrec = sub.add_parser("zotero-reconcile-sources"); zrec.add_argument("inventory", type=Path); zrec.add_argument("--out", type=Path, required=True); zrec.add_argument("--markdown-out", type=Path)
     a = p.parse_args()
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
@@ -137,6 +139,10 @@ def main() -> None:
             pulled["review_registry"] = review_registry(a.registry, a.review_out)["counts"]
             pulled["review_out"] = str(a.review_out)
         print(json.dumps(pulled, ensure_ascii=False))
+    elif a.cmd == "zotero-reconcile-sources":
+        report = reconcile_sources(a.inventory); write_reconciliation(report, a.out)
+        if a.markdown_out: write_reconciliation_markdown(report, a.markdown_out)
+        print(json.dumps({"written": str(a.out), **report["summary"]}, ensure_ascii=False))
     else:
         graph = json.loads((a.directory / "graph.json").read_text(encoding="utf-8"))
         print(json.dumps({"written": str(export_native_projection(graph, a.directory))}, ensure_ascii=False))

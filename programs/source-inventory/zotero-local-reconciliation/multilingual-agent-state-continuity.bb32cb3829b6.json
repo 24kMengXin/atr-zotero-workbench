@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "zotero-local-source-reconciliation",
+  "captured_at": "2026-07-18T23:49:27.922350+00:00",
+  "policy": {
+    "zotero_read_only": true,
+    "no_download": true,
+    "availability_is_not_inspection": true,
+    "title_only_requires_review": true
+  },
+  "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
+  "scope": "program",
+  "program_key": "multilingual-agent-state-continuity",
+  "summary": {
+    "canonical_sources": 30,
+    "exact_identity_matches": 0,
+    "local_fulltext": 0,
+    "identity_review_required": 0,
+    "not_found": 30
+  },
+  "matches": []
+}

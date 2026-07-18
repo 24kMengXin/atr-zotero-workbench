@@ -121,15 +121,6 @@
       "artifact_ids": [
         "sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b"
       ]
-    },
-    {
-      "at": "2026-07-18T23:52:30.463807+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-f861fe86ac99",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95"
-      ]
     }
   ],
   "nodes": [
@@ -577,14 +568,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "53GAPKMY",
-        "zotero_attachment_key": "635HN4RP",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -601,11 +592,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/635HN4RP",
-        "zotero_local_pdf_sha256": "92d9535a8df4012ddbb2cc7693738615b1fc1bcb7e6474546da3d82fc33a9422",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -725,14 +712,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "SREKTU7F",
-        "zotero_attachment_key": "BL5ZHWB2",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -749,11 +736,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/BL5ZHWB2",
-        "zotero_local_pdf_sha256": "21bda074f5ccf97014b64833e7efcd5306f776e15c2a75f0734fa5600a9523aa",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -1065,14 +1048,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "LQ66SCHU",
-        "zotero_attachment_key": "PGFVKK6C",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -1089,11 +1072,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/PGFVKK6C",
-        "zotero_local_pdf_sha256": "f4a9c054adc7d129cd2863cb20a63c1da3b7701fbe1acc23ca71d9dd0d7312f3",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -3469,14 +3448,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "WXXKFXG7",
-        "zotero_attachment_key": "3KYR22B9",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -3493,11 +3472,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/3KYR22B9",
-        "zotero_local_pdf_sha256": "3b4e521c47fc09c3112c56bf92ae59e9ba64c4d180b6fc269fb7f5293c8afb99",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -4097,14 +4072,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "FI3C5YEM",
-        "zotero_attachment_key": "I3VI6789",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -4121,11 +4096,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/I3VI6789",
-        "zotero_local_pdf_sha256": "388b2cad3f30b05ef0095866a3fee11bbfe2f7535dfbd4c53db6078808921795",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -5228,14 +5199,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "K3A58RZP",
-        "zotero_attachment_key": "SEGNAJ4N",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -5252,11 +5223,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/SEGNAJ4N",
-        "zotero_local_pdf_sha256": "0db7a1cf6c90e63605a47f8a3aca3e3581f2b1aa39e0912840a1df9dd8356ee9",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -5424,14 +5391,14 @@
         "access_status": "METADATA_ONLY",
         "access_route": "NONE",
         "content_form": "",
-        "fulltext_state": "ATTACHED_NOT_INSPECTED",
+        "fulltext_state": "",
         "worker_inspection_state": "NOT_RECORDED",
         "human_inspection_state": "NOT_RECORDED",
         "content_digest": "",
         "inspection_spans": [],
-        "zotero_item_key": "GY7QJUAY",
-        "zotero_attachment_key": "GJ6ZLZRN",
-        "zotero_attachment_state": "LOCAL_PDF_VERIFIED",
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
         "zotero_snapshot_state": "",
         "local_cache_state": "",
         "local_cache_path": "",
@@ -5448,11 +5415,7 @@
         "observed_at": null,
         "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
         "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
-        "zotero_identity_status": "EXACT_IDENTITY_MATCH",
-        "zotero_open_uri": "zotero://open-pdf/library/items/GJ6ZLZRN",
-        "zotero_local_pdf_sha256": "385001c0ab82c62aba9c887e879ca48329939b5144aa82d77f256d25d0499ddb",
-        "human_annotation_count": 0
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
       }
     },
     {
@@ -7816,47 +7779,6 @@
       }
     },
     {
-      "id": "artifact:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · f861fe86ac99",
-      "data": {
-        "artifact_id": "sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-        "original_name": "multilingual-representation-and-data-decisions.f861fe86ac99.json",
-        "created_at": "2026-07-18T23:52:30.381022+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/multilingual-representation-and-data-decisions.f861fe86ac99.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · multilingual-representation-and-data-decisions",
-      "data": {
-        "program_key": "multilingual-representation-and-data-decisions",
-        "summary": {
-          "canonical_sources": 135,
-          "exact_identity_matches": 7,
-          "local_fulltext": 7,
-          "identity_review_required": 3,
-          "not_found": 125
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -8051,21 +7973,6 @@
         "role": "LEGACY_MAPPING_INDEX_REVIEW_ONLY",
         "note": "Declares exact legacy artifacts consumed by current alignment; no lifecycle, claim, gate, or route effect.",
         "created_at": "2026-07-18T23:17:57.739789+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-f861fe86ac99",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 13,
-        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-f861fe86ac99",
-        "subject_id": "program:multilingual-representation-and-data-decisions",
-        "subject_version": 0,
-        "artifact_id": "sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-18T23:52:30.463807+00:00"
       }
     }
   ],
@@ -10517,98 +10424,6 @@
       }
     },
     {
-      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-      "target": "artifact:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-AUTOPE-2023",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-CAMT-2024",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-COMPENSATING-DATA-REASONING-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-LRM-MT-TRENDS-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-MQM-APE-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-MT-R1-ZERO-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-QUALITY-AWARE-DECODING-2022",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-R1-T1-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-RAGTRANS-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "target": "paper:SRC-TEAR-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
       "source": "subject:program:multilingual-representation-and-data-decisions",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "relation": "records_transition",
@@ -10763,18 +10578,6 @@
       "target": "artifact:sha256:a7b610aa4b620353d0459f4c0265e5ab9c18e2eb251039a11b95bf5756ee055b",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-representation-and-data-decisions",
-      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-f861fe86ac99",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-f861fe86ac99",
-      "target": "artifact:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -10866,16 +10669,8 @@
         "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
         "node_count": 331,
         "edge_count": 428
-      },
-      {
-        "id": "c23eb63e27d00012",
-        "archived_at": "2026-07-18T23:52:42.457299+00:00",
-        "path": "history/projections/c23eb63e27d00012.json",
-        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "node_count": 331,
-        "edge_count": 428
       }
     ],
-    "previous_projection": "c23eb63e27d00012"
+    "previous_projection": "e56b2e437af7fc13"
   }
 }

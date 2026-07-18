@@ -1586,6 +1586,17 @@
       "review_role": "IMMUTABLE_MIGRATION_BOUNDARY",
       "collection_role": "HISTORY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f",
+      "atr_id": "zotero_reconciliation:sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f",
+      "title": "Zotero 本地来源对账 · agent-infrastructure-and-evaluation-contracts",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

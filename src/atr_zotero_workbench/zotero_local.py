@@ -82,6 +82,7 @@ class LocalZoteroAPI:
         self.fetcher = fetcher or self._fetch
         self._list_cache: dict[tuple[str, str | None], list[dict[str, Any]]] = {}
         self._item_cache: dict[str, dict[str, Any]] = {}
+        self._endpoint_cache: dict[str, list[dict[str, Any]]] = {}
 
     @staticmethod
     def _fetch(url: str) -> Any:
@@ -114,9 +115,34 @@ class LocalZoteroAPI:
             self._item_cache[key] = self.fetcher(self.base_url + "/items/" + urllib.parse.quote(key))
         return self._item_cache[key]
 
+    def paged_endpoint(self, endpoint: str, **params: Any) -> list[dict[str, Any]]:
+        cache_key = endpoint + "?" + urllib.parse.urlencode(sorted(params.items()))
+        if cache_key in self._endpoint_cache:
+            return self._endpoint_cache[cache_key]
+        base_params = {"limit": 100, **params}
+        items: list[dict[str, Any]] = []
+        start = 0
+        while True:
+            page = self.fetcher(self.base_url + endpoint + "?" + urllib.parse.urlencode({**base_params, "start": start}))
+            if not isinstance(page, list):
+                raise ValueError("Zotero local API paged endpoint did not return a JSON array")
+            items.extend(page)
+            if len(page) < 100:
+                break
+            start += len(page)
+        self._endpoint_cache[cache_key] = items
+        return items
+
+    def top_items(self) -> list[dict[str, Any]]:
+        return self.paged_endpoint("/items/top", sort="dateModified", direction="desc")
+
+    def children(self, key: str) -> list[dict[str, Any]]:
+        return self.paged_endpoint("/items/" + urllib.parse.quote(key) + "/children")
+
     def refresh(self) -> None:
         self._list_cache.clear()
         self._item_cache.clear()
+        self._endpoint_cache.clear()
 
 
 def _workspace_scope(workspace: Path) -> tuple[dict[str, Any], set[str], set[str]]:

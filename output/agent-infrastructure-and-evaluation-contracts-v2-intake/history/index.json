@@ -88,6 +88,14 @@
       "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "node_count": 116,
       "edge_count": 217
+    },
+    {
+      "id": "cf8e8b504806a8a2",
+      "archived_at": "2026-07-18T23:52:41.564719+00:00",
+      "path": "history/projections/cf8e8b504806a8a2.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 116,
+      "edge_count": 217
     }
   ]
 }

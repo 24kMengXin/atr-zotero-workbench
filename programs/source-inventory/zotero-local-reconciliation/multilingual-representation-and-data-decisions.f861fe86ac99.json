@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "zotero-local-source-reconciliation",
+  "captured_at": "2026-07-18T23:49:27.922350+00:00",
+  "policy": {
+    "zotero_read_only": true,
+    "no_download": true,
+    "availability_is_not_inspection": true,
+    "title_only_requires_review": true
+  },
+  "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
+  "scope": "program",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "summary": {
+    "canonical_sources": 135,
+    "exact_identity_matches": 7,
+    "local_fulltext": 7,
+    "identity_review_required": 3,
+    "not_found": 125
+  },
+  "matches": [
+    {
+      "canonical_source_id": "SRC-AUTOPE-2023",
+      "title": "Leveraging GPT-4 for Automatic Translation Post-Editing",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "53GAPKMY",
+      "zotero_item_title": "Leveraging GPT-4 for Automatic Translation Post-Editing",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "635HN4RP",
+          "filename": "Raunak 等 - 2023 - Leveraging GPT-4 for Automatic Translation Post-Editing.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/635HN4RP",
+          "size_bytes": 220453,
+          "sha256": "92d9535a8df4012ddbb2cc7693738615b1fc1bcb7e6474546da3d82fc33a9422",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-AUTOPE-2023"
+    },
+    {
+      "canonical_source_id": "SRC-CAMT-2024",
+      "title": "Benchmarking Machine Translation with Cultural Awareness",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "SREKTU7F",
+      "zotero_item_title": "Benchmarking Machine Translation with Cultural Awareness",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "BL5ZHWB2",
+          "filename": "Yao 等 - 2024 - Benchmarking Machine Translation with Cultural Awareness.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/BL5ZHWB2",
+          "size_bytes": 1618996,
+          "sha256": "21bda074f5ccf97014b64833e7efcd5306f776e15c2a75f0734fa5600a9523aa",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-CAMT-2024"
+    },
+    {
+      "canonical_source_id": "SRC-COMPENSATING-DATA-REASONING-2025",
+      "title": "Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_ARXIV_ID",
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "LQ66SCHU",
+      "zotero_item_title": "Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "PGFVKK6C",
+          "filename": "Frontull和Ströhle - 2025 - Compensating for Data with Reasoning Low-Resource Machine Translation with LLMs.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/PGFVKK6C",
+          "size_bytes": 340390,
+          "sha256": "f4a9c054adc7d129cd2863cb20a63c1da3b7701fbe1acc23ca71d9dd0d7312f3",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-COMPENSATING-DATA-REASONING-2025"
+    },
+    {
+      "canonical_source_id": "SRC-LRM-MT-TRENDS-2025",
+      "title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_ARXIV_ID",
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "WXXKFXG7",
+      "zotero_item_title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "3KYR22B9",
+          "filename": "Liu 等 - 2025 - New Trends for Modern Machine Translation with Large Reasoning Models.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/3KYR22B9",
+          "size_bytes": 5368614,
+          "sha256": "3b4e521c47fc09c3112c56bf92ae59e9ba64c4d180b6fc269fb7f5293c8afb99",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-LRM-MT-TRENDS-2025"
+    },
+    {
+      "canonical_source_id": "SRC-MQM-APE-2025",
+      "title": "MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "TITLE_MATCH_REQUIRES_REVIEW",
+      "match_methods": [
+        "EXACT_NORMALIZED_TITLE"
+      ],
+      "zotero_item_key": "SDX6HNW2",
+      "zotero_item_title": "MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators",
+      "access_status": "IDENTITY_REVIEW_REQUIRED",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-MQM-APE-2025"
+    },
+    {
+      "canonical_source_id": "SRC-MT-R1-ZERO-2025",
+      "title": "MT-R1-Zero: Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_ARXIV_ID",
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "FI3C5YEM",
+      "zotero_item_title": "MT-R1-Zero: Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "I3VI6789",
+          "filename": "Feng 等 - 2025 - MT-R1-Zero Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/I3VI6789",
+          "size_bytes": 2340333,
+          "sha256": "388b2cad3f30b05ef0095866a3fee11bbfe2f7535dfbd4c53db6078808921795",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-MT-R1-ZERO-2025"
+    },
+    {
+      "canonical_source_id": "SRC-QUALITY-AWARE-DECODING-2022",
+      "title": "Quality-Aware Decoding for Neural Machine Translation",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "K3A58RZP",
+      "zotero_item_title": "Quality-Aware Decoding for Neural Machine Translation",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "SEGNAJ4N",
+          "filename": "Fernandes 等 - 2022 - Quality-Aware Decoding for Neural Machine Translation.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/SEGNAJ4N",
+          "size_bytes": 478874,
+          "sha256": "0db7a1cf6c90e63605a47f8a3aca3e3581f2b1aa39e0912840a1df9dd8356ee9",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-QUALITY-AWARE-DECODING-2022"
+    },
+    {
+      "canonical_source_id": "SRC-R1-T1-2025",
+      "title": "R1-T1: Fully Incentivizing Translation Capability in LLMs via Reasoning Learning",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_ARXIV_ID",
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "GY7QJUAY",
+      "zotero_item_title": "R1-T1: Fully Incentivizing Translation Capability in LLMs via Reasoning Learning",
+      "access_status": "ZOTERO_LOCAL_FULLTEXT",
+      "local_fulltext": true,
+      "pdf_attachments": [
+        {
+          "attachment_key": "GJ6ZLZRN",
+          "filename": "He 等 - 2025 - R1-T1 Fully Incentivizing Translation Capability in LLMs via Reasoning Learning.pdf",
+          "link_mode": "imported_url",
+          "zotero_open_uri": "zotero://open-pdf/library/items/GJ6ZLZRN",
+          "size_bytes": 836789,
+          "sha256": "385001c0ab82c62aba9c887e879ca48329939b5144aa82d77f256d25d0499ddb",
+          "annotation_count": 0
+        }
+      ],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-R1-T1-2025"
+    },
+    {
+      "canonical_source_id": "SRC-RAGTRANS-2025",
+      "title": "Retrieval-Augmented Machine Translation with Unstructured Knowledge",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "TITLE_MATCH_REQUIRES_REVIEW",
+      "match_methods": [
+        "EXACT_NORMALIZED_TITLE"
+      ],
+      "zotero_item_key": "RK5JBPI3",
+      "zotero_item_title": "Retrieval-Augmented Machine Translation with Unstructured Knowledge",
+      "access_status": "IDENTITY_REVIEW_REQUIRED",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-RAGTRANS-2025"
+    },
+    {
+      "canonical_source_id": "SRC-TEAR-2025",
+      "title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "TITLE_MATCH_REQUIRES_REVIEW",
+      "match_methods": [
+        "EXACT_NORMALIZED_TITLE"
+      ],
+      "zotero_item_key": "R4HWU558",
+      "zotero_item_title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+      "access_status": "IDENTITY_REVIEW_REQUIRED",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-TEAR-2025"
+    }
+  ]
+}

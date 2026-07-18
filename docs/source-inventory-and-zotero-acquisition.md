@@ -13,6 +13,9 @@
 - `canonical-sources.jsonl`：一个可能的书目对象一行；
 - `source-occurrences.jsonl`：每次历史使用一行，绝不因去重丢失；
 - `zotero-acquisition-queue.json`：按 canonical/重复频次排序的 Zotero 获取与检查队列。
+- `zotero-local-reconciliation.json`：只读 local API 对账快照；严格身份匹配、本地 PDF 摘要、Zotero item/attachment key 与 annotation 数分开记录。
+
+2026-07-19 对日常 Zotero 的实查不再沿用“344/344 都只有链接”的旧结论：148 个顶层条目中，9 个与 canonical source 严格匹配；其中 7 个确认存在本地 PDF，2 个只有书目；另有 3 个仅标题相同，保持 `IDENTITY_REVIEW_REQUIRED`；332 个未找到。7 个 PDF 均记录 SHA-256，但全部仍是 `ATTACHED_NOT_INSPECTED`，不能据此宣称 worker 已读全文。第一次实现曾错误删除 OpenReview `?id=` 并造成四篇论文碰撞，已清退该结果、改为站点感知归一化并加入回归门禁。详见 [Zotero 本地对账](source-inventory-zotero-reconciliation.md)。
 
 重建命令：
 
