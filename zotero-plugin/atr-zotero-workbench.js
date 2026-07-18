@@ -357,7 +357,9 @@ var ATRZoteroWorkbench = {
           let nearest = paper ? edges.filter(edge => edge.target === paper.id && edge.relation === "anchored_by")
             .map(edge => by[edge.source]).filter(node => node?.kind === "research_question") : [];
           let review = xul("vbox"); review.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
-          review.append(label(paper?.label || event.atr_source_id || "未映射来源", "font-weight:bold;white-space:normal"));
+          let claim = claims.find(node => node.data?.claim_id === event.atr_claim_id);
+          review.append(label(claim?.label || paper?.label || event.atr_claim_id || event.atr_source_id || "未映射反馈目标", "font-weight:bold;white-space:normal"));
+          review.append(label("立场：" + (event.review_stance || "UNSPECIFIED") + " · 原文定位：" + (event.source_locator || "未填写"), "white-space:normal;color:#365b47"));
           review.append(label("最近研究问题：" + (nearest.map(node => node.label).join(" · ") || "尚未在当前投影中找到"), "white-space:normal;color:#365b47"));
           review.append(label(this.plainNote(event.note_html).slice(0, 420) || "（笔记内容为空）", "white-space:normal;color:#475569;margin-top:4px"));
           reviewBox.append(review);

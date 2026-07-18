@@ -166,6 +166,8 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(item['review_target_type'], 'claim')
             self.assertEqual(item['annotation_claim_id'], 'C1')
             self.assertEqual(item['nearest_research_branches'][0]['question'], 'Why?')
+            self.assertEqual(item['nearest_decision_objects'][0]['id'], 'claim:C1')
+            self.assertEqual(item['nearest_decision_objects'][0]['distance_from_review_target'], 0)
 
     def test_review_packet_is_immutable_and_requires_owner_decision(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -186,6 +188,7 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(packet['review']['stance'], 'CHALLENGES')
             self.assertEqual(packet['review']['source_locator'], 'p. 7, para. 2')
             self.assertEqual(packet['status'], 'PENDING_ATR_OWNER_REVIEW')
+            self.assertEqual(packet['impact']['nearest_decision_objects'][0]['id'], 'claim:C1')
             self.assertIn('OPEN_CLAIM_REVIEW', packet['required_owner_decision']['allowed_dispositions'])
             self.assertEqual(materialize_review_packets(out)['existing'], 1)
 

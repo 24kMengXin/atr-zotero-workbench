@@ -30,7 +30,7 @@ def impact_report(output: Path) -> dict[str, Any]:
         # claim review.
         start = by_claim.get(claim) or by_source.get(source)
         target_type = "claim" if by_claim.get(claim) else ("source" if by_source.get(source) else "unmapped")
-        questions, claims, paths = [], [], {}
+        questions, claims, decision_objects, paths = [], [], [], {}
         queue, seen = deque([start] if start else []), {start} if start else set()
         if start:
             paths[start] = [start]
@@ -40,6 +40,8 @@ def impact_report(output: Path) -> dict[str, Any]:
                 questions.append(current)
             if nodes[current]["kind"] == "claim" and current != start:
                 claims.append(current)
+            if nodes[current]["kind"] in {"claim", "research_question", "real_world_tension", "research_problem"}:
+                decision_objects.append(current)
             for neighbor in adjacency[current]:
                 if neighbor not in seen:
                     seen.add(neighbor)
@@ -67,6 +69,19 @@ def impact_report(output: Path) -> dict[str, Any]:
             for node_id in claims
         ]
         claim_paths.sort(key=lambda item: (item["distance_from_review_target"], item["claim"]))
+        decision_paths = [
+            {
+                "kind": nodes[node_id]["kind"],
+                "id": node_id,
+                "label": nodes[node_id]["label"],
+                "distance_from_review_target": len(paths[node_id]) - 1,
+                "path": [{"id": item, "label": nodes[item]["label"], "kind": nodes[item]["kind"]} for item in paths[node_id]],
+            }
+            for node_id in dict.fromkeys(decision_objects)
+        ]
+        decision_paths.sort(key=lambda item: (item["distance_from_review_target"], item["kind"], item["label"]))
+        nearest_decision_distance = decision_paths[0]["distance_from_review_target"] if decision_paths else None
+        nearest_decision_objects = [item for item in decision_paths if item["distance_from_review_target"] == nearest_decision_distance]
         affected.append({
             "event": event,
             "annotation_source_id": source,
@@ -76,6 +91,8 @@ def impact_report(output: Path) -> dict[str, Any]:
             "nearest_research_branches": nearest,
             "all_affected_research_questions": question_paths,
             "related_claims": claim_paths,
+            "nearest_decision_objects": nearest_decision_objects,
+            "all_affected_decision_objects": decision_paths,
             "codex_next_action": "请人工审阅该反馈；若它挑战断言或来源边界，创建新的 immutable ATR human-review-packet，再由 owner 决定是否重做 route/claim review。保留既有节点和边作为历史投影，不自动清退文献或改写 ATR lifecycle。",
         })
     return {"schema_version":"0.1", "projection": "derived-human-input-review", "events_seen":len(events),
@@ -114,6 +131,8 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
             "nearest_research_branches": affected["nearest_research_branches"],
             "all_affected_research_questions": affected["all_affected_research_questions"],
             "related_claims": affected["related_claims"],
+            "nearest_decision_objects": affected["nearest_decision_objects"],
+            "all_affected_decision_objects": affected["all_affected_decision_objects"],
             "recommended_next_action": affected["codex_next_action"],
             "event": event,
         })
@@ -167,6 +186,8 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
                 "nearest_research_branches": affected["nearest_research_branches"],
                 "all_affected_research_questions": affected["all_affected_research_questions"],
                 "related_claims": affected["related_claims"],
+                "nearest_decision_objects": affected["nearest_decision_objects"],
+                "all_affected_decision_objects": affected["all_affected_decision_objects"],
             },
             "required_owner_decision": {
                 "allowed_dispositions": ["ACCEPT_AS_REVIEW_INPUT", "REQUEST_CLARIFICATION", "OPEN_CLAIM_REVIEW", "OPEN_ROUTE_REVIEW", "NO_LIFECYCLE_CHANGE"],
