@@ -546,7 +546,23 @@ var ATRZoteroWorkbench = {
             row.append(review);
           }
           mapRow.append(row);
-          for (let child of edges.filter(edge => edge.source === concept.id && edge.relation === "specializes_concept").map(edge => by[edge.target]).filter(Boolean)) appendConcept(child, level + 1);
+          let children = edges.filter(edge => edge.source === concept.id && edge.relation === "specializes_concept").map(edge => by[edge.target]).filter(Boolean);
+          if (!children.length) return;
+          let toggle = xul("button"), descendants = xul("vbox"), expanded = false;
+          descendants.setAttribute("hidden", "true");
+          toggle.setAttribute("label", "展开下一级（" + children.length + "）");
+          toggle.addEventListener("command", () => {
+            expanded = !expanded; descendants.hidden = !expanded;
+            toggle.setAttribute("label", (expanded ? "收起下一级" : "展开下一级") + "（" + children.length + "）");
+          });
+          row.append(toggle, descendants);
+          let original = mapRow;
+          // Children belong visually to their parent rather than being appended
+          // into the map root.  Temporarily direct the recursive renderer to
+          // the collapsed container, then restore the outer map container.
+          mapRow = descendants;
+          for (let child of children) appendConcept(child, level + 1);
+          mapRow = original;
         };
         for (let root of edges.filter(edge => edge.source === map.id && edge.relation === "roots_concept").map(edge => by[edge.target]).filter(Boolean)) appendConcept(root, 0);
         conceptMapBox.append(mapRow);
