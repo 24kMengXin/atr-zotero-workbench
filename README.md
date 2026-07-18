@@ -19,6 +19,16 @@ python -m atr_zotero_workbench build \
 python -m atr_zotero_workbench serve ./output/multilingual
 ```
 
+要把新的 topic/run 加入插件可切换列表，在构建时显式登记它：
+
+```bash
+python -m atr_zotero_workbench build /path/to/atr-run \
+  --out ./output/my-topic --registry ./output/runs.json \
+  --run-key my-topic --label "我的研究主题"
+```
+
+工作台只显示这个 registry 中已登记的 run；它不会扫描或自动采纳未审计目录。
+
 打开终端显示的本地地址。点击节点可查看来源、证据边界和建议的人工阅读问题。
 
 ## Zotero 7 插件

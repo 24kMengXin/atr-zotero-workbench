@@ -1,11 +1,13 @@
 /* global IOUtils, PathUtils */
 var ATRZoteroWorkbench = {
-  id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay",
+  id: null, rootURI: null, observerID: null, addedElementIDs: [], overlayID: "atr-zotero-workbench-overlay", workspaceOverride: null,
   // This path deliberately matches the repo's generated workbench output. It is a user-visible pref.
   defaultWorkspace: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/multilingual",
+  defaultRegistry: "/Users/zone/Documents/research assistant/atr-zotero-workbench/output/runs.json",
   init({ id, rootURI }) { this.id = id; this.rootURI = rootURI; },
   log(message) { Zotero.debug("ATR Workbench: " + message); },
-  get workspace() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true) || this.defaultWorkspace; },
+  get workspace() { return this.workspaceOverride || Zotero.Prefs.get("extensions.atr-zotero-workbench.workspace", true) || this.defaultWorkspace; },
+  get registryPath() { return Zotero.Prefs.get("extensions.atr-zotero-workbench.registry", true) || this.defaultRegistry; },
   inboxPath() { return PathUtils.join(this.workspace, "human-input", "inbox.jsonl"); },
   // Keep the trace beside graph.json: that directory is created by the ATR
   // build, so a diagnostic must not depend on an extra directory API call.
@@ -32,6 +34,12 @@ var ATRZoteroWorkbench = {
     try {
       return (await Zotero.File.getContentsAsync(path)).split("\n")
         .filter(line => line.trim()).map(line => JSON.parse(line));
+    } catch (_) { return []; }
+  },
+  async loadRunRegistry() {
+    try {
+      let registry = JSON.parse(await Zotero.File.getContentsAsync(this.registryPath));
+      return (registry.runs || []).filter(run => run.key && run.workspace);
     } catch (_) { return []; }
   },
   plainNote(html) { return String(html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(); },
@@ -113,6 +121,7 @@ var ATRZoteroWorkbench = {
   async openWorkbench(window) {
     let doc = window.document;
     doc.getElementById(this.overlayID)?.remove();
+    let registeredRuns = await this.loadRunRegistry();
     await this.appendRuntimeStatus("open_requested", { window_uri: String(window.location) });
     let xul = name => doc.createXULElement(name);
     let label = (value, style = "") => {
@@ -130,6 +139,21 @@ var ATRZoteroWorkbench = {
     header.append(label("ATR × Zotero Research Workbench", "font-size:16px;font-weight:bold"));
     let meta = label("正在读取研究投影…", "opacity:.8;margin-left:12px");
     meta.setAttribute("flex", "1"); header.append(meta);
+    if (registeredRuns.length > 1) {
+      let picker = xul("menulist"), choices = xul("menupopup");
+      let current = registeredRuns.find(run => run.workspace === this.workspace) || registeredRuns[0];
+      picker.setAttribute("label", current.label || current.key);
+      for (let run of registeredRuns) {
+        let choice = xul("menuitem"); choice.setAttribute("label", run.label || run.key); choice.setAttribute("value", run.workspace);
+        choice.addEventListener("command", async () => {
+          this.workspaceOverride = run.workspace;
+          await this.appendRuntimeStatus("run_selected", { run_key: run.key, workspace: run.workspace });
+          await this.openWorkbench(window);
+        });
+        choices.append(choice);
+      }
+      picker.append(choices); header.append(picker);
+    }
     let close = xul("button"); close.setAttribute("label", "关闭");
     header.append(close); host.append(header);
     let body = xul("scrollbox");

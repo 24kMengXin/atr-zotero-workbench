@@ -29,6 +29,19 @@ class BuildTest(unittest.TestCase):
             self.assertEqual((association['source'], association['target']), ('concept:tokens', 'paper:P1'))
             self.assertEqual(association['data']['attribution'], 'derived_question_context')
 
+    def test_build_registers_explicit_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()
+            (run/'evidence'/'sources.jsonl').write_text('')
+            (run/'knowledge'/'frontier-map.json').write_text(json.dumps({'domain':'NLP'}))
+            (run/'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            registry = tmp_path/'registry.json'; out = tmp_path/'out'
+            build(run, out, registry, 'topic-a', 'Topic A')
+            record = json.loads(registry.read_text())['runs'][0]
+            self.assertEqual(record['key'], 'topic-a')
+            self.assertEqual(record['label'], 'Topic A')
+            self.assertEqual(Path(record['workspace']), out.resolve())
+
     def test_contextual_source_is_not_promoted_to_scholarly_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True); (run/'knowledge').mkdir()

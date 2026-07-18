@@ -66,6 +66,8 @@ def validate_source() -> None:
         fail("workbench must provide an explicit human-review note entry point")
     if "现实世界启发（不是学术证据）" not in runtime or "inspired_by_context" not in runtime:
         fail("workbench must keep real-world inspiration separate from scholarly evidence")
+    if "loadRunRegistry" not in runtime or "run_selected" not in runtime:
+        fail("workbench must offer registered-run switching instead of a single hard-coded topic")
     if "registerChrome" not in bootstrap:
         fail("bootstrap.js must register the workbench chrome content")
 
