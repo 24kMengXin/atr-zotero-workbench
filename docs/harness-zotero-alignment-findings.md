@@ -10,6 +10,7 @@
 | HZ-004 | 历史 run 大多只有 sources/frontier，缺 current claim、knowledge-context、opportunity-map、problem-card、source locator | 不能把“有论文”误判为“有完整研究链” | continuation 将来源与历史 claim 放入 migration baseline；当前 claim ledger 留空，并写 `MISSING_ARTIFACTS.md` |
 | HZ-005 | Zotero 的核心单元是阅读定位与人的判断，旧 ATR source ledger 只记录 source-level supports/does-not-support | source 不能直接等价为 claim review unit | 工作台采用 claim review note、locator、stance 与 immutable human-review-packet；当前仍需真实 Zotero 阅读来填充 |
 | HZ-006 | 真实 continuation 的 `opportunity-map` 能通过 harness validator，但工作台投影得到空标题、空后果、空证据边界：validator 只检查 signal 数量，插件依赖另一组字段 | 跨系统 artifact 契约不完整；“可验证”不等于“可读、可审查” | validator 现在要求 actor、incumbent practice、observed tension、material consequence、candidate construct、does-not-establish、rival explanations 与 required academic evidence；新增回归测试，并以真实 artifact 重投影验证 |
+| HZ-007 | workbench 已能把 Zotero 的 review packet 记录为 append-only owner disposition，但旧 `check_run.py` 不读取该账本；首次接入又把不存在的新账本当成旧 run 的必需文件 | 人类反馈缺少 controller 侧结构约束；反向强制新文件又会让真实历史 run 失效 | checker 对**存在的** `decisions/human-review-dispositions.jsonl` 验证唯一 decision/packet、允许处置、明确 target 与 non-authorizing boundary；账本缺席代表“尚无处置”，保持旧 run 可读。87 项 harness 回归和 continuation structural/referential check 已通过。 |
 
 ## 新 continuation 的可验证状态
 

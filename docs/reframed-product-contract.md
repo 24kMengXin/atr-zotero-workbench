@@ -95,7 +95,7 @@ ATR controller 仍是唯一可以推进 lifecycle 的系统。来自 Zotero 的�
 | --- | --- | --- |
 | topic → 实际过程 | v0.9 harness 记录 gate/stage；新 `run_instrumented.py` 以后会记录真实 Codex execution attempt（声明 skill 与实际 skill invocation 分开） | 当前 multilingual continuation 迁移前没有原生 skill-event，不能倒灌伪历史；尚需一个从新 topic 开始的端到端真实 run |
 | 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射，source/claim note 有 locator 与 stance 字段，阅读条目归入 per-run collection | 尚未验证对 PDF annotation/highlight 的精确 deep link；现有 continuation 仍待真实阅读者填写 locator |
-| 人的反馈回流 | note modify → review queue → immutable packet → append-only owner disposition，并显示最近问题/claim/路线影响 | owner disposition 只请求 controller review，尚未有 controller 原生消费并记录新的 route/claim artifact 的真实案例 |
+| 人的反馈回流 | note modify → review queue → immutable packet → append-only owner disposition，并显示最近问题/claim/路线影响；harness 对已存在的 disposition ledger 验证唯一 packet/decision、允许处置与非授权边界 | owner disposition 只请求 controller review，尚未有 controller 原生消费并记录新的 route/claim artifact 的真实案例 |
 | 知识与现实问题图 | concept map、opportunity map、问题卡与论文 role/细粒度问题均有 source IDs 和不成立边界；contextual sources 独立分层 | 不是完整领域 ontology；现实材料不提供部署影响估计或 gap certificate |
 | 历史保留 | 图投影快照、历史问题卡版本与 supersession relation 均可比较 | 尚未提供任意两个分支的完整并排互动比较；原始 artifact 的版本化仍依赖 harness 的 append-only政策 |
 | Zotero 运行时 | XPI 有 manifest/contract/static validation；失败时显示 workspace 诊断；独立 profile 已确认 Zotero 识别源码侧载版本 | 日常 profile 仍注册 0.3.8 而非候选 0.4.x；必须先通过 Zotero UI 重新安装候选 XPI，才能进行菜单、挂载、note notifier 的真实验收 |
