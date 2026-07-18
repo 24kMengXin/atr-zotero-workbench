@@ -2,6 +2,8 @@
 
 把 ATR 研究运行中的可审计证据转成一个供研究者阅读、批注与讨论的知识/问题图谱，并以 Zotero 为文献与阅读批注的归档层。
 
+当前代码仍是历史 run 的只读原型，**不是**最终的共同研究工作台。下一阶段以 [产品契约](docs/reframed-product-contract.md) 为准：最小单元将从“论文卡片”升级为带原文定位的可核查断言，并把人的结构化阅读判断送入 ATR 的显式复审流程。
+
 ## MVP（已实现）
 
 - 只读导入旧式 ATR v1 run（`evidence/sources.jsonl`、`knowledge/frontier-map.json`、`run-state.json`）

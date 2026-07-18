@@ -126,3 +126,43 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(queue['items'][0]['status'], 'pending_human_and_codex_review')
             self.assertEqual(queue['items'][0]['nearest_research_branches'][0]['question'], 'Why?')
             self.assertEqual(refresh_review_queue(out)['new_items'], 0)
+
+    def test_claims_keep_status_conditions_and_explicit_lineage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge').mkdir()
+            (run / 'evidence' / 'sources.jsonl').write_text(json.dumps({'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER'}) + '\n')
+            claims = [
+                {'claim_id':'C1.v1','text':'A narrow claim','status':'SUPERSEDED','conditions':{'setting':'x'},'forbidden_claims':['broad claim']},
+                {'claim_id':'C1.v2','claim':'A reframed claim','status':'PROBLEM_FORMULATION','supersedes':'C1.v1','source_ids':['P1']},
+            ]
+            (run / 'evidence' / 'claims.jsonl').write_text(''.join(json.dumps(row) + '\n' for row in claims))
+            (run / 'knowledge' / 'frontier-map.json').write_text(json.dumps({'domain':'NLP'}))
+            (run / 'run-state.json').write_text(json.dumps({'run_id':'r'}))
+            graph = build(run, tmp_path / 'out')
+            first = next(node for node in graph['nodes'] if node['id'] == 'claim:C1.v1')
+            self.assertEqual(first['data']['conditions'], {'setting':'x'})
+            self.assertEqual(first['data']['forbidden_claims'], ['broad claim'])
+            self.assertTrue(any(edge['relation'] == 'supersedes' and edge['source'] == 'claim:C1.v2' for edge in graph['edges']))
+            self.assertTrue(any(edge['relation'] == 'cites_explicit_source' and edge['target'] == 'paper:P1' for edge in graph['edges']))
+
+    def test_claim_review_is_not_reduced_to_a_source_review(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {
+                'nodes': [
+                    {'id':'claim:C1','kind':'claim','label':'Test claim','data':{'claim_id':'C1'}},
+                    {'id':'paper:P1','kind':'paper','label':'Paper','data':{'source_id':'P1'}},
+                    {'id':'question:Q1','kind':'research_question','label':'Why?','data':{'tension_id':'Q1'}},
+                ],
+                'edges': [
+                    {'source':'claim:C1','target':'paper:P1','relation':'cites_explicit_source','data':{}},
+                    {'source':'paper:P1','target':'question:Q1','relation':'anchored_by','data':{}},
+                ],
+            }
+            (out / 'graph.json').write_text(json.dumps(graph))
+            event = {'event':'human_note_modified','zotero_note_key':'N1','atr_claim_id':'C1','atr_source_id':'P1','review_stance':'CHALLENGES'}
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps(event) + '\n')
+            item = impact_report(out)['affected'][0]
+            self.assertEqual(item['review_target_type'], 'claim')
+            self.assertEqual(item['annotation_claim_id'], 'C1')
+            self.assertEqual(item['nearest_research_branches'][0]['question'], 'Why?')

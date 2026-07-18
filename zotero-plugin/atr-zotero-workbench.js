@@ -67,9 +67,28 @@ var ATRZoteroWorkbench = {
     if (existing) { window.ZoteroPane.selectItem(existing.id); return existing; }
     let note = new Zotero.Item("note"); note.parentItemID = item.id;
     note.setNote("<h1>我的 ATR 阅读反馈</h1><p>" + marker + "</p>"
+      + "<p>ATR Review Stance: PENDING</p>"
       + "<h2>来源支持的内容</h2><p>" + this.htmlEscape(source.data?.supports) + "</p>"
       + "<h2>来源不支持 / 不能推出的内容</h2><p>" + this.htmlEscape(source.data?.does_not_support) + "</p>"
       + "<h2>我的阅读与反驳</h2><p>请在这里写下你核对原文后的判断。</p>");
+    await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
+  },
+  async openClaimReviewNote(claim, window) {
+    let claimID = claim.data?.claim_id;
+    if (!claimID) throw new Error("claim node has no stable claim_id");
+    let marker = "ATR Claim ID: " + claimID;
+    let search = new Zotero.Search();
+    search.libraryID = Zotero.Libraries.userLibraryID;
+    search.addCondition("note", "contains", marker);
+    let ids = await search.search();
+    let existing = ids.map(id => Zotero.Items.get(id)).find(item => item?.isNote?.() && item.getNote().includes(marker));
+    if (existing) { window.ZoteroPane.selectItem(existing.id); return existing; }
+    let note = new Zotero.Item("note");
+    note.setNote("<h1>我的 ATR 断言审查</h1><p>" + marker + "</p>"
+      + "<p>ATR Review Stance: PENDING</p>"
+      + "<h2>AI 提出的可核查断言</h2><p>" + this.htmlEscape(claim.label) + "</p>"
+      + "<h2>适用条件</h2><p>" + this.htmlEscape(JSON.stringify(claim.data?.conditions || {})) + "</p>"
+      + "<h2>我的原文定位与判断</h2><p>请将 PENDING 改为 SUPPORTS / QUALIFIES / CHALLENGES / UNSURE / NEW_QUESTION，并写下原文位置、摘录与理由。</p>");
     await note.saveTx(); window.ZoteroPane.selectItem(note.id); return note;
   },
   async noteChanged(ids, extraData) {
@@ -78,11 +97,19 @@ var ATRZoteroWorkbench = {
       if (!item || !item.isNote()) continue;
       let parent = item.parentItemID ? Zotero.Items.get(item.parentItemID) : null;
       let parentExtra = parent ? parent.getField("extra") : "";
-      let source = /ATR source ID:\s*([^\n]+)/.exec(parentExtra)?.[1] || null;
+      let noteHTML = item.getNote(), noteText = this.plainNote(noteHTML);
+      let source = /ATR source ID:\s*([^\s<]+)/.exec(parentExtra)?.[1]
+        || /ATR Source ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
+      let claim = /ATR Claim ID:\s*([^\s<]+)/.exec(noteText)?.[1] || null;
+      let stance = /ATR Review Stance:\s*(SUPPORTS|QUALIFIES|CHALLENGES|UNSURE|NEW_QUESTION|PENDING)/.exec(noteText)?.[1] || "UNSPECIFIED";
+      // Never copy arbitrary Zotero notes into an ATR workspace. A feedback
+      // event exists only when the researcher explicitly works in a marked
+      // source/claim review note created or adopted for this purpose.
+      if (!source && !claim) continue;
       await this.appendHumanInput({
         schema_version: "0.1", event: "human_note_modified", at: new Date().toISOString(),
         zotero_note_key: item.key, zotero_parent_key: parent?.key || null, atr_source_id: source,
-        note_html: item.getNote(), notifier: extraData?.[id] || null
+        atr_claim_id: claim, review_stance: stance, note_html: noteHTML, notifier: extraData?.[id] || null
       });
     }
   },
@@ -181,6 +208,7 @@ var ATRZoteroWorkbench = {
       let by = Object.fromEntries(nodes.map(node => [node.id, node]));
       let questions = nodes.filter(node => node.kind === "research_question");
       let papers = nodes.filter(node => node.kind === "paper");
+      let claims = nodes.filter(node => node.kind === "claim");
       let gateNodes = nodes.filter(node => node.kind === "gate");
       let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
       let runNode = nodes.find(node => node.kind === "run");
@@ -205,6 +233,31 @@ var ATRZoteroWorkbench = {
       if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
       else lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
       body.append(lifecycleBox);
+      let claimBox = xul("vbox"); claimBox.setAttribute("style", "background:#f8f1e7;border:1px solid #d7ae73;border-radius:8px;padding:14px;margin-bottom:16px");
+      claimBox.append(label("等待你审查的 ATR 断言", "font-size:18px;font-weight:bold"));
+      claimBox.append(label("断言不是论文结论。请先核对原始材料，再在专属笔记中选择支持、限定、反驳、不确定或提出问题。你的判断只会生成待审查输入，不会自动修改 ATR 路线。", "white-space:normal;color:#765526;margin:5px 0"));
+      if (!claims.length) claimBox.append(label("当前 run 没有可用的 claim ledger；插件不会把论文标题或 AI 摘要伪造为断言。", "white-space:normal;color:#64748b"));
+      for (let claim of claims) {
+        let row = xul("vbox"); row.setAttribute("style", "background:#fff;border-radius:6px;padding:9px;margin-top:8px");
+        row.append(label(claim.label, "font-weight:bold;white-space:normal"));
+        row.append(label("状态：" + (claim.data?.status || "未记录") + " · 版本：" + (claim.data?.version ?? "未记录"), "white-space:normal;color:#765526;margin-top:3px"));
+        let restrictions = claim.data?.forbidden_claims || [];
+        if (restrictions.length) row.append(label("不能声称：" + restrictions.join(" · "), "white-space:normal;color:#64748b;margin-top:3px"));
+        let review = xul("button"); review.setAttribute("label", "建立 / 打开我的断言审查");
+        review.addEventListener("command", async () => {
+          try {
+            let note = await this.openClaimReviewNote(claim, window);
+            meta.setAttribute("value", "已定位断言审查笔记 · " + note.key);
+            await this.appendRuntimeStatus("claim_review_note_opened", { claim_id: claim.data?.claim_id, note_key: note.key });
+          } catch (error) {
+            this.log("could not open claim review note: " + error);
+            meta.setAttribute("value", "无法建立断言审查笔记：" + error);
+            await this.appendRuntimeStatus("claim_review_note_failed", { claim_id: claim.data?.claim_id, error: String(error) });
+          }
+        });
+        row.append(review); claimBox.append(row);
+      }
+      body.append(claimBox);
       let reviewBox = xul("vbox"); reviewBox.setAttribute("style", "background:#edf7f2;border:1px solid #8ac7ad;border-radius:8px;padding:14px;margin-bottom:16px");
       reviewBox.append(label("你的阅读反馈", "font-size:18px;font-weight:bold"));
       reviewBox.append(label("在 Zotero 的 ATR 阅读卡（子笔记）中写下判断；这里只展示事件副本，不会自动改写研究路线或删除旧线。", "white-space:normal;color:#365b47;margin:5px 0"));

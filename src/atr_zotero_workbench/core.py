@@ -25,6 +25,7 @@ class LegacyRun:
     run_state: dict[str, Any]
     intake: dict[str, Any]
     skill_events: list[dict[str, Any]]
+    claims: list[dict[str, Any]]
     gaps: list[str]
 
 
@@ -39,6 +40,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
     intake_path = path / "intake.json"
     intake = json.loads(intake_path.read_text(encoding="utf-8")) if intake_path.exists() else {}
     skill_events = read_jsonl(path / "observability" / "skill-events.jsonl")
+    claims = read_jsonl(path / "evidence" / "claims.jsonl")
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -56,7 +58,7 @@ def load_legacy_run(path: Path) -> LegacyRun:
         gaps.append("当前 ATR v0.9 run 尚无 knowledge/frontier-map.json；只展示 intake 与生命周期，不生成研究问题")
     if not sources:
         gaps.append("当前 run 的 evidence/sources.jsonl 为空；不生成文献或证据结论")
-    return LegacyRun(path, sources, frontier, state, intake, skill_events, gaps)
+    return LegacyRun(path, sources, frontier, state, intake, skill_events, claims, gaps)
 
 
 def _node(node_id: str, kind: str, label: str, **data: Any) -> dict[str, Any]:
@@ -78,6 +80,26 @@ def _source_layer(source_kind: str, declared: str | None = None) -> str:
     if any(token in kind for token in ("PAPER", "BENCHMARK", "PREPRINT", "CONFERENCE", "JOURNAL")):
         return "scholarly_evidence"
     return "source_needs_review"
+
+
+def _claim_text(claim: dict[str, Any]) -> str:
+    """The audited legacy runs used both `text` and `claim` field names."""
+    return str(claim.get("text") or claim.get("claim") or claim.get("claim_id") or "未命名断言")
+
+
+def _explicit_claim_source_ids(claim: dict[str, Any]) -> list[str]:
+    """Return only source links declared by the artifact itself.
+
+    Older claims commonly contain no paper links.  We must not infer one from
+    a seed ID, a filename, or a shared topic: that would turn provenance into
+    an attractive but false graph edge.
+    """
+    ids: list[str] = []
+    for key in ("source_ids", "evidence_source_ids", "anchor_source_ids"):
+        value = claim.get(key, [])
+        if isinstance(value, list):
+            ids.extend(str(item) for item in value if item)
+    return list(dict.fromkeys(ids))
 
 
 def project_graph(run: LegacyRun) -> dict[str, Any]:
@@ -104,6 +126,32 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                            event=event.get("event"), status=event.get("status"), invocation=event.get("invocation"),
                            artifact_ids=event.get("artifact_ids", [])))
         edge(f"run:{run_id}", f"skill:{event_id}", "records_skill_event")
+    known_paper_ids = {source.get("source_id") for source in run.sources if source.get("source_id")}
+    known_claim_ids: set[str] = set()
+    for claim in run.claims:
+        claim_id = claim.get("claim_id")
+        if not claim_id:
+            continue
+        claim_id = str(claim_id)
+        known_claim_ids.add(claim_id)
+        nodes.append(_node(
+            f"claim:{claim_id}", "claim", _claim_text(claim),
+            claim_id=claim_id, status=claim.get("status", "UNSPECIFIED"),
+            version=claim.get("version"), seed_id=claim.get("seed_id"),
+            conditions=claim.get("conditions", {}),
+            forbidden_claims=claim.get("forbidden_claims", []),
+            valid_until=claim.get("valid_until"),
+            revalidation_trigger=claim.get("revalidation_trigger", []),
+            collision_review=claim.get("collision_review", {}),
+        ))
+        edge(f"run:{run_id}", f"claim:{claim_id}", "records_claim")
+        for source_id in _explicit_claim_source_ids(claim):
+            if source_id in known_paper_ids:
+                edge(f"claim:{claim_id}", f"paper:{source_id}", "cites_explicit_source")
+    for claim in run.claims:
+        claim_id, prior = claim.get("claim_id"), claim.get("supersedes")
+        if claim_id and prior and str(prior) in known_claim_ids:
+            edge(f"claim:{claim_id}", f"claim:{prior}", "supersedes")
     domain = run.frontier.get("domain") or run.intake.get("initial_question") or "未定义领域"
     nodes.append(_node("concept:domain", "concept", domain, scope=run.frontier.get("scope", "")))
     edge(f"run:{run_id}", "concept:domain", "explores")
