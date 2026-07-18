@@ -344,6 +344,10 @@ var ATRZoteroWorkbench = {
       let humanReviewDispositions = nodes.filter(node => node.kind === "human_review_disposition");
       let gateNodes = nodes.filter(node => node.kind === "gate");
       let skillEvents = nodes.filter(node => node.kind === "skill_event").sort((a, b) => String(a.data?.timestamp || "").localeCompare(String(b.data?.timestamp || "")));
+      let v2Subjects = nodes.filter(node => node.kind === "atr_v2_subject");
+      let v2Artifacts = nodes.filter(node => node.kind === "atr_v2_artifact");
+      let v2Transitions = nodes.filter(node => node.kind === "atr_v2_transition");
+      let v2Attachments = nodes.filter(node => node.kind === "atr_v2_attachment");
       let timeline = Array.isArray(graph.timeline) ? graph.timeline : [];
       let runNode = nodes.find(node => node.kind === "run");
       let scholarly = papers.filter(node => node.data?.source_layer === "scholarly_evidence").length;
@@ -370,6 +374,11 @@ var ATRZoteroWorkbench = {
       lifecycleBox.append(label("ATR 运行过程", "font-size:18px;font-weight:bold"));
       lifecycleBox.append(label("当前阶段：" + (runNode?.data?.stage || "未记录") + " · 状态：" + (runNode?.data?.status || "未记录"), "white-space:normal"));
       lifecycleBox.append(label("下一步：" + (runNode?.data?.next_action || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
+      if (graph.projection === "derived-read-only-v2-sqlite") {
+        let active = v2Subjects.find(subject => subject.data?.active) || v2Subjects[0];
+        lifecycleBox.append(label("v2 SQLite authority · 当前 subject：" + (active?.label || "未记录") + " · version " + (active?.data?.version ?? "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
+        lifecycleBox.append(label("已记录事务：" + v2Transitions.length + "；immutable artifacts：" + v2Artifacts.length + "；不推进 lifecycle 的附件：" + v2Attachments.length, "white-space:normal;color:#365b7b"));
+      }
       let stageContract = runNode?.data?.stage_contract || {};
       if (stageContract.mode) {
         lifecycleBox.append(label("已记录知识路线：" + stageContract.mode + " · 退出条件：" + (stageContract.exit_condition || "未记录"), "white-space:normal;color:#365b7b;margin:4px 0"));
@@ -378,9 +387,9 @@ var ATRZoteroWorkbench = {
         lifecycleBox.append(label("候选预算：同时最多 " + (policy.max_live_candidates ?? "未记录") + " 个；总计最多 " + (policy.max_total_candidates_before_pivot ?? "未记录") + " 个后必须 pivot。", "white-space:normal;color:#365b7b"));
       }
       if (gateNodes.length) lifecycleBox.append(label("质量门：" + gateNodes.map(gate => gate.label).join(" · "), "white-space:normal;color:#365b7b"));
-      else lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
+      else if (graph.projection !== "derived-read-only-v2-sqlite") lifecycleBox.append(label("该 legacy run 未提供 gate ledger。", "white-space:normal;color:#64748b"));
       if (skillEvents.length) lifecycleBox.append(label("最近已记录的研究动作：" + skillEvents.slice(-6).map(event => event.label).join(" · "), "white-space:normal;color:#365b7b;margin-top:4px"));
-      else lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
+      else if (graph.projection !== "derived-read-only-v2-sqlite") lifecycleBox.append(label("当前 run 未记录 skill events。", "white-space:normal;color:#64748b;margin-top:4px"));
       body.append(lifecycleBox);
       let auditBox = xul("vbox"); auditBox.setAttribute("style", "background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:14px;margin-bottom:16px");
       auditBox.append(label("冻结 item 与执行契约审计", "font-size:18px;font-weight:bold"));
@@ -709,7 +718,7 @@ var ATRZoteroWorkbench = {
         let warning = xul("vbox"); warning.setAttribute("style", "background:#fff7e6;border:1px solid #f0c36d;border-radius:8px;padding:12px");
         warning.append(label("数据完整性提示", "font-weight:bold"), label(graph.diagnostics.join("；"), "white-space:normal")); body.append(warning);
       }
-      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size, human_review_disposition_count: humanReviewDispositions.length });
+      await this.appendRuntimeStatus("render_completed", { question_count: questions.length, source_count: papers.length, claim_count: claims.length, evidence_audit_count: evidenceAudits.length, concept_map_count: conceptMaps.length, knowledge_concept_count: knowledgeConcepts.length, knowledge_context_count: knowledgeContexts.length, landscape_brief_count: landscapeBriefs.length, real_world_tension_count: realWorldTensions.length, research_problem_count: researchProblems.length, human_review_count: latestReviews.size, human_review_disposition_count: humanReviewDispositions.length, v2_subject_count: v2Subjects.length, v2_artifact_count: v2Artifacts.length, v2_transition_count: v2Transitions.length, v2_attachment_count: v2Attachments.length });
     } catch (error) {
       this.log("could not render workbench overlay: " + error);
       await this.appendRuntimeStatus("render_failed", { error: String(error) });
