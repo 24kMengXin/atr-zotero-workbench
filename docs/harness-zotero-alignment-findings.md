@@ -9,6 +9,7 @@
 | HZ-003 | direction run 要求 frontier map，但初始化器不创建 `knowledge/` | 新 run 的首个必需 artifact 没有明确落点 | 初始化器创建 `knowledge/`；continuation 已验证 |
 | HZ-004 | 历史 run 大多只有 sources/frontier，缺 current claim、knowledge-context、opportunity-map、problem-card、source locator | 不能把“有论文”误判为“有完整研究链” | continuation 将来源与历史 claim 放入 migration baseline；当前 claim ledger 留空，并写 `MISSING_ARTIFACTS.md` |
 | HZ-005 | Zotero 的核心单元是阅读定位与人的判断，旧 ATR source ledger 只记录 source-level supports/does-not-support | source 不能直接等价为 claim review unit | 工作台采用 claim review note、locator、stance 与 immutable human-review-packet；当前仍需真实 Zotero 阅读来填充 |
+| HZ-006 | 真实 continuation 的 `opportunity-map` 能通过 harness validator，但工作台投影得到空标题、空后果、空证据边界：validator 只检查 signal 数量，插件依赖另一组字段 | 跨系统 artifact 契约不完整；“可验证”不等于“可读、可审查” | validator 现在要求 actor、incumbent practice、observed tension、material consequence、candidate construct、does-not-establish、rival explanations 与 required academic evidence；新增回归测试，并以真实 artifact 重投影验证 |
 
 ## 新 continuation 的可验证状态
 
@@ -18,6 +19,7 @@
 - 4 条历史 claim，保存在 `migration/historical-claims.jsonl`，未进入当前 `evidence/claims.jsonl`；
 - 采用有明确出处的 FKS frontier map；
 - `G2C-CONSTRUCTION` 为 `PENDING`；
-- 仍缺 topic-routing、knowledge-context、opportunity-map、problem cards、当前 claims、来源定位和人的 review packets。
+- 已有一个未晋升的、30 天有效的 opportunity-map（包含论文与协议实现两类独立来源）；它不替代 topic routing 或 claim review。
+- 仍缺 topic-routing、knowledge-context、problem cards、当前 claims、来源定位和人的 review packets。
 
 下一项 system change 只能在新的 source-grounded artifact 或人类阅读反馈显示需要它时实施。
