@@ -2,6 +2,18 @@
 
 本仓库遵循 **源码侧载优先、发布包后验** 的工作流。不要把日常调试变成反复安装 XPI、重启日常 Zotero 的循环；XPI 仅用于候选版本最终验证。
 
+这不是口号，而是仓库的开发门禁：任何 UI 或事件桥改动，先在源代码、静态契约和独立开发 profile 中留下可观察的证据，再允许生成候选 XPI。
+
+## 依据与版本边界
+
+本守则吸收了 Zotero 中文社区指南的完整导航：Make It Red 的目录/生命周期模型、代理文件侧载、Run JavaScript、`Zotero.debug`/`Zotero.log`、Preference 和 Notifier 的成对注册/释放规则。
+
+- 中文指南首页明确说明其面向 Zotero 7，且部分页面仍待重写；因此它用来规定**开发方法**，不用来猜测当前版本的 DOM ID 或内部 UI API。
+- 本项目以 Zotero 9.0.x 为实际兼容基线。所有易变 API（菜单 ID、挂载点、XPI 结构、兼容范围）必须由 `scripts/validate_zotero_plugin.py` 和独立 profile 的运行日志共同确认。
+- `manifest.json`/`bootstrap.js` 是扩展不可缺失的入口文件；`rootURI` 可指向解压源码或 XPI 内的 `jar:` 资源，故资源路径必须通过它构造，不能把本地 `file://` 当作应用 UI 的通用途径。
+
+参考： [中文指南首页](https://zotero-chinese.com/plugin-dev-guide/)、[调试代码](https://zotero-chinese.com/plugin-dev-guide/development/debug)、[侧载插件](https://zotero-chinese.com/plugin-dev-guide/development/sideloading)、[引导脚本](https://zotero-chinese.com/plugin-dev-guide/reference/bootstrap)、[事件机制](https://zotero-chinese.com/plugin-dev-guide/reference/notify)。
+
 ## 两类环境
 
 | 环境 | 用途 | 不可做的事 |
@@ -41,13 +53,28 @@ Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”�
 
    后者会验证 manifest、更新清单、全部生命周期 hook、菜单 ID、chrome 注册和 XPI 内容。
 
-2. 只在开发 profile 重启 Zotero，并从「工具 → 开发者 → Run JavaScript」执行小而可观察的探针；异步代码应 `return` 结果。
+2. 只在开发 profile 重新加载插件/重启 Zotero，并从「工具 → 开发者 → Run JavaScript」执行小而可观察的探针；异步代码应 `return` 结果。每次只验证一个断言，例如：
+
+   ```js
+   // 菜单是否被当前插件注入
+   return !!Zotero.getMainWindows()[0]
+     .document.getElementById("atr-zotero-workbench-menuitem");
+   ```
+
+   点击「打开 ATR Research Workbench」后，使用第二个探针确认实际 DOM 挂载，而不是只凭“没有报错”判断：
+
+   ```js
+   return !!Zotero.getMainWindows()[0]
+     .document.getElementById("atr-zotero-workbench-overlay");
+   ```
 
 3. 为运行时路径加 `Zotero.debug("ATR Workbench: ...")`，在「帮助 → 输出日志排错 → 查看输出文件」查看；异常用 `Zotero.log` 并在「工具 → 开发者 → Error Console」检查。不要用 `console.log` 作为插件日志。
 
-4. 只有一个完整用户流程在开发 profile 中通过后，才构建 XPI，并在日常 profile 中做一次安装/启用/菜单可见/核心 UI 可见的烟测。
+4. 在提交说明或 PR 描述中记录本次探针的返回值、相关日志时间段和是否有 Error Console 错误。没有这三项时，状态只能是“未验证”，不能写“已修复”。
 
-5. 每个 UI 缺陷都先保留 Error Console 与 debug 日志，再从资源 URL、生命周期、DOM/XUL API 三层定位。不得用复制 XPI 或编辑 profile 数据库来掩盖错误。
+5. 只有一个完整用户流程在开发 profile 中通过后，才构建 XPI，并在日常 profile 中做一次安装/启用/菜单可见/核心 UI 可见的烟测。
+
+6. 每个 UI 缺陷都先保留 Error Console 与 debug 日志，再从资源 URL、生命周期、DOM/XUL API 三层定位。不得用复制 XPI 或编辑 profile 数据库来掩盖错误。
 
 ## 生命周期与状态约束
 
