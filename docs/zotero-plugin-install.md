@@ -21,6 +21,7 @@
 1. 运行 `./scripts/build_zotero_plugin.sh`。
 2. Zotero：工具 → 插件 → 齿轮 → **Install Add-on From File…**。
 3. 选择 `dist/atr-zotero-workbench.xpi`，在插件列表确认 “ATR Research Workbench” 为启用状态。
+4. 不要以覆盖 profile 中同名 `.xpi` 文件代替安装：Zotero 会继续注册旧版本。使用 `scripts/check_installed_plugin_version.py dist/atr-zotero-workbench.xpi <profile-dir>` 核对候选版本与注册版本相同，再完全重启 Zotero。
 4. 重启 Zotero 后，从工具菜单选择“打开 ATR Research Workbench”。
 
 ## 验证人工输入桥
