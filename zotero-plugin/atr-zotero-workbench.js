@@ -70,7 +70,8 @@ var ATRZoteroWorkbench = {
     };
     let host = xul("vbox");
     host.id = this.overlayID;
-    host.setAttribute("style", "position:fixed;top:58px;right:18px;bottom:18px;left:220px;z-index:100000;background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28)");
+    host.setAttribute("flex", "1");
+    host.setAttribute("style", "background:#f5f7fb;color:#172033;border:1px solid #8093aa;border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.28)");
     let header = xul("hbox");
     header.setAttribute("align", "center");
     header.setAttribute("style", "background:#122a43;color:#fff;padding:14px 18px");
@@ -82,7 +83,11 @@ var ATRZoteroWorkbench = {
     let body = xul("scrollbox");
     body.setAttribute("orient", "vertical"); body.setAttribute("flex", "1");
     body.setAttribute("style", "padding:18px;overflow:auto"); host.append(body);
-    doc.documentElement.appendChild(host);
+    // Zotero's own transient views live in this stack. Appending to the
+    // document root creates an out-of-layout XUL node and can appear blank.
+    let stack = doc.getElementById("zotero-pane-stack");
+    if (!stack) throw new Error("Zotero pane stack is unavailable");
+    stack.appendChild(host);
     close.addEventListener("command", () => host.remove());
     try {
       let graph = JSON.parse(await IOUtils.readUTF8(PathUtils.join(this.workspace, "graph.json")));
