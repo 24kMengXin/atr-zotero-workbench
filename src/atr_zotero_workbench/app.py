@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 from .core import load_legacy_run, project_graph
-from .human_input import impact_report, materialize_review_packets, refresh_review_queue, record_review_disposition
+from .human_input import impact_report, materialize_review_packets, refresh_review_queue, record_review_disposition, attach_review_packet_to_v2
 from .history import archive_previous_projection
 from .programs import project_program
 from .runs import register_run
@@ -92,6 +92,7 @@ def main() -> None:
     y = sub.add_parser("sync"); y.add_argument("directory", type=Path)
     h = sub.add_parser("review-human-input"); h.add_argument("directory", type=Path); h.add_argument("--out", type=Path, required=True)
     d = sub.add_parser("record-review-disposition"); d.add_argument("directory", type=Path); d.add_argument("--run-dir", type=Path, required=True); d.add_argument("--packet", required=True); d.add_argument("--disposition", required=True); d.add_argument("--rationale", required=True); d.add_argument("--owner", required=True)
+    a2 = sub.add_parser("attach-review-to-v2"); a2.add_argument("directory", type=Path); a2.add_argument("--v2-run-dir", type=Path, required=True); a2.add_argument("--disposition-ledger", type=Path, required=True); a2.add_argument("--packet", required=True); a2.add_argument("--subject", required=True); a2.add_argument("--expected-version", type=int, required=True); a2.add_argument("--atrctl", type=Path, required=True)
     a = p.parse_args()
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label)["nodes"])}, ensure_ascii=False))
@@ -104,8 +105,10 @@ def main() -> None:
         queue = refresh_review_queue(a.directory)
         packets = materialize_review_packets(a.directory)
         print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"], "new_review_packets": len(packets["written"])}, ensure_ascii=False))
-    else:
+    elif a.cmd == "record-review-disposition":
         print(json.dumps(record_review_disposition(a.directory, a.run_dir, a.packet, a.disposition, a.rationale, a.owner), ensure_ascii=False))
+    else:
+        print(json.dumps(attach_review_packet_to_v2(a.directory, a.v2_run_dir, a.packet, a.subject, a.expected_version, a.atrctl, a.disposition_ledger), ensure_ascii=False))
 
 
 if __name__ == "__main__": main()

@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import hashlib
 import datetime as dt
+import subprocess
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
@@ -225,6 +226,62 @@ OWNER_DISPOSITIONS = {
     "ACCEPT_AS_REVIEW_INPUT", "REQUEST_CLARIFICATION", "OPEN_CLAIM_REVIEW",
     "OPEN_ROUTE_REVIEW", "NO_LIFECYCLE_CHANGE",
 }
+
+
+def attach_review_packet_to_v2(output: Path, v2_run_dir: Path, packet_id: str,
+                               subject_id: str, expected_version: int,
+                               atrctl: Path, disposition_ledger: Path) -> dict[str, Any]:
+    """Explicitly attach an owner-approved Zotero packet to an ATR v2 run.
+
+    This is deliberately an evidence attachment, not a transition: v2 keeps
+    the same subject version and stage.  The owner must subsequently inspect
+    the returned impact map and make any route/claim decision through v2's
+    separate transactional transition API.
+    """
+    packet_path = output / "human-input" / "review-packets" / f"{packet_id}.json"
+    if not packet_path.is_file():
+        raise ValueError(f"review packet not found: {packet_id}")
+    packet_bytes = packet_path.read_bytes()
+    packet = json.loads(packet_bytes)
+    if packet.get("artifact_type") != "human-review-packet":
+        raise ValueError("packet has wrong artifact_type")
+    if not disposition_ledger.is_file():
+        raise ValueError("owner disposition ledger is not available to the v2 bridge")
+    records = _rows(disposition_ledger)
+    decision = next((row for row in records if row.get("packet_id") == packet_id), None)
+    if not decision:
+        raise ValueError(f"owner disposition not found for packet: {packet_id}")
+    if decision.get("packet_sha256") != hashlib.sha256(packet_bytes).hexdigest():
+        raise ValueError("packet hash does not match the owner disposition")
+    if decision.get("disposition") not in {"ACCEPT_AS_REVIEW_INPUT", "OPEN_CLAIM_REVIEW", "OPEN_ROUTE_REVIEW"}:
+        raise ValueError("owner disposition does not authorize review input attachment")
+    if not atrctl.is_file():
+        raise ValueError(f"ATR v2 controller not found: {atrctl}")
+
+    def invoke(*args: str) -> str:
+        result = subprocess.run(["python3", str(atrctl), *args], text=True, capture_output=True)
+        if result.returncode:
+            raise RuntimeError(result.stderr.strip() or result.stdout.strip() or "atrctl failed")
+        return result.stdout.strip()
+
+    artifact_id = invoke("ingest", str(v2_run_dir), str(packet_path), "--kind", "human-review-packet", "--scope", "owner-approved Zotero reading feedback")
+    attachment_id = "HRA-" + hashlib.sha256((packet_id + "\0" + decision["decision_id"]).encode()).hexdigest()[:16]
+    invoke("attach", str(v2_run_dir), "--subject", subject_id,
+           "--expected-version", str(expected_version), "--artifact", artifact_id,
+           "--role", "human-review-input", "--attachment-id", attachment_id,
+           "--note", f"Owner disposition {decision['decision_id']}: {decision['disposition']}")
+    impact = packet.get("impact", {})
+    return {
+        "artifact_id": artifact_id,
+        "attachment_id": attachment_id,
+        "subject_id": subject_id,
+        "expected_version": expected_version,
+        "lifecycle_changed": False,
+        "owner_disposition": {"decision_id": decision["decision_id"], "disposition": decision["disposition"]},
+        "nearest_decision_objects": impact.get("nearest_decision_objects", []),
+        "nearest_research_problems": impact.get("nearest_research_problems", []),
+        "required_next_step": "Inspect this attached review input, then use atrctl transition only if a separately authored review artifact warrants a lifecycle decision.",
+    }
 
 
 def record_review_disposition(output: Path, run_dir: Path, packet_id: str, disposition: str,

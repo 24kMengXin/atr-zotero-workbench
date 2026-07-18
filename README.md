@@ -91,6 +91,19 @@ python -m atr_zotero_workbench record-review-disposition \
 
 允许的处置仅为接受为复审输入、要求澄清、开启 claim/route review 或不改变 lifecycle。该命令不会替代 ATR controller 记录后续的 route/gate 决定。
 
+对于 ATR v2 run，只有已记录且哈希匹配的 `OPEN_CLAIM_REVIEW`、`OPEN_ROUTE_REVIEW` 或 `ACCEPT_AS_REVIEW_INPUT` disposition 才能显式 attach 到当前 subject。该步骤把 packet 注册为内容寻址 artifact，并返回距离 root 最近的受影响对象；它不改变 subject 的 stage 或 version：
+
+```bash
+python -m atr_zotero_workbench attach-review-to-v2 \
+  output/multilingual-agent-action-continuation \
+  --v2-run-dir /path/to/v2-run \
+  --disposition-ledger /path/to/legacy-run/decisions/human-review-dispositions.jsonl \
+  --packet HRP-... --subject topic-1 --expected-version 3 \
+  --atrctl /path/to/auto-research-harness/v2/atrctl.py
+```
+
+接着由研究 owner 基于这份 attachment 单独作者化 review artifact；只有该 artifact 满足 v2 transition 的类型契约时，`atrctl transition` 才可能变更 lifecycle。
+
 导入 `output/multilingual/zotero/items.csl.json` 到 Zotero；`reading-cards/` 中的文件是与每篇文献对应的人工阅读/注释起点。
 
 如需写入 Zotero Web API（需要用户明确配置有写入权限的 API key）：

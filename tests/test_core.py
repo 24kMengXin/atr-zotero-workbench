@@ -212,6 +212,28 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(node['data']['disposition'], 'OPEN_CLAIM_REVIEW')
             self.assertTrue(any(edge['source'] == node['id'] and edge['target'] == 'claim:C1' for edge in graph['edges']))
 
+    def test_owner_approved_packet_attaches_to_v2_without_lifecycle_change(self):
+        from unittest.mock import patch
+        from atr_zotero_workbench.human_input import attach_review_packet_to_v2
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); out = root / 'out'; v2 = root / 'v2'; (out / 'human-input' / 'review-packets').mkdir(parents=True); v2.mkdir()
+            packet = {'artifact_type':'human-review-packet','packet_id':'HRP-a','impact':{'nearest_decision_objects':[{'id':'claim:C1'}], 'nearest_research_problems':[{'problem_id':'RQ-1'}]}}
+            packet_path = out / 'human-input' / 'review-packets' / 'HRP-a.json'; packet_path.write_text(json.dumps(packet))
+            digest = __import__('hashlib').sha256(packet_path.read_bytes()).hexdigest()
+            ledger = root / 'human-review-dispositions.jsonl'; ledger.write_text(json.dumps({'packet_id':'HRP-a','packet_sha256':digest,'decision_id':'HRD-1','disposition':'OPEN_CLAIM_REVIEW'}) + '\n')
+            atrctl = root / 'atrctl.py'; atrctl.write_text('# placeholder')
+            class Result:
+                returncode = 0; stderr = ''
+                def __init__(self, stdout): self.stdout = stdout
+            with patch('atr_zotero_workbench.human_input.subprocess.run', side_effect=[Result('sha256:packet\n'), Result('')]) as invoke:
+                result = attach_review_packet_to_v2(out, v2, 'HRP-a', 'subject-1', 3, atrctl, ledger)
+            self.assertEqual(result['artifact_id'], 'sha256:packet')
+            self.assertFalse(result['lifecycle_changed'])
+            self.assertEqual(result['nearest_decision_objects'][0]['id'], 'claim:C1')
+            self.assertIn('ingest', invoke.call_args_list[0].args[0])
+            self.assertIn('attach', invoke.call_args_list[1].args[0])
+            self.assertIn('--expected-version', invoke.call_args_list[1].args[0])
+
     def test_projects_existing_harness_knowledge_and_problem_artifacts_without_inference(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)
