@@ -17,8 +17,8 @@
 | 人的反馈不能自动改 lifecycle，旧节点、旧边和旧文献继续保留 | 已证明 | `REVIEW_INPUT_ONLY`、append-only packet/disposition、历史 projection snapshot；controller attachment 不改变 subject version/state | 无；后续任何自动 route 功能仍必须保持该不变量 |
 | 人的处置能触发新的 claim/route review，并把新旧路线并排保留 | 部分完成（代码路径与隔离运行） | v2 已有 owner disposition → isolated `human-review-assessment`；repo-local Zotero 9 三阶段 smoke 验证「共创复核」Note、保留/重审 edge、真实 authority 不变、clone 仍为 `INTAKE`/v0 | 用真实人的 packet 运行 scholarly reviewer；生成新的 problem/collision/route artifact；执行合法 controller decision；重新投影并比较 current/history 链 |
 | 插件与 auto-research harness 同时优化 | 部分完成 | harness 增加 knowledge/opportunity/problem-role/derived-question/human-review-assessment typed contracts；插件消费这些对象；105 项 harness tests 通过 | 还缺“全新 topic → worker artifacts → Zotero 阅读 → owner review → 新 route”的完整 v2 演示 run |
-| 精确回到 Zotero 原始来源、PDF 与高亮 | 部分完成 | 真实 smoke 验证 `Reader.open(..., {annotationID})` 重开精确 annotation；来源条目/附件/Note 原生打开 | ATR/Codex 侧尚无从 review packet 直接发起日常 Zotero annotation deep link 的用户入口 |
-| 新 GitHub repo 与本机目录配合 | 部分完成 | 本地 remote 指向 `24kMengXin/atr-zotero-workbench` | 当前大量实现仍未形成一次经过范围审查的 commit/push；不能把工作树状态当作远端已交付 |
+| 精确回到 Zotero 原始来源、PDF 与高亮 | 已证明（隔离环境） | 插件在事件发生时生成 user/group-aware `zotero://open-pdf/...page=...&annotation=...`；packet、queue、过程 Note 与 `review-links.md` 保留同一 URI；`Reader.open(..., {annotationID})` 内部重开也已验证 | 仍需在日常 profile 中点击一次真实 packet 链接做人工体验验收 |
+| 新 GitHub repo 与本机目录配合 | 已证明 | 插件里程碑已推送到 `24kMengXin/atr-zotero-workbench`；harness 合同已推送到 `24kMengXin/multilingual-aaai`；本机 `.runtime/` 仅承载 gitignored 可丢弃验证态 | 后续每个新 topic 的学术产物仍应按 owner 选择形成独立、可审计的 commit，而不是提交 Zotero profile/data |
 | 可安装候选 XPI | 已证明（隔离 profile） | `dist/atr-zotero-workbench.xpi`；静态/XPI 校验通过；隔离 Zotero 9.0.6 真实启动通过 | 日常 profile 尚未人工安装并验收；不得自动覆盖用户 profile |
 
 ## 当前最短的真实完成路径

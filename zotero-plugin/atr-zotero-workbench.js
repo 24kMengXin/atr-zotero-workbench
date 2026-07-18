@@ -543,10 +543,11 @@ var ATRZoteroWorkbench = {
 		let reviewRows = pendingReviews.length
 			? "<ul>" + pendingReviews.map(item => {
 				let nearest = (item.nearest_decision_objects || []).map(node => node.label).join("；");
-				return "<li><strong>" + this.htmlEscape(item.event?.review_stance || item.event?.event || "待审查输入")
-					+ "</strong> · target=" + this.htmlEscape(item.review_target_type || "unmapped")
-					+ (nearest ? "<br>最近受影响节点：" + this.htmlEscape(nearest) : "")
-					+ "<br>边界：仅请求 Codex/owner 审查，不自动改变 lifecycle。</li>";
+					return "<li><strong>" + this.htmlEscape(item.event?.review_stance || item.event?.event || "待审查输入")
+						+ "</strong> · target=" + this.htmlEscape(item.review_target_type || "unmapped")
+						+ (nearest ? "<br>最近受影响节点：" + this.htmlEscape(nearest) : "")
+						+ (item.zotero_open_uri ? "<br><a href=\"" + this.htmlEscape(item.zotero_open_uri) + "\">回到 Zotero 原始高亮</a>" : "")
+						+ "<br>边界：仅请求 Codex/owner 审查，不自动改变 lifecycle。</li>";
 			}).join("") + "</ul>"
 			: "<p>当前没有由 Codex 物化的 pending review queue 项。</p>";
 		let generated =
@@ -1392,6 +1393,29 @@ var ATRZoteroWorkbench = {
 	async annotationChanged(item, extraData) {
 		let sourceID = this.sourceIDFromItem(item);
 		if (!sourceID) return;
+		let attachment = Zotero.Items.get(item.parentItemID);
+		let libraryID = attachment?.libraryID || item.libraryID;
+		let scope = "library";
+		if (libraryID !== Zotero.Libraries.userLibraryID) {
+			try {
+				scope = "groups/" + Zotero.Groups.getGroupIDFromLibraryID(libraryID);
+			}
+			catch (error) {
+				this.log("cannot create annotation deep link for unsupported library: " + error);
+				scope = null;
+			}
+		}
+		let position = item.annotationPosition;
+		if (typeof position === "string") {
+			try { position = JSON.parse(position); }
+			catch (_) { position = null; }
+		}
+		let page = Number.isInteger(position?.pageIndex) ? position.pageIndex + 1 : null;
+		let deepLink = scope && attachment?.key
+			? "zotero://open-pdf/" + scope + "/items/" + encodeURIComponent(attachment.key)
+				+ "?" + (page ? "page=" + page + "&" : "")
+				+ "annotation=" + encodeURIComponent(item.key)
+			: null;
 		await this.appendHumanInput({
 			schema_version: "0.2",
 			event: "human_annotation_modified",
@@ -1399,6 +1423,9 @@ var ATRZoteroWorkbench = {
 			atr_source_id: sourceID,
 			zotero_annotation_key: item.key,
 			zotero_attachment_key: item.parentItem?.key || null,
+			zotero_library_id: libraryID || null,
+			zotero_library_scope: scope,
+			zotero_open_uri: deepLink,
 			annotation_type: item.annotationType || null,
 			annotation_text: item.annotationText || null,
 			annotation_comment: item.annotationComment || null,

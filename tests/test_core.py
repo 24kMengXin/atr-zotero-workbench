@@ -567,16 +567,22 @@ class BuildTest(unittest.TestCase):
                 'zotero_annotation_key':'A1', 'zotero_attachment_key':'PDF1',
                 'atr_source_id':'P1', 'annotation_text':'original span',
                 'annotation_comment':'this weakens the scope', 'annotation_page_label':'7',
+                'zotero_open_uri':'zotero://open-pdf/library/items/PDF1?page=7&annotation=A1',
             }
             (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps(event) + '\n')
             report = impact_report(out)
             self.assertEqual(report['latest_annotations'], 1)
             self.assertEqual(report['affected'][0]['review_target_type'], 'source')
             self.assertEqual(report['affected'][0]['nearest_research_problems'][0]['problem_id'], 'R1')
+            self.assertEqual(report['affected'][0]['zotero_open_uri'], event['zotero_open_uri'])
             packet_path = Path(materialize_review_packets(out)['written'][0])
             packet = json.loads(packet_path.read_text())
             self.assertEqual(packet['created_from']['event_type'], 'human_annotation_modified')
             self.assertEqual(packet['review']['annotation']['comment'], 'this weakens the scope')
+            self.assertEqual(packet['review']['zotero_open_uri'], event['zotero_open_uri'])
+            self.assertIn(f"]({event['zotero_open_uri']})", (out / 'human-input' / 'review-links.md').read_text())
+            queue = refresh_review_queue(out)
+            self.assertEqual(queue['items'][0]['zotero_open_uri'], event['zotero_open_uri'])
 
     def test_reader_feedback_does_not_leak_through_run_or_domain_containment(self):
         with tempfile.TemporaryDirectory() as tmp:

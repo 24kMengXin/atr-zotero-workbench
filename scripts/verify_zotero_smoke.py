@@ -46,6 +46,11 @@ def main() -> None:
     annotation_events = [event for event in events if event.get("event") == "human_annotation_modified"]
     if len(annotation_events) != 1 or not annotation_events[0].get("atr_source_id"):
         raise SystemExit(f"expected one mapped Reader annotation event, got {len(annotation_events)}")
+    deep_link = annotation_events[0].get("zotero_open_uri")
+    attachment_key = annotation_events[0].get("zotero_attachment_key")
+    annotation_key = annotation_events[0].get("zotero_annotation_key")
+    if not deep_link or f"/items/{attachment_key}?" not in deep_link or f"annotation={annotation_key}" not in deep_link:
+        raise SystemExit("Reader annotation did not preserve an exact Codex-to-Zotero deep link")
     annotation_open = next((row for row in runtime if row.get("stage") == "native_reader_annotation_opened"), None)
     if not annotation_open or annotation_open.get("annotation_key") != annotation_events[0].get("zotero_annotation_key"):
         raise SystemExit("Reader did not reopen the exact captured annotation via annotationID")
@@ -66,6 +71,9 @@ def main() -> None:
         raise SystemExit("Note and Reader feedback must materialize as two pending, review-only packets")
     if len(review_queue.get("items", [])) != 2:
         raise SystemExit("Note and Reader feedback must appear in the durable Codex review queue")
+    links = (WORKSPACE / "human-input" / "review-links.md").read_text(encoding="utf-8")
+    if deep_link not in links:
+        raise SystemExit("review-links.md does not expose the exact Reader annotation deep link")
 
     connection = sqlite3.connect(f"file:{RUNTIME / 'data' / 'zotero.sqlite'}?mode=ro", uri=True)
     collections = connection.execute("SELECT collectionName, parentCollectionID FROM collections ORDER BY collectionID").fetchall()
@@ -74,10 +82,10 @@ def main() -> None:
     knowledge_count = len(knowledge_objects)
     research_kinds = {
         "tension_note", "frontier_question_note", "problem_note",
-        "derived_question_note", "claim_note",
+        "derived_question_note", "claim_note", "review_assessment_note",
     }
     research_objects = [obj for obj in native_map["objects"] if obj.get("object_kind") in research_kinds]
-    expected_collection_count = 1 + 5 + 4 + knowledge_count + len(research_objects)
+    expected_collection_count = 1 + 5 + 5 + knowledge_count + len(research_objects)
     required_collection_names = set(native_map["collections"].values())
     observed_collection_names = {name for name, _ in collections}
     source_item_by_id = {
@@ -200,6 +208,7 @@ def main() -> None:
         "reader_nearest_problem_distance": nearest[0]["distance_from_review_target"],
         "review_packet_count": len(packets),
         "review_queue_count": len(review_queue["items"]),
+        "reader_deep_link": deep_link,
         "knowledge_collection_count": knowledge_count,
         "knowledge_hierarchy_verified": True,
         "research_collection_count": len(research_objects),

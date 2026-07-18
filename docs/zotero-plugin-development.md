@@ -111,6 +111,13 @@ Zotero 对 bootstrapped extension 支持以“插件 ID 同名的 proxy file”�
 - XPI 可解压且只包含启动脚本、manifest、偏好和 Fluent 资源；
 - 新建/干净 profile 可安装、启用、显示 topic 菜单和 ATR Item Pane section；
 - 用一条实际 Zotero Note 修改和一条 Reader annotation 验证 `human-input/inbox.jsonl` 事件桥；
+- 验证 annotation 事件中的 `zotero_open_uri` 同时包含 attachment key、PDF page 和 annotation key，且 user/group scope 在事件发生时解析；
+
+Deep-link 形状以 Zotero 当前
+[`ZoteroProtocolHandler.mjs`](https://github.com/zotero/zotero/blob/main/chrome/content/zotero/ZoteroProtocolHandler.mjs)
+的 `open-pdf` router 为准：user library 使用 `library/items/:objectKey`，group
+library 使用 `groups/:groupID/items/:objectKey`，`annotation` query 被解析为
+Reader `annotationID`。不要从论坛示例或文献标题反推 attachment key。
 - topic/source 分别在原生 Note/Reader tab 打开，没有 `zotero-pane-stack` overlay；
 - 日常 profile 的最终烟测没有新增 Error Console 报错。
 

@@ -6,11 +6,15 @@ import argparse
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = ROOT / ".runtime" / "zotero-smoke"
+sys.path.insert(0, str(ROOT / "src"))
+
+from atr_zotero_workbench.zotero import export_native_projection  # noqa: E402
 
 
 def write_smoke_pdf(path: Path) -> None:
@@ -60,8 +64,13 @@ def main() -> None:
     data = RUNTIME / "data"
     (workspace / "zotero").mkdir(parents=True)
     profile.mkdir(parents=True)
-    shutil.copy2(source_workspace / "graph.json", workspace / "graph.json")
-    shutil.copy2(source_workspace / "zotero" / "native-projection.json", workspace / "zotero" / "native-projection.json")
+    graph_path = workspace / "graph.json"
+    shutil.copy2(source_workspace / "graph.json", graph_path)
+    # Always derive the native map from the copied graph with the current
+    # bridge contract.  Historical workspaces may carry an older projection,
+    # and copying that cache would test stale output instead of today's code.
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    export_native_projection(graph, workspace)
     pdf_path = workspace / "reader-smoke-fixture.pdf"
     write_smoke_pdf(pdf_path)
 

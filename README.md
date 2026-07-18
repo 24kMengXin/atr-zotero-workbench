@@ -80,6 +80,11 @@ python -m atr_zotero_workbench review-human-input output/multilingual-agent-acti
 
 该命令还会追加 `human-input/review-queue.json`，并把每条显式的 Zotero 反馈物化为 `human-input/review-packets/HRP-*.json`。后者是供 ATR controller/owner 审查的不可变输入，包含 claim/source target、立场、原文定位和影响路径；它不会自动重写 ATR 结论、生命周期或历史图谱。
 
+Reader annotation 还会在事件发生时记录 Zotero 官方协议所需的 library/group、
+attachment key、PDF page 与 annotation key，并生成
+`human-input/review-links.md`。因此 Codex 返回的是可点击的
+`zotero://open-pdf/...&annotation=...` 原始高亮定位，而不是根据标题或页码猜测。
+
 该命令以 `ATR source ID` 反查受影响的 research question、问题卡、断言与最近决策节点，并写入插件会读取的 `review-queue.json`。它只提出下一步审阅建议，绝不自动变更 ATR lifecycle 或删除旧路线。
 
 从插件中首次为某篇来源“建立 / 打开我的阅读笔记”时，插件会把该条目加入本 run 的 `ATR · <run id>` collection。它以 `atr-source-id:<ID>` tag 查重；已有条目只会被**加入**该 collection，不会移动、删除或覆盖你的字段和笔记。

@@ -168,6 +168,7 @@ def impact_report(output: Path) -> dict[str, Any]:
             "annotation_claim_id": claim,
             "annotation_problem_id": problem,
             "annotation_graph_node_id": graph_node_id,
+            "zotero_open_uri": event.get("zotero_open_uri"),
             "review_target_type": target_type,
             "target_found_in_projection": bool(start),
             # Retained for readers of report schema 0.2. It historically meant
@@ -218,6 +219,7 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
             "annotation_claim_id": affected["annotation_claim_id"],
             "annotation_problem_id": affected["annotation_problem_id"],
             "annotation_graph_node_id": affected["annotation_graph_node_id"],
+            "zotero_open_uri": affected["zotero_open_uri"],
             "review_target_type": affected["review_target_type"],
             "target_found_in_projection": affected["target_found_in_projection"],
             "source_found_in_projection": affected["source_found_in_projection"],
@@ -281,6 +283,7 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
                 "graph_node_id": affected["annotation_graph_node_id"],
                 "source_id": affected["annotation_source_id"],
                 "source_locator": event.get("source_locator"),
+                "zotero_open_uri": event.get("zotero_open_uri"),
                 "stance": event.get("review_stance", "UNSPECIFIED"),
                 "note_html": event.get("note_html", ""),
                 "annotation": {
@@ -310,7 +313,30 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
         }
         path.write_text(json.dumps(packet, ensure_ascii=False, indent=2), encoding="utf-8")
         written.append(str(path))
-    return {"schema_version": "0.2", "artifact_type": "human-review-packet-batch", "written": written, "existing": existing}
+    links_path = materialize_review_links(output)
+    return {"schema_version": "0.2", "artifact_type": "human-review-packet-batch", "written": written, "existing": existing, "review_links": str(links_path)}
+
+
+def materialize_review_links(output: Path) -> Path:
+    """Build a derived Markdown index back to exact Zotero annotations."""
+    directory = output / "human-input" / "review-packets"
+    rows = []
+    for path in sorted(directory.glob("HRP-*.json")) if directory.exists() else []:
+        packet = json.loads(path.read_text(encoding="utf-8"))
+        uri = packet.get("review", {}).get("zotero_open_uri")
+        if not uri:
+            continue
+        label = packet.get("review", {}).get("source_id") or packet.get("review", {}).get("problem_id") or packet["packet_id"]
+        rows.append(f"- [{packet['packet_id']} · {label} · 回到原始高亮]({uri})")
+    target = output / "human-input" / "review-links.md"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        "# Zotero 原始阅读定位\n\n"
+        "这些链接来自 Zotero 在 annotation 事件发生时记录的 library/group、attachment、PDF page 与 annotation key；Codex 不重新猜测定位。\n\n"
+        + ("\n".join(rows) if rows else "当前 packet 没有可用的 Reader annotation deep link。") + "\n",
+        encoding="utf-8",
+    )
+    return target
 
 
 OWNER_DISPOSITIONS = {
