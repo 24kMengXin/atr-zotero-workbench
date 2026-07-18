@@ -1,0 +1,337 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.944941+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.977937+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:multilingual-representation-and-data-decisions",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:multilingual-representation-and-data-decisions",
+      "kind": "atr_v2_subject",
+      "label": "program:multilingual-representation-and-data-decisions",
+      "data": {
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.944843+00:00",
+        "updated_at": "2026-07-18T19:10:58.944919+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · 254a873880d7",
+      "data": {
+        "artifact_id": "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "artifact_kind": "program-intake",
+        "digest": "254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:58.878939+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-representation-and-data-decisions/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:multilingual-representation-and-data-decisions",
+      "kind": "research_program",
+      "label": "多语言表示、推理与语料决策",
+      "data": {
+        "program_key": "multilingual-representation-and-data-decisions",
+        "root_question": "语言混合、token 化和上游语料决策如何改变推理机会、评测结论与训练数据处置，而不是仅仅制造语言标签差异？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": true,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96"
+      }
+    },
+    {
+      "id": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · f5f5bc616acb",
+      "data": {
+        "artifact_id": "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:58.912654+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-representation-and-data-decisions/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-16-mt-reasoning",
+      "kind": "legacy_research_run",
+      "label": "2026-07-16-mt-reasoning",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-16-mt-reasoning",
+        "catalog_role": "机器翻译中的 LLM 推理综述",
+        "catalog_disposition": "retain_as_landscape_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+        "source_count": 102,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-reasoning-language-mixing",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-reasoning-language-mixing",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-reasoning-language-mixing",
+        "catalog_role": "语言混合的因果作用",
+        "catalog_disposition": "retain_as_mechanism_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+        "source_count": 5,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-fragmentation-assigned-compute-refresh",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-fragmentation-assigned-compute-refresh",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-fragmentation-assigned-compute-refresh",
+        "catalog_role": "token fragmentation 与推理预算的因果诊断",
+        "catalog_disposition": "canonical_causal_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-curation-decision",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-curation-decision",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-curation-decision",
+        "catalog_role": "语言识别/过滤的不确定性决策",
+        "catalog_disposition": "retain_as_data_policy_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+        "source_count": 20,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.944941+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "subject_version": 0,
+        "artifact_id": "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:58.977937+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "subject:program:multilingual-representation-and-data-decisions",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "target": "research_program:multilingual-representation-and-data-decisions",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "target": "research_program:multilingual-representation-and-data-decisions",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-representation-and-data-decisions",
+      "target": "legacy_run:2026-07-16-mt-reasoning",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-representation-and-data-decisions",
+      "target": "legacy_run:2026-07-17-multilingual-reasoning-language-mixing",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-representation-and-data-decisions",
+      "target": "legacy_run:2026-07-17-fragmentation-assigned-compute-refresh",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-representation-and-data-decisions",
+      "target": "legacy_run:2026-07-17-multilingual-curation-decision",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-representation-and-data-decisions",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-representation-and-data-decisions",
+      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "target": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "a35deb23ea962252",
+        "archived_at": "2026-07-18T19:12:43.403223+00:00",
+        "path": "history/projections/a35deb23ea962252.json",
+        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      }
+    ],
+    "previous_projection": "a35deb23ea962252"
+  }
+}

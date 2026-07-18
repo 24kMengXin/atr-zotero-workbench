@@ -1,0 +1,600 @@
+[
+  {
+    "id": "SRC-ABCD-2021",
+    "type": "article-journal",
+    "title": "Action-Based Conversations Dataset",
+    "URL": "https://arxiv.org/abs/2104.00783",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ABCD-2021",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ABCD-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ADAPTIVE-IPI-2026",
+    "type": "article-journal",
+    "title": "Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents",
+    "URL": "https://arxiv.org/abs/2606.26479",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ADAPTIVE-IPI-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ADAPTIVE-IPI-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTABSTAIN-2026",
+    "type": "article-journal",
+    "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+    "URL": "https://arxiv.org/abs/2607.10059",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTABSTAIN-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTDOJO-2024",
+    "type": "article-journal",
+    "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "URL": "https://openreview.net/forum?id=m1YYAQjO3w",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTDOJO-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTDOJO-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTDOJO-REPO-2026",
+    "type": "webpage",
+    "title": "AgentDojo public implementation",
+    "URL": "https://github.com/ethz-spylab/agentdojo",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTDOJO-REPO-2026",
+      "atr-source-kind:PRIMARY_CODE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENTDOJO-REPO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTIC-ABSTENTION-2026",
+    "type": "article-journal",
+    "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+    "URL": "https://arxiv.org/abs/2606.28733",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTIC-ABSTENTION-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTIC-ABSTENTION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTSHIELD-2026",
+    "type": "article-journal",
+    "title": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
+    "URL": "https://arxiv.org/abs/2605.11026",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTSHIELD-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTSHIELD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTSHIELD-REPO-2026",
+    "type": "webpage",
+    "title": "AgentShield public implementation",
+    "URL": "https://github.com/Yassin-H-Rassul/AgentShield",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTSHIELD-REPO-2026",
+      "atr-source-kind:PRIMARY_CODE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENTSHIELD-REPO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BITEXT-2023",
+    "type": "webpage",
+    "title": "Bitext customer-support chatbot dataset",
+    "URL": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BITEXT-2023",
+      "atr-source-kind:OPEN_SOURCE_DATASET",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-BITEXT-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COD-2023",
+    "type": "article-journal",
+    "title": "Cross-Lingual Dialogue Dataset Creation via Outline-Based Generation",
+    "URL": "https://aclanthology.org/2023.tacl-1.9/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COD-2023",
+      "atr-source-kind:PRIMARY_JOURNAL_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COD-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HIDDEN-SPACE-2025",
+    "type": "article-journal",
+    "title": "The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual Context",
+    "URL": "https://arxiv.org/abs/2504.02708",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HIDDEN-SPACE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HIDDEN-SPACE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INJECAGENT-2024",
+    "type": "article-journal",
+    "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+    "URL": "https://aclanthology.org/2024.findings-acl.624/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INJECAGENT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INJECAGENT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-JOURNEYBENCH-2026",
+    "type": "article-journal",
+    "title": "JourneyBench",
+    "URL": "https://aclanthology.org/2026.eacl-industry.15.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-JOURNEYBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-JOURNEYBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANGUAGE-BARRIER-2024",
+    "type": "article-journal",
+    "title": "The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts",
+    "URL": "https://aclanthology.org/2024.findings-acl.156/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANGUAGE-BARRIER-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANGUAGE-BARRIER-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LAYER-SWAP-2026",
+    "type": "article-journal",
+    "title": "Layer-wise Swapping for Generalizable Multilingual Safety",
+    "URL": "https://aclanthology.org/2026.eacl-long.98/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LAYER-SWAP-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LAYER-SWAP-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LINGUASAFE-2025",
+    "type": "article-journal",
+    "title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+    "URL": "https://arxiv.org/abs/2508.12733",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LINGUASAFE-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LINGUASAFE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLAMA-GUARD3-CARD",
+    "type": "webpage",
+    "title": "Llama Guard 3 model card",
+    "URL": "https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard3/8B/MODEL_CARD.md",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLAMA-GUARD3-CARD",
+      "atr-source-kind:MODEL_CARD",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLAMA-GUARD3-CARD\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MAPS-2025",
+    "type": "article-journal",
+    "title": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+    "URL": "https://arxiv.org/abs/2505.15935",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MAPS-2025",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MAPS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MELON-2025",
+    "type": "article-journal",
+    "title": "MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents",
+    "URL": "https://proceedings.mlr.press/v267/zhu25z.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MELON-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MELON-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MINIONESE-2026",
+    "type": "article-journal",
+    "title": "Minionese: Comprehensive Benchmark and Mechanistic Study of Multilingual LLM Safety",
+    "URL": "https://arxiv.org/abs/2607.10112",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MINIONESE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MINIONESE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MIPIAD-2026",
+    "type": "article-journal",
+    "title": "MIPIAD: Multilingual Indirect Prompt Injection Attack Defense with Qwen–TF-IDF Hybrid and Meta-Ensemble Learning",
+    "URL": "https://arxiv.org/abs/2605.07269",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MIPIAD-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MIPIAD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MKA-2025",
+    "type": "article-journal",
+    "title": "MKA: Leveraging Cross-Lingual Consensus for Model Abstention",
+    "URL": "https://arxiv.org/abs/2503.23687",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MKA-2025",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MKA-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLBENCHGUARD-2026",
+    "type": "article-journal",
+    "title": "ML-Bench&Guard: Policy-Grounded Multilingual Safety Benchmark and Guardrail for Large Language Models",
+    "URL": "https://arxiv.org/abs/2605.00689",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLBENCHGUARD-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLBENCHGUARD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-2026",
+    "type": "article-journal",
+    "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+    "URL": "https://aclanthology.org/2026.acl-long.2039/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MODULAR-LANGUAGE-ADAPT-2026",
+    "type": "article-journal",
+    "title": "Completely Modular Fine-tuning for Dynamic Language Adaptation",
+    "URL": "https://aclanthology.org/2026.findings-eacl.252/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MODULAR-LANGUAGE-ADAPT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MPO-2025",
+    "type": "article-journal",
+    "title": "MPO: Multilingual Safety Alignment via Reward Gap Optimization",
+    "URL": "https://aclanthology.org/2025.acl-long.1149/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MPO-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MPO-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MRGUARD-2025",
+    "type": "article-journal",
+    "title": "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+    "URL": "https://aclanthology.org/2025.emnlp-main.1392/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MRGUARD-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MRGUARD-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+    "type": "article-journal",
+    "title": "Teaching LLMs to Abstain across Languages via Multilingual Feedback",
+    "URL": "https://aclanthology.org/2024.emnlp-main.239/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "atr-source-kind:PRIMARY_CONFERENCE_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTI-ABSTAIN-FEEDBACK-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTI3WOZ-2023",
+    "type": "article-journal",
+    "title": "Multi3WOZ: A Multilingual, Multi-Domain, Multi-Parallel Dataset for Training and Evaluating Culturally Adapted Task-Oriented Dialog Systems",
+    "URL": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00609/118298/Multi3WOZ-A-Multilingual-Multi-Domain-Multi",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTI3WOZ-2023",
+      "atr-source-kind:PRIMARY_JOURNAL_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTI3WOZ-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIJAIL-2024",
+    "type": "article-journal",
+    "title": "Multilingual Jailbreak Challenges in Large Language Models",
+    "URL": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/6b396f766a50e0853a5164e68048540c-Abstract-Conference.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIJAIL-2024",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTIJAIL-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+    "type": "webpage",
+    "title": "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+    "URL": "https://aclanthology.org/2025.emnlp-main.800/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "atr-source-kind:SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-SAFETY-SURVEY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-UE-2026",
+    "type": "article-journal",
+    "title": "Estimating Uncertainty from Reasoning: A Large-Scale Study of Multi- and Crosslingual MCQA Performance in LLMs",
+    "URL": "https://arxiv.org/abs/2607.06327",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-UE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-UE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTITASK-BENCH-2025",
+    "type": "article-journal",
+    "title": "Multitask-Bench: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning",
+    "URL": "https://aclanthology.org/2025.coling-main.606/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTITASK-BENCH-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTITASK-BENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OSGUARD-2026",
+    "type": "article-journal",
+    "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
+    "URL": "https://arxiv.org/abs/2606.15034",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OSGUARD-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-OSGUARD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PRESTO-2024",
+    "type": "webpage",
+    "title": "PRESTO: multilingual realistic task-oriented dialogue parsing",
+    "URL": "https://research.google/blog/presto-a-multilingual-dataset-for-parsing-realistic-task-oriented-dialogues/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PRESTO-2024",
+      "atr-source-kind:OFFICIAL_DATASET_RELEASE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-PRESTO-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RABAK-2025",
+    "type": "article-journal",
+    "title": "Lost in Localization: Building RabakBench with Human-in-the-Loop Validation to Measure Multilingual Safety Gaps",
+    "URL": "https://arxiv.org/abs/2507.05980",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RABAK-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RABAK-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-REALSAFE-2025",
+    "type": "article-journal",
+    "title": "RealSafe: Quantifying Safety Risks of Language Agents in Real-World",
+    "URL": "https://aclanthology.org/2025.coling-main.642/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-REALSAFE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-REALSAFE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-STING-2026",
+    "type": "article-journal",
+    "title": "STING: Multilingual Multi-Turn Tool-Agent Red Teaming",
+    "URL": "https://arxiv.org/abs/2602.16346",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-STING-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-STING-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TELAGENTBENCH-2025",
+    "type": "article-journal",
+    "title": "TelAgentBench",
+    "URL": "https://aclanthology.org/2025.emnlp-industry.83.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TELAGENTBENCH-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TELAGENTBENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TONGUE-TIED-2025",
+    "type": "article-journal",
+    "title": "Tongue-Tied: Breaking LLMs Safety Through New Language Learning",
+    "URL": "https://aclanthology.org/2025.calcs-1.5/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TONGUE-TIED-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TONGUE-TIED-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOOLSAFE-2026",
+    "type": "article-journal",
+    "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback",
+    "URL": "https://aclanthology.org/2026.findings-acl.1850/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOOLSAFE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOOLSAFE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRACESAFE-2026",
+    "type": "article-journal",
+    "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
+    "URL": "https://arxiv.org/abs/2604.07223",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRACESAFE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRACESAFE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-UNFORGOTTEN-SAFETY-2025",
+    "type": "article-journal",
+    "title": "Unforgotten Safety: Preserving Safety Alignment of Large Language Models with Continual Learning",
+    "URL": "https://arxiv.org/abs/2512.10150",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-UNFORGOTTEN-SAFETY-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-UNFORGOTTEN-SAFETY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WMTCHAT-2024",
+    "type": "webpage",
+    "title": "WMT24 Chat Translation Task",
+    "URL": "https://wmt-chat-task.github.io/2024/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WMTCHAT-2024",
+      "atr-source-kind:OFFICIAL_SHARED_TASK_RELEASE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-WMTCHAT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XSafety-2024",
+    "type": "article-journal",
+    "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+    "URL": "https://arxiv.org/abs/2310.00905",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XSafety-2024",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XSafety-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+    "type": "webpage",
+    "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+    "URL": "https://arxiv.org/abs/2601.08012",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-VERIFIABLY-SAFE-TOOL-USE-2026\nEvidence boundary recorded in reading card."
+  }
+]

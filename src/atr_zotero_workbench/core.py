@@ -159,6 +159,16 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         if not any(item["source"] == source and item["target"] == target and item["relation"] == relation for item in edges):
             edges.append({"source": source, "target": target, "relation": relation, "data": data})
 
+    def ensure_node(node_id: str, kind: str, label: str, **data: Any) -> str:
+        existing = next((item for item in nodes if item["id"] == node_id), None)
+        if existing:
+            for key, value in data.items():
+                if value not in (None, "", [], {}) and not existing["data"].get(key):
+                    existing["data"][key] = value
+            return node_id
+        nodes.append(_node(node_id, kind, label, **data))
+        return node_id
+
     active = next((subject for subject in run.subjects if subject.get("active")), None)
     nodes.append(_node(f"run:{run.run_id}", "run", run.run_id, controller="ATR v2 SQLite", active_subject_id=active.get("subject_id") if active else None, stage=active.get("state") if active else None, gaps=run.gaps))
     for subject in run.subjects:
@@ -204,6 +214,12 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             return None
         source_id = str(source_id)
         node_id = f"paper:{source_id}"
+        recorded_fulltext_state = str(source.get("fulltext_state") or "")
+        worker_inspection_state = source.get("worker_inspection_state") or (
+            "FULLTEXT_INSPECTED" if "INSPECTED" in recorded_fulltext_state
+            else "NOT_RECORDED"
+        )
+        human_inspection_state = source.get("human_inspection_state") or "NOT_RECORDED"
         if source_id not in known_sources:
             known_sources.add(source_id)
             kind = str(source.get("kind") or source.get("source_kind") or "UNSPECIFIED")
@@ -211,6 +227,23 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             paper_node = _node(node_id, "paper", str(source.get("title") or source_id), source_id=source_id,
                                doi=source.get("doi", ""), url=source.get("url", ""), pdf_url=source.get("pdf_url", ""),
                                access_status=source.get("access_status", ""), access_route=source.get("access_route", ""),
+                               content_form=source.get("content_form", ""),
+                               fulltext_state=recorded_fulltext_state,
+                               worker_inspection_state=worker_inspection_state,
+                               human_inspection_state=human_inspection_state,
+                               content_digest=source.get("content_digest", ""),
+                               inspection_spans=source.get("inspection_spans", []),
+                               zotero_item_key=source.get("zotero_item_key"),
+                               zotero_attachment_key=source.get("zotero_attachment_key"),
+                               zotero_attachment_state=source.get("zotero_attachment_state", ""),
+                               zotero_snapshot_state=source.get("zotero_snapshot_state", ""),
+                               local_cache_state=source.get("local_cache_state", ""),
+                               local_cache_path=source.get("local_cache_path", ""),
+                               cache_role=source.get("cache_role", ""),
+                               identity_state=source.get("identity_state", ""),
+                               identity_evidence=source.get("identity_evidence", []),
+                               identity_review=source.get("identity_review", ""),
+                               local_cache_import_policy=source.get("local_cache_import_policy", ""),
                                source_kind=kind, source_layer=layer,
                                locator=source.get("locator", ""), provenance=provenance,
                                source_function=source.get("source_function"), observed_at=source.get("observed_at"),
@@ -229,9 +262,29 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             # the shared Zotero source node to gain a non-interpretive locator
             # that an earlier record did not yet know.
             paper_data = projected_source_nodes[source_id]["data"]
-            for field in ("doi", "url", "pdf_url", "access_status", "access_route"):
+            for field in (
+                "doi", "url", "pdf_url", "access_status", "access_route",
+                "content_form", "fulltext_state", "content_digest",
+                "worker_inspection_state", "human_inspection_state",
+                "zotero_item_key", "zotero_attachment_key",
+                "zotero_attachment_state", "zotero_snapshot_state",
+                "local_cache_state", "local_cache_path",
+                "cache_role", "identity_state", "identity_evidence", "identity_review",
+                "local_cache_import_policy",
+            ):
                 if not paper_data.get(field) and source.get(field):
                     paper_data[field] = source[field]
+            if (paper_data.get("worker_inspection_state") in {None, "", "NOT_RECORDED"}
+                    and worker_inspection_state != "NOT_RECORDED"):
+                paper_data["worker_inspection_state"] = worker_inspection_state
+            if (paper_data.get("human_inspection_state") in {None, "", "NOT_RECORDED"}
+                    and source.get("human_inspection_state") not in {None, "", "NOT_RECORDED"}):
+                paper_data["human_inspection_state"] = source["human_inspection_state"]
+            if source.get("inspection_spans"):
+                existing = paper_data.setdefault("inspection_spans", [])
+                for span in source["inspection_spans"]:
+                    if span not in existing:
+                        existing.append(span)
         return node_id
     for artifact in run.artifacts:
         artifact_id = artifact["artifact_id"]
@@ -240,6 +293,172 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
         payload = artifact.get("payload", {})
         nodes.append(_node(f"artifact:{artifact_id}", "atr_v2_artifact", f"{artifact['kind']} · {artifact_id.removeprefix('sha256:')[:12]}", artifact_id=artifact_id, artifact_kind=artifact["kind"], digest=artifact["digest"], original_name=artifact["original_name"], created_at=artifact["created_at"], metadata=metadata, artifact_type=payload.get("artifact_type"), projection_error=payload.get("_projection_error")))
         edge(f"run:{run.run_id}", f"artifact:{artifact_id}", "registers_immutable_artifact")
+        artifact_type = str(payload.get("artifact_type") or artifact.get("kind") or "")
+        if artifact_type == "portfolio-intake":
+            portfolio_id = str(payload.get("portfolio_id") or run.run_id)
+            portfolio_node = ensure_node(
+                f"portfolio:{portfolio_id}", "research_portfolio",
+                str(payload.get("question") or portfolio_id), portfolio_id=portfolio_id,
+                controller_boundary=payload.get("controller_boundary", ""), artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", portfolio_node, "materializes_portfolio_intake")
+            for child in payload.get("children", []):
+                if not isinstance(child, dict) or not child.get("program_key"):
+                    continue
+                key = str(child["program_key"])
+                child_node = ensure_node(
+                    f"research_program:{key}", "research_program", key,
+                    program_key=key, child_run_id=child.get("run_id"),
+                    subject_id=child.get("subject_id"), relationship=child.get("relationship"),
+                    lifecycle_state="SEPARATE_AUTHORITY_INTAKE",
+                )
+                edge(portfolio_node, child_node, "registers_separate_program_authority")
+        if artifact_type == "program-registry":
+            portfolio_id = str(payload.get("portfolio_id") or "multilingual-aaai-program-portfolio")
+            portfolio_node = ensure_node(f"portfolio:{portfolio_id}", "research_portfolio", portfolio_id, portfolio_id=portfolio_id)
+            edge(f"artifact:{artifact_id}", portfolio_node, "registers_program_children")
+            for child in payload.get("children", []):
+                if not isinstance(child, dict) or not child.get("program_key"):
+                    continue
+                key = str(child["program_key"])
+                child_node = ensure_node(f"research_program:{key}", "research_program", key,
+                                         program_key=key, child_run_id=child.get("run_id"), subject_id=child.get("subject_id"))
+                edge(portfolio_node, child_node, "registers_separate_program_authority")
+        if artifact_type == "portfolio-route-map":
+            portfolio_id = str(payload.get("portfolio_id") or "multilingual-aaai-program-portfolio")
+            portfolio_node = ensure_node(
+                f"portfolio:{portfolio_id}", "research_portfolio", portfolio_id,
+                portfolio_id=portfolio_id, history_policy=payload.get("history_policy"),
+            )
+            edge(f"artifact:{artifact_id}", portfolio_node, "materializes_portfolio_route_map")
+            for program in payload.get("programs", []):
+                if not isinstance(program, dict) or not program.get("program_key"):
+                    continue
+                key = str(program["program_key"])
+                program_node = ensure_node(
+                    f"research_program:{key}", "research_program",
+                    str(program.get("label") or key), program_key=key,
+                    child_run_id=program.get("child_run_id"),
+                    legacy_branch_count=len(program.get("branches", [])),
+                )
+                edge(portfolio_node, program_node, "registers_separate_program_authority")
+                for branch in program.get("branches", []):
+                    if not isinstance(branch, dict) or not branch.get("run"):
+                        continue
+                    legacy_id = str(branch["run"])
+                    legacy_node = ensure_node(
+                        f"legacy_run:{legacy_id}", "legacy_research_run", legacy_id,
+                        recorded_stage=branch.get("recorded_stage"),
+                        alignment_disposition=branch.get("alignment_disposition"),
+                        integration_action=branch.get("integration_action"),
+                        source_count=branch.get("source_count", 0),
+                        claim_count=branch.get("claim_count", 0),
+                        missing_for_current=branch.get("missing_for_current", []),
+                    )
+                    edge(program_node, legacy_node, "retains_legacy_branch_as_input")
+        if artifact_type == "portfolio-review-summary":
+            portfolio_id = str(payload.get("portfolio_id") or "multilingual-aaai-program-portfolio")
+            portfolio_node = ensure_node(
+                f"portfolio:{portfolio_id}", "research_portfolio", portfolio_id,
+                portfolio_id=portfolio_id,
+                posterior_review_summary=payload.get("summary", {}),
+                posterior_review_boundary=payload.get("does_not_authorize", ""),
+            )
+            edge(f"artifact:{artifact_id}", portfolio_node, "materializes_portfolio_review_summary")
+            for row in payload.get("programs", []):
+                if not isinstance(row, dict) or not row.get("program_key"):
+                    continue
+                key = str(row["program_key"])
+                program_node = ensure_node(
+                    f"research_program:{key}", "research_program", key,
+                    program_key=key,
+                    posterior_disposition=row.get("disposition"),
+                    posterior_status=row.get("status"),
+                    surviving_boundary=row.get("surviving_boundary", ""),
+                    next_evidence=row.get("next_evidence", []),
+                    collision_review_artifact_id=row.get("collision_review_artifact_id"),
+                    owner_review_status="PENDING_HUMAN_OWNER_REVIEW",
+                    owner_review_boundary="Portfolio summary is navigation only; the owner input must be recorded in the child collision-review Note.",
+                )
+                edge(portfolio_node, program_node, "summarizes_child_collision_review")
+        if artifact_type == "frontier-map":
+            program_key = str(payload.get("domain") or run.run_id)
+            program_node = ensure_node(
+                f"research_program:{program_key}", "research_program", program_key,
+                program_key=program_key,
+            )
+            edge(f"artifact:{artifact_id}", program_node, "frames_program_frontier")
+            for tension in payload.get("frontier_tensions", []):
+                if not isinstance(tension, dict) or not tension.get("tension_id"):
+                    continue
+                tension_id = str(tension["tension_id"])
+                question_node = ensure_node(
+                    f"research_question:{tension_id}", "research_question",
+                    str(tension.get("question") or tension_id), tension_id=tension_id,
+                    explanations=tension.get("competing_explanations", []),
+                    dimensions=tension.get("dimensions", []), freshness=tension.get("freshness"),
+                    review_status=payload.get("verification_status", "PENDING_SOURCE_REVIEW"),
+                    does_not_establish=tension.get("does_not_establish") or payload.get("evidence_boundary"),
+                    artifact_id=artifact_id,
+                )
+                edge(program_node, question_node, "frames_frontier_question")
+                for source_id in tension.get("anchor_source_ids", []):
+                    if str(source_id) in known_sources:
+                        edge(question_node, f"paper:{source_id}", "anchors_pending_source_verification")
+        if artifact_type == "topic-routing-package":
+            package_id = str(payload.get("package_id") or artifact_id)
+            topic_node = ensure_node(
+                f"topic_route:{package_id}", "topic_route_draft",
+                str(payload.get("topic") or package_id), package_id=package_id,
+                selected_track=payload.get("selected_track"), next_stage=payload.get("next_stage"),
+                rationale=payload.get("rationale"), valid_until=payload.get("valid_until"),
+                review_status="PENDING_INDEPENDENT_TOPIC_ROUTE_REVIEW",
+                does_not_establish="A structurally valid draft does not authorize a controller transition.",
+                artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", topic_node, "materializes_pending_topic_route")
+            active_program = next((
+                node["id"] for node in nodes
+                if node.get("kind") == "research_program"
+            ), None)
+            if active_program:
+                edge(active_program, topic_node, "awaits_independent_topic_route_review")
+        if artifact_type == "program-intake":
+            key = str(payload.get("program_key") or run.run_id)
+            program_node = ensure_node(
+                f"research_program:{key}", "research_program",
+                str(payload.get("label") or key), program_key=key,
+                root_question=payload.get("root_question", ""), parent_portfolio_run=payload.get("parent_portfolio_run"),
+                initial_state=payload.get("initial_state"), next_legal_work=payload.get("next_legal_work"),
+                language_axis_binding_required=payload.get("language_axis_binding_required"),
+                controller_boundary=payload.get("controller_boundary", ""), artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", program_node, "materializes_program_intake")
+        if artifact_type == "legacy-branch-index":
+            key = str(payload.get("program_key") or run.run_id)
+            program_node = ensure_node(f"research_program:{key}", "research_program", key, program_key=key)
+            edge(f"artifact:{artifact_id}", program_node, "indexes_legacy_branches")
+            for branch in payload.get("branches", []):
+                if not isinstance(branch, dict) or not branch.get("run"):
+                    continue
+                legacy_id = str(branch["run"])
+                legacy_node = ensure_node(
+                    f"legacy_run:{legacy_id}", "legacy_research_run", legacy_id,
+                    historical_path=branch.get("path"), catalog_role=branch.get("catalog_role"),
+                    catalog_disposition=branch.get("catalog_disposition"),
+                    alignment_disposition=branch.get("alignment_disposition"),
+                    integration_action=branch.get("integration_action"),
+                    source_count=branch.get("sources", 0), claim_count=branch.get("claims", 0),
+                    reusable=branch.get("reusable", []), missing_for_current=branch.get("missing_for_current", []),
+                )
+                edge(program_node, legacy_node, "retains_legacy_branch_as_input")
+        if artifact_type == "historical-alignment-summary":
+            audit_node = ensure_node(
+                f"alignment_audit:{payload.get('audit_digest', artifact_id)}", "historical_alignment_audit",
+                "历史归位审计", audit_digest=payload.get("audit_digest"), summary=payload.get("summary", {}),
+                disposition=payload.get("disposition"), source_boundary=payload.get("source_boundary"),
+            )
+            edge(f"artifact:{artifact_id}", audit_node, "materializes_alignment_boundary")
         # Knowledge artifacts must carry their own source metadata.  A source
         # ID alone is not enough to invent a Zotero/document edge.
         for source in payload.get("sources", []):
@@ -247,10 +466,56 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                 node_id = source_node(source, provenance=artifact_id)
                 if node_id:
                     edge(f"artifact:{artifact_id}", node_id, "records_explicit_source")
+        if artifact["kind"] == "opportunity-decision" or payload.get("artifact_type") == "opportunity-decision":
+            decision_id = str(payload.get("decision_id") or artifact_id)
+            gap_node = f"reality_signal_gap:{decision_id}"
+            nodes.append(_node(
+                gap_node, "reality_signal_gap",
+                "现实信号不足 · " + str(payload.get("decision") or "UNSPECIFIED"),
+                decision_id=decision_id, decision=payload.get("decision"),
+                searched_through=payload.get("searched_through"), reason=payload.get("reason", ""),
+                missing_source_function=payload.get("missing_source_function", ""),
+                next_legal_work=payload.get("next_legal_work", ""),
+                does_not_establish=payload.get("does_not_establish", ""),
+                controller_boundary=payload.get("controller_boundary", ""),
+                artifact_id=artifact_id,
+            ))
+            edge(f"artifact:{artifact_id}", gap_node, "materializes_reality_signal_gap")
+        if artifact["kind"] == "collision-review" or payload.get("artifact_type") == "collision-review":
+            review_id = str(payload.get("artifact_id") or artifact_id)
+            review_node = f"collision_review:{review_id}"
+            nodes.append(_node(
+                review_node, "collision_review",
+                f"碰撞复核 · {payload.get('disposition', 'UNSPECIFIED')}",
+                review_id=review_id,
+                input_problem_case_id=payload.get("input_problem_case_id"),
+                status=payload.get("status"), disposition=payload.get("disposition"),
+                comparisons=payload.get("comparisons", {}),
+                coverage_limits=payload.get("coverage_limits", []),
+                surviving_boundary=payload.get("surviving_boundary", ""),
+                alternative_explanations=payload.get("alternative_explanations", []),
+                next_evidence=payload.get("next_evidence", []),
+                does_not_authorize=payload.get("does_not_authorize", ""),
+                artifact_id=artifact_id,
+            ))
+            edge(f"artifact:{artifact_id}", review_node, "materializes_collision_review")
+            problem_id = payload.get("input_problem_case_id")
+            if problem_id:
+                edge(f"research_problem:{problem_id}", review_node, "is_claim_scoped_reviewed_by")
+            for inspected in payload.get("inspected_sources", []):
+                if not isinstance(inspected, dict):
+                    continue
+                source_id = source_node(inspected, provenance=artifact_id)
+                if source_id:
+                    edge(review_node, source_id, "inspects_for_collision",
+                         locator=inspected.get("locator", ""),
+                         comparison_type=inspected.get("comparison_type", ""),
+                         finding=inspected.get("finding", ""),
+                         does_not_establish=inspected.get("does_not_establish", ""))
         if artifact["kind"] == "knowledge-map" or payload.get("artifact_type") == "knowledge-map":
             map_id = str(payload.get("map_id") or artifact_id)
             map_node, historical = versioned(f"knowledge_map:{map_id}", artifact)
-            nodes.append(_node(map_node, "concept_map", str(payload.get("topic") or payload.get("scope") or map_id), map_id=map_id, definition=payload.get("definition", ""), does_not_establish=payload.get("does_not_establish", ""), artifact_id=artifact_id, historical_version=historical))
+            nodes.append(_node(map_node, "concept_map", str(payload.get("topic") or payload.get("scope") or map_id), map_id=map_id, schema_version=payload.get("schema_version"), map_review_status=payload.get("map_review_status", "LEGACY_SOURCE_IDS_ONLY"), definition=payload.get("definition", ""), does_not_establish=payload.get("does_not_establish", ""), artifact_id=artifact_id, historical_version=historical))
             edge(f"artifact:{artifact_id}", map_node, "materializes_knowledge_map")
             if historical:
                 edge(map_node, f"knowledge_map:{map_id}", "superseded_by_knowledge_map_version")
@@ -264,7 +529,7 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
             for concept in concepts:
                 concept_id = str(concept["concept_id"])
                 concept_node, _ = versioned(f"knowledge_concept:{map_id}:{concept_id}", artifact)
-                nodes.append(_node(concept_node, "knowledge_concept", str(concept.get("label") or concept_id), concept_id=concept_id, map_id=map_id, definition=concept.get("definition", ""), source_ids=concept.get("source_ids", []), does_not_establish=concept.get("does_not_establish", ""), depth=concept.get("depth"), artifact_id=artifact_id, historical_version=historical))
+                nodes.append(_node(concept_node, "knowledge_concept", str(concept.get("label") or concept_id), concept_id=concept_id, map_id=map_id, definition=concept.get("definition", ""), source_ids=concept.get("source_ids", []), review_status=concept.get("review_status", "PENDING_SOURCE_REVIEW"), evidence_spans=concept.get("evidence_spans", []), does_not_establish=concept.get("does_not_establish", ""), depth=concept.get("depth"), artifact_id=artifact_id, historical_version=historical))
                 parent = concept.get("parent_id")
                 parent_node = versioned(f"knowledge_concept:{map_id}:{parent}", artifact)[0] if str(parent) in concept_ids else map_node
                 edge(parent_node, concept_node, "specializes_concept" if str(parent) in concept_ids else "roots_concept")
@@ -358,6 +623,18 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                 for source_id in question.get("source_ids", []):
                     if str(source_id) in declared_problem_sources and str(source_id) in known_sources:
                         edge(question_node, f"paper:{source_id}", "cites_explicit_source")
+    # Some opportunity decisions precede the artifact that contributes the
+    # bibliographic metadata for a searched source. Resolve these edges only
+    # after every immutable artifact has had a chance to register its sources.
+    for artifact in run.artifacts:
+        payload = artifact.get("payload", {})
+        if payload.get("artifact_type") != "opportunity-decision":
+            continue
+        decision_id = str(payload.get("decision_id") or artifact["artifact_id"])
+        for source_id in payload.get("source_ids", []):
+            if str(source_id) in known_sources:
+                edge(f"reality_signal_gap:{decision_id}", f"paper:{source_id}",
+                     "searched_for_admissible_reality_signal_in")
     timeline: list[dict[str, Any]] = []
     for event in run.events:
         node_id = f"transition:{event['event_id']}"

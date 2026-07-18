@@ -1,0 +1,255 @@
+{
+  "artifact_type": "knowledge-map",
+  "schema_version": "1.1",
+  "map_id": "KM-multilingual-agent-action-attribution.draft-v1",
+  "topic": "multilingual-agent-action-attribution",
+  "scope": "A versioned learning hierarchy upgraded only where located worker-inspected spans support, limit, or challenge a bounded definition.",
+  "created_at": "2026-07-19T16:00:00+08:00",
+  "map_review_status": "PARTIALLY_SOURCE_REVIEWED",
+  "does_not_establish": "This map is a reading aid, not a universal ontology, field consensus, novelty certificate, causal hierarchy, human inspection record, route decision, or lifecycle transition.",
+  "sources": [
+    {
+      "source_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "pdf_url": "https://aclanthology.org/2025.findings-emnlp.1099.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
+      "identity_review": "RESOLVED_BY_INSPECTED_ACL_PDF_TITLE",
+      "supports": "Broad multilingual function-calling coverage and evidence of large cross-language performance variation.",
+      "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "The benchmark transforms parallel multilingual utterances into function-calling tasks across 52 languages and reports low average AST accuracy with severe low-resource failures.",
+          "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+        },
+        {
+          "locator": "pp. 7-10",
+          "observation": "Results depend on language, model, prompting template, translated descriptions, filtering, and AST/function-selection metrics.",
+          "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "pdf_url": "https://aclanthology.org/2026.acl-long.2039.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
+      "identity_review": "RESOLVED_BY_INSPECTED_ACL_PDF_TITLE",
+      "supports": "A controlled distinction between semantic tool selection and language-interface execution failure.",
+      "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "locator": "p. 8",
+          "observation": "Execution-interface violations dominate for some languages; translation mitigations help but introduce semantic drift and do not recover English performance.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "locator": "p. 9, Limitations",
+          "observation": "The study is single-turn, uses three languages and an English-parameter interface, and treats mitigations as diagnostic probes.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-UNITOOLCALL-2026",
+      "title": "UniToolCall: Unified Tool Calling via Question-Answer-Observation-Answer",
+      "url": "https://arxiv.org/abs/2604.11557",
+      "pdf_url": "https://arxiv.org/pdf/2604.11557",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 9",
+          "observation": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+          "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+        }
+      ],
+      "supports": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+      "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "action-attribution",
+      "label": "Multilingual agent action attribution",
+      "parent_id": null,
+      "definition": "A verification frame for separating language-conditioned action selection, interface execution, and evaluation effects.",
+      "source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-UNITOOLCALL-2026"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 1",
+          "relation": "DISTINGUISHES",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "source_id": "SRC-UNITOOLCALL-2026",
+          "locator": "pp. 1-2, 9",
+          "relation": "CHALLENGES",
+          "observation": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+          "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "language-surfaces",
+      "label": "Language-bearing surfaces",
+      "parent_id": "action-attribution",
+      "definition": "The distinct request, tool, observation, reasoning, output, and evaluator surfaces on which language can vary.",
+      "source_ids": [
+        "SRC-MLCL-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 1",
+          "relation": "DISTINGUISHES",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 8",
+          "relation": "EXEMPLIFIES",
+          "observation": "Execution-interface violations dominate for some languages; translation mitigations help but introduce semantic drift and do not recover English performance.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "action-selection",
+      "label": "Action selection",
+      "parent_id": "action-attribution",
+      "definition": "The agent decision to invoke, avoid, clarify, or abstain from a tool action before execution succeeds or fails.",
+      "source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 1",
+          "relation": "DISTINGUISHES",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "source_id": "SRC-MASSIVE-AGENTS-2025",
+          "locator": "p. 1",
+          "relation": "EXEMPLIFIES",
+          "observation": "The benchmark transforms parallel multilingual utterances into function-calling tasks across 52 languages and reports low average AST accuracy with severe low-resource failures.",
+          "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "interface-contract",
+      "label": "Tool interface contract",
+      "parent_id": "action-attribution",
+      "definition": "The schema, identifier, serialization, and documentation conditions connecting an intended action to an executable call.",
+      "source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-UNITOOLCALL-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 1",
+          "relation": "DEFINES",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        },
+        {
+          "source_id": "SRC-UNITOOLCALL-2026",
+          "locator": "pp. 1-2, 9",
+          "relation": "DEFINES",
+          "observation": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+          "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "execution-outcome",
+      "label": "Execution outcome",
+      "parent_id": "action-attribution",
+      "definition": "The environment-observed result after a call, kept distinct from the model's intended action.",
+      "source_ids": [
+        "SRC-MLCL-2026"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MLCL-2026",
+          "locator": "p. 1",
+          "relation": "EXEMPLIFIES",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention.",
+          "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "evaluation-attribution",
+      "label": "Evaluation attribution",
+      "parent_id": "action-attribution",
+      "definition": "The rule assigning an observed score or failure to semantics, action choice, interface validity, environment behavior, or evaluator error.",
+      "source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-UNITOOLCALL-2026"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MASSIVE-AGENTS-2025",
+          "locator": "pp. 7-10",
+          "relation": "LIMITS",
+          "observation": "Results depend on language, model, prompting template, translated descriptions, filtering, and AST/function-selection metrics.",
+          "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+        },
+        {
+          "source_id": "SRC-UNITOOLCALL-2026",
+          "locator": "pp. 1-2, 9",
+          "relation": "CHALLENGES",
+          "observation": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+          "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

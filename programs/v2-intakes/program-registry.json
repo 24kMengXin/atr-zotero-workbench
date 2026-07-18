@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-registry",
+  "portfolio_id": "multilingual-aaai-program-portfolio",
+  "children": [
+    {
+      "program_key": "multilingual-agent-action-attribution",
+      "run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+      "subject_id": "program:multilingual-agent-action-attribution",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    },
+    {
+      "program_key": "multilingual-agent-state-continuity",
+      "run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "subject_id": "program:multilingual-agent-state-continuity",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    },
+    {
+      "program_key": "multilingual-agent-authorization-safety",
+      "run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "subject_id": "program:multilingual-agent-authorization-safety",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    },
+    {
+      "program_key": "multilingual-representation-and-data-decisions",
+      "run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "subject_id": "program:multilingual-representation-and-data-decisions",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    },
+    {
+      "program_key": "agent-infrastructure-and-evaluation-contracts",
+      "run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    },
+    {
+      "program_key": "atr-research-governance",
+      "run_id": "2026-07-19-atr-research-governance-v2-intake",
+      "subject_id": "program:atr-research-governance",
+      "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY"
+    }
+  ],
+  "mutation_boundary": "Children never mutate this parent; terminal child summaries require a later explicit attachment."
+}

@@ -1,0 +1,18 @@
+{
+  "artifact_type": "opportunity-decision",
+  "schema_version": "1.0",
+  "decision_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
+  "program_key": "atr-research-governance",
+  "decision": "NO_ADMISSIBLE_SIGNAL",
+  "searched_through": "2026-07-19",
+  "reason": "All inspected sources are scientific papers or benchmark artifacts. The workbench's own user goal is not independent external pressure and therefore cannot serve as its own PRIMARY_WORKFLOW signal.",
+  "missing_source_function": "PRIMARY_WORKFLOW",
+  "source_ids": [
+    "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+    "SRC-ARBOR-2026",
+    "SRC-HEP-2026"
+  ],
+  "next_legal_work": "Retain the literature-led draft problem case and seek an independent primary workflow or ecosystem signal; do not manufacture an opportunity map.",
+  "does_not_establish": "No absence claim or research gap follows from this bounded search.",
+  "controller_boundary": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

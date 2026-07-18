@@ -1,0 +1,230 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-program-portfolio-v2",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.047320+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.079869+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "label": "附件 · HISTORICAL_INPUT_BOUNDARY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.112017+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "label": "附件 · CHILD_AUTHORITY_REGISTRY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-program-portfolio-v2",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "portfolio:multilingual-aaai",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:portfolio:multilingual-aaai",
+      "kind": "atr_v2_subject",
+      "label": "portfolio:multilingual-aaai",
+      "data": {
+        "subject_id": "portfolio:multilingual-aaai",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.047216+00:00",
+        "updated_at": "2026-07-18T19:10:58.047298+00:00",
+        "subject_kind": "portfolio"
+      }
+    },
+    {
+      "id": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "kind": "atr_v2_artifact",
+      "label": "portfolio-intake · 51e583f64bae",
+      "data": {
+        "artifact_id": "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "artifact_kind": "portfolio-intake",
+        "digest": "51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "original_name": "portfolio-intake.json",
+        "created_at": "2026-07-18T19:10:57.926920+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/portfolio-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "portfolio-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "kind": "atr_v2_artifact",
+      "label": "historical-alignment-summary · aa8309741461",
+      "data": {
+        "artifact_id": "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "artifact_kind": "historical-alignment-summary",
+        "digest": "aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "original_name": "historical-alignment-summary.json",
+        "created_at": "2026-07-18T19:10:57.972735+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/historical-alignment-summary.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "historical-alignment-summary",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "kind": "atr_v2_artifact",
+      "label": "program-registry · aabf0675d4b1",
+      "data": {
+        "artifact_id": "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "artifact_kind": "program-registry",
+        "digest": "aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "original_name": "program-registry.json",
+        "created_at": "2026-07-18T19:10:58.014481+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/program-registry.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-registry",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+        "subject_id": "portfolio:multilingual-aaai",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.047320+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "kind": "atr_v2_attachment",
+      "label": "HISTORICAL_INPUT_BOUNDARY · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+        "subject_id": "portfolio:multilingual-aaai",
+        "subject_version": 0,
+        "artifact_id": "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "role": "HISTORICAL_INPUT_BOUNDARY",
+        "note": "Records what may and may not be reused.",
+        "created_at": "2026-07-18T19:10:58.079869+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "kind": "atr_v2_attachment",
+      "label": "CHILD_AUTHORITY_REGISTRY · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+        "subject_id": "portfolio:multilingual-aaai",
+        "subject_version": 0,
+        "artifact_id": "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "role": "CHILD_AUTHORITY_REGISTRY",
+        "note": "Registers six separate child authorities.",
+        "created_at": "2026-07-18T19:10:58.112017+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "subject:portfolio:multilingual-aaai",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "target": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "target": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [],
+    "previous_projection": null
+  }
+}

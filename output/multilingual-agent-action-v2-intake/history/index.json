@@ -40,6 +40,14 @@
       "run": "multilingual-agent-action-v2-intake",
       "node_count": 51,
       "edge_count": 114
+    },
+    {
+      "id": "680da2e6c1ece62c",
+      "archived_at": "2026-07-18T21:57:03.747572+00:00",
+      "path": "history/projections/680da2e6c1ece62c.json",
+      "run": "multilingual-agent-action-v2-intake",
+      "node_count": 57,
+      "edge_count": 133
     }
   ]
 }

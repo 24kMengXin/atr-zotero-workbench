@@ -1,0 +1,59 @@
+{
+  "artifact_type": "source-acquisition-handoff",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-REPRESENTATION-AND-DATA-DECISIONS-R0-SRC-002.v1",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "input_collision_review_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-COL-001.v1",
+  "sources": [
+    {
+      "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "url": "https://arxiv.org/abs/2406.12419",
+      "pdf_url": "https://arxiv.org/pdf/2406.12419",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/ai-assisted-mt-eval.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2406.12419"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "assisted",
+            "evaluation",
+            "human",
+            "machine",
+            "translation"
+          ],
+          "expected_token_count": 5
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 8-10",
+          "observation": "Shows that AI-proposed error spans can reduce human MT-evaluation effort while maintaining evaluation quality in a bounded setup, and explicitly discusses priming, bias, metric choice, and intended-use limits.",
+          "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+        }
+      ],
+      "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+    }
+  ],
+  "handoff_policy": "Zotero may create a stored child attachment only after an explicit human read action; runtime item/attachment keys remain outside this immutable artifact.",
+  "does_not_authorize": "Identity and byte verification do not establish cited-version equivalence, human inspection, claim support, novelty, a route, or a lifecycle transition."
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "map_id": "FKM-multilingual-agent-action-attribution.draft-v1",
+  "domain": "multilingual-agent-action-attribution",
+  "scope": "Top-down verification scaffold, not an exhaustive survey or consensus map.",
+  "frontier_as_of": "2026-07-19",
+  "source_ledger_path": "evidence/sources.jsonl",
+  "verification_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+  "evidence_boundary": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "frontier_tensions": [
+    {
+      "tension_id": "FT-action-semantics-vs-interface",
+      "question": "When multilingual tool-use performance changes, is the load-bearing cause semantic action selection or the language/interface contract through which the action is expressed?",
+      "competing_explanations": [
+        "The model selects a different action under the focal natural-language surface.",
+        "The intended action is stable but schema wording, identifiers, serialization, or evaluation changes execution credit."
+      ],
+      "dimensions": [
+        "language surface",
+        "failure locus",
+        "interface contract"
+      ],
+      "anchor_source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-ARABIC-ENGLISH-TOOLS-2026",
+        "SRC-MTM-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "tension_id": "FT-action-capability-vs-instrument",
+      "question": "Does a multilingual benchmark measure transferable agent action capability or a benchmark-specific localization and judging contract?",
+      "competing_explanations": [
+        "The measured difference reflects capability across languages.",
+        "The difference is induced by translated items, tool documentation, release assets, or multilingual judge reliability."
+      ],
+      "dimensions": [
+        "construct validity",
+        "asset provenance",
+        "judge reliability"
+      ],
+      "anchor_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-BENCHMAX-2025",
+        "SRC-LLM-JUDGE-CHALLENGES-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "update_policy": {
+    "triggers": [
+      "first inspected source span",
+      "direct collision",
+      "benchmark or workflow revision",
+      "human Zotero review"
+    ],
+    "refresh_cadence": "before independent topic-route review and before any problem-case transition",
+    "owner": "research owner with Zotero-linked source review"
+  }
+}

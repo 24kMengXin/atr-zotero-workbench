@@ -1,0 +1,14 @@
+{
+  "artifact_type": "opportunity-decision",
+  "schema_version": "1.0",
+  "decision_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-DCS-001.v1",
+  "program_key": "multilingual-agent-authorization-safety",
+  "decision": "NO_ADMISSIBLE_SIGNAL",
+  "searched_through": "2026-07-19",
+  "reason": "The inspected set contains scientific-frontier evidence for agentic abstention and multilingual text safety, but no independent primary workflow source documenting multilingual tool-authorization decisions or irreversible commit failures.",
+  "missing_source_function": "PRIMARY_WORKFLOW",
+  "source_ids": ["SRC-AGENTABSTAIN-2026", "SRC-XSafety-2024"],
+  "next_legal_work": "Retain a literature-led draft problem case and seek a revision-pinned primary workflow signal; do not invent an opportunity map from two scientific papers.",
+  "does_not_establish": "No absence claim, research gap, novelty claim, or lifecycle transition follows from this bounded search.",
+  "controller_boundary": "Review-only decision; it cannot mutate subject state."
+}

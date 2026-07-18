@@ -1,0 +1,73 @@
+{
+  "artifact_type": "source-inspection-packet",
+  "schema_version": "1.0",
+  "packet_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-SRC-001.v1",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_status": "REVIEW_ONLY_NOT_A_GATE_VERDICT",
+  "sources": [
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Quality Gate: Estimating the Quality of Machine Translation for Public Administration Use Cases",
+      "url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "pdf_url": "https://aclanthology.org/2021.mtsummit-up.22.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "inspection_spans": [
+        {"locator": "p. 4", "observation": "A quality gate routes acceptable MT directly and unacceptable MT to human post-editing in public-administration assimilation and dissemination use cases."},
+        {"locator": "pp. 7-8", "observation": "Threshold trade-offs vary by language and use case; human raters disagree in one dissemination condition and the conclusions are limited to examined cases."}
+      ],
+      "supports": "A real decision-routing formulation linking MT quality, cost, speed, language, and use case.",
+      "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Supporting User Reliance on Machine Translation via Implicit and Explicit Feedback",
+      "url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.606.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "inspection_spans": [
+        {"locator": "pp. 8-9", "observation": "Implicit backtranslation and question-answer feedback improve decision accuracy and appropriate reliance while preserving user agency; critical errors remain difficult."},
+        {"locator": "pp. 9-10, Limitations", "observation": "The study is limited to English-Spanish, one COVID communication domain, one system, four feedback forms, and synthetic errors."}
+      ],
+      "supports": "Feedback presentation can change human decisions and appropriate reliance on MT.",
+      "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+    },
+    {
+      "source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+      "title": "European Commission use of eTranslation",
+      "url": "https://commission.europa.eu/about/service-standards-and-principles/commissions-use-languages_en",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "observed_at": "2026-07-19",
+      "inspection_spans": [
+        {"locator": "eTranslation section, lines 368-375 as inspected 2026-07-19", "observation": "The service supplies MT when human translations are unavailable, is fully automated, varies by text and language pair, and is available to public administrations."},
+        {"locator": "Use of machine translation on Europa, lines 278-282 as inspected 2026-07-19", "observation": "The Commission frames output as a basic idea, disclaims guaranteed accuracy, and excludes EU legislation from this use."}
+      ],
+      "supports": "A current public workflow where raw MT is exposed under explicit fit-for-purpose limits and variable quality.",
+      "does_not_establish": "How often users make consequential errors, which feedback design is best, or a universal routing threshold."
+    }
+  ],
+  "controller_boundary": "Inspection records source content and locators only. Repository cache, Zotero attachment, and Zotero snapshot states remain separate and explicit."
+}

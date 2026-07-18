@@ -1,0 +1,17 @@
+{
+  "artifact_type": "opportunity-decision",
+  "schema_version": "1.0",
+  "decision_id": "ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-DCS-001.v1",
+  "program_key": "multilingual-agent-action-attribution",
+  "decision": "NO_ADMISSIBLE_SIGNAL",
+  "searched_through": "2026-07-19",
+  "reason": "The inspected sources are scientific benchmarks; neither is an independent operational workflow record showing a consequential multilingual tool-action failure.",
+  "missing_source_function": "PRIMARY_WORKFLOW",
+  "source_ids": [
+    "SRC-MLCL-2026",
+    "SRC-MASSIVE-AGENTS-2025"
+  ],
+  "next_legal_work": "Retain the literature-led draft problem case and seek an independent primary workflow or ecosystem signal; do not manufacture an opportunity map.",
+  "does_not_establish": "No absence claim or research gap follows from this bounded search.",
+  "controller_boundary": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

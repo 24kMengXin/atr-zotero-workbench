@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "knowledge-map",
+  "map_id": "KM-multilingual-agent-state-continuity.draft-v1",
+  "topic": "multilingual-agent-state-continuity",
+  "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+  "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "sources": [
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-FORGETEVAL-2026",
+      "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "url": "https://arxiv.org/abs/2606.15903",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "title": "Design effective language understanding — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-MEM2ACTBENCH-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2607.06008",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "title": "Multilingual agents — Dialogflow CX",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "state-continuity",
+      "label": "Multilingual agent state continuity",
+      "parent_id": null,
+      "definition": "A verification frame for preserving and correctly using task-relevant state across language changes and long horizons.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-FORGETEVAL-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+        "SRC-MEM2ACTBENCH-2026",
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "state-encoding",
+      "label": "State encoding",
+      "parent_id": "state-continuity",
+      "definition": "How entities, commitments, constraints, and prior outcomes are represented for later use.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-FORGETEVAL-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "memory-storage",
+      "label": "Memory storage",
+      "parent_id": "state-continuity",
+      "definition": "The persistence layer and write policy that retain selected state across turns or sessions.",
+      "source_ids": [
+        "SRC-MEM2ACTBENCH-2026",
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "crosslingual-retrieval",
+      "label": "Cross-lingual retrieval",
+      "parent_id": "state-continuity",
+      "definition": "Recovery of relevant stored state when the later query uses another language or mixed language.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-FORGETEVAL-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "language-control-plane",
+      "label": "Language control plane",
+      "parent_id": "state-continuity",
+      "definition": "System rules that detect, pin, or switch language independently of semantic memory.",
+      "source_ids": [
+        "SRC-MEM2ACTBENCH-2026",
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "long-horizon-evaluation",
+      "label": "Long-horizon continuity evaluation",
+      "parent_id": "state-continuity",
+      "definition": "Evaluation that distinguishes state loss, retrieval failure, policy switching, and output-language mismatch over time.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-FORGETEVAL-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

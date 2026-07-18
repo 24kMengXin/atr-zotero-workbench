@@ -1,0 +1,29 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "problem_id": "PC-multilingual-mt-decision-routing.draft-v1",
+  "artifact_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-QST-001.v1",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When should a multilingual machine-translation workflow route output to human review or expose decision feedback, and when are apparent gains artifacts of language, use case, presentation, or rater disagreement?",
+  "decision_owner": "Public-service translation owners and interface designers deciding release, review, and feedback policy.",
+  "worlds": [
+    "W1: A calibrated threshold or feedback representation improves fit-for-purpose human decisions.",
+    "W2: Apparent gains are specific to language, use case, presentation, synthetic errors, or rater disagreement.",
+    "W3: Explicit advice increases trust or over-reliance, while implicit feedback better preserves user agency."
+  ],
+  "discriminator": "A preregistered decision study across at least two use cases and language pairs, with fixed MT outputs, a human-review reference, natural-versus-synthetic error controls, and presentation controls.",
+  "falsifier": "No decision improvement remains after controls, a single threshold fails to transport, or findings under synthetic errors do not reproduce on naturally occurring errors.",
+  "scope": "R0 problem framing around fit-for-purpose decisions, not a proposed universal metric or routing method.",
+  "does_not_establish": "No gap, novelty, prevalence, universal threshold, or lifecycle promotion is established.",
+  "source_spans": [
+    {"source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026", "title": "European Commission use of eTranslation", "url": "https://commission.europa.eu/about/service-standards-and-principles/commissions-use-languages_en", "kind": "PRIMARY_WORKFLOW_HTML", "locator": "eTranslation section, lines 368-375; machine-translation liability section, lines 278-282", "observation": "A live public workflow exposes fully automatic MT with explicit variation by text and language pair and fit-for-purpose exclusions.", "problem_posture": "CONTEXT_ONLY", "resolves": "Establishes an operational decision context and actor.", "leaves_unresolved": "Which routing or feedback policy improves decisions and at what cost.", "does_not_establish": "Failure prevalence or optimal policy."},
+    {"source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021", "title": "Quality Gate: Estimating the Quality of Machine Translation for Public Administration Use Cases", "url": "https://aclanthology.org/2021.mtsummit-up.22/", "kind": "PRIMARY_PAPER", "locator": "pp. 4, 7-8", "observation": "A quality gate formalizes routing but trade-offs vary by language and use case and include rater disagreement.", "problem_posture": "OBJECTIVELY_LEAVES", "resolves": "Supplies a threshold-based routing formulation.", "leaves_unresolved": "Whether thresholds transport and how human disagreement changes the decision target.", "does_not_establish": "A universal threshold."},
+    {"source_id": "SRC-USER-RELIANCE-MT-2025", "title": "Supporting User Reliance on Machine Translation via Implicit and Explicit Feedback", "url": "https://aclanthology.org/2025.emnlp-main.606/", "kind": "PRIMARY_PAPER", "locator": "pp. 8-10", "observation": "Feedback form affects reliance and decision accuracy, under narrow conditions.", "problem_posture": "OBJECTIVELY_LEAVES", "resolves": "Supplies a human-decision and agency formulation.", "leaves_unresolved": "Whether effects transport across languages, domains, systems, and natural errors.", "does_not_establish": "Broad generalization."}
+  ],
+  "derived_questions": [
+    {"question_id": "DQ-MT-1", "question": "Does a routing threshold transport across language pairs and assimilation versus dissemination use cases?", "smallest_discriminator": "A fixed-output comparison with separately calibrated and shared thresholds across two language-use-case cells.", "does_not_establish": "Universal validity.", "source_ids": ["SRC-QE-QUALITY-GATE-ROUTING-2021", "SRC-EC-ETRANSLATION-WORKFLOW-2026"]},
+    {"question_id": "DQ-MT-2", "question": "Does implicit feedback improve appropriate reliance on naturally occurring critical errors without reducing user agency?", "smallest_discriminator": "A presentation-controlled decision task contrasting natural and synthetic errors.", "does_not_establish": "Deployment-scale impact.", "source_ids": ["SRC-USER-RELIANCE-MT-2025", "SRC-EC-ETRANSLATION-WORKFLOW-2026"]}
+  ],
+  "controller_boundary": "Review-only problem case; independent review is required before route or promotion."
+}

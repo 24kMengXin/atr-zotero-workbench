@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "knowledge-map",
+  "map_id": "KM-multilingual-representation-and-data-decisions.draft-v1",
+  "topic": "multilingual-representation-and-data-decisions",
+  "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+  "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "sources": [
+    {
+      "source_id": "SRC-CULTURAX-2024",
+      "title": "CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages",
+      "url": "https://aclanthology.org/2024.lrec-main.377.pdf",
+      "kind": "PRIMARY_PAPER_AND_ASSET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-FINEWEB2-2025",
+      "title": "FineWeb2: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language",
+      "url": "https://arxiv.org/abs/2506.20920",
+      "kind": "PRIMARY_PAPER_AND_CODE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-QUALITY-GLANCE-2022",
+      "title": "Quality at a Glance: An Audit of Web-Crawled Multilingual Datasets",
+      "url": "https://arxiv.org/abs/2103.12028",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-LANGUAGE-IDEOLOGY-2022",
+      "title": "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection",
+      "url": "https://arxiv.org/abs/2201.10474",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Validating Quality Estimation in a Computer-Aided Translation Workflow: Speed, Cost and Quality Trade-off",
+      "url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
+      "url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-PRO-TRANSLATOR-QE-2026",
+      "title": "Professional Translators Versus Quality Estimation Models: Reliability and Agreement in English-Ukrainian Translation Evaluation",
+      "url": "https://aclanthology.org/2026.unlp-1.10/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "representation-data",
+      "label": "Multilingual representation and data decisions",
+      "parent_id": null,
+      "definition": "A verification frame connecting data, representation, inference, evaluation, and human-use decisions across languages.",
+      "source_ids": [
+        "SRC-CULTURAX-2024",
+        "SRC-FINEWEB2-2025",
+        "SRC-QUALITY-GLANCE-2022",
+        "SRC-LANGUAGE-IDEOLOGY-2022",
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025",
+        "SRC-PRO-TRANSLATOR-QE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "data-composition",
+      "label": "Multilingual data composition",
+      "parent_id": "representation-data",
+      "definition": "Which languages, domains, qualities, and duplication patterns enter pretraining, adaptation, or retrieval corpora.",
+      "source_ids": [
+        "SRC-CULTURAX-2024",
+        "SRC-FINEWEB2-2025",
+        "SRC-QUALITY-GLANCE-2022",
+        "SRC-LANGUAGE-IDEOLOGY-2022"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "tokenization-representation",
+      "label": "Tokenization and representation",
+      "parent_id": "representation-data",
+      "definition": "How scripts and language variation are segmented and represented, with implications for efficiency and accessibility.",
+      "source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025",
+        "SRC-PRO-TRANSLATOR-QE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "adaptation-allocation",
+      "label": "Adaptation and resource allocation",
+      "parent_id": "representation-data",
+      "definition": "How model capacity, data budgets, and transfer strategies are allocated across languages and domains.",
+      "source_ids": [
+        "SRC-CULTURAX-2024",
+        "SRC-FINEWEB2-2025",
+        "SRC-QUALITY-GLANCE-2022",
+        "SRC-LANGUAGE-IDEOLOGY-2022"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "inference-and-reasoning",
+      "label": "Inference and reasoning policy",
+      "parent_id": "representation-data",
+      "definition": "How prompting, retrieval, decoding, or test-time compute changes multilingual outputs under bounded conditions.",
+      "source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025",
+        "SRC-PRO-TRANSLATOR-QE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "quality-and-reliance",
+      "label": "Quality estimation and human reliance",
+      "parent_id": "representation-data",
+      "definition": "How quality signals support or mislead post-editing, sharing, triage, and other user decisions.",
+      "source_ids": [
+        "SRC-CULTURAX-2024",
+        "SRC-FINEWEB2-2025",
+        "SRC-QUALITY-GLANCE-2022",
+        "SRC-LANGUAGE-IDEOLOGY-2022"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

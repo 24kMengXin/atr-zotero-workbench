@@ -1,0 +1,61 @@
+{
+  "artifact_type": "source-acquisition-handoff",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-AGENT-AUTHORIZATION-SAFETY-R0-SRC-002.v1",
+  "program_key": "multilingual-agent-authorization-safety",
+  "input_collision_review_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-COL-001.v1",
+  "sources": [
+    {
+      "source_id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "url": "https://arxiv.org/abs/2601.08012",
+      "pdf_url": "https://arxiv.org/pdf/2601.08012",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/safe-tool-use.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.08012"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "llm",
+            "safe",
+            "tool",
+            "towards",
+            "use",
+            "verifiably"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-5",
+          "observation": "Frames tool safety as verifiable conformance to explicit specifications at consequential calls, directly covering commit-aware safety mechanisms without testing multilingual authorization effects.",
+          "does_not_establish": "Whether language changes recognition of an authorization boundary after comprehension and translation controls."
+        }
+      ],
+      "does_not_establish": "Whether language changes recognition of an authorization boundary after comprehension and translation controls."
+    }
+  ],
+  "handoff_policy": "Zotero may create a stored child attachment only after an explicit human read action; runtime item/attachment keys remain outside this immutable artifact.",
+  "does_not_authorize": "Identity and byte verification do not establish cited-version equivalence, human inspection, claim support, novelty, a route, or a lifecycle transition."
+}

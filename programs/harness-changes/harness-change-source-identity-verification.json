@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "change_id": "HCH-source-identity-before-fulltext-inspected-v1",
+  "scope": "Source acquisition identity verification before an acquired PDF can be recorded as inspected evidence or projected into Zotero.",
+  "observed_failure": "During the first collision-review reduction, an arXiv PDF URL returned a valid but unrelated paper. URL success, PDF readability, and a content digest would all have passed the existing provenance checks, so the wrong work could have been recorded as FULLTEXT_INSPECTED under the intended source ID.",
+  "evidence_refs": [
+    "programs/v2-intakes/pilot-reductions/multilingual-agent-action-attribution/collision-review.json",
+    ".runtime/collision-review/unitoolcall.pdf",
+    "https://arxiv.org/abs/2604.11557"
+  ],
+  "counterevidence": [
+    "DOI-resolved and publisher-hosted files often carry reliable embedded metadata, while scanned PDFs may lack machine-readable titles and therefore require a manual identity decision rather than automatic rejection.",
+    "Matching only a normalized title can still accept a preprint or revision different from the cited version."
+  ],
+  "proposed_mechanism": "Before setting FULLTEXT_INSPECTED, compare the intended source identity against at least two available signals among canonical DOI/arXiv ID, landing-page title, embedded PDF title/authors, and first-page title. Record IDENTITY_VERIFIED, IDENTITY_AMBIGUOUS, or IDENTITY_MISMATCH separately from download and inspection state; quarantine mismatches and never attach them to the intended Zotero item.",
+  "decision_node": "SOURCE_IDENTITY_BEFORE_INSPECTION",
+  "domain_boundary": {
+    "core_or_binding": "CORE",
+    "why_not_domain_specific": "A readable but misidentified file can corrupt evidence in every research domain; arXiv merely supplied the observed acquisition route."
+  },
+  "evaluation": {
+    "mode": "SHADOW",
+    "sample": "The next ten newly acquired scholarly PDFs across at least three program directions, including one DOI route and one repository route.",
+    "route_level_metrics": [
+      "number of mismatched or ambiguous files prevented from becoming FULLTEXT_INSPECTED",
+      "number of correct files unnecessarily delayed for manual identity review",
+      "time added before an honest ATTACH, REINSPECT, or ACCESS_REQUIRED decision"
+    ],
+    "rollback_rule": "Remove automatic rejection and retain only an identity-warning state if the check falsely rejects two correctly identified files or cannot produce a reviewable reason for a mismatch."
+  },
+  "disposition": "SHADOW",
+  "does_not_establish": "Identity agreement does not establish cited-version equivalence, lawful redistributability, inspection quality, comprehension, claim support, novelty, or a lifecycle transition.",
+  "created_at": "2026-07-19T12:00:00+08:00",
+  "review_by": "2026-08-19T12:00:00+08:00"
+}

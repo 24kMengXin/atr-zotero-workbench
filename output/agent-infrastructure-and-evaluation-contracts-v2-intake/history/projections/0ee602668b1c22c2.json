@@ -1,0 +1,3512 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:59.153477+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:59.187564+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:20:45.503780+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INVENTORY",
+      "label": "附件 · SOURCE_REVERIFICATION_QUEUE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:52.404333+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-01",
+      "label": "附件 · DRAFT_FKS_FRONTIER（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:52.881691+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-02",
+      "label": "附件 · DRAFT_KNOWLEDGE_SCAFFOLD（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:53.053383+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-03",
+      "label": "附件 · PENDING_TOPIC_ROUTE_REVIEW（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.573943+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INSPECTION",
+      "label": "附件 · FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.642545+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-OPPORTUNITY-MAP",
+      "label": "附件 · DRAFT_OPPORTUNITY_MAP_PENDING_REVIEW（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.711094+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-PROBLEM-CASE",
+      "label": "附件 · DRAFT_PROBLEM_CASE_PENDING_REVIEW（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6"
+      ]
+    },
+    {
+      "at": "2026-07-18T21:13:36.315847+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-COLLISION-REVIEW",
+      "label": "附件 · R0_COLLISION_REVIEW_WORKER_OUTPUT（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e"
+      ]
+    },
+    {
+      "at": "2026-07-18T21:33:57.988188+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-ACQUISITION-HANDOFF",
+      "label": "附件 · SOURCE_ACQUISITION_TO_ZOTERO_HANDOFF（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "kind": "atr_v2_subject",
+      "label": "program:agent-infrastructure-and-evaluation-contracts",
+      "data": {
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:59.153358+00:00",
+        "updated_at": "2026-07-18T19:10:59.153455+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · d2a16aa6655e",
+      "data": {
+        "artifact_id": "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "artifact_kind": "program-intake",
+        "digest": "d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:59.085086+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/agent-infrastructure-and-evaluation-contracts/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "kind": "research_program",
+      "label": "Agent 基础设施与评测契约",
+      "data": {
+        "program_key": "agent-infrastructure-and-evaluation-contracts",
+        "root_question": "运行时注册、框架 affordance、环境漂移和技能元数据如何在模型能力之前改变 agent 的实际可用能力与评测结论？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": false,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e"
+      }
+    },
+    {
+      "id": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · 6713883450bd",
+      "data": {
+        "artifact_id": "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:59.119647+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/agent-infrastructure-and-evaluation-contracts/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-agent-capability-registration",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-agent-capability-registration",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-capability-registration",
+        "catalog_role": "provider capability registry",
+        "catalog_disposition": "canonical_runtime_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 5,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-capability-contract-testbed",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-capability-contract-testbed",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-capability-contract-testbed",
+        "catalog_role": "endpoint/runtime/request emission contract testbed",
+        "catalog_disposition": "merge_as_testbed_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 6,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-agent-evaluation-drift-attribution",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-agent-evaluation-drift-attribution",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-evaluation-drift-attribution",
+        "catalog_role": "时间性 benchmark drift 归因",
+        "catalog_disposition": "merge_as_evaluation_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 8,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-programming-language-agent-affordances",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-programming-language-agent-affordances",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-programming-language-agent-affordances",
+        "catalog_role": "非 Python agent framework affordance",
+        "catalog_disposition": "merge_as_framework_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 6,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-skill-capability-containment",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-skill-capability-containment",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-skill-capability-containment",
+        "catalog_role": "动态 skill metadata 的能力边界",
+        "catalog_disposition": "merge_as_policy_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 6,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "kind": "atr_v2_artifact",
+      "label": "program-source-inventory · 30777c20946a",
+      "data": {
+        "artifact_id": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "artifact_kind": "program-source-inventory",
+        "digest": "30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "original_name": "program-source-inventory.json",
+        "created_at": "2026-07-18T19:20:45.463210+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/source-inventory/agent-infrastructure-and-evaluation-contracts/program-source-inventory.json",
+          "declared_scope": "metadata-only source re-verification queue"
+        },
+        "artifact_type": "program-source-inventory",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:SRC-AGENT-SKILLS-SURVEY-2026",
+      "kind": "paper",
+      "label": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+      "data": {
+        "source_id": "SRC-AGENT-SKILLS-SURVEY-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2602.12430",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_SURVEY",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENT-SKILLS-SURVEY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENT-SKILLS-SURVEY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTBEATS-2026",
+      "kind": "paper",
+      "label": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "data": {
+        "source_id": "SRC-AGENTBEATS-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.13608",
+        "pdf_url": "https://arxiv.org/pdf/2606.13608",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a",
+        "inspection_spans": [
+          {
+            "locator": "pp. 1-4",
+            "observation": "AgentBeats separates judge and subject agents through standardized protocols and treats benchmark administration as an explicit workflow."
+          },
+          {
+            "locator": "p. 11",
+            "observation": "A standardized pipeline preserves broad fidelity while enabling cross-agent comparisons."
+          },
+          {
+            "locator": "p. 13",
+            "observation": "Harness-swapping changes solve rates and token use; native model-harness pairings are not interchangeable."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTBEATS-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTBEATS-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTLAB-REPRO-2026",
+      "kind": "paper",
+      "label": "AgentLab reproducibility documentation",
+      "data": {
+        "source_id": "SRC-AGENTLAB-REPRO-2026",
+        "doi": "",
+        "url": "https://github.com/ServiceNow/AgentLab",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "HTML",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+        "inspection_spans": [
+          {
+            "locator": "README, lines 432-447",
+            "observation": "Reproducibility changes with software versions, silently updated API models, live websites, region/language defaults, stochastic agents, and nondeterministic tasks; studies record versions and commits."
+          },
+          {
+            "locator": "README, lines 403-421",
+            "observation": "AgentXray can inspect actions in previous or ongoing experiments but warns that its own display layer can behave unexpectedly."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "NOT_CACHED",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "OFFICIAL_OPEN_SOURCE_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTLAB-REPRO-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTLAB-REPRO-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTSKILLS-RFC-2026",
+      "kind": "paper",
+      "label": "Skill Package Manifest for Dependency Resolution and Distribution",
+      "data": {
+        "source_id": "SRC-AGENTSKILLS-RFC-2026",
+        "doi": "",
+        "url": "https://github.com/agentskills/agentskills/discussions/210",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "MAINTAINER_RFC",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTSKILLS-RFC-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTSKILLS-RFC-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-BFCL-2026",
+      "kind": "paper",
+      "label": "Berkeley Function Calling Leaderboard V4",
+      "data": {
+        "source_id": "SRC-BFCL-2026",
+        "doi": "",
+        "url": "https://gorilla.cs.berkeley.edu/leaderboard",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-BFCL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-BFCL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CAR-2026",
+      "kind": "paper",
+      "label": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "data": {
+        "source_id": "SRC-CAR-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.08275",
+        "pdf_url": "https://arxiv.org/pdf/2606.08275",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085",
+        "inspection_spans": [
+          {
+            "locator": "p. 1",
+            "observation": "CAR distinguishes the step executing harm from the earlier decision step and uses same-policy interventions rather than transcript judgment."
+          },
+          {
+            "locator": "p. 4",
+            "observation": "The paper narrows its contribution relative to oracle substitution and static-log attribution."
+          },
+          {
+            "locator": "p. 5, Limitations",
+            "observation": "Real side-effecting tools are out of scope, mocked reproducible tools are used, judges add noise, and the validation ground truth is synthetic."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CAR-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CAR-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CLAW-SWE-BENCH-2026",
+      "kind": "paper",
+      "label": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+      "data": {
+        "source_id": "SRC-CLAW-SWE-BENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.12344",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CLAW-SWE-BENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CLAW-SWE-BENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "kind": "paper",
+      "label": "ClawBench reproducibility-first benchmark release",
+      "data": {
+        "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+        "doi": "",
+        "url": "https://github.com/openclaw/clawbench",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "HTML",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+        "inspection_spans": [
+          {
+            "locator": "README, lines 790-824",
+            "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM."
+          },
+          {
+            "locator": "README, lines 797-801",
+            "observation": "Long-horizon and human-baseline coverage are planned rather than present in Core v1."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "NOT_CACHED",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "TECHNICAL_COMMUNITY_RELEASE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CLAWBENCH-DRIFT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CLAWBENCH-DRIFT-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "kind": "paper",
+      "label": "Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering",
+      "data": {
+        "source_id": "SRC-CODING-BENCH-HARNESS-POSITION-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.17799",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "POSITION_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CODING-BENCH-HARNESS-POSITION-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "kind": "paper",
+      "label": "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift",
+      "data": {
+        "source_id": "SRC-DRIFTROBUSTNESS-IEEE-2026",
+        "doi": "",
+        "url": "https://doi.org/10.1109/ACCESS.2026.3696096",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PEER_REVIEWED_ARTICLE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-DRIFTROBUSTNESS-IEEE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HERMES-CAPABILITY-2026",
+      "kind": "paper",
+      "label": "Allow manual capability declaration in custom providers",
+      "data": {
+        "source_id": "SRC-HERMES-CAPABILITY-2026",
+        "doi": "",
+        "url": "https://github.com/NousResearch/hermes-agent/issues/8731",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "FIELD_ISSUE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HERMES-CAPABILITY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HERMES-CAPABILITY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MCP-AGENTBENCH-2026",
+      "kind": "paper",
+      "label": "MCP-AgentBench",
+      "data": {
+        "source_id": "SRC-MCP-AGENTBENCH-2026",
+        "doi": "",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/40347",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "CONFLICT_REQUIRES_REVIEW",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed, 2026-07-17-multilingual-agent-evaluation-transport",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MCP-AGENTBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MCP-AGENTBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed, 2026-07-17-multilingual-agent-evaluation-transport",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "kind": "paper",
+      "label": "Model Context Protocol (MCP) Tool Descriptions Are Smelly!",
+      "data": {
+        "source_id": "SRC-MCP-DESCRIPTION-SMELLS-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2602.14878",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "CONFLICT_REQUIRES_REVIEW",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MCP-DESCRIPTION-SMELLS-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MCP-SPEC-2026",
+      "kind": "paper",
+      "label": "Model Context Protocol lifecycle and capability negotiation",
+      "data": {
+        "source_id": "SRC-MCP-SPEC-2026",
+        "doi": "",
+        "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_STANDARD",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-capability-registration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MCP-SPEC-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MCP-SPEC-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-capability-registration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MCP-UNIVERSE-2026",
+      "kind": "paper",
+      "label": "MCP-Universe",
+      "data": {
+        "source_id": "SRC-MCP-UNIVERSE-2026",
+        "doi": "",
+        "url": "https://mcp-universe.github.io/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MCP-UNIVERSE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MCP-UNIVERSE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MLEBENCH-VERSION-2026",
+      "kind": "paper",
+      "label": "MLE-bench repository and known-issues policy",
+      "data": {
+        "source_id": "SRC-MLEBENCH-VERSION-2026",
+        "doi": "",
+        "url": "https://github.com/openai/mle-bench",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "OFFICIAL_BENCHMARK_CHANGELOG",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MLEBENCH-VERSION-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLEBENCH-VERSION-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "kind": "paper",
+      "label": "Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving",
+      "data": {
+        "source_id": "SRC-MULTISWEBENCH-NEURIPS-2025",
+        "doi": "",
+        "url": "https://papers.neurips.cc/paper_files/paper/2025/hash/5afa9cb1e917b898ad418216dc726fbd-Abstract-Datasets_and_Benchmarks_Track.html",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTISWEBENCH-NEURIPS-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "kind": "paper",
+      "label": "multi-swe-bench/multi-swe-bench",
+      "data": {
+        "source_id": "SRC-MULTISWEBENCH-REPOSITORY-2026",
+        "doi": "",
+        "url": "https://github.com/multi-swe-bench/multi-swe-bench",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PUBLIC_REPOSITORY",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTISWEBENCH-REPOSITORY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-OPENCLAW-CAPABILITY-2026",
+      "kind": "paper",
+      "label": "Custom OpenAI-compatible providers don't send tools parameter for function calling",
+      "data": {
+        "source_id": "SRC-OPENCLAW-CAPABILITY-2026",
+        "doi": "",
+        "url": "https://github.com/openclaw/openclaw/issues/8923",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "FIELD_ISSUE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-OPENCLAW-CAPABILITY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-OPENCLAW-CAPABILITY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-OPENCLAW-SKILLFILTER-2026",
+      "kind": "paper",
+      "label": "Agent-level skills filters do not constrain injected skills prompt",
+      "data": {
+        "source_id": "SRC-OPENCLAW-SKILLFILTER-2026",
+        "doi": "",
+        "url": "https://github.com/openclaw/openclaw/issues/47019",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "REPRODUCIBLE_COMMUNITY_ISSUE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-OPENCLAW-SKILLFILTER-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-OPENCLAW-SKILLFILTER-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-PAEF-2026",
+      "kind": "paper",
+      "label": "Evaluating Agentic AI in the Wild: Failure Modes, Drift Patterns, and a Production Evaluation Framework",
+      "data": {
+        "source_id": "SRC-PAEF-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.01604",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-PAEF-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-PAEF-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-RELIABILITYBENCH-2026",
+      "kind": "paper",
+      "label": "ReliabilityBench: A Stress Benchmark for Reliable LLM Agents",
+      "data": {
+        "source_id": "SRC-RELIABILITYBENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2601.06112",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-RELIABILITYBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-RELIABILITYBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SKILLGUARD-2026",
+      "kind": "paper",
+      "label": "SkillGuard: A Permission Framework for Agent Skills",
+      "data": {
+        "source_id": "SRC-SKILLGUARD-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.03024",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SKILLGUARD-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SKILLGUARD-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SKILLINJECT-2026",
+      "kind": "paper",
+      "label": "Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks",
+      "data": {
+        "source_id": "SRC-SKILLINJECT-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2602.20156",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT_AND_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SKILLINJECT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SKILLINJECT-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "kind": "paper",
+      "label": "SWE-bench Multilingual",
+      "data": {
+        "source_id": "SRC-SWEBENCH-MULTILINGUAL-2026",
+        "doi": "",
+        "url": "https://www.swebench.com/multilingual.html",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PUBLIC_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SWEBENCH-MULTILINGUAL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SWEBENCH-QUICKSTART-2026",
+      "kind": "paper",
+      "label": "SWE-bench quickstart and multilingual dataset access",
+      "data": {
+        "source_id": "SRC-SWEBENCH-QUICKSTART-2026",
+        "doi": "",
+        "url": "https://github.com/SWE-bench/SWE-bench/blob/main/docs/guides/quickstart.md",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "OFFICIAL_REPOSITORY_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SWEBENCH-QUICKSTART-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SWEBENCH-QUICKSTART-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-VIGIL-2026",
+      "kind": "paper",
+      "label": "VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills",
+      "data": {
+        "source_id": "SRC-VIGIL-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.26524",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "cache_role": "",
+        "identity_state": "",
+        "identity_evidence": [],
+        "identity_review": "EXACT_NORMALIZED_MATCH",
+        "local_cache_import_policy": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-VIGIL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-VIGIL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "artifact:sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+      "kind": "atr_v2_artifact",
+      "label": "frontier-map · 2611dc06b255",
+      "data": {
+        "artifact_id": "sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+        "artifact_kind": "frontier-map",
+        "digest": "2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+        "original_name": "frontier-map.json",
+        "created_at": "2026-07-18T19:51:51.535489+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/agent-infrastructure-and-evaluation-contracts/knowledge/frontier-map.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": null,
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_question:FT-infra-agent-vs-harness",
+      "kind": "research_question",
+      "label": "When agent benchmark performance changes, which part is attributable to the agent and which to harness, tool schema, environment, or evaluator changes?",
+      "data": {
+        "tension_id": "FT-infra-agent-vs-harness",
+        "explanations": [
+          "The agent's policy or capability changed under a stable contract.",
+          "The surrounding execution and evaluation contract changed the observable outcome."
+        ],
+        "dimensions": [
+          "agent policy",
+          "harness",
+          "environment",
+          "evaluator"
+        ],
+        "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+        "review_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496"
+      }
+    },
+    {
+      "id": "research_question:FT-infra-openness-vs-replay",
+      "kind": "research_question",
+      "label": "Is an open agent benchmark reproducible because assets are public, or only when the complete versioned execution contract can be replayed?",
+      "data": {
+        "tension_id": "FT-infra-openness-vs-replay",
+        "explanations": [
+          "Public code and data are sufficient for meaningful comparison.",
+          "Unpinned tools, backends, policies, and orchestration make apparently open results non-comparable."
+        ],
+        "dimensions": [
+          "openness",
+          "version identity",
+          "replayability"
+        ],
+        "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+        "review_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496"
+      }
+    },
+    {
+      "id": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "kind": "atr_v2_artifact",
+      "label": "knowledge-map · 58264496fdc8",
+      "data": {
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "artifact_kind": "knowledge-map",
+        "digest": "58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "original_name": "knowledge-map.json",
+        "created_at": "2026-07-18T19:51:52.725580+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/agent-infrastructure-and-evaluation-contracts/knowledge/knowledge-map.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": "knowledge-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "knowledge_map:KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "kind": "concept_map",
+      "label": "agent-infrastructure-and-evaluation-contracts",
+      "data": {
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "kind": "knowledge_concept",
+      "label": "Agent infrastructure and evaluation contracts",
+      "data": {
+        "concept_id": "agent-infrastructure",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "A verification frame for separating agent capability, harness behavior, environment drift, and evaluation attribution.",
+        "source_ids": [
+          "SRC-AGENTBEATS-2026",
+          "SRC-CAR-2026",
+          "SRC-DRIFTROBUSTNESS-IEEE-2026",
+          "SRC-AGENTLAB-REPRO-2026",
+          "SRC-CLAWBENCH-DRIFT-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:tool-and-skill-contract",
+      "kind": "knowledge_concept",
+      "label": "Tool and skill contract",
+      "data": {
+        "concept_id": "tool-and-skill-contract",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "The declared interface, dependency, packaging, and invocation semantics available to an agent.",
+        "source_ids": [
+          "SRC-AGENTBEATS-2026",
+          "SRC-CAR-2026",
+          "SRC-DRIFTROBUSTNESS-IEEE-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:runtime-and-harness",
+      "kind": "knowledge_concept",
+      "label": "Runtime and harness",
+      "data": {
+        "concept_id": "runtime-and-harness",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "The orchestration, state, retry, observation, and execution layer mediating an agent's behavior.",
+        "source_ids": [
+          "SRC-AGENTLAB-REPRO-2026",
+          "SRC-AGENTBEATS-2026",
+          "SRC-CLAWBENCH-DRIFT-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:environment-drift",
+      "kind": "knowledge_concept",
+      "label": "Environment and policy drift",
+      "data": {
+        "concept_id": "environment-drift",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "Changes in schemas, tools, policies, services, and dependencies that can alter measured outcomes.",
+        "source_ids": [
+          "SRC-AGENTBEATS-2026",
+          "SRC-CAR-2026",
+          "SRC-DRIFTROBUSTNESS-IEEE-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:reproducibility-contract",
+      "kind": "knowledge_concept",
+      "label": "Reproducibility contract",
+      "data": {
+        "concept_id": "reproducibility-contract",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "The revisions, assets, configuration, and trace information required to replay or compare an agent run.",
+        "source_ids": [
+          "SRC-AGENTLAB-REPRO-2026",
+          "SRC-AGENTBEATS-2026",
+          "SRC-CLAWBENCH-DRIFT-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:evaluation-attribution",
+      "kind": "knowledge_concept",
+      "label": "Evaluation and failure attribution",
+      "data": {
+        "concept_id": "evaluation-attribution",
+        "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "definition": "Rules that distinguish agent decisions, harness failures, environment failures, and judge errors.",
+        "source_ids": [
+          "SRC-AGENTBEATS-2026",
+          "SRC-CAR-2026",
+          "SRC-DRIFTROBUSTNESS-IEEE-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "artifact:sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+      "kind": "atr_v2_artifact",
+      "label": "topic-routing-package · 7fd2b5d2edf7",
+      "data": {
+        "artifact_id": "sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+        "artifact_kind": "topic-routing-package",
+        "digest": "7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+        "original_name": "topic-routing-package.json",
+        "created_at": "2026-07-18T19:51:52.969829+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/agent-infrastructure-and-evaluation-contracts/knowledge/topic-routing-package.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": null,
+        "projection_error": null
+      }
+    },
+    {
+      "id": "topic_route:TRP-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "kind": "topic_route_draft",
+      "label": "运行时注册、框架 affordance、环境漂移和技能元数据如何在模型能力之前改变 agent 的实际可用能力与评测结论？",
+      "data": {
+        "package_id": "TRP-agent-infrastructure-and-evaluation-contracts.draft-v1",
+        "selected_track": "FOCUSED_REVIEW",
+        "next_stage": "R2_FOCUSED_REVIEW",
+        "rationale": "The inventory contains 27 canonical candidates, but none records inspected full text. The selected track is a proportional draft for verification and remains unauthorized until an independent reviewer reads the cited spans.",
+        "valid_until": "2026-08-19T00:00:00+08:00",
+        "review_status": "PENDING_INDEPENDENT_TOPIC_ROUTE_REVIEW",
+        "does_not_establish": "A structurally valid draft does not authorize a controller transition.",
+        "artifact_id": "sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd"
+      }
+    },
+    {
+      "id": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "kind": "atr_v2_artifact",
+      "label": "source-inspection-packet · a88a01d224b5",
+      "data": {
+        "artifact_id": "sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+        "artifact_kind": "source-inspection-packet",
+        "digest": "a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+        "original_name": "source-inspection-packet.json",
+        "created_at": "2026-07-18T20:51:54.532325+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/agent-infrastructure-and-evaluation-contracts/source-inspection-packet.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "source-inspection-packet",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "kind": "atr_v2_artifact",
+      "label": "opportunity-map · 91c1694e415e",
+      "data": {
+        "artifact_id": "sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+        "artifact_kind": "opportunity-map",
+        "digest": "91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+        "original_name": "opportunity-map.json",
+        "created_at": "2026-07-18T20:51:54.608710+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/agent-infrastructure-and-evaluation-contracts/opportunity-map.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "opportunity-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "opportunity_map:OM-agent-infra-replay-contract.review-v1",
+      "kind": "opportunity_map",
+      "label": "Versioned and replayable agent evaluation workflows",
+      "data": {
+        "map_id": "OM-agent-infra-replay-contract.review-v1",
+        "searched_through": "2026-07-19",
+        "created_at": "2026-07-19T00:00:00+08:00",
+        "valid_until": "2026-08-19",
+        "does_not_establish": "A bounded inspiration artifact, not a research-gap, novelty, prevalence, or lifecycle certificate.",
+        "artifact_id": "sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "kind": "real_world_tension",
+      "label": "Agent scores are reported as model capability while software, harness, provider, website, region/language, configuration, and judge remain moving parts",
+      "data": {
+        "tension_id": "T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+        "actor": "Agent benchmark maintainers and model/system selectors",
+        "incumbent_practice": "Publish open code/assets and compare aggregate scores under a nominal benchmark name.",
+        "material_consequence": "Teams may attribute a score change to the agent and choose or remediate the wrong component when the execution contract drifted.",
+        "candidate_construct": "Versioned execution-contract attribution and replay",
+        "alternative_explanations": [
+          "The underlying agent capability changed",
+          "Harness/configuration/provider/environment drift changed the measurement",
+          "Observed replay differences are judge noise or stochastic continuation"
+        ],
+        "translation_status": "ROUTE_TO_R0",
+        "does_not_establish": "A universal replay mechanism, causal attribution for live tools, or that openness guarantees reproducibility.",
+        "artifact_id": "sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "artifact:sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+      "kind": "atr_v2_artifact",
+      "label": "problem-case · 51149122835c",
+      "data": {
+        "artifact_id": "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "artifact_kind": "problem-case",
+        "digest": "51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "original_name": "problem-case.json",
+        "created_at": "2026-07-18T20:51:54.677119+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/agent-infrastructure-and-evaluation-contracts/problem-case.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "problem-case",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "kind": "research_problem",
+      "label": "When an agent benchmark score changes, when should the change be attributed to the agent and when to the harness, tool schema, configuration, provider, environment, or evaluator contract?",
+      "data": {
+        "problem_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+        "decision_owner": "Benchmark maintainers and system selectors deciding which component to compare, repair, or deploy.",
+        "worlds": [
+          "W1: The agent's decision policy or capability changed under an otherwise equivalent execution contract.",
+          "W2: Harness, configuration, schema, provider, website, locale, or evaluator drift changed the measured behavior.",
+          "W3: Replay or judge noise creates an apparent attribution without a stable intervention target."
+        ],
+        "discriminator": "A revision-pinned cross-harness replay matrix with frozen agent, benchmark items, tools, provider snapshot, evaluator, and environment where one contract component changes at a time and outcomes retain trace-level confidence intervals.",
+        "falsifier": "Score differences disappear under a frozen contract, fail to reproduce across replay, or cannot be localized beyond stochastic/judge uncertainty.",
+        "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+        "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+        "artifact_id": "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-1",
+      "kind": "derived_research_question",
+      "label": "Which minimal execution-contract fields reverse a benchmark comparison when pinned or changed?",
+      "data": {
+        "question_id": "DQ-INFRA-1",
+        "status": "REVIEW_TASK",
+        "smallest_discriminator": "One agent-task pair replayed across two harnesses with every other revision fixed.",
+        "does_not_establish": "Universal reproducibility.",
+        "parent_problem_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+        "artifact_id": "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-2",
+      "kind": "derived_research_question",
+      "label": "Can a trace-level intervention localize a score change without oracle substitution or transcript judging?",
+      "data": {
+        "question_id": "DQ-INFRA-2",
+        "status": "REVIEW_TASK",
+        "smallest_discriminator": "One mocked replay with known commitment point followed by one explicitly non-adjudicated live-tool feasibility check.",
+        "does_not_establish": "Live-tool causal validity.",
+        "parent_problem_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+        "artifact_id": "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "artifact:sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+      "kind": "atr_v2_artifact",
+      "label": "collision-review · 3102c0f92ef2",
+      "data": {
+        "artifact_id": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+        "artifact_kind": "collision-review",
+        "digest": "3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+        "original_name": "collision-review.json",
+        "created_at": "2026-07-18T21:13:36.277976+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/agent-infrastructure-and-evaluation-contracts/collision-review.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "collision-review",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "collision_review:ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "kind": "collision_review",
+      "label": "碰撞复核 · REFRAME",
+      "data": {
+        "review_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+        "input_problem_case_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+        "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+        "disposition": "REFRAME",
+        "comparisons": {
+          "exact": [
+            "Harness-Bench already directly establishes that full agent configurations can materially change scores."
+          ],
+          "claim": [
+            "The broad question 'does the harness matter?' is answered and cannot support a new gap."
+          ],
+          "mechanism": [
+            "AgentEval localizes step failures; Causal Agent Replay intervenes on mocked trajectories; neither yields general live field-level causal attribution."
+          ],
+          "compositional": [
+            "Together these works cover configuration sensitivity, trace diagnosis, and synthetic intervention, leaving only a narrower execution-contract attribution boundary."
+          ],
+          "adjacent": [
+            "Reproducibility documentation records versions and commits but does not estimate causal effects."
+          ]
+        },
+        "coverage_limits": [
+          "Harness-Bench explicitly limits its results to configuration-level diagnostics.",
+          "AgentEval uses an LLM judge, English workflows, and heuristic root-cause analysis.",
+          "Causal Agent Replay uses mocked tools and synthetic ground truth."
+        ],
+        "surviving_boundary": "A narrower boundary remains: identify the minimal revision-pinned execution-contract fields whose controlled change reverses a comparison, and require trace evidence that attributes the reversal without treating diagnostic symptoms as causes.",
+        "alternative_explanations": [
+          "Provider or environment drift may explain the change.",
+          "Evaluator interpretation may reverse a ranking without changing execution.",
+          "Trace-local symptoms may be downstream of an earlier contract mismatch."
+        ],
+        "next_evidence": [
+          "Construct one pinned pair differing in exactly one declared contract field.",
+          "Test whether independent replay and adjudication agree on the first causal divergence."
+        ],
+        "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review.",
+        "artifact_id": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e"
+      }
+    },
+    {
+      "id": "paper:SRC-HARNESS-BENCH-2026",
+      "kind": "paper",
+      "label": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "data": {
+        "source_id": "SRC-HARNESS-BENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.27922",
+        "pdf_url": "https://arxiv.org/pdf/2605.27922",
+        "access_status": "EXPLICIT_OPEN_PDF",
+        "access_route": "OPEN_REPOSITORY",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e",
+        "inspection_spans": [
+          {
+            "locator": "pp. 1-2, 7-8",
+            "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+            "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/collision-review/harness-bench.pdf",
+        "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "identity_state": "IDENTITY_VERIFIED",
+        "identity_evidence": [
+          {
+            "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+            "value": "2605.27922"
+          },
+          {
+            "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+            "matched": [
+              "agent",
+              "bench",
+              "evaluating",
+              "harness",
+              "harnesses",
+              "language",
+              "large",
+              "models"
+            ],
+            "expected_token_count": 8
+          },
+          {
+            "signal": "BYTE_IDENTITY",
+            "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
+          }
+        ],
+        "identity_review": "",
+        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "source_kind": "UNSPECIFIED",
+        "source_layer": "source_needs_review",
+        "locator": "pp. 1-2, 7-8",
+        "provenance": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "",
+        "does_not_support": "Which individual contract field caused a score change or whether a model-only comparison is valid.",
+        "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+      }
+    },
+    {
+      "id": "evidence:SRC-HARNESS-BENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HARNESS-BENCH-2026 的证据边界",
+      "data": {
+        "supports": "",
+        "does_not_support": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTEVAL-2026",
+      "kind": "paper",
+      "label": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "data": {
+        "source_id": "SRC-AGENTEVAL-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2604.23581",
+        "pdf_url": "https://arxiv.org/pdf/2604.23581",
+        "access_status": "EXPLICIT_OPEN_PDF",
+        "access_route": "OPEN_REPOSITORY",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87",
+        "inspection_spans": [
+          {
+            "locator": "pp. 1, 6-8",
+            "observation": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+            "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/collision-review/agent-eval.pdf",
+        "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "identity_state": "IDENTITY_VERIFIED",
+        "identity_evidence": [
+          {
+            "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+            "value": "2604.23581"
+          },
+          {
+            "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+            "matched": [
+              "agenteval",
+              "agents",
+              "evaluation",
+              "framework",
+              "level",
+              "llm",
+              "step"
+            ],
+            "expected_token_count": 7
+          },
+          {
+            "signal": "BYTE_IDENTITY",
+            "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
+          }
+        ],
+        "identity_review": "",
+        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "source_kind": "UNSPECIFIED",
+        "source_layer": "source_needs_review",
+        "locator": "pp. 1, 6-8",
+        "provenance": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "",
+        "does_not_support": "Causal attribution across harness fields, multilingual transport, or evaluator independence.",
+        "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTEVAL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTEVAL-2026 的证据边界",
+      "data": {
+        "supports": "",
+        "does_not_support": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+      }
+    },
+    {
+      "id": "artifact:sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+      "kind": "atr_v2_artifact",
+      "label": "source-acquisition-handoff · 3ae500bab11f",
+      "data": {
+        "artifact_id": "sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+        "artifact_kind": "source-acquisition-handoff",
+        "digest": "3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+        "original_name": "source-acquisition-handoff.json",
+        "created_at": "2026-07-18T21:33:57.952609+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/agent-infrastructure-and-evaluation-contracts/source-acquisition-handoff.json",
+          "declared_scope": "identity-verified Zotero stored-copy handoff; explicit read only"
+        },
+        "artifact_type": "source-acquisition-handoff",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:59.153477+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:59.187564+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INVENTORY",
+      "kind": "atr_v2_attachment",
+      "label": "SOURCE_REVERIFICATION_QUEUE · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INVENTORY",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+        "role": "SOURCE_REVERIFICATION_QUEUE",
+        "note": "Canonical bibliographic candidates; attachment and cited-span inspection remain pending.",
+        "created_at": "2026-07-18T19:20:45.503780+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-01",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_FKS_FRONTIER · v0",
+      "data": {
+        "seq": 3,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-01",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+        "role": "DRAFT_FKS_FRONTIER",
+        "note": "FKS frontier questions; metadata-only anchors pending Zotero full-text review.",
+        "created_at": "2026-07-18T19:51:52.404333+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-02",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_KNOWLEDGE_SCAFFOLD · v0",
+      "data": {
+        "seq": 4,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-02",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+        "role": "DRAFT_KNOWLEDGE_SCAFFOLD",
+        "note": "Top-down concept hierarchy for human source verification; not consensus.",
+        "created_at": "2026-07-18T19:51:52.881691+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-03",
+      "kind": "atr_v2_attachment",
+      "label": "PENDING_TOPIC_ROUTE_REVIEW · v0",
+      "data": {
+        "seq": 5,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-03",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+        "role": "PENDING_TOPIC_ROUTE_REVIEW",
+        "note": "Structurally valid route draft; no transition before independent evidence review.",
+        "created_at": "2026-07-18T19:51:53.053383+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INSPECTION",
+      "kind": "atr_v2_attachment",
+      "label": "FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY · v0",
+      "data": {
+        "seq": 6,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INSPECTION",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+        "role": "FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.573943+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-OPPORTUNITY-MAP",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_OPPORTUNITY_MAP_PENDING_REVIEW · v0",
+      "data": {
+        "seq": 7,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-OPPORTUNITY-MAP",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+        "role": "DRAFT_OPPORTUNITY_MAP_PENDING_REVIEW",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.642545+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-PROBLEM-CASE",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_PROBLEM_CASE_PENDING_REVIEW · v0",
+      "data": {
+        "seq": 8,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-PROBLEM-CASE",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+        "role": "DRAFT_PROBLEM_CASE_PENDING_REVIEW",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.711094+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-COLLISION-REVIEW",
+      "kind": "atr_v2_attachment",
+      "label": "R0_COLLISION_REVIEW_WORKER_OUTPUT · v0",
+      "data": {
+        "seq": 9,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-COLLISION-REVIEW",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+        "role": "R0_COLLISION_REVIEW_WORKER_OUTPUT",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T21:13:36.315847+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-ACQUISITION-HANDOFF",
+      "kind": "atr_v2_attachment",
+      "label": "SOURCE_ACQUISITION_TO_ZOTERO_HANDOFF · v0",
+      "data": {
+        "seq": 10,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-ACQUISITION-HANDOFF",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+        "role": "SOURCE_ACQUISITION_TO_ZOTERO_HANDOFF",
+        "note": "Identity-verified local cache may become a Zotero stored copy only on explicit read; no lifecycle effect.",
+        "created_at": "2026-07-18T21:33:57.988188+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "target": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "target": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "legacy_run:2026-07-17-agent-capability-registration",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "legacy_run:2026-07-17-capability-contract-testbed",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "legacy_run:2026-07-17-agent-evaluation-drift-attribution",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "legacy_run:2026-07-17-programming-language-agent-affordances",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "legacy_run:2026-07-17-skill-capability-containment",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENT-SKILLS-SURVEY-2026",
+      "target": "evidence:SRC-AGENT-SKILLS-SURVEY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-AGENT-SKILLS-SURVEY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTBEATS-2026",
+      "target": "evidence:SRC-AGENTBEATS-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTLAB-REPRO-2026",
+      "target": "evidence:SRC-AGENTLAB-REPRO-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTSKILLS-RFC-2026",
+      "target": "evidence:SRC-AGENTSKILLS-RFC-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-AGENTSKILLS-RFC-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-BFCL-2026",
+      "target": "evidence:SRC-BFCL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-BFCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CAR-2026",
+      "target": "evidence:SRC-CAR-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CLAW-SWE-BENCH-2026",
+      "target": "evidence:SRC-CLAW-SWE-BENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-CLAW-SWE-BENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "target": "evidence:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "target": "evidence:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "target": "evidence:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HERMES-CAPABILITY-2026",
+      "target": "evidence:SRC-HERMES-CAPABILITY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-HERMES-CAPABILITY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MCP-AGENTBENCH-2026",
+      "target": "evidence:SRC-MCP-AGENTBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MCP-AGENTBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "target": "evidence:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MCP-SPEC-2026",
+      "target": "evidence:SRC-MCP-SPEC-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MCP-SPEC-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MCP-UNIVERSE-2026",
+      "target": "evidence:SRC-MCP-UNIVERSE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MCP-UNIVERSE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLEBENCH-VERSION-2026",
+      "target": "evidence:SRC-MLEBENCH-VERSION-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MLEBENCH-VERSION-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "target": "evidence:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "target": "evidence:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-OPENCLAW-CAPABILITY-2026",
+      "target": "evidence:SRC-OPENCLAW-CAPABILITY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-OPENCLAW-CAPABILITY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-OPENCLAW-SKILLFILTER-2026",
+      "target": "evidence:SRC-OPENCLAW-SKILLFILTER-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-OPENCLAW-SKILLFILTER-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-PAEF-2026",
+      "target": "evidence:SRC-PAEF-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-PAEF-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-RELIABILITYBENCH-2026",
+      "target": "evidence:SRC-RELIABILITYBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-RELIABILITYBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SKILLGUARD-2026",
+      "target": "evidence:SRC-SKILLGUARD-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-SKILLGUARD-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SKILLINJECT-2026",
+      "target": "evidence:SRC-SKILLINJECT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-SKILLINJECT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "target": "evidence:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SWEBENCH-QUICKSTART-2026",
+      "target": "evidence:SRC-SWEBENCH-QUICKSTART-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-SWEBENCH-QUICKSTART-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-VIGIL-2026",
+      "target": "evidence:SRC-VIGIL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "target": "paper:SRC-VIGIL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+      "target": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "frames_program_frontier",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "research_question:FT-infra-agent-vs-harness",
+      "relation": "frames_frontier_question",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-agent-vs-harness",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-agent-vs-harness",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-agent-vs-harness",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "research_question:FT-infra-openness-vs-replay",
+      "relation": "frames_frontier_question",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-openness-vs-replay",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-openness-vs-replay",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-infra-openness-vs-replay",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "target": "knowledge_map:KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "relation": "materializes_knowledge_map",
+      "data": {}
+    },
+    {
+      "source": "knowledge_map:KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "relation": "roots_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:tool-and-skill-contract",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:tool-and-skill-contract",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:tool-and-skill-contract",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:tool-and-skill-contract",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:runtime-and-harness",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:runtime-and-harness",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:runtime-and-harness",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:runtime-and-harness",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:environment-drift",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:environment-drift",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:environment-drift",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:environment-drift",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:reproducibility-contract",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:reproducibility-contract",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:reproducibility-contract",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:reproducibility-contract",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:agent-infrastructure",
+      "target": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:evaluation-attribution",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:evaluation-attribution",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:evaluation-attribution",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-agent-infrastructure-and-evaluation-contracts.draft-v1:evaluation-attribution",
+      "target": "paper:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+      "target": "topic_route:TRP-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "relation": "materializes_pending_topic_route",
+      "data": {}
+    },
+    {
+      "source": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "target": "topic_route:TRP-agent-infrastructure-and-evaluation-contracts.draft-v1",
+      "relation": "awaits_independent_topic_route_review",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "target": "opportunity_map:OM-agent-infra-replay-contract.review-v1",
+      "relation": "materializes_opportunity_map",
+      "data": {}
+    },
+    {
+      "source": "opportunity_map:OM-agent-infra-replay-contract.review-v1",
+      "target": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "relation": "clusters_real_world_tension",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "real_world_tension:T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "grounded_in_explicit_signal",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+      "target": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "relation": "materializes_problem_case",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "pp. 1-4, 11, 13",
+        "observation": "Separates benchmark and subject agents and shows harness swapping changes results.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "A full-stack evaluation decomposition and measured harness sensitivity.",
+        "leaves_unresolved": "Causal attribution for arbitrary environments.",
+        "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+      }
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "pp. 1, 4-5",
+        "observation": "Provides intervention-based step attribution but only with mocked tools and synthetic ground truth.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "A causal replay instrument and its validity boundary.",
+        "leaves_unresolved": "Live side-effecting replay and general field attribution.",
+        "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+      }
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "README lines 403-447",
+        "observation": "Enumerates concrete reproducibility drift sources and records versions/commits.",
+        "problem_posture": "CONTEXT_ONLY",
+        "resolves": "A primary workflow pressure and inspection mechanism.",
+        "leaves_unresolved": "Effect sizes or a complete replay guarantee.",
+        "does_not_establish": "The size of each effect or a universal replay contract."
+      }
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "README lines 790-824",
+        "observation": "Treats harness, configuration, and model as a versioned full stack.",
+        "problem_posture": "CONTEXT_ONLY",
+        "resolves": "An operational alternative to model-only scoring.",
+        "leaves_unresolved": "Independent scientific validation or human calibration.",
+        "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+      }
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-1",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-1",
+      "target": "paper:SRC-AGENTBEATS-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-1",
+      "target": "paper:SRC-AGENTLAB-REPRO-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-2",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-2",
+      "target": "paper:SRC-CAR-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-agent-score-execution-contract-attribution.draft-v1:DQ-INFRA-2",
+      "target": "paper:SRC-CLAWBENCH-DRIFT-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+      "target": "collision_review:ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "relation": "materializes_collision_review",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-agent-score-execution-contract-attribution.draft-v1",
+      "target": "collision_review:ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "relation": "is_claim_scoped_reviewed_by",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HARNESS-BENCH-2026",
+      "target": "evidence:SRC-HARNESS-BENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "collision_review:ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "target": "paper:SRC-HARNESS-BENCH-2026",
+      "relation": "inspects_for_collision",
+      "data": {
+        "locator": "pp. 1-2, 7-8",
+        "comparison_type": "CLAIM_COLLISION",
+        "finding": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+        "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+      }
+    },
+    {
+      "source": "paper:SRC-AGENTEVAL-2026",
+      "target": "evidence:SRC-AGENTEVAL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "collision_review:ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "target": "paper:SRC-AGENTEVAL-2026",
+      "relation": "inspects_for_collision",
+      "data": {
+        "locator": "pp. 1, 6-8",
+        "comparison_type": "MECHANISM_COLLISION",
+        "finding": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+        "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+      }
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+      "target": "paper:SRC-HARNESS-BENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+      "target": "paper:SRC-AGENTEVAL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "target": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INVENTORY",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INVENTORY",
+      "target": "artifact:sha256:30777c20946a1dd47f15c0877b13ebab2fe603b2d6c2c9cd399af5cb4eef9e4d",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-01",
+      "target": "artifact:sha256:2611dc06b25548fdecf43f66af54f5c3520a833da41c5c37ca417443206f6496",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-02",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-02",
+      "target": "artifact:sha256:58264496fdc80b9e8b0936169ef1595c4a8311d909797a39bdbe8803244c5950",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-03",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-R0-03",
+      "target": "artifact:sha256:7fd2b5d2edf73c6497ad6c605a9c07e74b36bb9ecd127041a020e46f66677ddd",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INSPECTION",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-INSPECTION",
+      "target": "artifact:sha256:a88a01d224b517beafdb12bca9f1f1e0229f5a8fb794ef90243bbb359e698b69",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-OPPORTUNITY-MAP",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-OPPORTUNITY-MAP",
+      "target": "artifact:sha256:91c1694e415e7dad19ec5043e8018f9faa8117e12bea8ff93741228ab6b0efd6",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-PROBLEM-CASE",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-DRAFT-PROBLEM-CASE",
+      "target": "artifact:sha256:51149122835c0855107abcb032ab11cebb09fdfa93af7776b5e45d60e00f11a6",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-COLLISION-REVIEW",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-COLLISION-REVIEW",
+      "target": "artifact:sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-ACQUISITION-HANDOFF",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-SOURCE-ACQUISITION-HANDOFF",
+      "target": "artifact:sha256:3ae500bab11fd5d26b6b54b999fbc50d22f90900173519f77c165302e91cad39",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "2db10938f80fbd95",
+        "archived_at": "2026-07-18T19:12:43.463794+00:00",
+        "path": "history/projections/2db10938f80fbd95.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      },
+      {
+        "id": "f3939c164c2bc494",
+        "archived_at": "2026-07-18T19:20:56.547218+00:00",
+        "path": "history/projections/f3939c164c2bc494.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 12,
+        "edge_count": 14
+      },
+      {
+        "id": "16e2a07d785d8cbc",
+        "archived_at": "2026-07-18T19:53:40.654424+00:00",
+        "path": "history/projections/16e2a07d785d8cbc.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 68,
+        "edge_count": 71
+      },
+      {
+        "id": "497dd36408c8a179",
+        "archived_at": "2026-07-18T20:52:10.245800+00:00",
+        "path": "history/projections/497dd36408c8a179.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 84,
+        "edge_count": 123
+      },
+      {
+        "id": "8f295e49adb3524d",
+        "archived_at": "2026-07-18T21:16:46.064760+00:00",
+        "path": "history/projections/8f295e49adb3524d.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 95,
+        "edge_count": 157
+      },
+      {
+        "id": "18138cec0d31217d",
+        "archived_at": "2026-07-18T21:34:15.662353+00:00",
+        "path": "history/projections/18138cec0d31217d.json",
+        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "node_count": 102,
+        "edge_count": 166
+      }
+    ],
+    "previous_projection": "18138cec0d31217d"
+  }
+}

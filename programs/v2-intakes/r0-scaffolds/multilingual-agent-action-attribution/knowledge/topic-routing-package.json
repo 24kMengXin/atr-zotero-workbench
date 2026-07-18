@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.1",
+  "package_id": "TRP-multilingual-agent-action-attribution.draft-v1",
+  "topic": "当多语言 agent 的工具调用表现下降时，如何区分真实行动能力差异、语言条件化执行接口差异与评测/本地化伪差异，并由此形成可审计的行动契约？",
+  "domain_bindings": [
+    {
+      "binding_id": "language-axis",
+      "activation_condition": "The program asks how multilingual or cross-lingual surfaces affect an agent or data decision.",
+      "ambiguity_resolved": "Separates the focal natural-language/data surface from tool, schema, reasoning, evaluator, and programming-language surfaces.",
+      "extra_evidence_required": [
+        "parallel or controlled language-surface comparisons",
+        "explicit mapping of every language-bearing surface"
+      ],
+      "false_positive_prevented": "Prevents programming-language, translation, or benchmark coverage from being misreported as the focal multilingual mechanism.",
+      "deactivation_condition": "Deactivate only if the final construct and all load-bearing conditions are language independent."
+    }
+  ],
+  "language_axis": {
+    "focal_surface": "user natural-language request and interaction language",
+    "other_language_surfaces": [
+      "tool description language",
+      "schema identifiers and values",
+      "reasoning trace",
+      "final answer",
+      "evaluator language"
+    ],
+    "causal_relation": "Test whether changing the user-facing language surface changes action selection after interface serialization and evaluator effects are separately controlled.",
+    "excluded_homonyms": [
+      "programming-language coverage is not natural-language multilinguality",
+      "translated prompts do not imply translated tools or observations"
+    ]
+  },
+  "input_class": "BROAD_DIRECTION",
+  "searched_through": "2026-07-19 metadata inventory; full-text verification pending",
+  "corpus_assessment": {
+    "density_band": "DENSE",
+    "taxonomy_feasible": true,
+    "existing_survey_status": "UNCERTAIN",
+    "evidence_refs": [
+      "SRC-MLCL-2026",
+      "SRC-ARABIC-ENGLISH-TOOLS-2026",
+      "SRC-MTM-2026",
+      "SRC-MASSIVE-AGENTS-2025",
+      "SRC-BENCHMAX-2025",
+      "SRC-LLM-JUDGE-CHALLENGES-2026"
+    ],
+    "does_not_support": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+  },
+  "selected_track": "FOCUSED_REVIEW",
+  "next_stage": "R2_FOCUSED_REVIEW",
+  "knowledge_build_plan": {
+    "required_artifacts": [
+      "verified source ledger with Zotero attachment/locator states",
+      "source-reviewed frontier map",
+      "counterevidence and coverage report",
+      "independent route review"
+    ],
+    "artifact_paths": [
+      "evidence/sources.jsonl",
+      "knowledge/frontier-map.json",
+      "knowledge/knowledge-map.json"
+    ],
+    "question_generation_source": "Only source-inspected tensions and counterexamples surviving independent route review may generate problem cases.",
+    "exit_condition": "Candidate anchors are inspected with locators, the frontier scaffold is revised, counterevidence is recorded, and an independent reviewer selects or rejects the route."
+  },
+  "family_policy": {
+    "max_live_candidates": 2,
+    "max_total_candidates_before_pivot": 4,
+    "required_distinction_dimensions": [
+      "actor and decision",
+      "causal mechanism",
+      "measurement boundary"
+    ],
+    "pivot_rule": "After two unchanged blockers, change source channel or causal fingerprint; after the total cap, merge at a higher construct or park rather than minting setting-only siblings."
+  },
+  "forbidden_shortcuts": [
+    "Do not treat metadata or titles as inspected evidence.",
+    "Do not treat the frontier scaffold as novelty or a gap certificate.",
+    "Do not create a problem-case before independent route review."
+  ],
+  "rationale": "The inventory contains 105 canonical candidates, but none records inspected full text. The selected track is a proportional draft for verification and remains unauthorized until an independent reviewer reads the cited spans.",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "valid_until": "2026-08-19T00:00:00+08:00"
+}

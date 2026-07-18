@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "map_id": "FKM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+  "domain": "agent-infrastructure-and-evaluation-contracts",
+  "scope": "Top-down verification scaffold, not an exhaustive survey or consensus map.",
+  "frontier_as_of": "2026-07-19",
+  "source_ledger_path": "evidence/sources.jsonl",
+  "verification_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+  "evidence_boundary": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "frontier_tensions": [
+    {
+      "tension_id": "FT-infra-agent-vs-harness",
+      "question": "When agent benchmark performance changes, which part is attributable to the agent and which to harness, tool schema, environment, or evaluator changes?",
+      "competing_explanations": [
+        "The agent's policy or capability changed under a stable contract.",
+        "The surrounding execution and evaluation contract changed the observable outcome."
+      ],
+      "dimensions": [
+        "agent policy",
+        "harness",
+        "environment",
+        "evaluator"
+      ],
+      "anchor_source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026",
+        "SRC-DRIFTROBUSTNESS-IEEE-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "tension_id": "FT-infra-openness-vs-replay",
+      "question": "Is an open agent benchmark reproducible because assets are public, or only when the complete versioned execution contract can be replayed?",
+      "competing_explanations": [
+        "Public code and data are sufficient for meaningful comparison.",
+        "Unpinned tools, backends, policies, and orchestration make apparently open results non-comparable."
+      ],
+      "dimensions": [
+        "openness",
+        "version identity",
+        "replayability"
+      ],
+      "anchor_source_ids": [
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-AGENTBEATS-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "update_policy": {
+    "triggers": [
+      "first inspected source span",
+      "direct collision",
+      "benchmark or workflow revision",
+      "human Zotero review"
+    ],
+    "refresh_cadence": "before independent topic-route review and before any problem-case transition",
+    "owner": "research owner with Zotero-linked source review"
+  }
+}

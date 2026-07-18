@@ -10,6 +10,7 @@
 - 每个知识/研究节点都有独立原生 Note，并在同一 Collection 中复用其显式关联文献；历史问题版本保留在「历史版本」，不会被当前版本覆盖
 - 「Topic 与演化」中同时保留人的 Topic Note 与由真实 ATR timeline 生成的只读过程 Note；缺失历史不会被补造
 - Item Pane 可直接选择 `支持 / 需要限定 / 反驳 / 尚不能判断 / 提出新问题`，判断写回对应原生 Note 后只进入 review inbox
+- 碰撞复核 Note 提供需要非空理由的 owner route review；输入精确指向该复核及父问题，但仍只进入 review inbox，不自动改变 gate/route
 - Note marker 精确指向 graph node；Reader annotation 先映射 source，再只沿显式 source-decision 边找到最近受影响对象，生成 review-only packet
 - 只读导入旧式 ATR v1 run（`evidence/sources.jsonl`、`knowledge/frontier-map.json`、`run-state.json`）
 - 输出浏览器内的交互图谱：流程阶段、概念、现实世界研究问题、文献证据以及它们的可追溯关系
@@ -59,7 +60,7 @@ python -m atr_zotero_workbench build /path/to/atr-run \
 完整的调试、验证与发布门禁见[插件开发守则](docs/zotero-plugin-development.md)；日常 profile 仅用于候选 XPI 的最终烟测。
 
 在 Zotero 中选择「工具 → 插件 → 齿轮 → Install Add-on From File…」，选择
-`dist/atr-zotero-workbench.xpi`，并确认启用。之后从「工具 → ATR Research」选择 topic。插件会定位对应的原生 Collection，并在 Note tab 打开 topic note；文献从 Collection 或右侧 ATR section 进入原生 Reader tab。
+`dist/atr-zotero-workbench.xpi`，并确认启用。之后从「工具 → ATR Research」选择 topic。插件会定位对应的原生 Collection，并在 Note tab 打开 topic note；paper 的主动作「阅读原文并记录我的理解」会打开原生 Reader，并把同一份来源 Note 作为可编辑、可折叠的原生 Item Pane section 放在右栏。它与 ATR 的过程、知识、问题和当前对象 section 同时存在，不再在 Zotero 的 `item` / `notes` 两种右栏模式之间互相顶掉；深度写作打开的仍是同一份 Note。窄屏或双屏确需脱离显示时，再选择「便携显示 ATR 定位」。交互设计见 [docs/zotero-native-interaction-design.md](docs/zotero-native-interaction-design.md)。
 
 每次升级 XPI 都须在 Zotero 的「Install Add-on From File…」中重新选择该 XPI，然后**完全退出并重启 Zotero**；直接覆盖 profile 内的 `.xpi` 文件不会更新 Zotero 已注册的扩展版本。可在重启前后只读检查候选包和实际注册版本是否一致：
 
@@ -69,7 +70,7 @@ python3 scripts/check_installed_plugin_version.py \
   '/Users/zone/Library/Application Support/Zotero/Profiles/e1tzdljc.default'
 ```
 
-插件不会后台批量下载。点击来源时，它先复用 Zotero 已有附件；其次导入 ATR 明确声明的 HTTPS 开放 `pdf_url`；只有 DOI/落地页时，再调用 Zotero 原生 **Find Available File** 解析器，在你当前的开放获取与机构访问环境中查找、附加并打开全文。找不到就明确保留为书目记录并提示机构访问、开放仓储/作者稿或手工添加 PDF。成功和失败都会写入 runtime log；DOI、URL 或已附加文件都不代表人工已读或证据支持。
+插件不会后台批量下载。点击来源时，它先复用 Zotero 已有附件；若 ATR acquisition handoff 明确记录 `IDENTITY_VERIFIED`、repo 内路径、SHA-256 和允许显式导入策略，插件会在点击时重新校验摘要，再复制为 Zotero stored attachment；其次才处理明确声明的 HTTPS 开放 `pdf_url`，或调用 Zotero 原生 **Find Available File**。找不到就明确保留为书目记录。成功导入、worker 全文检查与人的阅读/annotation 是三个独立状态。
 
 同步、Reader/Note tab 打开和失败诊断会追加到该 workspace 的 `plugin-runtime.jsonl`。
 

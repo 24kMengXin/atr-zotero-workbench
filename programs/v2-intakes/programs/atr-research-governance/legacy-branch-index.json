@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "legacy-branch-index",
+  "program_key": "atr-research-governance",
+  "branches": [
+    {
+      "run": "2026-07-17-epistemic-route-calibration",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-epistemic-route-calibration",
+      "catalog_role": "覆盖失败与应停放 claim 的区分",
+      "catalog_disposition": "canonical_governance_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "PRIORITY_REVIEW_INPUT",
+      "sources": 7,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-evidence-conditioned-research-exploration",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-evidence-conditioned-research-exploration",
+      "catalog_role": "由碰撞/资产失败驱动的假设 pivot",
+      "catalog_disposition": "merge_as_governance_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 11,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    }
+  ],
+  "consumption_rule": "No branch artifact is consumed until it receives an artifact-level LEGACY_MAPPED manifest and its source claims are reverified."
+}

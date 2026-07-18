@@ -1,0 +1,66 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-STATE-CONTINUITY-R0-COL-001.v1",
+  "program_key": "multilingual-agent-state-continuity",
+  "input_problem_case_id": "PC-multilingual-state-memory-control-plane.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+      "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+      "url": "https://aclanthology.org/2025.findings-acl.1249/",
+      "local_cache_path": ".runtime/collision-review/stateful-tool-use.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-2, 9",
+      "comparison_type": "CLAIM_COLLISION",
+      "finding": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+      "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "No inspected paper isolates persistent-memory loss from language-control routing under the same pre-switch state snapshot."
+    ],
+    "claim": [
+      "Stateful Tool Use directly covers general multi-turn state lifecycle, so a broad claim that stateful tool use is unstudied is invalid."
+    ],
+    "mechanism": [
+      "Vendor documentation exposes language-control and locale-asset mechanisms, but does not measure failures."
+    ],
+    "compositional": [
+      "Stateful Tool Use plus HINDSIGHT, Mem2ActBench, PolyWorkBench, and vendor control-plane documentation makes the proposed boundary plausible but not yet empirically demonstrated."
+    ],
+    "adjacent": [
+      "Long-horizon execution and judge failures can be mislabeled as memory discontinuity."
+    ]
+  },
+  "coverage_limits": [
+    "Only one new scholarly full text was added in this bounded review.",
+    "The control-plane evidence remains product documentation rather than a paired incident or benchmark trace.",
+    "No prevalence claim is supportable."
+  ],
+  "surviving_boundary": "The only defensible candidate boundary is a paired language-switch replay that snapshots task state and separately logs language selection, retrieval, locale assets, flow routing, and independent action adjudication.",
+  "alternative_explanations": [
+    "Task memory was actually lost or overwritten.",
+    "Memory remained intact but language-specific retrieval or locale assets changed.",
+    "The judge conflated an execution failure with memory failure."
+  ],
+  "disposition": "NEEDS_EVIDENCE",
+  "next_evidence": [
+    "Acquire at least one paired real or benchmark trace containing both state snapshots and language-control variables.",
+    "Do not route until the trace can discriminate memory loss from intact-state rerouting."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

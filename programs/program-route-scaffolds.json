@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "evidence_boundary": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "programs": {
+    "multilingual-agent-action-attribution": {
+      "selected_track": "FOCUSED_REVIEW",
+      "language_axis": {
+        "focal_surface": "user natural-language request and interaction language",
+        "other_language_surfaces": ["tool description language", "schema identifiers and values", "reasoning trace", "final answer", "evaluator language"],
+        "causal_relation": "Test whether changing the user-facing language surface changes action selection after interface serialization and evaluator effects are separately controlled.",
+        "excluded_homonyms": ["programming-language coverage is not natural-language multilinguality", "translated prompts do not imply translated tools or observations"]
+      },
+      "concepts": [
+        ["action-attribution", "Multilingual agent action attribution", null, "A verification frame for separating language-conditioned action selection, interface execution, and evaluation effects."],
+        ["language-surfaces", "Language-bearing surfaces", "action-attribution", "The distinct request, tool, observation, reasoning, output, and evaluator surfaces on which language can vary."],
+        ["action-selection", "Action selection", "action-attribution", "The agent decision to invoke, avoid, clarify, or abstain from a tool action before execution succeeds or fails."],
+        ["interface-contract", "Tool interface contract", "action-attribution", "The schema, identifier, serialization, and documentation conditions connecting an intended action to an executable call."],
+        ["execution-outcome", "Execution outcome", "action-attribution", "The environment-observed result after a call, kept distinct from the model's intended action."],
+        ["evaluation-attribution", "Evaluation attribution", "action-attribution", "The rule assigning an observed score or failure to semantics, action choice, interface validity, environment behavior, or evaluator error."]
+      ],
+      "tensions": [
+        {"id": "FT-action-semantics-vs-interface", "question": "When multilingual tool-use performance changes, is the load-bearing cause semantic action selection or the language/interface contract through which the action is expressed?", "explanations": ["The model selects a different action under the focal natural-language surface.", "The intended action is stable but schema wording, identifiers, serialization, or evaluation changes execution credit."], "dimensions": ["language surface", "failure locus", "interface contract"], "sources": ["SRC-MLCL-2026", "SRC-ARABIC-ENGLISH-TOOLS-2026", "SRC-MTM-2026"]},
+        {"id": "FT-action-capability-vs-instrument", "question": "Does a multilingual benchmark measure transferable agent action capability or a benchmark-specific localization and judging contract?", "explanations": ["The measured difference reflects capability across languages.", "The difference is induced by translated items, tool documentation, release assets, or multilingual judge reliability."], "dimensions": ["construct validity", "asset provenance", "judge reliability"], "sources": ["SRC-MASSIVE-AGENTS-2025", "SRC-BENCHMAX-2025", "SRC-LLM-JUDGE-CHALLENGES-2026"]}
+      ]
+    },
+    "multilingual-agent-state-continuity": {
+      "selected_track": "FOCUSED_REVIEW",
+      "language_axis": {
+        "focal_surface": "language switching across turns and sessions",
+        "other_language_surfaces": ["stored memory representation", "retrieval query", "tool observation", "system language policy", "final response"],
+        "causal_relation": "Test whether language switching disrupts state encoding, retrieval, control-plane routing, or only the visible response surface.",
+        "excluded_homonyms": ["multi-party memory is not automatically multilingual continuity", "single-turn translation quality is not longitudinal state retention"]
+      },
+      "concepts": [
+        ["state-continuity", "Multilingual agent state continuity", null, "A verification frame for preserving and correctly using task-relevant state across language changes and long horizons."],
+        ["state-encoding", "State encoding", "state-continuity", "How entities, commitments, constraints, and prior outcomes are represented for later use."],
+        ["memory-storage", "Memory storage", "state-continuity", "The persistence layer and write policy that retain selected state across turns or sessions."],
+        ["crosslingual-retrieval", "Cross-lingual retrieval", "state-continuity", "Recovery of relevant stored state when the later query uses another language or mixed language."],
+        ["language-control-plane", "Language control plane", "state-continuity", "System rules that detect, pin, or switch language independently of semantic memory."],
+        ["long-horizon-evaluation", "Long-horizon continuity evaluation", "state-continuity", "Evaluation that distinguishes state loss, retrieval failure, policy switching, and output-language mismatch over time."]
+      ],
+      "tensions": [
+        {"id": "FT-state-memory-vs-language-control", "question": "When an agent loses continuity after a language switch, was task state forgotten or was intact state routed through the wrong language control plane?", "explanations": ["The memory representation or retrieval mechanism fails to preserve task state.", "State remains available but language detection, output alignment, or control-plane placement changes how it is used."], "dimensions": ["memory", "retrieval", "control plane"], "sources": ["SRC-HINDSIGHT-2026", "SRC-FORGETEVAL-2026", "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"]},
+        {"id": "FT-state-benchmark-vs-workflow", "question": "Do current memory and multilingual agent benchmarks exercise the same continuity obligations that real multi-turn workflows impose?", "explanations": ["Benchmark episodes capture the relevant state-retention construct.", "They isolate memory or language performance while omitting switching policies, tool observations, and user corrections that drive workflow continuity."], "dimensions": ["episode horizon", "workflow fidelity", "language switching"], "sources": ["SRC-MEM2ACTBENCH-2026", "SRC-POLYWORKBENCH-2026", "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"]}
+      ]
+    },
+    "multilingual-agent-authorization-safety": {
+      "selected_track": "FOCUSED_REVIEW",
+      "language_axis": {
+        "focal_surface": "user request language and culturally localized intent expression",
+        "other_language_surfaces": ["policy text", "tool descriptions", "retrieved content", "guardrail prompt", "action trace"],
+        "causal_relation": "Test whether language changes authorization inference, uncertainty handling, prompt-injection exposure, or guardrail measurement while the requested action and authority remain fixed.",
+        "excluded_homonyms": ["generic multilingual toxicity is not tool authorization", "successful task completion is not evidence of authorized action"]
+      },
+      "concepts": [
+        ["authorization-safety", "Multilingual agent authorization safety", null, "A verification frame for whether an agent acts only within a user's authorized intent across languages and adversarial context."],
+        ["intent-and-authority", "Intent and authority", "authorization-safety", "The requested goal and the permissions, ownership, and scope that make an action authorized or unauthorized."],
+        ["ambiguity-and-clarification", "Ambiguity and clarification", "authorization-safety", "Detection of underspecified authority and the decision to ask, abstain, or continue."],
+        ["indirect-instruction", "Indirect and injected instruction", "authorization-safety", "Untrusted content that competes with user authority through retrieved pages, messages, or tool observations."],
+        ["policy-grounding", "Policy-grounded guardrails", "authorization-safety", "Mechanisms that bind action decisions to explicit policy rather than surface-language heuristics."],
+        ["trajectory-safety", "Trajectory-level safety", "authorization-safety", "Evaluation of authorization and compromise across multi-step tool traces rather than isolated responses."]
+      ],
+      "tensions": [
+        {"id": "FT-auth-language-vs-authority", "question": "When safe action behavior changes across languages, does the model misread user authority or does the safety instrument fail to preserve policy meaning across language surfaces?", "explanations": ["Language-conditioned interpretation changes inferred intent or authority.", "The policy, guardrail, judge, or translated test changes while underlying authorization reasoning is stable."], "dimensions": ["authority", "policy language", "measurement"], "sources": ["SRC-XSafety-2024", "SRC-LINGUASAFE-2025", "SRC-MLBENCHGUARD-2026"]},
+        {"id": "FT-auth-compliance-vs-abstention", "question": "Should an uncertain multilingual agent continue, clarify, or abstain when completing the task and respecting authority lead to different actions?", "explanations": ["Task-success optimization dominates and produces unauthorized continuation.", "Calibrated uncertainty and authority-aware abstention can preserve user control without blanket refusal."], "dimensions": ["uncertainty", "clarification", "action consequence"], "sources": ["SRC-AGENTABSTAIN-2026", "SRC-AGENTIC-ABSTENTION-2026", "SRC-TOOLSAFE-2026"]}
+      ]
+    },
+    "multilingual-representation-and-data-decisions": {
+      "selected_track": "FULL_SURVEY",
+      "language_axis": {
+        "focal_surface": "language distribution in training and adaptation data",
+        "other_language_surfaces": ["tokenizer vocabulary", "retrieval corpus", "reasoning trace", "translation output", "quality evaluator"],
+        "causal_relation": "Trace how a representation or data-selection decision changes language-specific capability, cost, quality, and user-facing reliance under explicit resource conditions.",
+        "excluded_homonyms": ["language count is not usable coverage", "translation metric improvement is not automatically human decision benefit"]
+      },
+      "concepts": [
+        ["representation-data", "Multilingual representation and data decisions", null, "A verification frame connecting data, representation, inference, evaluation, and human-use decisions across languages."],
+        ["data-composition", "Multilingual data composition", "representation-data", "Which languages, domains, qualities, and duplication patterns enter pretraining, adaptation, or retrieval corpora."],
+        ["tokenization-representation", "Tokenization and representation", "representation-data", "How scripts and language variation are segmented and represented, with implications for efficiency and accessibility."],
+        ["adaptation-allocation", "Adaptation and resource allocation", "representation-data", "How model capacity, data budgets, and transfer strategies are allocated across languages and domains."],
+        ["inference-and-reasoning", "Inference and reasoning policy", "representation-data", "How prompting, retrieval, decoding, or test-time compute changes multilingual outputs under bounded conditions."],
+        ["quality-and-reliance", "Quality estimation and human reliance", "representation-data", "How quality signals support or mislead post-editing, sharing, triage, and other user decisions."]
+      ],
+      "tensions": [
+        {"id": "FT-data-scale-vs-usable-quality", "question": "When multilingual data scale increases, which gains come from coverage and which are limited by identification, filtering, duplication, and language ideology?", "explanations": ["More diverse data directly improves usable language coverage.", "Pipeline selection and representation choices determine which data is recognized, retained, and valued, so nominal scale can conceal quality and exclusion effects."], "dimensions": ["coverage", "quality", "selection policy"], "sources": ["SRC-CULTURAX-2024", "SRC-FINEWEB2-2025", "SRC-QUALITY-GLANCE-2022", "SRC-LANGUAGE-IDEOLOGY-2022"]},
+        {"id": "FT-mt-metric-vs-human-decision", "question": "When an MT or quality-estimation score improves, does it support the human decision at stake or only optimize an evaluator-specific representation of quality?", "explanations": ["The metric tracks errors that matter for post-editing, sharing, or safety decisions.", "Metric calibration, self-bias, domain mismatch, or missing discourse/cultural context breaks the link to human reliance."], "dimensions": ["metric validity", "human workflow", "domain and language"], "sources": ["SRC-QE-QUALITY-GATE-ROUTING-2021", "SRC-USER-RELIANCE-MT-2025", "SRC-PRO-TRANSLATOR-QE-2026"]}
+      ]
+    },
+    "agent-infrastructure-and-evaluation-contracts": {
+      "selected_track": "FOCUSED_REVIEW",
+      "concepts": [
+        ["agent-infrastructure", "Agent infrastructure and evaluation contracts", null, "A verification frame for separating agent capability, harness behavior, environment drift, and evaluation attribution."],
+        ["tool-and-skill-contract", "Tool and skill contract", "agent-infrastructure", "The declared interface, dependency, packaging, and invocation semantics available to an agent."],
+        ["runtime-and-harness", "Runtime and harness", "agent-infrastructure", "The orchestration, state, retry, observation, and execution layer mediating an agent's behavior."],
+        ["environment-drift", "Environment and policy drift", "agent-infrastructure", "Changes in schemas, tools, policies, services, and dependencies that can alter measured outcomes."],
+        ["reproducibility-contract", "Reproducibility contract", "agent-infrastructure", "The revisions, assets, configuration, and trace information required to replay or compare an agent run."],
+        ["evaluation-attribution", "Evaluation and failure attribution", "agent-infrastructure", "Rules that distinguish agent decisions, harness failures, environment failures, and judge errors."]
+      ],
+      "tensions": [
+        {"id": "FT-infra-agent-vs-harness", "question": "When agent benchmark performance changes, which part is attributable to the agent and which to harness, tool schema, environment, or evaluator changes?", "explanations": ["The agent's policy or capability changed under a stable contract.", "The surrounding execution and evaluation contract changed the observable outcome."], "dimensions": ["agent policy", "harness", "environment", "evaluator"], "sources": ["SRC-AGENTBEATS-2026", "SRC-CAR-2026", "SRC-DRIFTROBUSTNESS-IEEE-2026"]},
+        {"id": "FT-infra-openness-vs-replay", "question": "Is an open agent benchmark reproducible because assets are public, or only when the complete versioned execution contract can be replayed?", "explanations": ["Public code and data are sufficient for meaningful comparison.", "Unpinned tools, backends, policies, and orchestration make apparently open results non-comparable."], "dimensions": ["openness", "version identity", "replayability"], "sources": ["SRC-AGENTLAB-REPRO-2026", "SRC-AGENTBEATS-2026", "SRC-CLAWBENCH-DRIFT-2026"]}
+      ]
+    },
+    "atr-research-governance": {
+      "selected_track": "EMERGING_DIRECTION",
+      "concepts": [
+        ["research-governance", "Agentic research governance", null, "A verification frame for how AI-assisted research preserves evidence, alternatives, human judgment, and reversible route decisions."],
+        ["evidence-provenance", "Evidence and provenance", "research-governance", "Stable identities and explicit edges connecting sources, claims, reviews, experiments, and decisions."],
+        ["hypothesis-portfolio", "Hypothesis and seed portfolio", "research-governance", "A persistent set of competing, parked, killed, and active directions rather than a single overwritten narrative."],
+        ["gate-route-transition", "Gate, route, and transition separation", "research-governance", "Separation between evidence predicates, the selected scientific route, and atomic lifecycle mutation."],
+        ["human-review", "Human reading and review", "research-governance", "Source-linked annotations and judgments that enter as review input without silently approving a claim."],
+        ["system-learning", "Harness evaluation and system learning", "research-governance", "Prospective comparison of process interventions, repeated failures, rollback conditions, and route-level effects."]
+      ],
+      "tensions": [
+        {"id": "FT-governance-output-vs-process", "question": "Should research-agent quality be judged by polished outputs or by an auditable process that preserves failed branches, source use, and decision reversals?", "explanations": ["End-product quality captures the practical value of the research agent.", "Without process provenance, polished outputs can conceal source overreading, local recombination, or overwritten negative evidence."], "dimensions": ["output quality", "process auditability", "negative memory"], "sources": ["SRC-AUTORESEARCHBENCH-2026--6ca54095", "SRC-ARBOR-2026", "SRC-HEP-2026"]},
+        {"id": "FT-governance-autonomy-vs-human-learning", "question": "How should autonomous research progress be balanced against source-linked human reading that can revise the knowledge and problem structure?", "explanations": ["Greater autonomy and self-reinforcement increase useful research throughput.", "Human-authored interpretation and explicit review boundaries are required to prevent fluent synthesis from replacing understanding and governance."], "dimensions": ["autonomy", "human agency", "review latency"], "sources": ["SRC-AUTORESEARCHCLAW-2026", "SRC-HARPA-2026", "SRC-HEP-2026"]}
+      ]
+    }
+  }
+}

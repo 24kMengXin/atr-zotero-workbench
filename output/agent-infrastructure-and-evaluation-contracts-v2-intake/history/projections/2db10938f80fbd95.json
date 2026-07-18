@@ -1,0 +1,170 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:59.153477+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:59.187564+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "kind": "atr_v2_subject",
+      "label": "program:agent-infrastructure-and-evaluation-contracts",
+      "data": {
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:59.153358+00:00",
+        "updated_at": "2026-07-18T19:10:59.153455+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · d2a16aa6655e",
+      "data": {
+        "artifact_id": "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "artifact_kind": "program-intake",
+        "digest": "d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:59.085086+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/agent-infrastructure-and-evaluation-contracts/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · 6713883450bd",
+      "data": {
+        "artifact_id": "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:59.119647+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/agent-infrastructure-and-evaluation-contracts/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:59.153477+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "subject_version": 0,
+        "artifact_id": "sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:59.187564+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "target": "artifact:sha256:d2a16aa6655ed6721313d5db1e0bab593ff01eebccfa8a07e0cebd31051d1a8e",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
+      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-01",
+      "target": "artifact:sha256:6713883450bd7f02e4ccf3f79c9f7f19d9b8030096225d0a5dd4a1a3e29c2724",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [],
+    "previous_projection": null
+  }
+}

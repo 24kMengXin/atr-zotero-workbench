@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "legacy-branch-index",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "branches": [
+    {
+      "run": "2026-07-16-mt-reasoning",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-16-mt-reasoning",
+      "catalog_role": "机器翻译中的 LLM 推理综述",
+      "catalog_disposition": "retain_as_landscape_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+      "sources": 102,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-multilingual-reasoning-language-mixing",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-reasoning-language-mixing",
+      "catalog_role": "语言混合的因果作用",
+      "catalog_disposition": "retain_as_mechanism_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+      "sources": 5,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-fragmentation-assigned-compute-refresh",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-fragmentation-assigned-compute-refresh",
+      "catalog_role": "token fragmentation 与推理预算的因果诊断",
+      "catalog_disposition": "canonical_causal_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "PRIORITY_REVIEW_INPUT",
+      "sources": 9,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "frontier_map"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-multilingual-curation-decision",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-curation-decision",
+      "catalog_role": "语言识别/过滤的不确定性决策",
+      "catalog_disposition": "retain_as_data_policy_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+      "sources": 20,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "frontier_map"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    }
+  ],
+  "consumption_rule": "No branch artifact is consumed until it receives an artifact-level LEGACY_MAPPED manifest and its source claims are reverified."
+}

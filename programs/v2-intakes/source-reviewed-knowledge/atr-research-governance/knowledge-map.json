@@ -1,0 +1,300 @@
+{
+  "artifact_type": "knowledge-map",
+  "schema_version": "1.1",
+  "map_id": "KM-atr-research-governance.draft-v1",
+  "topic": "atr-research-governance",
+  "scope": "A versioned learning hierarchy upgraded only where located worker-inspected spans support, limit, or challenge a bounded definition.",
+  "created_at": "2026-07-19T16:00:00+08:00",
+  "map_review_status": "PARTIALLY_SOURCE_REVIEWED",
+  "does_not_establish": "This map is a reading aid, not a universal ontology, field consensus, novelty certificate, causal hierarchy, human inspection record, route decision, or lifecycle transition.",
+  "sources": [
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "url": "https://arxiv.org/abs/2606.11926",
+      "pdf_url": "https://arxiv.org/pdf/2606.11926",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "A persistent-tree mechanism for cumulative autonomous research and preserved failed branches.",
+      "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "locator": "pp. 14-17",
+          "observation": "Reported gains are measured on fixed task-native objectives and held-out evaluations; the operational setting removes step-level human supervision.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "locator": "pp. 22-23, Limitations/future work",
+          "observation": "The evidence concerns six optimization tasks and does not establish human learning or broad scientific validity.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "url": "https://arxiv.org/abs/2604.25256",
+      "pdf_url": "https://arxiv.org/pdf/2604.25256",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+      "identity_review": "RESOLVED_BY_INSPECTED_ARXIV_TITLE; LEGACY_COLLISION_SUFFIX_PRESERVED",
+      "supports": "Evidence that polished search output can conceal constraint, verification, tool, and evidence-state failures.",
+      "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "Deep and Wide Research tasks require full-text, multi-step, open-ended literature discovery; strong agents score below ten percent on the reported metrics.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        },
+        {
+          "locator": "pp. 18-19",
+          "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        },
+        {
+          "locator": "pp. 21-22",
+          "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "url": "https://arxiv.org/abs/2607.09195",
+      "pdf_url": "https://arxiv.org/pdf/2607.09195",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "An auditable hypothesis/evidence/belief protocol and append-only lifecycle mechanism.",
+      "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "locator": "p. 12",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Experiments use one autonomous materials-research agent without human input under a bounded setup.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "url": "https://arxiv.org/abs/2601.20727",
+      "pdf_url": "https://arxiv.org/pdf/2601.20727",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 11-15",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "supports": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+      "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "research-governance",
+      "label": "Agentic research governance",
+      "parent_id": null,
+      "definition": "A verification frame for how AI-assisted research preserves evidence, alternatives, human judgment, and reversible route decisions.",
+      "source_ids": [
+        "SRC-HEP-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HEP-2026",
+          "locator": "pp. 1-2",
+          "relation": "DEFINES",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+          "locator": "pp. 1-2, 11-15",
+          "relation": "CHALLENGES",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "evidence-provenance",
+      "label": "Evidence and provenance",
+      "parent_id": "research-governance",
+      "definition": "Stable identities and explicit edges connecting sources, claims, reviews, experiments, and decisions.",
+      "source_ids": [
+        "SRC-HEP-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HEP-2026",
+          "locator": "pp. 1-2",
+          "relation": "DEFINES",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "source_id": "SRC-HEP-2026",
+          "locator": "p. 12",
+          "relation": "EXEMPLIFIES",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+          "locator": "pp. 1-2, 11-15",
+          "relation": "EXEMPLIFIES",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "hypothesis-portfolio",
+      "label": "Hypothesis and seed portfolio",
+      "parent_id": "research-governance",
+      "definition": "A persistent set of competing, parked, killed, and active directions rather than a single overwritten narrative.",
+      "source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-ARBOR-2026",
+          "locator": "p. 1",
+          "relation": "DEFINES",
+          "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "source_id": "SRC-HEP-2026",
+          "locator": "p. 12",
+          "relation": "EXEMPLIFIES",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "gate-route-transition",
+      "label": "Gate, route, and transition separation",
+      "parent_id": "research-governance",
+      "definition": "Separation between evidence predicates, the selected scientific route, and atomic lifecycle mutation.",
+      "source_ids": [
+        "SRC-HEP-2026"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HEP-2026",
+          "locator": "p. 12",
+          "relation": "DISTINGUISHES",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "human-review",
+      "label": "Human reading and review",
+      "parent_id": "research-governance",
+      "definition": "Source-linked annotations and judgments that enter as review input without silently approving a claim.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "locator": "pp. 18-19",
+          "relation": "EXEMPLIFIES",
+          "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        },
+        {
+          "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "locator": "pp. 21-22",
+          "relation": "LIMITS",
+          "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "system-learning",
+      "label": "Harness evaluation and system learning",
+      "parent_id": "research-governance",
+      "definition": "Prospective comparison of process interventions, repeated failures, rollback conditions, and route-level effects.",
+      "source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ],
+      "review_status": "PENDING_ADDITIONAL_SOURCE_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-ARBOR-2026",
+          "locator": "pp. 22-23, Limitations/future work",
+          "relation": "LIMITS",
+          "observation": "The inspected autonomous optimization evidence does not establish prospective human-process learning or route-level effects.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+          "locator": "pp. 1-2, 11-15",
+          "relation": "LIMITS",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

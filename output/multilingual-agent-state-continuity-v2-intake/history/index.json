@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "08e269426e82664d",
+      "archived_at": "2026-07-18T19:12:43.275711+00:00",
+      "path": "history/projections/08e269426e82664d.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 6,
+      "edge_count": 7
+    },
+    {
+      "id": "89c865a0cb907e58",
+      "archived_at": "2026-07-18T19:20:56.326252+00:00",
+      "path": "history/projections/89c865a0cb907e58.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 12,
+      "edge_count": 14
+    },
+    {
+      "id": "76f439293f7a4f92",
+      "archived_at": "2026-07-18T19:53:40.408929+00:00",
+      "path": "history/projections/76f439293f7a4f92.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 74,
+      "edge_count": 77
+    },
+    {
+      "id": "99b20002db294553",
+      "archived_at": "2026-07-18T20:52:10.177210+00:00",
+      "path": "history/projections/99b20002db294553.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 90,
+      "edge_count": 131
+    },
+    {
+      "id": "dcf71e32a90f24c8",
+      "archived_at": "2026-07-18T21:16:45.569632+00:00",
+      "path": "history/projections/dcf71e32a90f24c8.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 101,
+      "edge_count": 171
+    },
+    {
+      "id": "5cb31244b24aa60f",
+      "archived_at": "2026-07-18T21:34:15.155707+00:00",
+      "path": "history/projections/5cb31244b24aa60f.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 106,
+      "edge_count": 178
+    },
+    {
+      "id": "6e66e28dd55ec271",
+      "archived_at": "2026-07-18T21:54:40.292043+00:00",
+      "path": "history/projections/6e66e28dd55ec271.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 108,
+      "edge_count": 182
+    },
+    {
+      "id": "3620adb2952d7efc",
+      "archived_at": "2026-07-18T21:57:04.213133+00:00",
+      "path": "history/projections/3620adb2952d7efc.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 108,
+      "edge_count": 182
+    },
+    {
+      "id": "d11b7674a49f2a42",
+      "archived_at": "2026-07-18T22:05:06.851442+00:00",
+      "path": "history/projections/d11b7674a49f2a42.json",
+      "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "node_count": 108,
+      "edge_count": 182
+    }
+  ]
+}

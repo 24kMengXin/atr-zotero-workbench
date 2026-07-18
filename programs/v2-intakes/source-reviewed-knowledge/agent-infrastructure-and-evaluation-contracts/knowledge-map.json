@@ -1,0 +1,364 @@
+{
+  "artifact_type": "knowledge-map",
+  "schema_version": "1.1",
+  "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+  "topic": "agent-infrastructure-and-evaluation-contracts",
+  "scope": "A versioned learning hierarchy upgraded only where located worker-inspected spans support, limit, or challenge a bounded definition.",
+  "created_at": "2026-07-19T16:00:00+08:00",
+  "map_review_status": "PARTIALLY_SOURCE_REVIEWED",
+  "does_not_establish": "This map is a reading aid, not a universal ontology, field consensus, novelty certificate, causal hierarchy, human inspection record, route decision, or lifecycle transition.",
+  "sources": [
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "url": "https://arxiv.org/abs/2606.13608",
+      "pdf_url": "https://arxiv.org/pdf/2606.13608",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "Evidence that agent, harness, benchmark, and protocol are separable evaluation components and harness choice changes outcomes.",
+      "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-4",
+          "observation": "AgentBeats separates judge and subject agents through standardized protocols and treats benchmark administration as an explicit workflow.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        },
+        {
+          "locator": "p. 11",
+          "observation": "A standardized pipeline preserves broad fidelity while enabling cross-agent comparisons.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Harness-swapping changes solve rates and token use; native model-harness pairings are not interchangeable.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-AGENTEVAL-2026",
+      "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "url": "https://arxiv.org/abs/2604.23581",
+      "pdf_url": "https://arxiv.org/pdf/2604.23581",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1, 6-8",
+          "observation": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+          "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+        }
+      ],
+      "supports": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+      "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+    },
+    {
+      "source_id": "SRC-AGENTLAB-REPRO-2026",
+      "title": "AgentLab reproducibility documentation",
+      "url": "https://github.com/ServiceNow/AgentLab",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "observed_at": "2026-07-19",
+      "supports": "A concrete benchmark workflow showing that public assets alone do not freeze software, providers, environments, regional language, or inspection tooling.",
+      "does_not_establish": "The size of each effect or a universal replay contract.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "README, lines 432-447",
+          "observation": "Reproducibility changes with software versions, silently updated API models, live websites, region/language defaults, stochastic agents, and nondeterministic tasks; studies record versions and commits.",
+          "does_not_establish": "The size of each effect or a universal replay contract."
+        },
+        {
+          "locator": "README, lines 403-421",
+          "observation": "AgentXray can inspect actions in previous or ongoing experiments but warns that its own display layer can behave unexpectedly.",
+          "does_not_establish": "The size of each effect or a universal replay contract."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "url": "https://arxiv.org/abs/2606.08275",
+      "pdf_url": "https://arxiv.org/pdf/2606.08275",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "A counterfactual attribution instrument and a point-of-commitment distinction.",
+      "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "CAR distinguishes the step executing harm from the earlier decision step and uses same-policy interventions rather than transcript judgment.",
+          "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+        },
+        {
+          "locator": "p. 4",
+          "observation": "The paper narrows its contribution relative to oracle substitution and static-log attribution.",
+          "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+        },
+        {
+          "locator": "p. 5, Limitations",
+          "observation": "Real side-effecting tools are out of scope, mocked reproducible tools are used, judges add noise, and the validation ground truth is synthetic.",
+          "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+      "title": "ClawBench/ShellBench reproducibility-first benchmark release",
+      "url": "https://github.com/openclaw/shellbench",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "observed_at": "2026-07-19",
+      "supports": "An operational full-stack evaluation posture and explicit versioned coverage limits.",
+      "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "README, lines 790-824",
+          "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM.",
+          "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+        },
+        {
+          "locator": "README, lines 797-801",
+          "observation": "Long-horizon and human-baseline coverage are planned rather than present in Core v1.",
+          "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-HARNESS-BENCH-2026",
+      "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.27922",
+      "pdf_url": "https://arxiv.org/pdf/2605.27922",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 7-8",
+          "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+          "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+        }
+      ],
+      "supports": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+      "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "agent-infrastructure",
+      "label": "Agent infrastructure and evaluation contracts",
+      "parent_id": null,
+      "definition": "A verification frame for separating agent capability, harness behavior, environment drift, and evaluation attribution.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-HARNESS-BENCH-2026"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AGENTBEATS-2026",
+          "locator": "pp. 1-4",
+          "relation": "DISTINGUISHES",
+          "observation": "AgentBeats separates judge and subject agents through standardized protocols and treats benchmark administration as an explicit workflow.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        },
+        {
+          "source_id": "SRC-HARNESS-BENCH-2026",
+          "locator": "pp. 1-2, 7-8",
+          "relation": "CHALLENGES",
+          "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+          "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "tool-and-skill-contract",
+      "label": "Tool and skill contract",
+      "parent_id": "agent-infrastructure",
+      "definition": "The declared interface, dependency, packaging, and invocation semantics available to an agent.",
+      "source_ids": [
+        "SRC-CLAWBENCH-DRIFT-2026",
+        "SRC-HARNESS-BENCH-2026"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+          "locator": "README, lines 790-824",
+          "relation": "EXEMPLIFIES",
+          "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM.",
+          "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+        },
+        {
+          "source_id": "SRC-HARNESS-BENCH-2026",
+          "locator": "pp. 1-2, 7-8",
+          "relation": "LIMITS",
+          "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+          "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "runtime-and-harness",
+      "label": "Runtime and harness",
+      "parent_id": "agent-infrastructure",
+      "definition": "The orchestration, state, retry, observation, and execution layer mediating an agent's behavior.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AGENTBEATS-2026",
+          "locator": "pp. 1-4",
+          "relation": "DISTINGUISHES",
+          "observation": "AgentBeats separates judge and subject agents through standardized protocols and treats benchmark administration as an explicit workflow.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        },
+        {
+          "source_id": "SRC-AGENTBEATS-2026",
+          "locator": "p. 13",
+          "relation": "EXEMPLIFIES",
+          "observation": "Harness-swapping changes solve rates and token use; native model-harness pairings are not interchangeable.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        },
+        {
+          "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+          "locator": "README, lines 790-824",
+          "relation": "EXEMPLIFIES",
+          "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM.",
+          "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "environment-drift",
+      "label": "Environment and policy drift",
+      "parent_id": "agent-infrastructure",
+      "definition": "Changes in schemas, tools, policies, services, and dependencies that can alter measured outcomes.",
+      "source_ids": [
+        "SRC-AGENTLAB-REPRO-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AGENTLAB-REPRO-2026",
+          "locator": "README, lines 432-447",
+          "relation": "DEFINES",
+          "observation": "Reproducibility changes with software versions, silently updated API models, live websites, region/language defaults, stochastic agents, and nondeterministic tasks; studies record versions and commits.",
+          "does_not_establish": "The size of each effect or a universal replay contract."
+        },
+        {
+          "source_id": "SRC-AGENTLAB-REPRO-2026",
+          "locator": "README, lines 403-421",
+          "relation": "LIMITS",
+          "observation": "AgentXray can inspect actions in previous or ongoing experiments but warns that its own display layer can behave unexpectedly.",
+          "does_not_establish": "The size of each effect or a universal replay contract."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "reproducibility-contract",
+      "label": "Reproducibility contract",
+      "parent_id": "agent-infrastructure",
+      "definition": "The revisions, assets, configuration, and trace information required to replay or compare an agent run.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AGENTLAB-REPRO-2026",
+          "locator": "README, lines 432-447",
+          "relation": "DEFINES",
+          "observation": "Reproducibility changes with software versions, silently updated API models, live websites, region/language defaults, stochastic agents, and nondeterministic tasks; studies record versions and commits.",
+          "does_not_establish": "The size of each effect or a universal replay contract."
+        },
+        {
+          "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+          "locator": "README, lines 790-824",
+          "relation": "EXEMPLIFIES",
+          "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM.",
+          "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+        },
+        {
+          "source_id": "SRC-AGENTBEATS-2026",
+          "locator": "p. 11",
+          "relation": "EXEMPLIFIES",
+          "observation": "A standardized pipeline preserves broad fidelity while enabling cross-agent comparisons.",
+          "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "evaluation-attribution",
+      "label": "Evaluation and failure attribution",
+      "parent_id": "agent-infrastructure",
+      "definition": "Rules that distinguish agent decisions, harness failures, environment failures, and judge errors.",
+      "source_ids": [
+        "SRC-AGENTEVAL-2026",
+        "SRC-CAR-2026",
+        "SRC-HARNESS-BENCH-2026"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-CAR-2026",
+          "locator": "p. 1",
+          "relation": "DISTINGUISHES",
+          "observation": "CAR distinguishes the step executing harm from the earlier decision step and uses same-policy interventions rather than transcript judgment.",
+          "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+        },
+        {
+          "source_id": "SRC-AGENTEVAL-2026",
+          "locator": "pp. 1, 6-8",
+          "relation": "CHALLENGES",
+          "observation": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+          "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+        },
+        {
+          "source_id": "SRC-HARNESS-BENCH-2026",
+          "locator": "pp. 1-2, 7-8",
+          "relation": "LIMITS",
+          "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+          "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

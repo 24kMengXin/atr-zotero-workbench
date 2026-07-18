@@ -1,0 +1,170 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.944941+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.977937+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:multilingual-representation-and-data-decisions",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:multilingual-representation-and-data-decisions",
+      "kind": "atr_v2_subject",
+      "label": "program:multilingual-representation-and-data-decisions",
+      "data": {
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.944843+00:00",
+        "updated_at": "2026-07-18T19:10:58.944919+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · 254a873880d7",
+      "data": {
+        "artifact_id": "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "artifact_kind": "program-intake",
+        "digest": "254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:58.878939+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-representation-and-data-decisions/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · f5f5bc616acb",
+      "data": {
+        "artifact_id": "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:58.912654+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-representation-and-data-decisions/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.944941+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "subject_version": 0,
+        "artifact_id": "sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:58.977937+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "subject:program:multilingual-representation-and-data-decisions",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-representation-and-data-decisions",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "target": "artifact:sha256:254a873880d71582052da009c28d0478afa6cab8d14e844fd2805c23381eee96",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-representation-and-data-decisions",
+      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-01",
+      "target": "artifact:sha256:f5f5bc616acbf637f4f74b0b9ba52ced5268c70cb8827098b048cf723c5ce7e5",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [],
+    "previous_projection": null
+  }
+}

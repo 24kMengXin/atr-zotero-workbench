@@ -18,7 +18,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "zotero-plugin"
 ADDON_ID = "atr-zotero-workbench@24kmengxin.github.io"
-REQUIRED_ROOT_FILES = {"manifest.json", "bootstrap.js", "prefs.js", "atr-zotero-workbench.js", "update.json"}
+REQUIRED_ROOT_FILES = {
+    "manifest.json", "bootstrap.js", "prefs.js", "atr-zotero-workbench.js",
+    "update.json", "companion.xhtml",
+}
 REQUIRED_PACKAGED_FILES = REQUIRED_ROOT_FILES | {
     "locale/en-US/atr-mainWindow.ftl",
     "locale/zh-CN/atr-mainWindow.ftl",
@@ -48,8 +51,13 @@ def validate_source() -> None:
     for hook in ("startup", "shutdown", "install", "uninstall", "onMainWindowLoad", "onMainWindowUnload"):
         if f"function {hook}" not in bootstrap and f"function {hook}(" not in bootstrap and f"async function {hook}" not in bootstrap:
             fail(f"bootstrap.js is missing {hook}()")
+    if ("aomStartup.registerChrome" not in bootstrap
+            or '["content", "atr-zotero-workbench", rootURI]' not in bootstrap
+            or "chromeHandle.destruct()" not in bootstrap):
+        fail("plugin must register and release its packaged companion-window content URL")
 
     runtime = (PLUGIN / "atr-zotero-workbench.js").read_text(encoding="utf-8")
+    projection_source = (ROOT / "src" / "atr_zotero_workbench" / "zotero.py").read_text(encoding="utf-8")
     if 'getElementById("menu_ToolsPopup")' not in runtime:
         fail("plugin must target Zotero 9's menu_ToolsPopup")
     if re.search(r'getElementById\(["\']menu_toolsPopup["\']\)', runtime):
@@ -65,11 +73,29 @@ def validate_source() -> None:
         "projection_loaded",
         "native_topic_synced",
         "native_note_tab_opened",
+        "native_reader_note_section_registered",
+        "native_reader_note_section_ready",
+        "native_reader_note_section_fallback",
+        "dev_smoke_reader_note_section_ready",
         "native_reader_tab_opened",
         "native_reader_annotation_opened",
         "process_note_created",
         "human_review_stance_selected",
+        "human_owner_route_input_selected",
+        "dev_smoke_owner_route_input_saved",
         "review_queue_loaded",
+        "co_reading_dock_rendered",
+        "co_reading_dock_probe_passed",
+        "co_reading_companion_opened",
+        "three_surface_coreading_ready",
+        "dev_smoke_three_surface_coreading_ready",
+        "dev_smoke_three_surface_probe",
+        "portfolio_program_opened",
+        "dev_smoke_portfolio_program_target_resolved",
+        "dev_smoke_portfolio_program_opened",
+        "portfolio_program_owner_review_opened",
+        "dev_smoke_portfolio_owner_review_opened",
+        "dev_smoke_portfolio_returned",
     ):
         if stage not in runtime:
             fail(f"native projection must emit runtime stage {stage!r}")
@@ -93,6 +119,46 @@ def validate_source() -> None:
     ):
         if native_contract not in runtime:
             fail(f"plugin is missing native Zotero contract {native_contract!r}")
+    for dock_contract in (
+        "appendCoReadingDock", "appendDockDisclosure", "nearestGraphNodes", "appendMiniGraph",
+        '"项目历史 / 过程"', '"知识定位"', '"现实问题 / 研究问题"', '"当前对象"',
+        "extensions.atr-zotero-workbench.dock.", 'aria-label", "ATR 当前对象局部关系图',
+        "mini_graph_count", "appendPortfolioGraph",
+        'aria-label", "ATR portfolio 到 program 与历史分支总览图', "portfolio_graph_count",
+        "runForProgramNode", "openProgramNode", 'interaction: "PORTFOLIO_TO_NATIVE_TOPIC_TAB"',
+        "openProgramReviewNode", 'interaction: "PORTFOLIO_TO_CHILD_COLLISION_REVIEW_NOTE"',
+        "待我的 owner review · ${pending.length}", '"进入 child 并开始 owner review"',
+    ):
+        if dock_contract not in runtime:
+            fail(f"Reader/Item Pane co-reading dock is missing {dock_contract!r}")
+    for co_reading_contract in (
+        "openNoteBesideReader", "coReadingNote", "openSourceForCoReading", 'context.mode = "item"',
+        "registerReadingNoteSection", 'bodyXHTML:', 'class="atr-reading-note-editor"',
+        'interaction: "READER_WITH_FOLDABLE_NOTE_AND_ATR_SECTIONS"',
+        '"阅读原文并记录我的理解"', '"在新标签深度编辑这份来源笔记"',
+        '"便携显示 ATR 定位"', '"记录我的判断（进入待复审队列）"',
+        '"worker 全文检查："', '"人的阅读：当前投影尚无 Note / annotation 复审记录"',
+        '"知识核验状态："', '"<h2>知识核验状态</h2><p>"',
+        '"<h2>原文核验跨度</h2><ul>"', "evidence_spans",
+        '"知识状态：绿色=受限原文支撑；紫色=部分支撑；橙色=被碰撞复核挑战；灰色=等待更多来源。"',
+        "BOUNDED_SOURCE_REVIEWED", "PARTIALLY_SOURCE_REVIEWED",
+        "CHALLENGED_BY_COLLISION_REVIEW", "PENDING_ADDITIONAL_SOURCE_REVIEW",
+        "ATR Collision Review:", "marker.collisionReview", "atr_collision_review_id",
+        "ATR Reality Signal Gap:", "marker.realitySignalGap", "atr_reality_signal_gap_node_id",
+        '"现实证据缺口"', '"为什么不能形成张力："', '"缺失的来源功能："',
+        '"完成我的 owner route review"', "setOwnerRouteInput",
+        '"ACCEPT_REFRAME"', '"REQUEST_MORE_EVIDENCE"', '"PARK_TOPIC"', '"RETIRE_CANDIDATE"',
+        'lifecycle_effect: "REVIEW_INPUT_ONLY"',
+    ):
+        if co_reading_contract not in runtime:
+            fail(f"Reader-centered native note interaction is missing {co_reading_contract!r}")
+    for companion_contract in (
+        "openCompanionWindow", "renderCompanionWindow", "openThreePaneCoReading",
+        "companion.xhtml", "alwaysRaised=yes", "companion.keepTop",
+        '"ZOTERO_READER", "ZOTERO_NATIVE_NOTE_EDITOR", "ATR_PORTABLE_CONTEXT"',
+    ):
+        if companion_contract not in runtime:
+            fail(f"portable co-reading companion is missing {companion_contract!r}")
     if "human_note_modified" not in runtime or "human_annotation_modified" not in runtime:
         fail("plugin must relay both explicit notes and native Reader annotations")
     if 'input_origin: "ZOTERO_NOTIFIER"' not in runtime or "ignored non-cognitive Note metadata change" not in runtime:
@@ -103,12 +169,17 @@ def validate_source() -> None:
         fail("plugin must capture user/group-aware Codex-to-Reader annotation deep links at event time")
     if "ensureReadableAttachment" not in runtime or "Zotero.Attachments.importFromURL" not in runtime or "source_pdf_imported" not in runtime:
         fail("plugin must import an explicitly mapped open PDF on first read instead of leaving a metadata-only item")
+    if ("Zotero.Attachments.importFromFile" not in runtime
+            or "source_local_pdf_imported" not in runtime
+            or "source_local_pdf_digest_mismatch" not in runtime
+            or "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ" not in projection_source):
+        fail("plugin must import only identity-verified, digest-stable repository PDFs into Zotero on explicit read")
     if ("Zotero.Attachments.addAvailableFile" not in runtime
             or "Zotero.Attachments.canFindFileForItem" not in runtime
             or "source_available_file_attached" not in runtime
             or "source_available_file_lookup_failed" not in runtime
             or 'fulltext_state: "FULLTEXT_ATTACHED"' not in runtime
-            or "用 Zotero 查找可用 PDF" not in runtime):
+            or "让 Zotero 查找全文并记录理解" not in runtime):
         fail("plugin must use Zotero's native available-file resolver and expose unresolved full-text state")
     if "review-queue.json" not in runtime or "pendingReviewItems" not in runtime:
         fail("plugin must display the Codex-derived pending review queue without mutating lifecycle")
@@ -117,6 +188,9 @@ def validate_source() -> None:
             or "ATR Knowledge Node:" not in runtime or "ATR Tension Node:" not in runtime
             or "ATR Research Question Node:" not in runtime or "ATR Derived Question Node:" not in runtime):
         fail("plugin must scope human feedback with stable ATR markers")
+    for marker in ("ATR Portfolio Node:", "ATR Research Program Node:", "ATR Legacy Run Node:", "ATR Alignment Audit Node:"):
+        if marker not in runtime:
+            fail(f"plugin must preserve portfolio migration marker {marker!r}")
     if "ATR Review Assessment:" not in runtime or "human_review_assessment" not in runtime:
         fail("plugin must project isolated human-review assessments as native Zotero Notes")
     for stance in ("SUPPORTS", "QUALIFIES", "CHALLENGES", "UNSURE", "NEW_QUESTION"):
@@ -143,7 +217,7 @@ def validate_source() -> None:
         fail("versioned Note lookup must compare parsed ATR markers exactly, not by string prefix")
     if "entering degraded mode" not in runtime or "配置错误 · 查看详情" not in runtime:
         fail("plugin must expose registry failures in Zotero instead of disappearing at startup")
-    if "registerChrome" in bootstrap or "chrome/content/workbench" in bootstrap:
+    if "chrome/content/workbench" in bootstrap:
         fail("bootstrap must not register the retired standalone workbench page")
 
 

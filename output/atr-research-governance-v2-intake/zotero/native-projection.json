@@ -1,0 +1,1133 @@
+{
+  "schema_version": "0.1",
+  "projection": "atr-zotero-native-map",
+  "run": "2026-07-19-atr-research-governance-v2-intake",
+  "source_graph_projection": "derived-read-only-v2-sqlite",
+  "topic": {
+    "title": "program:atr-research-governance",
+    "marker": "ATR Topic Run: 2026-07-19-atr-research-governance-v2-intake"
+  },
+  "collections": {
+    "root": "ATR · program:atr-research-governance",
+    "overview": "01 · Topic 与演化",
+    "knowledge": "02 · 知识体系",
+    "research": "03 · 研究问题与断言",
+    "sources": "04 · 来源阅读",
+    "history": "05 · 历史版本",
+    "research_tensions": "01 · 现实世界张力",
+    "research_frontier": "02 · 前沿研究问题",
+    "research_current": "03 · 当前问题卡",
+    "research_claims": "04 · 待审查断言",
+    "research_reviews": "05 · 共创复核"
+  },
+  "objects": [
+    {
+      "object_id": "topic:2026-07-19-atr-research-governance-v2-intake",
+      "object_kind": "topic_note",
+      "graph_node_id": "subject:program:atr-research-governance",
+      "atr_id": "2026-07-19-atr-research-governance-v2-intake",
+      "title": "program:atr-research-governance",
+      "marker": "ATR Topic Run: 2026-07-19-atr-research-governance-v2-intake",
+      "collection_role": "OVERVIEW",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "program:research_program:atr-research-governance",
+      "object_kind": "program_note",
+      "graph_node_id": "research_program:atr-research-governance",
+      "parent_graph_node_id": null,
+      "atr_id": "atr-research-governance",
+      "title": "ATR 自身的证据与路线治理",
+      "marker": "ATR Research Program Node: research_program:atr-research-governance",
+      "review_role": "PROGRAM_INTAKE_REVIEW",
+      "collection_role": "OVERVIEW",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "legacy-run:legacy_run:2026-07-17-epistemic-route-calibration",
+      "object_kind": "legacy_run_note",
+      "graph_node_id": "legacy_run:2026-07-17-epistemic-route-calibration",
+      "parent_graph_node_id": "research_program:atr-research-governance",
+      "atr_id": "legacy_run:2026-07-17-epistemic-route-calibration",
+      "title": "2026-07-17-epistemic-route-calibration",
+      "marker": "ATR Legacy Run Node: legacy_run:2026-07-17-epistemic-route-calibration",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "legacy-run:legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "object_kind": "legacy_run_note",
+      "graph_node_id": "legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "parent_graph_node_id": "research_program:atr-research-governance",
+      "atr_id": "legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "title": "2026-07-17-evidence-conditioned-research-exploration",
+      "marker": "ATR Legacy Run Node: legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "source:NEG-LEGACY-CONSTRUCTION-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:NEG-LEGACY-CONSTRUCTION-2026",
+      "atr_id": "NEG-LEGACY-CONSTRUCTION-2026",
+      "title": "Capability-contract testbed construction audit",
+      "marker": "atr-source-id:NEG-LEGACY-CONSTRUCTION-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "NEG-LEGACY-CONSTRUCTION-2026"
+      ],
+      "doi": "",
+      "url": "CONSTRUCTION-ASSET-AUDIT.v1.md",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-AGENTABSTAIN-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AGENTABSTAIN-2026",
+      "atr_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "marker": "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AGENTABSTAIN-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2607.10059",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-ARBOR-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-ARBOR-2026",
+      "atr_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "marker": "atr-source-id:SRC-ARBOR-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2606.11926",
+      "pdf_url": "https://arxiv.org/pdf/2606.11926",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "worker_inspection_state": "FULLTEXT_INSPECTED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks."
+        },
+        {
+          "locator": "pp. 14-17",
+          "observation": "Reported gains are measured on fixed task-native objectives and held-out evaluations; the operational setting removes step-level human supervision."
+        },
+        {
+          "locator": "pp. 22-23, Limitations/future work",
+          "observation": "The evidence concerns six optimization tasks and does not establish human learning or broad scientific validity."
+        },
+        {
+          "locator": "p. 1",
+          "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "locator": "pp. 14-17",
+          "observation": "Reported gains are measured on fixed task-native objectives and held-out evaluations; the operational setting removes step-level human supervision.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        },
+        {
+          "locator": "pp. 22-23, Limitations/future work",
+          "observation": "The evidence concerns six optimization tasks and does not establish human learning or broad scientific validity.",
+          "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+        }
+      ],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "atr_id": "SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "title": "AutoResearchBench",
+      "marker": "atr-source-id:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--4da822e3"
+      ],
+      "doi": "",
+      "url": "https://github.com/CherYou/AutoResearchBench",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "atr_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "marker": "atr-source-id:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2604.25256",
+      "pdf_url": "https://arxiv.org/pdf/2604.25256",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "worker_inspection_state": "FULLTEXT_INSPECTED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "Deep and Wide Research tasks require full-text, multi-step, open-ended literature discovery; strong agents score below ten percent on the reported metrics."
+        },
+        {
+          "locator": "pp. 18-19",
+          "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop."
+        },
+        {
+          "locator": "pp. 21-22",
+          "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking."
+        },
+        {
+          "locator": "p. 1",
+          "observation": "Deep and Wide Research tasks require full-text, multi-step, open-ended literature discovery; strong agents score below ten percent on the reported metrics.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        },
+        {
+          "locator": "pp. 18-19",
+          "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        },
+        {
+          "locator": "pp. 21-22",
+          "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking.",
+          "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+        }
+      ],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-AUTORESEARCHCLAW-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "atr_id": "SRC-AUTORESEARCHCLAW-2026",
+      "title": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+      "marker": "atr-source-id:SRC-AUTORESEARCHCLAW-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2605.20025",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-FIREBENCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-FIREBENCH-2026",
+      "atr_id": "SRC-FIREBENCH-2026",
+      "title": "FIRE-Bench",
+      "marker": "atr-source-id:SRC-FIREBENCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-FIREBENCH-2026"
+      ],
+      "doi": "",
+      "url": "https://firebench.github.io/",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-GRAPH2IDEA-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-GRAPH2IDEA-2026",
+      "atr_id": "SRC-GRAPH2IDEA-2026",
+      "title": "Graph2Idea: Retrieval-Augmented Scientific Idea Generation with Graph-Structured Contexts",
+      "marker": "atr-source-id:SRC-GRAPH2IDEA-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-GRAPH2IDEA-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2606.09105",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-HARPA-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-HARPA-2026",
+      "atr_id": "SRC-HARPA-2026",
+      "title": "HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation",
+      "marker": "atr-source-id:SRC-HARPA-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-HARPA-2026"
+      ],
+      "doi": "",
+      "url": "https://openreview.net/forum?id=zGr73fcSsB",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-HEP-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-HEP-2026",
+      "atr_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "marker": "atr-source-id:SRC-HEP-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-HEP-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2607.09195",
+      "pdf_url": "https://arxiv.org/pdf/2607.09195",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "worker_inspection_state": "FULLTEXT_INSPECTED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects."
+        },
+        {
+          "locator": "p. 12",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Experiments use one autonomous materials-research agent without human input under a bounded setup."
+        },
+        {
+          "locator": "pp. 1-2",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "locator": "p. 12",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Experiments use one autonomous materials-research agent without human input under a bounded setup.",
+          "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+        }
+      ],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-HEURESIS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-HEURESIS-2026",
+      "atr_id": "SRC-HEURESIS-2026",
+      "title": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
+      "marker": "atr-source-id:SRC-HEURESIS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-HEURESIS-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2606.25198",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-HEURESIS-REPO-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-HEURESIS-REPO-2026",
+      "atr_id": "SRC-HEURESIS-REPO-2026",
+      "title": "Heuresis official framework repository",
+      "marker": "atr-source-id:SRC-HEURESIS-REPO-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-HEURESIS-REPO-2026"
+      ],
+      "doi": "",
+      "url": "https://github.com/a-antoniades/Heuresis",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-NARROW-EXPLORATION-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-NARROW-EXPLORATION-2026",
+      "atr_id": "SRC-NARROW-EXPLORATION-2026",
+      "title": "AI Research Agents Narrow Scientific Exploration",
+      "marker": "atr-source-id:SRC-NARROW-EXPLORATION-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-NARROW-EXPLORATION-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2605.27905",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-RESEARCHBENCH-2025",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-RESEARCHBENCH-2025",
+      "atr_id": "SRC-RESEARCHBENCH-2025",
+      "title": "ResearchBench: Evaluating AI's Ability to Generate Research Ideas",
+      "marker": "atr-source-id:SRC-RESEARCHBENCH-2025",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-RESEARCHBENCH-2025"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2503.21248",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-SAGE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-SAGE-2026",
+      "atr_id": "SRC-SAGE-2026",
+      "title": "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
+      "marker": "atr-source-id:SRC-SAGE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-SAGE-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2606.31478",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "source:SRC-SCIENTISTONE-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-SCIENTISTONE-2026",
+      "atr_id": "SRC-SCIENTISTONE-2026",
+      "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
+      "marker": "atr-source-id:SRC-SCIENTISTONE-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-SCIENTISTONE-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2605.26340",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "source:SRC-SOUNDNESSBENCH-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-SOUNDNESSBENCH-2026",
+      "atr_id": "SRC-SOUNDNESSBENCH-2026",
+      "title": "SoundnessBench: Can Your AI Scientist Really Tell Good Research Ideas from Bad Ones?",
+      "marker": "atr-source-id:SRC-SOUNDNESSBENCH-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-SOUNDNESSBENCH-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2605.30329",
+      "pdf_url": "",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
+      "source_layer": "scholarly_evidence"
+    },
+    {
+      "object_id": "question:research_question:FT-governance-output-vs-process",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "research_question:FT-governance-output-vs-process",
+      "atr_id": "FT-governance-output-vs-process",
+      "title": "Should research-agent quality be judged by polished outputs or by an auditable process that preserves failed branches, source use, and decision reversals?",
+      "marker": "ATR Research Question Node: research_question:FT-governance-output-vs-process",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "question:research_question:FT-governance-autonomy-vs-human-learning",
+      "object_kind": "frontier_question_note",
+      "graph_node_id": "research_question:FT-governance-autonomy-vs-human-learning",
+      "atr_id": "FT-governance-autonomy-vs-human-learning",
+      "title": "How should autonomous research progress be balanced against source-linked human reading that can revise the knowledge and problem structure?",
+      "marker": "ATR Research Question Node: research_question:FT-governance-autonomy-vs-human-learning",
+      "review_role": "FRONTIER_REVIEW_TARGET",
+      "collection_role": "RESEARCH_FRONTIER",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "parent_graph_node_id": null,
+      "atr_id": "research-governance",
+      "title": "Agentic research governance",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance@3b1f0372505d",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "atr_id": "evidence-provenance",
+      "title": "Evidence and provenance",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio@3b1f0372505d",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "atr_id": "hypothesis-portfolio",
+      "title": "Hypothesis and seed portfolio",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition@3b1f0372505d",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "atr_id": "gate-route-transition",
+      "title": "Gate, route, and transition separation",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:human-review@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review@3b1f0372505d",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "atr_id": "human-review",
+      "title": "Human reading and review",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:human-review@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:system-learning@3b1f0372505d",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning@3b1f0372505d",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance@3b1f0372505d",
+      "atr_id": "system-learning",
+      "title": "Harness evaluation and system learning",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:system-learning@3b1f0372505d",
+      "review_role": "HISTORICAL_VERSION",
+      "collection_role": "HISTORY",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "topic-route:topic_route:TRP-atr-research-governance.draft-v1",
+      "object_kind": "route_note",
+      "graph_node_id": "topic_route:TRP-atr-research-governance.draft-v1",
+      "atr_id": "TRP-atr-research-governance.draft-v1",
+      "title": "自主研究系统如何以碰撞、资产失败与证据边界决定停放、重构或继续，而非把文献覆盖不足误当作新颖性？",
+      "marker": "ATR Topic Route Node: topic_route:TRP-atr-research-governance.draft-v1",
+      "review_role": "PENDING_INDEPENDENT_ROUTE_REVIEW",
+      "collection_role": "OVERVIEW",
+      "linked_source_ids": []
+    },
+    {
+      "object_id": "reality-gap:reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
+      "object_kind": "reality_gap_note",
+      "graph_node_id": "reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
+      "atr_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
+      "title": "现实信号不足 · NO_ADMISSIBLE_SIGNAL",
+      "marker": "ATR Reality Signal Gap: reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
+      "review_role": "REALITY_SIGNAL_SEARCH_BOUNDARY",
+      "collection_role": "RESEARCH_TENSION",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "problem:research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "object_kind": "problem_note",
+      "graph_node_id": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "atr_id": "PC-auditable-research-process-human-learning.draft-v1",
+      "title": "When does an auditable, branch-preserving research process improve scientific decisions and human learning beyond polished output quality, and when does it merely add process overhead?",
+      "marker": "ATR Problem ID: PC-auditable-research-process-human-learning.draft-v1 | ATR Graph Node: research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "review_role": "CURRENT_REVIEW_TARGET",
+      "collection_role": "RESEARCH_CURRENT",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "parent_graph_node_id": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "atr_id": "DQ-GOV-1",
+      "title": "Which preserved process object most often reverses an independent review decision: failed branch, source locator, evidence update, or route history?",
+      "marker": "ATR Derived Question Node: derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "derived-question:derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "object_kind": "derived_question_note",
+      "graph_node_id": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "parent_graph_node_id": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "atr_id": "DQ-GOV-2",
+      "title": "Can a human reconstruct and challenge a research claim from source-linked notes without reading an AI-generated summary as authority?",
+      "marker": "ATR Derived Question Node: derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "review_role": "FINER_GRAINED_REVIEW_TARGET",
+      "collection_role": "RESEARCH_DERIVED",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "collision-review:collision_review:ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+      "object_kind": "collision_review_note",
+      "graph_node_id": "collision_review:ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+      "parent_graph_node_id": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "atr_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+      "title": "碰撞复核 · REFRAME",
+      "marker": "ATR Collision Review: ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1 | ATR Graph Node: collision_review:ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+      "review_role": "READ_ONLY_WORKER_OUTPUT_NOT_GATE",
+      "collection_role": "RESEARCH_REVIEWS",
+      "linked_source_ids": [
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ]
+    },
+    {
+      "object_id": "source:SRC-LLM-AUDIT-TRAILS-2026",
+      "object_kind": "source_item",
+      "graph_node_id": "paper:SRC-LLM-AUDIT-TRAILS-2026",
+      "atr_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "marker": "atr-source-id:SRC-LLM-AUDIT-TRAILS-2026",
+      "collection_role": "SOURCES",
+      "linked_source_ids": [
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ],
+      "doi": "",
+      "url": "https://arxiv.org/abs/2601.20727",
+      "pdf_url": "https://arxiv.org/pdf/2601.20727",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "worker_inspection_state": "FULLTEXT_INSPECTED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 11-15",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/audit-trails.pdf",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/collision-review/audit-trails.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.20727"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "accountability",
+            "audit",
+            "language",
+            "large",
+            "models",
+            "trails"
+          ],
+          "expected_token_count": 6
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "source_layer": "source_needs_review"
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "parent_graph_node_id": null,
+      "atr_id": "research-governance",
+      "title": "Agentic research governance",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-HEP-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "atr_id": "evidence-provenance",
+      "title": "Evidence and provenance",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-HEP-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "atr_id": "hypothesis-portfolio",
+      "title": "Hypothesis and seed portfolio",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "atr_id": "gate-route-transition",
+      "title": "Gate, route, and transition separation",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "atr_id": "human-review",
+      "title": "Human reading and review",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095"
+      ]
+    },
+    {
+      "object_id": "knowledge:knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "object_kind": "knowledge_note",
+      "graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "parent_graph_node_id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "atr_id": "system-learning",
+      "title": "Harness evaluation and system learning",
+      "marker": "ATR Knowledge Node: knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "review_role": "LEARNING_AND_REVIEW_TARGET",
+      "collection_role": "KNOWLEDGE",
+      "linked_source_ids": [
+        "SRC-ARBOR-2026",
+        "SRC-LLM-AUDIT-TRAILS-2026"
+      ]
+    }
+  ],
+  "feedback_contract": {
+    "accepted_events": [
+      "human_note_modified",
+      "human_annotation_modified"
+    ],
+    "target_priority": [
+      "claim",
+      "collision_review",
+      "research_problem",
+      "research_question",
+      "real_world_tension",
+      "reality_signal_gap",
+      "source",
+      "knowledge",
+      "topic"
+    ],
+    "lifecycle_effect": "REVIEW_INPUT_ONLY",
+    "history_policy": "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES"
+  }
+}

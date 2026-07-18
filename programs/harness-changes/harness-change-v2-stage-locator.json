@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "change_id": "HCH-v2-stage-locator-sqlite-authority-v1",
+  "scope": "Read-only lifecycle localization for ATR v2 runs whose authority is atr.sqlite and whose state.json is a derived snapshot.",
+  "observed_failure": "advise_stage.py unconditionally opened legacy run-state.json and crashed before returning guidance for every inspected ATR v2 child, even though atrctl check passed.",
+  "evidence_refs": [
+    "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-19-multilingual-agent-action-attribution-v2-intake/state.json",
+    "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake/state.json"
+  ],
+  "counterevidence": [
+    "Legacy runs with run-state.json were already localized correctly, and atrctl check already validates v2 transactional structure; the defect is limited to the advisory reader boundary."
+  ],
+  "proposed_mechanism": "Prefer legacy run-state.json when present; otherwise accept only schema 2.0 state.json explicitly derived from atr.sqlite, normalize the active controller state to lifecycle guidance, and expose the underlying v2 state/version without creating a compatibility authority file.",
+  "decision_node": "READ_ONLY_STAGE_LOCALIZATION",
+  "domain_boundary": {
+    "core_or_binding": "CORE",
+    "why_not_domain_specific": "The authority-format distinction applies to every ATR v2 domain and does not add or relax any multilingual, ML, or scientific gate."
+  },
+  "evaluation": {
+    "mode": "SHADOW",
+    "sample": "The six independent multilingual program child authorities plus the existing legacy-run audit corpus.",
+    "route_level_metrics": [
+      "fraction of valid runs receiving non-crashing stage guidance",
+      "number of false route invitations caused by state normalization",
+      "legacy locator output regressions"
+    ],
+    "rollback_rule": "Remove the v2 adapter if it changes legacy output, reads a non-SQLite-derived snapshot, or emits guidance inconsistent with the v2 controller state map."
+  },
+  "disposition": "SHADOW",
+  "does_not_establish": "This compatibility adapter does not certify scholarly quality, gate readiness, route correctness, or that the v2 lifecycle and legacy lifecycle are semantically identical.",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_by": "2026-10-19T00:00:00+08:00"
+}

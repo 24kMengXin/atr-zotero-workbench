@@ -1,0 +1,561 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-source-inventory",
+  "program_key": "multilingual-agent-state-continuity",
+  "sources": [
+    {
+      "source_id": "SRC-ASR-CODESWITCH-BENCH-2026",
+      "title": "ASR_Code_Switch",
+      "url": "https://huggingface.co/datasets/Perle-ai/ASR_Code_Switch",
+      "kind": "PUBLIC_DATASET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ASR-CODESWITCH-BENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CODESWITCH-LLM-REASONING-2026",
+      "title": "Can Large Language Models Understand, Reason About, and Generate Code-Switched Text?",
+      "url": "https://arxiv.org/abs/2601.07153",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CODESWITCH-LLM-REASONING-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMMONAMIGOS-2020",
+      "title": "What Code-Switching Strategies are Effective in Dialogue Systems?",
+      "url": "https://aclanthology.org/2020.scil-1.32.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMMONAMIGOS-2020"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CS-IR-2026",
+      "title": "Code-Switching Information Retrieval",
+      "url": "https://aclanthology.org/2026.acl-long.2162/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CS-IR-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-FORGETEVAL-2026",
+      "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "url": "https://arxiv.org/abs/2606.15903",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-FORGETEVAL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "title": "Multilingual agents — Dialogflow CX",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-GROUPMEMBENCH-2026",
+      "title": "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations",
+      "url": "https://www.microsoft.com/en-us/research/publication/groupmembench-benchmarking-llm-agent-memory-in-multi-party-conversations/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-GROUPMEMBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-GUICEVAL-CVPR-2026",
+      "title": "GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GUI-CEval_A_Hierarchical_and_Comprehensive_Chinese_Benchmark_for_Mobile_GUI_CVPR_2026_paper.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-GUICEVAL-CVPR-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HINDSIGHT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LLM-SOCIETIES-2026",
+      "title": "Evolution of Cooperation in LLM Societies: A Multi-Lingual Examination",
+      "url": "https://openreview.net/forum?id=QcYLAh3lYb",
+      "kind": "PRIMARY_WORKSHOP",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LLM-SOCIETIES-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "title": "Long-Horizon Agent-Memory Benchmark",
+      "url": "https://huggingface.co/datasets/HieuNguyenDang/long-horizon-agent-memory",
+      "kind": "PUBLIC_DATASET_CARD",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LONG-HORIZON-MEMORY-HF-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MACOSWORLD-NEURIPS-2025",
+      "title": "macOSWorld: A Multilingual Interactive Benchmark for GUI Agents",
+      "url": "https://arxiv.org/abs/2506.04135",
+      "kind": "PRIMARY_PAPER_AND_PUBLIC_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MACOSWORLD-NEURIPS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MARBLE-REPO-2025",
+      "title": "MARBLE: Multi-Agent Coordination Backbone with LLM Engine",
+      "url": "https://github.com/ulab-uiuc/MARBLE",
+      "kind": "PRIMARY_CODE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MARBLE-REPO-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MEM2ACTBENCH-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MEM2ACTBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LOST-IN-EXECUTION-ACL-2026",
+        "SRC-MLCL-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MPRGUI-ACL-2026",
+      "title": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+      "url": "https://arxiv.org/abs/2512.00756",
+      "kind": "PRIMARY_PAPER_AND_PUBLIC_DATASET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-gui-locale-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MPRGUI-2026",
+        "SRC-MPRGUI-ACL-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "title": "Configure and create multilingual agents — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MS-COPILOT-DYNAMIC-SWITCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "title": "Design effective language understanding — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "title": "Make Employee Self-Service agent multilingual",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/employee-self-service-multilingual",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MS-ESS-DYNAMIC-LANGUAGE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "title": "Application card for Microsoft Security Copilot agents",
+      "url": "https://learn.microsoft.com/en-us/copilot/security/security-copilot-application-card-agents",
+      "kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MS-SECURITY-COPILOT-MEMORY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTIAGENTBENCH-2025",
+      "title": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents",
+      "url": "https://aclanthology.org/2025.acl-long.421/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTIAGENTBENCH-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OLA-CODESWITCH-2026",
+      "title": "OLA: Output Language Alignment in Code-Switched LLM Interactions",
+      "url": "https://arxiv.org/abs/2601.03589",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OLA-CODESWITCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2607.06008",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-agent-assurance, 2026-07-17-multilingual-agent-coordination",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-POLYWORKBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PRESTO-EMNLP-2023",
+      "title": "PRESTO: A Multilingual Dataset for Parsing Realistic Task-Oriented Dialogs",
+      "url": "https://aclanthology.org/2023.emnlp-main.667/",
+      "kind": "PRIMARY_PAPER_AND_PUBLIC_DATASET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PRESTO-EMNLP-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PRESTO-REPOSITORY-2026",
+      "title": "google-research-datasets/presto",
+      "url": "https://github.com/google-research-datasets/presto",
+      "kind": "PUBLIC_REPOSITORY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PRESTO-REPOSITORY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SEATAUBENCH-2026",
+      "title": "SEATauBench: Adapting Tool-Agent-User Evaluation Into Low-Resource Southeast Asian Languages",
+      "url": "https://arxiv.org/abs/2606.28715",
+      "kind": "PRIMARY_PAPER_AND_PUBLIC_REPOSITORY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SEATAUBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-VOICEAGENTBENCH-2025",
+      "title": "VoiceAgentBench: Are Voice Assistants ready for agentic tasks?",
+      "url": "https://arxiv.org/abs/2510.07978",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-VOICEAGENTBENCH-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-XBCP-2026",
+      "title": "Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus",
+      "url": "https://arxiv.org/abs/2606.15345",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-XBCP-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-XRAG-2025",
+      "title": "XRAG: Cross-lingual Retrieval-Augmented Generation",
+      "url": "https://arxiv.org/abs/2505.10089",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-XRAG-2025"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-XWEBAGENTBENCH-ACL-2025",
+      "title": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+      "url": "https://aclanthology.org/2025.findings-acl.988/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-coordination, 2026-07-17-multilingual-gui-locale-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-XWEB-2025",
+        "SRC-XWEBAGENTBENCH-2025",
+        "SRC-XWEBAGENTBENCH-ACL-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    }
+  ],
+  "occurrence_count": 32,
+  "canonical_source_count": 30,
+  "identity_conflict_count": 3,
+  "access_summary": {
+    "metadata_only": 30,
+    "fulltext_attached": 0,
+    "fulltext_inspected": 0
+  },
+  "next_action": "Resolve/de-duplicate against the Zotero library, acquire permitted readable attachments, then inspect load-bearing spans with locators.",
+  "controller_boundary": "This source inventory is an immutable metadata-only attachment. It does not itself advance lifecycle or establish bibliographic version identity, access, inspection, claim support, or a research gap."
+}

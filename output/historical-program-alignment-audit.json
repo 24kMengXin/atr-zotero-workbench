@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "artifact_type": "historical-program-alignment-audit",
   "catalog": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/multilingual-programs.json",
   "policy": {
@@ -12,6 +12,18 @@
     "run_count": 28,
     "runs_with_integrity_issues": 0,
     "runs_with_parseable_sources": 28,
+    "source_records": 391,
+    "unique_source_ids": 358,
+    "unique_source_urls": 326,
+    "unique_source_titles": 352,
+    "duplicate_source_id_rows": 33,
+    "source_records_with_access_status": 0,
+    "source_records_declared_fulltext_inspected": 0,
+    "runs_with_legacy_manifests": 2,
+    "structurally_valid_under_current_checker": 28,
+    "alignment_dispositions": {
+      "LEGACY_MAP_INPUT_ONLY": 28
+    },
     "dispositions": {
       "canonical_causal_branch": 1,
       "canonical_decision_branch": 1,
@@ -42,6 +54,86 @@
       "retain_as_security_branch": 1
     }
   },
+  "program_gap_matrix": [
+    {
+      "program": "multilingual-agent-action-attribution",
+      "historical_runs": 7,
+      "source_records": 124,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    },
+    {
+      "program": "multilingual-agent-state-continuity",
+      "historical_runs": 5,
+      "source_records": 32,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    },
+    {
+      "program": "multilingual-agent-authorization-safety",
+      "historical_runs": 5,
+      "source_records": 50,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    },
+    {
+      "program": "multilingual-representation-and-data-decisions",
+      "historical_runs": 4,
+      "source_records": 136,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    },
+    {
+      "program": "agent-infrastructure-and-evaluation-contracts",
+      "historical_runs": 5,
+      "source_records": 31,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    },
+    {
+      "program": "atr-research-governance",
+      "historical_runs": 2,
+      "source_records": 18,
+      "required_before_current_v2_chain": [
+        "new program-level v2 intake and topic route",
+        "source access/fulltext re-verification with Zotero attachment state",
+        "LEGACY_MAPPED manifests for every consumed artifact",
+        "fresh source-grounded FKS/knowledge context",
+        "opportunity decision (map or NO_ADMISSIBLE_SIGNAL)",
+        "current claim/problem versions only after their independent gates"
+      ]
+    }
+  ],
   "programs": [
     {
       "key": "multilingual-agent-action-attribution",
@@ -68,7 +160,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 9
+          },
+          "source_access": {
+            "records": 13,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -77,8 +179,67 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing opportunity_map",
-            "missing concept_map"
+            "missing concept_map",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/claims.jsonl",
+              "decision": "RETAIN_AS_CLAIM_HISTORY",
+              "boundary": "cannot become a current claim without a new claim version and review"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-15-g1-reconstruction",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "No active proposal. Preserve g1 as a negative-evidence legacy lane; only a separately scoped, freshly reviewed lower-tier measurement study may be opened in a new run.",
+            "guidance": {
+              "phase": "seed selection and problem formulation",
+              "allowed": [
+                "rank, park, formulate, or wake seeds"
+              ],
+              "next": "Pass G3M-MOTIVATION, then G3Q-PROBLEM, before any active collision review or pre-proposal study.",
+              "forbidden": [
+                "method-first activation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -102,7 +263,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 10,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -111,8 +282,78 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-16-action-evaluation-attribution",
+            "recorded_stage": "R2_FOCUSED_REVIEW",
+            "active_seed_id": null,
+            "recorded_next_action": "Independent G2 review is RED: MLCL occupies the semantic-versus-execution diagnostic and only a single-release documentation residual remains. Park the family without G3M/G3Q; wake only with a second pinned construction and human-governed evidence of an interpretation or decision reversal. No scientific execution is authorized.",
+            "guidance": {
+              "phase": "bounded evidence review",
+              "allowed": [
+                "claim-scoped search",
+                "evidence map",
+                "counterexample collection"
+              ],
+              "next": "Create only a source-traceable seed/problem formulation, or park/kill the direction.",
+              "forbidden": [
+                "claiming completeness",
+                "direct proposal authorization"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "candidates/S-action-evaluation-attribution/motivation-lineage-card.v1.json",
+              "R2-FOCUSED-REVIEW.v1.md",
+              "ASSET-AUTHORITY-BOUNDARY.v1.md",
+              "G2-INDEPENDENT-EVIDENCE-REVIEW-PACKET.v1.md",
+              "G3M-REVIEW-PACKET.v1.md",
+              "TICKETBENCH-ASSET-ACCESS-AUDIT.v1.md",
+              "MASSIVE-AGENTS-SECOND-SUBSTRATE-AUDIT.v1.md",
+              "PRODUCER-STRESS-TEST.v1.md",
+              "MLCL-COLLISION-ESCALATION.v1.md",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -136,7 +377,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 1
+          },
+          "source_access": {
+            "records": 56,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -145,8 +396,76 @@
           "not_sufficient_for_current_continuation": [
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "knowledge/knowledge-context*.json",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "boundary": "not a current canonical knowledge context"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-16-fks-multilingual-agent-action",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "No active seed remains; select a recorded dormant route or finalize the run.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is WAIT: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -170,7 +489,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 24,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -180,8 +509,79 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-controlled-multilingual-discovery",
+            "recorded_stage": "R2_FOCUSED_REVIEW",
+            "active_seed_id": null,
+            "recorded_next_action": "Execute FOCUSED_REVIEW knowledge-build plan; do not generate a new candidate outside the recorded family policy.",
+            "guidance": {
+              "phase": "bounded evidence review",
+              "allowed": [
+                "claim-scoped search",
+                "evidence map",
+                "counterexample collection"
+              ],
+              "next": "Create only a source-traceable seed/problem formulation, or park/kill the direction.",
+              "forbidden": [
+                "claiming completeness",
+                "direct proposal authorization"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "claim-to-paper attribution table covering multilingual agent benchmarks, aligned controls, token-budget methods, and tokenizer work",
+              "direct-collision review for representation-aware budgeting and multilingual agent diagnostics",
+              "asset/oracle ledger distinguishing formal diagnostic, translated benchmark, and native-language claims",
+              "knowledge/claim-to-paper-attribution.md",
+              "knowledge/focused-review-round-01.md",
+              "knowledge/asset-oracle-ledger.md",
+              "knowledge/focused-review-round-02-pragmatic-authorization.md",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -205,7 +605,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 6,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -214,8 +624,77 @@
           "not_sufficient_for_current_continuation": [
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "knowledge/knowledge-context*.json",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "boundary": "not a current canonical knowledge context"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-assurance",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route WAIT before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is WAIT: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -239,7 +718,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 7,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -247,8 +736,72 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-evaluation-transport",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -272,7 +825,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 8,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -282,8 +845,72 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-evidence-provenance",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }
@@ -314,7 +941,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 8,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -324,8 +961,84 @@
           "not_sufficient_for_current_continuation": [
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "knowledge/knowledge-context*.json",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "boundary": "not a current canonical knowledge context"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [
+              "legacy v1.0 skill events are not pair-validated; use v1.1 records for new work"
+            ],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-code-switch-agent-control-plane",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -349,7 +1062,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 9,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -359,8 +1082,84 @@
           "not_sufficient_for_current_continuation": [
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "knowledge/knowledge-context*.json",
+              "decision": "RETAIN_AS_LEGACY_KNOWLEDGE_CONTEXT",
+              "boundary": "not a current canonical knowledge context"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [
+              "legacy v1.0 skill events are not pair-validated; use v1.1 records for new work"
+            ],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-memory-continuity",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -384,7 +1183,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 5,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -393,8 +1202,73 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-coordination",
+            "recorded_stage": "R2_FOCUSED_REVIEW",
+            "active_seed_id": null,
+            "recorded_next_action": "Family parked after isolated G2 RED. Do not create a seed, API simulation or compute work; reopen only if the recorded common-asset wake condition is met.",
+            "guidance": {
+              "phase": "bounded evidence review",
+              "allowed": [
+                "claim-scoped search",
+                "evidence map",
+                "counterexample collection"
+              ],
+              "next": "Create only a source-traceable seed/problem formulation, or park/kill the direction.",
+              "forbidden": [
+                "claiming completeness",
+                "direct proposal authorization"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "R2-FOCUSED-REVIEW.v1.md",
+              "COORDINATION-LOCUS-MAP.v1.md",
+              "ASSET-AND-COLLISION-AUDIT.v1.md",
+              "G2-INDEPENDENT-EVIDENCE-REVIEW-PACKET.v1.md",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -418,7 +1292,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 6,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -428,8 +1312,74 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [
+              "legacy v1.0 skill events are not pair-validated; use v1.1 records for new work"
+            ],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-code-switched-speech-tool-grounding",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -453,7 +1403,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 4,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -462,8 +1422,67 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-gui-locale-attribution",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }
@@ -494,7 +1513,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 9,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -503,8 +1532,77 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-abstention-calibration",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -528,7 +1626,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 9,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -537,8 +1645,73 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-agent-safety-boundary",
+            "recorded_stage": "R2_FOCUSED_REVIEW",
+            "active_seed_id": null,
+            "recorded_next_action": "Family parked after isolated G2 RED. Do not generate a seed or compute work; reopen only if the recorded asset wake condition is met.",
+            "guidance": {
+              "phase": "bounded evidence review",
+              "allowed": [
+                "claim-scoped search",
+                "evidence map",
+                "counterexample collection"
+              ],
+              "next": "Create only a source-traceable seed/problem formulation, or park/kill the direction.",
+              "forbidden": [
+                "claiming completeness",
+                "direct proposal authorization"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "R2-FOCUSED-REVIEW.v1.md",
+              "SAFETY-AUTHORIZATION-DECISION-MAP.v1.md",
+              "ASSET-AND-COLLISION-AUDIT.v1.md",
+              "G2-INDEPENDENT-EVIDENCE-REVIEW-PACKET.v1.md",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -562,7 +1735,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 8,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -571,8 +1754,68 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing opportunity_map",
-            "missing concept_map"
+            "missing concept_map",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/claims.jsonl",
+              "decision": "RETAIN_AS_CLAIM_HISTORY",
+              "boundary": "cannot become a current claim without a new claim version and review"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-tool-output-injection",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Tool-output-injection family is PARKED after independent G2M/G2MP RED. Select a different recorded/broad direction; do not reopen this family without its explicit two-source wake condition.",
+            "guidance": {
+              "phase": "seed selection and problem formulation",
+              "allowed": [
+                "rank, park, formulate, or wake seeds"
+              ],
+              "next": "Pass G3M-MOTIVATION, then G3Q-PROBLEM, before any active collision review or pre-proposal study.",
+              "forbidden": [
+                "method-first activation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -596,7 +1839,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 9,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -605,8 +1858,77 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-pragmatic-action-authorization",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -630,7 +1952,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 15,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -640,8 +1972,72 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-adaptation-safety",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }
@@ -672,7 +2068,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 102,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -681,8 +2087,74 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-16-mt-reasoning",
+            "recorded_stage": "R2_SURVEY",
+            "active_seed_id": null,
+            "recorded_next_action": "Independent review v11 kills the source-bounded MT-reasoning R2 route: no non-setting decision structure survives direct collision. The next legal action is a distinct R0 direction route through the portfolio, not another MT-reasoning/feedback/QA-routing/triage/high-stakes setting variant. The 48 legacy-unlinked sources and 16 null-count historical queries remain recall limits. No proposal, API, GPU or experiment is authorized.",
+            "guidance": {
+              "phase": "full survey knowledge build",
+              "allowed": [
+                "high-recall discovery",
+                "continuous verification",
+                "taxonomy and agenda maintenance",
+                "survey drafting/review"
+              ],
+              "next": "After survey quality gates and temporal refresh, hand evidence-backed question cards to survey-gap-mining.",
+              "forbidden": [
+                "promoting an agenda sentence as a gap",
+                "proposal or smoke-test authorization"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "paper/taxonomy.json",
+              "discovery/state/verified.jsonl",
+              "agenda-status.jsonl",
+              "survey-refresh.md",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -706,7 +2178,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 5,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -716,8 +2198,80 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [
+              "legacy v1.0 skill events are not pair-validated; use v1.1 records for new work"
+            ],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-reasoning-language-mixing",
+            "recorded_stage": "R2_FOCUSED_REVIEW",
+            "active_seed_id": null,
+            "recorded_next_action": "Direction route KILL is terminal for its subject; do not revive it without a fresh route.",
+            "guidance": {
+              "phase": "bounded evidence review",
+              "allowed": [
+                "claim-scoped search",
+                "evidence map",
+                "counterexample collection"
+              ],
+              "next": "Create only a source-traceable seed/problem formulation, or park/kill the direction.",
+              "forbidden": [
+                "claiming completeness",
+                "direct proposal authorization"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "R2-language-mixing-evidence-map.jsonl",
+              "R2-language-mixing-condition-matrix.md",
+              "R2-language-mixing-asset-and-trace-ledger.jsonl",
+              "R2-language-mixing-question-register.jsonl",
+              "dated evidence coverage and the worker's independent quality gate"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -741,7 +2295,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 9,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -751,8 +2315,72 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-fragmentation-assigned-compute-refresh",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -776,7 +2404,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 20,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -786,8 +2424,76 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/frontier-map.json",
+              "decision": "REUSE_AS_HISTORICAL_FRONTIER_INPUT",
+              "boundary": "requires current source refresh and FKS review"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-multilingual-curation-decision",
+            "recorded_stage": "R2_SURVEY",
+            "active_seed_id": null,
+            "recorded_next_action": "Maintain the dated survey synthesis only; do not create a seed, proposal, construction program, or scientific execution without a fresh routed question.",
+            "guidance": {
+              "phase": "dated survey-only synthesis",
+              "allowed": [
+                "maintain the frontier delta",
+                "refresh the cited evidence at its stated horizon",
+                "monitor explicit external wake conditions"
+              ],
+              "next": "Do not produce question cards from this survey. Reopen only with a fresh, independently reviewed field decision and oracle contract.",
+              "forbidden": [
+                "new seed creation",
+                "proposal or construction routing",
+                "scientific compute",
+                "turning an empty taxonomy cell into a gap"
+              ]
+            },
+            "blocking_observations": [
+              "legacy topic route has descriptive requirements but no machine-checkable artifact_paths; migrate before relying on completion advice"
+            ],
+            "required_before_handoff": [
+              "a dated external wake-condition package and a fresh route decision"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }
@@ -818,7 +2524,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 5,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -826,8 +2542,72 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-agent-capability-registration",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -851,7 +2631,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 6,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -859,8 +2649,72 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-capability-contract-testbed",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK_CONSTRUCTION before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK_CONSTRUCTION: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -884,7 +2738,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 8,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -893,8 +2757,77 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-agent-evaluation-drift-attribution",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -918,7 +2851,17 @@
             "opportunity_map": false,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 6,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -928,8 +2871,74 @@
             "missing knowledge_context",
             "missing opportunity_map",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [
+              "legacy v1.0 skill events are not pair-validated; use v1.1 records for new work"
+            ],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-programming-language-agent-affordances",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -953,7 +2962,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 6,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -962,8 +2981,77 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-skill-capability-containment",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }
@@ -994,7 +3082,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": false
+            "skill_events": false,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 7,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger"
@@ -1002,8 +3100,72 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "PRIORITY_REVIEW_INPUT",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-epistemic-route-calibration",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         },
@@ -1027,7 +3189,17 @@
             "opportunity_map": true,
             "concept_map": false,
             "problem_cards": 0,
-            "skill_events": true
+            "skill_events": true,
+            "artifact_manifests": 0
+          },
+          "source_access": {
+            "records": 11,
+            "with_doi": 0,
+            "with_pdf_url": 0,
+            "with_access_status": 0,
+            "declared_fulltext_attached": 0,
+            "declared_fulltext_inspected": 0,
+            "with_content_locator": 0
           },
           "reusable_as_provenance_input": [
             "source_ledger",
@@ -1036,8 +3208,77 @@
           "not_sufficient_for_current_continuation": [
             "missing knowledge_context",
             "missing concept_map",
-            "no current claim ledger"
+            "no current claim ledger",
+            "no LEGACY_MAPPED artifact manifests",
+            "source access/fulltext state undeclared",
+            "no source declared FULLTEXT_INSPECTED with locator"
           ],
+          "artifact_dispositions": [
+            {
+              "artifact": "evidence/sources.jsonl",
+              "decision": "REUSE_AFTER_SOURCE_REVERIFICATION",
+              "boundary": "metadata/abstract records are not inspected full text"
+            },
+            {
+              "artifact": "evidence/edges.jsonl",
+              "decision": "RETAIN_AS_LEGACY_PROVENANCE",
+              "boundary": "edge semantics require remapping before v2 projection"
+            },
+            {
+              "artifact": "knowledge/opportunity-map.json",
+              "decision": "REUSE_AS_R0_5_INPUT_ONLY",
+              "boundary": "not a gap, seed, or route certificate"
+            },
+            {
+              "artifact": "observability/skill-events.jsonl",
+              "decision": "RETAIN_AS_PROCESS_HISTORY",
+              "boundary": "v1.0 events are excluded from pair-certified invocation metrics"
+            },
+            {
+              "artifact": "run-state.json",
+              "decision": "RETAIN_AS_LEGACY_STATE_SNAPSHOT",
+              "boundary": "must not be copied into v2 lifecycle state"
+            },
+            {
+              "artifact": "unclassified prose/code/results",
+              "decision": "ARCHIVE_PENDING_ARTIFACT_LEVEL_REVIEW",
+              "boundary": "not consumed automatically"
+            }
+          ],
+          "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+          "program_integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+          "harness_structural_check": {
+            "pass": true,
+            "errors": [],
+            "warnings": [],
+            "scope": "structural_and_referential_only",
+            "exit_code": 0
+          },
+          "harness_stage_localization": {
+            "run_id": "2026-07-17-evidence-conditioned-research-exploration",
+            "recorded_stage": "R3_SEED_PORTFOLIO",
+            "active_seed_id": null,
+            "recorded_next_action": "Follow recorded direction route PARK before promoting any seed.",
+            "guidance": {
+              "phase": "parked or waiting direction",
+              "allowed": [
+                "verify the recorded wake condition against new external evidence",
+                "record a fresh route only if the condition is satisfied"
+              ],
+              "next": "Current route is PARK: do not enter G3 without a fresh wake/review route.",
+              "forbidden": [
+                "G3 motivation/problem gates",
+                "new seed creation",
+                "scientific compute"
+              ]
+            },
+            "blocking_observations": [],
+            "required_before_handoff": [
+              "a fresh, independently reviewable wake-condition delta"
+            ],
+            "authority_boundary": "Read-only locator: this report does not certify scholarly quality, novelty, readiness, or authorize a transition.",
+            "exit_code": 0
+          },
           "integrity_issues": [],
           "blocking_issues": []
         }

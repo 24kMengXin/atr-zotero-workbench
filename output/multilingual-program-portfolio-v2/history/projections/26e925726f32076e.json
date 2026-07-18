@@ -1,0 +1,432 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-program-portfolio-v2",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.047320+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.079869+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "label": "附件 · HISTORICAL_INPUT_BOUNDARY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.112017+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "label": "附件 · CHILD_AUTHORITY_REGISTRY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-program-portfolio-v2",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "portfolio:multilingual-aaai",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:portfolio:multilingual-aaai",
+      "kind": "atr_v2_subject",
+      "label": "portfolio:multilingual-aaai",
+      "data": {
+        "subject_id": "portfolio:multilingual-aaai",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.047216+00:00",
+        "updated_at": "2026-07-18T19:10:58.047298+00:00",
+        "subject_kind": "portfolio"
+      }
+    },
+    {
+      "id": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "kind": "atr_v2_artifact",
+      "label": "portfolio-intake · 51e583f64bae",
+      "data": {
+        "artifact_id": "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "artifact_kind": "portfolio-intake",
+        "digest": "51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "original_name": "portfolio-intake.json",
+        "created_at": "2026-07-18T19:10:57.926920+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/portfolio-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "portfolio-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "portfolio:multilingual-aaai-program-portfolio",
+      "kind": "research_portfolio",
+      "label": "How should the six historically distinct multilingual/agent research programs be revalidated and developed without collapsing their mechanisms or inheriting legacy lifecycle claims?",
+      "data": {
+        "portfolio_id": "multilingual-aaai-program-portfolio",
+        "controller_boundary": "This intake registers separate program authorities. It does not promote any historical stage, gate, claim, source interpretation, or child result.",
+        "artifact_id": "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a"
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-action-attribution",
+      "kind": "research_program",
+      "label": "multilingual-agent-action-attribution",
+      "data": {
+        "program_key": "multilingual-agent-action-attribution",
+        "child_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+        "subject_id": "program:multilingual-agent-action-attribution",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-state-continuity",
+      "kind": "research_program",
+      "label": "multilingual-agent-state-continuity",
+      "data": {
+        "program_key": "multilingual-agent-state-continuity",
+        "child_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+        "subject_id": "program:multilingual-agent-state-continuity",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-authorization-safety",
+      "kind": "research_program",
+      "label": "multilingual-agent-authorization-safety",
+      "data": {
+        "program_key": "multilingual-agent-authorization-safety",
+        "child_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "research_program:multilingual-representation-and-data-decisions",
+      "kind": "research_program",
+      "label": "multilingual-representation-and-data-decisions",
+      "data": {
+        "program_key": "multilingual-representation-and-data-decisions",
+        "child_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+        "subject_id": "program:multilingual-representation-and-data-decisions",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "kind": "research_program",
+      "label": "agent-infrastructure-and-evaluation-contracts",
+      "data": {
+        "program_key": "agent-infrastructure-and-evaluation-contracts",
+        "child_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "research_program:atr-research-governance",
+      "kind": "research_program",
+      "label": "atr-research-governance",
+      "data": {
+        "program_key": "atr-research-governance",
+        "child_run_id": "2026-07-19-atr-research-governance-v2-intake",
+        "subject_id": "program:atr-research-governance",
+        "relationship": "PORTFOLIO_CHILD_SEPARATE_AUTHORITY",
+        "lifecycle_state": "SEPARATE_AUTHORITY_INTAKE"
+      }
+    },
+    {
+      "id": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "kind": "atr_v2_artifact",
+      "label": "historical-alignment-summary · aa8309741461",
+      "data": {
+        "artifact_id": "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "artifact_kind": "historical-alignment-summary",
+        "digest": "aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "original_name": "historical-alignment-summary.json",
+        "created_at": "2026-07-18T19:10:57.972735+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/historical-alignment-summary.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "historical-alignment-summary",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "alignment_audit:sha256:bee85cc7e1b2bd8355b466270f0bd51a6f0cd763e5605f64fd75f048bf85f7bd",
+      "kind": "historical_alignment_audit",
+      "label": "历史归位审计",
+      "data": {
+        "audit_digest": "sha256:bee85cc7e1b2bd8355b466270f0bd51a6f0cd763e5605f64fd75f048bf85f7bd",
+        "summary": {
+          "program_count": 6,
+          "run_count": 28,
+          "runs_with_integrity_issues": 0,
+          "runs_with_parseable_sources": 28,
+          "source_records": 391,
+          "unique_source_ids": 358,
+          "unique_source_urls": 326,
+          "unique_source_titles": 352,
+          "duplicate_source_id_rows": 33,
+          "source_records_with_access_status": 0,
+          "source_records_declared_fulltext_inspected": 0,
+          "runs_with_legacy_manifests": 2,
+          "structurally_valid_under_current_checker": 28,
+          "alignment_dispositions": {
+            "LEGACY_MAP_INPUT_ONLY": 28
+          },
+          "dispositions": {
+            "canonical_causal_branch": 1,
+            "canonical_decision_branch": 1,
+            "canonical_frontier_branch": 1,
+            "canonical_governance_branch": 1,
+            "canonical_mechanism_branch": 1,
+            "canonical_runtime_branch": 1,
+            "merge_as_adaptation_boundary": 1,
+            "merge_as_application_context": 1,
+            "merge_as_authorization_branch": 1,
+            "merge_as_coordination_branch": 1,
+            "merge_as_evaluation_branch": 1,
+            "merge_as_foundational_evidence": 1,
+            "merge_as_framework_branch": 1,
+            "merge_as_governance_branch": 1,
+            "merge_as_guardrail_branch": 1,
+            "merge_as_measurement_branch": 1,
+            "merge_as_modality_branch": 2,
+            "merge_as_policy_branch": 1,
+            "merge_as_reader_verification_branch": 1,
+            "merge_as_state_branch": 1,
+            "merge_as_testbed_branch": 1,
+            "retain_as_claim_history": 1,
+            "retain_as_data_policy_branch": 1,
+            "retain_as_exploratory_branch": 1,
+            "retain_as_landscape_branch": 1,
+            "retain_as_mechanism_branch": 1,
+            "retain_as_security_branch": 1
+          }
+        },
+        "disposition": "LEGACY_MAP_INPUT_ONLY",
+        "source_boundary": "A source record is metadata/abstract history until access, attachment, full-text inspection, and locator evidence are recorded separately."
+      }
+    },
+    {
+      "id": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "kind": "atr_v2_artifact",
+      "label": "program-registry · aabf0675d4b1",
+      "data": {
+        "artifact_id": "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "artifact_kind": "program-registry",
+        "digest": "aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "original_name": "program-registry.json",
+        "created_at": "2026-07-18T19:10:58.014481+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/program-registry.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-registry",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+        "subject_id": "portfolio:multilingual-aaai",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.047320+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "kind": "atr_v2_attachment",
+      "label": "HISTORICAL_INPUT_BOUNDARY · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+        "subject_id": "portfolio:multilingual-aaai",
+        "subject_version": 0,
+        "artifact_id": "sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+        "role": "HISTORICAL_INPUT_BOUNDARY",
+        "note": "Records what may and may not be reused.",
+        "created_at": "2026-07-18T19:10:58.079869+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "kind": "atr_v2_attachment",
+      "label": "CHILD_AUTHORITY_REGISTRY · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+        "subject_id": "portfolio:multilingual-aaai",
+        "subject_version": 0,
+        "artifact_id": "sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+        "role": "CHILD_AUTHORITY_REGISTRY",
+        "note": "Registers six separate child authorities.",
+        "created_at": "2026-07-18T19:10:58.112017+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "subject:portfolio:multilingual-aaai",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "target": "portfolio:multilingual-aaai-program-portfolio",
+      "relation": "materializes_portfolio_intake",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:multilingual-agent-action-attribution",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:multilingual-agent-state-continuity",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:multilingual-agent-authorization-safety",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:multilingual-representation-and-data-decisions",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:agent-infrastructure-and-evaluation-contracts",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "portfolio:multilingual-aaai-program-portfolio",
+      "target": "research_program:atr-research-governance",
+      "relation": "registers_separate_program_authority",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "target": "alignment_audit:sha256:bee85cc7e1b2bd8355b466270f0bd51a6f0cd763e5605f64fd75f048bf85f7bd",
+      "relation": "materializes_alignment_boundary",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "target": "portfolio:multilingual-aaai-program-portfolio",
+      "relation": "registers_program_children",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
+      "target": "artifact:sha256:51e583f64bae081640c97876899008129f7dbebaa0854afba9dad3abc2ccbc0a",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-01",
+      "target": "artifact:sha256:aa8309741461a97ee6886cd583c3523676d1f5c8430de55c5eb222b9bbd5f5c9",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:portfolio:multilingual-aaai",
+      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-02",
+      "target": "artifact:sha256:aabf0675d4b12296f61b4c44e606636217b9315882f3c9c2ea58f7a7cf24eb23",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "f172aa8dff40b720",
+        "archived_at": "2026-07-18T19:12:43.155670+00:00",
+        "path": "history/projections/f172aa8dff40b720.json",
+        "run": "2026-07-19-multilingual-program-portfolio-v2",
+        "node_count": 8,
+        "edge_count": 10
+      }
+    ],
+    "previous_projection": "f172aa8dff40b720"
+  }
+}

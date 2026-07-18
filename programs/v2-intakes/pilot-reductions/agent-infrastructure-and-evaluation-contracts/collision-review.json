@@ -1,0 +1,79 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "input_problem_case_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-HARNESS-BENCH-2026",
+      "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.27922",
+      "local_cache_path": ".runtime/collision-review/harness-bench.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-2, 7-8",
+      "comparison_type": "CLAIM_COLLISION",
+      "finding": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+      "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+    },
+    {
+      "source_id": "SRC-AGENTEVAL-2026",
+      "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "url": "https://arxiv.org/abs/2604.23581",
+      "local_cache_path": ".runtime/collision-review/agent-eval.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1, 6-8",
+      "comparison_type": "MECHANISM_COLLISION",
+      "finding": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+      "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "Harness-Bench already directly establishes that full agent configurations can materially change scores."
+    ],
+    "claim": [
+      "The broad question 'does the harness matter?' is answered and cannot support a new gap."
+    ],
+    "mechanism": [
+      "AgentEval localizes step failures; Causal Agent Replay intervenes on mocked trajectories; neither yields general live field-level causal attribution."
+    ],
+    "compositional": [
+      "Together these works cover configuration sensitivity, trace diagnosis, and synthetic intervention, leaving only a narrower execution-contract attribution boundary."
+    ],
+    "adjacent": [
+      "Reproducibility documentation records versions and commits but does not estimate causal effects."
+    ]
+  },
+  "coverage_limits": [
+    "Harness-Bench explicitly limits its results to configuration-level diagnostics.",
+    "AgentEval uses an LLM judge, English workflows, and heuristic root-cause analysis.",
+    "Causal Agent Replay uses mocked tools and synthetic ground truth."
+  ],
+  "surviving_boundary": "A narrower boundary remains: identify the minimal revision-pinned execution-contract fields whose controlled change reverses a comparison, and require trace evidence that attributes the reversal without treating diagnostic symptoms as causes.",
+  "alternative_explanations": [
+    "Provider or environment drift may explain the change.",
+    "Evaluator interpretation may reverse a ranking without changing execution.",
+    "Trace-local symptoms may be downstream of an earlier contract mismatch."
+  ],
+  "disposition": "REFRAME",
+  "next_evidence": [
+    "Construct one pinned pair differing in exactly one declared contract field.",
+    "Test whether independent replay and adjudication agree on the first causal divergence."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

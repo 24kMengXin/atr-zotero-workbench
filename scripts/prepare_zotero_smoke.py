@@ -48,9 +48,10 @@ def main() -> None:
     parser.add_argument("--run-key", help="explicit registered run to copy; defaults to active_run")
     parser.add_argument("--remote-pdf", action="store_true", help="exercise a mapped source pdf_url instead of the local fixture")
     parser.add_argument("--native-resolver", action="store_true", help="exercise Zotero's native available-file lookup for a DOI-only source")
+    parser.add_argument("--verified-local-pdf", action="store_true", help="exercise an identity-verified repository PDF import")
     args = parser.parse_args()
-    if args.remote_pdf and args.native_resolver:
-        raise SystemExit("--remote-pdf and --native-resolver are mutually exclusive")
+    if sum((args.remote_pdf, args.native_resolver, args.verified_local_pdf)) > 1:
+        raise SystemExit("--remote-pdf, --native-resolver, and --verified-local-pdf are mutually exclusive")
     if RUNTIME.exists():
         if not args.reset:
             raise SystemExit(f"smoke runtime already exists: {RUNTIME}; pass --reset to replace it")
@@ -75,6 +76,7 @@ def main() -> None:
     # and copying that cache would test stale output instead of today's code.
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
     resolver_sources = []
+    verified_local_sources = []
     if args.native_resolver:
         for node in graph.get("nodes", []):
             node_data = node.get("data", {})
@@ -90,25 +92,64 @@ def main() -> None:
             raise SystemExit("selected run has no DOI source suitable for native-resolver smoke")
         graph_path.write_text(json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8")
     export_native_projection(graph, workspace)
+    native_map = json.loads((workspace / "zotero" / "native-projection.json").read_text(encoding="utf-8"))
+    if args.verified_local_pdf:
+        verified_local_sources = [
+            obj["atr_id"] for obj in native_map.get("objects", [])
+            if obj.get("object_kind") == "source_item" and obj.get("local_cache_import_state") == "READY"
+        ]
+        if not verified_local_sources:
+            raise SystemExit("selected run has no identity-verified local PDF suitable for smoke")
+    is_portfolio = any(node.get("kind") == "research_portfolio" for node in graph.get("nodes", []))
+    registry_runs = [{
+        "key": "smoke-current",
+        "label": "Repository-local Zotero smoke fixture",
+        "run_id": selected["run_id"],
+        "run_dir": str(workspace),
+        "workspace": str(workspace),
+        "controller_kind": selected["controller_kind"],
+        "authority_path": str(RUNTIME / "fixture-only-no-controller.sqlite"),
+        "authority_scope": "TEST_FIXTURE_ONLY",
+        "view_role": "CURRENT_RUN",
+    }]
+    if is_portfolio:
+        child_root = RUNTIME / "child-workspaces"
+        child_run_ids = {
+            node.get("data", {}).get("child_run_id")
+            for node in graph.get("nodes", [])
+            if node.get("kind") == "research_program"
+        } - {None}
+        for child_run_id in sorted(child_run_ids):
+            child = next((row for row in source_registry["runs"] if row.get("run_id") == child_run_id), None)
+            if not child or child.get("view_role") != "REGISTERED_V2_RUN":
+                raise SystemExit(f"portfolio child is not a registered v2 run: {child_run_id}")
+            child_workspace = child_root / child["key"]
+            (child_workspace / "zotero").mkdir(parents=True)
+            child_graph = json.loads((Path(child["workspace"]) / "graph.json").read_text(encoding="utf-8"))
+            (child_workspace / "graph.json").write_text(
+                json.dumps(child_graph, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            export_native_projection(child_graph, child_workspace)
+            registry_runs.append({
+                "key": child["key"],
+                "label": child["label"],
+                "run_id": child_run_id,
+                "run_dir": str(child_workspace),
+                "workspace": str(child_workspace),
+                "controller_kind": child["controller_kind"],
+                "authority_path": str(RUNTIME / "fixture-only-no-controller.sqlite"),
+                "authority_scope": "TEST_FIXTURE_ONLY",
+                "view_role": "REGISTERED_V2_RUN",
+            })
     pdf_path = workspace / "reader-smoke-fixture.pdf"
-    if not args.remote_pdf and not args.native_resolver:
+    if not args.remote_pdf and not args.native_resolver and not args.verified_local_pdf:
         write_smoke_pdf(pdf_path)
 
     registry = {
         "schema_version": "0.2",
         "projection": "atr-workbench-run-registry",
         "selection_policy": "EXPLICIT_ACTIVATION_ONLY",
-        "runs": [{
-            "key": "smoke-current",
-            "label": "Repository-local Zotero smoke fixture",
-            "run_id": selected["run_id"],
-            "run_dir": str(workspace),
-            "workspace": str(workspace),
-            "controller_kind": selected["controller_kind"],
-            "authority_path": str(RUNTIME / "fixture-only-no-controller.sqlite"),
-            "authority_scope": "TEST_FIXTURE_ONLY",
-            "view_role": "CURRENT_RUN",
-        }],
+        "runs": registry_runs,
         "active_run": "smoke-current",
         "selection": {
             "mode": "EXPLICIT",
@@ -122,19 +163,22 @@ def main() -> None:
     with (profile / "user.js").open("a", encoding="utf-8") as handle:
         handle.write(f'user_pref("extensions.atr-zotero-workbench.registry", {json.dumps(str(registry_path))});\n')
         handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeTestOnStartup", true);\n')
-        handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", true);\n')
-        handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", true);\n')
-        if not args.remote_pdf and not args.native_resolver:
+        handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", {str(not is_portfolio).lower()});\n')
+        handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", {str(not is_portfolio).lower()});\n')
+        if not args.remote_pdf and not args.native_resolver and not args.verified_local_pdf:
             handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokePDFPath", {json.dumps(str(pdf_path))});\n')
         if args.native_resolver:
             handle.write('user_pref("extensions.atr-zotero-workbench.devSmokeNativeResolver", true);\n')
+        if args.verified_local_pdf:
+            handle.write(f'user_pref("extensions.atr-zotero-workbench.devSmokePreferredSourceID", {json.dumps(verified_local_sources[0])});\n')
     metadata = {
         "source_active_run": source_registry["active_run"],
         "selected_run_key": selected_key,
         "source_workspace": str(source_workspace),
         "runtime": str(RUNTIME),
-        "reader_fixture_mode": "ZOTERO_NATIVE_AVAILABLE_FILE" if args.native_resolver else ("MAPPED_REMOTE_PDF_ON_DEMAND" if args.remote_pdf else "REPOSITORY_LOCAL_SYNTHETIC_PDF"),
+        "reader_fixture_mode": "VERIFIED_REPO_PDF_ON_DEMAND" if args.verified_local_pdf else ("ZOTERO_NATIVE_AVAILABLE_FILE" if args.native_resolver else ("MAPPED_REMOTE_PDF_ON_DEMAND" if args.remote_pdf else "REPOSITORY_LOCAL_SYNTHETIC_PDF")),
         "native_resolver_source_ids": resolver_sources,
+        "verified_local_source_ids": verified_local_sources,
         "safety_boundary": "REPOSITORY_LOCAL_GITIGNORED_DISPOSABLE_PROFILE_AND_DATA",
     }
     (RUNTIME / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")

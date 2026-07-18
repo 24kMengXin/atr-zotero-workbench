@@ -1,0 +1,2448 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-source-inventory",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "sources": [
+    {
+      "source_id": "SRC-ADVERSARIAL-QE-2021",
+      "title": "Pushing the Right Buttons: Adversarial Evaluation of Quality Estimation",
+      "url": "https://aclanthology.org/2021.wmt-1.67/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ADVERSARIAL-QE-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AIDATERM-2026",
+      "title": "Multi-Agent Orchestration for Terminology-Constrained Machine Translation in Industrial Localization",
+      "url": "https://aclanthology.org/2026.acl-industry.63/",
+      "kind": "PRIMARY_SYSTEM_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AIDATERM-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AMIYA-DIALECT-MBR-2026",
+      "title": "Maastricht University at AMIYA: Adapting LLMs for Dialectal Arabic using Fine-tuning and MBR Decoding",
+      "url": "https://aclanthology.org/2026.vardial-1.28/",
+      "kind": "PRIMARY_SHARED_TASK_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AMIYA-DIALECT-MBR-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-ATLAS-2026",
+      "title": "ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality",
+      "url": "https://arxiv.org/abs/2510.22037",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ATLAS-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AUTOPE-2023",
+      "title": "Leveraging GPT-4 for Automatic Translation Post-Editing",
+      "url": "https://aclanthology.org/2023.findings-emnlp.804/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AUTOPE-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-BAYESOPT-RERANK-2024",
+      "title": "A Bayesian Optimization Approach to Machine Translation Reranking",
+      "url": "https://arxiv.org/abs/2411.09694",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-BAYESOPT-RERANK-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-BEYOND-MANYSHOT-LOWRES-MT-2026",
+      "title": "Beyond Many-Shot Translation: Scaling In-Context Demonstrations For Low-Resource Machine Translation",
+      "url": "https://aclanthology.org/2026.loreslm-1.34/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-BEYOND-MANYSHOT-LOWRES-MT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CAMT-2024",
+      "title": "Benchmarking Machine Translation with Cultural Awareness",
+      "url": "https://aclanthology.org/2024.findings-emnlp.765/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CAMT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CEMT-2026",
+      "title": "CEMT: Controllable Element-Oriented Machine Translation via Structured Linguistic Reasoning",
+      "url": "https://aclanthology.org/2026.findings-acl.1882/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CEMT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CHATGPT-MT-2023",
+      "title": "Towards Making the Most of ChatGPT for Machine Translation",
+      "url": "https://aclanthology.org/2023.findings-emnlp.373/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CHATGPT-MT-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COD-2024",
+      "title": "Chain-of-Dictionary Prompting Elicits Translation in Large Language Models",
+      "url": "https://aclanthology.org/2024.emnlp-main.55/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COD-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMET-LOWRESOURCE-CALIBRATION-2024",
+      "title": "COMET for Low-Resource Machine Translation Evaluation: A Case Study of English-Maltese and Spanish-Basque",
+      "url": "https://aclanthology.org/2024.lrec-main.315/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMET-LOWRESOURCE-CALIBRATION-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMMONLID-2026",
+      "title": "CommonLID: Language Identification Benchmark for the Web",
+      "url": "https://commonlid.org/",
+      "kind": "PRIMARY_BENCHMARK_AND_ASSET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMMONLID-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMMONSENSE-MT-2023",
+      "title": "Revisiting Commonsense Reasoning in Machine Translation: Training, Evaluation and Challenge",
+      "url": "https://aclanthology.org/2023.acl-long.866/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMMONSENSE-MT-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMPENSATING-DATA-REASONING-2025",
+      "title": "Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs",
+      "url": "https://arxiv.org/abs/2505.22293",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMPENSATING-DATA-REASONING-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COMPOSITIONAL-TRANSLATION-2025",
+      "title": "Compositional Translation: A Novel LLM-based Approach for Low-resource Machine Translation",
+      "url": "https://arxiv.org/abs/2503.04554",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COMPOSITIONAL-TRANSLATION-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CONTAMINATION-2024",
+      "title": "Investigating Data Contamination for Pre-training Language Models",
+      "url": "https://arxiv.org/abs/2401.06059",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CONTAMINATION-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CONTEXT-AWARE-LLM-MT-SURVEY-2025",
+      "title": "Beyond the Sentence: A Survey on Context-Aware Machine Translation with Large Language Models",
+      "url": "https://arxiv.org/abs/2506.07583",
+      "kind": "SURVEY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CONTEXT-AWARE-LLM-MT-SURVEY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CONTEXT-COT-MT-2025",
+      "title": "Chain-of-Thought Reasoning Improves Context-Aware Translation with Large Language Models",
+      "url": "https://arxiv.org/abs/2510.18077",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CONTEXT-COT-MT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CROSSLINGUAL-QUALITY-2026",
+      "title": "Toward Cross-Lingual Quality Classifiers for Multilingual Pretraining Data Selection",
+      "url": "https://arxiv.org/abs/2604.20549",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CROSSLINGUAL-QUALITY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CULTURAX-2024",
+      "title": "CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages",
+      "url": "https://aclanthology.org/2024.lrec-main.377.pdf",
+      "kind": "PRIMARY_PAPER_AND_ASSET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CULTURAX-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DATA-SELECTION-SURVEY-2024",
+      "title": "A Survey on Data Selection for Language Models",
+      "url": "https://arxiv.org/abs/2402.16827",
+      "kind": "SURVEY_AND_LIVING_BIBLIOGRAPHY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DATA-SELECTION-SURVEY-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DATACOMP-LM-2024",
+      "title": "DataComp-LM: In Search of the Next Generation of Training Sets for Language Models",
+      "url": "https://arxiv.org/abs/2406.11794",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DATACOMP-LM-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DEDIT-2025",
+      "title": "Detect, Disambiguate, and Translate: On-Demand Visual Reasoning for Multimodal Machine Translation with Large Vision-Language Models",
+      "url": "https://aclanthology.org/2025.naacl-long.74/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DEDIT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DEDUP-2021",
+      "title": "Deduplicating Training Data Makes Language Models Better",
+      "url": "https://arxiv.org/abs/2107.06499",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DEDUP-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DEEPTRANS-2026",
+      "title": "DeepTrans: Deep Reasoning Translation via Reinforcement Learning",
+      "url": "https://aclanthology.org/2026.tacl-1.3/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DEEPTRANS-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DIAGNOSE-THEN-REPAIR-2026",
+      "title": "Diagnose, Then Repair: A Two-Stage MQM-Guided Post-Editing Framework for Domain-Specific Machine Translation",
+      "url": "https://aclanthology.org/2026.acl-industry.115/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DIAGNOSE-THEN-REPAIR-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DIBIMT-2025",
+      "title": "DiBiMT: A Gold Evaluation Benchmark for Studying Lexical Ambiguity in Machine Translation",
+      "url": "https://doi.org/10.1162/coli_a_00541",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DIBIMT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DISCOURSE-CENTRIC-DOCMT-2023",
+      "title": "Discourse-Centric Evaluation of Document-level Machine Translation with a New Densely Annotated Parallel Corpus of Novels",
+      "url": "https://aclanthology.org/2023.acl-long.435/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DISCOURSE-CENTRIC-DOCMT-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DMDTEVAL-2025",
+      "title": "DMDTEval: An Evaluation and Analysis of LLMs on Disambiguation in Multi-domain Translation",
+      "url": "https://aclanthology.org/2025.emnlp-main.309/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DMDTEVAL-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DOC-MBR-OT-2025",
+      "title": "Document-Level Text Generation with Minimum Bayes Risk Decoding using Optimal Transport",
+      "url": "https://aclanthology.org/2025.acl-long.1370/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DOC-MBR-OT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DOC2DOC-REFINEMENT-2025",
+      "title": "Two Intermediate Translations Are Better Than One: Fine-tuning LLMs for Document-level Translation Refinement",
+      "url": "https://aclanthology.org/2025.acl-long.726/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DOC2DOC-REFINEMENT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DRT-2025",
+      "title": "DRT: Deep Reasoning Translation via Long Chain-of-Thought",
+      "url": "https://aclanthology.org/2025.findings-acl.351/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DRT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-ERROR-GROUNDING-2025",
+      "title": "An Evaluation Resource for Grounding Translation Errors",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1299/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ERROR-GROUNDING-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-EXTREME-LOWRES-ICL-2025",
+      "title": "It’s All About In-Context Learning! Teaching Extremely Low-Resource Languages to LLMs",
+      "url": "https://aclanthology.org/2025.emnlp-main.1502/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-EXTREME-LOWRES-ICL-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-FINEWEB2-2025",
+      "title": "FineWeb2: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language",
+      "url": "https://arxiv.org/abs/2506.20920",
+      "kind": "PRIMARY_PAPER_AND_CODE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-FINEWEB2-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-FRED-LOWRESOURCE-2026",
+      "title": "Translation or Recitation? Calibrating Evaluation Scores for Machine Translation of Extremely Low-Resource Languages",
+      "url": "https://aclanthology.org/2026.acl-short.29/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-FRED-LOWRESOURCE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-FUR-2025",
+      "title": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+      "url": "https://aclanthology.org/2025.emnlp-main.504/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-FUR-2025",
+        "SRC-FUR-PARAMETRIC-FAITHFULNESS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-GLOTLID-2023",
+      "title": "GlotLID: Language Identification for Low-Resource Languages",
+      "url": "https://arxiv.org/abs/2310.16248",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-GLOTLID-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-GRAMMAR-REASONING-LOWRES-MT-2026",
+      "title": "Reasoning over Grammar: Can Synthetic Linguistic Reasoning Traces Enhance Low-Resource Machine Translation?",
+      "url": "https://arxiv.org/abs/2606.03782",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-GRAMMAR-REASONING-LOWRES-MT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HAT-MT-HALLUCINATION-2026",
+      "title": "HAT: Hallucination Annotation for Translation",
+      "url": "https://aclanthology.org/2026.acl-long.721/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HAT-MT-HALLUCINATION-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HJQE-HUMAN-LABEL-VALIDITY-2023",
+      "title": "Rethinking the Word-level Quality Estimation for Machine Translation from Human Judgement",
+      "url": "https://aclanthology.org/2023.findings-acl.126/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HJQE-HUMAN-LABEL-VALIDITY-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HUMAN-ERROR-MARKING-MT-2024",
+      "title": "Prompting Large Language Models with Human Error Markings for Self-Correcting Machine Translation",
+      "url": "https://aclanthology.org/2024.eamt-1.54/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HUMAN-ERROR-MARKING-MT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-INDIC-QE-PE-2025",
+      "title": "Quality Estimation and Post-Editing Using LLMs For Indic Languages: How Good Is It?",
+      "url": "https://aclanthology.org/2025.mtsummit-1.30/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-INDIC-QE-PE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-INFERENCE-COMPUTE-EVAL-2026",
+      "title": "How Inference Compute Shapes Frontier LLM Evaluation",
+      "url": "https://arxiv.org/abs/2606.17930",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-INFERENCE-COMPUTE-EVAL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-INSTANT-CONFIDENCE-QE-2026",
+      "title": "Early-Exit and Instant Confidence Translation Quality Estimation",
+      "url": "https://aclanthology.org/2026.eacl-long.4/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-INSTANT-CONFIDENCE-QE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-ITALERT-EMERGENCY-MT-2025",
+      "title": "ITALERT: Assessing the Quality of LLMs and NMT in Translating Italian Emergency Response Text",
+      "url": "https://aclanthology.org/2025.mtsummit-1.43/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ITALERT-EMERGENCY-MT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-ITERATIVE-REFINEMENT-2024",
+      "title": "Iterative Translation Refinement with Large Language Models",
+      "url": "https://aclanthology.org/2024.eamt-1.17/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ITERATIVE-REFINEMENT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-JQL-2025",
+      "title": "Judging Quality Across Languages: A Multilingual Approach to Pretraining Data Filtering with Language Models",
+      "url": "https://arxiv.org/abs/2505.22232",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-JQL-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LANG-RL-2026",
+      "title": "LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance",
+      "url": "https://arxiv.org/abs/2605.22567",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-reasoning-language-mixing",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LANG-RL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LANGMARK-2025",
+      "title": "LangMark: A Multilingual Dataset for Automatic Post-Editing",
+      "url": "https://aclanthology.org/2025.acl-long.1569/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LANGMARK-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LANGUAGE-IDEOLOGY-2022",
+      "title": "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection",
+      "url": "https://arxiv.org/abs/2201.10474",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LANGUAGE-IDEOLOGY-2022"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LANGUAGE-THOUGHT-DIVERSITY-2026",
+      "title": "Language of Thought Shapes Output Diversity in Large Language Models",
+      "url": "https://arxiv.org/abs/2601.11227",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-reasoning-language-mixing",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LANGUAGE-THOUGHT-DIVERSITY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LATENT-DISCOURSE-QAD-2026",
+      "title": "Unlocking Latent Discourse Translation in LLMs Through Quality-Aware Decoding",
+      "url": "https://aclanthology.org/2026.eacl-long.220/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LATENT-DISCOURSE-QAD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LAY-USERS-MT-AGENDA-2025",
+      "title": "Centering Lay Users in Machine Translation Interactions",
+      "url": "https://aclanthology.org/2025.emnlp-main.700/",
+      "kind": "SURVEY_OR_AGENDA",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LAY-USERS-MT-AGENDA-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LEGISTYR-TERMINOLOGY-2025",
+      "title": "The LegISTyr Test Set: Investigating Off-the-Shelf Instruction-Tuned LLMs for Terminology-Constrained Translation in a Low-Resource Language Variety",
+      "url": "https://aclanthology.org/2025.termtrends-1.1/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LEGISTYR-TERMINOLOGY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LID-WILD-2020",
+      "title": "Language ID in the Wild: Unexpected Challenges on the Path to a Thousand-Language Web Text Corpus",
+      "url": "https://research.google/pubs/language-id-in-the-wild-unexpected-challenges-on-the-path-to-a-thousand-language-web-text-corpus/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LID-WILD-2020"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LLM-DISAMBIGUATION-2023",
+      "title": "Towards Effective Disambiguation for Machine Translation with Large Language Models",
+      "url": "https://aclanthology.org/2023.wmt-1.44/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LLM-DISAMBIGUATION-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LLM-MT-EVALUATION-2024",
+      "title": "What do Large Language Models Need for Machine Translation Evaluation?",
+      "url": "https://arxiv.org/abs/2410.03278",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LLM-MT-EVALUATION-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LLM-MT-SURVEY-2025",
+      "title": "Bridging the Linguistic Divide: A Survey on Leveraging Large Language Models for Machine Translation",
+      "url": "https://arxiv.org/abs/2504.01919",
+      "kind": "SURVEY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LLM-MT-SURVEY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LMIX-CAUSES-EMNLP-2025",
+      "title": "Language Mixing in Reasoning Language Models: Patterns, Impact, and Internal Causes",
+      "url": "https://aclanthology.org/2025.emnlp-main.132.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-reasoning-language-mixing",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LMIX-CAUSES-EMNLP-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LMIX-EMNLP-2025",
+      "title": "The Impact of Language Mixing on Bilingual LLM Reasoning",
+      "url": "https://aclanthology.org/2025.emnlp-main.1654/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-reasoning-language-mixing",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LMIX-EMNLP-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LOWRES-DOMAIN-ADAPTATION-2025",
+      "title": "From Priest to Doctor: Domain Adaptation for Low-Resource Neural Machine Translation",
+      "url": "https://aclanthology.org/2025.coling-main.472/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LOWRES-DOMAIN-ADAPTATION-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LOWRES-RETRIEVAL-UNDERSTANDING-2024",
+      "title": "Shortcomings of LLMs for Low-Resource Translation: Retrieval and Understanding Are Both the Problem",
+      "url": "https://aclanthology.org/2024.wmt-1.125/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LOWRES-RETRIEVAL-UNDERSTANDING-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LRM-MT-TRENDS-2025",
+      "title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+      "url": "https://arxiv.org/abs/2503.10351",
+      "kind": "POSITION_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LRM-MT-TRENDS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LSP-POSTEDITING-SPEED-2023",
+      "title": "Is post-editing really faster than human translation?",
+      "url": "https://arxiv.org/abs/2312.12660",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LSP-POSTEDITING-SPEED-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-M2PO-2026",
+      "title": "M2PO: Multi-Perspective Multi-Pair Preference Optimization for Machine Translation",
+      "url": "https://aclanthology.org/2026.acl-long.469/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-M2PO-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MACD-2026",
+      "title": "Can Multi-agent Help Disambiguation in Multi-domain Translation?",
+      "url": "https://aclanthology.org/2026.findings-acl.907/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MACD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MADLAD400-2023",
+      "title": "MADLAD-400: A Multilingual and Document-Level Large Audited Dataset",
+      "url": "https://arxiv.org/abs/2309.04662",
+      "kind": "PRIMARY_PAPER_AND_ASSET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MADLAD400-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MALTESE-2022",
+      "title": "Pre-training Data Quality and Quantity for a Low-Resource Language: New Corpus and BERT Models for Maltese",
+      "url": "https://arxiv.org/abs/2205.10517",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MALTESE-2022"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MCLM-TTS-2025",
+      "title": "Scaling Test-time Compute for Low-resource Languages: Multilingual Reasoning in LLMs",
+      "url": "https://arxiv.org/abs/2504.02890",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MCLM-TTS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MESSMER-2025",
+      "title": "Enhancing Multilingual LLM Pretraining with Model-Based Data Selection",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/5aee125f052c90e326dcf6f380df94f6-Abstract-Datasets_and_Benchmarks_Track.html",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MESSMER-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MGSM-REV2-2025",
+      "title": "MGSM-Rev2",
+      "url": "https://github.com/google-research-datasets/MGSM-Rev2",
+      "kind": "PUBLIC_BENCHMARK_REPOSITORY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-reasoning-language-mixing",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MGSM-REV2-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MIX-DONT-TUNE-2026",
+      "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
+      "url": "https://arxiv.org/abs/2605.13225",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MIX-DONT-TUNE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MMAD-2025",
+      "title": "M-MAD: Multidimensional Multi-Agent Debate for Advanced Machine Translation Evaluation",
+      "url": "https://aclanthology.org/2025.acl-long.351/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MMAD-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MORE-THINKING-2026",
+      "title": "When More Thinking Hurts: The Limits of Test-Time Scaling",
+      "url": "https://arxiv.org/abs/2604.10739",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MORE-THINKING-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MQM-APE-2025",
+      "title": "MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators",
+      "url": "https://aclanthology.org/2025.coling-main.374/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MQM-APE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MT-R1-ZERO-2025",
+      "title": "MT-R1-Zero: Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2504.10160",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MT-R1-ZERO-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MT-REASONING-NEGATIVE-2026",
+      "title": "Unlocking Reasoning Capability on Machine Translation in Large Language Models",
+      "url": "https://arxiv.org/abs/2602.14763",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MT-REASONING-NEGATIVE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MT-TRIAGE-MULTIOUTPUT-2025",
+      "title": "Improving MT-enabled Triage Performance with Multiple MT Outputs",
+      "url": "https://aclanthology.org/2025.mtsummit-1.45/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MT-TRIAGE-MULTIOUTPUT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MTQA-INDUSTRY-TOOL-2022",
+      "title": "A Quality Estimation and Quality Evaluation Tool for the Translation Industry",
+      "url": "https://aclanthology.org/2022.eamt-1.43/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MTQA-INDUSTRY-TOOL-2022"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTI-KNOWLEDGE-DOCMT-2025",
+      "title": "Improving LLM-based Document-level Machine Translation with Multi-Knowledge Fusion",
+      "url": "https://arxiv.org/abs/2503.12152",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTI-KNOWLEDGE-DOCMT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTIDOMAIN-LRM-MT-2025",
+      "title": "How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation",
+      "url": "https://arxiv.org/abs/2505.19987",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTIDOMAIN-LRM-MT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTILINGUAL-CURSE-2023",
+      "title": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages",
+      "url": "https://arxiv.org/abs/2311.09205",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTILINGUAL-CURSE-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTILINGUAL-REASONING-CASCADES-2026",
+      "title": "Multilingual Reasoning Cascades Need More Context",
+      "url": "https://arxiv.org/abs/2606.27306",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTILINGUAL-REASONING-CASCADES-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTILINGUAL-REASONING-SURVEY-2025",
+      "title": "A Survey of Multilingual Reasoning in Language Models",
+      "url": "https://aclanthology.org/2025.findings-emnlp.474/",
+      "kind": "SURVEY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTILINGUAL-REASONING-SURVEY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-NEOAMT-2026",
+      "title": "NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2601.03790",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-NEOAMT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-NMT-FAITHFULNESS-2021",
+      "title": "Measuring and Improving Faithfulness of Attention in Neural Machine Translation",
+      "url": "https://aclanthology.org/2021.eacl-main.243/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-NMT-FAITHFULNESS-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-NSFCOT-GROUNDEDNESS-2026",
+      "title": "NSF-CoT: Neuro-Symbolic Formal Verification of Chain-of-Thought Faithfulness in Contextual Question Answering",
+      "url": "https://aclanthology.org/2026.findings-acl.516/",
+      "kind": "ADJACENT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-NSFCOT-GROUNDEDNESS-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OPENAI-USAGE-DOCS",
+      "title": "OpenAI API Usage reference",
+      "url": "https://platform.openai.com/docs/api-reference/usage/audio_transcriptions_object",
+      "kind": "OFFICIAL_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OPENAI-USAGE-DOCS"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OPENLID-2023",
+      "title": "An Open Dataset and Model for Language Identification",
+      "url": "https://arxiv.org/abs/2305.13820",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OPENLID-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PEDANTIC-REASONING-ERRORS-MT-2026",
+      "title": "Should We be Pedantic About Reasoning Errors in Machine Translation?",
+      "url": "https://arxiv.org/abs/2604.09890",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PEDANTIC-REASONING-ERRORS-MT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PHYSICIAN-CLINICAL-HARM-2023",
+      "title": "Physician Detection of Clinical Harm in Machine Translation: Quality Estimation Aids in Reliance and Backtranslation Identifies Critical Errors",
+      "url": "https://aclanthology.org/2023.emnlp-main.712/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PHYSICIAN-CLINICAL-HARM-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PRO-TRANSLATOR-QE-2026",
+      "title": "Professional Translators Versus Quality Estimation Models: Reliability and Agreement in English-Ukrainian Translation Evaluation",
+      "url": "https://aclanthology.org/2026.unlp-1.10/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PRO-TRANSLATOR-QE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PROFESSIONAL-HT-MT-BLIND-2020",
+      "title": "What's the Difference Between Professional Human and Machine Translation? A Blind Multi-language Study on Domain-specific MT",
+      "url": "https://arxiv.org/abs/2006.04781",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PROFESSIONAL-HT-MT-BLIND-2020"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QE-APE-SYNERGY-2017",
+      "title": "Pushing the Limits of Translation Quality Estimation",
+      "url": "https://aclanthology.org/Q17-1015/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QE-APE-SYNERGY-2017"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QE-CALIBRATED-DECODING-2025",
+      "title": "Calibrating Translation Decoding with Quality Estimation on LLMs",
+      "url": "https://arxiv.org/abs/2504.19044",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QE-CALIBRATED-DECODING-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QE-MTPE-USEFULNESS-2025",
+      "title": "Introducing Quality Estimation to Machine Translation Post-editing Workflow: An Empirical Study on Its Usefulness",
+      "url": "https://aclanthology.org/2025.mtsummit-1.38/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QE-MTPE-USEFULNESS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Validating Quality Estimation in a Computer-Aided Translation Workflow: Speed, Cost and Quality Trade-off",
+      "url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QE4PE-2025",
+      "title": "QE4PE: Word-level Quality Estimation for Human Post-Editing",
+      "url": "https://aclanthology.org/2025.tacl-1.64/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QE4PE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QUALITY-AWARE-DECODING-2022",
+      "title": "Quality-Aware Decoding for Neural Machine Translation",
+      "url": "https://aclanthology.org/2022.naacl-main.100/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QUALITY-AWARE-DECODING-2022"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QUALITY-AWARE-DECODING-2025",
+      "title": "Quality-Aware Decoding: Unifying Quality Estimation and Decoding",
+      "url": "https://aclanthology.org/2025.iwslt-1.3/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QUALITY-AWARE-DECODING-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QUALITY-AWARE-TRANSLATION-MODELS-2024",
+      "title": "Quality-Aware Translation Models: Efficient Generation and Quality Estimation in a Single Model",
+      "url": "https://aclanthology.org/2024.acl-long.836/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QUALITY-AWARE-TRANSLATION-MODELS-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-QUALITY-GLANCE-2022",
+      "title": "Quality at a Glance: An Audit of Web-Crawled Multilingual Datasets",
+      "url": "https://arxiv.org/abs/2103.12028",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-curation-decision",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-QUALITY-GLANCE-2022"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-R1-T1-2025",
+      "title": "R1-T1: Fully Incentivizing Translation Capability in LLMs via Reasoning Learning",
+      "url": "https://arxiv.org/abs/2502.19735",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-R1-T1-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-RAGTRANS-2025",
+      "title": "Retrieval-Augmented Machine Translation with Unstructured Knowledge",
+      "url": "https://aclanthology.org/2025.findings-emnlp.313/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-RAGTRANS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-REASONING-FOR-TRANSLATION-2025",
+      "title": "Reasoning for Translation: Comparative Analysis of Chain-of-Thought and Tree-of-Thought Prompting for LLM Translation",
+      "url": "https://aclanthology.org/2025.acl-srw.17/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-REASONING-FOR-TRANSLATION-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-REFINEMENT-MECHANISM-2026",
+      "title": "What Does LLM Refinement Actually Improve? A Systematic Study on Document-Level Literary Translation",
+      "url": "https://aclanthology.org/2026.acl-long.268/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-REFINEMENT-MECHANISM-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-REFREEVAL-MT-2023",
+      "title": "A Holistic Approach to Reference-Free Evaluation of Machine Translation",
+      "url": "https://aclanthology.org/2023.acl-short.55/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-REFREEVAL-MT-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-REMEDY-R-2026",
+      "title": "Remedy-R: Generative Reasoning for Machine Translation Evaluation without Error Annotations",
+      "url": "https://aclanthology.org/2026.findings-acl.364/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-REMEDY-R-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-RUBRIC-MQM-2025",
+      "title": "RUBRIC-MQM: Span-Level LLM-as-judge in Machine Translation For High-End Models",
+      "url": "https://aclanthology.org/2025.acl-industry.12/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-RUBRIC-MQM-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-S1-BUDGET-2025",
+      "title": "s1: Simple test-time scaling",
+      "url": "https://arxiv.org/abs/2501.19393",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-S1-BUDGET-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SAME-TASK-2024",
+      "title": "Same Task, More Tokens: the Effect of Input Length on Reasoning in Large Language Models",
+      "url": "https://aclanthology.org/2024.acl-long.818/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SAME-TASK-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SCRIPT-TAX-2026",
+      "title": "The Script Tax: Measuring Tokenization-Driven Efficiency and Latency Disparities in Multilingual Language Models",
+      "url": "https://arxiv.org/abs/2602.11174",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SCRIPT-TAX-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SELF-BIAS-REFINEMENT-2024",
+      "title": "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement",
+      "url": "https://aclanthology.org/2024.acl-long.826/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SELF-BIAS-REFINEMENT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SELF-EVOLUTION-KD-2025",
+      "title": "Self-Evolution Knowledge Distillation for LLM-based Machine Translation",
+      "url": "https://aclanthology.org/2025.coling-main.686/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SELF-EVOLUTION-KD-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SIGTURK-2026",
+      "title": "Overview of the SIGTURK 2026 Shared Task: Terminology-Aware Machine Translation for English-Turkish Scientific Texts",
+      "url": "https://aclanthology.org/2026.sigturk-1.20.pdf",
+      "kind": "OFFICIAL_SHARED_TASK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SIGTURK-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SYNTHETIC-DATA-OVER-THINKING-2025",
+      "title": "LLM Reasoning for Machine Translation: Synthetic Data Generation over Thinking Tokens",
+      "url": "https://arxiv.org/abs/2510.11919",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SYNTHETIC-DATA-OVER-THINKING-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TASER-2025",
+      "title": "TASER: Translation Assessment via Systematic Evaluation and Reasoning",
+      "url": "https://aclanthology.org/2025.wmt-1.76/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TASER-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TASTE-SELFREFLECTION-2024",
+      "title": "TASTE: Teaching Large Language Models to Translate through Self-Reflection",
+      "url": "https://arxiv.org/abs/2406.08434",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TASTE-SELFREFLECTION-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TAT-R1-2026",
+      "title": "TAT-R1: Terminology-Aware Translation with Reinforcement Learning and Word Alignment",
+      "url": "https://openreview.net/forum?id=g5BOOZZIcf",
+      "kind": "OPENREVIEW_PRIMARY_SUBMISSION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TAT-R1-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TEAMJ-DOC-LLM-RERANK-2024",
+      "title": "Document-level Translation with LLM Reranking: Team-J at WMT 2024",
+      "url": "https://aclanthology.org/2024.wmt-1.14/",
+      "kind": "PRIMARY_SHARED_TASK_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TEAMJ-DOC-LLM-RERANK-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TEAR-2025",
+      "title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+      "url": "https://aclanthology.org/2025.findings-naacl.218/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TEAR-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TOKEN-COST-2023",
+      "title": "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models",
+      "url": "https://aclanthology.org/2023.emnlp-main.614/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TOKEN-COST-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TOKENIZER-CHOICE-2024",
+      "title": "Tokenizer Choice For LLM Training: Negligible or Crucial?",
+      "url": "https://aclanthology.org/2024.findings-naacl.247/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-fragmentation-assigned-compute-refresh",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TOKENIZER-CHOICE-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TRANSLATE-WITH-CARE-2025",
+      "title": "Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations",
+      "url": "https://aclanthology.org/2025.findings-acl.26/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TRANSLATE-WITH-CARE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TRANSLATIONCORRECT-2025",
+      "title": "TRANSLATIONCORRECT: A Unified Framework for Machine Translation Post-Editing with Predictive Error Assistance",
+      "url": "https://aclanthology.org/2025.acl-demo.53/",
+      "kind": "PRIMARY_SYSTEM_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TRANSLATIONCORRECT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TTS-MT-2026",
+      "title": "Test-Time Scaling of Reasoning Models for Machine Translation",
+      "url": "https://aclanthology.org/2026.eacl-long.133/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-16-mt-reasoning, 2026-07-17-controlled-multilingual-discovery",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TTS-MT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TTS-RERANK-MT-2025",
+      "title": "Investigating Test-Time Scaling with Reranking for Machine Translation",
+      "url": "https://arxiv.org/abs/2509.19020",
+      "kind": "PREPRINT_PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TTS-RERANK-MT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TWT-2026",
+      "title": "Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation",
+      "url": "https://aclanthology.org/2026.acl-long.1400/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TWT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
+      "url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-USER-RELIANCE-MT-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-UVA-MT-UNCERTAINTY-QE-2025",
+      "title": "UvA-MT at WMT25 Evaluation Task: LLM Uncertainty as a Proxy for Translation Quality",
+      "url": "https://aclanthology.org/2025.wmt-1.72/",
+      "kind": "PRIMARY_SHARED_TASK_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-UVA-MT-UNCERTAINTY-QE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-WMT25-TERMINOLOGY-REPO",
+      "title": "WMT25 Terminology Shared Task repository",
+      "url": "https://github.com/wmt-conference/wmt25-terminology",
+      "kind": "OFFICIAL_CODE_AND_DATA",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-WMT25-TERMINOLOGY-REPO"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-WMT26-TERMINOLOGY-TASK",
+      "title": "WMT 2026 Terminology Translation Task",
+      "url": "https://www2.statmt.org/wmt26/terminology.html",
+      "kind": "OFFICIAL_SHARED_TASK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-WMT26-TERMINOLOGY-TASK"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-WORDLEVEL-QE-HELPFULNESS-2021",
+      "title": "Investigating the Helpfulness of Word-Level Quality Estimation for Post-Editing Machine Translation Output",
+      "url": "https://aclanthology.org/2021.emnlp-main.799/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-16-mt-reasoning",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-WORDLEVEL-QE-HELPFULNESS-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    }
+  ],
+  "occurrence_count": 136,
+  "canonical_source_count": 135,
+  "identity_conflict_count": 0,
+  "access_summary": {
+    "metadata_only": 135,
+    "fulltext_attached": 0,
+    "fulltext_inspected": 0
+  },
+  "next_action": "Resolve/de-duplicate against the Zotero library, acquire permitted readable attachments, then inspect load-bearing spans with locators.",
+  "controller_boundary": "This source inventory is an immutable metadata-only attachment. It does not itself advance lifecycle or establish bibliographic version identity, access, inspection, claim support, or a research gap."
+}

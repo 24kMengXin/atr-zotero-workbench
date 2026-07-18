@@ -1,0 +1,56 @@
+{
+  "artifact_type": "source-inspection-packet",
+  "schema_version": "1.0",
+  "packet_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-SRC-001.v1",
+  "program_key": "multilingual-agent-authorization-safety",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_status": "REVIEW_ONLY_NOT_A_GATE_VERDICT",
+  "sources": [
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "url": "https://arxiv.org/abs/2607.10059",
+      "pdf_url": "https://arxiv.org/pdf/2607.10059",
+      "kind": "PRIMARY_PREPRINT",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "RESOLVED_BY_INSPECTED_PDF_TITLE_AND_ARXIV_ID",
+      "inspection_spans": [
+        {"locator": "pp. 1-2", "observation": "Agentic abstention is framed as a sequential act-or-abstain decision before a potentially irreversible commit; the benchmark has 263 paired tasks and 42 executable sandboxes."},
+        {"locator": "p. 8", "observation": "The taxonomy distinguishes successful or implicit abstention, no abstention, and post-hoc abstention after an irreversible action."},
+        {"locator": "p. 21, Limitations", "observation": "The evaluation is deterministic, single-agent and single-turn; multilingual evaluation is explicitly left to future work."}
+      ],
+      "supports": "A commit-boundary, trace-observable construct for agentic abstention.",
+      "does_not_establish": "Any multilingual effect, a language-conditioned authorization failure, or deployment prevalence."
+    },
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "url": "https://arxiv.org/abs/2310.00905",
+      "pdf_url": "https://arxiv.org/pdf/2310.00905",
+      "kind": "PRIMARY_BENCHMARK",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-XSafety-2024.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_ARXIV_ID_CONFIRMED",
+      "inspection_spans": [
+        {"locator": "pp. 3-4", "observation": "A monolingual safety set is translated and professionally checked across ten languages, fourteen safety issues, and text-response attacks."},
+        {"locator": "p. 9, Limitations", "observation": "Automatic self-evaluation is inaccurate and the tested mitigation is insufficient."}
+      ],
+      "supports": "Language-conditioned variation in unsafe text responses under a multilingual content-safety benchmark.",
+      "does_not_establish": "Tool authorization, irreversible action commits, or act-versus-abstain traces."
+    }
+  ],
+  "controller_boundary": "Inspection repairs source identity and locator gaps only. It does not promote the program, establish a research gap, or represent these files as Zotero attachments."
+}

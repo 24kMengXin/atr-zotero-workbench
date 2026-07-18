@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-intake",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "label": "Agent 基础设施与评测契约",
+  "root_question": "运行时注册、框架 affordance、环境漂移和技能元数据如何在模型能力之前改变 agent 的实际可用能力与评测结论？",
+  "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+  "language_axis_binding_required": false,
+  "historical_alignment_audit": "sha256:bee85cc7e1b2bd8355b466270f0bd51a6f0cd763e5605f64fd75f048bf85f7bd",
+  "initial_state": "INTAKE",
+  "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+  "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict."
+}

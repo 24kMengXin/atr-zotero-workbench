@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "knowledge-map",
+  "map_id": "KM-agent-infrastructure-and-evaluation-contracts.draft-v1",
+  "topic": "agent-infrastructure-and-evaluation-contracts",
+  "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+  "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "sources": [
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "url": "https://arxiv.org/abs/2606.13608",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "url": "https://arxiv.org/abs/2606.08275",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "title": "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift",
+      "url": "https://doi.org/10.1109/ACCESS.2026.3696096",
+      "kind": "PEER_REVIEWED_ARTICLE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-AGENTLAB-REPRO-2026",
+      "title": "AgentLab reproducibility documentation",
+      "url": "https://github.com/ServiceNow/AgentLab",
+      "kind": "OFFICIAL_OPEN_SOURCE_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+      "title": "ClawBench reproducibility-first benchmark release",
+      "url": "https://github.com/openclaw/clawbench",
+      "kind": "TECHNICAL_COMMUNITY_RELEASE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "agent-infrastructure",
+      "label": "Agent infrastructure and evaluation contracts",
+      "parent_id": null,
+      "definition": "A verification frame for separating agent capability, harness behavior, environment drift, and evaluation attribution.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026",
+        "SRC-DRIFTROBUSTNESS-IEEE-2026",
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "tool-and-skill-contract",
+      "label": "Tool and skill contract",
+      "parent_id": "agent-infrastructure",
+      "definition": "The declared interface, dependency, packaging, and invocation semantics available to an agent.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026",
+        "SRC-DRIFTROBUSTNESS-IEEE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "runtime-and-harness",
+      "label": "Runtime and harness",
+      "parent_id": "agent-infrastructure",
+      "definition": "The orchestration, state, retry, observation, and execution layer mediating an agent's behavior.",
+      "source_ids": [
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-AGENTBEATS-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "environment-drift",
+      "label": "Environment and policy drift",
+      "parent_id": "agent-infrastructure",
+      "definition": "Changes in schemas, tools, policies, services, and dependencies that can alter measured outcomes.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026",
+        "SRC-DRIFTROBUSTNESS-IEEE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "reproducibility-contract",
+      "label": "Reproducibility contract",
+      "parent_id": "agent-infrastructure",
+      "definition": "The revisions, assets, configuration, and trace information required to replay or compare an agent run.",
+      "source_ids": [
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-AGENTBEATS-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "evaluation-attribution",
+      "label": "Evaluation and failure attribution",
+      "parent_id": "agent-infrastructure",
+      "definition": "Rules that distinguish agent decisions, harness failures, environment failures, and judge errors.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026",
+        "SRC-DRIFTROBUSTNESS-IEEE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

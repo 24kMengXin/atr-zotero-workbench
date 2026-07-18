@@ -4,16 +4,131 @@ import tempfile
 import unittest
 from pathlib import Path
 from atr_zotero_workbench.app import build, build_program
-from atr_zotero_workbench.core import load_legacy_run, project_graph
-from atr_zotero_workbench.zotero import native_projection, sync_web_api, validate_native_projection
+from atr_zotero_workbench.core import V2Run, load_legacy_run, project_graph, project_v2_graph
+from atr_zotero_workbench.zotero import native_projection, sync_web_api, validate_native_projection, verified_local_pdf
 from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue, review_registry
-from atr_zotero_workbench.runs import validate_registry
+from atr_zotero_workbench.runs import register_run, validate_registry
 
 _REPO_TEST_TMP = Path(__file__).resolve().parents[1] / ".runtime" / "tests"
 _REPO_TEST_TMP.mkdir(parents=True, exist_ok=True)
 tempfile.tempdir = str(_REPO_TEST_TMP)
 
 class BuildTest(unittest.TestCase):
+    def test_verified_local_pdf_requires_identity_policy_repo_boundary_and_digest(self):
+        with tempfile.TemporaryDirectory(dir=_REPO_TEST_TMP) as tmp:
+            root = Path(tmp)
+            pdf = root / 'paper.pdf'; pdf.write_bytes(b'%PDF-1.4\nverified')
+            data = {
+                'identity_state': 'IDENTITY_VERIFIED',
+                'local_cache_import_policy': 'ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ',
+                'local_cache_path': 'paper.pdf',
+                'content_digest': 'sha256:' + hashlib.sha256(pdf.read_bytes()).hexdigest(),
+            }
+            self.assertEqual(verified_local_pdf(data, root)['state'], 'READY')
+            data['content_digest'] = 'sha256:' + '0' * 64
+            self.assertEqual(verified_local_pdf(data, root)['state'], 'DIGEST_MISMATCH')
+            data['identity_state'] = 'IDENTITY_AMBIGUOUS'
+            self.assertEqual(verified_local_pdf(data, root)['state'], 'NOT_AUTHORIZED')
+    def test_v2_r0_scaffold_projects_pending_route_concepts_and_questions(self):
+        artifact = lambda aid, kind, payload: {
+            'artifact_id': f'sha256:{aid}', 'digest': aid * 64, 'kind': kind,
+            'original_name': kind + '.json', 'created_at': '2026-07-19',
+            'metadata_json': '{}', 'payload': payload,
+        }
+        sources = [{
+            'source_id': 'P1', 'title': 'Candidate paper', 'url': 'https://example.org/p1',
+            'kind': 'PRIMARY_PAPER', 'access_status': 'METADATA_ONLY',
+            'does_not_establish': 'Not inspected.',
+        }]
+        run = V2Run(Path('/r'), 'r0-run', [{
+            'subject_id': 'program:p', 'kind': 'research-program', 'state': 'INTAKE',
+            'version': 0, 'active': 1, 'created_at': '2026-07-19', 'updated_at': '2026-07-19',
+        }], [
+            artifact('a', 'program-source-inventory', {
+                'artifact_type': 'program-source-inventory', 'sources': sources,
+            }),
+            artifact('b', 'frontier-map', {
+                'artifact_type': 'frontier-map', 'domain': 'p',
+                'verification_status': 'PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW',
+                'evidence_boundary': 'Not inspected.',
+                'frontier_tensions': [{
+                    'tension_id': 'FT-1', 'question': 'Which explanation survives?',
+                    'competing_explanations': ['world a', 'world b'],
+                    'dimensions': ['mechanism', 'measurement'], 'anchor_source_ids': ['P1'],
+                }],
+            }),
+            artifact('c', 'knowledge-map', {
+                'artifact_type': 'knowledge-map', 'map_id': 'KM-1', 'topic': 'p',
+                'sources': sources, 'concepts': [{
+                    'concept_id': 'K1', 'label': 'Concept', 'definition': 'Provisional frame',
+                    'source_ids': ['P1'], 'does_not_establish': 'Not inspected.',
+                }],
+            }),
+            artifact('d', 'topic-routing-package', {
+                'artifact_type': 'topic-routing-package', 'package_id': 'TRP-p.v1',
+                'topic': 'Which route is proportionate?', 'selected_track': 'FOCUSED_REVIEW',
+                'next_stage': 'R2_FOCUSED_REVIEW', 'rationale': 'Needs inspected evidence.',
+            }),
+        ], [], [], [])
+        graph = project_v2_graph(run)
+        self.assertEqual(next(node for node in graph['nodes'] if node['kind'] == 'atr_v2_subject')['data']['state'], 'INTAKE')
+        question = next(node for node in graph['nodes'] if node['kind'] == 'research_question')
+        self.assertEqual(question['data']['review_status'], 'PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW')
+        self.assertTrue(any(node['kind'] == 'knowledge_concept' for node in graph['nodes']))
+        route = next(node for node in graph['nodes'] if node['kind'] == 'topic_route_draft')
+        self.assertEqual(route['data']['review_status'], 'PENDING_INDEPENDENT_TOPIC_ROUTE_REVIEW')
+        projection = native_projection(graph)
+        self.assertTrue(any(obj['object_kind'] == 'route_note' for obj in projection['objects']))
+
+    def test_v2_portfolio_projects_children_and_legacy_branches(self):
+        artifacts = [
+            {
+                'artifact_id': 'sha256:p', 'digest': 'p' * 64, 'kind': 'portfolio-intake',
+                'original_name': 'portfolio.json', 'created_at': '2026-01-01', 'metadata_json': '{}',
+                'payload': {'artifact_type': 'portfolio-intake', 'portfolio_id': 'P', 'question': 'Q',
+                            'children': [{'program_key': 'A', 'run_id': 'run-a', 'subject_id': 'program:A'}]},
+            },
+            {
+                'artifact_id': 'sha256:s', 'digest': 's' * 64, 'kind': 'portfolio-review-summary',
+                'original_name': 'review-summary.json', 'created_at': '2026-01-03', 'metadata_json': '{}',
+                'payload': {'artifact_type': 'portfolio-review-summary', 'portfolio_id': 'P',
+                            'summary': {'REFRAME': 1, 'NEEDS_EVIDENCE': 0},
+                            'does_not_authorize': 'Worker output is not a gate.',
+                            'programs': [{'program_key': 'A', 'disposition': 'REFRAME',
+                                          'status': 'CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE',
+                                          'surviving_boundary': 'one pinned contrast',
+                                          'next_evidence': ['one trace'],
+                                          'collision_review_artifact_id': 'COL-A'}]},
+            },
+            {
+                'artifact_id': 'sha256:b', 'digest': 'b' * 64, 'kind': 'portfolio-route-map',
+                'original_name': 'routes.json', 'created_at': '2026-01-02', 'metadata_json': '{}',
+                'payload': {'artifact_type': 'portfolio-route-map', 'portfolio_id': 'P',
+                            'programs': [{'program_key': 'A', 'child_run_id': 'run-a',
+                                          'branches': [{'run': 'old-a', 'source_count': 3,
+                                                        'claim_count': 1, 'recorded_stage': 'R2_FOCUSED_REVIEW',
+                                                        'alignment_disposition': 'LEGACY_MAP_INPUT_ONLY'}]}]},
+            },
+        ]
+        run = V2Run(Path('/r'), 'portfolio-run',
+                    [{'subject_id': 'portfolio:P', 'kind': 'portfolio', 'state': 'INTAKE', 'version': 0,
+                      'active': 1, 'created_at': '2026-01-01', 'updated_at': '2026-01-01'}],
+                    artifacts, [], [], [])
+        graph = project_v2_graph(run)
+        self.assertTrue(any(node['id'] == 'portfolio:P' for node in graph['nodes']))
+        self.assertTrue(any(node['id'] == 'research_program:A' for node in graph['nodes']))
+        self.assertTrue(any(node['id'] == 'legacy_run:old-a' for node in graph['nodes']))
+        self.assertTrue(any(edge['relation'] == 'registers_separate_program_authority' for edge in graph['edges']))
+        self.assertTrue(any(edge['relation'] == 'retains_legacy_branch_as_input' for edge in graph['edges']))
+        legacy = next(node for node in graph['nodes'] if node['id'] == 'legacy_run:old-a')
+        self.assertEqual(legacy['data']['recorded_stage'], 'R2_FOCUSED_REVIEW')
+        program = next(node for node in graph['nodes'] if node['id'] == 'research_program:A')
+        self.assertEqual(program['data']['posterior_disposition'], 'REFRAME')
+        self.assertEqual(program['data']['surviving_boundary'], 'one pinned contrast')
+        self.assertEqual(program['data']['owner_review_status'], 'PENDING_HUMAN_OWNER_REVIEW')
+        self.assertEqual(program['data']['collision_review_artifact_id'], 'COL-A')
+        self.assertTrue(any(edge['relation'] == 'summarizes_child_collision_review' for edge in graph['edges']))
+
     def test_registry_review_finds_pending_feedback_across_topics(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -39,7 +154,8 @@ class BuildTest(unittest.TestCase):
                     'key': key, 'label': key.title(), 'run_id': key,
                     'workspace': str(workspace), 'run_dir': str(root / ('run-' + key)),
                     'controller_kind': 'ATR_V2_SQLITE', 'authority_path': str(root / (key + '.sqlite')),
-                    'authority_scope': 'LIFECYCLE_AND_ATTACHMENTS', 'view_role': 'CURRENT_RUN',
+                    'authority_scope': 'LIFECYCLE_AND_ATTACHMENTS',
+                    'view_role': 'CURRENT_RUN' if key == 'active' else 'REGISTERED_V2_RUN',
                 })
             registry = root / 'runs.json'
             registry.write_text(json.dumps({
@@ -120,7 +236,7 @@ class BuildTest(unittest.TestCase):
             native = json.loads((tmp_path/'out'/'zotero'/'native-projection.json').read_text())
             self.assertEqual(native['projection'], 'atr-zotero-native-map')
             self.assertEqual(native['feedback_contract']['target_priority'], [
-                'claim', 'research_problem', 'research_question', 'real_world_tension',
+                'claim', 'collision_review', 'research_problem', 'research_question', 'real_world_tension', 'reality_signal_gap',
                 'source', 'knowledge', 'topic',
             ])
             self.assertEqual(next(obj for obj in native['objects'] if obj['object_kind'] == 'source_item')['marker'], 'atr-source-id:P1')
@@ -168,6 +284,39 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(body['selection']['selected_key'], 'first')
             self.assertEqual(validate_registry(body), [])
 
+    def test_registry_rejects_two_current_runs(self):
+        registry = {
+            'runs': [
+                {'key': key, 'workspace': '/w', 'run_dir': '/r',
+                 'controller_kind': 'ATR_V2_SQLITE', 'authority_path': '/r/atr.sqlite',
+                 'authority_scope': 'LIFECYCLE_AND_ATTACHMENTS', 'view_role': 'CURRENT_RUN'}
+                for key in ('first', 'second')
+            ],
+            'active_run': 'first',
+            'selection': {'mode': 'EXPLICIT', 'selected_key': 'first'},
+        }
+        self.assertIn('registry may contain at most one CURRENT_RUN', validate_registry(registry))
+
+    def test_activating_v2_run_demotes_previous_current(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); registry = root / 'registry.json'
+            for key, activate in (('first', False), ('second', True)):
+                run = root / key; run.mkdir()
+                register_run(
+                    registry,
+                    key=key,
+                    label=key.title(),
+                    run_dir=run,
+                    output=root / (key + '-out'),
+                    graph={'run': key, 'projection': 'derived-read-only-v2-sqlite'},
+                    activate=activate,
+                )
+            body = json.loads(registry.read_text())
+            roles = {row['key']: row['view_role'] for row in body['runs']}
+            self.assertEqual(body['active_run'], 'second')
+            self.assertEqual(roles, {'first': 'REGISTERED_V2_RUN', 'second': 'CURRENT_RUN'})
+            self.assertEqual(validate_registry(body), [])
+
     def test_v09_run_without_frontier_stays_honest_and_shows_lifecycle(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp); run = tmp_path/'run'; (run/'evidence').mkdir(parents=True)
@@ -203,8 +352,10 @@ class BuildTest(unittest.TestCase):
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:oldk', 'oldk', 'knowledge-map', 'old-map.json', '2025-12-31T00:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', (artifact, 'abc', 'knowledge-map', 'map.json', '2026-01-01T00:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:jkl', 'jkl', 'opportunity-map', 'opportunity.json', '2026-01-01T12:00:00Z', '{}'))
+            conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:nosig', 'nosig', 'opportunity-decision', 'opportunity-decision.json', '2026-01-01T13:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:oldp', 'oldp', 'problem-case', 'old-problem.json', '2026-01-01T18:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:def', 'def', 'problem-case', 'problem.json', '2026-01-02T00:00:00Z', '{}'))
+            conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:col', 'col', 'collision-review', 'collision-review.json', '2026-01-02T12:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:ghi', 'ghi', 'human-review-disposition', 'disposition.json', '2026-01-03T00:00:00Z', '{}'))
             conn.execute('INSERT INTO artifacts VALUES (?,?,?,?,?,?)', ('sha256:hra', 'hra', 'human-review-assessment', 'assessment.json', '2026-01-04T00:00:00Z', '{}'))
             conn.execute('INSERT INTO events VALUES (?,?,?,?,?,?,?,?,?,?)', (1, 'E1', 'topic-1', 'INTAKE', 'LANDSCAPE', 0, artifact, 'human', 'landscape', '2026-01-01T00:00:00Z'))
@@ -213,22 +364,32 @@ class BuildTest(unittest.TestCase):
             old_knowledge_body = run / 'artifacts' / 'oldk'; old_knowledge_body.mkdir(parents=True)
             (old_knowledge_body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','map_id':'KM-1','topic':'Old auditable agents map','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','kind':'PAPER'}],'concepts':[{'concept_id':'auditability','label':'Old auditability definition','definition':'Earlier definition','source_ids':['P1']}]}))
             body = run / 'artifacts' / 'abc'; body.mkdir(parents=True)
-            (body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','map_id':'KM-1','topic':'Auditable agents','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','pdf_url':'https://e.org/paper.pdf','kind':'PAPER','does_not_establish':'not a general guarantee'}],'concepts':[{'concept_id':'auditability','label':'Auditability','definition':'Traceable review','source_ids':['P1']},{'concept_id':'action','label':'Action attribution','parent_id':'auditability','source_ids':['P1']}]}))
+            (body / 'body.json').write_text(json.dumps({'artifact_type':'knowledge-map','schema_version':'1.1','map_id':'KM-1','topic':'Auditable agents','map_review_status':'PARTIALLY_SOURCE_REVIEWED','sources':[{'source_id':'P1','title':'Paper','url':'https://e.org','pdf_url':'https://e.org/paper.pdf','kind':'PAPER','does_not_establish':'not a general guarantee'}],'concepts':[{'concept_id':'auditability','label':'Auditability','definition':'Traceable review','source_ids':['P1'],'review_status':'BOUNDED_SOURCE_REVIEWED','evidence_spans':[{'source_id':'P1','locator':'p. 1','relation':'DEFINES','observation':'Defines traceability.','does_not_establish':'Universality.'}]},{'concept_id':'action','label':'Action attribution','parent_id':'auditability','source_ids':['P1'],'review_status':'PARTIALLY_SOURCE_REVIEWED','evidence_spans':[{'source_id':'P1','locator':'p. 2','relation':'LIMITS','observation':'Only one action setting.','does_not_establish':'General attribution.'}]}]}))
             opportunity_body = run / 'artifacts' / 'jkl'; opportunity_body.mkdir(parents=True)
             (opportunity_body / 'body.json').write_text(json.dumps({
                 'artifact_type':'opportunity-map','map_id':'OM-1','scope':'Human review of agent actions',
                 'searched_through':'2026-01-01','created_at':'2026-01-01T12:00:00Z','valid_until':'2027-01-01',
                 'does_not_establish':'This is inspiration, not a gap certificate.',
                 'sources':[
-                    {'source_id':'S-WORKFLOW','title':'Workflow issue','url':'https://w.org','kind':'ISSUE','source_function':'PRIMARY_WORKFLOW','observed_at':'2025-12-01','supports':'Reviewers lack traceability.','does_not_establish':'Prevalence.'},
+                    {'source_id':'S-WORKFLOW','title':'Workflow issue','url':'https://w.org','kind':'ISSUE','source_function':'PRIMARY_WORKFLOW','observed_at':'2025-12-01','content_form':'HTML','fulltext_state':'FULLTEXT_INSPECTED','zotero_snapshot_state':'NOT_CAPTURED','inspection_spans':[{'locator':'issue body','observation':'reviewers lack traceability'}],'supports':'Reviewers lack traceability.','does_not_establish':'Prevalence.'},
                     {'source_id':'S-FRONTIER','title':'Frontier paper','url':'https://f.org','kind':'PAPER','source_function':'SCIENTIFIC_FRONTIER','observed_at':'2025-12-15','supports':'Trace evidence changes adjudication.','does_not_establish':'Deployment harm.'},
                 ],
                 'tension_clusters':[{'tension_id':'T-1','label':'Reviewers cannot locate the cause of an agent action','source_ids':['S-WORKFLOW','S-FRONTIER'],'actor':'reviewers','incumbent_practice':'trust an aggregate score','material_consequence':'incorrect remediation','candidate_construct':'action traceability','alternative_explanations':['model capability','interface contract'],'translation_status':'ROUTE_TO_R0','does_not_establish':'Novelty or population frequency.'}],
+            }))
+            no_signal_body = run / 'artifacts' / 'nosig'; no_signal_body.mkdir(parents=True)
+            (no_signal_body / 'body.json').write_text(json.dumps({
+                'artifact_type':'opportunity-decision','decision_id':'OD-1','decision':'NO_ADMISSIBLE_SIGNAL',
+                'searched_through':'2026-01-01','reason':'The inspected paper is not a primary workflow record.',
+                'missing_source_function':'PRIMARY_WORKFLOW','source_ids':['P2'],
+                'next_legal_work':'Seek one revision-pinned workflow signal; do not manufacture a tension.',
+                'does_not_establish':'No absence claim follows.','controller_boundary':'Review input only.',
             }))
             old_problem_body = run / 'artifacts' / 'oldp'; old_problem_body.mkdir(parents=True)
             (old_problem_body / 'body.json').write_text(json.dumps({'artifact_type':'problem-case','problem_id':'PC-1','research_question':'Earlier action-cause question','worlds':['W1','W2'],'discriminator':'Earlier trace','falsifier':'No trace effect','source_spans':[{'source_id':'P2','title':'Deployment report','url':'https://r.org','kind':'REPORT','locator':'p. 2','observation':'earlier observation'}]}))
             problem_body = run / 'artifacts' / 'def'; problem_body.mkdir(parents=True)
             (problem_body / 'body.json').write_text(json.dumps({'artifact_type':'problem-case','problem_id':'PC-1','research_question':'Can a reviewer distinguish action causes?','worlds':['W1','W2'],'discriminator':'A contrastive trace','falsifier':'No trace changes judgment','source_spans':[{'source_id':'P2','title':'Deployment report','url':'https://r.org','kind':'REPORT','locator':'p. 3','observation':'reviewers lack provenance','problem_posture':'OBJECTIVELY_LEAVES','resolves':'Documents the observed workflow failure.','leaves_unresolved':'Does not distinguish model capability from interface contract.','does_not_establish':'Prevalence or causal attribution.'}],'derived_questions':[{'question_id':'DQ-1','question':'Does a contract-bearing trace distinguish the two causes?','smallest_discriminator':'One revision-pinned action with independent adjudication.','does_not_establish':'Population frequency.','source_ids':['P2']}]}))
+            collision_body = run / 'artifacts' / 'col'; collision_body.mkdir(parents=True)
+            (collision_body / 'body.json').write_text(json.dumps({'artifact_type':'collision-review','artifact_id':'COL-1','input_problem_case_id':'PC-1','status':'CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE','disposition':'REFRAME','comparisons':{'exact':['none'],'claim':['broad claim collides'],'mechanism':['mechanism collides'],'compositional':['combined coverage'],'adjacent':['adjacent benchmark']},'coverage_limits':['one suite'],'surviving_boundary':'Only a pinned field-level intervention remains.','alternative_explanations':['judge drift'],'next_evidence':['one pinned pair'],'does_not_authorize':'No novelty or gate.','inspected_sources':[{'source_id':'P3','title':'Harness paper','url':'https://h.org','kind':'PRIMARY_PAPER','fulltext_state':'FULLTEXT_INSPECTED','locator':'pp. 1-2','comparison_type':'CLAIM_COLLISION','finding':'Harness changes scores.','does_not_establish':'Field-level cause.'}]}))
             disposition_body = run / 'artifacts' / 'ghi'; disposition_body.mkdir(parents=True)
             (disposition_body / 'body.json').write_text(json.dumps({'artifact_type':'human-review-disposition','disposition_id':'HRD-1','packet_id':'HRP-1','disposition':'OPEN_CLAIM_REVIEW','owner':'researcher','rationale':'locator challenges scope','review':{'source_id':'P2'},'impact':{'all_affected_research_problems':[{'problem_id':'PC-1'}]}}))
             assessment_body = run / 'artifacts' / 'hra'; assessment_body.mkdir(parents=True)
@@ -240,11 +401,35 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(graph['projection'], 'derived-read-only-v2-sqlite')
             self.assertTrue(any(node['kind'] == 'atr_v2_attachment' for node in graph['nodes']))
             self.assertTrue(any(node['kind'] == 'knowledge_concept' and node['label'] == 'Action attribution' for node in graph['nodes']))
+            knowledge_node = next(node for node in graph['nodes'] if node['kind'] == 'knowledge_concept' and node['label'] == 'Action attribution')
+            self.assertEqual(knowledge_node['data']['review_status'], 'PARTIALLY_SOURCE_REVIEWED')
+            self.assertEqual(knowledge_node['data']['evidence_spans'][0]['locator'], 'p. 2')
             self.assertTrue(any(edge['relation'] == 'defines_with_explicit_source' for edge in graph['edges']))
             tension = next(node for node in graph['nodes'] if node['id'] == 'real_world_tension:T-1')
             self.assertEqual(tension['data']['candidate_construct'], 'action traceability')
             tension_sources = {edge['target'] for edge in graph['edges'] if edge['source'] == tension['id'] and edge['relation'] == 'grounded_in_explicit_signal'}
             self.assertEqual(tension_sources, {'paper:S-WORKFLOW', 'paper:S-FRONTIER'})
+            workflow_source = next(node for node in graph['nodes'] if node['id'] == 'paper:S-WORKFLOW')
+            self.assertEqual(workflow_source['data']['fulltext_state'], 'FULLTEXT_INSPECTED')
+            self.assertEqual(workflow_source['data']['worker_inspection_state'], 'FULLTEXT_INSPECTED')
+            self.assertEqual(workflow_source['data']['human_inspection_state'], 'NOT_RECORDED')
+            self.assertEqual(workflow_source['data']['zotero_snapshot_state'], 'NOT_CAPTURED')
+            self.assertEqual(workflow_source['data']['inspection_spans'][0]['locator'], 'issue body')
+            workflow_object = next(obj for obj in json.loads((root / 'out' / 'zotero' / 'native-projection.json').read_text())['objects'] if obj.get('atr_id') == 'S-WORKFLOW')
+            self.assertEqual(workflow_object['fulltext_state'], 'FULLTEXT_INSPECTED')
+            self.assertEqual(workflow_object['worker_inspection_state'], 'FULLTEXT_INSPECTED')
+            self.assertEqual(workflow_object['human_inspection_state'], 'NOT_RECORDED')
+            self.assertEqual(workflow_object['zotero_snapshot_state'], 'NOT_CAPTURED')
+            self.assertEqual(workflow_object['inspection_spans'][0]['locator'], 'issue body')
+            reality_gap = next(node for node in graph['nodes'] if node['id'] == 'reality_signal_gap:OD-1')
+            self.assertEqual(reality_gap['data']['decision'], 'NO_ADMISSIBLE_SIGNAL')
+            self.assertEqual(reality_gap['data']['missing_source_function'], 'PRIMARY_WORKFLOW')
+            self.assertTrue(any(edge['source'] == reality_gap['id'] and edge['target'] == 'paper:P2'
+                                and edge['relation'] == 'searched_for_admissible_reality_signal_in'
+                                for edge in graph['edges']))
+            native_gap = next(obj for obj in json.loads((root / 'out' / 'zotero' / 'native-projection.json').read_text())['objects']
+                              if obj.get('object_kind') == 'reality_gap_note')
+            self.assertEqual(native_gap['graph_node_id'], reality_gap['id'])
             problem = next(node for node in graph['nodes'] if node['id'] == 'research_problem:PC-1')
             self.assertEqual(problem['data']['discriminator'], 'A contrastive trace')
             problem_source = next(edge for edge in graph['edges'] if edge['source'] == problem['id'] and edge['relation'] == 'grounds_in_explicit_source_span' and edge['target'] == 'paper:P2')
@@ -253,6 +438,11 @@ class BuildTest(unittest.TestCase):
             derived = next(node for node in graph['nodes'] if node['id'] == 'derived_question:PC-1:DQ-1')
             self.assertEqual(derived['data']['smallest_discriminator'], 'One revision-pinned action with independent adjudication.')
             self.assertTrue(any(edge['source'] == problem['id'] and edge['target'] == derived['id'] and edge['relation'] == 'generates_finer_review_question' for edge in graph['edges']))
+            collision = next(node for node in graph['nodes'] if node['id'] == 'collision_review:COL-1')
+            self.assertEqual(collision['data']['disposition'], 'REFRAME')
+            self.assertEqual(collision['data']['surviving_boundary'], 'Only a pinned field-level intervention remains.')
+            self.assertTrue(any(edge['source'] == problem['id'] and edge['target'] == collision['id'] and edge['relation'] == 'is_claim_scoped_reviewed_by' for edge in graph['edges']))
+            self.assertTrue(any(edge['source'] == collision['id'] and edge['target'] == 'paper:P3' and edge['relation'] == 'inspects_for_collision' and edge['data']['locator'] == 'pp. 1-2' for edge in graph['edges']))
             disposition = next(node for node in graph['nodes'] if node['id'] == 'human_review:HRD-1')
             self.assertEqual(disposition['data']['disposition'], 'OPEN_CLAIM_REVIEW')
             self.assertTrue(any(edge['source'] == disposition['id'] and edge['target'] == 'research_problem:PC-1' for edge in graph['edges']))
@@ -279,6 +469,9 @@ class BuildTest(unittest.TestCase):
             derived_object = next(obj for obj in native['objects'] if obj['object_kind'] == 'derived_question_note')
             self.assertEqual(derived_object['parent_graph_node_id'], 'research_problem:PC-1')
             self.assertEqual(derived_object['linked_source_ids'], ['P2'])
+            collision_object = next(obj for obj in native['objects'] if obj['object_kind'] == 'collision_review_note')
+            self.assertEqual(collision_object['parent_graph_node_id'], 'research_problem:PC-1')
+            self.assertEqual(collision_object['linked_source_ids'], ['P3'])
             knowledge_objects = [obj for obj in native['objects'] if obj['object_kind'] == 'knowledge_note']
             self.assertEqual(len(knowledge_objects), 3)
             self.assertEqual(sum(obj['review_role'] == 'HISTORICAL_VERSION' for obj in knowledge_objects), 1)
@@ -633,6 +826,84 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(item['nearest_research_problems'][0]['distance_from_review_target'], 1)
             queue = refresh_review_queue(out)
             self.assertEqual(queue['items'][0]['nearest_research_problems'][0]['problem_id'], 'R1')
+
+    def test_collision_source_review_uses_only_explicit_review_bridge(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {
+                'nodes': [
+                    {'id':'paper:P1','kind':'paper','label':'Collision paper','data':{'source_id':'P1'}},
+                    {'id':'collision_review:C1','kind':'collision_review','label':'Scoped review','data':{}},
+                    {'id':'research_problem:R1','kind':'research_problem','label':'Which mechanism?','data':{'problem_id':'R1'}},
+                    {'id':'research_problem:R2','kind':'research_problem','label':'Unrelated problem','data':{'problem_id':'R2'}},
+                ],
+                'edges': [
+                    {'source':'collision_review:C1','target':'paper:P1','relation':'inspects_for_collision','data':{}},
+                    {'source':'research_problem:R1','target':'collision_review:C1','relation':'is_claim_scoped_reviewed_by','data':{}},
+                    {'source':'research_problem:R2','target':'paper:P1','relation':'contains','data':{}},
+                ],
+            }
+            (out / 'graph.json').write_text(json.dumps(graph))
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps({
+                'event':'human_annotation_modified', 'zotero_annotation_key':'A1', 'atr_source_id':'P1',
+            }) + '\n')
+            item = impact_report(out)['affected'][0]
+            self.assertEqual(item['nearest_research_problems'][0]['problem_id'], 'R1')
+            self.assertEqual(item['nearest_research_problems'][0]['distance_from_review_target'], 2)
+            self.assertNotIn('R2', [row['problem_id'] for row in item['all_affected_research_problems']])
+
+    def test_collision_review_note_is_an_explicit_owner_review_target(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {
+                'nodes': [
+                    {'id':'collision_review:C1','kind':'collision_review','label':'Scoped review','data':{}},
+                    {'id':'research_problem:R1','kind':'research_problem','label':'Which mechanism?','data':{'problem_id':'R1'}},
+                ],
+                'edges': [
+                    {'source':'research_problem:R1','target':'collision_review:C1','relation':'is_claim_scoped_reviewed_by','data':{}},
+                ],
+            }
+            (out / 'graph.json').write_text(json.dumps(graph))
+            event = {
+                'event':'human_note_modified', 'zotero_note_key':'N1',
+                'atr_graph_node_id':'collision_review:C1',
+                'atr_collision_review_id':'C1',
+                'owner_route_input':'ACCEPT_REFRAME',
+                'owner_route_rationale':'The surviving boundary matches the inspected span.',
+            }
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps(event) + '\n')
+            item = impact_report(out)['affected'][0]
+            self.assertEqual(item['review_target_type'], 'collision_review')
+            self.assertEqual(item['nearest_decision_objects'][0]['id'], 'collision_review:C1')
+            self.assertEqual(item['nearest_research_problems'][0]['problem_id'], 'R1')
+            self.assertEqual(item['nearest_research_problems'][0]['distance_from_review_target'], 1)
+            packet = json.loads(Path(materialize_review_packets(out)['written'][0]).read_text())
+            self.assertEqual(packet['review']['owner_route_input'], 'ACCEPT_REFRAME')
+            self.assertEqual(packet['review']['owner_route_rationale'], event['owner_route_rationale'])
+
+    def test_reality_signal_gap_note_stays_a_negative_evidence_target(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp); (out / 'human-input').mkdir()
+            graph = {
+                'nodes': [
+                    {'id':'reality_signal_gap:OD1','kind':'reality_signal_gap','label':'No admissible signal','data':{'decision_id':'OD1'}},
+                    {'id':'paper:P1','kind':'paper','label':'Scientific paper','data':{'source_id':'P1'}},
+                ],
+                'edges': [
+                    {'source':'reality_signal_gap:OD1','target':'paper:P1','relation':'searched_for_admissible_reality_signal_in','data':{}},
+                ],
+            }
+            (out / 'graph.json').write_text(json.dumps(graph))
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps({
+                'event':'human_note_modified','zotero_note_key':'N1',
+                'atr_graph_node_id':'reality_signal_gap:OD1','atr_reality_signal_gap_node_id':'reality_signal_gap:OD1',
+                'review_stance':'QUALIFIES',
+            }) + '\n')
+            item = impact_report(out)['affected'][0]
+            self.assertEqual(item['review_target_type'], 'reality_signal_gap')
+            self.assertEqual(item['nearest_decision_objects'][0]['id'], 'reality_signal_gap:OD1')
+            self.assertFalse(item['nearest_research_problems'])
 
     def test_native_reader_annotation_enters_impact_report(self):
         with tempfile.TemporaryDirectory() as tmp:

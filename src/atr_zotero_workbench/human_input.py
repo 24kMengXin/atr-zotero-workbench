@@ -15,6 +15,11 @@ REVIEW_PROPAGATION_RELATIONS = {
     "has_explicit_problem_role", "grounds_in_explicit_source_span",
     "grounds_in_explicit_evidence_layer", "grounded_in_explicit_signal",
     "defines_with_explicit_source", "specializes_concept",
+    # Explicit collision-review bridge: a paper inspected by a claim-scoped
+    # review can reach only the problem that names that review.  The generic
+    # artifact/run containment edges remain excluded.
+    "inspects_for_collision", "is_claim_scoped_reviewed_by",
+    "searched_for_admissible_reality_signal_in",
     # Explicit decision lineage; deliberately excludes run/program/gate containment
     "raises_question", "supersedes", "generates_finer_review_question",
     "refines_question", "derived_from_problem",
@@ -22,12 +27,14 @@ REVIEW_PROPAGATION_RELATIONS = {
 
 DECISION_OBJECT_PRIORITY = {
     "claim": 0,
-    "research_problem": 1,
-    "research_question": 2,
-    "derived_research_question": 2,
-    "real_world_tension": 3,
-    "knowledge_concept": 4,
-    "atr_v2_subject": 5,
+    "collision_review": 1,
+    "research_problem": 2,
+    "research_question": 3,
+    "derived_research_question": 3,
+    "real_world_tension": 4,
+    "reality_signal_gap": 5,
+    "knowledge_concept": 6,
+    "atr_v2_subject": 7,
 }
 
 def _rows(path: Path) -> list[dict[str, Any]]:
@@ -106,6 +113,8 @@ def impact_report(output: Path) -> dict[str, Any]:
             (explicit_node.get("kind") == "claim" and explicit_node.get("data", {}).get("claim_id") == claim)
             or (explicit_node.get("kind") == "research_problem" and explicit_node.get("data", {}).get("problem_id") == problem)
             or (explicit_node.get("kind") == "knowledge_concept" and graph_node_id == explicit_node.get("id"))
+            or (explicit_node.get("kind") == "collision_review" and graph_node_id == explicit_node.get("id"))
+            or (explicit_node.get("kind") == "reality_signal_gap" and graph_node_id == explicit_node.get("id"))
             or (explicit_node.get("kind") in {"research_question", "derived_research_question", "real_world_tension"}
                 and graph_node_id == explicit_node.get("id"))
         ):
@@ -114,11 +123,13 @@ def impact_report(output: Path) -> dict[str, Any]:
                  or by_source.get(source) or (topic_node if run_id == graph.get("run") else None))
         target_type = (
             "claim" if nodes.get(start, {}).get("kind") == "claim"
+            else "collision_review" if nodes.get(start, {}).get("kind") == "collision_review"
             else "research_problem" if nodes.get(start, {}).get("kind") == "research_problem"
             else "source" if by_source.get(source)
             else "knowledge" if nodes.get(start, {}).get("kind") == "knowledge_concept"
             else "research_question" if nodes.get(start, {}).get("kind") in {"research_question", "derived_research_question"}
             else "real_world_tension" if nodes.get(start, {}).get("kind") == "real_world_tension"
+            else "reality_signal_gap" if nodes.get(start, {}).get("kind") == "reality_signal_gap"
             else "topic" if start == topic_node and run_id == graph.get("run")
             else "unmapped"
         )
@@ -134,7 +145,7 @@ def impact_report(output: Path) -> dict[str, Any]:
                 claims.append(current)
             if nodes[current]["kind"] == "research_problem":
                 research_problems.append(current)
-            if nodes[current]["kind"] in {"atr_v2_subject", "knowledge_concept", "claim", "research_question", "derived_research_question", "real_world_tension", "research_problem"}:
+            if nodes[current]["kind"] in {"atr_v2_subject", "knowledge_concept", "claim", "collision_review", "research_question", "derived_research_question", "real_world_tension", "reality_signal_gap", "research_problem"}:
                 decision_objects.append(current)
             for neighbor in adjacency[current]:
                 if neighbor not in seen:
@@ -317,6 +328,8 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
                 "source_locator": event.get("source_locator"),
                 "zotero_open_uri": event.get("zotero_open_uri"),
                 "stance": event.get("review_stance", "UNSPECIFIED"),
+                "owner_route_input": event.get("owner_route_input"),
+                "owner_route_rationale": event.get("owner_route_rationale"),
                 "note_html": event.get("note_html", ""),
                 "annotation": {
                     "type": event.get("annotation_type"),

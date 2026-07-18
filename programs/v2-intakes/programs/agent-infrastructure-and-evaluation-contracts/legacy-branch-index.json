@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "legacy-branch-index",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "branches": [
+    {
+      "run": "2026-07-17-agent-capability-registration",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-capability-registration",
+      "catalog_role": "provider capability registry",
+      "catalog_disposition": "canonical_runtime_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "PRIORITY_REVIEW_INPUT",
+      "sources": 5,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-capability-contract-testbed",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-capability-contract-testbed",
+      "catalog_role": "endpoint/runtime/request emission contract testbed",
+      "catalog_disposition": "merge_as_testbed_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 6,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-agent-evaluation-drift-attribution",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-agent-evaluation-drift-attribution",
+      "catalog_role": "时间性 benchmark drift 归因",
+      "catalog_disposition": "merge_as_evaluation_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 8,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-programming-language-agent-affordances",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-programming-language-agent-affordances",
+      "catalog_role": "非 Python agent framework affordance",
+      "catalog_disposition": "merge_as_framework_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 6,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-skill-capability-containment",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-skill-capability-containment",
+      "catalog_role": "动态 skill metadata 的能力边界",
+      "catalog_disposition": "merge_as_policy_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 6,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    }
+  ],
+  "consumption_rule": "No branch artifact is consumed until it receives an artifact-level LEGACY_MAPPED manifest and its source claims are reverified."
+}

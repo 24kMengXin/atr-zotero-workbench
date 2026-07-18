@@ -28,15 +28,53 @@ def main() -> None:
         "startup_complete", "native_topic_menu_added", "native_item_pane_registered",
         "projection_loaded", "native_topic_synced", "native_note_tab_opened",
         "native_reader_tab_opened", "dev_smoke_feedback_saved",
+        "dev_smoke_owner_route_input_saved", "human_owner_route_input_selected",
+        "source_coreading_opened",
         "dev_smoke_reader_annotation_saved",
         "process_note_created", "human_review_stance_selected",
         "native_reader_annotation_opened",
+        "native_reader_note_section_registered",
+        "native_reader_note_section_ready",
+        "dev_smoke_reader_note_section_ready",
+        "co_reading_dock_rendered",
+        "co_reading_dock_probe_passed",
+        "co_reading_companion_opened",
+        "three_surface_coreading_ready",
+        "dev_smoke_three_surface_coreading_ready",
     }
     missing = sorted(required - stages)
     if missing:
         raise SystemExit(f"missing runtime stages: {missing}")
+    dock_probe = next(
+        (row for row in runtime if row.get("stage") == "co_reading_dock_probe_passed"),
+        None,
+    )
+    if (not dock_probe or dock_probe.get("panel_count") != 4
+            or dock_probe.get("mini_graph_count") != 2):
+        raise SystemExit(
+            "co-reading dock did not prove four foldable panels and two local SVG graphs: "
+            f"{dock_probe}"
+        )
+    pinned = next((row for row in runtime if row.get("stage") == "dev_smoke_reader_note_section_ready"), None)
+    native_pin = next((row for row in runtime if row.get("stage") == "native_reader_note_section_ready"), None)
+    if (not pinned or not native_pin or pinned.get("note_key") != native_pin.get("note_key")
+            or native_pin.get("interaction") != "READER_WITH_FOLDABLE_NOTE_AND_ATR_SECTIONS"
+            or not native_pin.get("atr_pane_id") or not native_pin.get("pane_id")):
+        raise SystemExit(f"Reader did not keep the expected foldable Note and ATR sections beside the PDF: {pinned}, {native_pin}")
+    three_surface = next(
+        (row for row in runtime if row.get("stage") == "dev_smoke_three_surface_coreading_ready"),
+        None,
+    )
+    if (not three_surface or three_surface.get("panel_count") != 4
+            or three_surface.get("mini_graph_count") != 2
+            or three_surface.get("note_key") != pinned.get("note_key")):
+        raise SystemExit(
+            "portable companion did not coexist with the expected native Note and local graphs: "
+            f"{three_surface}"
+        )
     remote_pdf = metadata.get("reader_fixture_mode") == "MAPPED_REMOTE_PDF_ON_DEMAND"
     native_resolver = metadata.get("reader_fixture_mode") == "ZOTERO_NATIVE_AVAILABLE_FILE"
+    verified_local_pdf = metadata.get("reader_fixture_mode") == "VERIFIED_REPO_PDF_ON_DEMAND"
     imported_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_imported"), None)
     if remote_pdf:
         started_pdf = next((row for row in runtime if row.get("stage") == "source_pdf_import_started"), None)
@@ -47,6 +85,15 @@ def main() -> None:
         started_lookup = next((row for row in runtime if row.get("stage") == "source_available_file_lookup_started"), None)
         if not started_lookup or not resolved_pdf or not started_lookup.get("doi"):
             raise SystemExit("native-resolver smoke did not prove a DOI lookup and attached available file")
+    local_pdf = next((row for row in runtime if row.get("stage") == "source_local_pdf_imported"), None)
+    if verified_local_pdf:
+        started_local = next((row for row in runtime if row.get("stage") == "source_local_pdf_import_started"), None)
+        mismatches = [row for row in runtime if row.get("stage") == "source_local_pdf_digest_mismatch"]
+        expected_source = metadata.get("verified_local_source_ids", [None])[0]
+        if (not started_local or not local_pdf or mismatches
+                or local_pdf.get("source_id") != expected_source
+                or local_pdf.get("access_route") != "VERIFIED_REPO_CACHE_TO_ZOTERO_STORED_COPY"):
+            raise SystemExit("verified-local-PDF smoke did not prove identity-gated, digest-stable Zotero import")
 
     events = rows(WORKSPACE / "human-input" / "inbox.jsonl")
     projected_run = json.loads((WORKSPACE / "graph.json").read_text(encoding="utf-8"))["run"]
@@ -59,6 +106,13 @@ def main() -> None:
         raise SystemExit(f"expected one exact problem Note feedback event, got {len(problem_events)}")
     if problem_events[0].get("review_stance") != "QUALIFIES":
         raise SystemExit(f"Item Pane stance selection was not captured as typed review input: {problem_events[0]}")
+    collision_events = [event for event in events if event.get("atr_collision_review_id")]
+    if len(collision_events) != 1:
+        raise SystemExit(f"expected one exact collision-review owner input, got {len(collision_events)}")
+    if (collision_events[0].get("owner_route_input") != "ACCEPT_REFRAME"
+            or not collision_events[0].get("owner_route_rationale")
+            or not str(collision_events[0].get("atr_graph_node_id", "")).startswith("collision_review:")):
+        raise SystemExit(f"collision-review owner input lost its typed decision, rationale, or exact target: {collision_events[0]}")
     annotation_events = [event for event in events if event.get("event") == "human_annotation_modified"]
     if (len(annotation_events) != 1 or not annotation_events[0].get("atr_source_id")
             or annotation_events[0].get("atr_run") != projected_run
@@ -76,6 +130,8 @@ def main() -> None:
         raise SystemExit("Reader annotation was not created on the on-demand imported attachment")
     if native_resolver and resolved_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
         raise SystemExit("Reader annotation was not created on the native-resolver attachment")
+    if verified_local_pdf and local_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
+        raise SystemExit("Reader annotation was not created on the identity-verified local attachment")
     impact = impact_report(WORKSPACE)
     if impact.get("ignored_event_count"):
         raise SystemExit(f"smoke generated non-cognitive feedback events: {impact['ignored_events']}")
@@ -84,17 +140,26 @@ def main() -> None:
         if row["event"].get("event") == "human_annotation_modified"
     )
     nearest = annotation_impact["nearest_research_problems"]
-    if not nearest or nearest[0]["distance_from_review_target"] != 1:
+    if not nearest or nearest[0]["distance_from_review_target"] not in {1, 2}:
         raise SystemExit(f"Reader annotation did not map to the nearest explicit research problem: {nearest}")
+    if verified_local_pdf and nearest[0]["distance_from_review_target"] != 2:
+        raise SystemExit(
+            "collision source annotation did not traverse exactly paper → collision review → research problem: "
+            f"{nearest}"
+        )
     materialize_review_packets(WORKSPACE)
     review_queue = refresh_review_queue(WORKSPACE)
     packets = [json.loads(path.read_text(encoding="utf-8")) for path in sorted(
         (WORKSPACE / "human-input" / "review-packets").glob("HRP-*.json")
     )]
-    if len(packets) != 2 or any(packet.get("status") != "PENDING_ATR_OWNER_REVIEW" for packet in packets):
-        raise SystemExit("Note and Reader feedback must materialize as two pending, review-only packets")
-    if len(review_queue.get("items", [])) != 2:
-        raise SystemExit("Note and Reader feedback must appear in the durable Codex review queue")
+    if len(packets) != 3 or any(packet.get("status") != "PENDING_ATR_OWNER_REVIEW" for packet in packets):
+        raise SystemExit("Problem Note, collision owner input, and Reader feedback must materialize as three pending, review-only packets")
+    collision_packet = next((packet for packet in packets if packet.get("review", {}).get("owner_route_input")), None)
+    if (not collision_packet or collision_packet["review"].get("owner_route_input") != "ACCEPT_REFRAME"
+            or not collision_packet["review"].get("owner_route_rationale")):
+        raise SystemExit("collision-review owner input was not preserved in its immutable review packet")
+    if len(review_queue.get("items", [])) != 3:
+        raise SystemExit("Problem Note, collision owner input, and Reader feedback must appear in the durable Codex review queue")
     links = (WORKSPACE / "human-input" / "review-links.md").read_text(encoding="utf-8")
     if deep_link not in links:
         raise SystemExit("review-links.md does not expose the exact Reader annotation deep link")
@@ -102,11 +167,25 @@ def main() -> None:
     connection = sqlite3.connect(f"file:{RUNTIME / 'data' / 'zotero.sqlite'}?mode=ro", uri=True)
     collections = connection.execute("SELECT collectionName, parentCollectionID FROM collections ORDER BY collectionID").fetchall()
     native_map = json.loads((WORKSPACE / "zotero" / "native-projection.json").read_text(encoding="utf-8"))
+    graph = json.loads((WORKSPACE / "graph.json").read_text(encoding="utf-8"))
     knowledge_objects = [obj for obj in native_map["objects"] if obj.get("object_kind") == "knowledge_note"]
     knowledge_count = len(knowledge_objects)
+    current_knowledge = [node for node in graph["nodes"] if node.get("kind") == "knowledge_concept"
+                         and not node.get("data", {}).get("historical_version")]
+    historical_knowledge = [node for node in graph["nodes"] if node.get("kind") == "knowledge_concept"
+                            and node.get("data", {}).get("historical_version")]
+    allowed_knowledge_statuses = {
+        "BOUNDED_SOURCE_REVIEWED", "PARTIALLY_SOURCE_REVIEWED",
+        "PENDING_ADDITIONAL_SOURCE_REVIEW", "CHALLENGED_BY_COLLISION_REVIEW",
+    }
+    if (len(current_knowledge) != 6 or len(historical_knowledge) != 6
+            or any(node.get("data", {}).get("review_status") not in allowed_knowledge_statuses
+                   or not node.get("data", {}).get("evidence_spans") for node in current_knowledge)):
+        raise SystemExit("knowledge map did not preserve six historical scaffolds beside six located source-reviewed concepts")
     research_kinds = {
-        "tension_note", "frontier_question_note", "problem_note",
-        "derived_question_note", "claim_note", "review_assessment_note",
+        "portfolio_note", "program_note", "legacy_run_note", "alignment_audit_note", "route_note",
+        "tension_note", "reality_gap_note", "frontier_question_note", "problem_note",
+        "derived_question_note", "claim_note", "review_assessment_note", "collision_review_note",
     }
     research_objects = [obj for obj in native_map["objects"] if obj.get("object_kind") in research_kinds]
     expected_collection_count = 1 + 5 + 5 + knowledge_count + len(research_objects)
@@ -147,29 +226,47 @@ def main() -> None:
         expected_item_count = 1 + len({source_item_by_id[source_id] for source_id in obj.get("linked_source_ids", [])})
         if item_count != expected_item_count:
             raise SystemExit(f"knowledge collection does not contain its Note plus linked sources: {name}")
+    knowledge_notes = [row[0] for row in connection.execute(
+        "SELECT note FROM itemNotes WHERE note LIKE '%ATR Knowledge Node:%'"
+    ).fetchall()]
+    if (len(knowledge_notes) != knowledge_count
+            or sum("知识核验状态" in note and "原文核验跨度" in note for note in knowledge_notes) != knowledge_count):
+        raise SystemExit("knowledge Notes do not expose per-node source-review status and located spans")
     def research_collection_name(obj: dict) -> str:
         prefix = {
+            "portfolio_note": "研究组合",
+            "program_note": "研究计划",
+            "legacy_run_note": "历史分支",
+            "alignment_audit_note": "归位审计",
+            "route_note": "路线草案",
             "tension_note": "张力",
+            "reality_gap_note": "现实证据缺口",
             "frontier_question_note": "前沿问题",
             "problem_note": "问题卡",
             "derived_question_note": "细粒度问题",
             "claim_note": "断言",
+            "review_assessment_note": "共创复核",
+            "collision_review_note": "碰撞复核",
         }[obj["object_kind"]]
         identity = str(obj.get("graph_node_id") or obj["atr_id"]).split(":")[-1]
         return f"{prefix} · {identity} · {obj['title']}"[:180].strip()
     research_by_graph_id = {obj["graph_node_id"]: obj for obj in research_objects}
     for obj in research_objects:
         name = research_collection_name(obj)
-        if obj["object_kind"] == "derived_question_note" and obj.get("parent_graph_node_id") in research_by_graph_id:
+        if obj.get("parent_graph_node_id") in research_by_graph_id:
             expected_parent = research_collection_name(research_by_graph_id[obj["parent_graph_node_id"]])
-        elif obj.get("review_role") == "HISTORICAL_VERSION":
+        elif obj["object_kind"] in {"legacy_run_note", "alignment_audit_note"} or obj.get("review_role") == "HISTORICAL_VERSION":
             expected_parent = native_map["collections"]["history"]
-        elif obj["object_kind"] == "tension_note":
+        elif obj["object_kind"] in {"portfolio_note", "program_note", "route_note"}:
+            expected_parent = native_map["collections"]["overview"]
+        elif obj["object_kind"] in {"tension_note", "reality_gap_note"}:
             expected_parent = native_map["collections"]["research_tensions"]
         elif obj["object_kind"] == "frontier_question_note":
             expected_parent = native_map["collections"]["research_frontier"]
         elif obj["object_kind"] == "claim_note":
             expected_parent = native_map["collections"]["research_claims"]
+        elif obj["object_kind"] in {"review_assessment_note", "collision_review_note"}:
+            expected_parent = native_map["collections"]["research_reviews"]
         else:
             expected_parent = native_map["collections"]["research_current"]
         if collection_tree.get(name) != expected_parent:
@@ -184,7 +281,16 @@ def main() -> None:
     item_counts = dict(connection.execute(
         "SELECT itemTypes.typeName, COUNT(*) FROM items JOIN itemTypes USING(itemTypeID) GROUP BY itemTypes.typeName"
     ).fetchall())
-    expected_notes = 1 + sum(obj.get("object_kind", "").endswith("_note") for obj in native_map["objects"])
+    # One process Note is outside the native-map object list. The Reader-centered
+    # smoke also creates exactly one source child Note and pins that same object
+    # beside the PDF; it is not a duplicate projection object.
+    expected_notes = 2 + sum(obj.get("object_kind", "").endswith("_note") for obj in native_map["objects"])
+    source_review_notes = connection.execute(
+        "SELECT items.key, itemNotes.note FROM itemNotes JOIN items USING(itemID) "
+        "WHERE itemNotes.note LIKE '%ATR 来源核对%'"
+    ).fetchall()
+    if len(source_review_notes) != 1 or source_review_notes[0][0] != pinned.get("note_key"):
+        raise SystemExit(f"Reader source review Note was duplicated or did not match the pinned Note: {source_review_notes}")
     process_notes = [row[0] for row in connection.execute(
         "SELECT note FROM itemNotes WHERE note LIKE '%ATR Process Run:%'"
     ).fetchall()]
@@ -200,6 +306,26 @@ def main() -> None:
         role_source_ids = re.findall(r" · ([^<]+)<br>问题姿态", note)
         if len(role_source_ids) != len(set(role_source_ids)):
             raise SystemExit(f"problem Note repeats one paper role more than once: {role_source_ids}")
+    collision_notes = [row[0] for row in connection.execute(
+        "SELECT note FROM itemNotes WHERE note LIKE '%ATR Collision Review:%'"
+    ).fetchall()]
+    expected_collision_notes = sum(
+        obj.get("object_kind") == "collision_review_note" for obj in native_map["objects"]
+    )
+    if len(collision_notes) != expected_collision_notes or any(
+        "残存可检验边界" not in note or "不授权" not in note for note in collision_notes
+    ):
+        raise SystemExit("collision-review Note count or non-authorizing boundary is incorrect")
+    reality_gap_notes = [row[0] for row in connection.execute(
+        "SELECT note FROM itemNotes WHERE note LIKE '%ATR Reality Signal Gap:%'"
+    ).fetchall()]
+    expected_reality_gap_notes = sum(
+        obj.get("object_kind") == "reality_gap_note" for obj in native_map["objects"]
+    )
+    if len(reality_gap_notes) != expected_reality_gap_notes or any(
+        "为什么不能形成张力" not in note or "不能推出" not in note for note in reality_gap_notes
+    ):
+        raise SystemExit("reality-signal gap Note count or negative-evidence boundary is incorrect")
     expected_source_ids = {
         obj["atr_id"] for obj in native_map["objects"] if obj.get("object_kind") == "source_item"
     }
@@ -236,12 +362,17 @@ def main() -> None:
         "reader_fixture_mode": metadata.get("reader_fixture_mode"),
         "remote_pdf_import_verified": remote_pdf,
         "native_available_file_verified": native_resolver,
+        "verified_local_pdf_import_verified": verified_local_pdf,
         "knowledge_collection_count": knowledge_count,
         "knowledge_hierarchy_verified": True,
+        "current_source_reviewed_knowledge_count": len(current_knowledge),
+        "historical_scaffold_knowledge_count": len(historical_knowledge),
         "research_collection_count": len(research_objects),
         "research_hierarchy_verified": True,
         "process_note_verified": True,
         "paper_problem_roles_visible": True,
+        "collision_review_note_count": len(collision_notes),
+        "reality_signal_gap_note_count": len(reality_gap_notes),
         "source_id_count": len(expected_source_ids),
         "deduplicated_regular_item_count": regular_item_count,
         "collections": [name for name, _ in collections],

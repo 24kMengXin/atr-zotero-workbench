@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "knowledge-map",
+  "map_id": "KM-atr-research-governance.draft-v1",
+  "topic": "atr-research-governance",
+  "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+  "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "sources": [
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "url": "https://arxiv.org/abs/2604.25256",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "url": "https://arxiv.org/abs/2606.11926",
+      "kind": "PRIMARY_SYSTEM",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "url": "https://arxiv.org/abs/2607.09195",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-AUTORESEARCHCLAW-2026",
+      "title": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+      "url": "https://arxiv.org/abs/2605.20025",
+      "kind": "PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-HARPA-2026",
+      "title": "HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation",
+      "url": "https://openreview.net/forum?id=zGr73fcSsB",
+      "kind": "OPENREVIEW_SUBMISSION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "research-governance",
+      "label": "Agentic research governance",
+      "parent_id": null,
+      "definition": "A verification frame for how AI-assisted research preserves evidence, alternatives, human judgment, and reversible route decisions.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026",
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "evidence-provenance",
+      "label": "Evidence and provenance",
+      "parent_id": "research-governance",
+      "definition": "Stable identities and explicit edges connecting sources, claims, reviews, experiments, and decisions.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "hypothesis-portfolio",
+      "label": "Hypothesis and seed portfolio",
+      "parent_id": "research-governance",
+      "definition": "A persistent set of competing, parked, killed, and active directions rather than a single overwritten narrative.",
+      "source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "gate-route-transition",
+      "label": "Gate, route, and transition separation",
+      "parent_id": "research-governance",
+      "definition": "Separation between evidence predicates, the selected scientific route, and atomic lifecycle mutation.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "human-review",
+      "label": "Human reading and review",
+      "parent_id": "research-governance",
+      "definition": "Source-linked annotations and judgments that enter as review input without silently approving a claim.",
+      "source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "system-learning",
+      "label": "Harness evaluation and system learning",
+      "parent_id": "research-governance",
+      "definition": "Prospective comparison of process interventions, repeated failures, rollback conditions, and route-level effects.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

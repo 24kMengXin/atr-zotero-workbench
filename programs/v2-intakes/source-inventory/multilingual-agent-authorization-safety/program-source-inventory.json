@@ -1,0 +1,831 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-source-inventory",
+  "program_key": "multilingual-agent-authorization-safety",
+  "sources": [
+    {
+      "source_id": "SRC-ABCD-2021",
+      "title": "Action-Based Conversations Dataset",
+      "url": "https://arxiv.org/abs/2104.00783",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ABCD-2021"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-ADAPTIVE-IPI-2026",
+      "title": "Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents",
+      "url": "https://arxiv.org/abs/2606.26479",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-ADAPTIVE-IPI-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "url": "https://arxiv.org/abs/2607.10059",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-evidence-conditioned-research-exploration, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary, 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTABSTAIN-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTDOJO-2024",
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "url": "https://openreview.net/forum?id=m1YYAQjO3w",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTDOJO-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTDOJO-REPO-2026",
+      "title": "AgentDojo public implementation",
+      "url": "https://github.com/ethz-spylab/agentdojo",
+      "kind": "PRIMARY_CODE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTDOJO-REPO-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTIC-ABSTENTION-2026",
+      "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+      "url": "https://arxiv.org/abs/2606.28733",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTIC-ABSTENTION-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTSHIELD-2026",
+      "title": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
+      "url": "https://arxiv.org/abs/2605.11026",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTSHIELD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTSHIELD-REPO-2026",
+      "title": "AgentShield public implementation",
+      "url": "https://github.com/Yassin-H-Rassul/AgentShield",
+      "kind": "PRIMARY_CODE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTSHIELD-REPO-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-BITEXT-2023",
+      "title": "Bitext customer-support chatbot dataset",
+      "url": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset",
+      "kind": "OPEN_SOURCE_DATASET",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-BITEXT-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-COD-2023",
+      "title": "Cross-Lingual Dialogue Dataset Creation via Outline-Based Generation",
+      "url": "https://aclanthology.org/2023.tacl-1.9/",
+      "kind": "PRIMARY_JOURNAL_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-COD-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HIDDEN-SPACE-2025",
+      "title": "The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual Context",
+      "url": "https://arxiv.org/abs/2504.02708",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HIDDEN-SPACE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-INJECAGENT-2024",
+      "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "url": "https://aclanthology.org/2024.findings-acl.624/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-INJECAGENT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-JOURNEYBENCH-2026",
+      "title": "JourneyBench",
+      "url": "https://aclanthology.org/2026.eacl-industry.15.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-JOURNEYBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LANGUAGE-BARRIER-2024",
+      "title": "The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts",
+      "url": "https://aclanthology.org/2024.findings-acl.156/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LANGUAGE-BARRIER-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LAYER-SWAP-2026",
+      "title": "Layer-wise Swapping for Generalizable Multilingual Safety",
+      "url": "https://aclanthology.org/2026.eacl-long.98/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LAYER-SWAP-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LINGUASAFE-2025",
+      "title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+      "url": "https://arxiv.org/abs/2508.12733",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LINGUASAFE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-LLAMA-GUARD3-CARD",
+      "title": "Llama Guard 3 model card",
+      "url": "https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard3/8B/MODEL_CARD.md",
+      "kind": "MODEL_CARD",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LLAMA-GUARD3-CARD"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MAPS-2025",
+      "title": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+      "url": "https://arxiv.org/abs/2505.15935",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-evaluation-transport, 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MAPS-2025",
+        "SRC-MAPS-2026",
+        "SRC-MAPS-EACL-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MELON-2025",
+      "title": "MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents",
+      "url": "https://proceedings.mlr.press/v267/zhu25z.html",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MELON-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MINIONESE-2026",
+      "title": "Minionese: Comprehensive Benchmark and Mechanistic Study of Multilingual LLM Safety",
+      "url": "https://arxiv.org/abs/2607.10112",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MINIONESE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MIPIAD-2026",
+      "title": "MIPIAD: Multilingual Indirect Prompt Injection Attack Defense with Qwen–TF-IDF Hybrid and Meta-Ensemble Learning",
+      "url": "https://arxiv.org/abs/2605.07269",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MIPIAD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MKA-2025",
+      "title": "MKA: Leveraging Cross-Lingual Consensus for Model Abstention",
+      "url": "https://arxiv.org/abs/2503.23687",
+      "kind": "PRIMARY_CONFERENCE_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MKA-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MLBENCHGUARD-2026",
+      "title": "ML-Bench&Guard: Policy-Grounded Multilingual Safety Benchmark and Guardrail for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.00689",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MLBENCHGUARD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-LOST-IN-EXECUTION-ACL-2026",
+        "SRC-MLCL-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "title": "Completely Modular Fine-tuning for Dynamic Language Adaptation",
+      "url": "https://aclanthology.org/2026.findings-eacl.252/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MODULAR-LANGUAGE-ADAPT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MPO-2025",
+      "title": "MPO: Multilingual Safety Alignment via Reward Gap Optimization",
+      "url": "https://aclanthology.org/2025.acl-long.1149/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MPO-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MRGUARD-2025",
+      "title": "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MRGUARD-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "title": "Teaching LLMs to Abstain across Languages via Multilingual Feedback",
+      "url": "https://aclanthology.org/2024.emnlp-main.239/",
+      "kind": "PRIMARY_CONFERENCE_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTI-ABSTAIN-FEEDBACK-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTI3WOZ-2023",
+      "title": "Multi3WOZ: A Multilingual, Multi-Domain, Multi-Parallel Dataset for Training and Evaluating Culturally Adapted Task-Oriented Dialog Systems",
+      "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00609/118298/Multi3WOZ-A-Multilingual-Multi-Domain-Multi",
+      "kind": "PRIMARY_JOURNAL_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTI3WOZ-2023"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTIJAIL-2024",
+      "title": "Multilingual Jailbreak Challenges in Large Language Models",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/6b396f766a50e0853a5164e68048540c-Abstract-Conference.html",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTIJAIL-2024",
+        "SRC-MULTILINGUAL-JAILBREAK-2024"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "title": "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+      "url": "https://aclanthology.org/2025.emnlp-main.800/",
+      "kind": "SURVEY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTILINGUAL-SAFETY-SURVEY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTILINGUAL-UE-2026",
+      "title": "Estimating Uncertainty from Reasoning: A Large-Scale Study of Multi- and Crosslingual MCQA Performance in LLMs",
+      "url": "https://arxiv.org/abs/2607.06327",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTILINGUAL-UE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTITASK-BENCH-2025",
+      "title": "Multitask-Bench: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning",
+      "url": "https://aclanthology.org/2025.coling-main.606/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTITASK-BENCH-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OSGUARD-2026",
+      "title": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
+      "url": "https://arxiv.org/abs/2606.15034",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OSGUARD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PRESTO-2024",
+      "title": "PRESTO: multilingual realistic task-oriented dialogue parsing",
+      "url": "https://research.google/blog/presto-a-multilingual-dataset-for-parsing-realistic-task-oriented-dialogues/",
+      "kind": "OFFICIAL_DATASET_RELEASE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PRESTO-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-RABAK-2025",
+      "title": "Lost in Localization: Building RabakBench with Human-in-the-Loop Validation to Measure Multilingual Safety Gaps",
+      "url": "https://arxiv.org/abs/2507.05980",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-RABAK-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-REALSAFE-2025",
+      "title": "RealSafe: Quantifying Safety Risks of Language Agents in Real-World",
+      "url": "https://aclanthology.org/2025.coling-main.642/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-REALSAFE-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-STING-2026",
+      "title": "STING: Multilingual Multi-Turn Tool-Agent Red Teaming",
+      "url": "https://arxiv.org/abs/2602.16346",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-STING-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TELAGENTBENCH-2025",
+      "title": "TelAgentBench",
+      "url": "https://aclanthology.org/2025.emnlp-industry.83.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TELAGENTBENCH-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TONGUE-TIED-2025",
+      "title": "Tongue-Tied: Breaking LLMs Safety Through New Language Learning",
+      "url": "https://aclanthology.org/2025.calcs-1.5/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TONGUE-TIED-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TOOLSAFE-2026",
+      "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback",
+      "url": "https://aclanthology.org/2026.findings-acl.1850/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TOOLSAFE-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-TRACESAFE-2026",
+      "title": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
+      "url": "https://arxiv.org/abs/2604.07223",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-TRACESAFE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-UNFORGOTTEN-SAFETY-2025",
+      "title": "Unforgotten Safety: Preserving Safety Alignment of Large Language Models with Continual Learning",
+      "url": "https://arxiv.org/abs/2512.10150",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-UNFORGOTTEN-SAFETY-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-WMTCHAT-2024",
+      "title": "WMT24 Chat Translation Task",
+      "url": "https://wmt-chat-task.github.io/2024/",
+      "kind": "OFFICIAL_SHARED_TASK_RELEASE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-WMTCHAT-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "url": "https://arxiv.org/abs/2310.00905",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-XSafety-2024"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    }
+  ],
+  "occurrence_count": 50,
+  "canonical_source_count": 45,
+  "identity_conflict_count": 5,
+  "access_summary": {
+    "metadata_only": 45,
+    "fulltext_attached": 0,
+    "fulltext_inspected": 0
+  },
+  "next_action": "Resolve/de-duplicate against the Zotero library, acquire permitted readable attachments, then inspect load-bearing spans with locators.",
+  "controller_boundary": "This source inventory is an immutable metadata-only attachment. It does not itself advance lifecycle or establish bibliographic version identity, access, inspection, claim support, or a research gap."
+}

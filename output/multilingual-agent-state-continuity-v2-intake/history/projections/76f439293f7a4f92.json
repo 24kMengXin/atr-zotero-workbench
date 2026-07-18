@@ -1,0 +1,1727 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.522715+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.556167+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:20:45.931858+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-SOURCE-INVENTORY",
+      "label": "附件 · SOURCE_REVERIFICATION_QUEUE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:multilingual-agent-state-continuity",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:multilingual-agent-state-continuity",
+      "kind": "atr_v2_subject",
+      "label": "program:multilingual-agent-state-continuity",
+      "data": {
+        "subject_id": "program:multilingual-agent-state-continuity",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.522615+00:00",
+        "updated_at": "2026-07-18T19:10:58.522694+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · b6ae834dfddd",
+      "data": {
+        "artifact_id": "sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+        "artifact_kind": "program-intake",
+        "digest": "b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:58.454773+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-state-continuity/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-state-continuity",
+      "kind": "research_program",
+      "label": "多语言 Agent 状态、交互与连续性",
+      "data": {
+        "program_key": "multilingual-agent-state-continuity",
+        "root_question": "多语言交互中的失败何时来自持久状态、记忆、协调或界面/语音通路，而非笼统的语言能力不足？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": true,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5"
+      }
+    },
+    {
+      "id": "artifact:sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · 528dbcdc8fb1",
+      "data": {
+        "artifact_id": "sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:58.489332+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-state-continuity/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-code-switch-agent-control-plane",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-code-switch-agent-control-plane",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switch-agent-control-plane",
+        "catalog_role": "对话内语言切换后的控制平面",
+        "catalog_disposition": "canonical_mechanism_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 8,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-memory-continuity",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-memory-continuity",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-memory-continuity",
+        "catalog_role": "跨语言长期记忆状态",
+        "catalog_disposition": "merge_as_state_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-coordination",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-coordination",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-coordination",
+        "catalog_role": "跨语言协作与委派",
+        "catalog_disposition": "merge_as_coordination_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 5,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-code-switched-speech-tool-grounding",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-code-switched-speech-tool-grounding",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switched-speech-tool-grounding",
+        "catalog_role": "语音转写与工具语义 grounding",
+        "catalog_disposition": "merge_as_modality_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 6,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-gui-locale-attribution",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-gui-locale-attribution",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-gui-locale-attribution",
+        "catalog_role": "指令语言与界面语言/布局归因",
+        "catalog_disposition": "merge_as_modality_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 4,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "kind": "atr_v2_artifact",
+      "label": "program-source-inventory · e3c560faeded",
+      "data": {
+        "artifact_id": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "artifact_kind": "program-source-inventory",
+        "digest": "e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "original_name": "program-source-inventory.json",
+        "created_at": "2026-07-18T19:20:45.896768+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/source-inventory/multilingual-agent-state-continuity/program-source-inventory.json",
+          "declared_scope": "metadata-only source re-verification queue"
+        },
+        "artifact_type": "program-source-inventory",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:SRC-ASR-CODESWITCH-BENCH-2026",
+      "kind": "paper",
+      "label": "ASR_Code_Switch",
+      "data": {
+        "source_id": "SRC-ASR-CODESWITCH-BENCH-2026",
+        "doi": "",
+        "url": "https://huggingface.co/datasets/Perle-ai/ASR_Code_Switch",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PUBLIC_DATASET",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-ASR-CODESWITCH-BENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-ASR-CODESWITCH-BENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CODESWITCH-LLM-REASONING-2026",
+      "kind": "paper",
+      "label": "Can Large Language Models Understand, Reason About, and Generate Code-Switched Text?",
+      "data": {
+        "source_id": "SRC-CODESWITCH-LLM-REASONING-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2601.07153",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CODESWITCH-LLM-REASONING-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CODESWITCH-LLM-REASONING-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-COMMONAMIGOS-2020",
+      "kind": "paper",
+      "label": "What Code-Switching Strategies are Effective in Dialogue Systems?",
+      "data": {
+        "source_id": "SRC-COMMONAMIGOS-2020",
+        "doi": "",
+        "url": "https://aclanthology.org/2020.scil-1.32.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-COMMONAMIGOS-2020",
+      "kind": "evidence_boundary",
+      "label": "SRC-COMMONAMIGOS-2020 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-CS-IR-2026",
+      "kind": "paper",
+      "label": "Code-Switching Information Retrieval",
+      "data": {
+        "source_id": "SRC-CS-IR-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.acl-long.2162/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-CS-IR-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-CS-IR-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-FORGETEVAL-2026",
+      "kind": "paper",
+      "label": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+      "data": {
+        "source_id": "SRC-FORGETEVAL-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.15903",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-FORGETEVAL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-FORGETEVAL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "kind": "paper",
+      "label": "Multilingual agents — Dialogflow CX",
+      "data": {
+        "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+        "doi": "",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-GROUPMEMBENCH-2026",
+      "kind": "paper",
+      "label": "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations",
+      "data": {
+        "source_id": "SRC-GROUPMEMBENCH-2026",
+        "doi": "",
+        "url": "https://www.microsoft.com/en-us/research/publication/groupmembench-benchmarking-llm-agent-memory-in-multi-party-conversations/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-GROUPMEMBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-GROUPMEMBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-GUICEVAL-CVPR-2026",
+      "kind": "paper",
+      "label": "GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents",
+      "data": {
+        "source_id": "SRC-GUICEVAL-CVPR-2026",
+        "doi": "",
+        "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GUI-CEval_A_Hierarchical_and_Comprehensive_Chinese_Benchmark_for_Mobile_GUI_CVPR_2026_paper.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-GUICEVAL-CVPR-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-GUICEVAL-CVPR-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HINDSIGHT-2026",
+      "kind": "paper",
+      "label": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "data": {
+        "source_id": "SRC-HINDSIGHT-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HINDSIGHT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HINDSIGHT-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LLM-SOCIETIES-2026",
+      "kind": "paper",
+      "label": "Evolution of Cooperation in LLM Societies: A Multi-Lingual Examination",
+      "data": {
+        "source_id": "SRC-LLM-SOCIETIES-2026",
+        "doi": "",
+        "url": "https://openreview.net/forum?id=QcYLAh3lYb",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_WORKSHOP",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LLM-SOCIETIES-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-LLM-SOCIETIES-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "kind": "paper",
+      "label": "Long-Horizon Agent-Memory Benchmark",
+      "data": {
+        "source_id": "SRC-LONG-HORIZON-MEMORY-HF-2026",
+        "doi": "",
+        "url": "https://huggingface.co/datasets/HieuNguyenDang/long-horizon-agent-memory",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PUBLIC_DATASET_CARD",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-LONG-HORIZON-MEMORY-HF-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MACOSWORLD-NEURIPS-2025",
+      "kind": "paper",
+      "label": "macOSWorld: A Multilingual Interactive Benchmark for GUI Agents",
+      "data": {
+        "source_id": "SRC-MACOSWORLD-NEURIPS-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2506.04135",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER_AND_PUBLIC_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MACOSWORLD-NEURIPS-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MACOSWORLD-NEURIPS-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MARBLE-REPO-2025",
+      "kind": "paper",
+      "label": "MARBLE: Multi-Agent Coordination Backbone with LLM Engine",
+      "data": {
+        "source_id": "SRC-MARBLE-REPO-2025",
+        "doi": "",
+        "url": "https://github.com/ulab-uiuc/MARBLE",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_CODE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MARBLE-REPO-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MARBLE-REPO-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MEM2ACTBENCH-2026",
+      "kind": "paper",
+      "label": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "data": {
+        "source_id": "SRC-MEM2ACTBENCH-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.acl-long.370.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MEM2ACTBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MEM2ACTBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MLCL-2026",
+      "kind": "paper",
+      "label": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "data": {
+        "source_id": "SRC-MLCL-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.acl-long.2039/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MLCL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLCL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MPRGUI-ACL-2026",
+      "kind": "paper",
+      "label": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+      "data": {
+        "source_id": "SRC-MPRGUI-ACL-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2512.00756",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER_AND_PUBLIC_DATASET",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MPRGUI-ACL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MPRGUI-ACL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "kind": "paper",
+      "label": "Configure and create multilingual agents — Microsoft Copilot Studio",
+      "data": {
+        "source_id": "SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+        "doi": "",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MS-COPILOT-DYNAMIC-SWITCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "kind": "paper",
+      "label": "Design effective language understanding — Microsoft Copilot Studio",
+      "data": {
+        "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+        "doi": "",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "kind": "paper",
+      "label": "Make Employee Self-Service agent multilingual",
+      "data": {
+        "source_id": "SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+        "doi": "",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/employee-self-service-multilingual",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MS-ESS-DYNAMIC-LANGUAGE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "kind": "paper",
+      "label": "Application card for Microsoft Security Copilot agents",
+      "data": {
+        "source_id": "SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+        "doi": "",
+        "url": "https://learn.microsoft.com/en-us/copilot/security/security-copilot-application-card-agents",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_WORKFLOW_DOCUMENTATION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MS-SECURITY-COPILOT-MEMORY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTIAGENTBENCH-2025",
+      "kind": "paper",
+      "label": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents",
+      "data": {
+        "source_id": "SRC-MULTIAGENTBENCH-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.acl-long.421/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTIAGENTBENCH-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTIAGENTBENCH-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-OLA-CODESWITCH-2026",
+      "kind": "paper",
+      "label": "OLA: Output Language Alignment in Code-Switched LLM Interactions",
+      "data": {
+        "source_id": "SRC-OLA-CODESWITCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2601.03589",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-OLA-CODESWITCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-OLA-CODESWITCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-POLYWORKBENCH-2026",
+      "kind": "paper",
+      "label": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "data": {
+        "source_id": "SRC-POLYWORKBENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.06008",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-agent-assurance, 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-POLYWORKBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-POLYWORKBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-agent-assurance, 2026-07-17-multilingual-agent-coordination",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-PRESTO-EMNLP-2023",
+      "kind": "paper",
+      "label": "PRESTO: A Multilingual Dataset for Parsing Realistic Task-Oriented Dialogs",
+      "data": {
+        "source_id": "SRC-PRESTO-EMNLP-2023",
+        "doi": "",
+        "url": "https://aclanthology.org/2023.emnlp-main.667/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER_AND_PUBLIC_DATASET",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-PRESTO-EMNLP-2023",
+      "kind": "evidence_boundary",
+      "label": "SRC-PRESTO-EMNLP-2023 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-PRESTO-REPOSITORY-2026",
+      "kind": "paper",
+      "label": "google-research-datasets/presto",
+      "data": {
+        "source_id": "SRC-PRESTO-REPOSITORY-2026",
+        "doi": "",
+        "url": "https://github.com/google-research-datasets/presto",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PUBLIC_REPOSITORY",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-PRESTO-REPOSITORY-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-PRESTO-REPOSITORY-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SEATAUBENCH-2026",
+      "kind": "paper",
+      "label": "SEATauBench: Adapting Tool-Agent-User Evaluation Into Low-Resource Southeast Asian Languages",
+      "data": {
+        "source_id": "SRC-SEATAUBENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.28715",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER_AND_PUBLIC_REPOSITORY",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SEATAUBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SEATAUBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switch-agent-control-plane",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-VOICEAGENTBENCH-2025",
+      "kind": "paper",
+      "label": "VoiceAgentBench: Are Voice Assistants ready for agentic tasks?",
+      "data": {
+        "source_id": "SRC-VOICEAGENTBENCH-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2510.07978",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-VOICEAGENTBENCH-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-VOICEAGENTBENCH-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-XBCP-2026",
+      "kind": "paper",
+      "label": "Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus",
+      "data": {
+        "source_id": "SRC-XBCP-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.15345",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-XBCP-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-XBCP-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-XRAG-2025",
+      "kind": "paper",
+      "label": "XRAG: Cross-lingual Retrieval-Augmented Generation",
+      "data": {
+        "source_id": "SRC-XRAG-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2505.10089",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-XRAG-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-XRAG-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-memory-continuity, 2026-07-17-multilingual-evidence-provenance",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-XWEBAGENTBENCH-ACL-2025",
+      "kind": "paper",
+      "label": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+      "data": {
+        "source_id": "SRC-XWEBAGENTBENCH-ACL-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.findings-acl.988/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-coordination, 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-XWEBAGENTBENCH-ACL-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-XWEBAGENTBENCH-ACL-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-coordination, 2026-07-17-multilingual-gui-locale-attribution",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
+        "subject_id": "program:multilingual-agent-state-continuity",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.522715+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-01",
+        "subject_id": "program:multilingual-agent-state-continuity",
+        "subject_version": 0,
+        "artifact_id": "sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:58.556167+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-SOURCE-INVENTORY",
+      "kind": "atr_v2_attachment",
+      "label": "SOURCE_REVERIFICATION_QUEUE · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-SOURCE-INVENTORY",
+        "subject_id": "program:multilingual-agent-state-continuity",
+        "subject_version": 0,
+        "artifact_id": "sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+        "role": "SOURCE_REVERIFICATION_QUEUE",
+        "note": "Canonical bibliographic candidates; attachment and cited-span inspection remain pending.",
+        "created_at": "2026-07-18T19:20:45.931858+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "target": "subject:program:multilingual-agent-state-continuity",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "target": "artifact:sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+      "target": "research_program:multilingual-agent-state-continuity",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "target": "artifact:sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+      "target": "research_program:multilingual-agent-state-continuity",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-state-continuity",
+      "target": "legacy_run:2026-07-17-code-switch-agent-control-plane",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-state-continuity",
+      "target": "legacy_run:2026-07-17-multilingual-agent-memory-continuity",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-state-continuity",
+      "target": "legacy_run:2026-07-17-multilingual-agent-coordination",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-state-continuity",
+      "target": "legacy_run:2026-07-17-code-switched-speech-tool-grounding",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-state-continuity",
+      "target": "legacy_run:2026-07-17-multilingual-gui-locale-attribution",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "target": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-ASR-CODESWITCH-BENCH-2026",
+      "target": "evidence:SRC-ASR-CODESWITCH-BENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-ASR-CODESWITCH-BENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CODESWITCH-LLM-REASONING-2026",
+      "target": "evidence:SRC-CODESWITCH-LLM-REASONING-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-CODESWITCH-LLM-REASONING-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-COMMONAMIGOS-2020",
+      "target": "evidence:SRC-COMMONAMIGOS-2020",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-COMMONAMIGOS-2020",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-CS-IR-2026",
+      "target": "evidence:SRC-CS-IR-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-CS-IR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-FORGETEVAL-2026",
+      "target": "evidence:SRC-FORGETEVAL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-FORGETEVAL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "target": "evidence:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-GROUPMEMBENCH-2026",
+      "target": "evidence:SRC-GROUPMEMBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-GROUPMEMBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-GUICEVAL-CVPR-2026",
+      "target": "evidence:SRC-GUICEVAL-CVPR-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-GUICEVAL-CVPR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HINDSIGHT-2026",
+      "target": "evidence:SRC-HINDSIGHT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-HINDSIGHT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LLM-SOCIETIES-2026",
+      "target": "evidence:SRC-LLM-SOCIETIES-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-LLM-SOCIETIES-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "target": "evidence:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MACOSWORLD-NEURIPS-2025",
+      "target": "evidence:SRC-MACOSWORLD-NEURIPS-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MACOSWORLD-NEURIPS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MARBLE-REPO-2025",
+      "target": "evidence:SRC-MARBLE-REPO-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MARBLE-REPO-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MEM2ACTBENCH-2026",
+      "target": "evidence:SRC-MEM2ACTBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MEM2ACTBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLCL-2026",
+      "target": "evidence:SRC-MLCL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MPRGUI-ACL-2026",
+      "target": "evidence:SRC-MPRGUI-ACL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MPRGUI-ACL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "target": "evidence:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "target": "evidence:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "target": "evidence:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "target": "evidence:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTIAGENTBENCH-2025",
+      "target": "evidence:SRC-MULTIAGENTBENCH-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-MULTIAGENTBENCH-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-OLA-CODESWITCH-2026",
+      "target": "evidence:SRC-OLA-CODESWITCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-OLA-CODESWITCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-POLYWORKBENCH-2026",
+      "target": "evidence:SRC-POLYWORKBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-POLYWORKBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-PRESTO-EMNLP-2023",
+      "target": "evidence:SRC-PRESTO-EMNLP-2023",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-PRESTO-EMNLP-2023",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-PRESTO-REPOSITORY-2026",
+      "target": "evidence:SRC-PRESTO-REPOSITORY-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-PRESTO-REPOSITORY-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SEATAUBENCH-2026",
+      "target": "evidence:SRC-SEATAUBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-SEATAUBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-VOICEAGENTBENCH-2025",
+      "target": "evidence:SRC-VOICEAGENTBENCH-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-VOICEAGENTBENCH-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-XBCP-2026",
+      "target": "evidence:SRC-XBCP-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-XBCP-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-XRAG-2025",
+      "target": "evidence:SRC-XRAG-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-XRAG-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-XWEBAGENTBENCH-ACL-2025",
+      "target": "evidence:SRC-XWEBAGENTBENCH-ACL-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "target": "paper:SRC-XWEBAGENTBENCH-ACL-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-state-continuity",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "target": "artifact:sha256:b6ae834dfddded7981cd37311af30b90bd3851183ab1ad46207666c285fb88f5",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-state-continuity",
+      "target": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-01",
+      "target": "artifact:sha256:528dbcdc8fb15e18591997912660759d310b2aa208dea2318f5ac4e4b252f977",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-state-continuity",
+      "target": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-SOURCE-INVENTORY",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-SOURCE-INVENTORY",
+      "target": "artifact:sha256:e3c560faededf3445dd97f79c78d3631eefb6934f1ff5e7a0d6bff2523e294cf",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "08e269426e82664d",
+        "archived_at": "2026-07-18T19:12:43.275711+00:00",
+        "path": "history/projections/08e269426e82664d.json",
+        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      },
+      {
+        "id": "89c865a0cb907e58",
+        "archived_at": "2026-07-18T19:20:56.326252+00:00",
+        "path": "history/projections/89c865a0cb907e58.json",
+        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+        "node_count": 12,
+        "edge_count": 14
+      }
+    ],
+    "previous_projection": "89c865a0cb907e58"
+  }
+}

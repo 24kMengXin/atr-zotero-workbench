@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "knowledge-map",
+  "map_id": "KM-multilingual-agent-authorization-safety.draft-v1",
+  "topic": "multilingual-agent-authorization-safety",
+  "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+  "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "sources": [
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "url": "https://arxiv.org/abs/2310.00905",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-LINGUASAFE-2025",
+      "title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+      "url": "https://arxiv.org/abs/2508.12733",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-MLBENCHGUARD-2026",
+      "title": "ML-Bench&Guard: Policy-Grounded Multilingual Safety Benchmark and Guardrail for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.00689",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "url": "https://arxiv.org/abs/2607.10059",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-AGENTIC-ABSTENTION-2026",
+      "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+      "url": "https://arxiv.org/abs/2606.28733",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "source_id": "SRC-TOOLSAFE-2026",
+      "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback",
+      "url": "https://aclanthology.org/2026.findings-acl.1850/",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Candidate source for this concept scaffold; content-level support remains unverified.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "authorization-safety",
+      "label": "Multilingual agent authorization safety",
+      "parent_id": null,
+      "definition": "A verification frame for whether an agent acts only within a user's authorized intent across languages and adversarial context.",
+      "source_ids": [
+        "SRC-XSafety-2024",
+        "SRC-LINGUASAFE-2025",
+        "SRC-MLBENCHGUARD-2026",
+        "SRC-AGENTABSTAIN-2026",
+        "SRC-AGENTIC-ABSTENTION-2026",
+        "SRC-TOOLSAFE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "intent-and-authority",
+      "label": "Intent and authority",
+      "parent_id": "authorization-safety",
+      "definition": "The requested goal and the permissions, ownership, and scope that make an action authorized or unauthorized.",
+      "source_ids": [
+        "SRC-XSafety-2024",
+        "SRC-LINGUASAFE-2025",
+        "SRC-MLBENCHGUARD-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "ambiguity-and-clarification",
+      "label": "Ambiguity and clarification",
+      "parent_id": "authorization-safety",
+      "definition": "Detection of underspecified authority and the decision to ask, abstain, or continue.",
+      "source_ids": [
+        "SRC-AGENTABSTAIN-2026",
+        "SRC-AGENTIC-ABSTENTION-2026",
+        "SRC-TOOLSAFE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "indirect-instruction",
+      "label": "Indirect and injected instruction",
+      "parent_id": "authorization-safety",
+      "definition": "Untrusted content that competes with user authority through retrieved pages, messages, or tool observations.",
+      "source_ids": [
+        "SRC-XSafety-2024",
+        "SRC-LINGUASAFE-2025",
+        "SRC-MLBENCHGUARD-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "policy-grounding",
+      "label": "Policy-grounded guardrails",
+      "parent_id": "authorization-safety",
+      "definition": "Mechanisms that bind action decisions to explicit policy rather than surface-language heuristics.",
+      "source_ids": [
+        "SRC-AGENTABSTAIN-2026",
+        "SRC-AGENTIC-ABSTENTION-2026",
+        "SRC-TOOLSAFE-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "trajectory-safety",
+      "label": "Trajectory-level safety",
+      "parent_id": "authorization-safety",
+      "definition": "Evaluation of authorization and compromise across multi-step tool traces rather than isolated responses.",
+      "source_ids": [
+        "SRC-XSafety-2024",
+        "SRC-LINGUASAFE-2025",
+        "SRC-MLBENCHGUARD-2026"
+      ],
+      "review_status": "AUTHORIAL_SCAFFOLD_PENDING_SOURCE_INSPECTION",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

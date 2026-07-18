@@ -1,0 +1,379 @@
+[
+  {
+    "id": "SRC-AGENT-SKILLS-SURVEY-2026",
+    "type": "webpage",
+    "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+    "URL": "https://arxiv.org/abs/2602.12430",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENT-SKILLS-SURVEY-2026",
+      "atr-source-kind:PRIMARY_SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENT-SKILLS-SURVEY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTBEATS-2026",
+    "type": "article-journal",
+    "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+    "URL": "https://arxiv.org/abs/2606.13608",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTBEATS-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTBEATS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTLAB-REPRO-2026",
+    "type": "webpage",
+    "title": "AgentLab reproducibility documentation",
+    "URL": "https://github.com/ServiceNow/AgentLab",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTLAB-REPRO-2026",
+      "atr-source-kind:OFFICIAL_OPEN_SOURCE_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENTLAB-REPRO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTSKILLS-RFC-2026",
+    "type": "webpage",
+    "title": "Skill Package Manifest for Dependency Resolution and Distribution",
+    "URL": "https://github.com/agentskills/agentskills/discussions/210",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTSKILLS-RFC-2026",
+      "atr-source-kind:MAINTAINER_RFC",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENTSKILLS-RFC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BFCL-2026",
+    "type": "article-journal",
+    "title": "Berkeley Function Calling Leaderboard V4",
+    "URL": "https://gorilla.cs.berkeley.edu/leaderboard",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BFCL-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-BFCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CAR-2026",
+    "type": "article-journal",
+    "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+    "URL": "https://arxiv.org/abs/2606.08275",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CAR-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CAR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLAW-SWE-BENCH-2026",
+    "type": "article-journal",
+    "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+    "URL": "https://arxiv.org/abs/2606.12344",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLAW-SWE-BENCH-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CLAW-SWE-BENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CLAWBENCH-DRIFT-2026",
+    "type": "webpage",
+    "title": "ClawBench reproducibility-first benchmark release",
+    "URL": "https://github.com/openclaw/clawbench",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CLAWBENCH-DRIFT-2026",
+      "atr-source-kind:TECHNICAL_COMMUNITY_RELEASE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-CLAWBENCH-DRIFT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CODING-BENCH-HARNESS-POSITION-2026",
+    "type": "article-journal",
+    "title": "Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering",
+    "URL": "https://arxiv.org/abs/2606.17799",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "atr-source-kind:POSITION_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CODING-BENCH-HARNESS-POSITION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DRIFTROBUSTNESS-IEEE-2026",
+    "type": "webpage",
+    "title": "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift",
+    "URL": "https://doi.org/10.1109/ACCESS.2026.3696096",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "atr-source-kind:PEER_REVIEWED_ARTICLE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-DRIFTROBUSTNESS-IEEE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HERMES-CAPABILITY-2026",
+    "type": "webpage",
+    "title": "Allow manual capability declaration in custom providers",
+    "URL": "https://github.com/NousResearch/hermes-agent/issues/8731",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HERMES-CAPABILITY-2026",
+      "atr-source-kind:FIELD_ISSUE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-HERMES-CAPABILITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-AGENTBENCH-2026",
+    "type": "article-journal",
+    "title": "MCP-AgentBench",
+    "URL": "https://ojs.aaai.org/index.php/AAAI/article/view/40347",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-AGENTBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCP-AGENTBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-DESCRIPTION-SMELLS-2026",
+    "type": "article-journal",
+    "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly!",
+    "URL": "https://arxiv.org/abs/2602.14878",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCP-DESCRIPTION-SMELLS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-SPEC-2026",
+    "type": "webpage",
+    "title": "Model Context Protocol lifecycle and capability negotiation",
+    "URL": "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-SPEC-2026",
+      "atr-source-kind:PRIMARY_STANDARD",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MCP-SPEC-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCP-UNIVERSE-2026",
+    "type": "article-journal",
+    "title": "MCP-Universe",
+    "URL": "https://mcp-universe.github.io/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCP-UNIVERSE-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCP-UNIVERSE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLEBENCH-VERSION-2026",
+    "type": "article-journal",
+    "title": "MLE-bench repository and known-issues policy",
+    "URL": "https://github.com/openai/mle-bench",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLEBENCH-VERSION-2026",
+      "atr-source-kind:OFFICIAL_BENCHMARK_CHANGELOG",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLEBENCH-VERSION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTISWEBENCH-NEURIPS-2025",
+    "type": "article-journal",
+    "title": "Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving",
+    "URL": "https://papers.neurips.cc/paper_files/paper/2025/hash/5afa9cb1e917b898ad418216dc726fbd-Abstract-Datasets_and_Benchmarks_Track.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTISWEBENCH-NEURIPS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTISWEBENCH-NEURIPS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTISWEBENCH-REPOSITORY-2026",
+    "type": "webpage",
+    "title": "multi-swe-bench/multi-swe-bench",
+    "URL": "https://github.com/multi-swe-bench/multi-swe-bench",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "atr-source-kind:PUBLIC_REPOSITORY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTISWEBENCH-REPOSITORY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OPENCLAW-CAPABILITY-2026",
+    "type": "webpage",
+    "title": "Custom OpenAI-compatible providers don't send tools parameter for function calling",
+    "URL": "https://github.com/openclaw/openclaw/issues/8923",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OPENCLAW-CAPABILITY-2026",
+      "atr-source-kind:FIELD_ISSUE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-OPENCLAW-CAPABILITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OPENCLAW-SKILLFILTER-2026",
+    "type": "webpage",
+    "title": "Agent-level skills filters do not constrain injected skills prompt",
+    "URL": "https://github.com/openclaw/openclaw/issues/47019",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OPENCLAW-SKILLFILTER-2026",
+      "atr-source-kind:REPRODUCIBLE_COMMUNITY_ISSUE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-OPENCLAW-SKILLFILTER-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PAEF-2026",
+    "type": "article-journal",
+    "title": "Evaluating Agentic AI in the Wild: Failure Modes, Drift Patterns, and a Production Evaluation Framework",
+    "URL": "https://arxiv.org/abs/2605.01604",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PAEF-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PAEF-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RELIABILITYBENCH-2026",
+    "type": "article-journal",
+    "title": "ReliabilityBench: A Stress Benchmark for Reliable LLM Agents",
+    "URL": "https://arxiv.org/abs/2601.06112",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RELIABILITYBENCH-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RELIABILITYBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SKILLGUARD-2026",
+    "type": "article-journal",
+    "title": "SkillGuard: A Permission Framework for Agent Skills",
+    "URL": "https://arxiv.org/abs/2606.03024",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SKILLGUARD-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SKILLGUARD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SKILLINJECT-2026",
+    "type": "article-journal",
+    "title": "Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks",
+    "URL": "https://arxiv.org/abs/2602.20156",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SKILLINJECT-2026",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SKILLINJECT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SWEBENCH-MULTILINGUAL-2026",
+    "type": "article-journal",
+    "title": "SWE-bench Multilingual",
+    "URL": "https://www.swebench.com/multilingual.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SWEBENCH-MULTILINGUAL-2026",
+      "atr-source-kind:PUBLIC_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SWEBENCH-MULTILINGUAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SWEBENCH-QUICKSTART-2026",
+    "type": "webpage",
+    "title": "SWE-bench quickstart and multilingual dataset access",
+    "URL": "https://github.com/SWE-bench/SWE-bench/blob/main/docs/guides/quickstart.md",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SWEBENCH-QUICKSTART-2026",
+      "atr-source-kind:OFFICIAL_REPOSITORY_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-SWEBENCH-QUICKSTART-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-VIGIL-2026",
+    "type": "article-journal",
+    "title": "VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills",
+    "URL": "https://arxiv.org/abs/2606.26524",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-VIGIL-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-VIGIL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HARNESS-BENCH-2026",
+    "type": "webpage",
+    "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+    "URL": "https://arxiv.org/abs/2605.27922",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HARNESS-BENCH-2026",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-HARNESS-BENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTEVAL-2026",
+    "type": "webpage",
+    "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+    "URL": "https://arxiv.org/abs/2604.23581",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTEVAL-2026",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AGENTEVAL-2026\nEvidence boundary recorded in reading card."
+  }
+]

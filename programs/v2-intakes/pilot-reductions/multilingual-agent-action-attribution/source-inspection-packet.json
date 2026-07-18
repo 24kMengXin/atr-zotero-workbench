@@ -1,0 +1,71 @@
+{
+  "artifact_type": "source-inspection-packet",
+  "schema_version": "1.0",
+  "packet_id": "ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-SRC-001.v1",
+  "program_key": "multilingual-agent-action-attribution",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_status": "REVIEW_ONLY_NOT_A_GATE_VERDICT",
+  "sources": [
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "pdf_url": "https://aclanthology.org/2026.acl-long.2039.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "RESOLVED_BY_INSPECTED_ACL_PDF_TITLE",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "Correct intent and tool selection can still yield non-executable calls when parameter values use the user's language rather than the interface convention."
+        },
+        {
+          "locator": "p. 8",
+          "observation": "Execution-interface violations dominate for some languages; translation mitigations help but introduce semantic drift and do not recover English performance."
+        },
+        {
+          "locator": "p. 9, Limitations",
+          "observation": "The study is single-turn, uses three languages and an English-parameter interface, and treats mitigations as diagnostic probes."
+        }
+      ],
+      "supports": "A controlled distinction between semantic tool selection and language-interface execution failure.",
+      "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+    },
+    {
+      "source_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "pdf_url": "https://aclanthology.org/2025.findings-emnlp.1099.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "RESOLVED_BY_INSPECTED_ACL_PDF_TITLE",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "The benchmark transforms parallel multilingual utterances into function-calling tasks across 52 languages and reports low average AST accuracy with severe low-resource failures."
+        },
+        {
+          "locator": "pp. 7-10",
+          "observation": "Results depend on language, model, prompting template, translated descriptions, filtering, and AST/function-selection metrics."
+        }
+      ],
+      "supports": "Broad multilingual function-calling coverage and evidence of large cross-language performance variation.",
+      "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+    }
+  ],
+  "controller_boundary": "Inspection repairs source identity and locator gaps only. Repository cache, Zotero attachment, and Zotero snapshot remain separate states. Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

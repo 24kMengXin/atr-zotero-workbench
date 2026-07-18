@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-intake",
+  "program_key": "atr-research-governance",
+  "label": "ATR 自身的证据与路线治理",
+  "root_question": "自主研究系统如何以碰撞、资产失败与证据边界决定停放、重构或继续，而非把文献覆盖不足误当作新颖性？",
+  "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+  "language_axis_binding_required": false,
+  "historical_alignment_audit": "sha256:bee85cc7e1b2bd8355b466270f0bd51a6f0cd763e5605f64fd75f048bf85f7bd",
+  "initial_state": "INTAKE",
+  "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+  "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict."
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "change_id": "HCH-knowledge-map-located-review-status-v1",
+  "scope": "ATR v2 knowledge-map artifacts consumed by human reading and Zotero concept navigation.",
+  "observed_failure": "Six metadata-only knowledge scaffolds passed through the historical alignment and appeared as 36 concept nodes, but the v2 contract required only source_ids. It could not say which located span defined, distinguished, challenged, or merely limited a concept, so a provisional reading outline could visually resemble source-reviewed knowledge.",
+  "evidence_refs": [
+    "programs/v2-intakes/r0-scaffolds",
+    "programs/v2-intakes/pilot-reductions",
+    "programs/v2-intakes/source-reviewed-knowledge",
+    "docs/goal-completion-audit.md"
+  ],
+  "counterevidence": [
+    "Legacy schema 1.0 maps remain useful as explicit authorial reading scaffolds when their pending status is visible.",
+    "A located span and a review-status label still do not certify field consensus or the correctness of the worker's interpretation."
+  ],
+  "proposed_mechanism": "Keep schema 1.0 readable for immutable history and require new schema 1.1 maps to declare a bounded map/concept review status, source inspection state, located source inspection spans, and per-concept DEFINES/DISTINGUISHES/EXEMPLIFIES/CHALLENGES/LIMITS/CANDIDATE_ONLY evidence spans. Preserve the prior map as a historical version in Zotero.",
+  "decision_node": "KNOWLEDGE_MAP_SOURCE_REVIEW_AND_HUMAN_READING_HANDOFF",
+  "domain_boundary": {
+    "core_or_binding": "CORE",
+    "why_not_domain_specific": "Any research direction can confuse a citation list with a source-reviewed definition; the six multilingual programs supplied the first full portfolio-scale replay."
+  },
+  "evaluation": {
+    "mode": "SHADOW",
+    "sample": "All 36 concepts in the six current multilingual child authorities plus the next two independently authored knowledge maps.",
+    "route_level_metrics": [
+      "number of concepts that change from apparent source grounding to explicit pending/challenged status",
+      "number of Zotero concept Notes from which a reviewer can reach the cited source and locator",
+      "number of human annotations that qualify or challenge one exact concept rather than the whole topic",
+      "reviewer disagreement about whether a definition was actually checked against full text"
+    ],
+    "rollback_rule": "Relax mandatory 1.1 fields to a warning if two independent map authors cannot provide honest located spans without inventing evidence, while retaining explicit pending status and legacy compatibility."
+  },
+  "disposition": "SHADOW",
+  "does_not_establish": "A schema-valid located map does not establish consensus, universality, causal hierarchy, novelty, human comprehension, a route decision, or a lifecycle transition.",
+  "created_at": "2026-07-19T16:30:00+08:00",
+  "review_by": "2026-08-19T16:30:00+08:00"
+}

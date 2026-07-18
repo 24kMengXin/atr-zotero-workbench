@@ -1,0 +1,61 @@
+{
+  "artifact_type": "source-acquisition-handoff",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-AGENT-STATE-CONTINUITY-R0-SRC-002.v1",
+  "program_key": "multilingual-agent-state-continuity",
+  "input_collision_review_id": "ARH-MULTILINGUAL-STATE-CONTINUITY-R0-COL-001.v1",
+  "sources": [
+    {
+      "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+      "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+      "url": "https://aclanthology.org/2025.findings-acl.1249/",
+      "pdf_url": "https://aclanthology.org/2025.findings-acl.1249.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/stateful-tool-use.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2025.findings-acl.1249"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "multi",
+            "rethinking",
+            "stateful",
+            "tool",
+            "turn",
+            "use"
+          ],
+          "expected_token_count": 8
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "EXPLICIT_PDF_URL",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 9",
+          "observation": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+          "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+        }
+      ],
+      "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+    }
+  ],
+  "handoff_policy": "Zotero may create a stored child attachment only after an explicit human read action; runtime item/attachment keys remain outside this immutable artifact.",
+  "does_not_authorize": "Identity and byte verification do not establish cited-version equivalence, human inspection, claim support, novelty, a route, or a lifecycle transition."
+}

@@ -1,0 +1,306 @@
+{
+  "artifact_type": "knowledge-map",
+  "schema_version": "1.1",
+  "map_id": "KM-multilingual-agent-state-continuity.draft-v1",
+  "topic": "multilingual-agent-state-continuity",
+  "scope": "A versioned learning hierarchy upgraded only where located worker-inspected spans support, limit, or challenge a bounded definition.",
+  "created_at": "2026-07-19T16:00:00+08:00",
+  "map_review_status": "PARTIALLY_SOURCE_REVIEWED",
+  "does_not_establish": "This map is a reading aid, not a universal ontology, field consensus, novelty certificate, causal hierarchy, human inspection record, route decision, or lifecycle transition.",
+  "sources": [
+    {
+      "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "title": "Multilingual agents — Dialogflow CX",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "observed_at": "2026-07-19",
+      "supports": "A production distinction between shared agent state and language-specific/control-plane data with documented switching limits.",
+      "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "Language-specific data, lines 377-420",
+          "observation": "Most agent data is shared, while training phrases, fulfillment responses, and entity entries must be supplied per language; generated translations require review.",
+          "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+        },
+        {
+          "locator": "Language auto detection, lines 492-516",
+          "observation": "Automatic switching cannot distinguish some locale variants and text integrations use only the default language.",
+          "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "pdf_url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "An inspectable persistent-memory architecture and an explicit English-only evidence boundary.",
+      "does_not_establish": "Multilingual state continuity or language-switch behavior.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "HINDSIGHT separates facts, beliefs, and observations in persistent memory with parallel retrieval and temporal organization.",
+          "does_not_establish": "Multilingual state continuity or language-switch behavior."
+        },
+        {
+          "locator": "p. 8, Limitations",
+          "observation": "Evaluation is English-only; extraction errors can propagate and opinion evolution lacks formal user validation.",
+          "does_not_establish": "Multilingual state continuity or language-switch behavior."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "title": "Design effective language understanding — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "observed_at": "2026-07-19",
+      "supports": "A production language control plane that can reroute search, response, and orchestration independently of remembered task facts.",
+      "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "Localization and languages, lines 103-120",
+          "observation": "System.User.Language is the central control point for knowledge search and response language and can be set, overridden, or automatically detected.",
+          "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection."
+        },
+        {
+          "locator": "Best practices/challenges, lines 129-143",
+          "observation": "Critical content may require custom translation; multilingual deployments require synchronization, testing, fallback, and monitoring.",
+          "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2607.06008",
+      "pdf_url": "https://arxiv.org/pdf/2607.06008",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "supports": "A multilingual long-horizon workflow benchmark and evidence that errors compound across execution steps.",
+      "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "The benchmark embeds multilingual inputs, intermediate reasoning, tools, and outputs in 67 long-horizon tasks across five domains.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        },
+        {
+          "locator": "p. 8",
+          "observation": "Strict arithmetic or schema errors can invalidate entire workflows, so aggregate Pass@1 can misrepresent reliability.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        },
+        {
+          "locator": "p. 10",
+          "observation": "Results vary across task domains and languages; the benchmark plans to expand rather than establishing a universal workflow distribution.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+      "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+      "url": "https://aclanthology.org/2025.findings-acl.1249/",
+      "pdf_url": "https://aclanthology.org/2025.findings-acl.1249.pdf",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "EXPLICIT_PDF_URL",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 9",
+          "observation": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+          "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+        }
+      ],
+      "supports": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+      "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "state-continuity",
+      "label": "Multilingual agent state continuity",
+      "parent_id": null,
+      "definition": "A verification frame for preserving and correctly using task-relevant state across language changes and long horizons.",
+      "source_ids": [
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-STATEFUL-TOOL-USE-2025"
+      ],
+      "review_status": "CHALLENGED_BY_COLLISION_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-POLYWORKBENCH-2026",
+          "locator": "p. 1",
+          "relation": "EXEMPLIFIES",
+          "observation": "The benchmark embeds multilingual inputs, intermediate reasoning, tools, and outputs in 67 long-horizon tasks across five domains.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        },
+        {
+          "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+          "locator": "pp. 1-2, 9",
+          "relation": "CHALLENGES",
+          "observation": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+          "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "state-encoding",
+      "label": "State encoding",
+      "parent_id": "state-continuity",
+      "definition": "How entities, commitments, constraints, and prior outcomes are represented for later use.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HINDSIGHT-2026",
+          "locator": "p. 1",
+          "relation": "DEFINES",
+          "observation": "HINDSIGHT separates facts, beliefs, and observations in persistent memory with parallel retrieval and temporal organization.",
+          "does_not_establish": "Multilingual state continuity or language-switch behavior."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "memory-storage",
+      "label": "Memory storage",
+      "parent_id": "state-continuity",
+      "definition": "The persistence layer and write policy that retain selected state across turns or sessions.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HINDSIGHT-2026",
+          "locator": "p. 1",
+          "relation": "DEFINES",
+          "observation": "HINDSIGHT separates facts, beliefs, and observations in persistent memory with parallel retrieval and temporal organization.",
+          "does_not_establish": "Multilingual state continuity or language-switch behavior."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "crosslingual-retrieval",
+      "label": "Cross-lingual retrieval",
+      "parent_id": "state-continuity",
+      "definition": "Recovery of relevant stored state when the later query uses another language or mixed language.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026"
+      ],
+      "review_status": "PENDING_ADDITIONAL_SOURCE_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-HINDSIGHT-2026",
+          "locator": "p. 8, Limitations",
+          "relation": "LIMITS",
+          "observation": "The inspected memory architecture is evaluated only in English and therefore does not establish cross-lingual retrieval.",
+          "does_not_establish": "Multilingual state continuity or language-switch behavior."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "language-control-plane",
+      "label": "Language control plane",
+      "parent_id": "state-continuity",
+      "definition": "System rules that detect, pin, or switch language independently of semantic memory.",
+      "source_ids": [
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+          "locator": "Localization and languages, lines 103-120",
+          "relation": "DEFINES",
+          "observation": "System.User.Language is the central control point for knowledge search and response language and can be set, overridden, or automatically detected.",
+          "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection."
+        },
+        {
+          "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+          "locator": "Language-specific data, lines 377-420",
+          "relation": "DISTINGUISHES",
+          "observation": "Most agent data is shared, while training phrases, fulfillment responses, and entity entries must be supplied per language; generated translations require review.",
+          "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+        },
+        {
+          "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+          "locator": "Language auto detection, lines 492-516",
+          "relation": "LIMITS",
+          "observation": "Automatic switching cannot distinguish some locale variants and text integrations use only the default language.",
+          "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "long-horizon-evaluation",
+      "label": "Long-horizon continuity evaluation",
+      "parent_id": "state-continuity",
+      "definition": "Evaluation that distinguishes state loss, retrieval failure, policy switching, and output-language mismatch over time.",
+      "source_ids": [
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-STATEFUL-TOOL-USE-2025"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-POLYWORKBENCH-2026",
+          "locator": "p. 1",
+          "relation": "EXEMPLIFIES",
+          "observation": "The benchmark embeds multilingual inputs, intermediate reasoning, tools, and outputs in 67 long-horizon tasks across five domains.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        },
+        {
+          "source_id": "SRC-POLYWORKBENCH-2026",
+          "locator": "p. 8",
+          "relation": "LIMITS",
+          "observation": "Strict arithmetic or schema errors can invalidate entire workflows, so aggregate Pass@1 can misrepresent reliability.",
+          "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+        },
+        {
+          "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+          "locator": "pp. 1-2, 9",
+          "relation": "LIMITS",
+          "observation": "Directly studies the full stateful tool-use lifecycle across multiple turns, but excludes agent-framework effects and does not isolate a language-control plane.",
+          "does_not_establish": "Whether a language switch loses task memory or merely changes retrieval, locale assets, routing, or judging."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

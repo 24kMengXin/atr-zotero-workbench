@@ -7,3 +7,8 @@ pref("extensions.atr-zotero-workbench.devSmokeTestOnStartup", false);
 pref("extensions.atr-zotero-workbench.devSmokeFeedbackOnStartup", false);
 pref("extensions.atr-zotero-workbench.devSmokeReaderAnnotationOnStartup", false);
 pref("extensions.atr-zotero-workbench.devSmokePDFPath", "");
+pref("extensions.atr-zotero-workbench.dock.processOpen", false);
+pref("extensions.atr-zotero-workbench.dock.knowledgeOpen", false);
+pref("extensions.atr-zotero-workbench.dock.problemOpen", true);
+pref("extensions.atr-zotero-workbench.dock.detailOpen", true);
+pref("extensions.atr-zotero-workbench.companion.keepTop", true);

@@ -1,0 +1,405 @@
+[
+  {
+    "id": "SRC-ASR-CODESWITCH-BENCH-2026",
+    "type": "webpage",
+    "title": "ASR_Code_Switch",
+    "URL": "https://huggingface.co/datasets/Perle-ai/ASR_Code_Switch",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ASR-CODESWITCH-BENCH-2026",
+      "atr-source-kind:PUBLIC_DATASET",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ASR-CODESWITCH-BENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CODESWITCH-LLM-REASONING-2026",
+    "type": "article-journal",
+    "title": "Can Large Language Models Understand, Reason About, and Generate Code-Switched Text?",
+    "URL": "https://arxiv.org/abs/2601.07153",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CODESWITCH-LLM-REASONING-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CODESWITCH-LLM-REASONING-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMMONAMIGOS-2020",
+    "type": "article-journal",
+    "title": "What Code-Switching Strategies are Effective in Dialogue Systems?",
+    "URL": "https://aclanthology.org/2020.scil-1.32.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMMONAMIGOS-2020",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMMONAMIGOS-2020\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CS-IR-2026",
+    "type": "article-journal",
+    "title": "Code-Switching Information Retrieval",
+    "URL": "https://aclanthology.org/2026.acl-long.2162/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CS-IR-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CS-IR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FORGETEVAL-2026",
+    "type": "article-journal",
+    "title": "Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations",
+    "URL": "https://arxiv.org/abs/2606.15903",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FORGETEVAL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FORGETEVAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+    "type": "webpage",
+    "title": "Multilingual agents — Dialogflow CX",
+    "URL": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GROUPMEMBENCH-2026",
+    "type": "article-journal",
+    "title": "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations",
+    "URL": "https://www.microsoft.com/en-us/research/publication/groupmembench-benchmarking-llm-agent-memory-in-multi-party-conversations/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GROUPMEMBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GROUPMEMBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GUICEVAL-CVPR-2026",
+    "type": "article-journal",
+    "title": "GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents",
+    "URL": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_GUI-CEval_A_Hierarchical_and_Comprehensive_Chinese_Benchmark_for_Mobile_GUI_CVPR_2026_paper.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GUICEVAL-CVPR-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GUICEVAL-CVPR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HINDSIGHT-2026",
+    "type": "article-journal",
+    "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+    "URL": "https://aclanthology.org/2026.acl-demo.27.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HINDSIGHT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HINDSIGHT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-SOCIETIES-2026",
+    "type": "webpage",
+    "title": "Evolution of Cooperation in LLM Societies: A Multi-Lingual Examination",
+    "URL": "https://openreview.net/forum?id=QcYLAh3lYb",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-SOCIETIES-2026",
+      "atr-source-kind:PRIMARY_WORKSHOP",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLM-SOCIETIES-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LONG-HORIZON-MEMORY-HF-2026",
+    "type": "webpage",
+    "title": "Long-Horizon Agent-Memory Benchmark",
+    "URL": "https://huggingface.co/datasets/HieuNguyenDang/long-horizon-agent-memory",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LONG-HORIZON-MEMORY-HF-2026",
+      "atr-source-kind:PUBLIC_DATASET_CARD",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LONG-HORIZON-MEMORY-HF-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MACOSWORLD-NEURIPS-2025",
+    "type": "article-journal",
+    "title": "macOSWorld: A Multilingual Interactive Benchmark for GUI Agents",
+    "URL": "https://arxiv.org/abs/2506.04135",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MACOSWORLD-NEURIPS-2025",
+      "atr-source-kind:PRIMARY_PAPER_AND_PUBLIC_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MACOSWORLD-NEURIPS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MARBLE-REPO-2025",
+    "type": "webpage",
+    "title": "MARBLE: Multi-Agent Coordination Backbone with LLM Engine",
+    "URL": "https://github.com/ulab-uiuc/MARBLE",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MARBLE-REPO-2025",
+      "atr-source-kind:PRIMARY_CODE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MARBLE-REPO-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MEM2ACTBENCH-2026",
+    "type": "article-journal",
+    "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+    "URL": "https://aclanthology.org/2026.acl-long.370.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MEM2ACTBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MEM2ACTBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MLCL-2026",
+    "type": "article-journal",
+    "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+    "URL": "https://aclanthology.org/2026.acl-long.2039/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MLCL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MLCL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MPRGUI-ACL-2026",
+    "type": "article-journal",
+    "title": "MPR-GUI: Benchmarking and Enhancing Multilingual Perception and Reasoning in GUI Agents",
+    "URL": "https://arxiv.org/abs/2512.00756",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MPRGUI-ACL-2026",
+      "atr-source-kind:PRIMARY_PAPER_AND_PUBLIC_DATASET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MPRGUI-ACL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+    "type": "webpage",
+    "title": "Configure and create multilingual agents — Microsoft Copilot Studio",
+    "URL": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MS-COPILOT-DYNAMIC-SWITCH-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MS-COPILOT-DYNAMIC-SWITCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+    "type": "webpage",
+    "title": "Design effective language understanding — Microsoft Copilot Studio",
+    "URL": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MS-COPILOT-LANGUAGE-CONTROL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+    "type": "webpage",
+    "title": "Make Employee Self-Service agent multilingual",
+    "URL": "https://learn.microsoft.com/en-us/microsoft-365/copilot/employee-self-service/employee-self-service-multilingual",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MS-ESS-DYNAMIC-LANGUAGE-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MS-ESS-DYNAMIC-LANGUAGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+    "type": "webpage",
+    "title": "Application card for Microsoft Security Copilot agents",
+    "URL": "https://learn.microsoft.com/en-us/copilot/security/security-copilot-application-card-agents",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MS-SECURITY-COPILOT-MEMORY-2026",
+      "atr-source-kind:OFFICIAL_WORKFLOW_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MS-SECURITY-COPILOT-MEMORY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIAGENTBENCH-2025",
+    "type": "article-journal",
+    "title": "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents",
+    "URL": "https://aclanthology.org/2025.acl-long.421/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIAGENTBENCH-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTIAGENTBENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OLA-CODESWITCH-2026",
+    "type": "article-journal",
+    "title": "OLA: Output Language Alignment in Code-Switched LLM Interactions",
+    "URL": "https://arxiv.org/abs/2601.03589",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OLA-CODESWITCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-OLA-CODESWITCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-POLYWORKBENCH-2026",
+    "type": "article-journal",
+    "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+    "URL": "https://arxiv.org/abs/2607.06008",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-POLYWORKBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-POLYWORKBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PRESTO-EMNLP-2023",
+    "type": "article-journal",
+    "title": "PRESTO: A Multilingual Dataset for Parsing Realistic Task-Oriented Dialogs",
+    "URL": "https://aclanthology.org/2023.emnlp-main.667/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PRESTO-EMNLP-2023",
+      "atr-source-kind:PRIMARY_PAPER_AND_PUBLIC_DATASET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PRESTO-EMNLP-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PRESTO-REPOSITORY-2026",
+    "type": "webpage",
+    "title": "google-research-datasets/presto",
+    "URL": "https://github.com/google-research-datasets/presto",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PRESTO-REPOSITORY-2026",
+      "atr-source-kind:PUBLIC_REPOSITORY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-PRESTO-REPOSITORY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SEATAUBENCH-2026",
+    "type": "article-journal",
+    "title": "SEATauBench: Adapting Tool-Agent-User Evaluation Into Low-Resource Southeast Asian Languages",
+    "URL": "https://arxiv.org/abs/2606.28715",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SEATAUBENCH-2026",
+      "atr-source-kind:PRIMARY_PAPER_AND_PUBLIC_REPOSITORY",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SEATAUBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-VOICEAGENTBENCH-2025",
+    "type": "article-journal",
+    "title": "VoiceAgentBench: Are Voice Assistants ready for agentic tasks?",
+    "URL": "https://arxiv.org/abs/2510.07978",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-VOICEAGENTBENCH-2025",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-VOICEAGENTBENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XBCP-2026",
+    "type": "article-journal",
+    "title": "Beyond Monolingual Deep Research: Evaluating Agents and Retrievers with Cross-Lingual BrowseComp-Plus",
+    "URL": "https://arxiv.org/abs/2606.15345",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XBCP-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XBCP-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XRAG-2025",
+    "type": "article-journal",
+    "title": "XRAG: Cross-lingual Retrieval-Augmented Generation",
+    "URL": "https://arxiv.org/abs/2505.10089",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XRAG-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XRAG-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-XWEBAGENTBENCH-ACL-2025",
+    "type": "article-journal",
+    "title": "X-WebAgentBench: A Multilingual Interactive Web Benchmark for Evaluating Global Agentic System",
+    "URL": "https://aclanthology.org/2025.findings-acl.988/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-XWEBAGENTBENCH-ACL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-XWEBAGENTBENCH-ACL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-STATEFUL-TOOL-USE-2025",
+    "type": "webpage",
+    "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+    "URL": "https://aclanthology.org/2025.findings-acl.1249/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-STATEFUL-TOOL-USE-2025",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-STATEFUL-TOOL-USE-2025\nEvidence boundary recorded in reading card."
+  }
+]

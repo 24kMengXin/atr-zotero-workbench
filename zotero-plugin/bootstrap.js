@@ -1,4 +1,5 @@
 var ATRZoteroWorkbench;
+var chromeHandle;
 
 function install() {}
 
@@ -8,6 +9,14 @@ function install() {}
 async function startup({ id, version, resourceURI, rootURI }) {
   await Zotero.initializationPromise;
   if (!rootURI) rootURI = resourceURI.spec;
+
+  const aomStartup = Components.classes[
+    "@mozilla.org/addons/addon-manager-startup;1"
+  ].getService(Components.interfaces.amIAddonManagerStartup);
+  const manifestURI = Services.io.newURI(rootURI + "manifest.json");
+  chromeHandle = aomStartup.registerChrome(manifestURI, [
+    ["content", "atr-zotero-workbench", rootURI],
+  ]);
 
   const ctx = { Zotero, Services, IOUtils, PathUtils, Components, rootURI };
   ctx._globalThis = ctx;
@@ -27,6 +36,10 @@ async function onMainWindowUnload({ window }) {
 async function shutdown() {
   await ATRZoteroWorkbench?.hooks.onShutdown();
   ATRZoteroWorkbench = undefined;
+  if (chromeHandle) {
+    chromeHandle.destruct();
+    chromeHandle = undefined;
+  }
 }
 
 function uninstall() {}

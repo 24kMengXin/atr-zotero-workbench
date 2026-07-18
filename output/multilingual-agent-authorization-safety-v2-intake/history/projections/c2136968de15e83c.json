@@ -1,0 +1,367 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.739188+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.778255+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:multilingual-agent-authorization-safety",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:multilingual-agent-authorization-safety",
+      "kind": "atr_v2_subject",
+      "label": "program:multilingual-agent-authorization-safety",
+      "data": {
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.739065+00:00",
+        "updated_at": "2026-07-18T19:10:58.739159+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · 01e07eb24990",
+      "data": {
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "artifact_kind": "program-intake",
+        "digest": "01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:58.667948+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-authorization-safety/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-authorization-safety",
+      "kind": "research_program",
+      "label": "多语言 Agent 授权与安全边界",
+      "data": {
+        "program_key": "multilingual-agent-authorization-safety",
+        "root_question": "在多语言条件下，何时应行动、澄清或拒绝，以及安全失败究竟发生在解释、行动表征、授权边界还是适配过程？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": true,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c"
+      }
+    },
+    {
+      "id": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · da25986962e3",
+      "data": {
+        "artifact_id": "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:58.703233+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-authorization-safety/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-abstention-calibration",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-abstention-calibration",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-abstention-calibration",
+        "catalog_role": "行动/弃权校准",
+        "catalog_disposition": "canonical_decision_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-safety-boundary",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-safety-boundary",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-safety-boundary",
+        "catalog_role": "工具调用前的安全边界归因",
+        "catalog_disposition": "merge_as_guardrail_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-tool-output-injection",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-tool-output-injection",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-tool-output-injection",
+        "catalog_role": "间接工具输出注入的语言条件化授权混淆",
+        "catalog_disposition": "retain_as_security_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+        "source_count": 8,
+        "claim_count": 3,
+        "reusable": [
+          "source_ledger",
+          "claim_history"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-pragmatic-action-authorization",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-pragmatic-action-authorization",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-pragmatic-action-authorization",
+        "catalog_role": "语用线索下的澄清/行动契约",
+        "catalog_disposition": "merge_as_authorization_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-adaptation-safety",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-adaptation-safety",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-adaptation-safety",
+        "catalog_role": "语言适配后的安全保持",
+        "catalog_disposition": "merge_as_adaptation_boundary",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 15,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.739188+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "subject_version": 0,
+        "artifact_id": "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:58.778255+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "subject:program:multilingual-agent-authorization-safety",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "target": "research_program:multilingual-agent-authorization-safety",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "target": "research_program:multilingual-agent-authorization-safety",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-agent-abstention-calibration",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-agent-safety-boundary",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-tool-output-injection",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-pragmatic-action-authorization",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-adaptation-safety",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-authorization-safety",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-authorization-safety",
+      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "target": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "d0652695e318a912",
+        "archived_at": "2026-07-18T19:12:43.344582+00:00",
+        "path": "history/projections/d0652695e318a912.json",
+        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      }
+    ],
+    "previous_projection": "d0652695e318a912"
+  }
+}

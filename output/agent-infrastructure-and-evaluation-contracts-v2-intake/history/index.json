@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "2db10938f80fbd95",
+      "archived_at": "2026-07-18T19:12:43.463794+00:00",
+      "path": "history/projections/2db10938f80fbd95.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 6,
+      "edge_count": 7
+    },
+    {
+      "id": "f3939c164c2bc494",
+      "archived_at": "2026-07-18T19:20:56.547218+00:00",
+      "path": "history/projections/f3939c164c2bc494.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 12,
+      "edge_count": 14
+    },
+    {
+      "id": "16e2a07d785d8cbc",
+      "archived_at": "2026-07-18T19:53:40.654424+00:00",
+      "path": "history/projections/16e2a07d785d8cbc.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 68,
+      "edge_count": 71
+    },
+    {
+      "id": "497dd36408c8a179",
+      "archived_at": "2026-07-18T20:52:10.245800+00:00",
+      "path": "history/projections/497dd36408c8a179.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 84,
+      "edge_count": 123
+    },
+    {
+      "id": "8f295e49adb3524d",
+      "archived_at": "2026-07-18T21:16:46.064760+00:00",
+      "path": "history/projections/8f295e49adb3524d.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 95,
+      "edge_count": 157
+    },
+    {
+      "id": "18138cec0d31217d",
+      "archived_at": "2026-07-18T21:34:15.662353+00:00",
+      "path": "history/projections/18138cec0d31217d.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 102,
+      "edge_count": 166
+    },
+    {
+      "id": "0ee602668b1c22c2",
+      "archived_at": "2026-07-18T21:54:40.377248+00:00",
+      "path": "history/projections/0ee602668b1c22c2.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 104,
+      "edge_count": 171
+    },
+    {
+      "id": "9eb211b976881d4d",
+      "archived_at": "2026-07-18T21:57:04.367143+00:00",
+      "path": "history/projections/9eb211b976881d4d.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 104,
+      "edge_count": 171
+    },
+    {
+      "id": "46087f504669d890",
+      "archived_at": "2026-07-18T22:05:06.935817+00:00",
+      "path": "history/projections/46087f504669d890.json",
+      "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "node_count": 104,
+      "edge_count": 171
+    }
+  ]
+}

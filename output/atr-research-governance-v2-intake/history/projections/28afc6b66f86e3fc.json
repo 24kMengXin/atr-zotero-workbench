@@ -1,0 +1,2249 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-atr-research-governance-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:59.363725+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:59.397619+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:20:45.609407+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INVENTORY",
+      "label": "附件 · SOURCE_REVERIFICATION_QUEUE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:53.489166+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-01",
+      "label": "附件 · DRAFT_FKS_FRONTIER（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:53.588333+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-02",
+      "label": "附件 · DRAFT_KNOWLEDGE_SCAFFOLD（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:51:53.720393+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-03",
+      "label": "附件 · PENDING_TOPIC_ROUTE_REVIEW（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.839595+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INSPECTION",
+      "label": "附件 · FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.907762+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-OPPORTUNITY-DECISION",
+      "label": "附件 · R0_OPPORTUNITY_DECISION_REVIEW_ONLY（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c"
+      ]
+    },
+    {
+      "at": "2026-07-18T20:51:54.977311+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-DRAFT-PROBLEM-CASE",
+      "label": "附件 · DRAFT_PROBLEM_CASE_PENDING_REVIEW（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-atr-research-governance-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-atr-research-governance-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:atr-research-governance",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:atr-research-governance",
+      "kind": "atr_v2_subject",
+      "label": "program:atr-research-governance",
+      "data": {
+        "subject_id": "program:atr-research-governance",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:59.363614+00:00",
+        "updated_at": "2026-07-18T19:10:59.363700+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · 9a76c8162714",
+      "data": {
+        "artifact_id": "sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+        "artifact_kind": "program-intake",
+        "digest": "9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:59.296760+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/atr-research-governance/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:atr-research-governance",
+      "kind": "research_program",
+      "label": "ATR 自身的证据与路线治理",
+      "data": {
+        "program_key": "atr-research-governance",
+        "root_question": "自主研究系统如何以碰撞、资产失败与证据边界决定停放、重构或继续，而非把文献覆盖不足误当作新颖性？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": false,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51"
+      }
+    },
+    {
+      "id": "artifact:sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · 131c392473f3",
+      "data": {
+        "artifact_id": "sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:59.330035+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/atr-research-governance/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-epistemic-route-calibration",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-epistemic-route-calibration",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-epistemic-route-calibration",
+        "catalog_role": "覆盖失败与应停放 claim 的区分",
+        "catalog_disposition": "canonical_governance_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 7,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-evidence-conditioned-research-exploration",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-evidence-conditioned-research-exploration",
+        "catalog_role": "由碰撞/资产失败驱动的假设 pivot",
+        "catalog_disposition": "merge_as_governance_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 11,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "kind": "atr_v2_artifact",
+      "label": "program-source-inventory · 02b34c00774e",
+      "data": {
+        "artifact_id": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "artifact_kind": "program-source-inventory",
+        "digest": "02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "original_name": "program-source-inventory.json",
+        "created_at": "2026-07-18T19:20:45.573580+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/source-inventory/atr-research-governance/program-source-inventory.json",
+          "declared_scope": "metadata-only source re-verification queue"
+        },
+        "artifact_type": "program-source-inventory",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:NEG-LEGACY-CONSTRUCTION-2026",
+      "kind": "paper",
+      "label": "Capability-contract testbed construction audit",
+      "data": {
+        "source_id": "NEG-LEGACY-CONSTRUCTION-2026",
+        "doi": "",
+        "url": "CONSTRUCTION-ASSET-AUDIT.v1.md",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "NEGATIVE_MEMORY",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:NEG-LEGACY-CONSTRUCTION-2026",
+      "kind": "evidence_boundary",
+      "label": "NEG-LEGACY-CONSTRUCTION-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTABSTAIN-2026",
+      "kind": "paper",
+      "label": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "data": {
+        "source_id": "SRC-AGENTABSTAIN-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.10059",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-evidence-conditioned-research-exploration, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary, 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTABSTAIN-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTABSTAIN-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-evidence-conditioned-research-exploration, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary, 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-ARBOR-2026",
+      "kind": "paper",
+      "label": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "data": {
+        "source_id": "SRC-ARBOR-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.11926",
+        "pdf_url": "https://arxiv.org/pdf/2606.11926",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+        "inspection_spans": [
+          {
+            "locator": "p. 1",
+            "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks."
+          },
+          {
+            "locator": "pp. 14-17",
+            "observation": "Reported gains are measured on fixed task-native objectives and held-out evaluations; the operational setting removes step-level human supervision."
+          },
+          {
+            "locator": "pp. 22-23, Limitations/future work",
+            "observation": "The evidence concerns six optimization tasks and does not establish human learning or broad scientific validity."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+        "source_kind": "PRIMARY_SYSTEM",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-ARBOR-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-ARBOR-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "kind": "paper",
+      "label": "AutoResearchBench",
+      "data": {
+        "source_id": "SRC-AUTORESEARCHBENCH-2026--4da822e3",
+        "doi": "",
+        "url": "https://github.com/CherYou/AutoResearchBench",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "kind": "evidence_boundary",
+      "label": "SRC-AUTORESEARCHBENCH-2026--4da822e3 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "kind": "paper",
+      "label": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "data": {
+        "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2604.25256",
+        "pdf_url": "https://arxiv.org/pdf/2604.25256",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+        "inspection_spans": [
+          {
+            "locator": "p. 1",
+            "observation": "Deep and Wide Research tasks require full-text, multi-step, open-ended literature discovery; strong agents score below ten percent on the reported metrics."
+          },
+          {
+            "locator": "pp. 18-19",
+            "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop."
+          },
+          {
+            "locator": "pp. 21-22",
+            "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "kind": "evidence_boundary",
+      "label": "SRC-AUTORESEARCHBENCH-2026--6ca54095 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "kind": "paper",
+      "label": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+      "data": {
+        "source_id": "SRC-AUTORESEARCHCLAW-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.20025",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AUTORESEARCHCLAW-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AUTORESEARCHCLAW-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-FIREBENCH-2026",
+      "kind": "paper",
+      "label": "FIRE-Bench",
+      "data": {
+        "source_id": "SRC-FIREBENCH-2026",
+        "doi": "",
+        "url": "https://firebench.github.io/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "OFFICIAL_BENCHMARK_RELEASE",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-FIREBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-FIREBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-GRAPH2IDEA-2026",
+      "kind": "paper",
+      "label": "Graph2Idea: Retrieval-Augmented Scientific Idea Generation with Graph-Structured Contexts",
+      "data": {
+        "source_id": "SRC-GRAPH2IDEA-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.09105",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-GRAPH2IDEA-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-GRAPH2IDEA-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HARPA-2026",
+      "kind": "paper",
+      "label": "HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation",
+      "data": {
+        "source_id": "SRC-HARPA-2026",
+        "doi": "",
+        "url": "https://openreview.net/forum?id=zGr73fcSsB",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "OPENREVIEW_SUBMISSION",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HARPA-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HARPA-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HEP-2026",
+      "kind": "paper",
+      "label": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "data": {
+        "source_id": "SRC-HEP-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.09195",
+        "pdf_url": "https://arxiv.org/pdf/2607.09195",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "PDF",
+        "fulltext_state": "FULLTEXT_INSPECTED",
+        "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+        "inspection_spans": [
+          {
+            "locator": "pp. 1-2",
+            "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects."
+          },
+          {
+            "locator": "p. 12",
+            "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves."
+          },
+          {
+            "locator": "p. 13",
+            "observation": "Experiments use one autonomous materials-research agent without human input under a bounded setup."
+          }
+        ],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "NOT_ATTACHED",
+        "zotero_snapshot_state": "NOT_CAPTURED",
+        "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+        "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HEP-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HEP-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HEURESIS-2026",
+      "kind": "paper",
+      "label": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
+      "data": {
+        "source_id": "SRC-HEURESIS-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.25198",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HEURESIS-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HEURESIS-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HEURESIS-REPO-2026",
+      "kind": "paper",
+      "label": "Heuresis official framework repository",
+      "data": {
+        "source_id": "SRC-HEURESIS-REPO-2026",
+        "doi": "",
+        "url": "https://github.com/a-antoniades/Heuresis",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "OFFICIAL_OPEN_SOURCE_RELEASE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HEURESIS-REPO-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-HEURESIS-REPO-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-NARROW-EXPLORATION-2026",
+      "kind": "paper",
+      "label": "AI Research Agents Narrow Scientific Exploration",
+      "data": {
+        "source_id": "SRC-NARROW-EXPLORATION-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.27905",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-NARROW-EXPLORATION-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-NARROW-EXPLORATION-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-RESEARCHBENCH-2025",
+      "kind": "paper",
+      "label": "ResearchBench: Evaluating AI's Ability to Generate Research Ideas",
+      "data": {
+        "source_id": "SRC-RESEARCHBENCH-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2503.21248",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-epistemic-route-calibration, 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-RESEARCHBENCH-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-RESEARCHBENCH-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-epistemic-route-calibration, 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SAGE-2026",
+      "kind": "paper",
+      "label": "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
+      "data": {
+        "source_id": "SRC-SAGE-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.31478",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SAGE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SAGE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-evidence-conditioned-research-exploration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SCIENTISTONE-2026",
+      "kind": "paper",
+      "label": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
+      "data": {
+        "source_id": "SRC-SCIENTISTONE-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.26340",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_SYSTEM",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SCIENTISTONE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SCIENTISTONE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-SOUNDNESSBENCH-2026",
+      "kind": "paper",
+      "label": "SoundnessBench: Can Your AI Scientist Really Tell Good Research Ideas from Bad Ones?",
+      "data": {
+        "source_id": "SRC-SOUNDNESSBENCH-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.30329",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "content_form": "",
+        "fulltext_state": "",
+        "content_digest": "",
+        "inspection_spans": [],
+        "zotero_item_key": null,
+        "zotero_attachment_key": null,
+        "zotero_attachment_state": "",
+        "zotero_snapshot_state": "",
+        "local_cache_state": "",
+        "local_cache_path": "",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-SOUNDNESSBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-SOUNDNESSBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-epistemic-route-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "artifact:sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+      "kind": "atr_v2_artifact",
+      "label": "frontier-map · e4b531a71fbe",
+      "data": {
+        "artifact_id": "sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+        "artifact_kind": "frontier-map",
+        "digest": "e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+        "original_name": "frontier-map.json",
+        "created_at": "2026-07-18T19:51:53.422724+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/atr-research-governance/knowledge/frontier-map.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": null,
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_question:FT-governance-output-vs-process",
+      "kind": "research_question",
+      "label": "Should research-agent quality be judged by polished outputs or by an auditable process that preserves failed branches, source use, and decision reversals?",
+      "data": {
+        "tension_id": "FT-governance-output-vs-process",
+        "explanations": [
+          "End-product quality captures the practical value of the research agent.",
+          "Without process provenance, polished outputs can conceal source overreading, local recombination, or overwritten negative evidence."
+        ],
+        "dimensions": [
+          "output quality",
+          "process auditability",
+          "negative memory"
+        ],
+        "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+        "review_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366"
+      }
+    },
+    {
+      "id": "research_question:FT-governance-autonomy-vs-human-learning",
+      "kind": "research_question",
+      "label": "How should autonomous research progress be balanced against source-linked human reading that can revise the knowledge and problem structure?",
+      "data": {
+        "tension_id": "FT-governance-autonomy-vs-human-learning",
+        "explanations": [
+          "Greater autonomy and self-reinforcement increase useful research throughput.",
+          "Human-authored interpretation and explicit review boundaries are required to prevent fluent synthesis from replacing understanding and governance."
+        ],
+        "dimensions": [
+          "autonomy",
+          "human agency",
+          "review latency"
+        ],
+        "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+        "review_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366"
+      }
+    },
+    {
+      "id": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "kind": "atr_v2_artifact",
+      "label": "knowledge-map · 3b1f0372505d",
+      "data": {
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "artifact_kind": "knowledge-map",
+        "digest": "3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "original_name": "knowledge-map.json",
+        "created_at": "2026-07-18T19:51:53.536180+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/atr-research-governance/knowledge/knowledge-map.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": "knowledge-map",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "knowledge_map:KM-atr-research-governance.draft-v1",
+      "kind": "concept_map",
+      "label": "atr-research-governance",
+      "data": {
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "A top-down hierarchy of concepts to verify while reading; definitions are provisional organizing statements.",
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "kind": "knowledge_concept",
+      "label": "Agentic research governance",
+      "data": {
+        "concept_id": "research-governance",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "A verification frame for how AI-assisted research preserves evidence, alternatives, human judgment, and reversible route decisions.",
+        "source_ids": [
+          "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "SRC-ARBOR-2026",
+          "SRC-HEP-2026",
+          "SRC-AUTORESEARCHCLAW-2026",
+          "SRC-HARPA-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "kind": "knowledge_concept",
+      "label": "Evidence and provenance",
+      "data": {
+        "concept_id": "evidence-provenance",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "Stable identities and explicit edges connecting sources, claims, reviews, experiments, and decisions.",
+        "source_ids": [
+          "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "SRC-ARBOR-2026",
+          "SRC-HEP-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "kind": "knowledge_concept",
+      "label": "Hypothesis and seed portfolio",
+      "data": {
+        "concept_id": "hypothesis-portfolio",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "A persistent set of competing, parked, killed, and active directions rather than a single overwritten narrative.",
+        "source_ids": [
+          "SRC-AUTORESEARCHCLAW-2026",
+          "SRC-HARPA-2026",
+          "SRC-HEP-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "kind": "knowledge_concept",
+      "label": "Gate, route, and transition separation",
+      "data": {
+        "concept_id": "gate-route-transition",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "Separation between evidence predicates, the selected scientific route, and atomic lifecycle mutation.",
+        "source_ids": [
+          "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "SRC-ARBOR-2026",
+          "SRC-HEP-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "kind": "knowledge_concept",
+      "label": "Human reading and review",
+      "data": {
+        "concept_id": "human-review",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "Source-linked annotations and judgments that enter as review input without silently approving a claim.",
+        "source_ids": [
+          "SRC-AUTORESEARCHCLAW-2026",
+          "SRC-HARPA-2026",
+          "SRC-HEP-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "kind": "knowledge_concept",
+      "label": "Harness evaluation and system learning",
+      "data": {
+        "concept_id": "system-learning",
+        "map_id": "KM-atr-research-governance.draft-v1",
+        "definition": "Prospective comparison of process interventions, repeated failures, rollback conditions, and route-level effects.",
+        "source_ids": [
+          "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+          "SRC-ARBOR-2026",
+          "SRC-HEP-2026"
+        ],
+        "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+        "depth": null,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "artifact:sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+      "kind": "atr_v2_artifact",
+      "label": "topic-routing-package · c78bc74a1c62",
+      "data": {
+        "artifact_id": "sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+        "artifact_kind": "topic-routing-package",
+        "digest": "c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+        "original_name": "topic-routing-package.json",
+        "created_at": "2026-07-18T19:51:53.643770+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/r0-scaffolds/atr-research-governance/knowledge/topic-routing-package.json",
+          "declared_scope": "R0 draft context; no lifecycle authorization"
+        },
+        "artifact_type": null,
+        "projection_error": null
+      }
+    },
+    {
+      "id": "topic_route:TRP-atr-research-governance.draft-v1",
+      "kind": "topic_route_draft",
+      "label": "自主研究系统如何以碰撞、资产失败与证据边界决定停放、重构或继续，而非把文献覆盖不足误当作新颖性？",
+      "data": {
+        "package_id": "TRP-atr-research-governance.draft-v1",
+        "selected_track": "EMERGING_DIRECTION",
+        "next_stage": "R1_LANDSCAPE",
+        "rationale": "The inventory contains 17 canonical candidates, but none records inspected full text. The selected track is a proportional draft for verification and remains unauthorized until an independent reviewer reads the cited spans.",
+        "valid_until": "2026-08-19T00:00:00+08:00",
+        "review_status": "PENDING_INDEPENDENT_TOPIC_ROUTE_REVIEW",
+        "does_not_establish": "A structurally valid draft does not authorize a controller transition.",
+        "artifact_id": "sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20"
+      }
+    },
+    {
+      "id": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "kind": "atr_v2_artifact",
+      "label": "source-inspection-packet · 97177c0b78b5",
+      "data": {
+        "artifact_id": "sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+        "artifact_kind": "source-inspection-packet",
+        "digest": "97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+        "original_name": "source-inspection-packet.json",
+        "created_at": "2026-07-18T20:51:54.803700+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/atr-research-governance/source-inspection-packet.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "source-inspection-packet",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+      "kind": "atr_v2_artifact",
+      "label": "opportunity-decision · 756eae6b9381",
+      "data": {
+        "artifact_id": "sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+        "artifact_kind": "opportunity-decision",
+        "digest": "756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+        "original_name": "opportunity-decision.json",
+        "created_at": "2026-07-18T20:51:54.874098+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/atr-research-governance/opportunity-decision.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "opportunity-decision",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "artifact:sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+      "kind": "atr_v2_artifact",
+      "label": "problem-case · 4c7d61f83c29",
+      "data": {
+        "artifact_id": "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "artifact_kind": "problem-case",
+        "digest": "4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "original_name": "problem-case.json",
+        "created_at": "2026-07-18T20:51:54.942388+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/pilot-reductions/atr-research-governance/problem-case.json",
+          "declared_scope": "R0 source reduction; review-only; no lifecycle authorization"
+        },
+        "artifact_type": "problem-case",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "kind": "research_problem",
+      "label": "When does an auditable, branch-preserving research process improve scientific decisions and human learning beyond polished output quality, and when does it merely add process overhead?",
+      "data": {
+        "problem_id": "PC-auditable-research-process-human-learning.draft-v1",
+        "decision_owner": "Researchers and research-system designers deciding how much autonomy, auditability, and human source review to require.",
+        "worlds": [
+          "W1: Persistent hypotheses, evidence, failed branches, and decision reversals expose errors and improve later research decisions.",
+          "W2: Output/task quality is sufficient; extra process artifacts add documentation without changing decisions.",
+          "W3: Autonomous optimization improves task-native metrics while weakening human understanding or scientific validity outside the fixed evaluator."
+        ],
+        "discriminator": "Compare revision-pinned research tasks with equivalent sources and budgets under output-only versus branch/evidence-preserving protocols; independent reviewers must make blinded source-grounded decisions and humans must demonstrate source-linked understanding rather than preference ratings alone.",
+        "falsifier": "The auditable protocol does not change error detection, route decisions, source-grounded understanding, or held-out validity after controlling for time and artifact volume.",
+        "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+        "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+        "artifact_id": "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "kind": "derived_research_question",
+      "label": "Which preserved process object most often reverses an independent review decision: failed branch, source locator, evidence update, or route history?",
+      "data": {
+        "question_id": "DQ-GOV-1",
+        "status": "REVIEW_TASK",
+        "smallest_discriminator": "One blinded paired review over output-only and append-only process records with identical source access.",
+        "does_not_establish": "Long-term scientific impact.",
+        "parent_problem_id": "PC-auditable-research-process-human-learning.draft-v1",
+        "artifact_id": "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "kind": "derived_research_question",
+      "label": "Can a human reconstruct and challenge a research claim from source-linked notes without reading an AI-generated summary as authority?",
+      "data": {
+        "question_id": "DQ-GOV-2",
+        "status": "REVIEW_TASK",
+        "smallest_discriminator": "One claim with original PDF spans, native human notes, and a subsequent disagreement-driven route update.",
+        "does_not_establish": "Population-level learning benefit.",
+        "parent_problem_id": "PC-auditable-research-process-human-learning.draft-v1",
+        "artifact_id": "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "historical_version": false
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
+        "subject_id": "program:atr-research-governance",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:59.363725+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-01",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:59.397619+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INVENTORY",
+      "kind": "atr_v2_attachment",
+      "label": "SOURCE_REVERIFICATION_QUEUE · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INVENTORY",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+        "role": "SOURCE_REVERIFICATION_QUEUE",
+        "note": "Canonical bibliographic candidates; attachment and cited-span inspection remain pending.",
+        "created_at": "2026-07-18T19:20:45.609407+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-01",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_FKS_FRONTIER · v0",
+      "data": {
+        "seq": 3,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-01",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+        "role": "DRAFT_FKS_FRONTIER",
+        "note": "FKS frontier questions; metadata-only anchors pending Zotero full-text review.",
+        "created_at": "2026-07-18T19:51:53.489166+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-02",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_KNOWLEDGE_SCAFFOLD · v0",
+      "data": {
+        "seq": 4,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-02",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+        "role": "DRAFT_KNOWLEDGE_SCAFFOLD",
+        "note": "Top-down concept hierarchy for human source verification; not consensus.",
+        "created_at": "2026-07-18T19:51:53.588333+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-03",
+      "kind": "atr_v2_attachment",
+      "label": "PENDING_TOPIC_ROUTE_REVIEW · v0",
+      "data": {
+        "seq": 5,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-R0-03",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+        "role": "PENDING_TOPIC_ROUTE_REVIEW",
+        "note": "Structurally valid route draft; no transition before independent evidence review.",
+        "created_at": "2026-07-18T19:51:53.720393+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INSPECTION",
+      "kind": "atr_v2_attachment",
+      "label": "FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY · v0",
+      "data": {
+        "seq": 6,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INSPECTION",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+        "role": "FULLTEXT_SOURCE_INSPECTION_REVIEW_ONLY",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.839595+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-OPPORTUNITY-DECISION",
+      "kind": "atr_v2_attachment",
+      "label": "R0_OPPORTUNITY_DECISION_REVIEW_ONLY · v0",
+      "data": {
+        "seq": 7,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-OPPORTUNITY-DECISION",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+        "role": "R0_OPPORTUNITY_DECISION_REVIEW_ONLY",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.907762+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-DRAFT-PROBLEM-CASE",
+      "kind": "atr_v2_attachment",
+      "label": "DRAFT_PROBLEM_CASE_PENDING_REVIEW · v0",
+      "data": {
+        "seq": 8,
+        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-DRAFT-PROBLEM-CASE",
+        "subject_id": "program:atr-research-governance",
+        "subject_version": 0,
+        "artifact_id": "sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+        "role": "DRAFT_PROBLEM_CASE_PENDING_REVIEW",
+        "note": "Source-inspected pilot reduction; independent review required; no transition.",
+        "created_at": "2026-07-18T20:51:54.977311+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "subject:program:atr-research-governance",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+      "target": "research_program:atr-research-governance",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+      "target": "research_program:atr-research-governance",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:atr-research-governance",
+      "target": "legacy_run:2026-07-17-epistemic-route-calibration",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:atr-research-governance",
+      "target": "legacy_run:2026-07-17-evidence-conditioned-research-exploration",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:NEG-LEGACY-CONSTRUCTION-2026",
+      "target": "evidence:NEG-LEGACY-CONSTRUCTION-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:NEG-LEGACY-CONSTRUCTION-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTABSTAIN-2026",
+      "target": "evidence:SRC-AGENTABSTAIN-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-AGENTABSTAIN-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-ARBOR-2026",
+      "target": "evidence:SRC-ARBOR-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "target": "evidence:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "target": "evidence:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "target": "evidence:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-FIREBENCH-2026",
+      "target": "evidence:SRC-FIREBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-FIREBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-GRAPH2IDEA-2026",
+      "target": "evidence:SRC-GRAPH2IDEA-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-GRAPH2IDEA-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HARPA-2026",
+      "target": "evidence:SRC-HARPA-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HEP-2026",
+      "target": "evidence:SRC-HEP-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HEURESIS-2026",
+      "target": "evidence:SRC-HEURESIS-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-HEURESIS-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HEURESIS-REPO-2026",
+      "target": "evidence:SRC-HEURESIS-REPO-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-HEURESIS-REPO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-NARROW-EXPLORATION-2026",
+      "target": "evidence:SRC-NARROW-EXPLORATION-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-NARROW-EXPLORATION-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-RESEARCHBENCH-2025",
+      "target": "evidence:SRC-RESEARCHBENCH-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-RESEARCHBENCH-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SAGE-2026",
+      "target": "evidence:SRC-SAGE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-SAGE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SCIENTISTONE-2026",
+      "target": "evidence:SRC-SCIENTISTONE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-SCIENTISTONE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-SOUNDNESSBENCH-2026",
+      "target": "evidence:SRC-SOUNDNESSBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "target": "paper:SRC-SOUNDNESSBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+      "target": "research_program:atr-research-governance",
+      "relation": "frames_program_frontier",
+      "data": {}
+    },
+    {
+      "source": "research_program:atr-research-governance",
+      "target": "research_question:FT-governance-output-vs-process",
+      "relation": "frames_frontier_question",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-output-vs-process",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-output-vs-process",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-output-vs-process",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_program:atr-research-governance",
+      "target": "research_question:FT-governance-autonomy-vs-human-learning",
+      "relation": "frames_frontier_question",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-autonomy-vs-human-learning",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-autonomy-vs-human-learning",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "research_question:FT-governance-autonomy-vs-human-learning",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "anchors_pending_source_verification",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "target": "knowledge_map:KM-atr-research-governance.draft-v1",
+      "relation": "materializes_knowledge_map",
+      "data": {}
+    },
+    {
+      "source": "knowledge_map:KM-atr-research-governance.draft-v1",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "relation": "roots_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:evidence-provenance",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:hypothesis-portfolio",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:gate-route-transition",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "target": "paper:SRC-AUTORESEARCHCLAW-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "target": "paper:SRC-HARPA-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:human-review",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:research-governance",
+      "target": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "relation": "specializes_concept",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "knowledge_concept:KM-atr-research-governance.draft-v1:system-learning",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "defines_with_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+      "target": "topic_route:TRP-atr-research-governance.draft-v1",
+      "relation": "materializes_pending_topic_route",
+      "data": {}
+    },
+    {
+      "source": "research_program:atr-research-governance",
+      "target": "topic_route:TRP-atr-research-governance.draft-v1",
+      "relation": "awaits_independent_topic_route_review",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+      "target": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "relation": "materializes_problem_case",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "pp. 1, 18-22",
+        "observation": "Shows literature agents fail on constraint verification, execution, aggregation, and termination despite producing search trajectories.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "An output/evidence-verification failure decomposition.",
+        "leaves_unresolved": "Human learning or general scientific validity.",
+        "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+      }
+    },
+    {
+      "source": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "pp. 1, 14-17, 22-23",
+        "observation": "Shows persistent-tree optimization gains under fixed task-native evaluators without step-level human supervision.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "A branch-preserving autonomous-process mechanism.",
+        "leaves_unresolved": "Human learning and open-ended scientific quality.",
+        "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+      }
+    },
+    {
+      "source": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "grounds_in_explicit_source_span",
+      "data": {
+        "locator": "pp. 1-2, 12-13",
+        "observation": "Externalizes hypotheses, evidence, and belief changes in an append-only protocol.",
+        "problem_posture": "OBJECTIVELY_LEAVES",
+        "resolves": "An auditability mechanism and lifecycle discipline.",
+        "leaves_unresolved": "Calibrated beliefs, human learning, or broad transfer.",
+        "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+      }
+    },
+    {
+      "source": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "target": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "target": "paper:SRC-ARBOR-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-1",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "research_problem:PC-auditable-research-process-human-learning.draft-v1",
+      "target": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "relation": "generates_finer_review_question",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "derived_question:PC-auditable-research-process-human-learning.draft-v1:DQ-GOV-2",
+      "target": "paper:SRC-HEP-2026",
+      "relation": "cites_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
+      "target": "artifact:sha256:9a76c8162714a4e511598add7aa6790bf7b287d53b09ed1aa877e1fcaff0ee51",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-01",
+      "target": "artifact:sha256:131c392473f333c6fef8718034c1234318b90a7e720fbed1a26c21fddfad0b2d",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INVENTORY",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INVENTORY",
+      "target": "artifact:sha256:02b34c00774e85976d78e0726ff505020e518185b933955ef5adffa5def169e3",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-01",
+      "target": "artifact:sha256:e4b531a71fbec598d2c02989391e725da27b85555e9c2186416896b2becc9366",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-02",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-02",
+      "target": "artifact:sha256:3b1f0372505dc554523427ac1f66534e0ec75fd2adb7f6800258ec1a88154254",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-03",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-R0-03",
+      "target": "artifact:sha256:c78bc74a1c62c0a27d2898ab75cc68bf2ce0cb03175f8b2e3970f3ef10903e20",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INSPECTION",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-SOURCE-INSPECTION",
+      "target": "artifact:sha256:97177c0b78b5b14c9ba52f0a20e7db2c57aa9601e6ba5d313cc7c472a20e68e7",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-OPPORTUNITY-DECISION",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-OPPORTUNITY-DECISION",
+      "target": "artifact:sha256:756eae6b93815b251e5b44e522ec7529312a3e6c7094bbd9b937607e4fc3630c",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:atr-research-governance",
+      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-DRAFT-PROBLEM-CASE",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-DRAFT-PROBLEM-CASE",
+      "target": "artifact:sha256:4c7d61f83c2955f70ec29d3eda724b92cf63002adf3685db3fd9f72ecd2f5339",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "16fec178debc42e8",
+        "archived_at": "2026-07-18T19:12:43.523880+00:00",
+        "path": "history/projections/16fec178debc42e8.json",
+        "run": "2026-07-19-atr-research-governance-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      },
+      {
+        "id": "e9de847d353df5c9",
+        "archived_at": "2026-07-18T19:20:56.617878+00:00",
+        "path": "history/projections/e9de847d353df5c9.json",
+        "run": "2026-07-19-atr-research-governance-v2-intake",
+        "node_count": 9,
+        "edge_count": 11
+      },
+      {
+        "id": "a77e5f953d29ee8e",
+        "archived_at": "2026-07-18T19:53:40.729350+00:00",
+        "path": "history/projections/a77e5f953d29ee8e.json",
+        "run": "2026-07-19-atr-research-governance-v2-intake",
+        "node_count": 45,
+        "edge_count": 48
+      },
+      {
+        "id": "1fdb7d485bb27b21",
+        "archived_at": "2026-07-18T20:52:10.322486+00:00",
+        "path": "history/projections/1fdb7d485bb27b21.json",
+        "run": "2026-07-19-atr-research-governance-v2-intake",
+        "node_count": 61,
+        "edge_count": 100
+      }
+    ],
+    "previous_projection": "1fdb7d485bb27b21"
+  }
+}

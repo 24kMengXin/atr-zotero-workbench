@@ -1,0 +1,274 @@
+{
+  "artifact_type": "knowledge-map",
+  "schema_version": "1.1",
+  "map_id": "KM-multilingual-representation-and-data-decisions.draft-v1",
+  "topic": "multilingual-representation-and-data-decisions",
+  "scope": "A versioned learning hierarchy upgraded only where located worker-inspected spans support, limit, or challenge a bounded definition.",
+  "created_at": "2026-07-19T16:00:00+08:00",
+  "map_review_status": "PARTIALLY_SOURCE_REVIEWED",
+  "does_not_establish": "This map is a reading aid, not a universal ontology, field consensus, novelty certificate, causal hierarchy, human inspection record, route decision, or lifecycle transition.",
+  "sources": [
+    {
+      "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "url": "https://arxiv.org/abs/2406.12419",
+      "pdf_url": "https://arxiv.org/pdf/2406.12419",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "identity_state": "IDENTITY_VERIFIED",
+      "content_digest": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 8-10",
+          "observation": "Shows that AI-proposed error spans can reduce human MT-evaluation effort while maintaining evaluation quality in a bounded setup, and explicitly discusses priming, bias, metric choice, and intended-use limits.",
+          "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+        }
+      ],
+      "supports": "Shows that AI-proposed error spans can reduce human MT-evaluation effort while maintaining evaluation quality in a bounded setup, and explicitly discusses priming, bias, metric choice, and intended-use limits.",
+      "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+    },
+    {
+      "source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+      "title": "European Commission use of eTranslation",
+      "url": "https://commission.europa.eu/about/service-standards-and-principles/commissions-use-languages_en",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "observed_at": "2026-07-19",
+      "supports": "A current public workflow where raw MT is exposed under explicit fit-for-purpose limits and variable quality.",
+      "does_not_establish": "How often users make consequential errors, which feedback design is best, or a universal routing threshold.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "eTranslation section, lines 368-375 as inspected 2026-07-19",
+          "observation": "The service supplies MT when human translations are unavailable, is fully automated, varies by text and language pair, and is available to public administrations.",
+          "does_not_establish": "How often users make consequential errors, which feedback design is best, or a universal routing threshold."
+        },
+        {
+          "locator": "Use of machine translation on Europa, lines 278-282 as inspected 2026-07-19",
+          "observation": "The Commission frames output as a basic idea, disclaims guaranteed accuracy, and excludes EU legislation from this use.",
+          "does_not_establish": "How often users make consequential errors, which feedback design is best, or a universal routing threshold."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Quality Gate: Estimating the Quality of Machine Translation for Public Administration Use Cases",
+      "url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "pdf_url": "https://aclanthology.org/2021.mtsummit-up.22.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
+      "supports": "A real decision-routing formulation linking MT quality, cost, speed, language, and use case.",
+      "does_not_establish": "A universal threshold or transfer to unexamined languages and settings.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "p. 4",
+          "observation": "A quality gate routes acceptable MT directly and unacceptable MT to human post-editing in public-administration assimilation and dissemination use cases.",
+          "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+        },
+        {
+          "locator": "pp. 7-8",
+          "observation": "Threshold trade-offs vary by language and use case; human raters disagree in one dissemination condition and the conclusions are limited to examined cases.",
+          "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+        }
+      ]
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Supporting User Reliance on Machine Translation via Implicit and Explicit Feedback",
+      "url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "pdf_url": "https://aclanthology.org/2025.emnlp-main.606.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
+      "supports": "Feedback presentation can change human decisions and appropriate reliance on MT.",
+      "does_not_establish": "Broad language, domain, system, or natural-error generalization.",
+      "inspection_state": "FULLTEXT_INSPECTED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 8-9",
+          "observation": "Implicit backtranslation and question-answer feedback improve decision accuracy and appropriate reliance while preserving user agency; critical errors remain difficult.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        },
+        {
+          "locator": "pp. 9-10, Limitations",
+          "observation": "The study is limited to English-Spanish, one COVID communication domain, one system, four feedback forms, and synthetic errors.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "representation-data",
+      "label": "Multilingual representation and data decisions",
+      "parent_id": null,
+      "definition": "A verification frame connecting data, representation, inference, evaluation, and human-use decisions across languages.",
+      "source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+          "locator": "p. 4",
+          "relation": "EXEMPLIFIES",
+          "observation": "A quality gate routes acceptable MT directly and unacceptable MT to human post-editing in public-administration assimilation and dissemination use cases.",
+          "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+        },
+        {
+          "source_id": "SRC-USER-RELIANCE-MT-2025",
+          "locator": "pp. 8-9",
+          "relation": "EXEMPLIFIES",
+          "observation": "Implicit backtranslation and question-answer feedback improve decision accuracy and appropriate reliance while preserving user agency; critical errors remain difficult.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "data-composition",
+      "label": "Multilingual data composition",
+      "parent_id": "representation-data",
+      "definition": "Which languages, domains, qualities, and duplication patterns enter pretraining, adaptation, or retrieval corpora.",
+      "source_ids": [
+        "SRC-AI-ASSISTED-MT-EVAL-2024"
+      ],
+      "review_status": "PENDING_ADDITIONAL_SOURCE_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+          "locator": "pp. 1-2, 8-10",
+          "relation": "LIMITS",
+          "observation": "The inspected evaluation-assistance study does not establish multilingual training or retrieval data-composition decisions.",
+          "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "tokenization-representation",
+      "label": "Tokenization and representation",
+      "parent_id": "representation-data",
+      "definition": "How scripts and language variation are segmented and represented, with implications for efficiency and accessibility.",
+      "source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021"
+      ],
+      "review_status": "PENDING_ADDITIONAL_SOURCE_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+          "locator": "pp. 7-8",
+          "relation": "LIMITS",
+          "observation": "The inspected workflow evidence varies by language and use case but does not examine tokenization or internal representation.",
+          "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "adaptation-allocation",
+      "label": "Adaptation and resource allocation",
+      "parent_id": "representation-data",
+      "definition": "How model capacity, data budgets, and transfer strategies are allocated across languages and domains.",
+      "source_ids": [
+        "SRC-USER-RELIANCE-MT-2025"
+      ],
+      "review_status": "PENDING_ADDITIONAL_SOURCE_REVIEW",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-USER-RELIANCE-MT-2025",
+          "locator": "pp. 9-10, Limitations",
+          "relation": "LIMITS",
+          "observation": "The bounded user study does not examine model-capacity, data-budget, or transfer allocation.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "inference-and-reasoning",
+      "label": "Inference and reasoning policy",
+      "parent_id": "representation-data",
+      "definition": "How prompting, retrieval, decoding, or test-time compute changes multilingual outputs under bounded conditions.",
+      "source_ids": [
+        "SRC-USER-RELIANCE-MT-2025"
+      ],
+      "review_status": "PARTIALLY_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-USER-RELIANCE-MT-2025",
+          "locator": "pp. 8-9",
+          "relation": "EXEMPLIFIES",
+          "observation": "Implicit backtranslation and question-answer feedback improve decision accuracy and appropriate reliance while preserving user agency; critical errors remain difficult.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        },
+        {
+          "source_id": "SRC-USER-RELIANCE-MT-2025",
+          "locator": "pp. 9-10, Limitations",
+          "relation": "LIMITS",
+          "observation": "The study is limited to English-Spanish, one COVID communication domain, one system, four feedback forms, and synthetic errors.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "concept_id": "quality-and-reliance",
+      "label": "Quality estimation and human reliance",
+      "parent_id": "representation-data",
+      "definition": "How quality signals support or mislead post-editing, sharing, triage, and other user decisions.",
+      "source_ids": [
+        "SRC-AI-ASSISTED-MT-EVAL-2024",
+        "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025"
+      ],
+      "review_status": "BOUNDED_SOURCE_REVIEWED",
+      "evidence_spans": [
+        {
+          "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+          "locator": "p. 4",
+          "relation": "DEFINES",
+          "observation": "A quality gate routes acceptable MT directly and unacceptable MT to human post-editing in public-administration assimilation and dissemination use cases.",
+          "does_not_establish": "A universal threshold or transfer to unexamined languages and settings."
+        },
+        {
+          "source_id": "SRC-USER-RELIANCE-MT-2025",
+          "locator": "pp. 8-9",
+          "relation": "EXEMPLIFIES",
+          "observation": "Implicit backtranslation and question-answer feedback improve decision accuracy and appropriate reliance while preserving user agency; critical errors remain difficult.",
+          "does_not_establish": "Broad language, domain, system, or natural-error generalization."
+        },
+        {
+          "source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+          "locator": "eTranslation section, lines 368-375 as inspected 2026-07-19",
+          "relation": "EXEMPLIFIES",
+          "observation": "The service supplies MT when human translations are unavailable, is fully automated, varies by text and language pair, and is available to public administrations.",
+          "does_not_establish": "How often users make consequential errors, which feedback design is best, or a universal routing threshold."
+        },
+        {
+          "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+          "locator": "pp. 1-2, 8-10",
+          "relation": "LIMITS",
+          "observation": "Shows that AI-proposed error spans can reduce human MT-evaluation effort while maintaining evaluation quality in a bounded setup, and explicitly discusses priming, bias, metric choice, and intended-use limits.",
+          "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+        }
+      ],
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ]
+}

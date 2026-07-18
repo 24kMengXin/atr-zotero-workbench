@@ -1,0 +1,107 @@
+{
+  "artifact_type": "source-inspection-packet",
+  "schema_version": "1.0",
+  "packet_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-SRC-001.v1",
+  "program_key": "atr-research-governance",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_status": "REVIEW_ONLY_NOT_A_GATE_VERDICT",
+  "sources": [
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "url": "https://arxiv.org/abs/2604.25256",
+      "pdf_url": "https://arxiv.org/pdf/2604.25256",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "RESOLVED_BY_INSPECTED_ARXIV_TITLE; LEGACY_COLLISION_SUFFIX_PRESERVED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "Deep and Wide Research tasks require full-text, multi-step, open-ended literature discovery; strong agents score below ten percent on the reported metrics."
+        },
+        {
+          "locator": "pp. 18-19",
+          "observation": "Ground truth uses full-text multi-model verification plus domain-expert audits with a precision-triggered re-review loop."
+        },
+        {
+          "locator": "pp. 21-22",
+          "observation": "Manual auditing checks extra retrievals; observed failures include constraint relaxation, tool execution, evidence aggregation, and termination/state tracking."
+        }
+      ],
+      "supports": "Evidence that polished search output can conceal constraint, verification, tool, and evidence-state failures.",
+      "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+    },
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "url": "https://arxiv.org/abs/2606.11926",
+      "pdf_url": "https://arxiv.org/pdf/2606.11926",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "A persistent hypothesis tree links hypotheses, artifacts, evidence, and distilled insights across autonomous optimization tasks."
+        },
+        {
+          "locator": "pp. 14-17",
+          "observation": "Reported gains are measured on fixed task-native objectives and held-out evaluations; the operational setting removes step-level human supervision."
+        },
+        {
+          "locator": "pp. 22-23, Limitations/future work",
+          "observation": "The evidence concerns six optimization tasks and does not establish human learning or broad scientific validity."
+        }
+      ],
+      "supports": "A persistent-tree mechanism for cumulative autonomous research and preserved failed branches.",
+      "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "url": "https://arxiv.org/abs/2607.09195",
+      "pdf_url": "https://arxiv.org/pdf/2607.09195",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2",
+          "observation": "HEP argues that existing agents and humans cannot readily trace hypotheses, tests, and belief changes, and externalizes them as persistent auditable objects."
+        },
+        {
+          "locator": "p. 12",
+          "observation": "The registry is append-only and event-sourced; evidence-driven refinement preserves parent states and rejects invalid lifecycle moves."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Experiments use one autonomous materials-research agent without human input under a bounded setup."
+        }
+      ],
+      "supports": "An auditable hypothesis/evidence/belief protocol and append-only lifecycle mechanism.",
+      "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+    }
+  ],
+  "controller_boundary": "Inspection repairs source identity and locator gaps only. Repository cache, Zotero attachment, and Zotero snapshot remain separate states. Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

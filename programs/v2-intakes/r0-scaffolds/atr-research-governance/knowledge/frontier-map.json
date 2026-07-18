@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "map_id": "FKM-atr-research-governance.draft-v1",
+  "domain": "atr-research-governance",
+  "scope": "Top-down verification scaffold, not an exhaustive survey or consensus map.",
+  "frontier_as_of": "2026-07-19",
+  "source_ledger_path": "evidence/sources.jsonl",
+  "verification_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+  "evidence_boundary": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "frontier_tensions": [
+    {
+      "tension_id": "FT-governance-output-vs-process",
+      "question": "Should research-agent quality be judged by polished outputs or by an auditable process that preserves failed branches, source use, and decision reversals?",
+      "competing_explanations": [
+        "End-product quality captures the practical value of the research agent.",
+        "Without process provenance, polished outputs can conceal source overreading, local recombination, or overwritten negative evidence."
+      ],
+      "dimensions": [
+        "output quality",
+        "process auditability",
+        "negative memory"
+      ],
+      "anchor_source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "tension_id": "FT-governance-autonomy-vs-human-learning",
+      "question": "How should autonomous research progress be balanced against source-linked human reading that can revise the knowledge and problem structure?",
+      "competing_explanations": [
+        "Greater autonomy and self-reinforcement increase useful research throughput.",
+        "Human-authored interpretation and explicit review boundaries are required to prevent fluent synthesis from replacing understanding and governance."
+      ],
+      "dimensions": [
+        "autonomy",
+        "human agency",
+        "review latency"
+      ],
+      "anchor_source_ids": [
+        "SRC-AUTORESEARCHCLAW-2026",
+        "SRC-HARPA-2026",
+        "SRC-HEP-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "update_policy": {
+    "triggers": [
+      "first inspected source span",
+      "direct collision",
+      "benchmark or workflow revision",
+      "human Zotero review"
+    ],
+    "refresh_cadence": "before independent topic-route review and before any problem-case transition",
+    "owner": "research owner with Zotero-linked source review"
+  }
+}

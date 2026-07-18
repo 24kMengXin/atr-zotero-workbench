@@ -1,0 +1,112 @@
+{
+  "artifact_type": "source-acquisition-handoff",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-AGENT-INFRASTRUCTURE-AND-EVALUATION-CONTRACTS-R0-SRC-002.v1",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "input_collision_review_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+  "sources": [
+    {
+      "source_id": "SRC-HARNESS-BENCH-2026",
+      "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.27922",
+      "pdf_url": "https://arxiv.org/pdf/2605.27922",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/harness-bench.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2605.27922"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "bench",
+            "evaluating",
+            "harness",
+            "harnesses",
+            "language",
+            "large",
+            "models"
+          ],
+          "expected_token_count": 8
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 7-8",
+          "observation": "Shows large configuration-level score variation and a failure taxonomy, while explicitly warning that the diagnostics are not causal decomposition of individual mechanisms.",
+          "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+        }
+      ],
+      "does_not_establish": "Which individual contract field caused a score change or whether a model-only comparison is valid."
+    },
+    {
+      "source_id": "SRC-AGENTEVAL-2026",
+      "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "url": "https://arxiv.org/abs/2604.23581",
+      "pdf_url": "https://arxiv.org/pdf/2604.23581",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/agent-eval.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2604.23581"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agenteval",
+            "agents",
+            "evaluation",
+            "framework",
+            "level",
+            "llm",
+            "step"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1, 6-8",
+          "observation": "Adds step-level detection and root-cause localization, but its root-cause analysis is a practical heuristic rather than formal causal inference and its workflows are English-only.",
+          "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+        }
+      ],
+      "does_not_establish": "Causal attribution across harness fields, multilingual transport, or evaluator independence."
+    }
+  ],
+  "handoff_policy": "Zotero may create a stored child attachment only after an explicit human read action; runtime item/attachment keys remain outside this immutable artifact.",
+  "does_not_authorize": "Identity and byte verification do not establish cited-version equivalence, human inspection, claim support, novelty, a route, or a lifecycle transition."
+}

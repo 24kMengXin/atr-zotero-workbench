@@ -1,0 +1,66 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+  "program_key": "atr-research-governance",
+  "input_problem_case_id": "PC-auditable-research-process-human-learning.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "url": "https://arxiv.org/abs/2601.20727",
+      "local_cache_path": ".runtime/collision-review/audit-trails.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-2, 11-15",
+      "comparison_type": "CLAIM_COLLISION",
+      "finding": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+      "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "No inspected source causally compares output-only and branch/evidence-preserving research under equal budget with blinded scientific and human-learning outcomes."
+    ],
+    "claim": [
+      "Audit Trails and the existing Hypothesis Evolution Protocol directly cover append-only, decision-linked auditability; auditability as a mechanism is not a gap."
+    ],
+    "mechanism": [
+      "Audit Trails supplies capture/store/use layers and human governance events; ARBOR supplies persistent hypothesis-tree optimization under fixed evaluators."
+    ],
+    "compositional": [
+      "These mechanisms cover much of the broad process-design proposal but leave causal value beyond documentation and fixed task metrics unresolved."
+    ],
+    "adjacent": [
+      "AutoResearchBench diagnoses literature-agent failures without establishing that more process artifacts improve human understanding or scientific validity."
+    ]
+  },
+  "coverage_limits": [
+    "Audit Trails is a reference architecture and proof of concept, not a controlled scientific-decision study.",
+    "Human learning and held-out scientific validity remain unmeasured.",
+    "Privacy and proportionality may make complete trails harmful or infeasible."
+  ],
+  "surviving_boundary": "The surviving question must be causal and minimal: which preserved object—failed branch, source locator, belief update, or route reversal—changes an independent scientific decision or source-grounded human understanding under matched time and artifact budgets?",
+  "alternative_explanations": [
+    "More records may only increase documentation burden.",
+    "Fixed evaluators may reward process artifacts without improving science.",
+    "Audit access and privacy constraints may reduce practical utility."
+  ],
+  "disposition": "REFRAME",
+  "next_evidence": [
+    "Test one preserved object at a time against output-only review under a matched budget.",
+    "Measure decision reversal or source-grounded reconstruction, not preference for transparency."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

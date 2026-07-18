@@ -7,16 +7,24 @@
 ```bash
 python3 scripts/audit_historical_programs.py \
   programs/multilingual-programs.json \
-  --out output/historical-program-alignment-audit.json
+  --harness-root /Users/zone/Documents/multilingual-aaai/auto-research-harness \
+  --out output/historical-program-alignment-audit.json \
+  --markdown-out docs/historical-program-disposition-matrix.md
 ```
 
-## 2026-07-18 基线
+## 2026-07-19 深化审计
 
 - 6 个研究计划、28 个历史 run 都被 catalog 覆盖；
-- 28/28 有可解析的 `evidence/sources.jsonl`；
-- 没有 JSON 级损坏；
-- 这些 run 仍普遍缺少可作为**当前**研究链的 knowledge context、opportunity map、concept map 与 current claim ledger。
+- 28/28 有可解析的 `evidence/sources.jsonl`，并通过当前 checker 的结构/引用检查；
+- 391 条来源记录只形成 358 个唯一 source ID、326 个唯一 URL 和 352 个唯一标题；进入 Zotero 前必须去重；
+- 0/391 声明 access status，0/391 记录带 locator 的全文检查；它们不能被表述为“全文已下载或已读”；
+- 只有 2/28 个 run 含任意 artifact manifest；
+- 历史 28 个 run 中没有 `concept-map.json` 或 `research-problem-cards/*.json`。现有 frontier、knowledge context、opportunity 与少量 claim 都只能作为历史输入。
 
-因此，审计将历史 source ledger、frontier map、claim history 和记录过程事件标记为可复用的 provenance input；它不会把 source 数量或旧 stage 当作“当前 claim 已经成立”的证据。每个 catalog disposition（`canonical_*`、`merge_as_*`、`retain_as_*`）都会在 JSON 里逐 run 输出，便于后续决定是新建 continuation、只保留为历史，还是因输入损坏而隔离。
+因此，28 个 run 全部归为 `LEGACY_MAP_INPUT_ONLY`。这不是删除历史，而是把旧 stage、gate、claim 和 route 从 current 权威中清退。逐 run 的 artifact disposition、source/fulltext 缺口和六个 program 的弹性骨架见 [历史归位矩阵](historical-program-disposition-matrix.md)。
+
+该矩阵已经驱动一个新的 v2 portfolio 与六个独立 child run。它们全部停在 `INTAKE`/version 0，只附加 portfolio/program intake、审计边界、legacy branch index、metadata-only source queue 和 portfolio route-map；没有继承任何旧 stage 或 PASS。route-map 把 6 个 program 与 28 条历史 branch 作为只读导航谱系集中落盘，供 Zotero 全局折叠图使用，不构成 lifecycle transition。对应定义保存在 `programs/v2-intakes/`，可由 `scripts/bootstrap_multilingual_v2_portfolio.py` 与 `scripts/attach_portfolio_route_map.py` 重放和检查。
+
+下一层的跨 run 去重与 Zotero 获取状态见 [来源归并与获取队列](source-inventory-and-zotero-acquisition.md)。391 个 occurrence 已无损归并为 344 个 canonical source；每个 program 的队列已作为 metadata-only attachment 进入其 v2 child version 0。
 
 首个 continuation `2026-07-18-multilingual-agent-action-continuation` 是该政策的示例：它不改写七个历史分支，而是导入来源、隔离历史 claim，并按新 artifact 逐步补充概念图、现实张力、景观简报和草案问题卡。

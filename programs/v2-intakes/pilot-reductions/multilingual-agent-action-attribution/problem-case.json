@@ -1,0 +1,68 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-QST-001.v1",
+  "problem_id": "PC-multilingual-action-semantics-interface.draft-v1",
+  "program_key": "multilingual-agent-action-attribution",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When multilingual tool-use performance changes, when is the load-bearing cause semantic action selection and when is it the language/interface/evaluator contract through which the action is expressed and scored?",
+  "decision_owner": "Agent benchmark and tool-interface designers deciding whether to change the model, interface contract, or evaluation interpretation.",
+  "worlds": [
+    "W1: Language changes the selected action or intended arguments.",
+    "W2: The intended action is intact, but language-bearing parameter values violate a rigid execution interface.",
+    "W3: Translation, prompt templates, dataset filtering, or judging metrics create the apparent capability gap."
+  ],
+  "discriminator": "A revision-pinned factorial comparison holding task intent and tool semantics fixed while varying query, schema, parameter-value, and evaluator languages, with executable outcomes and independent semantic adjudication.",
+  "falsifier": "The apparent language effect disappears under interface-normalized execution and independent semantic scoring, or is fully explained by translation/template artifacts.",
+  "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+  "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+  "source_spans": [
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 8-9",
+      "observation": "Separates correct semantic intent from non-executable language-interface values under controlled single-turn calls.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "Supplies a concrete interface-failure world and its limits.",
+      "leaves_unresolved": "Whether the distinction transports to long-horizon workflows or broad languages.",
+      "does_not_establish": "Long-horizon behavior, all languages, real deployment incidence, or the superiority of one interface design."
+    },
+    {
+      "source_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "kind": "PRIMARY_PAPER",
+      "locator": "p. 1; pp. 7-10",
+      "observation": "Shows broad multilingual variation under a particular parallel-data and scoring contract.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "Supplies coverage and a competing benchmark-level observation.",
+      "leaves_unresolved": "Which causal layer produces the observed gaps.",
+      "does_not_establish": "That performance gaps are caused specifically by semantic action selection rather than translation, interface, data, or evaluator contracts."
+    }
+  ],
+  "derived_questions": [
+    {
+      "question_id": "DQ-ACTION-1",
+      "question": "Which language-bearing surface first changes the executable action trace?",
+      "smallest_discriminator": "One frozen task crossed across query, schema, parameter-value, and evaluator languages.",
+      "does_not_establish": "Population prevalence.",
+      "source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MASSIVE-AGENTS-2025"
+      ]
+    },
+    {
+      "question_id": "DQ-ACTION-2",
+      "question": "Does semantic-equivalent scoring reverse model or language rankings relative to strict AST scoring?",
+      "smallest_discriminator": "A blinded paired adjudication on the same model outputs.",
+      "does_not_establish": "A universally correct metric.",
+      "source_ids": [
+        "SRC-MLCL-2026",
+        "SRC-MASSIVE-AGENTS-2025"
+      ]
+    }
+  ],
+  "controller_boundary": "Independent review is required before any route or promotion decision."
+}

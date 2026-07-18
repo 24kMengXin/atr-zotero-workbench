@@ -1,0 +1,92 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-QST-001.v1",
+  "problem_id": "PC-agent-score-execution-contract-attribution.draft-v1",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When an agent benchmark score changes, when should the change be attributed to the agent and when to the harness, tool schema, configuration, provider, environment, or evaluator contract?",
+  "decision_owner": "Benchmark maintainers and system selectors deciding which component to compare, repair, or deploy.",
+  "worlds": [
+    "W1: The agent's decision policy or capability changed under an otherwise equivalent execution contract.",
+    "W2: Harness, configuration, schema, provider, website, locale, or evaluator drift changed the measured behavior.",
+    "W3: Replay or judge noise creates an apparent attribution without a stable intervention target."
+  ],
+  "discriminator": "A revision-pinned cross-harness replay matrix with frozen agent, benchmark items, tools, provider snapshot, evaluator, and environment where one contract component changes at a time and outcomes retain trace-level confidence intervals.",
+  "falsifier": "Score differences disappear under a frozen contract, fail to reproduce across replay, or cannot be localized beyond stochastic/judge uncertainty.",
+  "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+  "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+  "source_spans": [
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "url": "https://arxiv.org/abs/2606.13608",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1-4, 11, 13",
+      "observation": "Separates benchmark and subject agents and shows harness swapping changes results.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A full-stack evaluation decomposition and measured harness sensitivity.",
+      "leaves_unresolved": "Causal attribution for arbitrary environments.",
+      "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "url": "https://arxiv.org/abs/2606.08275",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 4-5",
+      "observation": "Provides intervention-based step attribution but only with mocked tools and synthetic ground truth.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A causal replay instrument and its validity boundary.",
+      "leaves_unresolved": "Live side-effecting replay and general field attribution.",
+      "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+    },
+    {
+      "source_id": "SRC-AGENTLAB-REPRO-2026",
+      "title": "AgentLab reproducibility documentation",
+      "url": "https://github.com/ServiceNow/AgentLab",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "locator": "README lines 403-447",
+      "observation": "Enumerates concrete reproducibility drift sources and records versions/commits.",
+      "problem_posture": "CONTEXT_ONLY",
+      "resolves": "A primary workflow pressure and inspection mechanism.",
+      "leaves_unresolved": "Effect sizes or a complete replay guarantee.",
+      "does_not_establish": "The size of each effect or a universal replay contract."
+    },
+    {
+      "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+      "title": "ClawBench/ShellBench reproducibility-first benchmark release",
+      "url": "https://github.com/openclaw/shellbench",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "locator": "README lines 790-824",
+      "observation": "Treats harness, configuration, and model as a versioned full stack.",
+      "problem_posture": "CONTEXT_ONLY",
+      "resolves": "An operational alternative to model-only scoring.",
+      "leaves_unresolved": "Independent scientific validation or human calibration.",
+      "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+    }
+  ],
+  "derived_questions": [
+    {
+      "question_id": "DQ-INFRA-1",
+      "question": "Which minimal execution-contract fields reverse a benchmark comparison when pinned or changed?",
+      "smallest_discriminator": "One agent-task pair replayed across two harnesses with every other revision fixed.",
+      "does_not_establish": "Universal reproducibility.",
+      "source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-AGENTLAB-REPRO-2026"
+      ]
+    },
+    {
+      "question_id": "DQ-INFRA-2",
+      "question": "Can a trace-level intervention localize a score change without oracle substitution or transcript judging?",
+      "smallest_discriminator": "One mocked replay with known commitment point followed by one explicitly non-adjudicated live-tool feasibility check.",
+      "does_not_establish": "Live-tool causal validity.",
+      "source_ids": [
+        "SRC-CAR-2026",
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ]
+    }
+  ],
+  "controller_boundary": "Independent review is required before any route or promotion decision."
+}

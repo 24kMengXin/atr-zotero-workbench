@@ -1,0 +1,1783 @@
+[
+  {
+    "id": "SRC-ADVERSARIAL-QE-2021",
+    "type": "article-journal",
+    "title": "Pushing the Right Buttons: Adversarial Evaluation of Quality Estimation",
+    "URL": "https://aclanthology.org/2021.wmt-1.67/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ADVERSARIAL-QE-2021",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ADVERSARIAL-QE-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AIDATERM-2026",
+    "type": "article-journal",
+    "title": "Multi-Agent Orchestration for Terminology-Constrained Machine Translation in Industrial Localization",
+    "URL": "https://aclanthology.org/2026.acl-industry.63/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AIDATERM-2026",
+      "atr-source-kind:PRIMARY_SYSTEM_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AIDATERM-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AMIYA-DIALECT-MBR-2026",
+    "type": "article-journal",
+    "title": "Maastricht University at AMIYA: Adapting LLMs for Dialectal Arabic using Fine-tuning and MBR Decoding",
+    "URL": "https://aclanthology.org/2026.vardial-1.28/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AMIYA-DIALECT-MBR-2026",
+      "atr-source-kind:PRIMARY_SHARED_TASK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AMIYA-DIALECT-MBR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ATLAS-2026",
+    "type": "article-journal",
+    "title": "ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality",
+    "URL": "https://arxiv.org/abs/2510.22037",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ATLAS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ATLAS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AUTOPE-2023",
+    "type": "article-journal",
+    "title": "Leveraging GPT-4 for Automatic Translation Post-Editing",
+    "URL": "https://aclanthology.org/2023.findings-emnlp.804/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AUTOPE-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AUTOPE-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BAYESOPT-RERANK-2024",
+    "type": "article-journal",
+    "title": "A Bayesian Optimization Approach to Machine Translation Reranking",
+    "URL": "https://arxiv.org/abs/2411.09694",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BAYESOPT-RERANK-2024",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-BAYESOPT-RERANK-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-BEYOND-MANYSHOT-LOWRES-MT-2026",
+    "type": "article-journal",
+    "title": "Beyond Many-Shot Translation: Scaling In-Context Demonstrations For Low-Resource Machine Translation",
+    "URL": "https://aclanthology.org/2026.loreslm-1.34/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-BEYOND-MANYSHOT-LOWRES-MT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-BEYOND-MANYSHOT-LOWRES-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CAMT-2024",
+    "type": "article-journal",
+    "title": "Benchmarking Machine Translation with Cultural Awareness",
+    "URL": "https://aclanthology.org/2024.findings-emnlp.765/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CAMT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CAMT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CEMT-2026",
+    "type": "article-journal",
+    "title": "CEMT: Controllable Element-Oriented Machine Translation via Structured Linguistic Reasoning",
+    "URL": "https://aclanthology.org/2026.findings-acl.1882/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CEMT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CEMT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CHATGPT-MT-2023",
+    "type": "article-journal",
+    "title": "Towards Making the Most of ChatGPT for Machine Translation",
+    "URL": "https://aclanthology.org/2023.findings-emnlp.373/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CHATGPT-MT-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CHATGPT-MT-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COD-2024",
+    "type": "article-journal",
+    "title": "Chain-of-Dictionary Prompting Elicits Translation in Large Language Models",
+    "URL": "https://aclanthology.org/2024.emnlp-main.55/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COD-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COD-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMET-LOWRESOURCE-CALIBRATION-2024",
+    "type": "article-journal",
+    "title": "COMET for Low-Resource Machine Translation Evaluation: A Case Study of English-Maltese and Spanish-Basque",
+    "URL": "https://aclanthology.org/2024.lrec-main.315/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMET-LOWRESOURCE-CALIBRATION-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMET-LOWRESOURCE-CALIBRATION-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMMONLID-2026",
+    "type": "article-journal",
+    "title": "CommonLID: Language Identification Benchmark for the Web",
+    "URL": "https://commonlid.org/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMMONLID-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK_AND_ASSET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMMONLID-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMMONSENSE-MT-2023",
+    "type": "article-journal",
+    "title": "Revisiting Commonsense Reasoning in Machine Translation: Training, Evaluation and Challenge",
+    "URL": "https://aclanthology.org/2023.acl-long.866/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMMONSENSE-MT-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMMONSENSE-MT-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMPENSATING-DATA-REASONING-2025",
+    "type": "article-journal",
+    "title": "Compensating for Data with Reasoning: Low-Resource Machine Translation with LLMs",
+    "URL": "https://arxiv.org/abs/2505.22293",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMPENSATING-DATA-REASONING-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMPENSATING-DATA-REASONING-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-COMPOSITIONAL-TRANSLATION-2025",
+    "type": "article-journal",
+    "title": "Compositional Translation: A Novel LLM-based Approach for Low-resource Machine Translation",
+    "URL": "https://arxiv.org/abs/2503.04554",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-COMPOSITIONAL-TRANSLATION-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-COMPOSITIONAL-TRANSLATION-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONTAMINATION-2024",
+    "type": "article-journal",
+    "title": "Investigating Data Contamination for Pre-training Language Models",
+    "URL": "https://arxiv.org/abs/2401.06059",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONTAMINATION-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CONTAMINATION-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONTEXT-AWARE-LLM-MT-SURVEY-2025",
+    "type": "webpage",
+    "title": "Beyond the Sentence: A Survey on Context-Aware Machine Translation with Large Language Models",
+    "URL": "https://arxiv.org/abs/2506.07583",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONTEXT-AWARE-LLM-MT-SURVEY-2025",
+      "atr-source-kind:SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-CONTEXT-AWARE-LLM-MT-SURVEY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CONTEXT-COT-MT-2025",
+    "type": "article-journal",
+    "title": "Chain-of-Thought Reasoning Improves Context-Aware Translation with Large Language Models",
+    "URL": "https://arxiv.org/abs/2510.18077",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CONTEXT-COT-MT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CONTEXT-COT-MT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CROSSLINGUAL-QUALITY-2026",
+    "type": "article-journal",
+    "title": "Toward Cross-Lingual Quality Classifiers for Multilingual Pretraining Data Selection",
+    "URL": "https://arxiv.org/abs/2604.20549",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CROSSLINGUAL-QUALITY-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CROSSLINGUAL-QUALITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-CULTURAX-2024",
+    "type": "article-journal",
+    "title": "CulturaX: A Cleaned, Enormous, and Multilingual Dataset for Large Language Models in 167 Languages",
+    "URL": "https://aclanthology.org/2024.lrec-main.377.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-CULTURAX-2024",
+      "atr-source-kind:PRIMARY_PAPER_AND_ASSET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-CULTURAX-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DATA-SELECTION-SURVEY-2024",
+    "type": "webpage",
+    "title": "A Survey on Data Selection for Language Models",
+    "URL": "https://arxiv.org/abs/2402.16827",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DATA-SELECTION-SURVEY-2024",
+      "atr-source-kind:SURVEY_AND_LIVING_BIBLIOGRAPHY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-DATA-SELECTION-SURVEY-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DATACOMP-LM-2024",
+    "type": "article-journal",
+    "title": "DataComp-LM: In Search of the Next Generation of Training Sets for Language Models",
+    "URL": "https://arxiv.org/abs/2406.11794",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DATACOMP-LM-2024",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DATACOMP-LM-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DEDIT-2025",
+    "type": "article-journal",
+    "title": "Detect, Disambiguate, and Translate: On-Demand Visual Reasoning for Multimodal Machine Translation with Large Vision-Language Models",
+    "URL": "https://aclanthology.org/2025.naacl-long.74/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DEDIT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DEDIT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DEDUP-2021",
+    "type": "article-journal",
+    "title": "Deduplicating Training Data Makes Language Models Better",
+    "URL": "https://arxiv.org/abs/2107.06499",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DEDUP-2021",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DEDUP-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DEEPTRANS-2026",
+    "type": "article-journal",
+    "title": "DeepTrans: Deep Reasoning Translation via Reinforcement Learning",
+    "URL": "https://aclanthology.org/2026.tacl-1.3/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DEEPTRANS-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DEEPTRANS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DIAGNOSE-THEN-REPAIR-2026",
+    "type": "article-journal",
+    "title": "Diagnose, Then Repair: A Two-Stage MQM-Guided Post-Editing Framework for Domain-Specific Machine Translation",
+    "URL": "https://aclanthology.org/2026.acl-industry.115/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DIAGNOSE-THEN-REPAIR-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DIAGNOSE-THEN-REPAIR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DIBIMT-2025",
+    "type": "article-journal",
+    "title": "DiBiMT: A Gold Evaluation Benchmark for Studying Lexical Ambiguity in Machine Translation",
+    "URL": "https://doi.org/10.1162/coli_a_00541",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DIBIMT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DIBIMT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DISCOURSE-CENTRIC-DOCMT-2023",
+    "type": "article-journal",
+    "title": "Discourse-Centric Evaluation of Document-level Machine Translation with a New Densely Annotated Parallel Corpus of Novels",
+    "URL": "https://aclanthology.org/2023.acl-long.435/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DISCOURSE-CENTRIC-DOCMT-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DISCOURSE-CENTRIC-DOCMT-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DMDTEVAL-2025",
+    "type": "article-journal",
+    "title": "DMDTEval: An Evaluation and Analysis of LLMs on Disambiguation in Multi-domain Translation",
+    "URL": "https://aclanthology.org/2025.emnlp-main.309/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DMDTEVAL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DMDTEVAL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DOC-MBR-OT-2025",
+    "type": "article-journal",
+    "title": "Document-Level Text Generation with Minimum Bayes Risk Decoding using Optimal Transport",
+    "URL": "https://aclanthology.org/2025.acl-long.1370/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DOC-MBR-OT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DOC-MBR-OT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DOC2DOC-REFINEMENT-2025",
+    "type": "article-journal",
+    "title": "Two Intermediate Translations Are Better Than One: Fine-tuning LLMs for Document-level Translation Refinement",
+    "URL": "https://aclanthology.org/2025.acl-long.726/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DOC2DOC-REFINEMENT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DOC2DOC-REFINEMENT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-DRT-2025",
+    "type": "article-journal",
+    "title": "DRT: Deep Reasoning Translation via Long Chain-of-Thought",
+    "URL": "https://aclanthology.org/2025.findings-acl.351/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-DRT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-DRT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ERROR-GROUNDING-2025",
+    "type": "article-journal",
+    "title": "An Evaluation Resource for Grounding Translation Errors",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.1299/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ERROR-GROUNDING-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ERROR-GROUNDING-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-EXTREME-LOWRES-ICL-2025",
+    "type": "article-journal",
+    "title": "It’s All About In-Context Learning! Teaching Extremely Low-Resource Languages to LLMs",
+    "URL": "https://aclanthology.org/2025.emnlp-main.1502/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-EXTREME-LOWRES-ICL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-EXTREME-LOWRES-ICL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FINEWEB2-2025",
+    "type": "article-journal",
+    "title": "FineWeb2: One Pipeline to Scale Them All -- Adapting Pre-Training Data Processing to Every Language",
+    "URL": "https://arxiv.org/abs/2506.20920",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FINEWEB2-2025",
+      "atr-source-kind:PRIMARY_PAPER_AND_CODE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FINEWEB2-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FRED-LOWRESOURCE-2026",
+    "type": "article-journal",
+    "title": "Translation or Recitation? Calibrating Evaluation Scores for Machine Translation of Extremely Low-Resource Languages",
+    "URL": "https://aclanthology.org/2026.acl-short.29/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FRED-LOWRESOURCE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FRED-LOWRESOURCE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FUR-2025",
+    "type": "article-journal",
+    "title": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+    "URL": "https://aclanthology.org/2025.emnlp-main.504/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FUR-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FUR-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GLOTLID-2023",
+    "type": "article-journal",
+    "title": "GlotLID: Language Identification for Low-Resource Languages",
+    "URL": "https://arxiv.org/abs/2310.16248",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GLOTLID-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GLOTLID-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GRAMMAR-REASONING-LOWRES-MT-2026",
+    "type": "article-journal",
+    "title": "Reasoning over Grammar: Can Synthetic Linguistic Reasoning Traces Enhance Low-Resource Machine Translation?",
+    "URL": "https://arxiv.org/abs/2606.03782",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GRAMMAR-REASONING-LOWRES-MT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GRAMMAR-REASONING-LOWRES-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HAT-MT-HALLUCINATION-2026",
+    "type": "article-journal",
+    "title": "HAT: Hallucination Annotation for Translation",
+    "URL": "https://aclanthology.org/2026.acl-long.721/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HAT-MT-HALLUCINATION-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HAT-MT-HALLUCINATION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HJQE-HUMAN-LABEL-VALIDITY-2023",
+    "type": "article-journal",
+    "title": "Rethinking the Word-level Quality Estimation for Machine Translation from Human Judgement",
+    "URL": "https://aclanthology.org/2023.findings-acl.126/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HJQE-HUMAN-LABEL-VALIDITY-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HJQE-HUMAN-LABEL-VALIDITY-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HUMAN-ERROR-MARKING-MT-2024",
+    "type": "article-journal",
+    "title": "Prompting Large Language Models with Human Error Markings for Self-Correcting Machine Translation",
+    "URL": "https://aclanthology.org/2024.eamt-1.54/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HUMAN-ERROR-MARKING-MT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HUMAN-ERROR-MARKING-MT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INDIC-QE-PE-2025",
+    "type": "article-journal",
+    "title": "Quality Estimation and Post-Editing Using LLMs For Indic Languages: How Good Is It?",
+    "URL": "https://aclanthology.org/2025.mtsummit-1.30/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INDIC-QE-PE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INDIC-QE-PE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INFERENCE-COMPUTE-EVAL-2026",
+    "type": "article-journal",
+    "title": "How Inference Compute Shapes Frontier LLM Evaluation",
+    "URL": "https://arxiv.org/abs/2606.17930",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INFERENCE-COMPUTE-EVAL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INFERENCE-COMPUTE-EVAL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-INSTANT-CONFIDENCE-QE-2026",
+    "type": "article-journal",
+    "title": "Early-Exit and Instant Confidence Translation Quality Estimation",
+    "URL": "https://aclanthology.org/2026.eacl-long.4/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-INSTANT-CONFIDENCE-QE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-INSTANT-CONFIDENCE-QE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ITALERT-EMERGENCY-MT-2025",
+    "type": "article-journal",
+    "title": "ITALERT: Assessing the Quality of LLMs and NMT in Translating Italian Emergency Response Text",
+    "URL": "https://aclanthology.org/2025.mtsummit-1.43/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ITALERT-EMERGENCY-MT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ITALERT-EMERGENCY-MT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ITERATIVE-REFINEMENT-2024",
+    "type": "article-journal",
+    "title": "Iterative Translation Refinement with Large Language Models",
+    "URL": "https://aclanthology.org/2024.eamt-1.17/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ITERATIVE-REFINEMENT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-ITERATIVE-REFINEMENT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-JQL-2025",
+    "type": "article-journal",
+    "title": "Judging Quality Across Languages: A Multilingual Approach to Pretraining Data Filtering with Language Models",
+    "URL": "https://arxiv.org/abs/2505.22232",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-JQL-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-JQL-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANG-RL-2026",
+    "type": "article-journal",
+    "title": "LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance",
+    "URL": "https://arxiv.org/abs/2605.22567",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANG-RL-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANG-RL-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANGMARK-2025",
+    "type": "article-journal",
+    "title": "LangMark: A Multilingual Dataset for Automatic Post-Editing",
+    "URL": "https://aclanthology.org/2025.acl-long.1569/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANGMARK-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANGMARK-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANGUAGE-IDEOLOGY-2022",
+    "type": "article-journal",
+    "title": "Whose Language Counts as High Quality? Measuring Language Ideologies in Text Data Selection",
+    "URL": "https://arxiv.org/abs/2201.10474",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANGUAGE-IDEOLOGY-2022",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANGUAGE-IDEOLOGY-2022\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LANGUAGE-THOUGHT-DIVERSITY-2026",
+    "type": "article-journal",
+    "title": "Language of Thought Shapes Output Diversity in Large Language Models",
+    "URL": "https://arxiv.org/abs/2601.11227",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LANGUAGE-THOUGHT-DIVERSITY-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LANGUAGE-THOUGHT-DIVERSITY-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LATENT-DISCOURSE-QAD-2026",
+    "type": "article-journal",
+    "title": "Unlocking Latent Discourse Translation in LLMs Through Quality-Aware Decoding",
+    "URL": "https://aclanthology.org/2026.eacl-long.220/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LATENT-DISCOURSE-QAD-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LATENT-DISCOURSE-QAD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LAY-USERS-MT-AGENDA-2025",
+    "type": "webpage",
+    "title": "Centering Lay Users in Machine Translation Interactions",
+    "URL": "https://aclanthology.org/2025.emnlp-main.700/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LAY-USERS-MT-AGENDA-2025",
+      "atr-source-kind:SURVEY_OR_AGENDA",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LAY-USERS-MT-AGENDA-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LEGISTYR-TERMINOLOGY-2025",
+    "type": "article-journal",
+    "title": "The LegISTyr Test Set: Investigating Off-the-Shelf Instruction-Tuned LLMs for Terminology-Constrained Translation in a Low-Resource Language Variety",
+    "URL": "https://aclanthology.org/2025.termtrends-1.1/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LEGISTYR-TERMINOLOGY-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LEGISTYR-TERMINOLOGY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LID-WILD-2020",
+    "type": "article-journal",
+    "title": "Language ID in the Wild: Unexpected Challenges on the Path to a Thousand-Language Web Text Corpus",
+    "URL": "https://research.google/pubs/language-id-in-the-wild-unexpected-challenges-on-the-path-to-a-thousand-language-web-text-corpus/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LID-WILD-2020",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LID-WILD-2020\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-DISAMBIGUATION-2023",
+    "type": "article-journal",
+    "title": "Towards Effective Disambiguation for Machine Translation with Large Language Models",
+    "URL": "https://aclanthology.org/2023.wmt-1.44/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-DISAMBIGUATION-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LLM-DISAMBIGUATION-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-MT-EVALUATION-2024",
+    "type": "article-journal",
+    "title": "What do Large Language Models Need for Machine Translation Evaluation?",
+    "URL": "https://arxiv.org/abs/2410.03278",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-MT-EVALUATION-2024",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LLM-MT-EVALUATION-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-MT-SURVEY-2025",
+    "type": "webpage",
+    "title": "Bridging the Linguistic Divide: A Survey on Leveraging Large Language Models for Machine Translation",
+    "URL": "https://arxiv.org/abs/2504.01919",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-MT-SURVEY-2025",
+      "atr-source-kind:SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLM-MT-SURVEY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LMIX-CAUSES-EMNLP-2025",
+    "type": "article-journal",
+    "title": "Language Mixing in Reasoning Language Models: Patterns, Impact, and Internal Causes",
+    "URL": "https://aclanthology.org/2025.emnlp-main.132.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LMIX-CAUSES-EMNLP-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LMIX-CAUSES-EMNLP-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LMIX-EMNLP-2025",
+    "type": "article-journal",
+    "title": "The Impact of Language Mixing on Bilingual LLM Reasoning",
+    "URL": "https://aclanthology.org/2025.emnlp-main.1654/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LMIX-EMNLP-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LMIX-EMNLP-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LOWRES-DOMAIN-ADAPTATION-2025",
+    "type": "article-journal",
+    "title": "From Priest to Doctor: Domain Adaptation for Low-Resource Neural Machine Translation",
+    "URL": "https://aclanthology.org/2025.coling-main.472/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LOWRES-DOMAIN-ADAPTATION-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LOWRES-DOMAIN-ADAPTATION-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LOWRES-RETRIEVAL-UNDERSTANDING-2024",
+    "type": "article-journal",
+    "title": "Shortcomings of LLMs for Low-Resource Translation: Retrieval and Understanding Are Both the Problem",
+    "URL": "https://aclanthology.org/2024.wmt-1.125/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LOWRES-RETRIEVAL-UNDERSTANDING-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LOWRES-RETRIEVAL-UNDERSTANDING-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LRM-MT-TRENDS-2025",
+    "type": "article-journal",
+    "title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+    "URL": "https://arxiv.org/abs/2503.10351",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LRM-MT-TRENDS-2025",
+      "atr-source-kind:POSITION_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LRM-MT-TRENDS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LSP-POSTEDITING-SPEED-2023",
+    "type": "article-journal",
+    "title": "Is post-editing really faster than human translation?",
+    "URL": "https://arxiv.org/abs/2312.12660",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LSP-POSTEDITING-SPEED-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-LSP-POSTEDITING-SPEED-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-M2PO-2026",
+    "type": "article-journal",
+    "title": "M2PO: Multi-Perspective Multi-Pair Preference Optimization for Machine Translation",
+    "URL": "https://aclanthology.org/2026.acl-long.469/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-M2PO-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-M2PO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MACD-2026",
+    "type": "article-journal",
+    "title": "Can Multi-agent Help Disambiguation in Multi-domain Translation?",
+    "URL": "https://aclanthology.org/2026.findings-acl.907/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MACD-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MACD-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MADLAD400-2023",
+    "type": "article-journal",
+    "title": "MADLAD-400: A Multilingual and Document-Level Large Audited Dataset",
+    "URL": "https://arxiv.org/abs/2309.04662",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MADLAD400-2023",
+      "atr-source-kind:PRIMARY_PAPER_AND_ASSET",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MADLAD400-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MALTESE-2022",
+    "type": "article-journal",
+    "title": "Pre-training Data Quality and Quantity for a Low-Resource Language: New Corpus and BERT Models for Maltese",
+    "URL": "https://arxiv.org/abs/2205.10517",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MALTESE-2022",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MALTESE-2022\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MCLM-TTS-2025",
+    "type": "article-journal",
+    "title": "Scaling Test-time Compute for Low-resource Languages: Multilingual Reasoning in LLMs",
+    "URL": "https://arxiv.org/abs/2504.02890",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MCLM-TTS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MCLM-TTS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MESSMER-2025",
+    "type": "article-journal",
+    "title": "Enhancing Multilingual LLM Pretraining with Model-Based Data Selection",
+    "URL": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/5aee125f052c90e326dcf6f380df94f6-Abstract-Datasets_and_Benchmarks_Track.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MESSMER-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MESSMER-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MGSM-REV2-2025",
+    "type": "article-journal",
+    "title": "MGSM-Rev2",
+    "URL": "https://github.com/google-research-datasets/MGSM-Rev2",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MGSM-REV2-2025",
+      "atr-source-kind:PUBLIC_BENCHMARK_REPOSITORY",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MGSM-REV2-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MIX-DONT-TUNE-2026",
+    "type": "article-journal",
+    "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
+    "URL": "https://arxiv.org/abs/2605.13225",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MIX-DONT-TUNE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MIX-DONT-TUNE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MMAD-2025",
+    "type": "article-journal",
+    "title": "M-MAD: Multidimensional Multi-Agent Debate for Advanced Machine Translation Evaluation",
+    "URL": "https://aclanthology.org/2025.acl-long.351/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MMAD-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MMAD-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MORE-THINKING-2026",
+    "type": "article-journal",
+    "title": "When More Thinking Hurts: The Limits of Test-Time Scaling",
+    "URL": "https://arxiv.org/abs/2604.10739",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MORE-THINKING-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MORE-THINKING-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MQM-APE-2025",
+    "type": "article-journal",
+    "title": "MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators",
+    "URL": "https://aclanthology.org/2025.coling-main.374/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MQM-APE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MQM-APE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MT-R1-ZERO-2025",
+    "type": "article-journal",
+    "title": "MT-R1-Zero: Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning",
+    "URL": "https://arxiv.org/abs/2504.10160",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MT-R1-ZERO-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MT-R1-ZERO-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MT-REASONING-NEGATIVE-2026",
+    "type": "article-journal",
+    "title": "Unlocking Reasoning Capability on Machine Translation in Large Language Models",
+    "URL": "https://arxiv.org/abs/2602.14763",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MT-REASONING-NEGATIVE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MT-REASONING-NEGATIVE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MT-TRIAGE-MULTIOUTPUT-2025",
+    "type": "article-journal",
+    "title": "Improving MT-enabled Triage Performance with Multiple MT Outputs",
+    "URL": "https://aclanthology.org/2025.mtsummit-1.45/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MT-TRIAGE-MULTIOUTPUT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MT-TRIAGE-MULTIOUTPUT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MTQA-INDUSTRY-TOOL-2022",
+    "type": "article-journal",
+    "title": "A Quality Estimation and Quality Evaluation Tool for the Translation Industry",
+    "URL": "https://aclanthology.org/2022.eamt-1.43/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MTQA-INDUSTRY-TOOL-2022",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MTQA-INDUSTRY-TOOL-2022\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTI-KNOWLEDGE-DOCMT-2025",
+    "type": "article-journal",
+    "title": "Improving LLM-based Document-level Machine Translation with Multi-Knowledge Fusion",
+    "URL": "https://arxiv.org/abs/2503.12152",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTI-KNOWLEDGE-DOCMT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTI-KNOWLEDGE-DOCMT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTIDOMAIN-LRM-MT-2025",
+    "type": "article-journal",
+    "title": "How Well Do Large Reasoning Models Translate? A Comprehensive Evaluation for Multi-Domain Machine Translation",
+    "URL": "https://arxiv.org/abs/2505.19987",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTIDOMAIN-LRM-MT-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTIDOMAIN-LRM-MT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-CURSE-2023",
+    "type": "article-journal",
+    "title": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages",
+    "URL": "https://arxiv.org/abs/2311.09205",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-CURSE-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-CURSE-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-REASONING-CASCADES-2026",
+    "type": "article-journal",
+    "title": "Multilingual Reasoning Cascades Need More Context",
+    "URL": "https://arxiv.org/abs/2606.27306",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-REASONING-CASCADES-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-REASONING-CASCADES-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-MULTILINGUAL-REASONING-SURVEY-2025",
+    "type": "webpage",
+    "title": "A Survey of Multilingual Reasoning in Language Models",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.474/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-MULTILINGUAL-REASONING-SURVEY-2025",
+      "atr-source-kind:SURVEY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-MULTILINGUAL-REASONING-SURVEY-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-NEOAMT-2026",
+    "type": "article-journal",
+    "title": "NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning",
+    "URL": "https://arxiv.org/abs/2601.03790",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-NEOAMT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-NEOAMT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-NMT-FAITHFULNESS-2021",
+    "type": "article-journal",
+    "title": "Measuring and Improving Faithfulness of Attention in Neural Machine Translation",
+    "URL": "https://aclanthology.org/2021.eacl-main.243/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-NMT-FAITHFULNESS-2021",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-NMT-FAITHFULNESS-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-NSFCOT-GROUNDEDNESS-2026",
+    "type": "article-journal",
+    "title": "NSF-CoT: Neuro-Symbolic Formal Verification of Chain-of-Thought Faithfulness in Contextual Question Answering",
+    "URL": "https://aclanthology.org/2026.findings-acl.516/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-NSFCOT-GROUNDEDNESS-2026",
+      "atr-source-kind:ADJACENT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-NSFCOT-GROUNDEDNESS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OPENAI-USAGE-DOCS",
+    "type": "webpage",
+    "title": "OpenAI API Usage reference",
+    "URL": "https://platform.openai.com/docs/api-reference/usage/audio_transcriptions_object",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OPENAI-USAGE-DOCS",
+      "atr-source-kind:OFFICIAL_DOCUMENTATION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-OPENAI-USAGE-DOCS\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-OPENLID-2023",
+    "type": "article-journal",
+    "title": "An Open Dataset and Model for Language Identification",
+    "URL": "https://arxiv.org/abs/2305.13820",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-OPENLID-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-OPENLID-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PEDANTIC-REASONING-ERRORS-MT-2026",
+    "type": "article-journal",
+    "title": "Should We be Pedantic About Reasoning Errors in Machine Translation?",
+    "URL": "https://arxiv.org/abs/2604.09890",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PEDANTIC-REASONING-ERRORS-MT-2026",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PEDANTIC-REASONING-ERRORS-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PHYSICIAN-CLINICAL-HARM-2023",
+    "type": "article-journal",
+    "title": "Physician Detection of Clinical Harm in Machine Translation: Quality Estimation Aids in Reliance and Backtranslation Identifies Critical Errors",
+    "URL": "https://aclanthology.org/2023.emnlp-main.712/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PHYSICIAN-CLINICAL-HARM-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PHYSICIAN-CLINICAL-HARM-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PRO-TRANSLATOR-QE-2026",
+    "type": "article-journal",
+    "title": "Professional Translators Versus Quality Estimation Models: Reliability and Agreement in English-Ukrainian Translation Evaluation",
+    "URL": "https://aclanthology.org/2026.unlp-1.10/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PRO-TRANSLATOR-QE-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PRO-TRANSLATOR-QE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-PROFESSIONAL-HT-MT-BLIND-2020",
+    "type": "article-journal",
+    "title": "What's the Difference Between Professional Human and Machine Translation? A Blind Multi-language Study on Domain-specific MT",
+    "URL": "https://arxiv.org/abs/2006.04781",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-PROFESSIONAL-HT-MT-BLIND-2020",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-PROFESSIONAL-HT-MT-BLIND-2020\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QE-APE-SYNERGY-2017",
+    "type": "article-journal",
+    "title": "Pushing the Limits of Translation Quality Estimation",
+    "URL": "https://aclanthology.org/Q17-1015/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QE-APE-SYNERGY-2017",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QE-APE-SYNERGY-2017\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QE-CALIBRATED-DECODING-2025",
+    "type": "article-journal",
+    "title": "Calibrating Translation Decoding with Quality Estimation on LLMs",
+    "URL": "https://arxiv.org/abs/2504.19044",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QE-CALIBRATED-DECODING-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QE-CALIBRATED-DECODING-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QE-MTPE-USEFULNESS-2025",
+    "type": "article-journal",
+    "title": "Introducing Quality Estimation to Machine Translation Post-editing Workflow: An Empirical Study on Its Usefulness",
+    "URL": "https://aclanthology.org/2025.mtsummit-1.38/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QE-MTPE-USEFULNESS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QE-MTPE-USEFULNESS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+    "type": "article-journal",
+    "title": "Validating Quality Estimation in a Computer-Aided Translation Workflow: Speed, Cost and Quality Trade-off",
+    "URL": "https://aclanthology.org/2021.mtsummit-up.22/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QE-QUALITY-GATE-ROUTING-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QE4PE-2025",
+    "type": "article-journal",
+    "title": "QE4PE: Word-level Quality Estimation for Human Post-Editing",
+    "URL": "https://aclanthology.org/2025.tacl-1.64/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QE4PE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QE4PE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QUALITY-AWARE-DECODING-2022",
+    "type": "article-journal",
+    "title": "Quality-Aware Decoding for Neural Machine Translation",
+    "URL": "https://aclanthology.org/2022.naacl-main.100/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QUALITY-AWARE-DECODING-2022",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QUALITY-AWARE-DECODING-2022\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QUALITY-AWARE-DECODING-2025",
+    "type": "article-journal",
+    "title": "Quality-Aware Decoding: Unifying Quality Estimation and Decoding",
+    "URL": "https://aclanthology.org/2025.iwslt-1.3/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QUALITY-AWARE-DECODING-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QUALITY-AWARE-DECODING-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QUALITY-AWARE-TRANSLATION-MODELS-2024",
+    "type": "article-journal",
+    "title": "Quality-Aware Translation Models: Efficient Generation and Quality Estimation in a Single Model",
+    "URL": "https://aclanthology.org/2024.acl-long.836/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QUALITY-AWARE-TRANSLATION-MODELS-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QUALITY-AWARE-TRANSLATION-MODELS-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-QUALITY-GLANCE-2022",
+    "type": "article-journal",
+    "title": "Quality at a Glance: An Audit of Web-Crawled Multilingual Datasets",
+    "URL": "https://arxiv.org/abs/2103.12028",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-QUALITY-GLANCE-2022",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-QUALITY-GLANCE-2022\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-R1-T1-2025",
+    "type": "article-journal",
+    "title": "R1-T1: Fully Incentivizing Translation Capability in LLMs via Reasoning Learning",
+    "URL": "https://arxiv.org/abs/2502.19735",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-R1-T1-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-R1-T1-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RAGTRANS-2025",
+    "type": "article-journal",
+    "title": "Retrieval-Augmented Machine Translation with Unstructured Knowledge",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.313/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RAGTRANS-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RAGTRANS-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-REASONING-FOR-TRANSLATION-2025",
+    "type": "article-journal",
+    "title": "Reasoning for Translation: Comparative Analysis of Chain-of-Thought and Tree-of-Thought Prompting for LLM Translation",
+    "URL": "https://aclanthology.org/2025.acl-srw.17/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-REASONING-FOR-TRANSLATION-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-REASONING-FOR-TRANSLATION-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-REFINEMENT-MECHANISM-2026",
+    "type": "article-journal",
+    "title": "What Does LLM Refinement Actually Improve? A Systematic Study on Document-Level Literary Translation",
+    "URL": "https://aclanthology.org/2026.acl-long.268/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-REFINEMENT-MECHANISM-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-REFINEMENT-MECHANISM-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-REFREEVAL-MT-2023",
+    "type": "article-journal",
+    "title": "A Holistic Approach to Reference-Free Evaluation of Machine Translation",
+    "URL": "https://aclanthology.org/2023.acl-short.55/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-REFREEVAL-MT-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-REFREEVAL-MT-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-REMEDY-R-2026",
+    "type": "article-journal",
+    "title": "Remedy-R: Generative Reasoning for Machine Translation Evaluation without Error Annotations",
+    "URL": "https://aclanthology.org/2026.findings-acl.364/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-REMEDY-R-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-REMEDY-R-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RUBRIC-MQM-2025",
+    "type": "article-journal",
+    "title": "RUBRIC-MQM: Span-Level LLM-as-judge in Machine Translation For High-End Models",
+    "URL": "https://aclanthology.org/2025.acl-industry.12/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RUBRIC-MQM-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RUBRIC-MQM-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-S1-BUDGET-2025",
+    "type": "article-journal",
+    "title": "s1: Simple test-time scaling",
+    "URL": "https://arxiv.org/abs/2501.19393",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-S1-BUDGET-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-S1-BUDGET-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SAME-TASK-2024",
+    "type": "article-journal",
+    "title": "Same Task, More Tokens: the Effect of Input Length on Reasoning in Large Language Models",
+    "URL": "https://aclanthology.org/2024.acl-long.818/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SAME-TASK-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SAME-TASK-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SCRIPT-TAX-2026",
+    "type": "article-journal",
+    "title": "The Script Tax: Measuring Tokenization-Driven Efficiency and Latency Disparities in Multilingual Language Models",
+    "URL": "https://arxiv.org/abs/2602.11174",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SCRIPT-TAX-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SCRIPT-TAX-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SELF-BIAS-REFINEMENT-2024",
+    "type": "article-journal",
+    "title": "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement",
+    "URL": "https://aclanthology.org/2024.acl-long.826/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SELF-BIAS-REFINEMENT-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SELF-BIAS-REFINEMENT-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SELF-EVOLUTION-KD-2025",
+    "type": "article-journal",
+    "title": "Self-Evolution Knowledge Distillation for LLM-based Machine Translation",
+    "URL": "https://aclanthology.org/2025.coling-main.686/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SELF-EVOLUTION-KD-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SELF-EVOLUTION-KD-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SIGTURK-2026",
+    "type": "webpage",
+    "title": "Overview of the SIGTURK 2026 Shared Task: Terminology-Aware Machine Translation for English-Turkish Scientific Texts",
+    "URL": "https://aclanthology.org/2026.sigturk-1.20.pdf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SIGTURK-2026",
+      "atr-source-kind:OFFICIAL_SHARED_TASK",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-SIGTURK-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SYNTHETIC-DATA-OVER-THINKING-2025",
+    "type": "article-journal",
+    "title": "LLM Reasoning for Machine Translation: Synthetic Data Generation over Thinking Tokens",
+    "URL": "https://arxiv.org/abs/2510.11919",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SYNTHETIC-DATA-OVER-THINKING-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SYNTHETIC-DATA-OVER-THINKING-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TASER-2025",
+    "type": "article-journal",
+    "title": "TASER: Translation Assessment via Systematic Evaluation and Reasoning",
+    "URL": "https://aclanthology.org/2025.wmt-1.76/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TASER-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TASER-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TASTE-SELFREFLECTION-2024",
+    "type": "article-journal",
+    "title": "TASTE: Teaching Large Language Models to Translate through Self-Reflection",
+    "URL": "https://arxiv.org/abs/2406.08434",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TASTE-SELFREFLECTION-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TASTE-SELFREFLECTION-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TAT-R1-2026",
+    "type": "webpage",
+    "title": "TAT-R1: Terminology-Aware Translation with Reinforcement Learning and Word Alignment",
+    "URL": "https://openreview.net/forum?id=g5BOOZZIcf",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TAT-R1-2026",
+      "atr-source-kind:OPENREVIEW_PRIMARY_SUBMISSION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-TAT-R1-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TEAMJ-DOC-LLM-RERANK-2024",
+    "type": "article-journal",
+    "title": "Document-level Translation with LLM Reranking: Team-J at WMT 2024",
+    "URL": "https://aclanthology.org/2024.wmt-1.14/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TEAMJ-DOC-LLM-RERANK-2024",
+      "atr-source-kind:PRIMARY_SHARED_TASK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TEAMJ-DOC-LLM-RERANK-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TEAR-2025",
+    "type": "article-journal",
+    "title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+    "URL": "https://aclanthology.org/2025.findings-naacl.218/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TEAR-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TEAR-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKEN-COST-2023",
+    "type": "article-journal",
+    "title": "Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models",
+    "URL": "https://aclanthology.org/2023.emnlp-main.614/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKEN-COST-2023",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKEN-COST-2023\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TOKENIZER-CHOICE-2024",
+    "type": "article-journal",
+    "title": "Tokenizer Choice For LLM Training: Negligible or Crucial?",
+    "URL": "https://aclanthology.org/2024.findings-naacl.247/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TOKENIZER-CHOICE-2024",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TOKENIZER-CHOICE-2024\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRANSLATE-WITH-CARE-2025",
+    "type": "article-journal",
+    "title": "Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations",
+    "URL": "https://aclanthology.org/2025.findings-acl.26/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRANSLATE-WITH-CARE-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRANSLATE-WITH-CARE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TRANSLATIONCORRECT-2025",
+    "type": "article-journal",
+    "title": "TRANSLATIONCORRECT: A Unified Framework for Machine Translation Post-Editing with Predictive Error Assistance",
+    "URL": "https://aclanthology.org/2025.acl-demo.53/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TRANSLATIONCORRECT-2025",
+      "atr-source-kind:PRIMARY_SYSTEM_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TRANSLATIONCORRECT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TTS-MT-2026",
+    "type": "article-journal",
+    "title": "Test-Time Scaling of Reasoning Models for Machine Translation",
+    "URL": "https://aclanthology.org/2026.eacl-long.133/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TTS-MT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TTS-MT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TTS-RERANK-MT-2025",
+    "type": "article-journal",
+    "title": "Investigating Test-Time Scaling with Reranking for Machine Translation",
+    "URL": "https://arxiv.org/abs/2509.19020",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TTS-RERANK-MT-2025",
+      "atr-source-kind:PREPRINT_PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TTS-RERANK-MT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-TWT-2026",
+    "type": "article-journal",
+    "title": "Translation with Thought: Difficulty-Adaptive Reasoning via Reinforcement Learning for Multi-Domain Machine Translation",
+    "URL": "https://aclanthology.org/2026.acl-long.1400/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-TWT-2026",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-TWT-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-USER-RELIANCE-MT-2025",
+    "type": "article-journal",
+    "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
+    "URL": "https://aclanthology.org/2025.emnlp-main.606/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-USER-RELIANCE-MT-2025",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-USER-RELIANCE-MT-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-UVA-MT-UNCERTAINTY-QE-2025",
+    "type": "article-journal",
+    "title": "UvA-MT at WMT25 Evaluation Task: LLM Uncertainty as a Proxy for Translation Quality",
+    "URL": "https://aclanthology.org/2025.wmt-1.72/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-UVA-MT-UNCERTAINTY-QE-2025",
+      "atr-source-kind:PRIMARY_SHARED_TASK_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-UVA-MT-UNCERTAINTY-QE-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WMT25-TERMINOLOGY-REPO",
+    "type": "webpage",
+    "title": "WMT25 Terminology Shared Task repository",
+    "URL": "https://github.com/wmt-conference/wmt25-terminology",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WMT25-TERMINOLOGY-REPO",
+      "atr-source-kind:OFFICIAL_CODE_AND_DATA",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-WMT25-TERMINOLOGY-REPO\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WMT26-TERMINOLOGY-TASK",
+    "type": "webpage",
+    "title": "WMT 2026 Terminology Translation Task",
+    "URL": "https://www2.statmt.org/wmt26/terminology.html",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WMT26-TERMINOLOGY-TASK",
+      "atr-source-kind:OFFICIAL_SHARED_TASK",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-WMT26-TERMINOLOGY-TASK\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-WORDLEVEL-QE-HELPFULNESS-2021",
+    "type": "article-journal",
+    "title": "Investigating the Helpfulness of Word-Level Quality Estimation for Post-Editing Machine Translation Output",
+    "URL": "https://aclanthology.org/2021.emnlp-main.799/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-WORDLEVEL-QE-HELPFULNESS-2021",
+      "atr-source-kind:PRIMARY_PAPER",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-WORDLEVEL-QE-HELPFULNESS-2021\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+    "type": "webpage",
+    "title": "European Commission use of eTranslation",
+    "URL": "https://commission.europa.eu/about/service-standards-and-principles/commissions-use-languages_en",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-EC-ETRANSLATION-WORKFLOW-2026",
+      "atr-source-kind:PRIMARY_WORKFLOW_HTML",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-EC-ETRANSLATION-WORKFLOW-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+    "type": "webpage",
+    "title": "AI-Assisted Human Evaluation of Machine Translation",
+    "URL": "https://arxiv.org/abs/2406.12419",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AI-ASSISTED-MT-EVAL-2024",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-AI-ASSISTED-MT-EVAL-2024\nEvidence boundary recorded in reading card."
+  }
+]

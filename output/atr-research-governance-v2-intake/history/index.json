@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "16fec178debc42e8",
+      "archived_at": "2026-07-18T19:12:43.523880+00:00",
+      "path": "history/projections/16fec178debc42e8.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 6,
+      "edge_count": 7
+    },
+    {
+      "id": "e9de847d353df5c9",
+      "archived_at": "2026-07-18T19:20:56.617878+00:00",
+      "path": "history/projections/e9de847d353df5c9.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 9,
+      "edge_count": 11
+    },
+    {
+      "id": "a77e5f953d29ee8e",
+      "archived_at": "2026-07-18T19:53:40.729350+00:00",
+      "path": "history/projections/a77e5f953d29ee8e.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 45,
+      "edge_count": 48
+    },
+    {
+      "id": "1fdb7d485bb27b21",
+      "archived_at": "2026-07-18T20:52:10.322486+00:00",
+      "path": "history/projections/1fdb7d485bb27b21.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 61,
+      "edge_count": 100
+    },
+    {
+      "id": "28afc6b66f86e3fc",
+      "archived_at": "2026-07-18T21:24:23.155568+00:00",
+      "path": "history/projections/28afc6b66f86e3fc.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 70,
+      "edge_count": 123
+    },
+    {
+      "id": "e67c84f08838f556",
+      "archived_at": "2026-07-18T21:34:16.140876+00:00",
+      "path": "history/projections/e67c84f08838f556.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 75,
+      "edge_count": 130
+    },
+    {
+      "id": "7a87dadbbaa31607",
+      "archived_at": "2026-07-18T21:54:40.447672+00:00",
+      "path": "history/projections/7a87dadbbaa31607.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 77,
+      "edge_count": 134
+    },
+    {
+      "id": "2fe3d189a8ce1f57",
+      "archived_at": "2026-07-18T21:57:04.437115+00:00",
+      "path": "history/projections/2fe3d189a8ce1f57.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 77,
+      "edge_count": 134
+    },
+    {
+      "id": "bce874fe1a620848",
+      "archived_at": "2026-07-18T22:05:07.009053+00:00",
+      "path": "history/projections/bce874fe1a620848.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 77,
+      "edge_count": 134
+    },
+    {
+      "id": "c8d95196c6647ec0",
+      "archived_at": "2026-07-18T22:29:56.765163+00:00",
+      "path": "history/projections/c8d95196c6647ec0.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 86,
+      "edge_count": 165
+    }
+  ]
+}

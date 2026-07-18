@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "program-source-inventory",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "sources": [
+    {
+      "source_id": "SRC-AGENT-SKILLS-SURVEY-2026",
+      "title": "Agent Skills for Large Language Models: Architecture, Acquisition, Security, and the Path Forward",
+      "url": "https://arxiv.org/abs/2602.12430",
+      "kind": "PRIMARY_SURVEY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENT-SKILLS-SURVEY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "url": "https://arxiv.org/abs/2606.13608",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTBEATS-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTLAB-REPRO-2026",
+      "title": "AgentLab reproducibility documentation",
+      "url": "https://github.com/ServiceNow/AgentLab",
+      "kind": "OFFICIAL_OPEN_SOURCE_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTLAB-REPRO-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-AGENTSKILLS-RFC-2026",
+      "title": "Skill Package Manifest for Dependency Resolution and Distribution",
+      "url": "https://github.com/agentskills/agentskills/discussions/210",
+      "kind": "MAINTAINER_RFC",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-AGENTSKILLS-RFC-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-BFCL-2026",
+      "title": "Berkeley Function Calling Leaderboard V4",
+      "url": "https://gorilla.cs.berkeley.edu/leaderboard",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-BFCL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "url": "https://arxiv.org/abs/2606.08275",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CAR-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CLAW-SWE-BENCH-2026",
+      "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+      "url": "https://arxiv.org/abs/2606.12344",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CLAW-SWE-BENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+      "title": "ClawBench reproducibility-first benchmark release",
+      "url": "https://github.com/openclaw/clawbench",
+      "kind": "TECHNICAL_COMMUNITY_RELEASE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CLAWBENCH-DRIFT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-CODING-BENCH-HARNESS-POSITION-2026",
+      "title": "Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering",
+      "url": "https://arxiv.org/abs/2606.17799",
+      "kind": "POSITION_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-CODING-BENCH-HARNESS-POSITION-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-DRIFTROBUSTNESS-IEEE-2026",
+      "title": "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift",
+      "url": "https://doi.org/10.1109/ACCESS.2026.3696096",
+      "kind": "PEER_REVIEWED_ARTICLE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-DRIFTROBUSTNESS-IEEE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-HERMES-CAPABILITY-2026",
+      "title": "Allow manual capability declaration in custom providers",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/8731",
+      "kind": "FIELD_ISSUE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-HERMES-CAPABILITY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MCP-AGENTBENCH-2026",
+      "title": "MCP-AgentBench",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/40347",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed, 2026-07-17-multilingual-agent-evaluation-transport",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MCP-AGENTBENCH-2026",
+        "SRC-MCP-AGENTBENCH-AAAI-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MCP-DESCRIPTION-SMELLS-2026",
+      "title": "Model Context Protocol (MCP) Tool Descriptions Are Smelly!",
+      "url": "https://arxiv.org/abs/2602.14878",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 3 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MCP-DESCRIPTION-SMELLS-2026",
+        "SRC-MCP-SMELLS-2026"
+      ],
+      "identity_review": "CONFLICT_REQUIRES_REVIEW",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MCP-SPEC-2026",
+      "title": "Model Context Protocol lifecycle and capability negotiation",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle",
+      "kind": "PRIMARY_STANDARD",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-capability-registration",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MCP-SPEC-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MCP-UNIVERSE-2026",
+      "title": "MCP-Universe",
+      "url": "https://mcp-universe.github.io/",
+      "kind": "PRIMARY_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-capability-contract-testbed",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MCP-UNIVERSE-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MLEBENCH-VERSION-2026",
+      "title": "MLE-bench repository and known-issues policy",
+      "url": "https://github.com/openai/mle-bench",
+      "kind": "OFFICIAL_BENCHMARK_CHANGELOG",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MLEBENCH-VERSION-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTISWEBENCH-NEURIPS-2025",
+      "title": "Multi-SWE-bench: A Multilingual Benchmark for Issue Resolving",
+      "url": "https://papers.neurips.cc/paper_files/paper/2025/hash/5afa9cb1e917b898ad418216dc726fbd-Abstract-Datasets_and_Benchmarks_Track.html",
+      "kind": "PRIMARY_PAPER",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTISWEBENCH-NEURIPS-2025"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-MULTISWEBENCH-REPOSITORY-2026",
+      "title": "multi-swe-bench/multi-swe-bench",
+      "url": "https://github.com/multi-swe-bench/multi-swe-bench",
+      "kind": "PUBLIC_REPOSITORY",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-MULTISWEBENCH-REPOSITORY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OPENCLAW-CAPABILITY-2026",
+      "title": "Custom OpenAI-compatible providers don't send tools parameter for function calling",
+      "url": "https://github.com/openclaw/openclaw/issues/8923",
+      "kind": "FIELD_ISSUE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-agent-capability-registration, 2026-07-17-capability-contract-testbed",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OPENCLAW-CAPABILITY-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-OPENCLAW-SKILLFILTER-2026",
+      "title": "Agent-level skills filters do not constrain injected skills prompt",
+      "url": "https://github.com/openclaw/openclaw/issues/47019",
+      "kind": "REPRODUCIBLE_COMMUNITY_ISSUE",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-OPENCLAW-SKILLFILTER-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-PAEF-2026",
+      "title": "Evaluating Agentic AI in the Wild: Failure Modes, Drift Patterns, and a Production Evaluation Framework",
+      "url": "https://arxiv.org/abs/2605.01604",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-PAEF-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-RELIABILITYBENCH-2026",
+      "title": "ReliabilityBench: A Stress Benchmark for Reliable LLM Agents",
+      "url": "https://arxiv.org/abs/2601.06112",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-agent-evaluation-drift-attribution",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-RELIABILITYBENCH-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SKILLGUARD-2026",
+      "title": "SkillGuard: A Permission Framework for Agent Skills",
+      "url": "https://arxiv.org/abs/2606.03024",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SKILLGUARD-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SKILLINJECT-2026",
+      "title": "Skill-Inject: Measuring Agent Vulnerability to Skill File Attacks",
+      "url": "https://arxiv.org/abs/2602.20156",
+      "kind": "PRIMARY_PREPRINT_AND_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SKILLINJECT-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SWEBENCH-MULTILINGUAL-2026",
+      "title": "SWE-bench Multilingual",
+      "url": "https://www.swebench.com/multilingual.html",
+      "kind": "PUBLIC_BENCHMARK",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SWEBENCH-MULTILINGUAL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-SWEBENCH-QUICKSTART-2026",
+      "title": "SWE-bench quickstart and multilingual dataset access",
+      "url": "https://github.com/SWE-bench/SWE-bench/blob/main/docs/guides/quickstart.md",
+      "kind": "OFFICIAL_REPOSITORY_DOCUMENTATION",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-programming-language-agent-affordances",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-SWEBENCH-QUICKSTART-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    },
+    {
+      "source_id": "SRC-VIGIL-2026",
+      "title": "VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills",
+      "url": "https://arxiv.org/abs/2606.26524",
+      "kind": "PRIMARY_PREPRINT",
+      "access_status": "METADATA_ONLY",
+      "access_route": "NONE",
+      "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-skill-capability-containment",
+      "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+      "legacy_source_ids": [
+        "SRC-VIGIL-2026"
+      ],
+      "identity_review": "EXACT_NORMALIZED_MATCH",
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "fulltext_attached": false,
+      "fulltext_inspected": false
+    }
+  ],
+  "occurrence_count": 31,
+  "canonical_source_count": 27,
+  "identity_conflict_count": 2,
+  "access_summary": {
+    "metadata_only": 27,
+    "fulltext_attached": 0,
+    "fulltext_inspected": 0
+  },
+  "next_action": "Resolve/de-duplicate against the Zotero library, acquire permitted readable attachments, then inspect load-bearing spans with locators.",
+  "controller_boundary": "This source inventory is an immutable metadata-only attachment. It does not itself advance lifecycle or establish bibliographic version identity, access, inspection, claim support, or a research gap."
+}

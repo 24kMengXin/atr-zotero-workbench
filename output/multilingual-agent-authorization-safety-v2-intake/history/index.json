@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "d0652695e318a912",
+      "archived_at": "2026-07-18T19:12:43.344582+00:00",
+      "path": "history/projections/d0652695e318a912.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 6,
+      "edge_count": 7
+    },
+    {
+      "id": "c2136968de15e83c",
+      "archived_at": "2026-07-18T19:20:56.391664+00:00",
+      "path": "history/projections/c2136968de15e83c.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 12,
+      "edge_count": 14
+    },
+    {
+      "id": "0b6be900d3101e86",
+      "archived_at": "2026-07-18T19:53:40.478898+00:00",
+      "path": "history/projections/0b6be900d3101e86.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 104,
+      "edge_count": 107
+    },
+    {
+      "id": "1c2e43b035cee565",
+      "archived_at": "2026-07-18T20:38:15.681862+00:00",
+      "path": "history/projections/1c2e43b035cee565.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 120,
+      "edge_count": 161
+    },
+    {
+      "id": "c400d7658c70339b",
+      "archived_at": "2026-07-18T21:24:22.008091+00:00",
+      "path": "history/projections/c400d7658c70339b.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 129,
+      "edge_count": 179
+    },
+    {
+      "id": "2ad3c89acb777606",
+      "archived_at": "2026-07-18T21:34:14.222107+00:00",
+      "path": "history/projections/2ad3c89acb777606.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 134,
+      "edge_count": 186
+    },
+    {
+      "id": "c78da0e08744dd45",
+      "archived_at": "2026-07-18T21:54:40.116728+00:00",
+      "path": "history/projections/c78da0e08744dd45.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 136,
+      "edge_count": 190
+    },
+    {
+      "id": "3ff3c2c14bdc7557",
+      "archived_at": "2026-07-18T21:57:03.998921+00:00",
+      "path": "history/projections/3ff3c2c14bdc7557.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 136,
+      "edge_count": 190
+    },
+    {
+      "id": "e8c47e65031d01d5",
+      "archived_at": "2026-07-18T22:05:06.662419+00:00",
+      "path": "history/projections/e8c47e65031d01d5.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 136,
+      "edge_count": 190
+    },
+    {
+      "id": "e1fd6da92f1e42a4",
+      "archived_at": "2026-07-18T22:29:56.285017+00:00",
+      "path": "history/projections/e1fd6da92f1e42a4.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 145,
+      "edge_count": 217
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.1",
+  "package_id": "TRP-multilingual-representation-and-data-decisions.draft-v1",
+  "topic": "语言混合、token 化和上游语料决策如何改变推理机会、评测结论与训练数据处置，而不是仅仅制造语言标签差异？",
+  "domain_bindings": [
+    {
+      "binding_id": "language-axis",
+      "activation_condition": "The program asks how multilingual or cross-lingual surfaces affect an agent or data decision.",
+      "ambiguity_resolved": "Separates the focal natural-language/data surface from tool, schema, reasoning, evaluator, and programming-language surfaces.",
+      "extra_evidence_required": [
+        "parallel or controlled language-surface comparisons",
+        "explicit mapping of every language-bearing surface"
+      ],
+      "false_positive_prevented": "Prevents programming-language, translation, or benchmark coverage from being misreported as the focal multilingual mechanism.",
+      "deactivation_condition": "Deactivate only if the final construct and all load-bearing conditions are language independent."
+    }
+  ],
+  "language_axis": {
+    "focal_surface": "language distribution in training and adaptation data",
+    "other_language_surfaces": [
+      "tokenizer vocabulary",
+      "retrieval corpus",
+      "reasoning trace",
+      "translation output",
+      "quality evaluator"
+    ],
+    "causal_relation": "Trace how a representation or data-selection decision changes language-specific capability, cost, quality, and user-facing reliance under explicit resource conditions.",
+    "excluded_homonyms": [
+      "language count is not usable coverage",
+      "translation metric improvement is not automatically human decision benefit"
+    ]
+  },
+  "input_class": "BROAD_DIRECTION",
+  "searched_through": "2026-07-19 metadata inventory; full-text verification pending",
+  "corpus_assessment": {
+    "density_band": "DENSE",
+    "taxonomy_feasible": true,
+    "existing_survey_status": "UNCERTAIN",
+    "evidence_refs": [
+      "SRC-CULTURAX-2024",
+      "SRC-FINEWEB2-2025",
+      "SRC-QUALITY-GLANCE-2022",
+      "SRC-LANGUAGE-IDEOLOGY-2022",
+      "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "SRC-USER-RELIANCE-MT-2025",
+      "SRC-PRO-TRANSLATOR-QE-2026"
+    ],
+    "does_not_support": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+  },
+  "selected_track": "FULL_SURVEY",
+  "next_stage": "R2_SURVEY",
+  "knowledge_build_plan": {
+    "required_artifacts": [
+      "verified source ledger with Zotero attachment/locator states",
+      "source-reviewed frontier map",
+      "counterevidence and coverage report",
+      "independent route review",
+      "source-grounded taxonomy with contradiction boundaries",
+      "dated seed agenda with non-promotable outcomes retained"
+    ],
+    "artifact_paths": [
+      "evidence/sources.jsonl",
+      "knowledge/frontier-map.json",
+      "knowledge/knowledge-map.json"
+    ],
+    "question_generation_source": "Only source-inspected tensions and counterexamples surviving independent route review may generate problem cases.",
+    "exit_condition": "Candidate anchors are inspected with locators, the frontier scaffold is revised, counterevidence is recorded, and an independent reviewer selects or rejects the route."
+  },
+  "family_policy": {
+    "max_live_candidates": 2,
+    "max_total_candidates_before_pivot": 4,
+    "required_distinction_dimensions": [
+      "actor and decision",
+      "causal mechanism",
+      "measurement boundary"
+    ],
+    "pivot_rule": "After two unchanged blockers, change source channel or causal fingerprint; after the total cap, merge at a higher construct or park rather than minting setting-only siblings."
+  },
+  "forbidden_shortcuts": [
+    "Do not treat metadata or titles as inspected evidence.",
+    "Do not treat the frontier scaffold as novelty or a gap certificate.",
+    "Do not create a problem-case before independent route review."
+  ],
+  "rationale": "The inventory contains 135 canonical candidates, but none records inspected full text. The selected track is a proportional draft for verification and remains unauthorized until an independent reviewer reads the cited spans.",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "valid_until": "2026-08-19T00:00:00+08:00"
+}

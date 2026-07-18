@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "snapshots": [
+    {
+      "id": "a35deb23ea962252",
+      "archived_at": "2026-07-18T19:12:43.403223+00:00",
+      "path": "history/projections/a35deb23ea962252.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 6,
+      "edge_count": 7
+    },
+    {
+      "id": "50854c8cc3ec5934",
+      "archived_at": "2026-07-18T19:20:56.462739+00:00",
+      "path": "history/projections/50854c8cc3ec5934.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 11,
+      "edge_count": 13
+    },
+    {
+      "id": "db64f6163d92c97a",
+      "archived_at": "2026-07-18T19:53:40.567756+00:00",
+      "path": "history/projections/db64f6163d92c97a.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 283,
+      "edge_count": 286
+    },
+    {
+      "id": "d9d17452d125ee71",
+      "archived_at": "2026-07-18T20:38:15.872180+00:00",
+      "path": "history/projections/d9d17452d125ee71.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 299,
+      "edge_count": 346
+    },
+    {
+      "id": "583a9a0cc47bb793",
+      "archived_at": "2026-07-18T21:24:22.713245+00:00",
+      "path": "history/projections/583a9a0cc47bb793.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 312,
+      "edge_count": 377
+    },
+    {
+      "id": "70f2adefd38eae71",
+      "archived_at": "2026-07-18T21:34:14.690668+00:00",
+      "path": "history/projections/70f2adefd38eae71.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 317,
+      "edge_count": 384
+    },
+    {
+      "id": "804735e92de1a68d",
+      "archived_at": "2026-07-18T21:54:40.203335+00:00",
+      "path": "history/projections/804735e92de1a68d.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 319,
+      "edge_count": 388
+    },
+    {
+      "id": "2661af8f940eddb0",
+      "archived_at": "2026-07-18T21:57:04.090545+00:00",
+      "path": "history/projections/2661af8f940eddb0.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 319,
+      "edge_count": 388
+    },
+    {
+      "id": "1a8d2c0969675d7e",
+      "archived_at": "2026-07-18T22:05:06.756508+00:00",
+      "path": "history/projections/1a8d2c0969675d7e.json",
+      "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "node_count": 319,
+      "edge_count": 388
+    }
+  ]
+}

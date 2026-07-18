@@ -1,0 +1,60 @@
+{
+  "artifact_type": "source-acquisition-handoff",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-SRC-002.v1",
+  "program_key": "atr-research-governance",
+  "input_collision_review_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+  "sources": [
+    {
+      "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "url": "https://arxiv.org/abs/2601.20727",
+      "pdf_url": "https://arxiv.org/pdf/2601.20727",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/collision-review/audit-trails.pdf",
+      "cache_role": "VERIFIED_ACQUISITION_CACHE",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.20727"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "accountability",
+            "audit",
+            "language",
+            "large",
+            "models",
+            "trails"
+          ],
+          "expected_token_count": 6
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        }
+      ],
+      "access_status": "EXPLICIT_OPEN_PDF",
+      "access_route": "OPEN_REPOSITORY",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "zotero_attachment_state": "NOT_ATTACHED_AT_ARTIFACT_CREATION",
+      "fulltext_state": "FULLTEXT_INSPECTED_BY_WORKER_NOT_HUMAN",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-2, 11-15",
+          "observation": "Directly proposes chronological, tamper-evident, context-rich lifecycle and decision records with append-only storage and auditor-facing reconstruction, while acknowledging scale, composition, access, privacy, and proportionality limits.",
+          "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+        }
+      ],
+      "does_not_establish": "That added records improve scientific decisions, human learning, calibrated beliefs, or held-out validity rather than documentation volume."
+    }
+  ],
+  "handoff_policy": "Zotero may create a stored child attachment only after an explicit human read action; runtime item/attachment keys remain outside this immutable artifact.",
+  "does_not_authorize": "Identity and byte verification do not establish cited-version equivalence, human inspection, claim support, novelty, a route, or a lifecycle transition."
+}

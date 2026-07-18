@@ -24,4 +24,8 @@ class HistoricalAuditTest(unittest.TestCase):
             self.assertEqual(report["summary"]["run_count"], 1)
             self.assertEqual(row["reusable_as_provenance_input"], ["source_ledger"])
             self.assertIn("missing concept_map", row["not_sufficient_for_current_continuation"])
+            self.assertIn("source access/fulltext state undeclared", row["not_sufficient_for_current_continuation"])
+            self.assertEqual(row["alignment_disposition"], "LEGACY_MAP_INPUT_ONLY")
+            self.assertEqual(row["artifact_dispositions"][0]["decision"], "REUSE_AFTER_SOURCE_REVERIFICATION")
+            self.assertEqual(report["summary"]["source_records_with_access_status"], 0)
             self.assertEqual((run / "evidence" / "sources.jsonl").read_text(), '{"source_id":"P1"}\n')

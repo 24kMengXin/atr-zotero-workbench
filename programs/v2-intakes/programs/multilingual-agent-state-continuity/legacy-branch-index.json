@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "legacy-branch-index",
+  "program_key": "multilingual-agent-state-continuity",
+  "branches": [
+    {
+      "run": "2026-07-17-code-switch-agent-control-plane",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switch-agent-control-plane",
+      "catalog_role": "对话内语言切换后的控制平面",
+      "catalog_disposition": "canonical_mechanism_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "PRIORITY_REVIEW_INPUT",
+      "sources": 8,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "frontier_map",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-multilingual-agent-memory-continuity",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-memory-continuity",
+      "catalog_role": "跨语言长期记忆状态",
+      "catalog_disposition": "merge_as_state_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 9,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "frontier_map",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-multilingual-agent-coordination",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-coordination",
+      "catalog_role": "跨语言协作与委派",
+      "catalog_disposition": "merge_as_coordination_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 5,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-code-switched-speech-tool-grounding",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-code-switched-speech-tool-grounding",
+      "catalog_role": "语音转写与工具语义 grounding",
+      "catalog_disposition": "merge_as_modality_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 6,
+      "claims": 0,
+      "reusable": [
+        "source_ledger",
+        "recorded_process_events"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    },
+    {
+      "run": "2026-07-17-multilingual-gui-locale-attribution",
+      "path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-gui-locale-attribution",
+      "catalog_role": "指令语言与界面语言/布局归因",
+      "catalog_disposition": "merge_as_modality_branch",
+      "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+      "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+      "sources": 4,
+      "claims": 0,
+      "reusable": [
+        "source_ledger"
+      ],
+      "missing_for_current": [
+        "missing knowledge_context",
+        "missing opportunity_map",
+        "missing concept_map",
+        "no current claim ledger",
+        "no LEGACY_MAPPED artifact manifests",
+        "source access/fulltext state undeclared",
+        "no source declared FULLTEXT_INSPECTED with locator"
+      ]
+    }
+  ],
+  "consumption_rule": "No branch artifact is consumed until it receives an artifact-level LEGACY_MAPPED manifest and its source claims are reverified."
+}

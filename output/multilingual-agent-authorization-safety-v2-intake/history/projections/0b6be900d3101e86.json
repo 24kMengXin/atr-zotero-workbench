@@ -1,0 +1,2370 @@
+{
+  "schema_version": "0.2",
+  "projection": "derived-read-only-v2-sqlite",
+  "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+  "diagnostics": [],
+  "timeline": [
+    {
+      "at": "2026-07-18T19:10:58.739188+00:00",
+      "kind": "atr_v2_transition",
+      "id": "EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "label": "∅ → INTAKE",
+      "review_mode": "none",
+      "artifact_ids": [
+        "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:10:58.778255+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "label": "附件 · LEGACY_BRANCH_LINEAGE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c"
+      ]
+    },
+    {
+      "at": "2026-07-18T19:20:45.827776+00:00",
+      "kind": "atr_v2_attachment",
+      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-SOURCE-INVENTORY",
+      "label": "附件 · SOURCE_REVERIFICATION_QUEUE（不改变 lifecycle）",
+      "artifact_ids": [
+        "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "kind": "run",
+      "label": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "data": {
+        "controller": "ATR v2 SQLite",
+        "active_subject_id": "program:multilingual-agent-authorization-safety",
+        "stage": "INTAKE",
+        "gaps": []
+      }
+    },
+    {
+      "id": "subject:program:multilingual-agent-authorization-safety",
+      "kind": "atr_v2_subject",
+      "label": "program:multilingual-agent-authorization-safety",
+      "data": {
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "state": "INTAKE",
+        "version": 0,
+        "active": 1,
+        "created_at": "2026-07-18T19:10:58.739065+00:00",
+        "updated_at": "2026-07-18T19:10:58.739159+00:00",
+        "subject_kind": "research-program"
+      }
+    },
+    {
+      "id": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "kind": "atr_v2_artifact",
+      "label": "program-intake · 01e07eb24990",
+      "data": {
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "artifact_kind": "program-intake",
+        "digest": "01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "original_name": "program-intake.json",
+        "created_at": "2026-07-18T19:10:58.667948+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-authorization-safety/program-intake.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "program-intake",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "research_program:multilingual-agent-authorization-safety",
+      "kind": "research_program",
+      "label": "多语言 Agent 授权与安全边界",
+      "data": {
+        "program_key": "multilingual-agent-authorization-safety",
+        "root_question": "在多语言条件下，何时应行动、澄清或拒绝，以及安全失败究竟发生在解释、行动表征、授权边界还是适配过程？",
+        "parent_portfolio_run": "2026-07-19-multilingual-program-portfolio-v2",
+        "initial_state": "INTAKE",
+        "next_legal_work": "deduplicate and reverify sources; author a fresh program-level topic route and FKS knowledge context",
+        "language_axis_binding_required": true,
+        "controller_boundary": "The historical branches are inputs only. This artifact does not inherit their stage, gate, claim, route, or scholarly verdict.",
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c"
+      }
+    },
+    {
+      "id": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "kind": "atr_v2_artifact",
+      "label": "legacy-branch-index · da25986962e3",
+      "data": {
+        "artifact_id": "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "artifact_kind": "legacy-branch-index",
+        "digest": "da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "original_name": "legacy-branch-index.json",
+        "created_at": "2026-07-18T19:10:58.703233+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/programs/multilingual-agent-authorization-safety/legacy-branch-index.json",
+          "declared_scope": "historical alignment input; no lifecycle authorization"
+        },
+        "artifact_type": "legacy-branch-index",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-abstention-calibration",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-abstention-calibration",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-abstention-calibration",
+        "catalog_role": "行动/弃权校准",
+        "catalog_disposition": "canonical_decision_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "PRIORITY_REVIEW_INPUT",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-agent-safety-boundary",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-agent-safety-boundary",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-agent-safety-boundary",
+        "catalog_role": "工具调用前的安全边界归因",
+        "catalog_disposition": "merge_as_guardrail_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-tool-output-injection",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-tool-output-injection",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-tool-output-injection",
+        "catalog_role": "间接工具输出注入的语言条件化授权混淆",
+        "catalog_disposition": "retain_as_security_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "RETAIN_BRANCH_AFTER_REVERIFY",
+        "source_count": 8,
+        "claim_count": 3,
+        "reusable": [
+          "source_ledger",
+          "claim_history"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-pragmatic-action-authorization",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-pragmatic-action-authorization",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-pragmatic-action-authorization",
+        "catalog_role": "语用线索下的澄清/行动契约",
+        "catalog_disposition": "merge_as_authorization_branch",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 9,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "recorded_process_events"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "legacy_run:2026-07-17-multilingual-adaptation-safety",
+      "kind": "legacy_research_run",
+      "label": "2026-07-17-multilingual-adaptation-safety",
+      "data": {
+        "historical_path": "/Users/zone/Documents/multilingual-aaai/research-runs/2026-07-17-multilingual-adaptation-safety",
+        "catalog_role": "语言适配后的安全保持",
+        "catalog_disposition": "merge_as_adaptation_boundary",
+        "alignment_disposition": "LEGACY_MAP_INPUT_ONLY",
+        "integration_action": "MERGE_AFTER_DEDUP_AND_REVERIFY",
+        "source_count": 15,
+        "claim_count": 0,
+        "reusable": [
+          "source_ledger",
+          "frontier_map"
+        ],
+        "missing_for_current": [
+          "missing knowledge_context",
+          "missing opportunity_map",
+          "missing concept_map",
+          "no current claim ledger",
+          "no LEGACY_MAPPED artifact manifests",
+          "source access/fulltext state undeclared",
+          "no source declared FULLTEXT_INSPECTED with locator"
+        ]
+      }
+    },
+    {
+      "id": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "kind": "atr_v2_artifact",
+      "label": "program-source-inventory · b96dab18d95e",
+      "data": {
+        "artifact_id": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "artifact_kind": "program-source-inventory",
+        "digest": "b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "original_name": "program-source-inventory.json",
+        "created_at": "2026-07-18T19:20:45.791797+00:00",
+        "metadata": {
+          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/v2-intakes/source-inventory/multilingual-agent-authorization-safety/program-source-inventory.json",
+          "declared_scope": "metadata-only source re-verification queue"
+        },
+        "artifact_type": "program-source-inventory",
+        "projection_error": null
+      }
+    },
+    {
+      "id": "paper:SRC-ABCD-2021",
+      "kind": "paper",
+      "label": "Action-Based Conversations Dataset",
+      "data": {
+        "source_id": "SRC-ABCD-2021",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2104.00783",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-ABCD-2021",
+      "kind": "evidence_boundary",
+      "label": "SRC-ABCD-2021 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-ADAPTIVE-IPI-2026",
+      "kind": "paper",
+      "label": "Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents",
+      "data": {
+        "source_id": "SRC-ADAPTIVE-IPI-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.26479",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-ADAPTIVE-IPI-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-ADAPTIVE-IPI-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTABSTAIN-2026",
+      "kind": "paper",
+      "label": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "data": {
+        "source_id": "SRC-AGENTABSTAIN-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.10059",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-evidence-conditioned-research-exploration, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary, 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTABSTAIN-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTABSTAIN-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-evidence-conditioned-research-exploration, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary, 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTDOJO-2024",
+      "kind": "paper",
+      "label": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "data": {
+        "source_id": "SRC-AGENTDOJO-2024",
+        "doi": "",
+        "url": "https://openreview.net/forum?id=m1YYAQjO3w",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTDOJO-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTDOJO-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTDOJO-REPO-2026",
+      "kind": "paper",
+      "label": "AgentDojo public implementation",
+      "data": {
+        "source_id": "SRC-AGENTDOJO-REPO-2026",
+        "doi": "",
+        "url": "https://github.com/ethz-spylab/agentdojo",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_CODE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTDOJO-REPO-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTDOJO-REPO-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTIC-ABSTENTION-2026",
+      "kind": "paper",
+      "label": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+      "data": {
+        "source_id": "SRC-AGENTIC-ABSTENTION-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.28733",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTIC-ABSTENTION-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTIC-ABSTENTION-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTSHIELD-2026",
+      "kind": "paper",
+      "label": "AgentShield: Deception-based Compromise Detection for Tool-using LLM Agents",
+      "data": {
+        "source_id": "SRC-AGENTSHIELD-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.11026",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTSHIELD-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTSHIELD-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-AGENTSHIELD-REPO-2026",
+      "kind": "paper",
+      "label": "AgentShield public implementation",
+      "data": {
+        "source_id": "SRC-AGENTSHIELD-REPO-2026",
+        "doi": "",
+        "url": "https://github.com/Yassin-H-Rassul/AgentShield",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_CODE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-AGENTSHIELD-REPO-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-AGENTSHIELD-REPO-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-BITEXT-2023",
+      "kind": "paper",
+      "label": "Bitext customer-support chatbot dataset",
+      "data": {
+        "source_id": "SRC-BITEXT-2023",
+        "doi": "",
+        "url": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OPEN_SOURCE_DATASET",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-BITEXT-2023",
+      "kind": "evidence_boundary",
+      "label": "SRC-BITEXT-2023 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-COD-2023",
+      "kind": "paper",
+      "label": "Cross-Lingual Dialogue Dataset Creation via Outline-Based Generation",
+      "data": {
+        "source_id": "SRC-COD-2023",
+        "doi": "",
+        "url": "https://aclanthology.org/2023.tacl-1.9/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_JOURNAL_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-COD-2023",
+      "kind": "evidence_boundary",
+      "label": "SRC-COD-2023 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-HIDDEN-SPACE-2025",
+      "kind": "paper",
+      "label": "The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual Context",
+      "data": {
+        "source_id": "SRC-HIDDEN-SPACE-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2504.02708",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-HIDDEN-SPACE-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-HIDDEN-SPACE-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-INJECAGENT-2024",
+      "kind": "paper",
+      "label": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+      "data": {
+        "source_id": "SRC-INJECAGENT-2024",
+        "doi": "",
+        "url": "https://aclanthology.org/2024.findings-acl.624/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-INJECAGENT-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-INJECAGENT-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-16-fks-multilingual-agent-action, 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-JOURNEYBENCH-2026",
+      "kind": "paper",
+      "label": "JourneyBench",
+      "data": {
+        "source_id": "SRC-JOURNEYBENCH-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.eacl-industry.15.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-JOURNEYBENCH-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-JOURNEYBENCH-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LANGUAGE-BARRIER-2024",
+      "kind": "paper",
+      "label": "The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts",
+      "data": {
+        "source_id": "SRC-LANGUAGE-BARRIER-2024",
+        "doi": "",
+        "url": "https://aclanthology.org/2024.findings-acl.156/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LANGUAGE-BARRIER-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-LANGUAGE-BARRIER-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LAYER-SWAP-2026",
+      "kind": "paper",
+      "label": "Layer-wise Swapping for Generalizable Multilingual Safety",
+      "data": {
+        "source_id": "SRC-LAYER-SWAP-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.eacl-long.98/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LAYER-SWAP-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-LAYER-SWAP-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LINGUASAFE-2025",
+      "kind": "paper",
+      "label": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+      "data": {
+        "source_id": "SRC-LINGUASAFE-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2508.12733",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LINGUASAFE-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-LINGUASAFE-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-LLAMA-GUARD3-CARD",
+      "kind": "paper",
+      "label": "Llama Guard 3 model card",
+      "data": {
+        "source_id": "SRC-LLAMA-GUARD3-CARD",
+        "doi": "",
+        "url": "https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard3/8B/MODEL_CARD.md",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "MODEL_CARD",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-LLAMA-GUARD3-CARD",
+      "kind": "evidence_boundary",
+      "label": "SRC-LLAMA-GUARD3-CARD 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MAPS-2025",
+      "kind": "paper",
+      "label": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+      "data": {
+        "source_id": "SRC-MAPS-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2505.15935",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-evaluation-transport, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MAPS-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MAPS-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 4 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-evaluation-transport, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MELON-2025",
+      "kind": "paper",
+      "label": "MELON: Provable Defense Against Indirect Prompt Injection Attacks in AI Agents",
+      "data": {
+        "source_id": "SRC-MELON-2025",
+        "doi": "",
+        "url": "https://proceedings.mlr.press/v267/zhu25z.html",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MELON-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MELON-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MINIONESE-2026",
+      "kind": "paper",
+      "label": "Minionese: Comprehensive Benchmark and Mechanistic Study of Multilingual LLM Safety",
+      "data": {
+        "source_id": "SRC-MINIONESE-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.10112",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MINIONESE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MINIONESE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MIPIAD-2026",
+      "kind": "paper",
+      "label": "MIPIAD: Multilingual Indirect Prompt Injection Attack Defense with Qwen–TF-IDF Hybrid and Meta-Ensemble Learning",
+      "data": {
+        "source_id": "SRC-MIPIAD-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.07269",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MIPIAD-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MIPIAD-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-tool-output-injection",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MKA-2025",
+      "kind": "paper",
+      "label": "MKA: Leveraging Cross-Lingual Consensus for Model Abstention",
+      "data": {
+        "source_id": "SRC-MKA-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2503.23687",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_CONFERENCE_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MKA-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MKA-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MLBENCHGUARD-2026",
+      "kind": "paper",
+      "label": "ML-Bench&Guard: Policy-Grounded Multilingual Safety Benchmark and Guardrail for Large Language Models",
+      "data": {
+        "source_id": "SRC-MLBENCHGUARD-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2605.00689",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MLBENCHGUARD-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLBENCHGUARD-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MLCL-2026",
+      "kind": "paper",
+      "label": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "data": {
+        "source_id": "SRC-MLCL-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.acl-long.2039/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MLCL-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MLCL-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 5 occurrence(s) across: 2026-07-16-action-evaluation-attribution, 2026-07-16-fks-multilingual-agent-action, 2026-07-17-code-switched-speech-tool-grounding, 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "kind": "paper",
+      "label": "Completely Modular Fine-tuning for Dynamic Language Adaptation",
+      "data": {
+        "source_id": "SRC-MODULAR-LANGUAGE-ADAPT-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.findings-eacl.252/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MODULAR-LANGUAGE-ADAPT-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MPO-2025",
+      "kind": "paper",
+      "label": "MPO: Multilingual Safety Alignment via Reward Gap Optimization",
+      "data": {
+        "source_id": "SRC-MPO-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.acl-long.1149/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MPO-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MPO-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MRGUARD-2025",
+      "kind": "paper",
+      "label": "MrGuard: A Multilingual Reasoning Guardrail for Universal LLM Safety",
+      "data": {
+        "source_id": "SRC-MRGUARD-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.emnlp-main.1392/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MRGUARD-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MRGUARD-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "kind": "paper",
+      "label": "Teaching LLMs to Abstain across Languages via Multilingual Feedback",
+      "data": {
+        "source_id": "SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+        "doi": "",
+        "url": "https://aclanthology.org/2024.emnlp-main.239/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_CONFERENCE_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTI-ABSTAIN-FEEDBACK-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTI3WOZ-2023",
+      "kind": "paper",
+      "label": "Multi3WOZ: A Multilingual, Multi-Domain, Multi-Parallel Dataset for Training and Evaluating Culturally Adapted Task-Oriented Dialog Systems",
+      "data": {
+        "source_id": "SRC-MULTI3WOZ-2023",
+        "doi": "",
+        "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00609/118298/Multi3WOZ-A-Multilingual-Multi-Domain-Multi",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_JOURNAL_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTI3WOZ-2023",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTI3WOZ-2023 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTIJAIL-2024",
+      "kind": "paper",
+      "label": "Multilingual Jailbreak Challenges in Large Language Models",
+      "data": {
+        "source_id": "SRC-MULTIJAIL-2024",
+        "doi": "",
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/6b396f766a50e0853a5164e68048540c-Abstract-Conference.html",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTIJAIL-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTIJAIL-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "kind": "paper",
+      "label": "The State of Multilingual LLM Safety Research: From Measuring The Language Gap To Mitigating It",
+      "data": {
+        "source_id": "SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.emnlp-main.800/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "SURVEY",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTILINGUAL-SAFETY-SURVEY-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTILINGUAL-UE-2026",
+      "kind": "paper",
+      "label": "Estimating Uncertainty from Reasoning: A Large-Scale Study of Multi- and Crosslingual MCQA Performance in LLMs",
+      "data": {
+        "source_id": "SRC-MULTILINGUAL-UE-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2607.06327",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTILINGUAL-UE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTILINGUAL-UE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-MULTITASK-BENCH-2025",
+      "kind": "paper",
+      "label": "Multitask-Bench: Unveiling and Mitigating Safety Gaps in LLMs Fine-tuning",
+      "data": {
+        "source_id": "SRC-MULTITASK-BENCH-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.coling-main.606/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-MULTITASK-BENCH-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-MULTITASK-BENCH-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-OSGUARD-2026",
+      "kind": "paper",
+      "label": "OSGuard: A Benchmark for Safety in Computer-Use Agents",
+      "data": {
+        "source_id": "SRC-OSGUARD-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2606.15034",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-OSGUARD-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-OSGUARD-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-PRESTO-2024",
+      "kind": "paper",
+      "label": "PRESTO: multilingual realistic task-oriented dialogue parsing",
+      "data": {
+        "source_id": "SRC-PRESTO-2024",
+        "doi": "",
+        "url": "https://research.google/blog/presto-a-multilingual-dataset-for-parsing-realistic-task-oriented-dialogues/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_DATASET_RELEASE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-PRESTO-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-PRESTO-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-RABAK-2025",
+      "kind": "paper",
+      "label": "Lost in Localization: Building RabakBench with Human-in-the-Loop Validation to Measure Multilingual Safety Gaps",
+      "data": {
+        "source_id": "SRC-RABAK-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2507.05980",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-RABAK-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-RABAK-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-REALSAFE-2025",
+      "kind": "paper",
+      "label": "RealSafe: Quantifying Safety Risks of Language Agents in Real-World",
+      "data": {
+        "source_id": "SRC-REALSAFE-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.coling-main.642/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-REALSAFE-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-REALSAFE-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-STING-2026",
+      "kind": "paper",
+      "label": "STING: Multilingual Multi-Turn Tool-Agent Red Teaming",
+      "data": {
+        "source_id": "SRC-STING-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2602.16346",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-STING-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-STING-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-abstention-calibration",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-TELAGENTBENCH-2025",
+      "kind": "paper",
+      "label": "TelAgentBench",
+      "data": {
+        "source_id": "SRC-TELAGENTBENCH-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.emnlp-industry.83.pdf",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-TELAGENTBENCH-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-TELAGENTBENCH-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-TONGUE-TIED-2025",
+      "kind": "paper",
+      "label": "Tongue-Tied: Breaking LLMs Safety Through New Language Learning",
+      "data": {
+        "source_id": "SRC-TONGUE-TIED-2025",
+        "doi": "",
+        "url": "https://aclanthology.org/2025.calcs-1.5/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-TONGUE-TIED-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-TONGUE-TIED-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-TOOLSAFE-2026",
+      "kind": "paper",
+      "label": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback",
+      "data": {
+        "source_id": "SRC-TOOLSAFE-2026",
+        "doi": "",
+        "url": "https://aclanthology.org/2026.findings-acl.1850/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-TOOLSAFE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-TOOLSAFE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 2 occurrence(s) across: 2026-07-17-controlled-multilingual-discovery, 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-TRACESAFE-2026",
+      "kind": "paper",
+      "label": "TraceSafe: A Systematic Assessment of LLM Guardrails on Multi-Step Tool-Calling Trajectories",
+      "data": {
+        "source_id": "SRC-TRACESAFE-2026",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2604.07223",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PREPRINT",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-TRACESAFE-2026",
+      "kind": "evidence_boundary",
+      "label": "SRC-TRACESAFE-2026 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-agent-safety-boundary",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-UNFORGOTTEN-SAFETY-2025",
+      "kind": "paper",
+      "label": "Unforgotten Safety: Preserving Safety Alignment of Large Language Models with Continual Learning",
+      "data": {
+        "source_id": "SRC-UNFORGOTTEN-SAFETY-2025",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2512.10150",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_PAPER",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-UNFORGOTTEN-SAFETY-2025",
+      "kind": "evidence_boundary",
+      "label": "SRC-UNFORGOTTEN-SAFETY-2025 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-WMTCHAT-2024",
+      "kind": "paper",
+      "label": "WMT24 Chat Translation Task",
+      "data": {
+        "source_id": "SRC-WMTCHAT-2024",
+        "doi": "",
+        "url": "https://wmt-chat-task.github.io/2024/",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "OFFICIAL_SHARED_TASK_RELEASE",
+        "source_layer": "source_needs_review",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-WMTCHAT-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-WMTCHAT-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-pragmatic-action-authorization",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "paper:SRC-XSafety-2024",
+      "kind": "paper",
+      "label": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "data": {
+        "source_id": "SRC-XSafety-2024",
+        "doi": "",
+        "url": "https://arxiv.org/abs/2310.00905",
+        "pdf_url": "",
+        "access_status": "METADATA_ONLY",
+        "access_route": "NONE",
+        "source_kind": "PRIMARY_BENCHMARK",
+        "source_layer": "scholarly_evidence",
+        "locator": "",
+        "provenance": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "source_function": null,
+        "observed_at": null,
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness.",
+        "does_not_establish": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "evidence:SRC-XSafety-2024",
+      "kind": "evidence_boundary",
+      "label": "SRC-XSafety-2024 的证据边界",
+      "data": {
+        "supports": "Historical inventory records 1 occurrence(s) across: 2026-07-17-multilingual-adaptation-safety",
+        "does_not_support": "Canonicalization establishes only probable bibliographic identity; it does not establish version identity, access, attachment, inspection, support, or scholarly correctness."
+      }
+    },
+    {
+      "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "kind": "atr_v2_transition",
+      "label": "∅ → INTAKE",
+      "data": {
+        "seq": 1,
+        "event_id": "EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "from_state": null,
+        "to_state": "INTAKE",
+        "expected_version": 0,
+        "artifact_id": "sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+        "review_mode": "none",
+        "note": "subject created",
+        "created_at": "2026-07-18T19:10:58.739188+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "kind": "atr_v2_attachment",
+      "label": "LEGACY_BRANCH_LINEAGE · v0",
+      "data": {
+        "seq": 1,
+        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "subject_version": 0,
+        "artifact_id": "sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+        "role": "LEGACY_BRANCH_LINEAGE",
+        "note": "Indexes historical branches without promoting them.",
+        "created_at": "2026-07-18T19:10:58.778255+00:00"
+      }
+    },
+    {
+      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-SOURCE-INVENTORY",
+      "kind": "atr_v2_attachment",
+      "label": "SOURCE_REVERIFICATION_QUEUE · v0",
+      "data": {
+        "seq": 2,
+        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-SOURCE-INVENTORY",
+        "subject_id": "program:multilingual-agent-authorization-safety",
+        "subject_version": 0,
+        "artifact_id": "sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+        "role": "SOURCE_REVERIFICATION_QUEUE",
+        "note": "Canonical bibliographic candidates; attachment and cited-span inspection remain pending.",
+        "created_at": "2026-07-18T19:20:45.827776+00:00"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "subject:program:multilingual-agent-authorization-safety",
+      "relation": "tracks_subject",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "target": "research_program:multilingual-agent-authorization-safety",
+      "relation": "materializes_program_intake",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "target": "research_program:multilingual-agent-authorization-safety",
+      "relation": "indexes_legacy_branches",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-agent-abstention-calibration",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-agent-safety-boundary",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-tool-output-injection",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-pragmatic-action-authorization",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "research_program:multilingual-agent-authorization-safety",
+      "target": "legacy_run:2026-07-17-multilingual-adaptation-safety",
+      "relation": "retains_legacy_branch_as_input",
+      "data": {}
+    },
+    {
+      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "relation": "registers_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-ABCD-2021",
+      "target": "evidence:SRC-ABCD-2021",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-ABCD-2021",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-ADAPTIVE-IPI-2026",
+      "target": "evidence:SRC-ADAPTIVE-IPI-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-ADAPTIVE-IPI-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTABSTAIN-2026",
+      "target": "evidence:SRC-AGENTABSTAIN-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTABSTAIN-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTDOJO-2024",
+      "target": "evidence:SRC-AGENTDOJO-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTDOJO-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTDOJO-REPO-2026",
+      "target": "evidence:SRC-AGENTDOJO-REPO-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTDOJO-REPO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTIC-ABSTENTION-2026",
+      "target": "evidence:SRC-AGENTIC-ABSTENTION-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTIC-ABSTENTION-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTSHIELD-2026",
+      "target": "evidence:SRC-AGENTSHIELD-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTSHIELD-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-AGENTSHIELD-REPO-2026",
+      "target": "evidence:SRC-AGENTSHIELD-REPO-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-AGENTSHIELD-REPO-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-BITEXT-2023",
+      "target": "evidence:SRC-BITEXT-2023",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-BITEXT-2023",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-COD-2023",
+      "target": "evidence:SRC-COD-2023",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-COD-2023",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-HIDDEN-SPACE-2025",
+      "target": "evidence:SRC-HIDDEN-SPACE-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-HIDDEN-SPACE-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-INJECAGENT-2024",
+      "target": "evidence:SRC-INJECAGENT-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-INJECAGENT-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-JOURNEYBENCH-2026",
+      "target": "evidence:SRC-JOURNEYBENCH-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-JOURNEYBENCH-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LANGUAGE-BARRIER-2024",
+      "target": "evidence:SRC-LANGUAGE-BARRIER-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-LANGUAGE-BARRIER-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LAYER-SWAP-2026",
+      "target": "evidence:SRC-LAYER-SWAP-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-LAYER-SWAP-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LINGUASAFE-2025",
+      "target": "evidence:SRC-LINGUASAFE-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-LINGUASAFE-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-LLAMA-GUARD3-CARD",
+      "target": "evidence:SRC-LLAMA-GUARD3-CARD",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-LLAMA-GUARD3-CARD",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MAPS-2025",
+      "target": "evidence:SRC-MAPS-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MAPS-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MELON-2025",
+      "target": "evidence:SRC-MELON-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MELON-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MINIONESE-2026",
+      "target": "evidence:SRC-MINIONESE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MINIONESE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MIPIAD-2026",
+      "target": "evidence:SRC-MIPIAD-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MIPIAD-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MKA-2025",
+      "target": "evidence:SRC-MKA-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MKA-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLBENCHGUARD-2026",
+      "target": "evidence:SRC-MLBENCHGUARD-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MLBENCHGUARD-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MLCL-2026",
+      "target": "evidence:SRC-MLCL-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MLCL-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "target": "evidence:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MODULAR-LANGUAGE-ADAPT-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MPO-2025",
+      "target": "evidence:SRC-MPO-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MPO-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MRGUARD-2025",
+      "target": "evidence:SRC-MRGUARD-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MRGUARD-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "target": "evidence:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTI-ABSTAIN-FEEDBACK-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTI3WOZ-2023",
+      "target": "evidence:SRC-MULTI3WOZ-2023",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTI3WOZ-2023",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTIJAIL-2024",
+      "target": "evidence:SRC-MULTIJAIL-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTIJAIL-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "target": "evidence:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTILINGUAL-SAFETY-SURVEY-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTILINGUAL-UE-2026",
+      "target": "evidence:SRC-MULTILINGUAL-UE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTILINGUAL-UE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-MULTITASK-BENCH-2025",
+      "target": "evidence:SRC-MULTITASK-BENCH-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-MULTITASK-BENCH-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-OSGUARD-2026",
+      "target": "evidence:SRC-OSGUARD-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-OSGUARD-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-PRESTO-2024",
+      "target": "evidence:SRC-PRESTO-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-PRESTO-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-RABAK-2025",
+      "target": "evidence:SRC-RABAK-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-RABAK-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-REALSAFE-2025",
+      "target": "evidence:SRC-REALSAFE-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-REALSAFE-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-STING-2026",
+      "target": "evidence:SRC-STING-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-STING-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-TELAGENTBENCH-2025",
+      "target": "evidence:SRC-TELAGENTBENCH-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-TELAGENTBENCH-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-TONGUE-TIED-2025",
+      "target": "evidence:SRC-TONGUE-TIED-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-TONGUE-TIED-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-TOOLSAFE-2026",
+      "target": "evidence:SRC-TOOLSAFE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-TOOLSAFE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-TRACESAFE-2026",
+      "target": "evidence:SRC-TRACESAFE-2026",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-TRACESAFE-2026",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-UNFORGOTTEN-SAFETY-2025",
+      "target": "evidence:SRC-UNFORGOTTEN-SAFETY-2025",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-UNFORGOTTEN-SAFETY-2025",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-WMTCHAT-2024",
+      "target": "evidence:SRC-WMTCHAT-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-WMTCHAT-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "paper:SRC-XSafety-2024",
+      "target": "evidence:SRC-XSafety-2024",
+      "relation": "states_boundary",
+      "data": {}
+    },
+    {
+      "source": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "target": "paper:SRC-XSafety-2024",
+      "relation": "records_explicit_source",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-authorization-safety",
+      "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "relation": "records_transition",
+      "data": {}
+    },
+    {
+      "source": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "target": "artifact:sha256:01e07eb24990647d2558c102776836587258825c3786b5ee6b4e50f6ef9c711c",
+      "relation": "authorized_by_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-authorization-safety",
+      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-01",
+      "target": "artifact:sha256:da25986962e3b622c0c00e11258aef89285af613f1797f70853af0d0a8822a2c",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    },
+    {
+      "source": "subject:program:multilingual-agent-authorization-safety",
+      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-SOURCE-INVENTORY",
+      "relation": "attaches_evidence_without_transition",
+      "data": {}
+    },
+    {
+      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-SOURCE-INVENTORY",
+      "target": "artifact:sha256:b96dab18d95ee4b3e1e4a865bdea52a6e31dbe407064ed82de13d05ca151c609",
+      "relation": "attaches_immutable_artifact",
+      "data": {}
+    }
+  ],
+  "history": {
+    "snapshots": [
+      {
+        "id": "d0652695e318a912",
+        "archived_at": "2026-07-18T19:12:43.344582+00:00",
+        "path": "history/projections/d0652695e318a912.json",
+        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "node_count": 6,
+        "edge_count": 7
+      },
+      {
+        "id": "c2136968de15e83c",
+        "archived_at": "2026-07-18T19:20:56.391664+00:00",
+        "path": "history/projections/c2136968de15e83c.json",
+        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+        "node_count": 12,
+        "edge_count": 14
+      }
+    ],
+    "previous_projection": "c2136968de15e83c"
+  }
+}

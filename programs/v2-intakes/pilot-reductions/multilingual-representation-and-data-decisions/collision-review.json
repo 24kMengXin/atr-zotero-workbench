@@ -1,0 +1,65 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-COL-001.v1",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "input_problem_case_id": "PC-multilingual-mt-decision-routing.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "url": "https://arxiv.org/abs/2406.12419",
+      "local_cache_path": ".runtime/collision-review/ai-assisted-mt-eval.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-2, 8-10",
+      "comparison_type": "CLAIM_COLLISION",
+      "finding": "Shows that AI-proposed error spans can reduce human MT-evaluation effort while maintaining evaluation quality in a bounded setup, and explicitly discusses priming, bias, metric choice, and intended-use limits.",
+      "does_not_establish": "A universal routing threshold, transport across use cases/language pairs, or improved end-user agency under natural errors."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "No inspected study crosses routing threshold, feedback representation, natural errors, use case, and language pair in one preregistered decision design."
+    ],
+    "claim": [
+      "Quality Gate already studies threshold routing, and prior user-reliance work already studies implicit versus explicit feedback; neither broad component is new."
+    ],
+    "mechanism": [
+      "AI-assisted MT evaluation directly tests error-span assistance and exposes priming, bias, and evaluation-economy mechanisms."
+    ],
+    "compositional": [
+      "The three lines substantially cover routing, feedback form, and AI-assisted evaluation; a broad 'human review improves MT decisions' claim is overrun."
+    ],
+    "adjacent": [
+      "Rater disagreement and synthetic-error presentation can generate apparent gains that fail to transport to natural operational errors."
+    ]
+  },
+  "coverage_limits": [
+    "The fresh paper evaluates annotator efficiency and evaluation quality, not end-user deployment decisions.",
+    "Evidence remains narrow in language, metric, and error-generation conditions."
+  ],
+  "surviving_boundary": "The defensible remainder is a transport test of a fixed routing/feedback policy across natural errors, at least two use cases and language pairs, with rater disagreement and presentation explicitly modeled.",
+  "alternative_explanations": [
+    "A single threshold overfits one language or use case.",
+    "AI suggestions prime raters rather than improve decisions.",
+    "Synthetic errors exaggerate the value of explicit feedback."
+  ],
+  "disposition": "REFRAME",
+  "next_evidence": [
+    "Define the decision loss and human-review reference before selecting a threshold.",
+    "Run a small natural-error transport check before any proposal route."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

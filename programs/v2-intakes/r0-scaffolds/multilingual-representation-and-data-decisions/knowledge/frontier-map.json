@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "map_id": "FKM-multilingual-representation-and-data-decisions.draft-v1",
+  "domain": "multilingual-representation-and-data-decisions",
+  "scope": "Top-down verification scaffold, not an exhaustive survey or consensus map.",
+  "frontier_as_of": "2026-07-19",
+  "source_ledger_path": "evidence/sources.jsonl",
+  "verification_status": "PENDING_ZOTERO_FULLTEXT_AND_LOCATOR_REVIEW",
+  "evidence_boundary": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap.",
+  "frontier_tensions": [
+    {
+      "tension_id": "FT-data-scale-vs-usable-quality",
+      "question": "When multilingual data scale increases, which gains come from coverage and which are limited by identification, filtering, duplication, and language ideology?",
+      "competing_explanations": [
+        "More diverse data directly improves usable language coverage.",
+        "Pipeline selection and representation choices determine which data is recognized, retained, and valued, so nominal scale can conceal quality and exclusion effects."
+      ],
+      "dimensions": [
+        "coverage",
+        "quality",
+        "selection policy"
+      ],
+      "anchor_source_ids": [
+        "SRC-CULTURAX-2024",
+        "SRC-FINEWEB2-2025",
+        "SRC-QUALITY-GLANCE-2022",
+        "SRC-LANGUAGE-IDEOLOGY-2022"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    },
+    {
+      "tension_id": "FT-mt-metric-vs-human-decision",
+      "question": "When an MT or quality-estimation score improves, does it support the human decision at stake or only optimize an evaluator-specific representation of quality?",
+      "competing_explanations": [
+        "The metric tracks errors that matter for post-editing, sharing, or safety decisions.",
+        "Metric calibration, self-bias, domain mismatch, or missing discourse/cultural context breaks the link to human reliance."
+      ],
+      "dimensions": [
+        "metric validity",
+        "human workflow",
+        "domain and language"
+      ],
+      "anchor_source_ids": [
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025",
+        "SRC-PRO-TRANSLATOR-QE-2026"
+      ],
+      "freshness": "Refresh after source attachment/inspection, a direct collision, or a relevant benchmark/workflow revision.",
+      "does_not_establish": "All selected sources are METADATA_ONLY candidates until Zotero attachment and cited-span inspection are recorded. These maps organize verification work; they do not establish consensus, novelty, prevalence, or a research gap."
+    }
+  ],
+  "update_policy": {
+    "triggers": [
+      "first inspected source span",
+      "direct collision",
+      "benchmark or workflow revision",
+      "human Zotero review"
+    ],
+    "refresh_cadence": "before independent topic-route review and before any problem-case transition",
+    "owner": "research owner with Zotero-linked source review"
+  }
+}

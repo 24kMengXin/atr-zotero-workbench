@@ -1,0 +1,236 @@
+[
+  {
+    "id": "NEG-LEGACY-CONSTRUCTION-2026",
+    "type": "webpage",
+    "title": "Capability-contract testbed construction audit",
+    "URL": "CONSTRUCTION-ASSET-AUDIT.v1.md",
+    "keyword": [
+      "ATR",
+      "atr-source-id:NEG-LEGACY-CONSTRUCTION-2026",
+      "atr-source-kind:NEGATIVE_MEMORY",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: NEG-LEGACY-CONSTRUCTION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AGENTABSTAIN-2026",
+    "type": "article-journal",
+    "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+    "URL": "https://arxiv.org/abs/2607.10059",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AGENTABSTAIN-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AGENTABSTAIN-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-ARBOR-2026",
+    "type": "webpage",
+    "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+    "URL": "https://arxiv.org/abs/2606.11926",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-ARBOR-2026",
+      "atr-source-kind:PRIMARY_SYSTEM",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-ARBOR-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AUTORESEARCHBENCH-2026--4da822e3",
+    "type": "article-journal",
+    "title": "AutoResearchBench",
+    "URL": "https://github.com/CherYou/AutoResearchBench",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AUTORESEARCHBENCH-2026--4da822e3",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AUTORESEARCHBENCH-2026--4da822e3\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+    "type": "article-journal",
+    "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+    "URL": "https://arxiv.org/abs/2604.25256",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AUTORESEARCHBENCH-2026--6ca54095\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-AUTORESEARCHCLAW-2026",
+    "type": "article-journal",
+    "title": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+    "URL": "https://arxiv.org/abs/2605.20025",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-AUTORESEARCHCLAW-2026",
+      "atr-source-kind:PRIMARY_PREPRINT_AND_OFFICIAL_RELEASE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-AUTORESEARCHCLAW-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-FIREBENCH-2026",
+    "type": "article-journal",
+    "title": "FIRE-Bench",
+    "URL": "https://firebench.github.io/",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-FIREBENCH-2026",
+      "atr-source-kind:OFFICIAL_BENCHMARK_RELEASE",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-FIREBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-GRAPH2IDEA-2026",
+    "type": "article-journal",
+    "title": "Graph2Idea: Retrieval-Augmented Scientific Idea Generation with Graph-Structured Contexts",
+    "URL": "https://arxiv.org/abs/2606.09105",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-GRAPH2IDEA-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-GRAPH2IDEA-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HARPA-2026",
+    "type": "webpage",
+    "title": "HARPA: A Testability-Driven, Literature-Grounded Framework for Research Ideation",
+    "URL": "https://openreview.net/forum?id=zGr73fcSsB",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HARPA-2026",
+      "atr-source-kind:OPENREVIEW_SUBMISSION",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-HARPA-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HEP-2026",
+    "type": "article-journal",
+    "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+    "URL": "https://arxiv.org/abs/2607.09195",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HEP-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HEP-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HEURESIS-2026",
+    "type": "article-journal",
+    "title": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
+    "URL": "https://arxiv.org/abs/2606.25198",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HEURESIS-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-HEURESIS-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-HEURESIS-REPO-2026",
+    "type": "webpage",
+    "title": "Heuresis official framework repository",
+    "URL": "https://github.com/a-antoniades/Heuresis",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-HEURESIS-REPO-2026",
+      "atr-source-kind:OFFICIAL_OPEN_SOURCE_RELEASE",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-HEURESIS-REPO-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-NARROW-EXPLORATION-2026",
+    "type": "article-journal",
+    "title": "AI Research Agents Narrow Scientific Exploration",
+    "URL": "https://arxiv.org/abs/2605.27905",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-NARROW-EXPLORATION-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-NARROW-EXPLORATION-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-RESEARCHBENCH-2025",
+    "type": "article-journal",
+    "title": "ResearchBench: Evaluating AI's Ability to Generate Research Ideas",
+    "URL": "https://arxiv.org/abs/2503.21248",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-RESEARCHBENCH-2025",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-RESEARCHBENCH-2025\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SAGE-2026",
+    "type": "article-journal",
+    "title": "One Reflection Is Not Enough: Self-Correcting Autonomous Research via Multi-Hypothesis Failure Attribution",
+    "URL": "https://arxiv.org/abs/2606.31478",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SAGE-2026",
+      "atr-source-kind:PRIMARY_PREPRINT",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SAGE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SCIENTISTONE-2026",
+    "type": "webpage",
+    "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence",
+    "URL": "https://arxiv.org/abs/2605.26340",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SCIENTISTONE-2026",
+      "atr-source-kind:PRIMARY_SYSTEM",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-SCIENTISTONE-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-SOUNDNESSBENCH-2026",
+    "type": "article-journal",
+    "title": "SoundnessBench: Can Your AI Scientist Really Tell Good Research Ideas from Bad Ones?",
+    "URL": "https://arxiv.org/abs/2605.30329",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-SOUNDNESSBENCH-2026",
+      "atr-source-kind:PRIMARY_BENCHMARK",
+      "atr-source-layer:scholarly_evidence"
+    ],
+    "note": "ATR source ID: SRC-SOUNDNESSBENCH-2026\nEvidence boundary recorded in reading card."
+  },
+  {
+    "id": "SRC-LLM-AUDIT-TRAILS-2026",
+    "type": "webpage",
+    "title": "Audit Trails for Accountability in Large Language Models",
+    "URL": "https://arxiv.org/abs/2601.20727",
+    "keyword": [
+      "ATR",
+      "atr-source-id:SRC-LLM-AUDIT-TRAILS-2026",
+      "atr-source-kind:UNSPECIFIED",
+      "atr-source-layer:source_needs_review"
+    ],
+    "note": "ATR source ID: SRC-LLM-AUDIT-TRAILS-2026\nEvidence boundary recorded in reading card."
+  }
+]

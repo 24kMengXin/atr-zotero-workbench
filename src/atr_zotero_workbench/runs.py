@@ -17,7 +17,9 @@ def describe_authority(run_dir: Path, graph: dict[str, Any]) -> dict[str, str]:
             "controller_kind": "ATR_V2_SQLITE",
             "authority_path": str((run_dir / "atr.sqlite").resolve()),
             "authority_scope": "LIFECYCLE_AND_ATTACHMENTS",
-            "view_role": "CURRENT_RUN",
+            # Being backed by an ATR v2 controller says where authority lives;
+            # it does not make every registered v2 run the selected current run.
+            "view_role": "REGISTERED_V2_RUN",
         }
     if graph.get("program"):
         return {
@@ -53,6 +55,11 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
                 errors.append(f"run {row.get('key')!r} missing {field}")
         if row.get("controller_kind") == "DERIVED_PROGRAM_VIEW" and row.get("authority_scope") != "NAVIGATION_ONLY":
             errors.append(f"derived program {row.get('key')!r} must be NAVIGATION_ONLY")
+    current_keys = [row.get("key") for row in runs if row.get("view_role") == "CURRENT_RUN"]
+    if len(current_keys) > 1:
+        errors.append("registry may contain at most one CURRENT_RUN")
+    if current_keys and current_keys[0] != active:
+        errors.append("CURRENT_RUN must equal active_run")
     selection = registry.get("selection") or {}
     if selection.get("mode") != "EXPLICIT":
         errors.append("selection.mode must be EXPLICIT")
@@ -78,6 +85,11 @@ def register_run(
     authority = describe_authority(run_dir, graph)
     if view_role:
         authority["view_role"] = view_role
+    should_activate = activate or not registry.get("active_run")
+    if authority["view_role"] == "CURRENT_RUN" and not should_activate:
+        raise ValueError("CURRENT_RUN requires explicit activation")
+    if should_activate and authority["controller_kind"] == "ATR_V2_SQLITE" and not view_role:
+        authority["view_role"] = "CURRENT_RUN"
     record = {
         "key": key,
         "label": label,
@@ -86,13 +98,21 @@ def register_run(
         "workspace": str(output.resolve()),
         **authority,
     }
-    registry["runs"] = [item for item in registry.get("runs", []) if item.get("key") != key] + [record]
+    existing = [item for item in registry.get("runs", []) if item.get("key") != key]
+    if should_activate:
+        existing = [
+            {**item, "view_role": "REGISTERED_V2_RUN"}
+            if item.get("view_role") == "CURRENT_RUN" and item.get("controller_kind") == "ATR_V2_SQLITE"
+            else item
+            for item in existing
+        ]
+    registry["runs"] = existing + [record]
     registry["schema_version"] = "0.2"
     registry["selection_policy"] = "EXPLICIT_ACTIVATION_ONLY"
     # Building another projection must not silently change the research context
     # Zotero opens. The first record is a deterministic bootstrap; subsequent
     # changes require --activate or an explicit registry migration.
-    if activate or not registry.get("active_run"):
+    if should_activate:
         registry["active_run"] = key
     registry["selection"] = {
         "mode": "EXPLICIT",

@@ -1,0 +1,81 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-QST-001.v1",
+  "problem_id": "PC-auditable-research-process-human-learning.draft-v1",
+  "program_key": "atr-research-governance",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When does an auditable, branch-preserving research process improve scientific decisions and human learning beyond polished output quality, and when does it merely add process overhead?",
+  "decision_owner": "Researchers and research-system designers deciding how much autonomy, auditability, and human source review to require.",
+  "worlds": [
+    "W1: Persistent hypotheses, evidence, failed branches, and decision reversals expose errors and improve later research decisions.",
+    "W2: Output/task quality is sufficient; extra process artifacts add documentation without changing decisions.",
+    "W3: Autonomous optimization improves task-native metrics while weakening human understanding or scientific validity outside the fixed evaluator."
+  ],
+  "discriminator": "Compare revision-pinned research tasks with equivalent sources and budgets under output-only versus branch/evidence-preserving protocols; independent reviewers must make blinded source-grounded decisions and humans must demonstrate source-linked understanding rather than preference ratings alone.",
+  "falsifier": "The auditable protocol does not change error detection, route decisions, source-grounded understanding, or held-out validity after controlling for time and artifact volume.",
+  "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+  "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+  "source_spans": [
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "url": "https://arxiv.org/abs/2604.25256",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 18-22",
+      "observation": "Shows literature agents fail on constraint verification, execution, aggregation, and termination despite producing search trajectories.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "An output/evidence-verification failure decomposition.",
+      "leaves_unresolved": "Human learning or general scientific validity.",
+      "does_not_establish": "End-to-end scientific quality, human learning, or superiority of one research-process protocol."
+    },
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "url": "https://arxiv.org/abs/2606.11926",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 14-17, 22-23",
+      "observation": "Shows persistent-tree optimization gains under fixed task-native evaluators without step-level human supervision.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A branch-preserving autonomous-process mechanism.",
+      "leaves_unresolved": "Human learning and open-ended scientific quality.",
+      "does_not_establish": "That this process improves human understanding, scientific validity, or open-ended topic choice."
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "url": "https://arxiv.org/abs/2607.09195",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1-2, 12-13",
+      "observation": "Externalizes hypotheses, evidence, and belief changes in an append-only protocol.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "An auditability mechanism and lifecycle discipline.",
+      "leaves_unresolved": "Calibrated beliefs, human learning, or broad transfer.",
+      "does_not_establish": "Human learning benefits, calibrated belief truth, or transfer beyond the tested materials-science tasks."
+    }
+  ],
+  "derived_questions": [
+    {
+      "question_id": "DQ-GOV-1",
+      "question": "Which preserved process object most often reverses an independent review decision: failed branch, source locator, evidence update, or route history?",
+      "smallest_discriminator": "One blinded paired review over output-only and append-only process records with identical source access.",
+      "does_not_establish": "Long-term scientific impact.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-ARBOR-2026",
+        "SRC-HEP-2026"
+      ]
+    },
+    {
+      "question_id": "DQ-GOV-2",
+      "question": "Can a human reconstruct and challenge a research claim from source-linked notes without reading an AI-generated summary as authority?",
+      "smallest_discriminator": "One claim with original PDF spans, native human notes, and a subsequent disagreement-driven route update.",
+      "does_not_establish": "Population-level learning benefit.",
+      "source_ids": [
+        "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+        "SRC-HEP-2026"
+      ]
+    }
+  ],
+  "controller_boundary": "Independent review is required before any route or promotion decision."
+}

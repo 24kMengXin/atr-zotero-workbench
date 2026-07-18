@@ -1,0 +1,33 @@
+{
+  "artifact_type": "opportunity-map",
+  "schema_version": "1.0",
+  "map_id": "OM-multilingual-representation-data-decisions.review-v1",
+  "artifact_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-OPP-001.v1",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "scope": "Human and automatic routing decisions for public-facing machine translation",
+  "searched_through": "2026-07-19",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "valid_until": "2026-08-19",
+  "review_status": "DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "does_not_establish": "This map is a bounded inspiration artifact, not a research-gap, prevalence, novelty, or lifecycle certificate.",
+  "sources": [
+    {"source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026", "title": "European Commission use of eTranslation", "url": "https://commission.europa.eu/about/service-standards-and-principles/commissions-use-languages_en", "kind": "PRIMARY_WORKFLOW_HTML", "source_function": "PRIMARY_WORKFLOW", "observed_at": "2026-07-19", "content_form": "HTML", "fulltext_state": "FULLTEXT_INSPECTED", "zotero_snapshot_state": "NOT_CAPTURED", "zotero_attachment_state": "NOT_ATTACHED", "inspection_spans": [{"locator": "eTranslation section, lines 368-375", "observation": "Raw MT is used when human translation is unavailable, with variable quality by text and language pair."}], "supports": "An operational, multilingual public-service workflow with explicit output limitations.", "does_not_establish": "Outcome frequency or the best decision interface."},
+    {"source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021", "title": "Quality Gate: Estimating the Quality of Machine Translation for Public Administration Use Cases", "url": "https://aclanthology.org/2021.mtsummit-up.22/", "kind": "PRIMARY_PAPER", "source_function": "SCIENTIFIC_FRONTIER", "observed_at": "2021", "content_form": "PDF", "fulltext_state": "FULLTEXT_INSPECTED", "content_digest": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406", "zotero_attachment_state": "NOT_ATTACHED", "inspection_spans": [{"locator": "pp. 4, 7-8", "observation": "A quality gate routes MT or human review, with threshold trade-offs varying by language and use case."}], "supports": "A decision-routing scientific construct.", "does_not_establish": "A universal routing threshold."},
+    {"source_id": "SRC-USER-RELIANCE-MT-2025", "title": "Supporting User Reliance on Machine Translation via Implicit and Explicit Feedback", "url": "https://aclanthology.org/2025.emnlp-main.606/", "kind": "PRIMARY_PAPER", "source_function": "SCIENTIFIC_FRONTIER", "observed_at": "2025", "content_form": "PDF", "fulltext_state": "FULLTEXT_INSPECTED", "content_digest": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244", "zotero_attachment_state": "NOT_ATTACHED", "inspection_spans": [{"locator": "pp. 8-10", "observation": "Feedback form changes decision accuracy and reliance, under narrow language/domain/error conditions."}], "supports": "A human-decision interface construct.", "does_not_establish": "Generalization beyond the tested setting."}
+  ],
+  "tension_clusters": [
+    {
+      "tension_id": "T-MT-FIT-FOR-PURPOSE-ROUTING",
+      "label": "Public workflows expose variable-quality raw MT while consequential use requires fit-for-purpose judgment",
+      "source_ids": ["SRC-EC-ETRANSLATION-WORKFLOW-2026", "SRC-QE-QUALITY-GATE-ROUTING-2021", "SRC-USER-RELIANCE-MT-2025"],
+      "actor": "Public-administration communicators and end users",
+      "incumbent_practice": "Expose raw MT when human translation is unavailable, or route by an estimated quality threshold.",
+      "material_consequence": "Misleading public information, inappropriate user reliance, or unnecessary human-review cost.",
+      "candidate_construct": "Decision-calibrated translation routing and feedback conditioned on language, use case, and user agency.",
+      "alternative_explanations": ["Underlying MT quality is insufficient regardless of interface", "Presentation and decision support, rather than translation quality alone, drive the observed reliance", "Human disagreement makes a single threshold ill-posed"],
+      "translation_status": "ROUTE_TO_R0",
+      "does_not_establish": "A research gap, prevalence, novelty, or a universal threshold."
+    }
+  ],
+  "controller_boundary": "Review-only map; it cannot mutate subject state or authorize a proposal."
+}

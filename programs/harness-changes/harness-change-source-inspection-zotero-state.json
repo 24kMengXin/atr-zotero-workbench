@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "change_id": "HCH-source-inspection-zotero-state-separation-v1",
+  "scope": "Source acquisition and read-only Zotero projection for ATR v2 evidence records.",
+  "observed_failure": "Two independent pilot reductions exposed the same controller-level ambiguity: content can be inspected from a repository cache or live HTML while no readable Zotero attachment/snapshot exists, but the current acquisition vocabulary and projection merge do not consistently preserve those independent states.",
+  "evidence_refs": [
+    "programs/v2-intakes/pilot-reductions/multilingual-agent-authorization-safety/source-inspection-packet.json",
+    "programs/v2-intakes/pilot-reductions/multilingual-representation-and-data-decisions/source-inspection-packet.json",
+    ".runtime/zotero-smoke/workspace/plugin-runtime.jsonl"
+  ],
+  "counterevidence": [
+    "When a PDF is already attached inside Zotero, Zotero's native attachment lookup is authoritative and the extra state tuple adds no new routing information.",
+    "A live HTML inspection without a content digest is less reproducible than a pinned file and must not be presented as immutable full-text identity."
+  ],
+  "proposed_mechanism": "Shadow a source-state tuple that separately records content_form, inspection_state and locators, content identity/digest, repository cache state, Zotero item/attachment state, and Zotero snapshot state. Merge later non-interpretive inspection facts into shared source projections without overwriting human Notes or changing lifecycle.",
+  "decision_node": "SOURCE_ACQUISITION_AND_READ_ONLY_PROJECTION",
+  "domain_boundary": {
+    "core_or_binding": "CORE",
+    "why_not_domain_specific": "The ambiguity applies to PDF, HTML, code, dataset, and workflow sources across research domains; multilinguality only supplied the pilot histories."
+  },
+  "expected_route_level_effect": "Prevent inspected content from being routed back to metadata-only reinspection, and prevent repository caches from being mistaken for Zotero-readable attachments during human review.",
+  "evaluation": {
+    "mode": "SHADOW",
+    "sample": "Two current multilingual program authorities plus the next two source-inspected non-multilingual directions.",
+    "route_level_metrics": [
+      "number of source-review tasks repeated because inspected spans were lost during projection",
+      "number of human-review attempts blocked because a repository cache was mislabeled as a Zotero attachment",
+      "time to an honest ATTACH, REINSPECT, or ACCESS_REQUIRED decision",
+      "reviewer disagreement about whether content was actually inspected"
+    ],
+    "rollback_rule": "Drop or simplify the tuple if it changes lifecycle, overwrites native Notes, treats dynamic HTML as immutable, or adds documentation without changing any ATTACH/REINSPECT/ACCESS_REQUIRED decision."
+  },
+  "disposition": "SHADOW",
+  "does_not_establish": "This card does not establish source correctness, scholarly support, a research gap, Zotero attachment availability, or a universal requirement to store every inspected source in Zotero.",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_by": "2026-08-19T00:00:00+08:00"
+}

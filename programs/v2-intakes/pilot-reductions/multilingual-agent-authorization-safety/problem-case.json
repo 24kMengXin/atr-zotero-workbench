@@ -1,0 +1,50 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "problem_id": "PC-multilingual-authorization-cross-layer-evidence.draft-v1",
+  "artifact_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-QST-001.v1",
+  "program_key": "multilingual-agent-authorization-safety",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When a language change alters an agent's act-or-abstain decision before an irreversible commit, when is this a language-conditioned authorization effect rather than general comprehension, translation, or text-safety behavior?",
+  "decision_owner": "Agent-system and evaluation designers deciding what evidence is required at authorization gates.",
+  "worlds": [
+    "W1: Language changes recognition of the authorization or commit boundary itself.",
+    "W2: Language changes general comprehension or translation of the intended action, with no authorization-specific effect.",
+    "W3: A text-safety refusal proxy does not transport to commit-level tool authorization."
+  ],
+  "discriminator": "Use revision-pinned paired tasks where only the language surface changes, with deterministic tool traces, an explicit irreversible commit point, contract controls, and independent action adjudication.",
+  "falsifier": "No language-conditioned act-or-abstain effect remains after comprehension, translation, and text-safety controls, or the observed difference is fully explained by those controls.",
+  "scope": "Problem framing at R0; the paired-language instrument is a discriminator, not a claimed contribution.",
+  "does_not_establish": "This draft does not establish a gap, prevalence, novelty, a safety method, a benchmark contribution, or authorization to advance lifecycle state.",
+  "source_spans": [
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "url": "https://arxiv.org/abs/2607.10059",
+      "kind": "PRIMARY_PREPRINT",
+      "locator": "pp. 1-2, 8, 21",
+      "observation": "Defines and evaluates commit-level agentic abstention while explicitly leaving multilingual evaluation open.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "Supplies an executable commit-boundary abstention construct and trace taxonomy.",
+      "leaves_unresolved": "Whether language changes authorization-boundary recognition rather than general task comprehension.",
+      "does_not_establish": "A multilingual authorization effect."
+    },
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "url": "https://arxiv.org/abs/2310.00905",
+      "kind": "PRIMARY_BENCHMARK",
+      "locator": "pp. 3-4, 9",
+      "observation": "Demonstrates multilingual variation for unsafe text responses, not tool commits.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "Supplies evidence that language is material in text-level safety evaluation.",
+      "leaves_unresolved": "Whether text-level effects transport to tool authorization and irreversible action.",
+      "does_not_establish": "Tool-use authorization behavior."
+    }
+  ],
+  "derived_questions": [
+    {"question_id": "DQ-AUTH-1", "question": "What is the smallest frozen authorization item that distinguishes commit-boundary recognition from translation failure?", "smallest_discriminator": "One paired multilingual task with an independent intended-action oracle and a logged commit boundary.", "does_not_establish": "Benchmark validity or population frequency.", "source_ids": ["SRC-AGENTABSTAIN-2026", "SRC-XSafety-2024"]},
+    {"question_id": "DQ-AUTH-2", "question": "Is there an admissible primary workflow asset for multilingual authorization failures?", "smallest_discriminator": "A revision-pinned issue, incident, or operational record with language, intended action, authorization decision, and consequence.", "does_not_establish": "A gap if none is found.", "source_ids": []}
+  ],
+  "controller_boundary": "Review-only problem case; independent review is required before any route or promotion decision."
+}

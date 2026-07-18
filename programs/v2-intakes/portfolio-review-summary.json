@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "portfolio-review-summary",
+  "artifact_id": "ARH-MULTILINGUAL-PORTFOLIO-R0-COLLISION-SUMMARY-001.v1",
+  "portfolio_id": "multilingual-aaai-program-portfolio",
+  "programs": [
+    {
+      "program_key": "multilingual-agent-action-attribution",
+      "child_run_id": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
+      "collision_review_artifact_id": "ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-COL-001.v1",
+      "collision_review_digest": "sha256:a4cc37e941280100e6e48b8a6c05b998539d433a4cd7e46fd45463e5288a7df6",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "REFRAME",
+      "surviving_boundary": "A narrower, testable boundary remains: a revision-pinned long-horizon factorial crossing query, schema, parameter-value, and evaluator languages while holding intent and execution semantics fixed, with both executable and independent semantic adjudication.",
+      "next_evidence": [
+        "Build one paired factorial trace set before any route decision.",
+        "Pre-register which trace fields distinguish semantic selection from representation and evaluator effects."
+      ]
+    },
+    {
+      "program_key": "multilingual-agent-authorization-safety",
+      "child_run_id": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "collision_review_artifact_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-COL-001.v1",
+      "collision_review_digest": "sha256:51436c5340f13c88448ab7384cd105364c289da89d4d8fc6a4fbca1637729959",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "NEEDS_EVIDENCE",
+      "surviving_boundary": "A candidate boundary survives only as a controlled paired commit task where language alone varies and comprehension, translation, tool contract, and text-safety refusal are separately measured.",
+      "next_evidence": [
+        "Acquire or construct one deterministic paired commit trace with explicit authorization state.",
+        "Do not route until an authorization-specific effect survives comprehension and translation controls."
+      ]
+    },
+    {
+      "program_key": "multilingual-representation-and-data-decisions",
+      "child_run_id": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
+      "collision_review_artifact_id": "ARH-MULTILINGUAL-REPRESENTATION-DATA-R0-COL-001.v1",
+      "collision_review_digest": "sha256:244e10f97eeb0ef739bd9570736fd0d5404de872f8f9db6781e70762d2be47e5",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "REFRAME",
+      "surviving_boundary": "The defensible remainder is a transport test of a fixed routing/feedback policy across natural errors, at least two use cases and language pairs, with rater disagreement and presentation explicitly modeled.",
+      "next_evidence": [
+        "Define the decision loss and human-review reference before selecting a threshold.",
+        "Run a small natural-error transport check before any proposal route."
+      ]
+    },
+    {
+      "program_key": "multilingual-agent-state-continuity",
+      "child_run_id": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
+      "collision_review_artifact_id": "ARH-MULTILINGUAL-STATE-CONTINUITY-R0-COL-001.v1",
+      "collision_review_digest": "sha256:c37cf7a4bbc365e8f50da85758f839270f26aa545f17b2c1acac535144352984",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "NEEDS_EVIDENCE",
+      "surviving_boundary": "The only defensible candidate boundary is a paired language-switch replay that snapshots task state and separately logs language selection, retrieval, locale assets, flow routing, and independent action adjudication.",
+      "next_evidence": [
+        "Acquire at least one paired real or benchmark trace containing both state snapshots and language-control variables.",
+        "Do not route until the trace can discriminate memory loss from intact-state rerouting."
+      ]
+    },
+    {
+      "program_key": "agent-infrastructure-and-evaluation-contracts",
+      "child_run_id": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "collision_review_artifact_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-COL-001.v1",
+      "collision_review_digest": "sha256:3102c0f92ef2e185d18b138dd8bf8db4063c4c2756505010e2b3bfc339f5029e",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "REFRAME",
+      "surviving_boundary": "A narrower boundary remains: identify the minimal revision-pinned execution-contract fields whose controlled change reverses a comparison, and require trace evidence that attributes the reversal without treating diagnostic symptoms as causes.",
+      "next_evidence": [
+        "Construct one pinned pair differing in exactly one declared contract field.",
+        "Test whether independent replay and adjudication agree on the first causal divergence."
+      ]
+    },
+    {
+      "program_key": "atr-research-governance",
+      "child_run_id": "2026-07-19-atr-research-governance-v2-intake",
+      "collision_review_artifact_id": "ARH-ATR-RESEARCH-GOVERNANCE-R0-COL-001.v1",
+      "collision_review_digest": "sha256:7387e56d481c87388501ae7000982593ffe8a7efee6d30851857c571ec0acb4c",
+      "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+      "disposition": "REFRAME",
+      "surviving_boundary": "The surviving question must be causal and minimal: which preserved object—failed branch, source locator, belief update, or route reversal—changes an independent scientific decision or source-grounded human understanding under matched time and artifact budgets?",
+      "next_evidence": [
+        "Test one preserved object at a time against output-only review under a matched budget.",
+        "Measure decision reversal or source-grounded reconstruction, not preference for transparency."
+      ]
+    }
+  ],
+  "summary": {
+    "REFRAME": 4,
+    "NEEDS_EVIDENCE": 2,
+    "program_count": 6
+  },
+  "does_not_authorize": "This derived portfolio summary does not establish novelty, replace child artifacts, pass a gate, choose a route, or mutate any child lifecycle."
+}

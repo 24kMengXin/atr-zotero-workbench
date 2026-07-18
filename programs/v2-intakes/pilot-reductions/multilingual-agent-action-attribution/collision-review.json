@@ -1,0 +1,65 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-COL-001.v1",
+  "program_key": "multilingual-agent-action-attribution",
+  "input_problem_case_id": "PC-multilingual-action-semantics-interface.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-UNITOOLCALL-2026",
+      "title": "UniToolCall: Unified Tool Calling via Question-Answer-Observation-Answer",
+      "url": "https://arxiv.org/abs/2604.11557",
+      "local_cache_path": ".runtime/collision-review/unitoolcall.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-2, 9",
+      "comparison_type": "MECHANISM_COLLISION",
+      "finding": "Directly identifies representation fragmentation and evaluation mismatch, then standardizes the tool-call representation and strict-plus-semantic evaluation boundary.",
+      "does_not_establish": "Multilingual long-horizon causal attribution or transport beyond the standardized representation and evaluation boundary."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "No inspected source asks the full long-horizon multilingual factorial question verbatim."
+    ],
+    "claim": [
+      "MLCL already separates semantic intent from executable parameter-language convention in controlled single-turn calls."
+    ],
+    "mechanism": [
+      "UniToolCall already treats representation fragmentation and evaluation mismatch as load-bearing tool-call mechanisms."
+    ],
+    "compositional": [
+      "MLCL plus UniToolCall covers much of the broad semantic-versus-interface contrast; breadth alone is not a surviving gap."
+    ],
+    "adjacent": [
+      "MASSIVE-Agents supplies multilingual coverage but not causal-layer isolation."
+    ]
+  },
+  "coverage_limits": [
+    "Fresh full-text review added one direct mechanism source; the existing MLCL and MASSIVE source spans remain the comparison baseline.",
+    "No deployment incidence or broad language-family coverage was established."
+  ],
+  "surviving_boundary": "A narrower, testable boundary remains: a revision-pinned long-horizon factorial crossing query, schema, parameter-value, and evaluator languages while holding intent and execution semantics fixed, with both executable and independent semantic adjudication.",
+  "alternative_explanations": [
+    "Observed gaps may be translation/template artifacts.",
+    "Strict parsing may disagree with semantic correctness.",
+    "Long-horizon failures may arise from state or harness drift rather than action selection."
+  ],
+  "disposition": "REFRAME",
+  "next_evidence": [
+    "Build one paired factorial trace set before any route decision.",
+    "Pre-register which trace fields distinguish semantic selection from representation and evaluator effects."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

@@ -17,7 +17,8 @@
     "research_tensions": "01 · 现实世界张力",
     "research_frontier": "02 · 前沿研究问题",
     "research_current": "03 · 当前问题卡",
-    "research_claims": "04 · 待审查断言"
+    "research_claims": "04 · 待审查断言",
+    "research_reviews": "05 · 共创复核"
   },
   "objects": [
     {
@@ -41,7 +42,28 @@
       "linked_source_ids": [
         "SRC-MASSIVE-AGENTS-2025"
       ],
+      "doi": "",
       "url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "pdf_url": "",
+      "access_status": "",
+      "access_route": "",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -55,7 +77,28 @@
       "linked_source_ids": [
         "SRC-MLCL-2026"
       ],
+      "doi": "",
       "url": "https://aclanthology.org/2026.acl-long.2039/",
+      "pdf_url": "",
+      "access_status": "",
+      "access_route": "",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -171,7 +214,28 @@
       "linked_source_ids": [
         "SRC-MCP-SCHEMA-CONVERGENCE-2026"
       ],
+      "doi": "",
       "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834",
+      "pdf_url": "",
+      "access_status": "",
+      "access_route": "",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
       "source_layer": "source_needs_review"
     },
     {
@@ -304,7 +368,28 @@
       "linked_source_ids": [
         "SRC-G1-R4-NEGATIVE-2026"
       ],
+      "doi": "",
       "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+      "pdf_url": "",
+      "access_status": "",
+      "access_route": "",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
       "source_layer": "source_needs_review"
     },
     {
@@ -318,7 +403,28 @@
       "linked_source_ids": [
         "SRC-MLCL-RELEASE-AUDIT-2026"
       ],
+      "doi": "",
       "url": "UNRESOLVED_URL_REQUIRES_OWNER_REVIEW",
+      "pdf_url": "",
+      "access_status": "",
+      "access_route": "",
+      "content_form": "",
+      "fulltext_state": "",
+      "worker_inspection_state": "NOT_RECORDED",
+      "human_inspection_state": "NOT_RECORDED",
+      "content_digest": "",
+      "inspection_spans": [],
+      "zotero_item_key": null,
+      "zotero_attachment_key": null,
+      "zotero_attachment_state": "",
+      "zotero_snapshot_state": "",
+      "local_cache_state": "",
+      "local_cache_path": "",
+      "local_cache_import_state": "NOT_AUTHORIZED",
+      "verified_local_pdf_path": null,
+      "identity_state": "",
+      "identity_evidence": [],
+      "local_cache_import_policy": "",
       "source_layer": "source_needs_review"
     },
     {
@@ -498,6 +604,7 @@
     ],
     "target_priority": [
       "claim",
+      "collision_review",
       "research_problem",
       "research_question",
       "real_world_tension",

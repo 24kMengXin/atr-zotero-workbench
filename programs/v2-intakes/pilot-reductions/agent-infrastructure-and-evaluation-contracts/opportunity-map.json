@@ -1,0 +1,157 @@
+{
+  "artifact_type": "opportunity-map",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-AGENT-INFRA-EVAL-CONTRACTS-R0-OPP-001.v1",
+  "map_id": "OM-agent-infra-replay-contract.review-v1",
+  "program_key": "agent-infrastructure-and-evaluation-contracts",
+  "scope": "Versioned and replayable agent evaluation workflows",
+  "searched_through": "2026-07-19",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "valid_until": "2026-08-19",
+  "review_status": "DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "does_not_establish": "A bounded inspiration artifact, not a research-gap, novelty, prevalence, or lifecycle certificate.",
+  "sources": [
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "url": "https://arxiv.org/abs/2606.13608",
+      "pdf_url": "https://arxiv.org/pdf/2606.13608",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "observed_at": "2026-07-19",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "pp. 1-4",
+          "observation": "AgentBeats separates judge and subject agents through standardized protocols and treats benchmark administration as an explicit workflow."
+        },
+        {
+          "locator": "p. 11",
+          "observation": "A standardized pipeline preserves broad fidelity while enabling cross-agent comparisons."
+        },
+        {
+          "locator": "p. 13",
+          "observation": "Harness-swapping changes solve rates and token use; native model-harness pairings are not interchangeable."
+        }
+      ],
+      "supports": "Evidence that agent, harness, benchmark, and protocol are separable evaluation components and harness choice changes outcomes.",
+      "does_not_establish": "Causal attribution for arbitrary deployments or reproducibility from openness alone."
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "url": "https://arxiv.org/abs/2606.08275",
+      "pdf_url": "https://arxiv.org/pdf/2606.08275",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "observed_at": "2026-07-19",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "CAR distinguishes the step executing harm from the earlier decision step and uses same-policy interventions rather than transcript judgment."
+        },
+        {
+          "locator": "p. 4",
+          "observation": "The paper narrows its contribution relative to oracle substitution and static-log attribution."
+        },
+        {
+          "locator": "p. 5, Limitations",
+          "observation": "Real side-effecting tools are out of scope, mocked reproducible tools are used, judges add noise, and the validation ground truth is synthetic."
+        }
+      ],
+      "supports": "A counterfactual attribution instrument and a point-of-commitment distinction.",
+      "does_not_establish": "Faithful replay of live side-effecting tools or a field-level causal attribution result."
+    },
+    {
+      "source_id": "SRC-AGENTLAB-REPRO-2026",
+      "title": "AgentLab reproducibility documentation",
+      "url": "https://github.com/ServiceNow/AgentLab",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "observed_at": "2026-07-19",
+      "inspection_spans": [
+        {
+          "locator": "README, lines 432-447",
+          "observation": "Reproducibility changes with software versions, silently updated API models, live websites, region/language defaults, stochastic agents, and nondeterministic tasks; studies record versions and commits."
+        },
+        {
+          "locator": "README, lines 403-421",
+          "observation": "AgentXray can inspect actions in previous or ongoing experiments but warns that its own display layer can behave unexpectedly."
+        }
+      ],
+      "supports": "A concrete benchmark workflow showing that public assets alone do not freeze software, providers, environments, regional language, or inspection tooling.",
+      "does_not_establish": "The size of each effect or a universal replay contract."
+    },
+    {
+      "source_id": "SRC-CLAWBENCH-DRIFT-2026",
+      "title": "ClawBench/ShellBench reproducibility-first benchmark release",
+      "url": "https://github.com/openclaw/shellbench",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "observed_at": "2026-07-19",
+      "inspection_spans": [
+        {
+          "locator": "README, lines 790-824",
+          "observation": "The release versions its diagnostics and explicitly scores the full stack—harness, configuration, and model—rather than only the LLM."
+        },
+        {
+          "locator": "README, lines 797-801",
+          "observation": "Long-horizon and human-baseline coverage are planned rather than present in Core v1."
+        }
+      ],
+      "supports": "An operational full-stack evaluation posture and explicit versioned coverage limits.",
+      "does_not_establish": "Scientific validation of its diagnostics, broad human calibration, or causal attribution."
+    }
+  ],
+  "tension_clusters": [
+    {
+      "tension_id": "T-AGENT-SCORE-VS-EXECUTION-CONTRACT",
+      "label": "Agent scores are reported as model capability while software, harness, provider, website, region/language, configuration, and judge remain moving parts",
+      "source_ids": [
+        "SRC-AGENTLAB-REPRO-2026",
+        "SRC-CLAWBENCH-DRIFT-2026",
+        "SRC-AGENTBEATS-2026",
+        "SRC-CAR-2026"
+      ],
+      "actor": "Agent benchmark maintainers and model/system selectors",
+      "incumbent_practice": "Publish open code/assets and compare aggregate scores under a nominal benchmark name.",
+      "material_consequence": "Teams may attribute a score change to the agent and choose or remediate the wrong component when the execution contract drifted.",
+      "candidate_construct": "Versioned execution-contract attribution and replay",
+      "alternative_explanations": [
+        "The underlying agent capability changed",
+        "Harness/configuration/provider/environment drift changed the measurement",
+        "Observed replay differences are judge noise or stochastic continuation"
+      ],
+      "translation_status": "ROUTE_TO_R0",
+      "does_not_establish": "A universal replay mechanism, causal attribution for live tools, or that openness guarantees reproducibility."
+    }
+  ],
+  "controller_boundary": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

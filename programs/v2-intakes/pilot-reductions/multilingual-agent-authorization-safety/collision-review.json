@@ -1,0 +1,66 @@
+{
+  "artifact_type": "collision-review",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-COL-001.v1",
+  "program_key": "multilingual-agent-authorization-safety",
+  "input_problem_case_id": "PC-multilingual-authorization-cross-layer-evidence.draft-v1",
+  "status": "CLAIM_SCOPED_POSTERIOR_REVIEW_NOT_GATE",
+  "review_mode": "POSTERIOR_REVIEW_WORKER",
+  "reviewer_role": "posterior-review",
+  "reviewer_isolation_claimed": false,
+  "source_cutoff": "2026-07-19",
+  "query_log": [
+    "exact problem wording and quoted constructs",
+    "adjacent benchmark, stateful tool-use, harness, and evaluation mechanisms",
+    "primary paper full text inspected rather than title/abstract-only matching"
+  ],
+  "inspected_sources": [
+    {
+      "source_id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "url": "https://arxiv.org/abs/2601.08012",
+      "local_cache_path": ".runtime/collision-review/safe-tool-use.pdf",
+      "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "content_digest": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "locator": "pp. 1-5",
+      "comparison_type": "MECHANISM_COLLISION",
+      "finding": "Frames tool safety as verifiable conformance to explicit specifications at consequential calls, directly covering commit-aware safety mechanisms without testing multilingual authorization effects.",
+      "does_not_establish": "Whether language changes recognition of an authorization boundary after comprehension and translation controls."
+    }
+  ],
+  "comparisons": {
+    "exact": [
+      "No inspected work isolates a language-conditioned commit authorization effect after comprehension and translation controls."
+    ],
+    "claim": [
+      "AgentAbstain directly covers commit-level abstention, so commit-aware act-or-abstain behavior itself is not an unstudied construct."
+    ],
+    "mechanism": [
+      "Verifiably Safe Tool Use directly covers specification-based checks at consequential tool calls, but not language-conditioned authorization recognition."
+    ],
+    "compositional": [
+      "AgentAbstain, multilingual text-safety evidence, and specification-based tool safety jointly motivate the contrast but do not demonstrate the cross-layer effect."
+    ],
+    "adjacent": [
+      "General comprehension, translation error, and text-refusal variation can reproduce the observed pattern without an authorization-specific mechanism."
+    ]
+  },
+  "coverage_limits": [
+    "Only one new mechanism paper was inspected in this bounded review.",
+    "No paired multilingual commit trace controls comprehension and translation.",
+    "Text-level safety benchmarks are not executable authorization evidence."
+  ],
+  "surviving_boundary": "A candidate boundary survives only as a controlled paired commit task where language alone varies and comprehension, translation, tool contract, and text-safety refusal are separately measured.",
+  "alternative_explanations": [
+    "The instruction was misunderstood before authorization was evaluated.",
+    "Translation changed the requested action.",
+    "A general safety refusal proxy was mistaken for tool authorization."
+  ],
+  "disposition": "NEEDS_EVIDENCE",
+  "next_evidence": [
+    "Acquire or construct one deterministic paired commit trace with explicit authorization state.",
+    "Do not route until an authorization-specific effect survives comprehension and translation controls."
+  ],
+  "does_not_authorize": "This worker output does not establish novelty, pass a gate, choose a route, mutate lifecycle state, or certify an independent review."
+}

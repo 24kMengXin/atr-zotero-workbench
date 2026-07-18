@@ -1,0 +1,155 @@
+{
+  "artifact_type": "source-inspection-packet",
+  "schema_version": "1.0",
+  "packet_id": "ARH-MULTILINGUAL-STATE-CONTINUITY-R0-SRC-001.v1",
+  "program_key": "multilingual-agent-state-continuity",
+  "created_at": "2026-07-19T00:00:00+08:00",
+  "review_status": "REVIEW_ONLY_NOT_A_GATE_VERDICT",
+  "sources": [
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "pdf_url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "HINDSIGHT separates facts, beliefs, and observations in persistent memory with parallel retrieval and temporal organization."
+        },
+        {
+          "locator": "p. 8, Limitations",
+          "observation": "Evaluation is English-only; extraction errors can propagate and opinion evolution lacks formal user validation."
+        }
+      ],
+      "supports": "An inspectable persistent-memory architecture and an explicit English-only evidence boundary.",
+      "does_not_establish": "Multilingual state continuity or language-switch behavior."
+    },
+    {
+      "source_id": "SRC-MEM2ACTBENCH-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "pdf_url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:fddb3048eafe66381ef5e4cfea975ced132091d4e380d43abd151991cd5103e7",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MEM2ACTBENCH-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "The benchmark requires agents to recover evolving long-term constraints for underspecified tool invocations; human review finds 91.3% strongly memory-dependent."
+        },
+        {
+          "locator": "p. 7",
+          "observation": "Performance falls as grounded parameter values become more complex."
+        },
+        {
+          "locator": "p. 9, Limitations",
+          "observation": "The asset targets memory-grounded tool parameterization and does not itself evaluate multilingual control-plane routing."
+        }
+      ],
+      "supports": "A memory-dependent action contract and a concrete parameter-grounding failure boundary.",
+      "does_not_establish": "Whether a language switch loses memory or merely routes intact state through a different language configuration."
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2607.06008",
+      "pdf_url": "https://arxiv.org/pdf/2607.06008",
+      "kind": "PRIMARY_PAPER",
+      "source_function": "SCIENTIFIC_FRONTIER",
+      "content_form": "PDF",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f",
+      "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "identity_review": "EXACT_TITLE_AND_SOURCE_ID_CONFIRMED",
+      "inspection_spans": [
+        {
+          "locator": "p. 1",
+          "observation": "The benchmark embeds multilingual inputs, intermediate reasoning, tools, and outputs in 67 long-horizon tasks across five domains."
+        },
+        {
+          "locator": "p. 8",
+          "observation": "Strict arithmetic or schema errors can invalidate entire workflows, so aggregate Pass@1 can misrepresent reliability."
+        },
+        {
+          "locator": "p. 10",
+          "observation": "Results vary across task domains and languages; the benchmark plans to expand rather than establishing a universal workflow distribution."
+        }
+      ],
+      "supports": "A multilingual long-horizon workflow benchmark and evidence that errors compound across execution steps.",
+      "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "title": "Design effective language understanding — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "observed_at": "2026-07-19",
+      "inspection_spans": [
+        {
+          "locator": "Localization and languages, lines 103-120",
+          "observation": "System.User.Language is the central control point for knowledge search and response language and can be set, overridden, or automatically detected."
+        },
+        {
+          "locator": "Best practices/challenges, lines 129-143",
+          "observation": "Critical content may require custom translation; multilingual deployments require synchronization, testing, fallback, and monitoring."
+        }
+      ],
+      "supports": "A production language control plane that can reroute search, response, and orchestration independently of remembered task facts.",
+      "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection."
+    },
+    {
+      "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "title": "Multilingual agents — Dialogflow CX",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "source_function": "PRIMARY_WORKFLOW",
+      "content_form": "HTML",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "content_digest": "NOT_RECORDED_DYNAMIC_HTML",
+      "local_cache_state": "NOT_CACHED",
+      "zotero_attachment_state": "NOT_ATTACHED",
+      "zotero_snapshot_state": "NOT_CAPTURED",
+      "observed_at": "2026-07-19",
+      "inspection_spans": [
+        {
+          "locator": "Language-specific data, lines 377-420",
+          "observation": "Most agent data is shared, while training phrases, fulfillment responses, and entity entries must be supplied per language; generated translations require review."
+        },
+        {
+          "locator": "Language auto detection, lines 492-516",
+          "observation": "Automatic switching cannot distinguish some locale variants and text integrations use only the default language."
+        }
+      ],
+      "supports": "A production distinction between shared agent state and language-specific/control-plane data with documented switching limits.",
+      "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+    }
+  ],
+  "controller_boundary": "Inspection repairs source identity and locator gaps only. Repository cache, Zotero attachment, and Zotero snapshot remain separate states. Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established."
+}

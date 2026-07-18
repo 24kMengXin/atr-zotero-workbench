@@ -1,10 +1,37 @@
 """Safe Zotero export and opt-in Web API writer. No local database access."""
 from __future__ import annotations
 
-import json, os
+import hashlib, json, os
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def verified_local_pdf(data: dict, repo_root: Path = REPO_ROOT) -> dict:
+    """Resolve an explicitly authorized cache file without weakening artifact provenance."""
+    result = {"state": "NOT_AUTHORIZED", "path": None}
+    if data.get("identity_state") != "IDENTITY_VERIFIED":
+        return result
+    if data.get("local_cache_import_policy") != "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ":
+        return result
+    relative = data.get("local_cache_path")
+    digest = str(data.get("content_digest") or "")
+    if not isinstance(relative, str) or not relative.endswith(".pdf") or not digest.startswith("sha256:"):
+        return {"state": "INVALID_CONTRACT", "path": None}
+    candidate = (repo_root / relative).resolve()
+    try:
+        candidate.relative_to(repo_root.resolve())
+    except ValueError:
+        return {"state": "OUTSIDE_REPO", "path": None}
+    if not candidate.is_file():
+        return {"state": "FILE_MISSING", "path": None}
+    actual = hashlib.sha256(candidate.read_bytes()).hexdigest()
+    if actual != digest.removeprefix("sha256:"):
+        return {"state": "DIGEST_MISMATCH", "path": None, "actual_digest": f"sha256:{actual}"}
+    return {"state": "READY", "path": str(candidate)}
 
 
 def validate_native_projection(projection: dict, graph: dict) -> list[str]:
@@ -60,9 +87,12 @@ def validate_native_projection(projection: dict, graph: dict) -> list[str]:
         "claim": "claim_note",
         "knowledge_concept": "knowledge_note",
         "real_world_tension": "tension_note",
+        "reality_signal_gap": "reality_gap_note",
         "research_question": "frontier_question_note",
         "derived_research_question": "derived_question_note",
+        "collision_review": "collision_review_note",
         "human_review_assessment": "review_assessment_note",
+        "topic_route_draft": "route_note",
     }
     for graph_kind, object_kind in kind_mapping.items():
         expected = {node_id for node_id, node in nodes.items() if node.get("kind") == graph_kind}
@@ -83,6 +113,9 @@ def validate_native_projection(projection: dict, graph: dict) -> list[str]:
         if obj.get("object_kind") == "derived_question_note" and parent_id \
                 and nodes.get(parent_id, {}).get("kind") != "research_problem":
             errors.append(f"objects[{index}] derived question parent must be a research_problem")
+        if obj.get("object_kind") == "collision_review_note" and parent_id \
+                and nodes.get(parent_id, {}).get("kind") != "research_problem":
+            errors.append(f"objects[{index}] collision review parent must be a research_problem")
     collections = projection.get("collections", {})
     for role in ("root", "overview", "knowledge", "research", "sources", "history",
                  "research_tensions", "research_frontier", "research_current", "research_claims",
@@ -92,7 +125,7 @@ def validate_native_projection(projection: dict, graph: dict) -> list[str]:
     feedback = projection.get("feedback_contract", {})
     if set(feedback.get("accepted_events", [])) != {"human_note_modified", "human_annotation_modified"}:
         errors.append("feedback contract must accept native note and Reader annotation events")
-    if feedback.get("target_priority") != ["claim", "research_problem", "research_question", "real_world_tension", "source", "knowledge", "topic"]:
+    if feedback.get("target_priority") != ["claim", "collision_review", "research_problem", "research_question", "real_world_tension", "reality_signal_gap", "source", "knowledge", "topic"]:
         errors.append("feedback target priority must fall back from exact research decisions through sources/knowledge to topic")
     if feedback.get("lifecycle_effect") != "REVIEW_INPUT_ONLY":
         errors.append("Zotero feedback must remain REVIEW_INPUT_ONLY")
@@ -154,6 +187,21 @@ def native_projection(graph: dict) -> dict:
             and by_id.get(edge.get("source"), {}).get("kind") == "research_problem"
         ), None)
 
+    def reviewed_problem_node(node_id: str) -> str | None:
+        return next((
+            edge.get("source") for edge in edges
+            if edge.get("target") == node_id
+            and edge.get("relation") == "is_claim_scoped_reviewed_by"
+            and by_id.get(edge.get("source"), {}).get("kind") == "research_problem"
+        ), None)
+
+    def parent_by_relation(node_id: str, relation: str, parent_kind: str) -> str | None:
+        return next((
+            edge.get("source") for edge in edges
+            if edge.get("target") == node_id and edge.get("relation") == relation
+            and by_id.get(edge.get("source"), {}).get("kind") == parent_kind
+        ), None)
+
     objects = [{
         "object_id": f"topic:{graph.get('run')}",
         "object_kind": "topic_note",
@@ -167,6 +215,7 @@ def native_projection(graph: dict) -> dict:
     for node in nodes:
         data = node.get("data", {})
         if node.get("kind") == "paper" and data.get("source_id"):
+            local_pdf = verified_local_pdf(data)
             objects.append({
                 "object_id": f"source:{data['source_id']}",
                 "object_kind": "source_item",
@@ -181,6 +230,23 @@ def native_projection(graph: dict) -> dict:
                 "pdf_url": data.get("pdf_url"),
                 "access_status": data.get("access_status"),
                 "access_route": data.get("access_route"),
+                "content_form": data.get("content_form"),
+                "fulltext_state": data.get("fulltext_state"),
+                "worker_inspection_state": data.get("worker_inspection_state"),
+                "human_inspection_state": data.get("human_inspection_state"),
+                "content_digest": data.get("content_digest"),
+                "inspection_spans": data.get("inspection_spans", []),
+                "zotero_item_key": data.get("zotero_item_key"),
+                "zotero_attachment_key": data.get("zotero_attachment_key"),
+                "zotero_attachment_state": data.get("zotero_attachment_state"),
+                "zotero_snapshot_state": data.get("zotero_snapshot_state"),
+                "local_cache_state": data.get("local_cache_state"),
+                "local_cache_path": data.get("local_cache_path"),
+                "local_cache_import_state": local_pdf["state"],
+                "verified_local_pdf_path": local_pdf["path"],
+                "identity_state": data.get("identity_state"),
+                "identity_evidence": data.get("identity_evidence", []),
+                "local_cache_import_policy": data.get("local_cache_import_policy"),
                 "source_layer": data.get("source_layer"),
             })
         elif node.get("kind") == "research_problem" and data.get("problem_id"):
@@ -232,6 +298,18 @@ def native_projection(graph: dict) -> dict:
                 "collection_role": "HISTORY" if node["id"] in historical_nodes else "RESEARCH_TENSION",
                 "linked_source_ids": linked_sources(node["id"]),
             })
+        elif node.get("kind") == "reality_signal_gap":
+            objects.append({
+                "object_id": f"reality-gap:{node['id']}",
+                "object_kind": "reality_gap_note",
+                "graph_node_id": node["id"],
+                "atr_id": data.get("decision_id") or node["id"],
+                "title": node.get("label"),
+                "marker": f"ATR Reality Signal Gap: {node['id']}",
+                "review_role": "REALITY_SIGNAL_SEARCH_BOUNDARY",
+                "collection_role": "RESEARCH_TENSION",
+                "linked_source_ids": linked_sources(node["id"]),
+            })
         elif node.get("kind") == "research_question":
             objects.append({
                 "object_id": f"question:{node['id']}",
@@ -257,6 +335,19 @@ def native_projection(graph: dict) -> dict:
                 "collection_role": "HISTORY" if node["id"] in historical_nodes else "RESEARCH_DERIVED",
                 "linked_source_ids": linked_sources(node["id"]),
             })
+        elif node.get("kind") == "collision_review":
+            objects.append({
+                "object_id": f"collision-review:{node['id']}",
+                "object_kind": "collision_review_note",
+                "graph_node_id": node["id"],
+                "parent_graph_node_id": reviewed_problem_node(node["id"]),
+                "atr_id": data.get("review_id") or node["id"],
+                "title": node.get("label"),
+                "marker": f"ATR Collision Review: {data.get('review_id') or node['id']} | ATR Graph Node: {node['id']}",
+                "review_role": "READ_ONLY_WORKER_OUTPUT_NOT_GATE",
+                "collection_role": "RESEARCH_REVIEWS",
+                "linked_source_ids": linked_sources(node["id"]),
+            })
         elif node.get("kind") == "human_review_assessment" and data.get("assessment_id"):
             objects.append({
                 "object_id": f"review-assessment:{node['id']}",
@@ -268,6 +359,50 @@ def native_projection(graph: dict) -> dict:
                 "review_role": "IMMUTABLE_CODEX_REVIEW",
                 "collection_role": "RESEARCH_REVIEWS",
                 "linked_source_ids": linked_sources(node["id"]),
+            })
+        elif node.get("kind") == "topic_route_draft":
+            objects.append({
+                "object_id": f"topic-route:{node['id']}", "object_kind": "route_note",
+                "graph_node_id": node["id"], "atr_id": data.get("package_id") or node["id"],
+                "title": node.get("label"), "marker": f"ATR Topic Route Node: {node['id']}",
+                "review_role": "PENDING_INDEPENDENT_ROUTE_REVIEW", "collection_role": "OVERVIEW",
+                "linked_source_ids": linked_sources(node["id"]),
+            })
+        elif node.get("kind") == "research_portfolio":
+            objects.append({
+                "object_id": f"portfolio:{node['id']}", "object_kind": "portfolio_note",
+                "graph_node_id": node["id"], "atr_id": data.get("portfolio_id") or node["id"],
+                "title": node.get("label"), "marker": f"ATR Portfolio Node: {node['id']}",
+                "review_role": "NAVIGATION_AND_REVIEW_BOUNDARY", "collection_role": "OVERVIEW",
+                "linked_source_ids": [],
+            })
+        elif node.get("kind") == "research_program":
+            objects.append({
+                "object_id": f"program:{node['id']}", "object_kind": "program_note",
+                "graph_node_id": node["id"],
+                "parent_graph_node_id": parent_by_relation(node["id"], "registers_separate_program_authority", "research_portfolio"),
+                "atr_id": data.get("program_key") or node["id"], "title": node.get("label"),
+                "marker": f"ATR Research Program Node: {node['id']}",
+                "review_role": "PROGRAM_INTAKE_REVIEW", "collection_role": "OVERVIEW",
+                "linked_source_ids": [],
+            })
+        elif node.get("kind") == "legacy_research_run":
+            objects.append({
+                "object_id": f"legacy-run:{node['id']}", "object_kind": "legacy_run_note",
+                "graph_node_id": node["id"],
+                "parent_graph_node_id": parent_by_relation(node["id"], "retains_legacy_branch_as_input", "research_program"),
+                "atr_id": node["id"], "title": node.get("label"),
+                "marker": f"ATR Legacy Run Node: {node['id']}",
+                "review_role": "HISTORICAL_VERSION", "collection_role": "HISTORY",
+                "linked_source_ids": [],
+            })
+        elif node.get("kind") == "historical_alignment_audit":
+            objects.append({
+                "object_id": f"alignment-audit:{node['id']}", "object_kind": "alignment_audit_note",
+                "graph_node_id": node["id"], "atr_id": data.get("audit_digest") or node["id"],
+                "title": node.get("label"), "marker": f"ATR Alignment Audit Node: {node['id']}",
+                "review_role": "IMMUTABLE_MIGRATION_BOUNDARY", "collection_role": "HISTORY",
+                "linked_source_ids": [],
             })
     projection = {
         "schema_version": "0.1",
@@ -291,7 +426,7 @@ def native_projection(graph: dict) -> dict:
         "objects": objects,
         "feedback_contract": {
             "accepted_events": ["human_note_modified", "human_annotation_modified"],
-            "target_priority": ["claim", "research_problem", "research_question", "real_world_tension", "source", "knowledge", "topic"],
+            "target_priority": ["claim", "collision_review", "research_problem", "research_question", "real_world_tension", "reality_signal_gap", "source", "knowledge", "topic"],
             "lifecycle_effect": "REVIEW_INPUT_ONLY",
             "history_policy": "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES",
         },

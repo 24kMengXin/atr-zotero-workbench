@@ -1,0 +1,106 @@
+{
+  "artifact_type": "problem-case",
+  "schema_version": "1.0",
+  "artifact_id": "ARH-MULTILINGUAL-STATE-CONTINUITY-R0-QST-001.v1",
+  "problem_id": "PC-multilingual-state-memory-control-plane.draft-v1",
+  "program_key": "multilingual-agent-state-continuity",
+  "status": "DRAFT_R0_SOURCE_REDUCTION_PENDING_INDEPENDENT_REVIEW",
+  "research_question": "When an agent appears to lose continuity after a language switch, when was task state forgotten and when was intact state routed through a different language control plane, locale asset, or evaluation contract?",
+  "decision_owner": "Conversational-agent owners deciding whether to repair memory, localization/control configuration, or evaluation.",
+  "worlds": [
+    "W1: Persistent task facts or evolving constraints were lost, overwritten, or retrieved incorrectly.",
+    "W2: Task state remained intact, but the selected/detected language changed retrieval, response, entity, fulfillment, or flow behavior.",
+    "W3: Long-horizon task or judge design labels a general execution failure as memory discontinuity."
+  ],
+  "discriminator": "A revision-pinned multi-turn replay that snapshots persistent state before a language switch, logs language-control variables and selected locale assets, and independently adjudicates intended actions after the switch.",
+  "falsifier": "The continuity error vanishes when language-control routing is held fixed despite unchanged memory, or persists identically across languages after control and evaluator normalization.",
+  "scope": "Method-free R0 problem framing; any benchmark, replay system, or visualization is an instrument.",
+  "does_not_establish": "Review-only source reduction; no gap, novelty, prevalence, proposal, or lifecycle transition is established.",
+  "source_spans": [
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 8",
+      "observation": "Provides inspectable persistent memory but only English evidence.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A fact/belief/state representation and explicit language evidence gap.",
+      "leaves_unresolved": "Language-switch control behavior.",
+      "does_not_establish": "Multilingual state continuity or language-switch behavior."
+    },
+    {
+      "source_id": "SRC-MEM2ACTBENCH-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 7, 9",
+      "observation": "Defines memory-dependent tool parameterization from evolving histories.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A concrete memory-utilization world.",
+      "leaves_unresolved": "Language control versus memory attribution.",
+      "does_not_establish": "Whether a language switch loses memory or merely routes intact state through a different language configuration."
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2607.06008",
+      "kind": "PRIMARY_PAPER",
+      "locator": "pp. 1, 8, 10",
+      "observation": "Shows multilingual errors compound in long-horizon workflows.",
+      "problem_posture": "OBJECTIVELY_LEAVES",
+      "resolves": "A multilingual execution world.",
+      "leaves_unresolved": "Isolation of memory from harness and control variables.",
+      "does_not_establish": "Isolation of persistent-memory loss from language control, harness, judge, or task-design effects."
+    },
+    {
+      "source_id": "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+      "title": "Design effective language understanding — Microsoft Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/language-understanding",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "locator": "lines 103-143",
+      "observation": "Documents a central language variable controlling retrieval and responses.",
+      "problem_posture": "CONTEXT_ONLY",
+      "resolves": "A real control-plane mechanism.",
+      "leaves_unresolved": "Observed memory loss or prevalence.",
+      "does_not_establish": "Observed memory loss, failure prevalence, or the correctness of automatic detection."
+    },
+    {
+      "source_id": "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026",
+      "title": "Multilingual agents — Dialogflow CX",
+      "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-multilingual",
+      "kind": "PRIMARY_WORKFLOW_HTML",
+      "locator": "lines 377-420, 492-516",
+      "observation": "Separates shared agent data from language-specific assets and documents switching limitations.",
+      "problem_posture": "CONTEXT_ONLY",
+      "resolves": "A real shared-state/locale-data distinction.",
+      "leaves_unresolved": "Causal attribution of user failures.",
+      "does_not_establish": "That a user-visible continuity failure is caused by memory rather than configuration or locale routing."
+    }
+  ],
+  "derived_questions": [
+    {
+      "question_id": "DQ-STATE-1",
+      "question": "Which state fields remain identical before and after a language switch, and which control/locale assets change?",
+      "smallest_discriminator": "One serialized multi-turn state snapshot plus language-control and asset-selection trace.",
+      "does_not_establish": "Cross-platform prevalence.",
+      "source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-MS-COPILOT-LANGUAGE-CONTROL-2026",
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ]
+    },
+    {
+      "question_id": "DQ-STATE-2",
+      "question": "Does a memory-grounded intended action survive language switching when the control plane is frozen?",
+      "smallest_discriminator": "One underspecified tool action replayed with fixed memory and crossed language-control settings.",
+      "does_not_establish": "A general memory architecture ranking.",
+      "source_ids": [
+        "SRC-MEM2ACTBENCH-2026",
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-GOOGLE-DIALOGFLOW-AUTODETECT-2026"
+      ]
+    }
+  ],
+  "controller_boundary": "Independent review is required before any route or promotion decision."
+}
