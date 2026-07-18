@@ -13,13 +13,13 @@
 
 ## 新 continuation 的可验证状态
 
-`2026-07-18-multilingual-agent-action-continuation` 是新的 `R0_INTAKE`，而不是被伪装成历史阶段的合并 run：
+`2026-07-18-multilingual-agent-action-continuation` 是新的 continuation，而不是被伪装成历史阶段的合并 run。其当前记录阶段为 `R2_FOCUSED_REVIEW`：
 
 - 111 个去重的历史来源；
 - 4 条历史 claim，保存在 `migration/historical-claims.jsonl`，未进入当前 `evidence/claims.jsonl`；
 - 采用有明确出处的 FKS frontier map；
-- `G2C-CONSTRUCTION` 为 `PENDING`；
-- 已有一个未晋升的、30 天有效的 opportunity-map（包含论文与协议实现两类独立来源）；它不替代 topic routing 或 claim review。
-- 仍缺 topic-routing、knowledge-context、problem cards、当前 claims、来源定位和人的 review packets。
+- `G2C-CONSTRUCTION` 与所有 claim/proposal gate 仍为 `PENDING`；
+- 已记录未晋升的 opportunity-map、topic-routing package、knowledge-context、版本化 research-problem card、item-contract audit、source-grounded concept map 与 contextual inspiration ledger；它们都不替代 claim review。
+- 当前 claim ledger 为空，item contract 不足，且尚无真实 Zotero source locator/review packet 或 controller 后续路由决定；这些是继续 R2 而非进入 G3Q 的明确原因。
 
 下一项 system change 只能在新的 source-grounded artifact 或人类阅读反馈显示需要它时实施。

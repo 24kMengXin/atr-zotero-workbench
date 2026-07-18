@@ -85,6 +85,19 @@ ATR controller 仍是唯一可以推进 lifecycle 的系统。来自 Zotero 的�
 5. 研究者明确触发审查，ATR 产生新的审查 artifact 或保留原路线的理由；
 6. 新旧图、来源和判断均可并排比较，且没有任何旧记录被删除或改写。
 
-## 现有原型的定位与缺口
+## 当前实现与仍未完成的验收证据（2026-07-18）
 
-目前的 `graph.json`、XUL overlay 和 legacy adapter 只可作为历史 run 的只读浏览器，不能作为上述 MVP 的完成证据。尤其缺少：claim/locator schema、结构化反馈、反馈到 controller 的 review packet、ATR v2 原生 event/artifact adapter、真实的分支版本视图，以及问题图中的现实情境与可证伪条件。
+`graph.json`、XUL overlay 和 legacy/v0.9 adapter 已不再只是论文列表：它们能投影 source-grounded concept tree、现实张力、问题卡、细粒度 review question、item-contract audit、时间戳 artifact、历史 projection snapshot、Zotero source/claim stance、immutable human-review-packet 与 owner disposition。历史问题卡版本也会保留并显示其替代关系。
+
+但这些能力不等于完成上述 MVP。当前证据与缺口如下：
+
+| 验收对象 | 当前证据 | 仍缺什么，因而不能宣称完成 |
+| --- | --- | --- |
+| topic → 实际过程 | v0.9 harness 记录 gate/stage；新 `run_instrumented.py` 以后会记录真实 Codex execution attempt（声明 skill 与实际 skill invocation 分开） | 当前 multilingual continuation 迁移前没有原生 skill-event，不能倒灌伪历史；尚需一个从新 topic 开始的端到端真实 run |
+| 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射，source/claim note 有 locator 与 stance 字段，阅读条目归入 per-run collection | 尚未验证对 PDF annotation/highlight 的精确 deep link；现有 continuation 仍待真实阅读者填写 locator |
+| 人的反馈回流 | note modify → review queue → immutable packet → append-only owner disposition，并显示最近问题/claim/路线影响 | owner disposition 只请求 controller review，尚未有 controller 原生消费并记录新的 route/claim artifact 的真实案例 |
+| 知识与现实问题图 | concept map、opportunity map、问题卡与论文 role/细粒度问题均有 source IDs 和不成立边界；contextual sources 独立分层 | 不是完整领域 ontology；现实材料不提供部署影响估计或 gap certificate |
+| 历史保留 | 图投影快照、历史问题卡版本与 supersession relation 均可比较 | 尚未提供任意两个分支的完整并排互动比较；原始 artifact 的版本化仍依赖 harness 的 append-only政策 |
+| Zotero 运行时 | XPI 有 manifest/contract/static validation；失败时显示 workspace 诊断；独立 profile 已确认 Zotero 识别源码侧载版本 | 日常 profile 仍注册 0.3.8 而非候选 0.4.x；必须先通过 Zotero UI 重新安装候选 XPI，才能进行菜单、挂载、note notifier 的真实验收 |
+
+因此下一次系统改动的优先级不是继续美化图，而是：完成候选 XPI 的真实安装/开发 profile 启用验证；随后用一条真实 Zotero 阅读反馈驱动 controller 的明确复审决定，并保留全过程 artifact。
