@@ -1411,6 +1411,11 @@ var ATRZoteroWorkbench = {
 
 	async noteChanged(item, extraData) {
 		if (this.suppressedNotifierItemIDs.has(item.id)) return;
+		let changedFields = Object.keys(extraData?.changed || {});
+		if (changedFields.length && changedFields.every(field => field === "collections")) {
+			this.log("ignored non-cognitive Note metadata change: " + item.key);
+			return;
+		}
 		let noteHTML = item.getNote();
 		let noteText = this.plainNote(noteHTML);
 		let marker = this.markerFromNote(item);
@@ -1423,6 +1428,7 @@ var ATRZoteroWorkbench = {
 		await this.appendHumanInput({
 			schema_version: "0.2",
 			event: "human_note_modified",
+			input_origin: "ZOTERO_NOTIFIER",
 			at: new Date().toISOString(),
 			atr_run: marker.run,
 			atr_source_id: marker.source,
@@ -1446,6 +1452,9 @@ var ATRZoteroWorkbench = {
 	async annotationChanged(item, extraData) {
 		let sourceID = this.sourceIDFromItem(item);
 		if (!sourceID) return;
+		let sourceNode = (this.activeGraph?.nodes || []).find(node =>
+			node.kind === "paper" && node.data?.source_id === sourceID
+		);
 		let attachment = Zotero.Items.get(item.parentItemID);
 		let libraryID = attachment?.libraryID || item.libraryID;
 		let scope = "library";
@@ -1472,8 +1481,11 @@ var ATRZoteroWorkbench = {
 		await this.appendHumanInput({
 			schema_version: "0.2",
 			event: "human_annotation_modified",
+			input_origin: "ZOTERO_NOTIFIER",
 			at: new Date().toISOString(),
+			atr_run: this.activeGraph?.run || null,
 			atr_source_id: sourceID,
+			atr_graph_node_id: sourceNode?.id || null,
 			zotero_annotation_key: item.key,
 			zotero_attachment_key: item.parentItem?.key || null,
 			zotero_library_id: libraryID || null,

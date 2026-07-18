@@ -13,7 +13,7 @@
 | 每个研究问题说明论文主观/客观提出、遗留、解决、挑战了什么 | 已证明（结构和 UI） | `problem_posture/resolves/leaves_unresolved/does_not_establish` 的 v2 校验；问题 Note 显示每篇论文角色且去重；真实 smoke 验证 | 历史记录缺失的 posture 保持“未记录”；需要真实阅读补定位，不能由系统猜补 |
 | 论文讨论继续产生更细粒度问题节点 | 已证明 | typed `derived_questions`、显式父问题边和 source 限制；Zotero 中 3 个细粒度问题嵌套于当前问题卡 | 新问题仍必须由来源与最小判别器支撑，不能自动膨胀 |
 | 人可以离线逐篇读、批注、写 Note，并明确支持/限定/反驳/不确定/提问 | 已证明（隔离环境） | Reader annotation 捕获；Item Pane 五种 typed stance；真实 smoke 捕获 `QUALIFIES`、highlight/comment/page/position | 需要用户在日常库中完成一次真实研究阅读，而非 smoke fixture |
-| 从人的修改找到最靠近根/决策的受影响信息，回到 Codex 做认知更新 | 已证明到“待审查输入” | 只沿显式研究边的 BFS impact；Reader source → 最近问题距离 1；review queue 两阶段回显最近节点 | 尚未用一条用户真实反馈完成后续 scholarly re-review |
+| 从人的修改找到最靠近根/决策的受影响信息，回到 Codex 做认知更新 | 已证明到“待审查输入” | 只沿显式研究边的 BFS impact；Reader source → 最近问题距离 1；`review-registry` 一次扫描所有显式 topic 并优先显示 active topic/最近决策节点；Collection-only 元数据误报会保留但标记为非认知事件 | 尚未用一条用户真实反馈完成后续 scholarly re-review |
 | 人的反馈不能自动改 lifecycle，旧节点、旧边和旧文献继续保留 | 已证明 | `REVIEW_INPUT_ONLY`、append-only packet/disposition、历史 projection snapshot；controller attachment 不改变 subject version/state | 无；后续任何自动 route 功能仍必须保持该不变量 |
 | 人的处置能触发新的 claim/route review，并把新旧路线并排保留 | 部分完成（代码路径与隔离运行） | v2 已有 owner disposition → isolated `human-review-assessment`；repo-local Zotero 9 三阶段 smoke 验证「共创复核」Note、保留/重审 edge、真实 authority 不变、clone 仍为 `INTAKE`/v0 | 用真实人的 packet 运行 scholarly reviewer；生成新的 problem/collision/route artifact；执行合法 controller decision；重新投影并比较 current/history 链 |
 | 插件与 auto-research harness 同时优化 | 部分完成 | 新 topic 迫使 harness 增加可选 HTTPS `pdf_url` source contract 和 SHADOW change card；插件按需导入真实 arXiv PDF；真实 Zotero 9 完成新 topic → Reader → annotation → review packet，105 项 harness tests 通过 | 还缺真实 owner review → 新 problem/collision/route；smoke annotation 不具有学术权威 |
@@ -24,7 +24,7 @@
 ## 当前最短的真实完成路径
 
 1. 由用户在日常 Zotero 中选择一个当前问题/来源，完成一条真实 typed stance 或 Reader annotation。
-2. Codex 运行 `review-human-input`，展示最近受影响节点；用户记录 owner disposition。
+2. Codex 运行 `review-registry`，跨 topic 展示最近受影响节点；用户记录 owner disposition。
 3. 对该 packet 另行执行 scoped collision/route review，生成新的 immutable artifact；controller 决定保持、分叉或停放。
 4. 重建投影，在 Zotero 中验证旧问题/旧边仍在历史版本，新版本成为 current target。
 5. 最后在日常 profile 安装候选 XPI 做人工体验验收；隔离 profile 的通过不能替代用户库验收。

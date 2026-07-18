@@ -73,8 +73,18 @@ python3 scripts/check_installed_plugin_version.py \
 
 同步、Reader/Note tab 打开和失败诊断会追加到该 workspace 的 `plugin-runtime.jsonl`。
 
-修改 Zotero 中由本工具生成的阅读卡/笔记，会追加到
-`output/multilingual/human-input/inbox.jsonl`。回到 Codex 后运行：
+修改 Zotero 中由本工具生成的阅读卡/笔记，会追加到对应 topic 的
+`output/<topic>/human-input/inbox.jsonl`。回到 Codex 后优先扫描显式 registry，
+一次找出所有 topic 中尚待复核的修改及其最近决策节点：
+
+```bash
+python -m atr_zotero_workbench review-registry output/runs.json \
+  --out output/codex-inbox-summary.json
+```
+
+聚合文件是 repo-local、可替换的 Codex 收件箱；每个 topic 自己的 queue/packet
+仍是权威记录。Collection 归属等纯元数据变化会被标记为非认知事件，不会冒充
+人的阅读反馈。若只处理一个已知 workspace，也可以运行：
 
 ```bash
 python -m atr_zotero_workbench review-human-input output/multilingual-agent-action-continuation --out output/multilingual-agent-action-continuation/human-input/impact-report.json

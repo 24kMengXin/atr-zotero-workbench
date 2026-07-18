@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 from .core import load_legacy_run, project_graph
-from .human_input import impact_report, materialize_review_packets, refresh_review_queue, record_review_disposition, attach_review_packet_to_v2, attach_review_assessment_to_v2
+from .human_input import impact_report, materialize_review_packets, refresh_review_queue, review_registry, record_review_disposition, attach_review_packet_to_v2, attach_review_assessment_to_v2
 from .history import archive_previous_projection
 from .programs import project_program
 from .runs import register_run
@@ -93,6 +93,7 @@ def main() -> None:
     s = sub.add_parser("serve"); s.add_argument("directory", type=Path); s.add_argument("--port", type=int, default=8765)
     y = sub.add_parser("sync"); y.add_argument("directory", type=Path)
     h = sub.add_parser("review-human-input"); h.add_argument("directory", type=Path); h.add_argument("--out", type=Path, required=True)
+    hr = sub.add_parser("review-registry"); hr.add_argument("registry", type=Path); hr.add_argument("--out", type=Path, required=True)
     d = sub.add_parser("record-review-disposition"); d.add_argument("directory", type=Path); d.add_argument("--run-dir", type=Path, required=True); d.add_argument("--packet", required=True); d.add_argument("--disposition", required=True); d.add_argument("--rationale", required=True); d.add_argument("--owner", required=True)
     a2 = sub.add_parser("attach-review-to-v2"); a2.add_argument("directory", type=Path); a2.add_argument("--v2-run-dir", type=Path, required=True); a2.add_argument("--disposition-ledger", type=Path, required=True); a2.add_argument("--packet", required=True); a2.add_argument("--subject", required=True); a2.add_argument("--expected-version", type=int, required=True); a2.add_argument("--atrctl", type=Path, required=True)
     a3 = sub.add_parser("attach-review-assessment-to-v2"); a3.add_argument("directory", type=Path); a3.add_argument("--v2-run-dir", type=Path, required=True); a3.add_argument("--assessment", type=Path, required=True); a3.add_argument("--subject", required=True); a3.add_argument("--expected-version", type=int, required=True); a3.add_argument("--atrctl", type=Path, required=True)
@@ -109,6 +110,9 @@ def main() -> None:
         queue = refresh_review_queue(a.directory)
         packets = materialize_review_packets(a.directory)
         print(json.dumps({"written": str(a.out), "affected": len(report["affected"]), "new_queue_items": queue["new_items"], "new_review_packets": len(packets["written"])}, ensure_ascii=False))
+    elif a.cmd == "review-registry":
+        summary = review_registry(a.registry, a.out)
+        print(json.dumps({"written": str(a.out), **summary["counts"]}, ensure_ascii=False))
     elif a.cmd == "record-review-disposition":
         print(json.dumps(record_review_disposition(a.directory, a.run_dir, a.packet, a.disposition, a.rationale, a.owner), ensure_ascii=False))
     elif a.cmd == "attach-review-to-v2":

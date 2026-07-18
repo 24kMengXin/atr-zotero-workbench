@@ -94,7 +94,7 @@ ATR controller 仍是唯一可以推进 lifecycle 的系统。来自 Zotero 的�
 | 验收对象 | 当前证据 | 仍缺什么，因而不能宣称完成 |
 | --- | --- | --- |
 | topic → 实际过程 | v0.9 harness 记录 gate/stage；新 `run_instrumented.py` 以后会记录真实 Codex execution attempt（声明 skill 与实际 skill invocation 分开） | 当前 multilingual continuation 迁移前没有原生 skill-event，不能倒灌伪历史；尚需一个从新 topic 开始的端到端真实 run |
-| 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射；隔离 Zotero 9 smoke 已验证 114 个 source ID → 109 个去重条目、Reader PDF 打开、原生 highlight/comment/page/position 捕获，并映射到距离 1 的最近问题 | 尚未实现从 ATR 侧反向打开某条既有 annotation 的精确 Reader deep link；真实研究来源仍需阅读者填写/核对 locator |
+| 原始来源与定位 | Zotero 条目以 `atr-source-id` 幂等映射；隔离 Zotero 9 smoke 已验证 Reader PDF 打开、原生 highlight/comment/page/position 捕获，并以 `zotero://open-pdf/...&annotation=...` 和 `Reader.open(..., {annotationID})` 精确反向打开既有 annotation | 真实研究来源仍需阅读者核对 locator；隔离 profile 不能替代日常库人工点击验收 |
 | 人的反馈回流 | Item Pane 五种判断 → Note typed stance → review queue → immutable packet → append-only owner disposition → isolated assessment；三阶段隔离 smoke 已验证 `QUALIFIES`、Reader annotation、最近节点回显，以及 `05 · 共创复核` 原生 Note。assessment 明确保留来源、请求 evidence review，且 clone stage/version 不变 | 已证明代码路径，但仍缺真实人的处置后另行产出新 collision/route/claim artifact 并形成 current/history 分支的学术案例 |
 | 知识与现实问题图 | concept map、opportunity map、问题卡与论文 role/细粒度问题均有 source IDs 和不成立边界；contextual sources 独立分层 | 不是完整领域 ontology；现实材料不提供部署影响估计或 gap certificate |
 | 历史保留 | 图投影快照、历史问题卡版本与 supersession relation 均可比较 | 尚未提供任意两个分支的完整并排互动比较；原始 artifact 的版本化仍依赖 harness 的 append-only政策 |

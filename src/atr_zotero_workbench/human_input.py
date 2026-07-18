@@ -20,16 +20,44 @@ REVIEW_PROPAGATION_RELATIONS = {
     "refines_question", "derived_from_problem",
 }
 
+DECISION_OBJECT_PRIORITY = {
+    "claim": 0,
+    "research_problem": 1,
+    "research_question": 2,
+    "derived_research_question": 2,
+    "real_world_tension": 3,
+    "knowledge_concept": 4,
+    "atr_v2_subject": 5,
+}
+
 def _rows(path: Path) -> list[dict[str, Any]]:
     if not path.exists(): return []
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+def _event_item_id(event: dict[str, Any]) -> str:
+    raw = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode()).hexdigest()[:16]
+
+def _ignored_event_reason(event: dict[str, Any]) -> str | None:
+    if event.get("input_origin") == "PLUGIN_GENERATED":
+        return "PLUGIN_GENERATED"
+    if event.get("event") == "human_note_modified":
+        changed = event.get("notifier", {}).get("changed")
+        if isinstance(changed, dict) and changed and set(changed) <= {"collections"}:
+            return "COLLECTION_METADATA_ONLY"
+    return None
 
 def impact_report(output: Path) -> dict[str, Any]:
     graph = json.loads((output / "graph.json").read_text(encoding="utf-8"))
     events = _rows(output / "human-input" / "inbox.jsonl")
     latest = {}
+    ignored = []
     for event in events:
         if event.get("event") not in {"human_note_modified", "human_annotation_modified"}:
+            continue
+        ignored_reason = _ignored_event_reason(event)
+        if ignored_reason:
+            ignored.append({"id": _event_item_id(event), "reason": ignored_reason, "event": event})
             continue
         key = event.get("zotero_note_key") or event.get("zotero_annotation_key")
         if key:
@@ -185,6 +213,7 @@ def impact_report(output: Path) -> dict[str, Any]:
             "codex_next_action": "请人工审阅该反馈；若它挑战断言或来源边界，创建新的 immutable ATR human-review-packet，再由 owner 决定是否重做 route/claim review。保留既有节点和边作为历史投影，不自动清退文献或改写 ATR lifecycle。",
         })
     return {"schema_version":"0.2", "projection": "derived-human-input-review", "events_seen":len(events),
+            "ignored_events": ignored, "ignored_event_count": len(ignored),
             "latest_feedback_objects":len(latest), "latest_notes":sum(1 for kind, _ in latest if kind == "human_note_modified"),
             "latest_annotations":sum(1 for kind, _ in latest if kind == "human_annotation_modified"), "affected":affected}
 
@@ -206,8 +235,7 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
     added = 0
     for affected in report["affected"]:
         event = affected["event"]
-        raw = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-        item_id = hashlib.sha256(raw.encode()).hexdigest()[:16]
+        item_id = _event_item_id(event)
         if item_id in known:
             continue
         items.append({
@@ -235,6 +263,11 @@ def refresh_review_queue(output: Path) -> dict[str, Any]:
             "event": event,
         })
         known.add(item_id); added += 1
+    ignored = {item["id"]: item["reason"] for item in report.get("ignored_events", [])}
+    for item in items:
+        if item.get("status") == "pending_human_and_codex_review" and item.get("id") in ignored:
+            item["status"] = "ignored_non_cognitive_event"
+            item["ignore_reason"] = ignored[item["id"]]
     existing["latest_refresh_events_seen"] = report["events_seen"]
     existing["new_items"] = added
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -256,8 +289,7 @@ def materialize_review_packets(output: Path) -> dict[str, Any]:
     written, existing = [], 0
     for affected in report["affected"]:
         event = affected["event"]
-        raw = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-        packet_id = "HRP-" + hashlib.sha256(raw.encode()).hexdigest()[:16]
+        packet_id = "HRP-" + _event_item_id(event)
         path = directory / f"{packet_id}.json"
         if path.exists():
             existing += 1
@@ -337,6 +369,125 @@ def materialize_review_links(output: Path) -> Path:
         encoding="utf-8",
     )
     return target
+
+
+def review_registry(registry_path: Path, out_path: Path) -> dict[str, Any]:
+    """Aggregate human review input from every explicitly registered topic.
+
+    Per-topic queues and immutable packets remain authoritative.  This
+    replaceable Codex inbox only identifies where human attention changed the
+    graph and which explicit decision object is nearest; it cannot advance a
+    lifecycle state or rewrite history.
+    """
+    from .runs import validate_registry
+
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    errors = validate_registry(registry)
+    if errors:
+        raise ValueError("invalid ATR workbench registry: " + "; ".join(errors))
+
+    active_key = registry["active_run"]
+    topics: list[dict[str, Any]] = []
+    pending: list[dict[str, Any]] = []
+    new_queue_items = 0
+    new_review_packets = 0
+    for run in registry["runs"]:
+        workspace = Path(run["workspace"])
+        topic = {
+            "key": run["key"],
+            "label": run.get("label") or run["key"],
+            "run_id": run.get("run_id"),
+            "workspace": str(workspace),
+            "active": run["key"] == active_key,
+            "controller_kind": run["controller_kind"],
+        }
+        if not (workspace / "graph.json").is_file():
+            topic.update({"status": "MISSING_PROJECTION", "events_seen": 0, "pending": 0})
+            topics.append(topic)
+            continue
+        if not (workspace / "human-input" / "inbox.jsonl").is_file():
+            topic.update({"status": "NO_HUMAN_INPUT", "events_seen": 0, "pending": 0})
+            topics.append(topic)
+            continue
+
+        report = impact_report(workspace)
+        queue = refresh_review_queue(workspace)
+        packets = materialize_review_packets(workspace)
+        topic_pending = [
+            item for item in queue.get("items", [])
+            if item.get("status") == "pending_human_and_codex_review"
+        ]
+        topic.update({
+            "status": "PENDING_REVIEW" if topic_pending else "REVIEWED_OR_EMPTY",
+            "events_seen": report["events_seen"],
+            "latest_feedback_objects": report["latest_feedback_objects"],
+            "pending": len(topic_pending),
+            "new_queue_items": queue.get("new_items", 0),
+            "new_review_packets": len(packets["written"]),
+        })
+        topics.append(topic)
+        new_queue_items += queue.get("new_items", 0)
+        new_review_packets += len(packets["written"])
+        for item in topic_pending:
+            nearest = item.get("nearest_decision_objects") or []
+            nearest_distance = min(
+                (node.get("distance_from_review_target", 10**9) for node in nearest),
+                default=None,
+            )
+            primary = min(nearest, key=lambda node: (
+                node.get("distance_from_review_target", 10**9),
+                DECISION_OBJECT_PRIORITY.get(node.get("kind"), 10**9),
+                node.get("id") or "",
+            ), default=None)
+            pending.append({
+                "topic_key": run["key"],
+                "topic_label": topic["label"],
+                "active_topic": topic["active"],
+                "workspace": str(workspace),
+                "queue_item_id": item["id"],
+                "observed_at": item.get("observed_at"),
+                "review_target_type": item.get("review_target_type"),
+                "source_id": item.get("annotation_source_id"),
+                "graph_node_id": item.get("annotation_graph_node_id"),
+                "zotero_open_uri": item.get("zotero_open_uri"),
+                "nearest_decision_distance": nearest_distance,
+                "primary_decision_object": primary,
+                "nearest_decision_objects": nearest,
+                "nearest_research_problems": item.get("nearest_research_problems", []),
+                "review_path_policy": item.get("review_path_policy"),
+                "required_action": item.get("recommended_next_action"),
+            })
+
+    pending.sort(key=lambda item: (
+        not item["active_topic"],
+        item["nearest_decision_distance"] if item["nearest_decision_distance"] is not None else 10**9,
+        item.get("observed_at") or "",
+        item["topic_key"],
+        item["queue_item_id"],
+    ))
+    summary = {
+        "schema_version": "0.1",
+        "projection": "codex-multi-topic-human-input-inbox",
+        "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "registry": str(registry_path.resolve()),
+        "active_topic": active_key,
+        "lifecycle_effect": "REVIEW_INPUT_ONLY",
+        "history_policy": "APPEND_ONLY_PRESERVE_OLD_NODES_AND_EDGES",
+        "topics": topics,
+        "pending": pending,
+        "counts": {
+            "topics_registered": len(topics),
+            "topics_with_pending_review": sum(topic["pending"] > 0 for topic in topics),
+            "pending_review_objects": len(pending),
+            "new_queue_items": new_queue_items,
+            "new_review_packets": new_review_packets,
+        },
+    }
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = out_path.parent / ("." + out_path.name + ".tmp")
+    temporary.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(out_path)
+    return summary
 
 
 OWNER_DISPOSITIONS = {

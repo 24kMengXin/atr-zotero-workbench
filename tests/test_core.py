@@ -1,3 +1,4 @@
+import hashlib
 import json
 import tempfile
 import unittest
@@ -5,7 +6,7 @@ from pathlib import Path
 from atr_zotero_workbench.app import build, build_program
 from atr_zotero_workbench.core import load_legacy_run, project_graph
 from atr_zotero_workbench.zotero import native_projection, sync_web_api, validate_native_projection
-from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue
+from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue, review_registry
 from atr_zotero_workbench.runs import validate_registry
 
 _REPO_TEST_TMP = Path(__file__).resolve().parents[1] / ".runtime" / "tests"
@@ -13,6 +14,83 @@ _REPO_TEST_TMP.mkdir(parents=True, exist_ok=True)
 tempfile.tempdir = str(_REPO_TEST_TMP)
 
 class BuildTest(unittest.TestCase):
+    def test_registry_review_finds_pending_feedback_across_topics(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runs = []
+            for key, source in [('active', 'P1'), ('other', 'P2')]:
+                workspace = root / key
+                (workspace / 'human-input').mkdir(parents=True)
+                problem = f'research_problem:{key}'
+                (workspace / 'graph.json').write_text(json.dumps({
+                    'run': key,
+                    'nodes': [
+                        {'id': f'paper:{source}', 'kind': 'paper', 'label': source, 'data': {'source_id': source}},
+                        {'id': problem, 'kind': 'research_problem', 'label': key + ' problem', 'data': {'problem_id': key}},
+                    ],
+                    'edges': [{'source': problem, 'target': f'paper:{source}', 'relation': 'grounds_in_explicit_source_span', 'data': {}}],
+                }))
+                (workspace / 'human-input' / 'inbox.jsonl').write_text(json.dumps({
+                    'event': 'human_annotation_modified', 'at': '2026-07-18T00:00:00Z',
+                    'zotero_annotation_key': 'A-' + key, 'atr_run': key,
+                    'atr_source_id': source, 'atr_graph_node_id': f'paper:{source}',
+                }) + '\n')
+                runs.append({
+                    'key': key, 'label': key.title(), 'run_id': key,
+                    'workspace': str(workspace), 'run_dir': str(root / ('run-' + key)),
+                    'controller_kind': 'ATR_V2_SQLITE', 'authority_path': str(root / (key + '.sqlite')),
+                    'authority_scope': 'LIFECYCLE_AND_ATTACHMENTS', 'view_role': 'CURRENT_RUN',
+                })
+            registry = root / 'runs.json'
+            registry.write_text(json.dumps({
+                'schema_version': '0.2', 'projection': 'atr-workbench-run-registry',
+                'selection_policy': 'EXPLICIT_ACTIVATION_ONLY', 'runs': runs,
+                'active_run': 'active', 'selection': {'mode': 'EXPLICIT', 'selected_key': 'active'},
+            }))
+            out = root / 'codex-inbox-summary.json'
+            summary = review_registry(registry, out)
+            self.assertEqual(summary['counts']['pending_review_objects'], 2)
+            self.assertEqual(summary['counts']['new_review_packets'], 2)
+            self.assertEqual(summary['pending'][0]['topic_key'], 'active')
+            self.assertEqual(summary['pending'][0]['nearest_decision_objects'][0]['id'], 'research_problem:active')
+            self.assertEqual(summary['pending'][0]['primary_decision_object']['id'], 'research_problem:active')
+            self.assertEqual(summary['pending'][0]['nearest_decision_distance'], 1)
+            self.assertEqual(summary['lifecycle_effect'], 'REVIEW_INPUT_ONLY')
+            self.assertTrue(out.is_file())
+            second = review_registry(registry, out)
+            self.assertEqual(second['counts']['new_queue_items'], 0)
+            self.assertEqual(second['counts']['new_review_packets'], 0)
+            self.assertEqual(second['counts']['pending_review_objects'], 2)
+
+    def test_collection_only_note_change_is_not_cognitive_feedback(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            (out / 'human-input').mkdir()
+            (out / 'graph.json').write_text(json.dumps({
+                'run': 'r',
+                'nodes': [{'id': 'subject:S1', 'kind': 'atr_v2_subject', 'label': 'S1', 'data': {'active': True}}],
+                'edges': [],
+            }))
+            event = {
+                'event': 'human_note_modified', 'atr_run': 'r', 'zotero_note_key': 'N1',
+                'notifier': {'changed': {'collections': [2]}},
+            }
+            (out / 'human-input' / 'inbox.jsonl').write_text(json.dumps(event) + '\n')
+            (out / 'human-input' / 'review-queue.json').write_text(json.dumps({
+                'schema_version': '0.1', 'projection': 'codex-review-queue',
+                'items': [{
+                    'id': hashlib.sha256(json.dumps(event, sort_keys=True, separators=(',', ':')).encode()).hexdigest()[:16],
+                    'status': 'pending_human_and_codex_review',
+                }],
+            }))
+            report = impact_report(out)
+            self.assertEqual(report['latest_feedback_objects'], 0)
+            self.assertEqual(report['ignored_event_count'], 1)
+            self.assertEqual(report['ignored_events'][0]['reason'], 'COLLECTION_METADATA_ONLY')
+            queue = refresh_review_queue(out)
+            self.assertEqual(queue['items'][0]['status'], 'ignored_non_cognitive_event')
+            self.assertEqual(materialize_review_packets(out)['written'], [])
+
     def test_native_projection_rejects_duplicate_and_dangling_objects(self):
         graph = {
             'run': 'r',

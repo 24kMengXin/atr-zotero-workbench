@@ -43,15 +43,20 @@ def main() -> None:
             raise SystemExit("remote-PDF smoke did not prove an explicit on-demand HTTPS import")
 
     events = rows(WORKSPACE / "human-input" / "inbox.jsonl")
-    if any(event.get("atr_run") and not event.get("atr_problem_id") for event in events):
+    projected_run = json.loads((WORKSPACE / "graph.json").read_text(encoding="utf-8"))["run"]
+    if any(event.get("event") == "human_note_modified" and event.get("atr_run") and not event.get("atr_problem_id") for event in events):
         raise SystemExit("programmatic Topic Note creation leaked into the human-input inbox")
+    if any(event.get("input_origin") != "ZOTERO_NOTIFIER" for event in events):
+        raise SystemExit("human-input event lacks explicit Zotero notifier provenance")
     problem_events = [event for event in events if event.get("atr_problem_id") and event.get("atr_graph_node_id")]
     if len(problem_events) != 1:
         raise SystemExit(f"expected one exact problem Note feedback event, got {len(problem_events)}")
     if problem_events[0].get("review_stance") != "QUALIFIES":
         raise SystemExit(f"Item Pane stance selection was not captured as typed review input: {problem_events[0]}")
     annotation_events = [event for event in events if event.get("event") == "human_annotation_modified"]
-    if len(annotation_events) != 1 or not annotation_events[0].get("atr_source_id"):
+    if (len(annotation_events) != 1 or not annotation_events[0].get("atr_source_id")
+            or annotation_events[0].get("atr_run") != projected_run
+            or not annotation_events[0].get("atr_graph_node_id")):
         raise SystemExit(f"expected one mapped Reader annotation event, got {len(annotation_events)}")
     deep_link = annotation_events[0].get("zotero_open_uri")
     attachment_key = annotation_events[0].get("zotero_attachment_key")
@@ -64,6 +69,8 @@ def main() -> None:
     if remote_pdf and imported_pdf.get("attachment_key") != annotation_open.get("attachment_key"):
         raise SystemExit("Reader annotation was not created on the on-demand imported attachment")
     impact = impact_report(WORKSPACE)
+    if impact.get("ignored_event_count"):
+        raise SystemExit(f"smoke generated non-cognitive feedback events: {impact['ignored_events']}")
     annotation_impact = next(
         row for row in impact["affected"]
         if row["event"].get("event") == "human_annotation_modified"

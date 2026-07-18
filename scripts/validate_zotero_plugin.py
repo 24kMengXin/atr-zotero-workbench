@@ -95,6 +95,8 @@ def validate_source() -> None:
             fail(f"plugin is missing native Zotero contract {native_contract!r}")
     if "human_note_modified" not in runtime or "human_annotation_modified" not in runtime:
         fail("plugin must relay both explicit notes and native Reader annotations")
+    if 'input_origin: "ZOTERO_NOTIFIER"' not in runtime or "ignored non-cognitive Note metadata change" not in runtime:
+        fail("plugin must identify Zotero feedback provenance and reject collection-only Note metadata changes")
     if "annotationID: annotation.key" not in runtime:
         fail("plugin must reopen a selected native annotation at its exact Reader location")
     if "zotero://open-pdf/" not in runtime or "getGroupIDFromLibraryID" not in runtime or "zotero_open_uri" not in runtime:
