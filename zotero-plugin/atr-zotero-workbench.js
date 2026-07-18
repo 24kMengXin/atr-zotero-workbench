@@ -589,7 +589,10 @@ var ATRZoteroWorkbench = {
         row.append(label(problem.label, "font-weight:bold;white-space:normal"));
         let worlds = (problem.data?.counterfactual_worlds || []).map(world => (world.label || "世界") + "：" + (world.explanation || "未记录")).join(" · ");
         let paperRoles = edges.filter(edge => edge.target === problem.id && edge.relation === "has_explicit_problem_role");
+        let successor = edges.find(edge => edge.source === problem.id && edge.relation === "superseded_by_recorded_problem_version");
         row.append(label("状态：" + (problem.data?.status || "UNSPECIFIED"), "white-space:normal;color:#7a5620"));
+        row.append(label("工件：" + (problem.data?.artifact_path || "未记录") + (problem.data?.artifact_version ? " · " + problem.data.artifact_version : ""), "white-space:normal;color:#64748b"));
+        if (successor) row.append(label("此版本已由当前记录的问题卡取代；它仍保留为历史审计证据。", "white-space:normal;color:#64748b"));
         row.append(label("竞争解释：" + (worlds || "未记录"), "white-space:normal"));
         row.append(label("最小证伪条件：" + (problem.data?.minimum_falsifier || "未记录"), "white-space:normal;color:#7a5620"));
         row.append(label("论文在此问题中的位置", "font-size:13px;font-weight:bold;margin-top:7px"));

@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from atr_zotero_workbench.app import build, build_program
+from atr_zotero_workbench.core import load_legacy_run, project_graph
 from atr_zotero_workbench.zotero import sync_web_api
 from atr_zotero_workbench.human_input import impact_report, materialize_review_packets, refresh_review_queue
 
@@ -229,6 +230,21 @@ class BuildTest(unittest.TestCase):
             self.assertEqual((role['source'], role['target']), ('paper:P1', 'research_problem:RQ-1'))
             self.assertEqual(role['data']['leaves_unresolved'], 'does not establish prevalence')
             self.assertFalse(any(edge['source'] == 'paper:MISSING' for edge in graph['edges']))
+
+    def test_research_problem_retains_draft_alongside_its_current_version(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp); run = tmp_path / 'run'; (run / 'evidence').mkdir(parents=True); (run / 'knowledge' / 'research-problem-cards').mkdir(parents=True)
+            (run / 'evidence' / 'sources.jsonl').write_text('')
+            base = {'problem_id': 'RQ-1', 'research_question': 'A sufficiently long question about attribution and executable contracts', 'counterfactual_worlds': []}
+            (run / 'knowledge' / 'research-problem-cards' / 'RQ-1.draft.json').write_text(json.dumps({**base, 'status': 'DRAFT_R0_NEEDS_OWNER_REVIEW'}))
+            (run / 'knowledge' / 'research-problem-cards' / 'RQ-1.v1.json').write_text(json.dumps({**base, 'status': 'R2_FOCUSED_REVIEW_NEEDS_OWNER_REVIEW', 'artifact_version': 'v1'}))
+            graph = project_graph(load_legacy_run(run))
+            problems = [node for node in graph['nodes'] if node['kind'] == 'research_problem']
+            self.assertEqual(len(problems), 2)
+            self.assertIn('research_problem:RQ-1', [node['id'] for node in problems])
+            draft = next(node for node in problems if node['data']['status'].startswith('DRAFT_R0'))
+            self.assertIn('RQ-1.draft.json', draft['id'])
+            self.assertTrue(any(edge['relation'] == 'superseded_by_recorded_problem_version' for edge in graph['edges']))
 
     def test_source_review_identifies_nearest_research_problem_for_codex(self):
         with tempfile.TemporaryDirectory() as tmp:

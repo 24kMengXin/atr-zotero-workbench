@@ -61,7 +61,12 @@ def load_legacy_run(path: Path) -> LegacyRun:
     research_problems = []
     problem_dir = path / "knowledge" / "research-problem-cards"
     for problem_path in sorted(problem_dir.glob("*.json")) if problem_dir.exists() else []:
-        research_problems.append(json.loads(problem_path.read_text(encoding="utf-8")))
+        problem = json.loads(problem_path.read_text(encoding="utf-8"))
+        # The artifact path is provenance, not a field authored by the research
+        # worker.  Keeping it lets the projection retain an R0 draft alongside
+        # its R2 continuation without silently collapsing two different states.
+        problem["_artifact_path"] = str(problem_path.relative_to(path))
+        research_problems.append(problem)
     gaps = []
     for relative in ("evidence/claims.jsonl", "evidence/edges.jsonl", "observability/skill-events.jsonl"):
         target = path / relative
@@ -326,11 +331,32 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
             for source_id in cluster.get("signal_refs", []):
                 if source_id in known_paper_ids:
                     edge(cluster_node, f"paper:{source_id}", "grounded_in_explicit_signal")
+    problem_id_counts: dict[str, int] = {}
     for problem in run.research_problems:
         problem_id = str(problem.get("problem_id", "unknown"))
-        problem_node = f"research_problem:{problem_id}"
+        problem_id_counts[problem_id] = problem_id_counts.get(problem_id, 0) + 1
+    canonical_problem_paths: dict[str, str] = {}
+    for problem in run.research_problems:
+        problem_id = str(problem.get("problem_id", "unknown"))
+        # Prefer a non-draft version as the stable decision target.  Old drafts
+        # remain visible under their artifact identity and link to that target.
+        if not str(problem.get("status", "")).startswith("DRAFT_R0"):
+            canonical_problem_paths[problem_id] = problem.get("_artifact_path", "")
+    for problem in run.research_problems:
+        problem_id = str(problem.get("problem_id", "unknown"))
+        artifact_path = problem.get("_artifact_path", "")
+        is_noncanonical_version = (
+            problem_id_counts[problem_id] > 1
+            and canonical_problem_paths.get(problem_id)
+            and artifact_path != canonical_problem_paths[problem_id]
+        )
+        problem_node = (
+            f"research_problem:{problem_id}:{artifact_path}"
+            if is_noncanonical_version else f"research_problem:{problem_id}"
+        )
         nodes.append(_node(problem_node, "research_problem", problem.get("research_question", problem_id),
                            problem_id=problem_id, status=problem.get("status", "UNSPECIFIED"), claim_version=problem.get("claim_version"),
+                           artifact_path=artifact_path, artifact_version=problem.get("artifact_version"),
                            construct_of_interest=problem.get("construct_of_interest"), status_quo=problem.get("status_quo"),
                            confounded_observation=problem.get("confounded_observation"),
                            counterfactual_worlds=problem.get("counterfactual_worlds", []),
@@ -338,6 +364,8 @@ def project_graph(run: LegacyRun) -> dict[str, Any]:
                            minimum_falsifier=problem.get("minimum_falsifier"),
                            contribution_boundary=problem.get("contribution_boundary", {})))
         edge(f"run:{run_id}", problem_node, "records_research_problem")
+        if is_noncanonical_version:
+            edge(problem_node, f"research_problem:{problem_id}", "superseded_by_recorded_problem_version")
         claim_id = problem.get("claim_version")
         if claim_id in known_claim_ids:
             edge(problem_node, f"claim:{claim_id}", "tests_claim")
