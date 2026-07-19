@@ -139,15 +139,6 @@
       "artifact_ids": [
         "sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:25.308608+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-ZOTERO-LOCAL-RECON-6cdac84da223",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae"
-      ]
     }
   ],
   "nodes": [
@@ -3559,47 +3550,6 @@
       }
     },
     {
-      "id": "artifact:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · 6cdac84da223",
-      "data": {
-        "artifact_id": "sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-        "original_name": "multilingual-agent-authorization-safety.6cdac84da223.json",
-        "created_at": "2026-07-19T00:31:25.274189+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/multilingual-agent-authorization-safety.6cdac84da223.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · multilingual-agent-authorization-safety",
-      "data": {
-        "program_key": "multilingual-agent-authorization-safety",
-        "summary": {
-          "canonical_sources": 46,
-          "exact_identity_matches": 1,
-          "local_fulltext": 0,
-          "identity_review_required": 0,
-          "not_found": 45
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3824,21 +3774,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.344843+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-ZOTERO-LOCAL-RECON-6cdac84da223",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 15,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-ZOTERO-LOCAL-RECON-6cdac84da223",
-        "subject_id": "program:multilingual-agent-authorization-safety",
-        "subject_version": 0,
-        "artifact_id": "sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:25.308608+00:00"
       }
     }
   ],
@@ -5135,26 +5070,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-      "target": "artifact:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "target": "zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
-      "source": "zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "target": "paper:SRC-MAPS-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": false
-      }
-    },
-    {
       "source": "reality_signal_gap:ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-DCS-001.v1",
       "target": "paper:SRC-AGENTABSTAIN-2026",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -5345,18 +5260,6 @@
       "target": "artifact:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-authorization-safety",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-ZOTERO-LOCAL-RECON-6cdac84da223",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-ZOTERO-LOCAL-RECON-6cdac84da223",
-      "target": "artifact:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -5472,16 +5375,8 @@
         "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
         "node_count": 152,
         "edge_count": 235
-      },
-      {
-        "id": "ff57c60f5a530fed",
-        "archived_at": "2026-07-19T00:31:46.817268+00:00",
-        "path": "history/projections/ff57c60f5a530fed.json",
-        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "node_count": 155,
-        "edge_count": 242
       }
     ],
-    "previous_projection": "ff57c60f5a530fed"
+    "previous_projection": "e128442f8c1495a8"
   }
 }

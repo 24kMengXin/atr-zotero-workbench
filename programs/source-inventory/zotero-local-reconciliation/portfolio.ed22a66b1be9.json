@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "zotero-local-source-reconciliation",
+  "captured_at": "2026-07-19T00:30:52.907703+00:00",
+  "policy": {
+    "zotero_read_only": true,
+    "no_download": true,
+    "availability_is_not_inspection": true,
+    "title_only_requires_review": true
+  },
+  "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
+  "scope": "portfolio",
+  "summary": {
+    "canonical_sources": 352,
+    "zotero_top_items": 148,
+    "exact_identity_matches": 9,
+    "local_fulltext": 7,
+    "items_without_local_fulltext": 2,
+    "title_matches_requiring_review": 3,
+    "identity_conflicts_requiring_review": 0,
+    "ambiguous_matches": 0,
+    "not_found": 340,
+    "matched_human_annotations": 0,
+    "fulltext_inspected": 0,
+    "programs": {
+      "agent-infrastructure-and-evaluation-contracts": {
+        "canonical_sources": 29,
+        "exact_identity_matches": 0,
+        "local_fulltext": 0,
+        "identity_review_required": 0,
+        "not_found": 29
+      },
+      "atr-research-governance": {
+        "canonical_sources": 18,
+        "exact_identity_matches": 0,
+        "local_fulltext": 0,
+        "identity_review_required": 0,
+        "not_found": 18
+      },
+      "multilingual-agent-action-attribution": {
+        "canonical_sources": 106,
+        "exact_identity_matches": 2,
+        "local_fulltext": 0,
+        "identity_review_required": 0,
+        "not_found": 104
+      },
+      "multilingual-agent-authorization-safety": {
+        "canonical_sources": 46,
+        "exact_identity_matches": 1,
+        "local_fulltext": 0,
+        "identity_review_required": 0,
+        "not_found": 45
+      },
+      "multilingual-agent-state-continuity": {
+        "canonical_sources": 31,
+        "exact_identity_matches": 0,
+        "local_fulltext": 0,
+        "identity_review_required": 0,
+        "not_found": 31
+      },
+      "multilingual-representation-and-data-decisions": {
+        "canonical_sources": 137,
+        "exact_identity_matches": 7,
+        "local_fulltext": 7,
+        "identity_review_required": 3,
+        "not_found": 127
+      }
+    }
+  },
+  "matches": [],
+  "program_summaries": {
+    "agent-infrastructure-and-evaluation-contracts": {
+      "canonical_sources": 29,
+      "exact_identity_matches": 0,
+      "local_fulltext": 0,
+      "identity_review_required": 0,
+      "not_found": 29
+    },
+    "atr-research-governance": {
+      "canonical_sources": 18,
+      "exact_identity_matches": 0,
+      "local_fulltext": 0,
+      "identity_review_required": 0,
+      "not_found": 18
+    },
+    "multilingual-agent-action-attribution": {
+      "canonical_sources": 106,
+      "exact_identity_matches": 2,
+      "local_fulltext": 0,
+      "identity_review_required": 0,
+      "not_found": 104
+    },
+    "multilingual-agent-authorization-safety": {
+      "canonical_sources": 46,
+      "exact_identity_matches": 1,
+      "local_fulltext": 0,
+      "identity_review_required": 0,
+      "not_found": 45
+    },
+    "multilingual-agent-state-continuity": {
+      "canonical_sources": 31,
+      "exact_identity_matches": 0,
+      "local_fulltext": 0,
+      "identity_review_required": 0,
+      "not_found": 31
+    },
+    "multilingual-representation-and-data-decisions": {
+      "canonical_sources": 137,
+      "exact_identity_matches": 7,
+      "local_fulltext": 7,
+      "identity_review_required": 3,
+      "not_found": 127
+    }
+  }
+}

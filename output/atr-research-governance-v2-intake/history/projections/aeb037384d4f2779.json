@@ -139,15 +139,6 @@
       "artifact_ids": [
         "sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:25.739952+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-ZOTERO-LOCAL-RECON-cbb4840d5e50",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819"
-      ]
     }
   ],
   "nodes": [
@@ -2193,47 +2184,6 @@
       }
     },
     {
-      "id": "artifact:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · cbb4840d5e50",
-      "data": {
-        "artifact_id": "sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-        "original_name": "atr-research-governance.cbb4840d5e50.json",
-        "created_at": "2026-07-19T00:31:25.691686+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/atr-research-governance.cbb4840d5e50.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · atr-research-governance",
-      "data": {
-        "program_key": "atr-research-governance",
-        "summary": {
-          "canonical_sources": 18,
-          "exact_identity_matches": 0,
-          "local_fulltext": 0,
-          "identity_review_required": 0,
-          "not_found": 18
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -2458,21 +2408,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.636509+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-ZOTERO-LOCAL-RECON-cbb4840d5e50",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 15,
-        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-ZOTERO-LOCAL-RECON-cbb4840d5e50",
-        "subject_id": "program:atr-research-governance",
-        "subject_version": 0,
-        "artifact_id": "sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:25.739952+00:00"
       }
     }
   ],
@@ -3438,18 +3373,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-atr-research-governance-v2-intake",
-      "target": "artifact:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "target": "zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
       "source": "reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
       "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -3646,18 +3569,6 @@
       "target": "artifact:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:atr-research-governance",
-      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-ZOTERO-LOCAL-RECON-cbb4840d5e50",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-ZOTERO-LOCAL-RECON-cbb4840d5e50",
-      "target": "artifact:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -3773,16 +3684,8 @@
         "run": "2026-07-19-atr-research-governance-v2-intake",
         "node_count": 93,
         "edge_count": 180
-      },
-      {
-        "id": "aeb037384d4f2779",
-        "archived_at": "2026-07-19T00:31:47.121379+00:00",
-        "path": "history/projections/aeb037384d4f2779.json",
-        "run": "2026-07-19-atr-research-governance-v2-intake",
-        "node_count": 96,
-        "edge_count": 188
       }
     ],
-    "previous_projection": "aeb037384d4f2779"
+    "previous_projection": "916fc9a82f41cc64"
   }
 }

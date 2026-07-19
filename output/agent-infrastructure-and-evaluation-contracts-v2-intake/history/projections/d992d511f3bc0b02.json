@@ -139,15 +139,6 @@
       "artifact_ids": [
         "sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:25.589388+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-ZOTERO-LOCAL-RECON-253483643e1c",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f"
-      ]
     }
   ],
   "nodes": [
@@ -2888,47 +2879,6 @@
       }
     },
     {
-      "id": "artifact:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · 253483643e1c",
-      "data": {
-        "artifact_id": "sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-        "original_name": "agent-infrastructure-and-evaluation-contracts.253483643e1c.json",
-        "created_at": "2026-07-19T00:31:25.541095+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/agent-infrastructure-and-evaluation-contracts.253483643e1c.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · agent-infrastructure-and-evaluation-contracts",
-      "data": {
-        "program_key": "agent-infrastructure-and-evaluation-contracts",
-        "summary": {
-          "canonical_sources": 29,
-          "exact_identity_matches": 0,
-          "local_fulltext": 0,
-          "identity_review_required": 0,
-          "not_found": 29
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3153,21 +3103,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.534809+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-ZOTERO-LOCAL-RECON-253483643e1c",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 15,
-        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-ZOTERO-LOCAL-RECON-253483643e1c",
-        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
-        "subject_version": 0,
-        "artifact_id": "sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:25.589388+00:00"
       }
     }
   ],
@@ -4415,18 +4350,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-      "target": "artifact:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "target": "zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
       "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
       "target": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "relation": "records_transition",
@@ -4605,18 +4528,6 @@
       "target": "artifact:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
-      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-ZOTERO-LOCAL-RECON-253483643e1c",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-ZOTERO-LOCAL-RECON-253483643e1c",
-      "target": "artifact:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4724,16 +4635,8 @@
         "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
         "node_count": 119,
         "edge_count": 221
-      },
-      {
-        "id": "d992d511f3bc0b02",
-        "archived_at": "2026-07-19T00:31:47.038135+00:00",
-        "path": "history/projections/d992d511f3bc0b02.json",
-        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "node_count": 122,
-        "edge_count": 229
       }
     ],
-    "previous_projection": "d992d511f3bc0b02"
+    "previous_projection": "4067173b8e4f96cf"
   }
 }

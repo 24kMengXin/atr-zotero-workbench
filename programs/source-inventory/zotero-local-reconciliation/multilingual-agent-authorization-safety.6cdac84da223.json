@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "zotero-local-source-reconciliation",
+  "captured_at": "2026-07-19T00:30:52.907703+00:00",
+  "policy": {
+    "zotero_read_only": true,
+    "no_download": true,
+    "availability_is_not_inspection": true,
+    "title_only_requires_review": true
+  },
+  "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
+  "scope": "program",
+  "program_key": "multilingual-agent-authorization-safety",
+  "summary": {
+    "canonical_sources": 46,
+    "exact_identity_matches": 1,
+    "local_fulltext": 0,
+    "identity_review_required": 0,
+    "not_found": 45
+  },
+  "matches": [
+    {
+      "canonical_source_id": "SRC-MAPS-2025",
+      "title": "MAPS: A Multilingual Benchmark for Global Agent Performance and Security",
+      "program_keys": [
+        "multilingual-agent-action-attribution",
+        "multilingual-agent-authorization-safety"
+      ],
+      "identity_status": "EXACT_IDENTITY_MATCH",
+      "match_methods": [
+        "EXACT_NORMALIZED_URL"
+      ],
+      "zotero_item_key": "7QYWEMTJ",
+      "zotero_item_title": "MAPS: A Multilingual Benchmark for Agent Performance and Security",
+      "access_status": "ZOTERO_ITEM_NO_LOCAL_FULLTEXT",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid.",
+      "source_id": "SRC-MAPS-2025"
+    }
+  ]
+}

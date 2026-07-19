@@ -64,6 +64,14 @@
       "run": "2026-07-19-multilingual-program-portfolio-v2",
       "node_count": 54,
       "edge_count": 97
+    },
+    {
+      "id": "517e7e93d126091f",
+      "archived_at": "2026-07-19T00:31:47.235339+00:00",
+      "path": "history/projections/517e7e93d126091f.json",
+      "run": "2026-07-19-multilingual-program-portfolio-v2",
+      "node_count": 57,
+      "edge_count": 101
     }
   ]
 }

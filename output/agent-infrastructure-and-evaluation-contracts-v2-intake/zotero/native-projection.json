@@ -1679,6 +1679,17 @@
         "SRC-CAR-2026",
         "SRC-HARNESS-BENCH-2026"
       ]
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
+      "atr_id": "zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
+      "title": "Zotero 本地来源对账 · agent-infrastructure-and-evaluation-contracts",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:253483643e1c79b82a12e8d497c7b346e245c794c57021175666dc2ae3d6a09f",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

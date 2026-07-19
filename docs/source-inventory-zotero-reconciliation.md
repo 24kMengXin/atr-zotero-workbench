@@ -1,24 +1,24 @@
 # Canonical sources × Zotero 本地文库对账
 
-- canonical source：344；Zotero 顶层条目：148。
+- canonical source：352；Zotero 顶层条目：148。
 - 严格身份匹配：9；其中确认存在本地 PDF：7；只有书目无本地 PDF：2。
-- 仅标题候选：3；身份冲突：0；Zotero 未找到：332。
+- 仅标题候选：3；身份冲突：0；Zotero 未找到：340。
 - 匹配 PDF 上已有人的 annotation：0；按 ATR load-bearing span 合同完成全文检查：0。
 
 `ZOTERO_LOCAL_FULLTEXT` 只证明 Zotero 中存在可读 PDF，并由文件摘要确认；不证明 worker 已读全文，不证明来源支持任何 claim。标题匹配不升级 access/fulltext 状态。
 
-另有 21 份 PDF 已存在 repo 的 `.runtime` 研究缓存中：21/21 通过 repo 边界、已记录 SHA-256、canonical locator 与首页标题核验，并已按原 program 接回六个现有 child authority。它们当前不是 Zotero attachment；只有人显式打开对应来源时，插件才会再次核验摘要并复制为 Zotero stored attachment。该交接不新建 topic，不改变原有 `FULLTEXT_INSPECTED` 状态，也不产生新的 claim 支持。
+统一 inventory 另有 8 个由 current v2 immutable artifact 记录为 `FULLTEXT_INSPECTED` 的来源；它们在本次日常 Zotero 对账中全部为 `NOT_FOUND_IN_ZOTERO`。因此“worker 已检查 repo/开放来源中的定位段落”和“人可在 Zotero Reader 中阅读/标注”继续是两个独立状态，不能互相升级。
 
 ## 按 program
 
 | Program | canonical | exact | local PDF | identity review | not found |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| agent-infrastructure-and-evaluation-contracts | 27 | 0 | 0 | 0 | 27 |
-| atr-research-governance | 17 | 0 | 0 | 0 | 17 |
-| multilingual-agent-action-attribution | 105 | 2 | 0 | 0 | 103 |
-| multilingual-agent-authorization-safety | 45 | 1 | 0 | 0 | 44 |
-| multilingual-agent-state-continuity | 30 | 0 | 0 | 0 | 30 |
-| multilingual-representation-and-data-decisions | 135 | 7 | 7 | 3 | 125 |
+| agent-infrastructure-and-evaluation-contracts | 29 | 0 | 0 | 0 | 29 |
+| atr-research-governance | 18 | 0 | 0 | 0 | 18 |
+| multilingual-agent-action-attribution | 106 | 2 | 0 | 0 | 104 |
+| multilingual-agent-authorization-safety | 46 | 1 | 0 | 0 | 45 |
+| multilingual-agent-state-continuity | 31 | 0 | 0 | 0 | 31 |
+| multilingual-representation-and-data-decisions | 137 | 7 | 7 | 3 | 127 |
 
 ## 已确认的 Zotero 本地全文
 
@@ -39,3 +39,5 @@
 | SRC-MQM-APE-2025 | SDX6HNW2 | MQM-APE: Toward High-Quality Error Annotation Predictors with Automatic Post-Editing in LLM Translation Evaluators |
 | SRC-RAGTRANS-2025 | RK5JBPI3 | Retrieval-Augmented Machine Translation with Unstructured Knowledge |
 | SRC-TEAR-2025 | R4HWU558 | TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement |
+
+另有 21 份 PDF 已存在 repo 的 `.runtime` 研究缓存中，21/21 通过 repo 边界、已记录 SHA-256、canonical locator 与首页标题核验。它们当前不是日常 Zotero attachment；只有人显式打开对应来源时，插件才会再次核验摘要并复制为 Zotero stored attachment，不进行隐式批量导入。

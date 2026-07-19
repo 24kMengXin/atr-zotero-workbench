@@ -25,6 +25,7 @@ def main() -> None:
         "co_reading_dock_rendered", "co_reading_dock_probe_passed",
         "dev_smoke_portfolio_program_target_resolved",
         "dev_smoke_portfolio_returned",
+        "portfolio_registry_materialized",
     }
     missing = sorted(required - stages)
     if missing:
@@ -59,12 +60,60 @@ def main() -> None:
     } - {None}
     if len(child_ids) != 6 or not child_ids.issubset(registered):
         raise SystemExit(f"portfolio registry does not preserve all six child targets: {child_ids - registered}")
+    materialized = next(row for row in runtime if row.get("stage") == "portfolio_registry_materialized")
+    if (materialized.get("topic_count") != 7 or materialized.get("child_count") != 6
+            or materialized.get("history_branch_count") != 28
+            or materialized.get("mapped_artifact_count") != 164
+            or materialized.get("lifecycle_effect") != "NONE_PROJECTION_ONLY"):
+        raise SystemExit(f"portfolio bulk materialization did not preserve the 1→6→28→164 contract: {materialized}")
+    for row in registry.get("runs", []):
+        if row.get("view_role") != "REGISTERED_V2_RUN":
+            continue
+        child_log = Path(row["workspace"]) / "plugin-runtime.jsonl"
+        child_events = rows(child_log)
+        if not any(event.get("stage") == "portfolio_child_materialized"
+                   and event.get("run_id") == row.get("run_id") for event in child_events):
+            raise SystemExit(f"child was not bulk-materialized into Zotero: {row.get('run_id')}")
+    expected_source_ids = set()
+    for row in registry.get("runs", []):
+        if row.get("view_role") != "REGISTERED_V2_RUN":
+            continue
+        child_graph = json.loads((Path(row["workspace"]) / "graph.json").read_text(encoding="utf-8"))
+        expected_source_ids.update(
+            str(node.get("data", {}).get("source_id"))
+            for node in child_graph.get("nodes", [])
+            if node.get("kind") == "paper" and node.get("data", {}).get("source_id")
+        )
     connection = sqlite3.connect(f"file:{RUNTIME / 'data' / 'zotero.sqlite'}?mode=ro", uri=True)
     note_count = connection.execute(
         "SELECT COUNT(*) FROM itemNotes WHERE note LIKE '%ATR Research Program Node:%'"
     ).fetchone()[0]
     if note_count != 6:
         raise SystemExit(f"expected six native program navigation Notes, found {note_count}")
+    topic_note_count = connection.execute(
+        "SELECT COUNT(*) FROM itemNotes WHERE note LIKE '%ATR Topic Run:%'"
+    ).fetchone()[0]
+    legacy_note_count = connection.execute(
+        "SELECT COUNT(*) FROM itemNotes WHERE note LIKE '%ATR Legacy Run Node:%'"
+    ).fetchone()[0]
+    root_collection_count = connection.execute(
+        "SELECT COUNT(*) FROM collections WHERE parentCollectionID IS NULL AND collectionName LIKE 'ATR · %'"
+    ).fetchone()[0]
+    if (topic_note_count != 7 or legacy_note_count != 28 or root_collection_count != 7):
+        raise SystemExit(
+            "bulk materialization did not create exactly seven native topic roots and 28 historical Notes: "
+            f"topics={topic_note_count}, history={legacy_note_count}, roots={root_collection_count}"
+        )
+    materialized_source_ids = {
+        name.removeprefix("atr-source-id:")
+        for (name,) in connection.execute("SELECT name FROM tags WHERE name LIKE 'atr-source-id:%'")
+    }
+    if materialized_source_ids != expected_source_ids:
+        raise SystemExit(
+            "bulk materialization did not close over the exact six-child source set: "
+            f"missing={sorted(expected_source_ids - materialized_source_ids)}, "
+            f"extra={sorted(materialized_source_ids - expected_source_ids)}"
+        )
     print(json.dumps({
         "portfolio_programs": 6,
         "resolved_child_run_id": target["child_run_id"],
@@ -72,6 +121,11 @@ def main() -> None:
         "opened_child_collision_review_note": dev_owner_review_open["collision_review_note_key"],
         "foldable_panels": probe["panel_count"],
         "portfolio_graphs": probe["portfolio_graph_count"],
+        "materialized_topic_roots": root_collection_count,
+        "materialized_child_authorities": materialized["child_count"],
+        "materialized_history_branches": legacy_note_count,
+        "mapped_legacy_artifacts": materialized["mapped_artifact_count"],
+        "materialized_canonical_sources": len(materialized_source_ids),
         "authority_effect": "NONE_NAVIGATION_ONLY",
     }, ensure_ascii=False, indent=2))
 

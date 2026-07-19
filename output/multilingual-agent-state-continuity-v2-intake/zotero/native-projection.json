@@ -1750,6 +1750,17 @@
         "SRC-POLYWORKBENCH-2026",
         "SRC-STATEFUL-TOOL-USE-2025"
       ]
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
+      "atr_id": "zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
+      "title": "Zotero 本地来源对账 · multilingual-agent-state-continuity",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

@@ -76,15 +76,6 @@
       "artifact_ids": [
         "sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:24.984097+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-ZOTERO-LOCAL-RECON-ed22a66b1be9",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9"
-      ]
     }
   ],
   "nodes": [
@@ -1481,97 +1472,6 @@
       }
     },
     {
-      "id": "artifact:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · ed22a66b1be9",
-      "data": {
-        "artifact_id": "sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-        "original_name": "portfolio.ed22a66b1be9.json",
-        "created_at": "2026-07-19T00:31:24.944700+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/portfolio.ed22a66b1be9.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · portfolio",
-      "data": {
-        "program_key": null,
-        "summary": {
-          "canonical_sources": 352,
-          "zotero_top_items": 148,
-          "exact_identity_matches": 9,
-          "local_fulltext": 7,
-          "items_without_local_fulltext": 2,
-          "title_matches_requiring_review": 3,
-          "identity_conflicts_requiring_review": 0,
-          "ambiguous_matches": 0,
-          "not_found": 340,
-          "matched_human_annotations": 0,
-          "fulltext_inspected": 0,
-          "programs": {
-            "agent-infrastructure-and-evaluation-contracts": {
-              "canonical_sources": 29,
-              "exact_identity_matches": 0,
-              "local_fulltext": 0,
-              "identity_review_required": 0,
-              "not_found": 29
-            },
-            "atr-research-governance": {
-              "canonical_sources": 18,
-              "exact_identity_matches": 0,
-              "local_fulltext": 0,
-              "identity_review_required": 0,
-              "not_found": 18
-            },
-            "multilingual-agent-action-attribution": {
-              "canonical_sources": 106,
-              "exact_identity_matches": 2,
-              "local_fulltext": 0,
-              "identity_review_required": 0,
-              "not_found": 104
-            },
-            "multilingual-agent-authorization-safety": {
-              "canonical_sources": 46,
-              "exact_identity_matches": 1,
-              "local_fulltext": 0,
-              "identity_review_required": 0,
-              "not_found": 45
-            },
-            "multilingual-agent-state-continuity": {
-              "canonical_sources": 31,
-              "exact_identity_matches": 0,
-              "local_fulltext": 0,
-              "identity_review_required": 0,
-              "not_found": 31
-            },
-            "multilingual-representation-and-data-decisions": {
-              "canonical_sources": 137,
-              "exact_identity_matches": 7,
-              "local_fulltext": 7,
-              "identity_review_required": 3,
-              "not_found": 127
-            }
-          }
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -1691,21 +1591,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.054401+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-ZOTERO-LOCAL-RECON-ed22a66b1be9",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 8,
-        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-ZOTERO-LOCAL-RECON-ed22a66b1be9",
-        "subject_id": "portfolio:multilingual-aaai",
-        "subject_version": 0,
-        "artifact_id": "sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:24.984097+00:00"
       }
     }
   ],
@@ -2277,18 +2162,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
-      "target": "artifact:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "target": "zotero_reconciliation:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
       "source": "subject:portfolio:multilingual-aaai",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
       "relation": "records_transition",
@@ -2383,18 +2256,6 @@
       "target": "artifact:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:portfolio:multilingual-aaai",
-      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-ZOTERO-LOCAL-RECON-ed22a66b1be9",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-ZOTERO-LOCAL-RECON-ed22a66b1be9",
-      "target": "artifact:sha256:ed22a66b1be9a3577189dd13874334ef62d5041b14afe6e62dca4562de867ae9",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -2462,16 +2323,8 @@
         "run": "2026-07-19-multilingual-program-portfolio-v2",
         "node_count": 54,
         "edge_count": 97
-      },
-      {
-        "id": "517e7e93d126091f",
-        "archived_at": "2026-07-19T00:31:47.235339+00:00",
-        "path": "history/projections/517e7e93d126091f.json",
-        "run": "2026-07-19-multilingual-program-portfolio-v2",
-        "node_count": 57,
-        "edge_count": 101
       }
     ],
-    "previous_projection": "517e7e93d126091f"
+    "previous_projection": "b96ac3fe97249d51"
   }
 }

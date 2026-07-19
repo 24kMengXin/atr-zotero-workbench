@@ -111,6 +111,8 @@ def validate_source() -> None:
         "portfolio_program_owner_review_opened",
         "dev_smoke_portfolio_owner_review_opened",
         "dev_smoke_portfolio_returned",
+        "portfolio_registry_materialized",
+        "portfolio_child_materialized",
     ):
         if stage not in runtime:
             fail(f"native projection must emit runtime stage {stage!r}")
@@ -141,6 +143,8 @@ def validate_source() -> None:
         "mini_graph_count", "appendPortfolioGraph",
         'aria-label", "ATR portfolio 到 program 与历史分支总览图', "portfolio_graph_count",
         "runForProgramNode", "openProgramNode", 'interaction: "PORTFOLIO_TO_NATIVE_TOPIC_TAB"',
+        "materializePortfolioRegistry", '"同步当前研究组合（1 portfolio + 6 child）"',
+        'lifecycle_effect: "NONE_PROJECTION_ONLY"',
         '"逐项历史消费映射"', "LEGACY_MAPPED×", "mappedArtifacts",
         '"Zotero 本地来源对账"', '"Zotero 来源对账 · 只读"',
         '"Repo PDF → Zotero 显式导入交接"', '"Repo PDF → Zotero · 待显式打开"',

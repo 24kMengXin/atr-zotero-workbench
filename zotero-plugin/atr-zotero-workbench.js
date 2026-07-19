@@ -1710,6 +1710,76 @@ var ATRZoteroWorkbench = {
 		}
 	},
 
+	async materializePortfolioRegistry(window, requestConfirmation = true) {
+		let registry = await this.loadRunRegistry();
+		let portfolioRun = registry.runs.find(run => run.key === registry.activeRun);
+		if (!portfolioRun || portfolioRun.view_role !== "CURRENT_RUN") {
+			throw new Error("显式 active_run 不是唯一 CURRENT_RUN portfolio");
+		}
+		let portfolioGraph = await this.loadProjection(portfolioRun);
+		let declaredChildRunIDs = new Set((portfolioGraph.nodes || [])
+			.filter(node => node.kind === "research_program" && node.data?.child_run_id)
+			.map(node => node.data.child_run_id));
+		let childRuns = registry.runs.filter(run => run.view_role === "REGISTERED_V2_RUN");
+		let registeredChildRunIDs = new Set(childRuns.map(run => run.run_id));
+		if (declaredChildRunIDs.size !== 6
+				|| registeredChildRunIDs.size !== declaredChildRunIDs.size
+				|| [...declaredChildRunIDs].some(runID => !registeredChildRunIDs.has(runID))) {
+			throw new Error("portfolio 与 registry 的 current child authority 不是完全一致的六条链");
+		}
+		if (requestConfirmation) {
+			let accepted = Services.prompt.confirm(
+				window,
+				"ATR Research",
+				"将 1 个 portfolio 与 6 个 current child 物化为 Zotero 原生 Collection、Note 和来源条目。\n\n"
+					+ "历史分支继续只读保留；不会下载全部 PDF，不会改变 ATR lifecycle。是否继续？",
+			);
+			if (!accepted) return null;
+		}
+		let summaries = [];
+		for (let run of [portfolioRun, ...childRuns]) {
+			let graph = await this.loadProjection(run);
+			let synced = await this.syncTopic(graph);
+			let summary = {
+				run_id: run.run_id,
+				view_role: run.view_role,
+				collection_id: synced.collection.id,
+				topic_note_key: synced.note.key,
+				source_count: synced.sources.length,
+			};
+			summaries.push(summary);
+			if (run.view_role === "REGISTERED_V2_RUN") {
+				await this.appendRuntimeStatus("portfolio_child_materialized", summary);
+			}
+		}
+		await this.loadProjection(portfolioRun);
+		let finalPortfolio = await this.syncTopic(this.activeGraph);
+		let historyBranchCount = (this.activeGraph.nodes || [])
+			.filter(node => node.kind === "legacy_research_run").length;
+		let mappedArtifactCount = (this.activeGraph.nodes || [])
+			.filter(node => node.kind === "legacy_research_run")
+			.reduce((total, node) => total + Number(node.data?.mapped_artifact_count || 0), 0);
+		await this.appendRuntimeStatus("portfolio_registry_materialized", {
+			topic_count: summaries.length,
+			child_count: childRuns.length,
+			history_branch_count: historyBranchCount,
+			mapped_artifact_count: mappedArtifactCount,
+			lifecycle_effect: "NONE_PROJECTION_ONLY",
+		});
+		window.Zotero_Tabs.select("zotero-pane");
+		await window.ZoteroPane.collectionsView.selectCollection(finalPortfolio.collection.id);
+		await this.openNativeNote(finalPortfolio.note);
+		if (requestConfirmation) {
+			Services.prompt.alert(
+				window,
+				"ATR Research",
+				"已物化 1 个 portfolio、6 个 current child、"
+					+ historyBranchCount + " 条历史分支和 " + mappedArtifactCount + " 个逐项映射记录。",
+			);
+		}
+		return { portfolio: finalPortfolio, summaries };
+	},
+
 	sourceIDFromItem(item) {
 		if (!item) return null;
 		let current = item;
@@ -2782,6 +2852,14 @@ var ATRZoteroWorkbench = {
 			return;
 		}
 		let runs = registry.runs.length ? registry.runs : [await this.defaultRun()];
+		let materializeItem = doc.createXULElement("menuitem");
+		materializeItem.setAttribute("label", "同步当前研究组合（1 portfolio + 6 child）");
+		materializeItem.addEventListener("command", () => {
+			this.materializePortfolioRegistry(window, true)
+				.catch(error => Services.prompt.alert(window, "ATR Research", String(error)));
+		});
+		popup.append(materializeItem);
+		popup.append(doc.createXULElement("menuseparator"));
 		runs.sort((left, right) => Number(right.key === registry.activeRun) - Number(left.key === registry.activeRun));
 		for (let run of runs) {
 			let item = doc.createXULElement("menuitem");
@@ -2870,6 +2948,10 @@ var ATRZoteroWorkbench = {
 						throw new Error("portfolio dock smoke expected one portfolio route graph, found " + portfolioGraphs.length);
 					}
 					if (isPortfolio) {
+						let materialized = await ATRZoteroWorkbench.materializePortfolioRegistry(window, false);
+						if (!materialized || materialized.summaries.length !== 7) {
+							throw new Error("portfolio registry materialization did not cover exactly 1+6 topics");
+						}
 						let programNode = (ATRZoteroWorkbench.activeGraph?.nodes || [])
 							.find(node => node.kind === "research_program" && node.data?.child_run_id);
 						let childRun = programNode

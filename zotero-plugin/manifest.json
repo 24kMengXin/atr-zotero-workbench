@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ATR Research Workbench",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "Navigate ATR topics through Zotero tabs, read in the native reader, write in native notes, and unfold visual context on demand.",
   "homepage_url": "https://github.com/24kMengXin/atr-zotero-workbench",
   "author": "24kMengXin",

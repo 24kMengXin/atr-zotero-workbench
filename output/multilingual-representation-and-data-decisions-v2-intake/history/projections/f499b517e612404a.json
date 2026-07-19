@@ -139,15 +139,6 @@
       "artifact_ids": [
         "sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:25.458544+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-86bcf29ff94f",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64"
-      ]
     }
   ],
   "nodes": [
@@ -7984,47 +7975,6 @@
       }
     },
     {
-      "id": "artifact:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · 86bcf29ff94f",
-      "data": {
-        "artifact_id": "sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-        "original_name": "multilingual-representation-and-data-decisions.86bcf29ff94f.json",
-        "created_at": "2026-07-19T00:31:25.404374+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/multilingual-representation-and-data-decisions.86bcf29ff94f.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · multilingual-representation-and-data-decisions",
-      "data": {
-        "program_key": "multilingual-representation-and-data-decisions",
-        "summary": {
-          "canonical_sources": 137,
-          "exact_identity_matches": 7,
-          "local_fulltext": 7,
-          "identity_review_required": 3,
-          "not_found": 127
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -8249,21 +8199,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.438938+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-86bcf29ff94f",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 15,
-        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-86bcf29ff94f",
-        "subject_id": "program:multilingual-representation-and-data-decisions",
-        "subject_version": 0,
-        "artifact_id": "sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:25.458544+00:00"
       }
     }
   ],
@@ -10837,98 +10772,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-      "target": "artifact:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-AUTOPE-2023",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-CAMT-2024",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-COMPENSATING-DATA-REASONING-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-LRM-MT-TRENDS-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-MQM-APE-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-MT-R1-ZERO-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-QUALITY-AWARE-DECODING-2022",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-R1-T1-2025",
-      "relation": "confirms_zotero_local_availability",
-      "data": {
-        "local_fulltext": true
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-RAGTRANS-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
-      "source": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "target": "paper:SRC-TEAR-2025",
-      "relation": "flags_zotero_identity_candidate",
-      "data": {
-        "identity_status": "TITLE_MATCH_REQUIRES_REVIEW"
-      }
-    },
-    {
       "source": "subject:program:multilingual-representation-and-data-decisions",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "relation": "records_transition",
@@ -11107,18 +10950,6 @@
       "target": "artifact:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-representation-and-data-decisions",
-      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-86bcf29ff94f",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-ZOTERO-LOCAL-RECON-86bcf29ff94f",
-      "target": "artifact:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -11226,16 +11057,8 @@
         "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
         "node_count": 334,
         "edge_count": 442
-      },
-      {
-        "id": "f499b517e612404a",
-        "archived_at": "2026-07-19T00:31:46.931545+00:00",
-        "path": "history/projections/f499b517e612404a.json",
-        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "node_count": 337,
-        "edge_count": 449
       }
     ],
-    "previous_projection": "f499b517e612404a"
+    "previous_projection": "d8d91d7a25416d65"
   }
 }

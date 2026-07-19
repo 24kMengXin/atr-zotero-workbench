@@ -112,6 +112,14 @@
       "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
       "node_count": 152,
       "edge_count": 235
+    },
+    {
+      "id": "ff57c60f5a530fed",
+      "archived_at": "2026-07-19T00:31:46.817268+00:00",
+      "path": "history/projections/ff57c60f5a530fed.json",
+      "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
+      "node_count": 155,
+      "edge_count": 242
     }
   ]
 }

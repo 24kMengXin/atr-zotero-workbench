@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "artifact_type": "zotero-local-source-reconciliation",
-  "generated_at": "2026-07-18T23:49:27.922350+00:00",
+  "generated_at": "2026-07-19T00:30:52.907703+00:00",
   "inventory": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/canonical-sources.jsonl",
   "zotero_api": "http://127.0.0.1:23119/api/users/0",
   "policy": {
@@ -11,7 +11,7 @@
     "title_only_requires_review": true
   },
   "summary": {
-    "canonical_sources": 344,
+    "canonical_sources": 352,
     "zotero_top_items": 148,
     "exact_identity_matches": 9,
     "local_fulltext": 7,
@@ -19,51 +19,51 @@
     "title_matches_requiring_review": 3,
     "identity_conflicts_requiring_review": 0,
     "ambiguous_matches": 0,
-    "not_found": 332,
+    "not_found": 340,
     "matched_human_annotations": 0,
     "fulltext_inspected": 0,
     "programs": {
       "agent-infrastructure-and-evaluation-contracts": {
-        "canonical_sources": 27,
+        "canonical_sources": 29,
         "exact_identity_matches": 0,
         "local_fulltext": 0,
         "identity_review_required": 0,
-        "not_found": 27
+        "not_found": 29
       },
       "atr-research-governance": {
-        "canonical_sources": 17,
+        "canonical_sources": 18,
         "exact_identity_matches": 0,
         "local_fulltext": 0,
         "identity_review_required": 0,
-        "not_found": 17
+        "not_found": 18
       },
       "multilingual-agent-action-attribution": {
-        "canonical_sources": 105,
+        "canonical_sources": 106,
         "exact_identity_matches": 2,
         "local_fulltext": 0,
         "identity_review_required": 0,
-        "not_found": 103
+        "not_found": 104
       },
       "multilingual-agent-authorization-safety": {
-        "canonical_sources": 45,
+        "canonical_sources": 46,
         "exact_identity_matches": 1,
         "local_fulltext": 0,
         "identity_review_required": 0,
-        "not_found": 44
+        "not_found": 45
       },
       "multilingual-agent-state-continuity": {
-        "canonical_sources": 30,
+        "canonical_sources": 31,
         "exact_identity_matches": 0,
         "local_fulltext": 0,
         "identity_review_required": 0,
-        "not_found": 30
+        "not_found": 31
       },
       "multilingual-representation-and-data-decisions": {
-        "canonical_sources": 135,
+        "canonical_sources": 137,
         "exact_identity_matches": 7,
         "local_fulltext": 7,
         "identity_review_required": 3,
-        "not_found": 125
+        "not_found": 127
       }
     }
   },
@@ -224,6 +224,23 @@
       "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
     },
     {
+      "canonical_source_id": "SRC-AGENTEVAL-2026",
+      "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "program_keys": [
+        "agent-infrastructure-and-evaluation-contracts"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
       "canonical_source_id": "SRC-AGENTIC-ABSTENTION-2026",
       "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
       "program_keys": [
@@ -313,6 +330,23 @@
       "title": "Skill Package Manifest for Dependency Resolution and Distribution",
       "program_keys": [
         "agent-infrastructure-and-evaluation-contracts"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
+      "canonical_source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
       ],
       "identity_status": "NOT_FOUND_IN_ZOTERO",
       "match_methods": [],
@@ -1400,6 +1434,23 @@
       "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
     },
     {
+      "canonical_source_id": "SRC-EC-ETRANSLATION-WORKFLOW-2026",
+      "title": "European Commission use of eTranslation",
+      "program_keys": [
+        "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
       "canonical_source_id": "SRC-ERROR-GROUNDING-2025",
       "title": "An Evaluation Resource for Grounding Translation Errors",
       "program_keys": [
@@ -1727,6 +1778,23 @@
       "title": "GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents",
       "program_keys": [
         "multilingual-agent-state-continuity"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
+      "canonical_source_id": "SRC-HARNESS-BENCH-2026",
+      "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "program_keys": [
+        "agent-infrastructure-and-evaluation-contracts"
       ],
       "identity_status": "NOT_FOUND_IN_ZOTERO",
       "match_methods": [],
@@ -2340,6 +2408,23 @@
       "title": "Llama Guard 3 model card",
       "program_keys": [
         "multilingual-agent-authorization-safety"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
+      "canonical_source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "program_keys": [
+        "atr-research-governance"
       ],
       "identity_status": "NOT_FOUND_IN_ZOTERO",
       "match_methods": [],
@@ -4814,6 +4899,23 @@
       "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
     },
     {
+      "canonical_source_id": "SRC-STATEFUL-TOOL-USE-2025",
+      "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+      "program_keys": [
+        "multilingual-agent-state-continuity"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
       "canonical_source_id": "SRC-STING-2026",
       "title": "STING: Multilingual Multi-Turn Tool-Agent Red Teaming",
       "program_keys": [
@@ -5502,6 +5604,23 @@
       "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
     },
     {
+      "canonical_source_id": "SRC-UNITOOLCALL-2026",
+      "title": "UniToolCall: Unified Tool Calling via Question-Answer-Observation-Answer",
+      "program_keys": [
+        "multilingual-agent-action-attribution"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
       "canonical_source_id": "SRC-USER-RELIANCE-MT-2025",
       "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
       "program_keys": [
@@ -5523,6 +5642,23 @@
       "title": "UvA-MT at WMT25 Evaluation Task: LLM Uncertainty as a Proxy for Translation Quality",
       "program_keys": [
         "multilingual-representation-and-data-decisions"
+      ],
+      "identity_status": "NOT_FOUND_IN_ZOTERO",
+      "match_methods": [],
+      "zotero_item_key": null,
+      "zotero_item_title": null,
+      "access_status": "NOT_FOUND_IN_ZOTERO",
+      "local_fulltext": false,
+      "pdf_attachments": [],
+      "human_annotation_count": 0,
+      "fulltext_inspected": false,
+      "boundary": "A Zotero item/PDF match establishes local availability only; it does not establish that a worker inspected load-bearing spans or that any scholarly claim is valid."
+    },
+    {
+      "canonical_source_id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "program_keys": [
+        "multilingual-agent-authorization-safety"
       ],
       "identity_status": "NOT_FOUND_IN_ZOTERO",
       "match_methods": [],

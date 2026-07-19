@@ -2179,6 +2179,19 @@
         "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
         "SRC-XSafety-2024"
       ]
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
+      "atr_id": "zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
+      "title": "Zotero 本地来源对账 · multilingual-agent-authorization-safety",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:6cdac84da223baa7db68cb2861abdc050a1feef633cb5388100413e261b759ae",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-MAPS-2025"
+      ]
     }
   ],
   "feedback_contract": {

@@ -139,15 +139,6 @@
       "artifact_ids": [
         "sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7"
       ]
-    },
-    {
-      "at": "2026-07-19T00:31:25.194431+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-ZOTERO-LOCAL-RECON-55229740f290",
-      "label": "附件 · ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be"
-      ]
     }
   ],
   "nodes": [
@@ -2957,47 +2948,6 @@
       }
     },
     {
-      "id": "artifact:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "kind": "atr_v2_artifact",
-      "label": "zotero-local-source-reconciliation · 55229740f290",
-      "data": {
-        "artifact_id": "sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-        "artifact_kind": "zotero-local-source-reconciliation",
-        "digest": "55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-        "original_name": "multilingual-agent-state-continuity.55229740f290.json",
-        "created_at": "2026-07-19T00:31:25.157927+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/zotero-local-reconciliation/multilingual-agent-state-continuity.55229740f290.json",
-          "declared_scope": "read-only local availability audit; not inspection or evidence"
-        },
-        "artifact_type": "zotero-local-source-reconciliation",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "kind": "zotero_source_reconciliation",
-      "label": "Zotero 本地来源对账 · multilingual-agent-state-continuity",
-      "data": {
-        "program_key": "multilingual-agent-state-continuity",
-        "summary": {
-          "canonical_sources": 31,
-          "exact_identity_matches": 0,
-          "local_fulltext": 0,
-          "identity_review_required": 0,
-          "not_found": 31
-        },
-        "policy": {
-          "zotero_read_only": true,
-          "no_download": true,
-          "availability_is_not_inspection": true,
-          "title_only_requires_review": true
-        },
-        "controller_boundary": "Local Zotero availability is review-only. It cannot establish FULLTEXT_INSPECTED, claim support, a gate, a route, or a lifecycle transition.",
-        "artifact_id": "sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3222,21 +3172,6 @@
         "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
         "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
         "created_at": "2026-07-19T00:06:07.248734+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-ZOTERO-LOCAL-RECON-55229740f290",
-      "kind": "atr_v2_attachment",
-      "label": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 15,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-ZOTERO-LOCAL-RECON-55229740f290",
-        "subject_id": "program:multilingual-agent-state-continuity",
-        "subject_version": 0,
-        "artifact_id": "sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-        "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
-        "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
-        "created_at": "2026-07-19T00:31:25.194431+00:00"
       }
     }
   ],
@@ -4522,18 +4457,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
-      "target": "artifact:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "target": "zotero_reconciliation:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "relation": "materializes_zotero_local_availability_audit",
-      "data": {}
-    },
-    {
       "source": "subject:program:multilingual-agent-state-continuity",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "relation": "records_transition",
@@ -4712,18 +4635,6 @@
       "target": "artifact:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-state-continuity",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-ZOTERO-LOCAL-RECON-55229740f290",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-ZOTERO-LOCAL-RECON-55229740f290",
-      "target": "artifact:sha256:55229740f29083f11c2461612f4659ee0dff72b843683f02b60c48ed06bdb5be",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4831,16 +4742,8 @@
         "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
         "node_count": 123,
         "edge_count": 227
-      },
-      {
-        "id": "d7fa0389da686a35",
-        "archived_at": "2026-07-19T00:31:46.686512+00:00",
-        "path": "history/projections/d7fa0389da686a35.json",
-        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "node_count": 126,
-        "edge_count": 235
       }
     ],
-    "previous_projection": "d7fa0389da686a35"
+    "previous_projection": "e8498667442e2d36"
   }
 }

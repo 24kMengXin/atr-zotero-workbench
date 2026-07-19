@@ -1,12 +1,12 @@
 # multilingual 来源归并与 Zotero 获取队列
 
-历史归位之后，`scripts/build_multilingual_source_inventory.py` 对 28 个 run 的来源做**书目身份归并**，但不合并或覆盖历史解释：
+历史归位之后，`scripts/build_multilingual_source_inventory.py` 对 28 个 run 的来源做**书目身份归并**，并从六个 current child 的 content-addressed、source-reviewed knowledge-map artifact 补齐后来新增的来源；它不读取 Zotero/graph 投影作为 authority，也不合并或覆盖历史解释：
 
-- 391 个 legacy occurrence 归并为 344 个 canonical source；
+- 391 个 legacy occurrence 归并为 344 个 canonical source；current v2 审阅层另外补入 8 个历史账本没有的来源，因此统一账本现为 399 个 occurrence / 352 个 canonical source；
 - 47 个重复 occurrence 保留在 `source-occurrences.jsonl`，各自继续携带原 run、program、`supports` 与 `does_not_support`；
 - 16 个 canonical source 存在标题/URL/legacy ID 冲突，需要 Zotero/原文复核；
 - 两个不同的 AutoResearchBench 记录曾复用 `SRC-AUTORESEARCHBENCH-2026`，现以稳定 digest 后缀分开，避免一个 Zotero item 覆盖另一个；
-- 344/344 当前均为 `METADATA_ONLY`，0 个已声明附件，0 个已声明全文检查。
+- 8 个新增 occurrence 明确标记 `CURRENT_V2_REVIEWED_SOURCE`、不可变 artifact digest、locator 和 `FULLTEXT_INSPECTED`；这是 worker 检查状态，不等于人的阅读，也不等于 Zotero attachment。其余历史来源仍不从 URL 推断全文状态。
 
 权威派生文件位于 `programs/source-inventory/`：
 
@@ -15,13 +15,15 @@
 - `zotero-acquisition-queue.json`：按 canonical/重复频次排序的 Zotero 获取与检查队列。
 - `zotero-local-reconciliation.json`：只读 local API 对账快照；严格身份匹配、本地 PDF 摘要、Zotero item/attachment key 与 annotation 数分开记录。
 
-2026-07-19 对日常 Zotero 的实查不再沿用“344/344 都只有链接”的旧结论：148 个顶层条目中，9 个与 canonical source 严格匹配；其中 7 个确认存在本地 PDF，2 个只有书目；另有 3 个仅标题相同，保持 `IDENTITY_REVIEW_REQUIRED`；332 个未找到。7 个 PDF 均记录 SHA-256，但全部仍是 `ATTACHED_NOT_INSPECTED`，不能据此宣称 worker 已读全文。第一次实现曾错误删除 OpenReview `?id=` 并造成四篇论文碰撞，已清退该结果、改为站点感知归一化并加入回归门禁。详见 [Zotero 本地对账](source-inventory-zotero-reconciliation.md)。
+2026-07-19 对日常 Zotero 的实查现覆盖全部 352 个 canonical source：148 个顶层条目中，9 个严格匹配；其中 7 个确认存在本地 PDF，2 个只有书目；另有 3 个仅标题相同，保持 `IDENTITY_REVIEW_REQUIRED`；340 个未找到。7 个 PDF 均记录 SHA-256，但全部仍是 `ATTACHED_NOT_INSPECTED`，不能据此宣称 worker 或人已读全文。current v2 的 8 个 worker-inspected 来源全部尚未在日常 Zotero 找到，状态边界没有被合并。第一次实现曾错误删除 OpenReview `?id=` 并造成四篇论文碰撞，已清退该结果、改为站点感知归一化并加入回归门禁。详见 [Zotero 本地对账](source-inventory-zotero-reconciliation.md)。
 
 重建命令：
 
 ```bash
 python3 scripts/build_multilingual_source_inventory.py \
   programs/multilingual-programs.json \
+  --current-registry programs/v2-intakes/program-registry.json \
+  --runs-root /path/to/multilingual-aaai/research-runs \
   --out programs/source-inventory
 ```
 
@@ -31,12 +33,12 @@ python3 scripts/build_multilingual_source_inventory.py \
 
 | Program | Canonical source |
 | --- | ---: |
-| multilingual agent action attribution | 105 |
-| multilingual agent state continuity | 30 |
-| multilingual agent authorization/safety | 45 |
-| multilingual representation/data decisions | 135 |
-| agent infrastructure/evaluation contracts | 27 |
-| ATR research governance | 17 |
+| multilingual agent action attribution | 106 |
+| multilingual agent state continuity | 31 |
+| multilingual agent authorization/safety | 46 |
+| multilingual representation/data decisions | 137 |
+| agent infrastructure/evaluation contracts | 29 |
+| ATR research governance | 18 |
 
 跨 program 的同一 canonical source 使用同一稳定 source ID，因此 Zotero 同步必须复用既有 item，而不是复制条目。
 

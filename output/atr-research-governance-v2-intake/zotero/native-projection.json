@@ -1239,6 +1239,17 @@
         "SRC-HEP-2026",
         "SRC-LLM-AUDIT-TRAILS-2026"
       ]
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
+      "atr_id": "zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
+      "title": "Zotero 本地来源对账 · atr-research-governance",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:cbb4840d5e509c708d5bc64212a913968d6cae505bc541f1bbb8b9c1342e0819",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

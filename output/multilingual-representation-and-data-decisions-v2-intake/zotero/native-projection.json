@@ -5404,6 +5404,28 @@
         "SRC-QE-QUALITY-GATE-ROUTING-2021",
         "SRC-USER-RELIANCE-MT-2025"
       ]
+    },
+    {
+      "object_id": "zotero-reconciliation:zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
+      "atr_id": "zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
+      "title": "Zotero 本地来源对账 · multilingual-representation-and-data-decisions",
+      "marker": "ATR Alignment Audit Node: zotero_reconciliation:sha256:86bcf29ff94fca5cc7c4d19d6a295fefbe24ba8c0bb96944ffb9e98846ab2e64",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-AUTOPE-2023",
+        "SRC-CAMT-2024",
+        "SRC-COMPENSATING-DATA-REASONING-2025",
+        "SRC-LRM-MT-TRENDS-2025",
+        "SRC-MQM-APE-2025",
+        "SRC-MT-R1-ZERO-2025",
+        "SRC-QUALITY-AWARE-DECODING-2022",
+        "SRC-R1-T1-2025",
+        "SRC-RAGTRANS-2025",
+        "SRC-TEAR-2025"
+      ]
     }
   ],
   "feedback_contract": {
