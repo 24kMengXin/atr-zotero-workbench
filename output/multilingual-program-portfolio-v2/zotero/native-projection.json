@@ -482,6 +482,17 @@
       "collection_role": "HISTORY",
       "review_role": "AVAILABILITY_AUDIT_ONLY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
+      "atr_id": "repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
+      "title": "Repo PDF → Zotero 交接 · portfolio",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": []
     }
   ],
   "feedback_contract": {

@@ -1,0 +1,969 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "repo-pdf-zotero-handoff-audit",
+  "generated_at": "2026-07-19T00:00:08.355857+00:00",
+  "policy": {
+    "explicit_human_open_required": true,
+    "zotero_write_not_performed": true,
+    "repo_boundary_required": true,
+    "digest_required": true,
+    "canonical_locator_and_title_required": true
+  },
+  "summary": {
+    "repo_cached_pdfs": 21,
+    "import_ready": 21,
+    "blocked": 0,
+    "already_preverified": 7
+  },
+  "handoffs": [
+    {
+      "source_id": "SRC-AGENTBEATS-2026",
+      "title": "AgentBeats: Agentifying Agent Assessment for Openness, Standardization, and Reproducibility",
+      "program_workspace": "agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2606.13608",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
+      "content_digest": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.13608"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "agentbeats",
+            "agentifying",
+            "assessment",
+            "openness",
+            "reproducibility",
+            "standardization"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.13608",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-CAR-2026",
+      "title": "Causal Agent Replay: Counterfactual Attribution for LLM-Agent Failures",
+      "program_workspace": "agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2606.08275",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
+      "content_digest": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.08275"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "attribution",
+            "causal",
+            "counterfactual",
+            "failures",
+            "llm",
+            "replay"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.08275",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-HARNESS-BENCH-2026",
+      "title": "Harness-Bench: Evaluating Agent Harnesses for Large Language Models",
+      "program_workspace": "agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2605.27922",
+      "local_cache_path": ".runtime/collision-review/harness-bench.pdf",
+      "content_digest": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2605.27922"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "bench",
+            "evaluating",
+            "harness",
+            "harnesses",
+            "language",
+            "large",
+            "models"
+          ],
+          "expected_token_count": 8
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-AGENTEVAL-2026",
+      "title": "AgentEval: A Step-Level Evaluation Framework for LLM Agents",
+      "program_workspace": "agent-infrastructure-and-evaluation-contracts-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2604.23581",
+      "local_cache_path": ".runtime/collision-review/agent-eval.pdf",
+      "content_digest": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2604.23581"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agenteval",
+            "agents",
+            "evaluation",
+            "framework",
+            "level",
+            "llm",
+            "step"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2606.11926",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+      "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.11926"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "autonomous",
+            "generalist",
+            "hypothesis",
+            "refinement",
+            "research",
+            "toward",
+            "tree"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.11926",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2604.25256",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+      "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2604.25256"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "autoresearchbench",
+            "benchmarking",
+            "complex",
+            "discovery",
+            "literature",
+            "scientific"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2604.25256",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2607.09195",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+      "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.09195"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "auditable",
+            "evolution",
+            "hypothesis",
+            "llm",
+            "protocol",
+            "scientists",
+            "toward"
+          ],
+          "expected_token_count": 8,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.09195",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2601.20727",
+      "local_cache_path": ".runtime/collision-review/audit-trails.pdf",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.20727"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "accountability",
+            "audit",
+            "language",
+            "large",
+            "models",
+            "trails"
+          ],
+          "expected_token_count": 6
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
+      "content_digest": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.findings-emnlp.1099"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmark",
+            "calling",
+            "function",
+            "languages",
+            "massive",
+            "multilingual"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.findings-emnlp.1099",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://aclanthology.org/2026.acl-long.2039/",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
+      "content_digest": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-long.2039"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "calling",
+            "execution",
+            "language",
+            "large",
+            "lost",
+            "models",
+            "multilingual",
+            "robustness",
+            "tool"
+          ],
+          "expected_token_count": 9,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-long.2039",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-UNITOOLCALL-2026",
+      "title": "UniToolCall: Unified Tool Calling via Question-Answer-Observation-Answer",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2604.11557",
+      "local_cache_path": ".runtime/collision-review/unitoolcall.pdf",
+      "content_digest": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2604.11557"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "answer",
+            "observation",
+            "tool",
+            "unified",
+            "unitoolcall"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2607.10059",
+      "local_cache_path": ".runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
+      "content_digest": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.10059"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "act",
+            "agentabstain",
+            "agents",
+            "know",
+            "llm"
+          ],
+          "expected_token_count": 5,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.10059",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2310.00905",
+      "local_cache_path": ".runtime/source-inspection/SRC-XSafety-2024.pdf",
+      "content_digest": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2310.00905"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "all",
+            "languages",
+            "llms",
+            "matter",
+            "multilingual",
+            "safety"
+          ],
+          "expected_token_count": 6,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2310.00905",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2601.08012",
+      "local_cache_path": ".runtime/collision-review/safe-tool-use.pdf",
+      "content_digest": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.08012"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "llm",
+            "safe",
+            "tool",
+            "towards",
+            "use",
+            "verifiably"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-HINDSIGHT-2026",
+      "title": "HINDSIGHT: Structured Agent Memory that Retains, Recalls, and Reflects",
+      "program_workspace": "multilingual-agent-state-continuity-v2-intake",
+      "canonical_url": "https://aclanthology.org/2026.acl-demo.27.pdf",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
+      "content_digest": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-demo.27"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "hindsight",
+            "memory",
+            "recalls",
+            "reflects",
+            "retains",
+            "structured"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-demo.27",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-MEM2ACTBENCH-2026",
+      "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory in LLM Agents",
+      "program_workspace": "multilingual-agent-state-continuity-v2-intake",
+      "canonical_url": "https://aclanthology.org/2026.acl-long.370.pdf",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MEM2ACTBENCH-2026.pdf",
+      "content_digest": "sha256:fddb3048eafe66381ef5e4cfea975ced132091d4e380d43abd151991cd5103e7",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:fddb3048eafe66381ef5e4cfea975ced132091d4e380d43abd151991cd5103e7"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-long.370"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmark",
+            "evaluating",
+            "llm",
+            "long",
+            "mem2actbench",
+            "memory",
+            "term"
+          ],
+          "expected_token_count": 8,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-long.370",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-POLYWORKBENCH-2026",
+      "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+      "program_workspace": "multilingual-agent-state-continuity-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2607.06008",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
+      "content_digest": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.06008"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmarking",
+            "horizon",
+            "llm",
+            "long",
+            "multilingual",
+            "polyworkbench"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.06008",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-STATEFUL-TOOL-USE-2025",
+      "title": "Rethinking Stateful Tool Use in Multi-Turn LLM Agents",
+      "program_workspace": "multilingual-agent-state-continuity-v2-intake",
+      "canonical_url": "https://aclanthology.org/2025.findings-acl.1249/",
+      "local_cache_path": ".runtime/collision-review/stateful-tool-use.pdf",
+      "content_digest": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2025.findings-acl.1249"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "multi",
+            "rethinking",
+            "stateful",
+            "tool",
+            "turn",
+            "use"
+          ],
+          "expected_token_count": 8
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    },
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Validating Quality Estimation in a Computer-Aided Translation Workflow: Speed, Cost and Quality Trade-off",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
+      "content_digest": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2021.mtsummit-up.22"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "aided",
+            "computer",
+            "cost",
+            "estimation",
+            "off",
+            "quality",
+            "speed",
+            "trade",
+            "translation",
+            "validating",
+            "workflow"
+          ],
+          "expected_token_count": 11,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2021.mtsummit-up.22",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
+      "content_digest": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.emnlp-main.606"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "evaluating",
+            "feedback",
+            "machine",
+            "quality",
+            "reliance",
+            "share",
+            "should",
+            "this",
+            "translation",
+            "user"
+          ],
+          "expected_token_count": 10,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.emnlp-main.606",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2406.12419",
+      "local_cache_path": ".runtime/collision-review/ai-assisted-mt-eval.pdf",
+      "content_digest": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2406.12419"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "assisted",
+            "evaluation",
+            "human",
+            "machine",
+            "translation"
+          ],
+          "expected_token_count": 5
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    }
+  ]
+}

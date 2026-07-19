@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "repo-pdf-zotero-handoff-audit",
+  "captured_at": "2026-07-19T00:00:08.355857+00:00",
+  "policy": {
+    "explicit_human_open_required": true,
+    "zotero_write_not_performed": true,
+    "repo_boundary_required": true,
+    "digest_required": true,
+    "canonical_locator_and_title_required": true
+  },
+  "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
+  "scope": "program",
+  "program_key": "atr-research-governance",
+  "summary": {
+    "repo_cached_pdfs": 4,
+    "import_ready": 4,
+    "blocked": 0
+  },
+  "handoffs": [
+    {
+      "source_id": "SRC-ARBOR-2026",
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2606.11926",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
+      "content_digest": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.11926"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "autonomous",
+            "generalist",
+            "hypothesis",
+            "refinement",
+            "research",
+            "toward",
+            "tree"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.11926",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-AUTORESEARCHBENCH-2026--6ca54095",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2604.25256",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
+      "content_digest": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2604.25256"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "autoresearchbench",
+            "benchmarking",
+            "complex",
+            "discovery",
+            "literature",
+            "scientific"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2604.25256",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-HEP-2026",
+      "title": "Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2607.09195",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
+      "content_digest": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.09195"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "auditable",
+            "evolution",
+            "hypothesis",
+            "llm",
+            "protocol",
+            "scientists",
+            "toward"
+          ],
+          "expected_token_count": 8,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.09195",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-LLM-AUDIT-TRAILS-2026",
+      "title": "Audit Trails for Accountability in Large Language Models",
+      "program_workspace": "atr-research-governance-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2601.20727",
+      "local_cache_path": ".runtime/collision-review/audit-trails.pdf",
+      "content_digest": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.20727"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "accountability",
+            "audit",
+            "language",
+            "large",
+            "models",
+            "trails"
+          ],
+          "expected_token_count": 6
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    }
+  ]
+}

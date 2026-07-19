@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "repo-pdf-zotero-handoff-audit",
+  "captured_at": "2026-07-19T00:00:08.355857+00:00",
+  "policy": {
+    "explicit_human_open_required": true,
+    "zotero_write_not_performed": true,
+    "repo_boundary_required": true,
+    "digest_required": true,
+    "canonical_locator_and_title_required": true
+  },
+  "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
+  "scope": "program",
+  "program_key": "multilingual-agent-authorization-safety",
+  "summary": {
+    "repo_cached_pdfs": 3,
+    "import_ready": 3,
+    "blocked": 0
+  },
+  "handoffs": [
+    {
+      "source_id": "SRC-AGENTABSTAIN-2026",
+      "title": "AgentAbstain: Do LLM Agents Know When Not to Act?",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2607.10059",
+      "local_cache_path": ".runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
+      "content_digest": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.10059"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "act",
+            "agentabstain",
+            "agents",
+            "know",
+            "llm"
+          ],
+          "expected_token_count": 5,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.10059",
+          "observed": true
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-XSafety-2024",
+      "title": "All Languages Matter: On the Multilingual Safety of LLMs",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2310.00905",
+      "local_cache_path": ".runtime/source-inspection/SRC-XSafety-2024.pdf",
+      "content_digest": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2310.00905"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "all",
+            "languages",
+            "llms",
+            "matter",
+            "multilingual",
+            "safety"
+          ],
+          "expected_token_count": 6,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2310.00905",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "program_workspace": "multilingual-agent-authorization-safety-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2601.08012",
+      "local_cache_path": ".runtime/collision-review/safe-tool-use.pdf",
+      "content_digest": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2601.08012"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "llm",
+            "safe",
+            "tool",
+            "towards",
+            "use",
+            "verifiably"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    }
+  ]
+}

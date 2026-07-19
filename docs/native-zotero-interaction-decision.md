@@ -57,8 +57,8 @@
 
 1. portfolio 图中的 program 不是“说明卡”，而是进入对应 child authority 的导航入口；
 2. topic、problem 与综合判断默认打开真正的 Zotero Note tab，人的理解位于中央编辑器，ATR section 位于右侧可折叠 Item Pane；
-3. paper 默认打开真正的 Zotero Reader tab，来源 Note 作为可编辑 section 与 ATR section 同时位于右侧；同一 Note 仍可另开原生标签；
-4. paper 的主动作先建立 Reader + 可折叠来源 Note + 可折叠 ATR 定位；伴随窗只在用户选择「便携显示 ATR 定位」时出现，用于窄屏或第二屏布局。
+3. paper 默认打开真正的 Zotero Reader tab；同一个原生共读 section 上半部是可编辑来源 Note，下半部直接显示可折叠的「知识定位」与「现实问题 → 研究问题」局部图；完整 ATR section 仍可按需展开，同一 Note 也可另开原生标签；
+4. paper 的主动作一次建立 Reader + Note + 两张关键图；伴随窗只在用户选择「便携镜像」时出现，用于窄屏或第二屏布局。
 
 - 优点：日常路径只出现 Zotero 原生标签、原生 Note 与官方 Item Pane section；从组合到 topic、从问题到文献都保持单击可达；窗口不再成为理解系统的前提。
 - 代价：窄屏下原文和长篇 Note 仍需在两个标签间切换；因此保留 Reader 右侧 Note 与可选伴随窗作为并置方式。
@@ -72,7 +72,7 @@
 - 文献必须通过 `Zotero.Reader.open()` / Zotero attachment handling 进入原生 Reader tab。
 - Note 必须通过 `Zotero.Notes.open()` 进入原生 Note tab，而不是只在 Library 中选中一条 note。
 - ATR section 使用 `Zotero.ItemPaneManager.registerSection()`，同时服务 Library 与 Reader 上下文。
-- topic/问题默认进入 Note tab，并在可折叠 Item Pane 中显示 ATR；paper 的唯一主动作打开 Reader，并在 `item` mode 中注册可编辑 Note section，使 Note 与 ATR section 并存。只有显式请求便携定位才打开伴随窗。
+- topic/问题默认进入 Note tab，并在可折叠 Item Pane 中显示 ATR；paper 的唯一主动作打开 Reader，并在 `item` mode 中注册一个原生共读 section，使可编辑 Note、知识图和问题图处在同一连续工作面。完整 ATR section 仍独立折叠，只有显式请求才打开便携镜像。
 - Item Pane 与伴随窗共享同一个当前焦点；节点点击必须反向选择 Zotero item、打开 Note，或用 annotation locator 打开 PDF 精确位置。
 - 四区折叠状态与置顶偏好必须持久化；伴随窗只是同一投影的镜像，不拥有单独状态。
 - 同步优先复用带 source tag、DOI、URL 或精确标题匹配的现有 Zotero 条目；不移动、不删除、不覆盖用户字段。
@@ -142,7 +142,7 @@
 ## 首个实现切片
 
 1. 先完成 multilingual-aaai 六个历史 topic、28 个 run 对 ATR v2 的整理；共读坞只消费校正后的 current/history/quarantine 投影，不再让五篇 demo 成为 current。
-2. Reader/Item Pane 共读轨道已实现：项目历史/过程、知识定位、现实问题/研究问题与当前对象四个 XHTML 折叠区会恢复 Zotero Preference 状态；v0.6.4 的「阅读原文并记录我的理解」一次建立 Reader + 可编辑阅读 Note section + ATR section，二者在同一右栏分别折叠；「在新标签深度编辑」打开同一 Note；「便携显示 ATR 定位」才打开可置顶镜像。知识/问题区使用可点击的局部 SVG 图。
+2. Reader/Item Pane 共读轨道已实现：v0.6.8 的「阅读原文并记录我的理解」一次建立 Reader + 单一原生共读 section；section 上半部是同一来源 Note 的 `note-editor`，下半部是默认展开、可分别折叠的知识图和「现实问题 → 研究问题」图。「在新标签深度编辑」打开同一 Note；完整四区 ATR section 与可置顶便携镜像都是次级入口。
 3. 当前 source/annotation 驱动局部邻域；节点能反向打开原生 Note、item 或 PDF annotation。portfolio 投影另有一张全局 SVG：1 个 portfolio → 6 个 program authority → 28 条只读历史 branch；蓝色 program 现在解析 registry 中完全匹配的 `child_run_id` 并进入对应 Zotero topic，灰色历史节点才打开只读导航 Note。
 4. 当前全局图仍可嵌在 Item Pane 的「过程 / 项目总览」折叠区；持续共读时则使用同一投影的伴随窗，不再计划未经验证的 Library 私有 DOM 托盘。
 5. Zotero 9 隔离 smoke 已证明 v0.6.4 的 Reader 保持 `item` mode，阅读 Note 与 ATR 拥有不同 pane ID 并同时注册；来源 Note 是 Zotero 原生 `note-editor`，同一份 Note 仍可开标签。伴随窗继续渲染 4 个折叠区和 2 张局部 SVG；portfolio 的折叠 owner-review 队列还能执行 program → registered child authority → exact collision-review Note → 返回 portfolio。action child 投影包含 106 个去重来源、6 个 current source-reviewed knowledge Collection、6 个 historical scaffold Collection 和 16 个研究集合。仍需在日常 profile 完成主观密度验收。

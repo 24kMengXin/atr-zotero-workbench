@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.344843+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-REPO-PDF-HANDOFF-6be621edc5ec",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48"
-      ]
     }
   ],
   "nodes": [
@@ -566,37 +557,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2607.10059"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "act",
-              "agentabstain",
-              "agents",
-              "know",
-              "llm"
-            ],
-            "expected_token_count": 5,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2607.10059",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "CONFLICT_REQUIRES_REVIEW",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -2632,38 +2596,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection/SRC-XSafety-2024.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2310.00905"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "all",
-              "languages",
-              "llms",
-              "matter",
-              "multilingual",
-              "safety"
-            ],
-            "expected_token_count": 6,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2310.00905",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_BENCHMARK",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -3152,10 +3088,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2601.08012"
           },
@@ -3510,46 +3442,6 @@
       }
     },
     {
-      "id": "artifact:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 6be621edc5ec",
-      "data": {
-        "artifact_id": "sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-        "original_name": "multilingual-agent-authorization-safety.6be621edc5ec.json",
-        "created_at": "2026-07-19T00:06:07.314784+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/multilingual-agent-authorization-safety.6be621edc5ec.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · multilingual-agent-authorization-safety",
-      "data": {
-        "program_key": "multilingual-agent-authorization-safety",
-        "summary": {
-          "repo_cached_pdfs": 3,
-          "import_ready": 3,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-authorization-safety-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3759,21 +3651,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.295983+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-REPO-PDF-HANDOFF-6be621edc5ec",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-REPO-PDF-HANDOFF-6be621edc5ec",
-        "subject_id": "program:multilingual-agent-authorization-safety",
-        "subject_version": 0,
-        "artifact_id": "sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.344843+00:00"
       }
     }
   ],
@@ -5040,36 +4917,6 @@
       }
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-      "target": "artifact:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "target": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "target": "paper:SRC-AGENTABSTAIN-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "target": "paper:SRC-XSafety-2024",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "target": "paper:SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "reality_signal_gap:ARH-MULTILINGUAL-AUTHORIZATION-SAFETY-R0-DCS-001.v1",
       "target": "paper:SRC-AGENTABSTAIN-2026",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -5248,18 +5095,6 @@
       "target": "artifact:sha256:7919a72a17b4798eabdc97236c3d8d25e879a6a566f4e09ce6c8b49cfdb0753c",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-authorization-safety",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-REPO-PDF-HANDOFF-6be621edc5ec",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-authorization-safety-v2-intake-REPO-PDF-HANDOFF-6be621edc5ec",
-      "target": "artifact:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -5367,16 +5202,8 @@
         "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
         "node_count": 149,
         "edge_count": 230
-      },
-      {
-        "id": "e128442f8c1495a8",
-        "archived_at": "2026-07-19T00:07:40.137610+00:00",
-        "path": "history/projections/e128442f8c1495a8.json",
-        "run": "2026-07-19-multilingual-agent-authorization-safety-v2-intake",
-        "node_count": 152,
-        "edge_count": 235
       }
     ],
-    "previous_projection": "e128442f8c1495a8"
+    "previous_projection": "12f78d4b8d903a9c"
   }
 }

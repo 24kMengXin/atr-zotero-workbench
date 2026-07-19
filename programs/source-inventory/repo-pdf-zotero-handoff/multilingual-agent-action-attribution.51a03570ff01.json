@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "repo-pdf-zotero-handoff-audit",
+  "captured_at": "2026-07-19T00:00:08.355857+00:00",
+  "policy": {
+    "explicit_human_open_required": true,
+    "zotero_write_not_performed": true,
+    "repo_boundary_required": true,
+    "digest_required": true,
+    "canonical_locator_and_title_required": true
+  },
+  "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
+  "scope": "program",
+  "program_key": "multilingual-agent-action-attribution",
+  "summary": {
+    "repo_cached_pdfs": 3,
+    "import_ready": 3,
+    "blocked": 0
+  },
+  "handoffs": [
+    {
+      "source_id": "SRC-MASSIVE-AGENTS-2025",
+      "title": "MASSIVE-Agents: A Benchmark for Multilingual Function-Calling in 52 Languages",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://aclanthology.org/2025.findings-emnlp.1099/",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
+      "content_digest": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.findings-emnlp.1099"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmark",
+            "calling",
+            "function",
+            "languages",
+            "massive",
+            "multilingual"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.findings-emnlp.1099",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-MLCL-2026",
+      "title": "Lost in Execution: On the Multilingual Robustness of Tool Calling in Large Language Models",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://aclanthology.org/2026.acl-long.2039/",
+      "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
+      "content_digest": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-long.2039"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "calling",
+            "execution",
+            "language",
+            "large",
+            "lost",
+            "models",
+            "multilingual",
+            "robustness",
+            "tool"
+          ],
+          "expected_token_count": 9,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-long.2039",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-UNITOOLCALL-2026",
+      "title": "UniToolCall: Unified Tool Calling via Question-Answer-Observation-Answer",
+      "program_workspace": "multilingual-agent-action-attribution-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2604.11557",
+      "local_cache_path": ".runtime/collision-review/unitoolcall.pdf",
+      "content_digest": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2604.11557"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "answer",
+            "observation",
+            "tool",
+            "unified",
+            "unitoolcall"
+          ],
+          "expected_token_count": 7
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    }
+  ]
+}

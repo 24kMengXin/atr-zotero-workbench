@@ -449,11 +449,40 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-demo.27"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "hindsight",
+            "memory",
+            "recalls",
+            "reflects",
+            "retains",
+            "structured"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-demo.27",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -637,11 +666,41 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-MEM2ACTBENCH-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-MEM2ACTBENCH-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:fddb3048eafe66381ef5e4cfea975ced132091d4e380d43abd151991cd5103e7"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-long.370"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmark",
+            "evaluating",
+            "llm",
+            "long",
+            "mem2actbench",
+            "memory",
+            "term"
+          ],
+          "expected_token_count": 8,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-long.370",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -999,11 +1058,40 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.06008"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmarking",
+            "horizon",
+            "llm",
+            "long",
+            "multilingual",
+            "polyworkbench"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.06008",
+          "observed": true
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -1510,6 +1598,10 @@
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
         {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad"
+        },
+        {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2025.findings-acl.1249"
         },
@@ -1642,6 +1734,22 @@
       "collection_role": "HISTORY",
       "review_role": "AVAILABILITY_AUDIT_ONLY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
+      "atr_id": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
+      "title": "Repo PDF → Zotero 交接 · multilingual-agent-state-continuity",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-HINDSIGHT-2026",
+        "SRC-MEM2ACTBENCH-2026",
+        "SRC-POLYWORKBENCH-2026",
+        "SRC-STATEFUL-TOOL-USE-2025"
+      ]
     }
   ],
   "feedback_contract": {

@@ -1329,11 +1329,40 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.findings-emnlp.1099"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agents",
+            "benchmark",
+            "calling",
+            "function",
+            "languages",
+            "massive",
+            "multilingual"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.findings-emnlp.1099",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -1532,11 +1561,42 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2026.acl-long.2039"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "calling",
+            "execution",
+            "language",
+            "large",
+            "lost",
+            "models",
+            "multilingual",
+            "robustness",
+            "tool"
+          ],
+          "expected_token_count": 9,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2026.acl-long.2039",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -4100,6 +4160,10 @@
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
         {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
+        },
+        {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2604.11557"
         },
@@ -4233,6 +4297,21 @@
       "linked_source_ids": [
         "SRC-MAPS-2025",
         "SRC-TALE-2024"
+      ]
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
+      "atr_id": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
+      "title": "Repo PDF → Zotero 交接 · multilingual-agent-action-attribution",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-MASSIVE-AGENTS-2025",
+        "SRC-MLCL-2026",
+        "SRC-UNITOOLCALL-2026"
       ]
     }
   ],

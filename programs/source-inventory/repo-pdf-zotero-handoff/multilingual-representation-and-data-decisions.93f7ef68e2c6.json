@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "repo-pdf-zotero-handoff-audit",
+  "captured_at": "2026-07-19T00:00:08.355857+00:00",
+  "policy": {
+    "explicit_human_open_required": true,
+    "zotero_write_not_performed": true,
+    "repo_boundary_required": true,
+    "digest_required": true,
+    "canonical_locator_and_title_required": true
+  },
+  "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
+  "scope": "program",
+  "program_key": "multilingual-representation-and-data-decisions",
+  "summary": {
+    "repo_cached_pdfs": 3,
+    "import_ready": 3,
+    "blocked": 0
+  },
+  "handoffs": [
+    {
+      "source_id": "SRC-QE-QUALITY-GATE-ROUTING-2021",
+      "title": "Validating Quality Estimation in a Computer-Aided Translation Workflow: Speed, Cost and Quality Trade-off",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://aclanthology.org/2021.mtsummit-up.22/",
+      "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
+      "content_digest": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2021.mtsummit-up.22"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "aided",
+            "computer",
+            "cost",
+            "estimation",
+            "off",
+            "quality",
+            "speed",
+            "trade",
+            "translation",
+            "validating",
+            "workflow"
+          ],
+          "expected_token_count": 11,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2021.mtsummit-up.22",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-USER-RELIANCE-MT-2025",
+      "title": "Should I Share this Translation? Evaluating Quality Feedback for User Reliance on Machine Translation",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://aclanthology.org/2025.emnlp-main.606/",
+      "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
+      "content_digest": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244",
+      "prior_identity_state": "",
+      "prior_import_policy": "",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.emnlp-main.606"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "evaluating",
+            "feedback",
+            "machine",
+            "quality",
+            "reliance",
+            "share",
+            "should",
+            "this",
+            "translation",
+            "user"
+          ],
+          "expected_token_count": 10,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.emnlp-main.606",
+          "observed": false
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "Identity/digest verification authorizes a Zotero stored copy only when the person explicitly opens this source; it does not establish scholarly support or new inspection."
+    },
+    {
+      "source_id": "SRC-AI-ASSISTED-MT-EVAL-2024",
+      "title": "AI-Assisted Human Evaluation of Machine Translation",
+      "program_workspace": "multilingual-representation-and-data-decisions-v2-intake",
+      "canonical_url": "https://arxiv.org/abs/2406.12419",
+      "local_cache_path": ".runtime/collision-review/ai-assisted-mt-eval.pdf",
+      "content_digest": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2",
+      "prior_identity_state": "IDENTITY_VERIFIED",
+      "prior_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "status": "IMPORT_READY",
+      "reasons": [],
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        },
+        {
+          "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
+          "value": "2406.12419"
+        },
+        {
+          "signal": "FIRST_PAGE_TITLE_TOKEN_MATCH",
+          "matched": [
+            "assisted",
+            "evaluation",
+            "human",
+            "machine",
+            "translation"
+          ],
+          "expected_token_count": 5
+        },
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        }
+      ],
+      "identity_state": "IDENTITY_VERIFIED",
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+      "fulltext_state": "FULLTEXT_INSPECTED",
+      "boundary": "A prior immutable identity handoff plus a fresh repo-boundary/digest check authorizes only an explicit-open Zotero stored copy; it does not establish new scholarly support."
+    }
+  ]
+}

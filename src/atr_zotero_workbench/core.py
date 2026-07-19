@@ -531,6 +531,34 @@ def project_v2_graph(run: V2Run) -> dict[str, Any]:
                 else:
                     edge(audit_node, paper_node, "flags_zotero_identity_candidate",
                          identity_status=status)
+        if artifact_type == "repo-pdf-zotero-handoff-audit":
+            program_key = payload.get("program_key")
+            audit_node = ensure_node(
+                f"repo_pdf_handoff:{artifact_id}", "repo_pdf_zotero_handoff_audit",
+                "Repo PDF → Zotero 交接 · " + str(program_key or "portfolio"),
+                program_key=program_key, summary=payload.get("summary", {}),
+                policy=payload.get("policy", {}), controller_boundary=payload.get("controller_boundary"),
+                artifact_id=artifact_id,
+            )
+            edge(f"artifact:{artifact_id}", audit_node, "materializes_repo_pdf_zotero_handoff")
+            for handoff in payload.get("handoffs", []):
+                if not isinstance(handoff, dict) or not handoff.get("source_id"):
+                    continue
+                source_id = str(handoff["source_id"])
+                paper_node = ensure_node(f"paper:{source_id}", "paper", str(handoff.get("title") or source_id), source_id=source_id)
+                if handoff.get("status") != "IMPORT_READY":
+                    edge(audit_node, paper_node, "blocks_repo_pdf_zotero_handoff", reasons=handoff.get("reasons", []))
+                    continue
+                paper = next(item for item in nodes if item["id"] == paper_node)
+                paper["data"].update({
+                    "identity_state": handoff.get("identity_state"),
+                    "identity_evidence": handoff.get("identity_evidence", []),
+                    "local_cache_import_policy": handoff.get("local_cache_import_policy"),
+                    "local_cache_path": handoff.get("local_cache_path"),
+                    "content_digest": handoff.get("content_digest"),
+                    "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
+                })
+                edge(audit_node, paper_node, "authorizes_explicit_zotero_stored_copy")
         if artifact_type == "historical-alignment-summary":
             audit_node = ensure_node(
                 f"alignment_audit:{payload.get('audit_digest', artifact_id)}", "historical_alignment_audit",

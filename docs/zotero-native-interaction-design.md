@@ -25,7 +25,7 @@
 | 独立三栏工作台 | 复制/嵌入 PDF 与编辑器 | 自由度高 | 产生第二套导航和状态 | 不采用 |
 | Note-tab 中心 | 适合跨文献综合写作 | 可放关系图 | 阅读单篇原文时需要切标签 | 保留为深度写作模式 |
 | Reader + 原生 Note + 伴随窗 | PDF 始终在中央；右侧持续编辑同一 Note | 可折叠、可置顶窗口显示局部图 | 复用 Reader、Note editor、官方 section 与非模态窗口 | 同时共读增强模式 |
-| 原生 Reader/Note 标签对 + Item Pane | 原文和综合 Note 各自保留为 Zotero 标签，来源 Note 以原生 `note-editor` section 嵌入 Reader 右栏 | 阅读 Note 与 ATR 定位分别折叠，必要时才弹出同一投影 | 不引入默认独立窗口；portfolio 可直接进入 child topic | **日常主模式** |
+| 原生 Reader/Note 标签对 + 共读 section | 原文和综合 Note 各自保留为 Zotero 标签；Reader 右栏的同一 section 内嵌原生 `note-editor` | Note 下方直接放两张可折叠局部图，完整 ATR section 与便携镜像按需打开 | 不引入默认独立窗口；portfolio 可直接进入 child topic | **日常主模式** |
 
 ## 选定交互
 
@@ -33,8 +33,8 @@
 
 1. 在 portfolio 的蓝色 program 节点上单击，插件按 `child_run_id` 打开对应 topic Collection 与 Zotero Note tab；不会把 program 误当成只读说明 Note。
 2. 在 Note tab 中写综合理解，同时从右侧 ATR section 展开过程、知识、问题或当前对象。
-3. 单击 paper 节点打开 Zotero Reader tab；选择「阅读原文并记录我的理解」后，右栏同时拥有两个原生可折叠 section：同一来源 Note 的编辑器，以及跟随当前对象的 ATR 局部图。图节点只负责定位回 Reader/Note。
-4. 只有需要三者同时可见时，在已经打开 Reader + Note 后选择「便携显示 ATR 定位」；关闭镜像不影响任何 Note、annotation 或 ATR 投影。
+3. 单击 paper 节点打开 Zotero Reader tab；选择「阅读原文并记录我的理解」后，右栏同一个原生共读 section 内先显示同一来源 Note 的编辑器，再显示「知识定位」与「现实问题 → 研究问题」两张可折叠局部图。图节点只负责定位回 Reader/Note。
+4. 完整过程/组合图仍在普通 ATR section；只有需要把定位移到第二屏时才选择「便携镜像」。关闭镜像不影响任何 Note、annotation 或 ATR 投影。
 
 ### 同时共读增强模式
 
@@ -50,7 +50,7 @@
 └───────────────────────────────────────────────────────────┘
 ```
 
-「阅读原文并记录我的理解」把当前来源的 child note 放入 Reader 右侧的原生 Item Pane section。PDF tab 不关闭，Note 与 ATR 定位可以同时展开或分别折叠；需要把图移到另一块屏幕时，再选择「便携显示 ATR 定位」。便携窗不是主入口，也不重复提供模式切换。
+「阅读原文并记录我的理解」把当前来源的 child note 和两张关键局部图放入 Reader 右侧的同一个原生 Item Pane section。PDF tab 不关闭，人的理解始终在图之前；知识图和问题图可独立折叠。需要完整项目图时展开普通 ATR section，需要把图移到另一块屏幕时才选择「便携镜像」。
 
 ### 深度综合
 
@@ -70,7 +70,7 @@ ATR 与阅读 Note section 都使用 Zotero 官方 `ItemPaneManager.registerSect
 ## 验收条件
 
 - 从 ATR 来源条目进入 Reader 后，PDF 保持打开。
-- 点击 paper 的主动作后，右侧显示真正的 Zotero note-editor，Note 是该来源的 child note；显式打开便携定位后，ATR 伴随窗可同时可见。
+- 点击 paper 的主动作后，右侧同一共读 section 显示真正的 Zotero note-editor、知识局部图和问题局部图；Note 是该来源的 child note。
 - 伴随窗可置顶、可调整大小，四个语义区独立折叠，并跟随当前 ATR 对象。
 - Reader annotation 和 Note 修改仍进入 append-only human-input inbox。
 - 切回 Item Details 后，ATR section 的折叠状态仍在，局部图节点可定位回 Reader/Note。

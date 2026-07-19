@@ -3572,11 +3572,44 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2021.mtsummit-up.22"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "aided",
+            "computer",
+            "cost",
+            "estimation",
+            "off",
+            "quality",
+            "speed",
+            "trade",
+            "translation",
+            "validating",
+            "workflow"
+          ],
+          "expected_token_count": 11,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2021.mtsummit-up.22",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -4715,11 +4748,43 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "aclanthology.org",
+          "identifier": "2025.emnlp-main.606"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "evaluating",
+            "feedback",
+            "machine",
+            "quality",
+            "reliance",
+            "share",
+            "should",
+            "this",
+            "translation",
+            "user"
+          ],
+          "expected_token_count": 10,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2025.emnlp-main.606",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -5178,6 +5243,10 @@
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
         {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
+        },
+        {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2406.12419"
         },
@@ -5319,6 +5388,21 @@
         "SRC-R1-T1-2025",
         "SRC-RAGTRANS-2025",
         "SRC-TEAR-2025"
+      ]
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
+      "atr_id": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
+      "title": "Repo PDF → Zotero 交接 · multilingual-representation-and-data-decisions",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-AI-ASSISTED-MT-EVAL-2024",
+        "SRC-QE-QUALITY-GATE-ROUTING-2021",
+        "SRC-USER-RELIANCE-MT-2025"
       ]
     }
   ],

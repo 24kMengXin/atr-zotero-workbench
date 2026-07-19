@@ -951,6 +951,16 @@ var ATRZoteroWorkbench = {
 				["不能推出", "本地书目/PDF 可用不等于全文已检查，也不构成 claim、gate 或 route。"],
 			];
 		}
+		else if (node.kind === "repo_pdf_zotero_handoff_audit") {
+			title = "Repo PDF → Zotero 显式导入交接";
+			sections = [
+				["Program", data.program_key || "portfolio"],
+				["交接摘要", JSON.stringify(data.summary || {})],
+				["导入策略", JSON.stringify(data.policy || {})],
+				["控制器边界", data.controller_boundary],
+				["人的动作", "只有点击并打开具体来源时，才会重新核对 digest 后复制为 Zotero stored attachment。"],
+			];
+		}
 		else if (node.kind === "historical_alignment_audit") {
 			title = "历史归位审计";
 			sections = [
@@ -1192,7 +1202,7 @@ var ATRZoteroWorkbench = {
 		this.readingContextItemID = null;
 	},
 
-	async registerReadingNoteSection(note, contextItem) {
+	async registerReadingNoteSection(note, contextItem, focusNode = this.companionFocusNode) {
 		contextItem = this.regularItemFromContext(contextItem);
 		if (!contextItem) throw new Error("当前 Reader 没有可绑定的 Zotero 文献条目");
 		if (this.readingNoteSectionID
@@ -1217,9 +1227,14 @@ var ATRZoteroWorkbench = {
 			},
 			bodyXHTML: `
 <html:style>
-  .atr-reading-note-editor { display: block; min-height: 260px; height: 38vh; max-height: 520px; }
+  .atr-reading-note-shell { display: grid; gap: 8px; }
+  .atr-reading-note-editor { display: block; min-height: 220px; height: 32vh; max-height: 420px; }
+  .atr-reading-visual-context { border-top: 1px solid var(--fill-quinary, #d9e2ec); padding-top: 4px; }
 </html:style>
-<note-editor class="atr-reading-note-editor"></note-editor>`,
+<html:div class="atr-reading-note-shell">
+  <note-editor class="atr-reading-note-editor"></note-editor>
+  <html:div class="atr-reading-visual-context"></html:div>
+</html:div>`,
 			sectionButtons: [{
 				type: "openNoteTab",
 				icon: "chrome://zotero/skin/16/universal/open-link.svg",
@@ -1254,6 +1269,10 @@ var ATRZoteroWorkbench = {
 					await Zotero.Promise.delay(25);
 				}
 				await editorElement._editorInstance?._initPromise;
+				let visualContext = body.querySelector(".atr-reading-visual-context");
+				if (!visualContext) throw new Error("共读 section 缺少可视化上下文容器");
+				visualContext.replaceChildren();
+				this.appendReadingVisualContext(body.ownerDocument, visualContext, focusNode, contextItem);
 			},
 		});
 		if (!sectionID) throw new Error("Zotero 未能注册阅读笔记 section");
@@ -1285,7 +1304,7 @@ var ATRZoteroWorkbench = {
 			let attachment = Zotero.Items.get(reader.itemID);
 			let contextItem = this.regularItemFromContext(attachment)
 				|| this.regularItemFromContext(note.parentItem);
-			let sectionID = await this.registerReadingNoteSection(note, contextItem);
+			let sectionID = await this.registerReadingNoteSection(note, contextItem, this.companionFocusNode);
 			contextPane.collapsed = false;
 			context.mode = "item";
 			await Zotero.Promise.delay(50);
@@ -1608,6 +1627,8 @@ var ATRZoteroWorkbench = {
 	async openSourceForCoReading(source, item = null, withPortableContext = false) {
 		item = item || await this.sourceItem(source);
 		let sourceItem = this.regularItemFromContext(item) || item;
+		this.companionFocusNode = source;
+		this.companionItem = item;
 		await this.openSourceInReader(source, item);
 		// Let Zotero finish selecting the Reader tab before switching its
 		// context pane into the native note-editor mode.
@@ -1994,6 +2015,49 @@ var ATRZoteroWorkbench = {
 		return svg;
 	},
 
+	appendReadingVisualContext(doc, parent, focusNode, item) {
+		let header = this.htmlElement(doc, "div");
+		header.style.padding = "4px 2px";
+		this.appendPaneText(doc, header, "与原文同时核对", true);
+		this.appendPaneText(doc, header, "上方是人的可编辑 Zotero Note；下方只显示当前来源附近已经落盘的知识与问题关系。两块图均可折叠。", false);
+		parent.append(header);
+		let openNode = async node => {
+			if (node.kind === "paper") return this.openSourceForCoReading(node);
+			if (node.kind === "research_program") return this.openProgramNode(node);
+			let object = (this.activeNativeMap?.objects || []).find(candidate => candidate.graph_node_id === node.id);
+			if (!object?.marker) return;
+			let note = await this.findMarkedNote(object.marker);
+			if (note) await this.openNoteBesideReader(note);
+		};
+		let knowledge = this.nearestGraphNodes(focusNode?.id, new Set(["knowledge_concept", "concept_map"]));
+		let knowledgeBody = this.appendDockDisclosure(
+			doc, parent, "readingKnowledge", "知识定位", [], true, false,
+		);
+		this.appendMiniGraph(doc, knowledgeBody, focusNode, knowledge, openNode);
+		let problems = this.nearestGraphNodes(focusNode?.id, new Set([
+			"real_world_tension", "reality_signal_gap", "research_question", "research_problem",
+			"derived_research_question", "claim",
+		]));
+		let problemBody = this.appendDockDisclosure(
+			doc, parent, "readingProblem", "现实问题 → 研究问题", [], true, false,
+		);
+		this.appendMiniGraph(doc, problemBody, focusNode, problems, openNode);
+		if (focusNode?.kind === "paper") {
+			this.appendPaneText(doc, parent, "当前来源支持：" + (focusNode.data?.supports || "未记录"));
+			this.appendPaneText(doc, parent, "不能据此推出：" + (
+				focusNode.data?.does_not_support || focusNode.data?.does_not_establish || "未记录"
+			), true);
+			this.appendPendingReviewSummary(doc, parent, null, focusNode.data?.source_id);
+		}
+		this.appendPaneButton(doc, parent, "打开完整 ATR 定位", () => {
+			let win = Zotero.getMainWindow();
+			let tabID = win?.Zotero_Tabs?.selectedID;
+			let itemContext = win?.ZoteroContextPane?.context?._getItemContext?.(tabID);
+			return itemContext?.scrollToPane?.(this.sectionID);
+		});
+		this.appendPaneButton(doc, parent, "便携镜像", () => this.openCompanionWindow(focusNode, item));
+	},
+
 	appendPortfolioGraph(doc, parent, openNode) {
 		let graph = this.activeGraph || { nodes: [], edges: [] };
 		let portfolio = (graph.nodes || []).find(node => node.kind === "research_portfolio");
@@ -2366,6 +2430,23 @@ var ATRZoteroWorkbench = {
 				.map(edge => byID[edge.target]).filter(Boolean);
 			for (let paper of linked) {
 				this.appendPaneButton(doc, body, "打开 Zotero 来源 · " + paper.label, () => this.openSourceForCoReading(paper));
+			}
+			return;
+		}
+
+		if (decisionNode?.kind === "repo_pdf_zotero_handoff_audit") {
+			setSectionSummary("Repo PDF → Zotero · 待显式打开");
+			let summary = decisionNode.data?.summary || {};
+			this.appendPaneText(doc, body, "repo 已缓存 PDF：" + String(summary.repo_cached_pdfs || 0), true);
+			this.appendPaneText(doc, body, "可在显式打开时导入：" + String(summary.import_ready || 0));
+			this.appendPaneText(doc, body, "仍被阻止：" + String(summary.blocked || 0));
+			this.appendPaneText(doc, body, "这里没有自动写 Zotero。打开具体来源时仍会重新校验路径与 SHA-256。", false);
+			let byID = Object.fromEntries((this.activeGraph.nodes || []).map(node => [node.id, node]));
+			let linked = (this.activeGraph.edges || [])
+				.filter(edge => edge.source === decisionNode.id && edge.relation === "authorizes_explicit_zotero_stored_copy")
+				.map(edge => byID[edge.target]).filter(Boolean);
+			for (let paper of linked) {
+				this.appendPaneButton(doc, body, "打开并交给 Zotero 管理 · " + paper.label, () => this.openSourceForCoReading(paper));
 			}
 			return;
 		}

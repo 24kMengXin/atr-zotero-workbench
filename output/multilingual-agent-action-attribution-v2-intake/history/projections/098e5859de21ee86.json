@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.152072+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-action-attribution-v2-intake-REPO-PDF-HANDOFF-51a03570ff01",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b"
-      ]
     }
   ],
   "nodes": [
@@ -2121,39 +2112,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-MASSIVE-AGENTS-2025.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:1ddfad8539c025ee9014f8c44bf06a4e82a133f68a905f42f455bd4eff7cb7b7"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2025.findings-emnlp.1099"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agents",
-              "benchmark",
-              "calling",
-              "function",
-              "languages",
-              "massive",
-              "multilingual"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2025.findings-emnlp.1099",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "CONFLICT_REQUIRES_REVIEW",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -2418,41 +2380,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-MLCL-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:39d43c3a949c7f710f23754d2d4751281a8ff2248e96ec58a5d9cbac92cab93a"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2026.acl-long.2039"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "calling",
-              "execution",
-              "language",
-              "large",
-              "lost",
-              "models",
-              "multilingual",
-              "robustness",
-              "tool"
-            ],
-            "expected_token_count": 9,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2026.acl-long.2039",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "CONFLICT_REQUIRES_REVIEW",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -6112,10 +6043,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:ff85c1a916d272638d1cb9078811144092a79ced0764755bcf93a099a62ce5af"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2604.11557"
           },
@@ -6485,46 +6412,6 @@
       }
     },
     {
-      "id": "artifact:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 51a03570ff01",
-      "data": {
-        "artifact_id": "sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-        "original_name": "multilingual-agent-action-attribution.51a03570ff01.json",
-        "created_at": "2026-07-19T00:06:07.121730+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/multilingual-agent-action-attribution.51a03570ff01.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · multilingual-agent-action-attribution",
-      "data": {
-        "program_key": "multilingual-agent-action-attribution",
-        "summary": {
-          "repo_cached_pdfs": 3,
-          "import_ready": 3,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-action-attribution-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -6734,21 +6621,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.060686+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-action-attribution-v2-intake-REPO-PDF-HANDOFF-51a03570ff01",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-action-attribution-v2-intake-REPO-PDF-HANDOFF-51a03570ff01",
-        "subject_id": "program:multilingual-agent-action-attribution",
-        "subject_version": 0,
-        "artifact_id": "sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.152072+00:00"
       }
     }
   ],
@@ -8801,36 +8673,6 @@
       }
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-action-attribution-v2-intake",
-      "target": "artifact:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "target": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "target": "paper:SRC-MASSIVE-AGENTS-2025",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "target": "paper:SRC-MLCL-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "target": "paper:SRC-UNITOOLCALL-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "reality_signal_gap:ARH-MULTILINGUAL-ACTION-ATTRIBUTION-R0-DCS-001.v1",
       "target": "paper:SRC-MLCL-2026",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -9009,18 +8851,6 @@
       "target": "artifact:sha256:22a0f7c5891f3cf0df365138ae519d80fc9da9c325816e32013f24b3a8a20a67",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-action-attribution",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-action-attribution-v2-intake-REPO-PDF-HANDOFF-51a03570ff01",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-action-attribution-v2-intake-REPO-PDF-HANDOFF-51a03570ff01",
-      "target": "artifact:sha256:51a03570ff011d0103d19351185c3a6f4a76612448f9197f278fd47b443fd90b",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -9128,16 +8958,8 @@
         "run": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
         "node_count": 271,
         "edge_count": 359
-      },
-      {
-        "id": "098e5859de21ee86",
-        "archived_at": "2026-07-19T00:07:39.917487+00:00",
-        "path": "history/projections/098e5859de21ee86.json",
-        "run": "2026-07-19-multilingual-agent-action-attribution-v2-intake",
-        "node_count": 274,
-        "edge_count": 365
       }
     ],
-    "previous_projection": "098e5859de21ee86"
+    "previous_projection": "f99dc3d08ee56101"
   }
 }

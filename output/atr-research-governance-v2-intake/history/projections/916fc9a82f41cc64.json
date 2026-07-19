@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.636509+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-atr-research-governance-v2-intake-REPO-PDF-HANDOFF-64d973d615d6",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e"
-      ]
     }
   ],
   "nodes": [
@@ -456,39 +447,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-ARBOR-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:c80931a404f5f0e0adc90d689fbedcc947fa986e4cfe9fa869238c85a7deb276"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2606.11926"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "autonomous",
-              "generalist",
-              "hypothesis",
-              "refinement",
-              "research",
-              "toward",
-              "tree"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2606.11926",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_SYSTEM",
         "source_layer": "source_needs_review",
         "locator": "",
@@ -609,39 +571,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-AUTORESEARCHBENCH-2026--6ca54095.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:9303b8930eb3c5b6eca8e4cfda6d56506ade638200c86c32a8fa7b91f44cae60"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2604.25256"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agents",
-              "autoresearchbench",
-              "benchmarking",
-              "complex",
-              "discovery",
-              "literature",
-              "scientific"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2604.25256",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "LEGACY_ID_COLLISION_REQUIRES_REVIEW",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_BENCHMARK",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -906,40 +839,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-HEP-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2607.09195"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agents",
-              "auditable",
-              "evolution",
-              "hypothesis",
-              "llm",
-              "protocol",
-              "scientists",
-              "toward"
-            ],
-            "expected_token_count": 8,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2607.09195",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -1763,10 +1666,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:4e2243656bb0bb7529e46de41603d651622c7e3bd04cc9b001d8eb29ccf0f149"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2601.20727"
           },
@@ -2144,46 +2043,6 @@
       }
     },
     {
-      "id": "artifact:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 64d973d615d6",
-      "data": {
-        "artifact_id": "sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-        "original_name": "atr-research-governance.64d973d615d6.json",
-        "created_at": "2026-07-19T00:06:07.599304+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/atr-research-governance.64d973d615d6.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · atr-research-governance",
-      "data": {
-        "program_key": "atr-research-governance",
-        "summary": {
-          "repo_cached_pdfs": 4,
-          "import_ready": 4,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-atr-research-governance-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -2393,21 +2252,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.822954+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-REPO-PDF-HANDOFF-64d973d615d6",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-atr-research-governance-v2-intake-REPO-PDF-HANDOFF-64d973d615d6",
-        "subject_id": "program:atr-research-governance",
-        "subject_version": 0,
-        "artifact_id": "sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.636509+00:00"
       }
     }
   ],
@@ -3337,42 +3181,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-atr-research-governance-v2-intake",
-      "target": "artifact:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "target": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "target": "paper:SRC-ARBOR-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "target": "paper:SRC-HEP-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "target": "paper:SRC-LLM-AUDIT-TRAILS-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "reality_signal_gap:ARH-ATR-RESEARCH-GOVERNANCE-R0-DCS-001.v1",
       "target": "paper:SRC-AUTORESEARCHBENCH-2026--6ca54095",
       "relation": "searched_for_admissible_reality_signal_in",
@@ -3557,18 +3365,6 @@
       "target": "artifact:sha256:c61602b10c397d6c58957135d133fa769b85514f39eb6875f49b5bfb30848917",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:atr-research-governance",
-      "target": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-REPO-PDF-HANDOFF-64d973d615d6",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-atr-research-governance-v2-intake-REPO-PDF-HANDOFF-64d973d615d6",
-      "target": "artifact:sha256:64d973d615d6f2bba2ab6d1b18d4dbf221ba4c6b45df16089be2ac2dde1cc43e",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -3676,16 +3472,8 @@
         "run": "2026-07-19-atr-research-governance-v2-intake",
         "node_count": 90,
         "edge_count": 176
-      },
-      {
-        "id": "916fc9a82f41cc64",
-        "archived_at": "2026-07-19T00:07:40.415402+00:00",
-        "path": "history/projections/916fc9a82f41cc64.json",
-        "run": "2026-07-19-atr-research-governance-v2-intake",
-        "node_count": 93,
-        "edge_count": 180
       }
     ],
-    "previous_projection": "916fc9a82f41cc64"
+    "previous_projection": "6813fd04edf984d9"
   }
 }

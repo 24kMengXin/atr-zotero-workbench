@@ -188,6 +188,50 @@ class BuildTest(unittest.TestCase):
                             and obj['review_role'] == 'AVAILABILITY_AUDIT_ONLY'
                             for obj in projection['objects']))
 
+    def test_repo_pdf_handoff_authorizes_only_explicit_open_and_preserves_inspection(self):
+        artifacts = [{
+            'artifact_id': 'sha256:s', 'digest': 's' * 64,
+            'kind': 'source-review', 'original_name': 'source.json',
+            'created_at': '2025-12-31', 'metadata_json': '{}',
+            'payload': {'artifact_type': 'source-review', 'sources': [{
+                'source_id': 'SRC-1', 'title': 'Paper', 'fulltext_state': 'FULLTEXT_INSPECTED',
+            }]},
+        }, {
+            'artifact_id': 'sha256:h', 'digest': 'h' * 64,
+            'kind': 'repo-pdf-zotero-handoff-audit', 'original_name': 'handoff.json',
+            'created_at': '2026-01-01', 'metadata_json': '{}',
+            'payload': {
+                'artifact_type': 'repo-pdf-zotero-handoff-audit', 'program_key': 'p',
+                'summary': {'repo_cached_pdfs': 1, 'import_ready': 1, 'blocked': 0},
+                'policy': {'explicit_human_open_required': True, 'zotero_write_not_performed': True},
+                'controller_boundary': 'Availability handoff only.',
+                'handoffs': [{
+                    'source_id': 'SRC-1', 'title': 'Paper', 'status': 'IMPORT_READY',
+                    'identity_state': 'IDENTITY_VERIFIED',
+                    'identity_evidence': [{'signal': 'BYTE_IDENTITY', 'value': 'sha256:' + 'a' * 64}],
+                    'local_cache_import_policy': 'ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ',
+                    'local_cache_path': '.runtime/paper.pdf', 'content_digest': 'sha256:' + 'a' * 64,
+                }],
+            },
+        }]
+        run = V2Run(Path('/r'), 'run', [{'subject_id': 'program:p', 'kind': 'program',
+            'state': 'INTAKE', 'version': 0, 'active': 1, 'created_at': '2026-01-01',
+            'updated_at': '2026-01-01'}], artifacts, [], [], [])
+        graph = project_v2_graph(run)
+        paper = next(node for node in graph['nodes'] if node['id'] == 'paper:SRC-1')
+        self.assertEqual(paper['data']['fulltext_state'], 'FULLTEXT_INSPECTED')
+        self.assertEqual(paper['data']['identity_state'], 'IDENTITY_VERIFIED')
+        self.assertEqual(paper['data']['local_cache_import_policy'],
+                         'ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ')
+        self.assertTrue(any(edge['relation'] == 'authorizes_explicit_zotero_stored_copy'
+                            for edge in graph['edges']))
+        projection = native_projection(graph)
+        audit = next(obj for obj in projection['objects']
+                     if obj['object_id'].startswith('repo-pdf-handoff:'))
+        self.assertEqual(audit['review_role'], 'AVAILABILITY_AUDIT_ONLY')
+        source = next(obj for obj in projection['objects'] if obj['object_id'] == 'source:SRC-1')
+        self.assertEqual(source['local_cache_import_state'], 'FILE_MISSING')
+
     def test_registry_review_finds_pending_feedback_across_topics(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

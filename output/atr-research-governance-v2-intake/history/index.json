@@ -104,6 +104,14 @@
       "run": "2026-07-19-atr-research-governance-v2-intake",
       "node_count": 90,
       "edge_count": 176
+    },
+    {
+      "id": "916fc9a82f41cc64",
+      "archived_at": "2026-07-19T00:07:40.415402+00:00",
+      "path": "history/projections/916fc9a82f41cc64.json",
+      "run": "2026-07-19-atr-research-governance-v2-intake",
+      "node_count": 93,
+      "edge_count": 180
     }
   ]
 }

@@ -14,6 +14,7 @@ from .zotero import export_bundle, export_native_projection, sync_web_api
 from .zotero_local import (pull_local_feedback, pull_registry_feedback,
                            snapshot_local_feedback, snapshot_registry_feedback)
 from .zotero_reconcile import reconcile_sources, write_reconciliation, write_reconciliation_markdown
+from .repo_pdf_handoff import audit_repo_pdfs, write_handoff
 
 
 # The graph is embedded at build time so the page works in Zotero's file:// tab
@@ -106,6 +107,7 @@ def main() -> None:
     zlrs = sub.add_parser("zotero-local-registry-snapshot"); zlrs.add_argument("registry", type=Path)
     zlrp = sub.add_parser("zotero-local-registry-pull"); zlrp.add_argument("registry", type=Path); zlrp.add_argument("--review-out", type=Path)
     zrec = sub.add_parser("zotero-reconcile-sources"); zrec.add_argument("inventory", type=Path); zrec.add_argument("--out", type=Path, required=True); zrec.add_argument("--markdown-out", type=Path)
+    zpdf = sub.add_parser("zotero-audit-repo-pdfs"); zpdf.add_argument("outputs", type=Path); zpdf.add_argument("--repo-root", type=Path, required=True); zpdf.add_argument("--out", type=Path, required=True); zpdf.add_argument("--markdown-out", type=Path)
     a = p.parse_args()
     if a.cmd == "build": print(json.dumps({"built": str(a.out), "nodes": len(build(a.run_dir, a.out, a.registry, a.run_key, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
     elif a.cmd == "build-program": print(json.dumps({"built": str(a.out), "nodes": len(build_program(a.catalog, a.program, a.out, a.registry, a.label, a.activate, a.view_role)["nodes"])}, ensure_ascii=False))
@@ -142,6 +144,9 @@ def main() -> None:
     elif a.cmd == "zotero-reconcile-sources":
         report = reconcile_sources(a.inventory); write_reconciliation(report, a.out)
         if a.markdown_out: write_reconciliation_markdown(report, a.markdown_out)
+        print(json.dumps({"written": str(a.out), **report["summary"]}, ensure_ascii=False))
+    elif a.cmd == "zotero-audit-repo-pdfs":
+        report = audit_repo_pdfs(a.outputs, a.repo_root); write_handoff(report, a.out, a.markdown_out)
         print(json.dumps({"written": str(a.out), **report["summary"]}, ensure_ascii=False))
     else:
         graph = json.loads((a.directory / "graph.json").read_text(encoding="utf-8"))

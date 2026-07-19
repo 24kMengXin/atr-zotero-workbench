@@ -194,11 +194,40 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.13608"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "agentbeats",
+            "agentifying",
+            "assessment",
+            "openness",
+            "reproducibility",
+            "standardization"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.13608",
+          "observed": true
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -381,11 +410,40 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2606.08275"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "agent",
+            "attribution",
+            "causal",
+            "counterfactual",
+            "failures",
+            "llm",
+            "replay"
+          ],
+          "expected_token_count": 7,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2606.08275",
+          "observed": true
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -1397,6 +1455,10 @@
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
         {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
+        },
+        {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2605.27922"
         },
@@ -1460,6 +1522,10 @@
       "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/collision-review/agent-eval.pdf",
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
+        },
         {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2604.23581"
@@ -1597,6 +1663,22 @@
       "collection_role": "HISTORY",
       "review_role": "AVAILABILITY_AUDIT_ONLY",
       "linked_source_ids": []
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
+      "atr_id": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
+      "title": "Repo PDF → Zotero 交接 · agent-infrastructure-and-evaluation-contracts",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-AGENTBEATS-2026",
+        "SRC-AGENTEVAL-2026",
+        "SRC-CAR-2026",
+        "SRC-HARNESS-BENCH-2026"
+      ]
     }
   ],
   "feedback_contract": {

@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.438938+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-REPO-PDF-HANDOFF-93f7ef68e2c6",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976"
-      ]
     }
   ],
   "nodes": [
@@ -5153,43 +5144,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection/SRC-QE-QUALITY-GATE-ROUTING-2021.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:7ca5d6e1b85e9ccbf5120d216e841551f2240510f1bef807f4abf2cdb3a5d406"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2021.mtsummit-up.22"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "aided",
-              "computer",
-              "cost",
-              "estimation",
-              "off",
-              "quality",
-              "speed",
-              "trade",
-              "translation",
-              "validating",
-              "workflow"
-            ],
-            "expected_token_count": 11,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2021.mtsummit-up.22",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -6753,42 +6711,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection/SRC-USER-RELIANCE-MT-2025.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:a52bbec109c06524b5f1a4045ebc5d611e5dfb81681400911957648686541244"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2025.emnlp-main.606"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "evaluating",
-              "feedback",
-              "machine",
-              "quality",
-              "reliance",
-              "share",
-              "should",
-              "this",
-              "translation",
-              "user"
-            ],
-            "expected_token_count": 10,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2025.emnlp-main.606",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -7562,10 +7488,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:09432b53f47cdade9a01c389476ceb5541d19528b356c32238ad23a5428b73d2"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2406.12419"
           },
@@ -7935,46 +7857,6 @@
       }
     },
     {
-      "id": "artifact:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 93f7ef68e2c6",
-      "data": {
-        "artifact_id": "sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-        "original_name": "multilingual-representation-and-data-decisions.93f7ef68e2c6.json",
-        "created_at": "2026-07-19T00:06:07.408981+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/multilingual-representation-and-data-decisions.93f7ef68e2c6.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · multilingual-representation-and-data-decisions",
-      "data": {
-        "program_key": "multilingual-representation-and-data-decisions",
-        "summary": {
-          "repo_cached_pdfs": 3,
-          "import_ready": 3,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -8184,21 +8066,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.463807+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-REPO-PDF-HANDOFF-93f7ef68e2c6",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-REPO-PDF-HANDOFF-93f7ef68e2c6",
-        "subject_id": "program:multilingual-representation-and-data-decisions",
-        "subject_version": 0,
-        "artifact_id": "sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.438938+00:00"
       }
     }
   ],
@@ -10742,36 +10609,6 @@
       }
     },
     {
-      "source": "run:2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-      "target": "artifact:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "target": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "target": "paper:SRC-QE-QUALITY-GATE-ROUTING-2021",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "target": "paper:SRC-USER-RELIANCE-MT-2025",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "target": "paper:SRC-AI-ASSISTED-MT-EVAL-2024",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "subject:program:multilingual-representation-and-data-decisions",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
       "relation": "records_transition",
@@ -10938,18 +10775,6 @@
       "target": "artifact:sha256:f861fe86ac99baa1fe7644bcd942dfe5bf2596bb5d0c57dcc9ce8da3ad1a9c95",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-representation-and-data-decisions",
-      "target": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-REPO-PDF-HANDOFF-93f7ef68e2c6",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-representation-and-data-decisions-v2-intake-REPO-PDF-HANDOFF-93f7ef68e2c6",
-      "target": "artifact:sha256:93f7ef68e2c6f2522842af7ba6c3d41f09099a52d2f448fff5a47fe0bf322976",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -11049,16 +10874,8 @@
         "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
         "node_count": 331,
         "edge_count": 428
-      },
-      {
-        "id": "d8d91d7a25416d65",
-        "archived_at": "2026-07-19T00:07:40.239858+00:00",
-        "path": "history/projections/d8d91d7a25416d65.json",
-        "run": "2026-07-19-multilingual-representation-and-data-decisions-v2-intake",
-        "node_count": 334,
-        "edge_count": 442
       }
     ],
-    "previous_projection": "d8d91d7a25416d65"
+    "previous_projection": "c23eb63e27d00012"
   }
 }

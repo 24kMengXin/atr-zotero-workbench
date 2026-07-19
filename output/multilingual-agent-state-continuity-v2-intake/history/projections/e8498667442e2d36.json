@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.248734+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-REPO-PDF-HANDOFF-14b2342a31b7",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7"
-      ]
     }
   ],
   "nodes": [
@@ -867,39 +858,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-HINDSIGHT-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:c1bc58396f754197c5383f1978495077e0d94a5e6f10c6eabeec2337ac8184c6"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2026.acl-demo.27"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agent",
-              "hindsight",
-              "memory",
-              "recalls",
-              "reflects",
-              "retains",
-              "structured"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2026.acl-demo.27",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -1149,40 +1111,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-MEM2ACTBENCH-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:fddb3048eafe66381ef5e4cfea975ced132091d4e380d43abd151991cd5103e7"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "aclanthology.org",
-            "identifier": "2026.acl-long.370"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agents",
-              "benchmark",
-              "evaluating",
-              "llm",
-              "long",
-              "mem2actbench",
-              "memory",
-              "term"
-            ],
-            "expected_token_count": 8,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2026.acl-long.370",
-            "observed": false
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -1658,39 +1590,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-POLYWORKBENCH-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:9147ee039e4efb1152144a59f46e56e42c230256ec4c51fea945773e406f950f"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2607.06008"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agents",
-              "benchmarking",
-              "horizon",
-              "llm",
-              "long",
-              "multilingual",
-              "polyworkbench"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2607.06008",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PAPER",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -2534,10 +2437,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:24b8b214b7a6bd5494c8febecd78dc38ac5f9f4426dbd27226702df5884fe3ad"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2025.findings-acl.1249"
           },
@@ -2908,46 +2807,6 @@
       }
     },
     {
-      "id": "artifact:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 14b2342a31b7",
-      "data": {
-        "artifact_id": "sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-        "original_name": "multilingual-agent-state-continuity.14b2342a31b7.json",
-        "created_at": "2026-07-19T00:06:07.218541+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/multilingual-agent-state-continuity.14b2342a31b7.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · multilingual-agent-state-continuity",
-      "data": {
-        "program_key": "multilingual-agent-state-continuity",
-        "summary": {
-          "repo_cached_pdfs": 4,
-          "import_ready": 4,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3157,21 +3016,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.187582+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-REPO-PDF-HANDOFF-14b2342a31b7",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-REPO-PDF-HANDOFF-14b2342a31b7",
-        "subject_id": "program:multilingual-agent-state-continuity",
-        "subject_version": 0,
-        "artifact_id": "sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.248734+00:00"
       }
     }
   ],
@@ -4421,42 +4265,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-agent-state-continuity-v2-intake",
-      "target": "artifact:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "target": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "target": "paper:SRC-HINDSIGHT-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "target": "paper:SRC-MEM2ACTBENCH-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "target": "paper:SRC-POLYWORKBENCH-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "target": "paper:SRC-STATEFUL-TOOL-USE-2025",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "subject:program:multilingual-agent-state-continuity",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-agent-state-continuity-v2-intake",
       "relation": "records_transition",
@@ -4623,18 +4431,6 @@
       "target": "artifact:sha256:bb32cb3829b6a9db3f3e2a1e2640fa4081f8c6a7d6bb250abe85f8760bb0b3ca",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:multilingual-agent-state-continuity",
-      "target": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-REPO-PDF-HANDOFF-14b2342a31b7",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-agent-state-continuity-v2-intake-REPO-PDF-HANDOFF-14b2342a31b7",
-      "target": "artifact:sha256:14b2342a31b735cd128edeeba5fcc500cb7a3e5223ca9fcf78530f25aa9d83d7",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4734,16 +4530,8 @@
         "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
         "node_count": 120,
         "edge_count": 223
-      },
-      {
-        "id": "e8498667442e2d36",
-        "archived_at": "2026-07-19T00:07:40.031167+00:00",
-        "path": "history/projections/e8498667442e2d36.json",
-        "run": "2026-07-19-multilingual-agent-state-continuity-v2-intake",
-        "node_count": 123,
-        "edge_count": 227
       }
     ],
-    "previous_projection": "e8498667442e2d36"
+    "previous_projection": "3c9bfb282ffed617"
   }
 }

@@ -142,6 +142,7 @@ def validate_source() -> None:
         "runForProgramNode", "openProgramNode", 'interaction: "PORTFOLIO_TO_NATIVE_TOPIC_TAB"',
         '"逐项历史消费映射"', "LEGACY_MAPPED×", "mappedArtifacts",
         '"Zotero 本地来源对账"', '"Zotero 来源对账 · 只读"',
+        '"Repo PDF → Zotero 显式导入交接"', '"Repo PDF → Zotero · 待显式打开"',
         "openProgramReviewNode", 'interaction: "PORTFOLIO_TO_CHILD_COLLISION_REVIEW_NOTE"',
         "待我的 owner review · ${pending.length}", '"进入 child 并开始 owner review"',
     ):
@@ -151,6 +152,8 @@ def validate_source() -> None:
         "openNoteBesideReader", "coReadingNote", "openSourceForCoReading", 'context.mode = "item"',
         "openCurrentReadingNote", 'type: "openReadingNote"', 'l10nID: "atr-item-pane-open-reading-note"',
         "registerReadingNoteSection", 'bodyXHTML:', 'class="atr-reading-note-editor"',
+		'class="atr-reading-visual-context"', "appendReadingVisualContext",
+		'"与原文同时核对"', '"现实问题 → 研究问题"',
         'interaction: "READER_WITH_FOLDABLE_NOTE_AND_ATR_SECTIONS"',
         '"阅读原文并记录我的理解"', '"在新标签深度编辑这份来源笔记"',
         '"便携显示 ATR 定位"', '"记录我的判断（进入待复审队列）"',

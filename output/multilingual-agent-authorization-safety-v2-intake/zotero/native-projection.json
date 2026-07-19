@@ -229,11 +229,38 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection/SRC-AGENTABSTAIN-2026.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:9d059f54f84bbc787ac8644db46cb270ff9a9afe73136bb63964eedc90ef1694"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2607.10059"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "act",
+            "agentabstain",
+            "agents",
+            "know",
+            "llm"
+          ],
+          "expected_token_count": 5,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2607.10059",
+          "observed": true
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -1718,11 +1745,39 @@
       "zotero_snapshot_state": "NOT_CAPTURED",
       "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
       "local_cache_path": ".runtime/source-inspection/SRC-XSafety-2024.pdf",
-      "local_cache_import_state": "NOT_AUTHORIZED",
-      "verified_local_pdf_path": null,
-      "identity_state": "",
-      "identity_evidence": [],
-      "local_cache_import_policy": "",
+      "local_cache_import_state": "READY",
+      "verified_local_pdf_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/.runtime/source-inspection/SRC-XSafety-2024.pdf",
+      "identity_state": "IDENTITY_VERIFIED",
+      "identity_evidence": [
+        {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:348f062b3719d88d7f7326e089da219ca12d1fda1e0a92cd6010ed97c0fd9241"
+        },
+        {
+          "signal": "CANONICAL_LOCATOR",
+          "host": "arxiv.org",
+          "identifier": "2310.00905"
+        },
+        {
+          "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
+          "matched": [
+            "all",
+            "languages",
+            "llms",
+            "matter",
+            "multilingual",
+            "safety"
+          ],
+          "expected_token_count": 6,
+          "coverage": 1.0
+        },
+        {
+          "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
+          "value": "2310.00905",
+          "observed": false
+        }
+      ],
+      "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
       "source_layer": "scholarly_evidence"
     },
     {
@@ -1973,6 +2028,10 @@
       "identity_state": "IDENTITY_VERIFIED",
       "identity_evidence": [
         {
+          "signal": "BYTE_IDENTITY",
+          "value": "sha256:445ba150fe29c42a0a151ee43829a6c67064356bd4e2803929e68beea3ca9e22"
+        },
+        {
           "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
           "value": "2601.08012"
         },
@@ -2104,6 +2163,21 @@
       "review_role": "AVAILABILITY_AUDIT_ONLY",
       "linked_source_ids": [
         "SRC-MAPS-2025"
+      ]
+    },
+    {
+      "object_id": "repo-pdf-handoff:repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
+      "object_kind": "alignment_audit_note",
+      "graph_node_id": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
+      "atr_id": "repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
+      "title": "Repo PDF → Zotero 交接 · multilingual-agent-authorization-safety",
+      "marker": "ATR Alignment Audit Node: repo_pdf_handoff:sha256:6be621edc5ec5947128f32d8b03cb19cde4e0361156206cad87681ac3b4a0c48",
+      "collection_role": "HISTORY",
+      "review_role": "AVAILABILITY_AUDIT_ONLY",
+      "linked_source_ids": [
+        "SRC-AGENTABSTAIN-2026",
+        "SRC-VERIFIABLY-SAFE-TOOL-USE-2026",
+        "SRC-XSafety-2024"
       ]
     }
   ],

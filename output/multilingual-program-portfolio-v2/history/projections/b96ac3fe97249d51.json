@@ -67,15 +67,6 @@
       "artifact_ids": [
         "sha256:cb6d79260ac36405d91a47e40432437033eb222304ea312053f9cb8a89278baa"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.054401+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-multilingual-program-portfolio-v2-REPO-PDF-HANDOFF-52e0c6c87c1f",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42"
-      ]
     }
   ],
   "nodes": [
@@ -1431,47 +1422,6 @@
       }
     },
     {
-      "id": "artifact:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · 52e0c6c87c1f",
-      "data": {
-        "artifact_id": "sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-        "original_name": "portfolio.52e0c6c87c1f.json",
-        "created_at": "2026-07-19T00:06:07.022007+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/portfolio.52e0c6c87c1f.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · portfolio",
-      "data": {
-        "program_key": null,
-        "summary": {
-          "repo_cached_pdfs": 21,
-          "import_ready": 21,
-          "blocked": 0,
-          "already_preverified": 7
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -1576,21 +1526,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:29.941244+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-REPO-PDF-HANDOFF-52e0c6c87c1f",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 7,
-        "attachment_id": "ATT-2026-07-19-multilingual-program-portfolio-v2-REPO-PDF-HANDOFF-52e0c6c87c1f",
-        "subject_id": "portfolio:multilingual-aaai",
-        "subject_version": 0,
-        "artifact_id": "sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.054401+00:00"
       }
     }
   ],
@@ -2150,18 +2085,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-multilingual-program-portfolio-v2",
-      "target": "artifact:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "target": "repo_pdf_handoff:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
       "source": "subject:portfolio:multilingual-aaai",
       "target": "transition:EV-INTAKE-2026-07-19-multilingual-program-portfolio-v2",
       "relation": "records_transition",
@@ -2244,18 +2167,6 @@
       "target": "artifact:sha256:cb6d79260ac36405d91a47e40432437033eb222304ea312053f9cb8a89278baa",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:portfolio:multilingual-aaai",
-      "target": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-REPO-PDF-HANDOFF-52e0c6c87c1f",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-multilingual-program-portfolio-v2-REPO-PDF-HANDOFF-52e0c6c87c1f",
-      "target": "artifact:sha256:52e0c6c87c1fa84ff6ce926dd91fd61ca8c9e03baad479164b9462906850ad42",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -2315,16 +2226,8 @@
         "run": "2026-07-19-multilingual-program-portfolio-v2",
         "node_count": 51,
         "edge_count": 93
-      },
-      {
-        "id": "b96ac3fe97249d51",
-        "archived_at": "2026-07-19T00:07:39.840337+00:00",
-        "path": "history/projections/b96ac3fe97249d51.json",
-        "run": "2026-07-19-multilingual-program-portfolio-v2",
-        "node_count": 54,
-        "edge_count": 97
       }
     ],
-    "previous_projection": "b96ac3fe97249d51"
+    "previous_projection": "f5394d38c3e6f965"
   }
 }

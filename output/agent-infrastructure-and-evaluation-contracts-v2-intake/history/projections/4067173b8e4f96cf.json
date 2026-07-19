@@ -130,15 +130,6 @@
       "artifact_ids": [
         "sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f"
       ]
-    },
-    {
-      "at": "2026-07-19T00:06:07.534809+00:00",
-      "kind": "atr_v2_attachment",
-      "id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-REPO-PDF-HANDOFF-cf7c2b392d78",
-      "label": "附件 · REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY（不改变 lifecycle）",
-      "artifact_ids": [
-        "sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650"
-      ]
     }
   ],
   "nodes": [
@@ -517,39 +508,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-AGENTBEATS-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:a733f7cc16a9e2db02e48142d51c5de34fb8650825723a5b1cadb1b608b33a4a"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2606.13608"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agent",
-              "agentbeats",
-              "agentifying",
-              "assessment",
-              "openness",
-              "reproducibility",
-              "standardization"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2606.13608",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -785,39 +747,10 @@
         "local_cache_state": "REPO_RUNTIME_CACHE_NOT_ZOTERO_ATTACHMENT",
         "local_cache_path": ".runtime/source-inspection-remaining/SRC-CAR-2026.pdf",
         "cache_role": "",
-        "identity_state": "IDENTITY_VERIFIED",
-        "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:477f92f0ebe56eff5ec4e795e974ab797d651e606dc707eae64f5153d2bf6085"
-          },
-          {
-            "signal": "CANONICAL_LOCATOR",
-            "host": "arxiv.org",
-            "identifier": "2606.08275"
-          },
-          {
-            "signal": "FIRST_TWO_PAGES_TITLE_TOKEN_MATCH",
-            "matched": [
-              "agent",
-              "attribution",
-              "causal",
-              "counterfactual",
-              "failures",
-              "llm",
-              "replay"
-            ],
-            "expected_token_count": 7,
-            "coverage": 1.0
-          },
-          {
-            "signal": "IDENTIFIER_VISIBLE_IN_FIRST_TWO_PAGES",
-            "value": "2606.08275",
-            "observed": true
-          }
-        ],
+        "identity_state": "",
+        "identity_evidence": [],
         "identity_review": "EXACT_NORMALIZED_MATCH",
-        "local_cache_import_policy": "ALLOW_ZOTERO_STORED_COPY_ON_EXPLICIT_READ",
+        "local_cache_import_policy": "",
         "source_kind": "PRIMARY_PREPRINT",
         "source_layer": "scholarly_evidence",
         "locator": "",
@@ -2352,10 +2285,6 @@
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
           {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:859570aa22270af5203be6042595cce1add19dcef2976db748550462ceb2709e"
-          },
-          {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2605.27922"
           },
@@ -2432,10 +2361,6 @@
         "cache_role": "REPO_LOCAL_GITIGNORED_VERIFICATION_CACHE_NOT_ZOTERO_ATTACHMENT",
         "identity_state": "IDENTITY_VERIFIED",
         "identity_evidence": [
-          {
-            "signal": "BYTE_IDENTITY",
-            "value": "sha256:112bac6e3c40fc843ed27b4076ee67d0a863c2730433aa9153764aa34942bd87"
-          },
           {
             "signal": "CANONICAL_IDENTIFIER_IN_LANDING_AND_PDF_ENDPOINT",
             "value": "2604.23581"
@@ -2839,46 +2764,6 @@
       }
     },
     {
-      "id": "artifact:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "kind": "atr_v2_artifact",
-      "label": "repo-pdf-zotero-handoff-audit · cf7c2b392d78",
-      "data": {
-        "artifact_id": "sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-        "artifact_kind": "repo-pdf-zotero-handoff-audit",
-        "digest": "cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-        "original_name": "agent-infrastructure-and-evaluation-contracts.cf7c2b392d78.json",
-        "created_at": "2026-07-19T00:06:07.503475+00:00",
-        "metadata": {
-          "source_path": "/Users/zone/Documents/research assistant/atr-zotero-workbench/programs/source-inventory/repo-pdf-zotero-handoff/agent-infrastructure-and-evaluation-contracts.cf7c2b392d78.json",
-          "declared_scope": "verified repo PDF; Zotero copy only on explicit human open"
-        },
-        "artifact_type": "repo-pdf-zotero-handoff-audit",
-        "projection_error": null
-      }
-    },
-    {
-      "id": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "kind": "repo_pdf_zotero_handoff_audit",
-      "label": "Repo PDF → Zotero 交接 · agent-infrastructure-and-evaluation-contracts",
-      "data": {
-        "program_key": "agent-infrastructure-and-evaluation-contracts",
-        "summary": {
-          "repo_cached_pdfs": 4,
-          "import_ready": 4,
-          "blocked": 0
-        },
-        "policy": {
-          "explicit_human_open_required": true,
-          "zotero_write_not_performed": true,
-          "repo_boundary_required": true,
-          "digest_required": true,
-          "canonical_locator_and_title_required": true
-        },
-        "controller_boundary": "This operational handoff can only authorize a stored copy after explicit human open. It cannot create evidence, inspection, claim support, gate, route, or lifecycle change.",
-        "artifact_id": "sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650"
-      }
-    },
-    {
       "id": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "kind": "atr_v2_transition",
       "label": "∅ → INTAKE",
@@ -3088,21 +2973,6 @@
         "role": "ZOTERO_LOCAL_AVAILABILITY_REVIEW_ONLY",
         "note": "Exact Zotero item/PDF availability only; title candidates and scholarly inspection remain unresolved.",
         "created_at": "2026-07-18T23:52:30.687221+00:00"
-      }
-    },
-    {
-      "id": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-REPO-PDF-HANDOFF-cf7c2b392d78",
-      "kind": "atr_v2_attachment",
-      "label": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY · v0",
-      "data": {
-        "seq": 14,
-        "attachment_id": "ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-REPO-PDF-HANDOFF-cf7c2b392d78",
-        "subject_id": "program:agent-infrastructure-and-evaluation-contracts",
-        "subject_version": 0,
-        "artifact_id": "sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-        "role": "REPO_PDF_ZOTERO_HANDOFF_REVIEW_ONLY",
-        "note": "Identity/digest handoff permits explicit-open stored copy only; no lifecycle or scholarly effect.",
-        "created_at": "2026-07-19T00:06:07.534809+00:00"
       }
     }
   ],
@@ -4314,42 +4184,6 @@
       "data": {}
     },
     {
-      "source": "run:2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-      "target": "artifact:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "relation": "registers_immutable_artifact",
-      "data": {}
-    },
-    {
-      "source": "artifact:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "target": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "relation": "materializes_repo_pdf_zotero_handoff",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "target": "paper:SRC-AGENTBEATS-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "target": "paper:SRC-CAR-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "target": "paper:SRC-HARNESS-BENCH-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
-      "source": "repo_pdf_handoff:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "target": "paper:SRC-AGENTEVAL-2026",
-      "relation": "authorizes_explicit_zotero_stored_copy",
-      "data": {}
-    },
-    {
       "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
       "target": "transition:EV-INTAKE-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
       "relation": "records_transition",
@@ -4516,18 +4350,6 @@
       "target": "artifact:sha256:8e16c5a13136e945c41fe97ddb0a6f047e9568d4ed8ec7ce8a2cc5013a6c172f",
       "relation": "attaches_immutable_artifact",
       "data": {}
-    },
-    {
-      "source": "subject:program:agent-infrastructure-and-evaluation-contracts",
-      "target": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-REPO-PDF-HANDOFF-cf7c2b392d78",
-      "relation": "attaches_evidence_without_transition",
-      "data": {}
-    },
-    {
-      "source": "attachment:ATT-2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake-REPO-PDF-HANDOFF-cf7c2b392d78",
-      "target": "artifact:sha256:cf7c2b392d78537f672b36ed0335d9506ef9e247578d0b5474e53a66810a6650",
-      "relation": "attaches_immutable_artifact",
-      "data": {}
     }
   ],
   "history": {
@@ -4627,16 +4449,8 @@
         "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
         "node_count": 116,
         "edge_count": 217
-      },
-      {
-        "id": "4067173b8e4f96cf",
-        "archived_at": "2026-07-19T00:07:40.339247+00:00",
-        "path": "history/projections/4067173b8e4f96cf.json",
-        "run": "2026-07-19-agent-infrastructure-and-evaluation-contracts-v2-intake",
-        "node_count": 119,
-        "edge_count": 221
       }
     ],
-    "previous_projection": "4067173b8e4f96cf"
+    "previous_projection": "cf8e8b504806a8a2"
   }
 }

@@ -7,6 +7,8 @@
 
 `ZOTERO_LOCAL_FULLTEXT` 只证明 Zotero 中存在可读 PDF，并由文件摘要确认；不证明 worker 已读全文，不证明来源支持任何 claim。标题匹配不升级 access/fulltext 状态。
 
+另有 21 份 PDF 已存在 repo 的 `.runtime` 研究缓存中：21/21 通过 repo 边界、已记录 SHA-256、canonical locator 与首页标题核验，并已按原 program 接回六个现有 child authority。它们当前不是 Zotero attachment；只有人显式打开对应来源时，插件才会再次核验摘要并复制为 Zotero stored attachment。该交接不新建 topic，不改变原有 `FULLTEXT_INSPECTED` 状态，也不产生新的 claim 支持。
+
 ## 按 program
 
 | Program | canonical | exact | local PDF | identity review | not found |
