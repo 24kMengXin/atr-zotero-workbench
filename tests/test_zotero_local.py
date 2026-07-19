@@ -141,6 +141,32 @@ class ZoteroLocalFeedbackTest(unittest.TestCase):
         self.assertEqual(pulled["counts"]["events_appended"], 1)
         self.assertEqual(next(row for row in pulled["topics"] if row["key"] == "two")["status"], "MISSING_BASELINE")
 
+    def test_portfolio_program_note_baselines_and_maps_to_exact_program_node(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace = Path(tmp)
+            (workspace / "graph.json").write_text(json.dumps({
+                "run": "portfolio-run", "nodes": [
+                    {"id": "portfolio:P1", "kind": "research_portfolio", "label": "Portfolio", "data": {}},
+                    {"id": "research_program:child", "kind": "research_program", "label": "Child", "data": {}},
+                ], "edges": [],
+            }))
+            api = FakeAPI()
+            api.annotations = []
+            api.notes = [{"key": "NP", "version": 1, "data": {"note": (
+                "<h1>Program</h1><p>ATR Research Program Node: research_program:child</p>"
+                "<p>ATR Review Stance: PENDING</p><h2>我的审查与追问</h2><p>请写下判断。</p>"
+            )}}]
+            baseline = snapshot_local_feedback(workspace, api)
+            self.assertEqual(baseline["notes"], 1)
+            api.notes[0]["version"] = 2
+            api.notes[0]["data"]["note"] = api.notes[0]["data"]["note"].replace(
+                "PENDING", "CHALLENGES").replace("请写下判断。", "这个 program 边界过宽。")
+            self.assertEqual(pull_local_feedback(workspace, api)["events_appended"], 1)
+            impact = impact_report(workspace)
+            self.assertEqual(impact["affected"][0]["annotation_graph_node_id"], "research_program:child")
+            self.assertEqual(impact["affected"][0]["review_target_type"], "program")
+            self.assertEqual(impact["affected"][0]["nearest_decision_objects"][0]["id"], "research_program:child")
+
 
 if __name__ == "__main__":
     unittest.main()

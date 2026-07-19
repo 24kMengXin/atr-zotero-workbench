@@ -35,6 +35,10 @@ DECISION_OBJECT_PRIORITY = {
     "reality_signal_gap": 5,
     "knowledge_concept": 6,
     "atr_v2_subject": 7,
+    "research_program": 8,
+    "research_portfolio": 9,
+    "historical_alignment_audit": 10,
+    "legacy_research_run": 11,
 }
 
 def _rows(path: Path) -> list[dict[str, Any]]:
@@ -115,6 +119,9 @@ def impact_report(output: Path) -> dict[str, Any]:
             or (explicit_node.get("kind") == "knowledge_concept" and graph_node_id == explicit_node.get("id"))
             or (explicit_node.get("kind") == "collision_review" and graph_node_id == explicit_node.get("id"))
             or (explicit_node.get("kind") == "reality_signal_gap" and graph_node_id == explicit_node.get("id"))
+            or (explicit_node.get("kind") in {"research_portfolio", "research_program",
+                "legacy_research_run", "historical_alignment_audit"}
+                and graph_node_id == explicit_node.get("id"))
             or (explicit_node.get("kind") in {"research_question", "derived_research_question", "real_world_tension"}
                 and graph_node_id == explicit_node.get("id"))
         ):
@@ -130,6 +137,10 @@ def impact_report(output: Path) -> dict[str, Any]:
             else "research_question" if nodes.get(start, {}).get("kind") in {"research_question", "derived_research_question"}
             else "real_world_tension" if nodes.get(start, {}).get("kind") == "real_world_tension"
             else "reality_signal_gap" if nodes.get(start, {}).get("kind") == "reality_signal_gap"
+            else "portfolio" if nodes.get(start, {}).get("kind") == "research_portfolio"
+            else "program" if nodes.get(start, {}).get("kind") == "research_program"
+            else "history" if nodes.get(start, {}).get("kind") == "legacy_research_run"
+            else "alignment_audit" if nodes.get(start, {}).get("kind") == "historical_alignment_audit"
             else "topic" if start == topic_node and run_id == graph.get("run")
             else "unmapped"
         )
@@ -145,7 +156,7 @@ def impact_report(output: Path) -> dict[str, Any]:
                 claims.append(current)
             if nodes[current]["kind"] == "research_problem":
                 research_problems.append(current)
-            if nodes[current]["kind"] in {"atr_v2_subject", "knowledge_concept", "claim", "collision_review", "research_question", "derived_research_question", "real_world_tension", "reality_signal_gap", "research_problem"}:
+            if nodes[current]["kind"] in {"atr_v2_subject", "knowledge_concept", "claim", "collision_review", "research_question", "derived_research_question", "real_world_tension", "reality_signal_gap", "research_problem", "research_portfolio", "research_program", "legacy_research_run", "historical_alignment_audit"}:
                 decision_objects.append(current)
             for neighbor in adjacency[current]:
                 if neighbor not in seen:

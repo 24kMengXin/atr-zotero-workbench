@@ -33,6 +33,10 @@ MARKERS = {
     "atr_derived_question_node_id": r"ATR Derived Question Node:\s*([^\s<]+)",
     "atr_topic_route_node_id": r"ATR Topic Route Node:\s*([^\s<]+)",
     "atr_collision_review_id": r"ATR Collision Review:\s*([^\s<]+)",
+    "atr_portfolio_node_id": r"ATR Portfolio Node:\s*([^\s<]+)",
+    "atr_program_node_id": r"ATR Research Program Node:\s*([^\s<]+)",
+    "atr_legacy_run_node_id": r"ATR Legacy Run Node:\s*([^\s<]+)",
+    "atr_alignment_audit_node_id": r"ATR Alignment Audit Node:\s*([^\s<]+)",
     "atr_graph_node_id": r"ATR Graph Node:\s*([^\s<]+)",
 }
 
@@ -71,6 +75,8 @@ def note_markers(note_html: str) -> dict[str, str | None]:
         "atr_knowledge_node_id", "atr_tension_node_id", "atr_research_question_node_id",
         "atr_derived_question_node_id", "atr_collision_review_id",
         "atr_reality_signal_gap_node_id", "atr_topic_route_node_id",
+        "atr_portfolio_node_id", "atr_program_node_id",
+        "atr_legacy_run_node_id", "atr_alignment_audit_node_id",
     ) if result[field]), None)
     return result
 
