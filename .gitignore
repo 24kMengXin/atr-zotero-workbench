@@ -6,5 +6,6 @@ __pycache__/
 /output/*/human-input/
 /output/runs.json
 /output/human-ai-scholarly-coreading/
+/output/review-registry.json
 /output/codex-inbox-summary.json
 /.runtime/
