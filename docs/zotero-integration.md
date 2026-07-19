@@ -13,4 +13,12 @@
 
 研究问题投影是“有证据的森林”而不是强制单树：现实张力、frontier question、problem、derived question 只有在 ATR graph 存在明确关系时才嵌套或传播反馈。历史版本保留独立 Note；marker 查找解析并比较完整 graph node ID，禁止用字符串前缀误合并版本。多个 ATR source ID 指向同一 DOI/URL/精确标题时复用一个 Zotero 条目，但每个 source ID tag 都必须保留。
 
+本机 `output/runs.json` 是含绝对路径的 gitignored registry，不作为可移植 authority。每次 portfolio/child 重建后使用 `align-registry` 对照 tracked 的 `programs/v2-intakes/program-registry.json`：只有其声明的六个 child 保持 `REGISTERED_V2_RUN`，portfolio 保持唯一 `CURRENT_RUN`；其他旧 v2 controller 继续可读，但降为 `HISTORICAL_NAVIGATION`。这样历史不会被删除，也不会再次混入 current topic 集合。
+
+```bash
+PYTHONPATH=src python3 -m atr_zotero_workbench.app align-registry output/runs.json \
+  --program-registry programs/v2-intakes/program-registry.json \
+  --portfolio-run-id 2026-07-19-multilingual-program-portfolio-v2
+```
+
 参考：<https://zotero-chinese.com/plugin-dev-guide/>、<https://zotero-chinese.com/user-guide/plugins/better-notes>、<https://www.zotero.org/support/dev/client_coding/plugin_development>、<https://www.zotero.org/support/dev/web_api/v3/write_requests>。
