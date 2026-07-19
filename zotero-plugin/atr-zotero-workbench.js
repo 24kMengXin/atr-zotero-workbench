@@ -2056,6 +2056,16 @@ var ATRZoteroWorkbench = {
 			return itemContext?.scrollToPane?.(this.sectionID);
 		});
 		this.appendPaneButton(doc, parent, "便携镜像", () => this.openCompanionWindow(focusNode, item));
+		let panelCount = parent.querySelectorAll("details[data-atr-dock-key]").length;
+		let graphCount = parent.querySelectorAll("svg[aria-label='ATR 当前对象局部关系图']").length;
+		this.appendRuntimeStatus("reading_visual_context_rendered", {
+			focus_node_id: focusNode?.id || null,
+			panel_count: panelCount,
+			mini_graph_count: graphCount,
+			knowledge_neighbor_count: knowledge.length,
+			problem_neighbor_count: problems.length,
+			interaction: "NATIVE_NOTE_EDITOR_WITH_INLINE_FOLDABLE_RESEARCH_GRAPHS",
+		}).catch(error => this.log("could not record reading visual context render: " + error));
 	},
 
 	appendPortfolioGraph(doc, parent, openNode) {

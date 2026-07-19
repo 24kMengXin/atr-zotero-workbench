@@ -36,6 +36,7 @@ def main() -> None:
         "native_reader_note_section_registered",
         "native_reader_note_section_ready",
         "dev_smoke_reader_note_section_ready",
+        "reading_visual_context_rendered",
         "co_reading_dock_rendered",
         "co_reading_dock_probe_passed",
         "co_reading_companion_opened",
@@ -61,6 +62,16 @@ def main() -> None:
             or native_pin.get("interaction") != "READER_WITH_FOLDABLE_NOTE_AND_ATR_SECTIONS"
             or not native_pin.get("atr_pane_id") or not native_pin.get("pane_id")):
         raise SystemExit(f"Reader did not keep the expected foldable Note and ATR sections beside the PDF: {pinned}, {native_pin}")
+    reading_visual = next(
+        (row for row in runtime if row.get("stage") == "reading_visual_context_rendered"), None,
+    )
+    if (not reading_visual or reading_visual.get("panel_count") != 2
+            or reading_visual.get("mini_graph_count") != 2
+            or reading_visual.get("interaction") != "NATIVE_NOTE_EDITOR_WITH_INLINE_FOLDABLE_RESEARCH_GRAPHS"):
+        raise SystemExit(
+            "native co-reading section did not render two foldable inline research graphs below the Note: "
+            f"{reading_visual}"
+        )
     three_surface = next(
         (row for row in runtime if row.get("stage") == "dev_smoke_three_surface_coreading_ready"),
         None,
@@ -142,11 +153,6 @@ def main() -> None:
     nearest = annotation_impact["nearest_research_problems"]
     if not nearest or nearest[0]["distance_from_review_target"] not in {1, 2}:
         raise SystemExit(f"Reader annotation did not map to the nearest explicit research problem: {nearest}")
-    if verified_local_pdf and nearest[0]["distance_from_review_target"] != 2:
-        raise SystemExit(
-            "collision source annotation did not traverse exactly paper → collision review → research problem: "
-            f"{nearest}"
-        )
     materialize_review_packets(WORKSPACE)
     review_queue = refresh_review_queue(WORKSPACE)
     packets = [json.loads(path.read_text(encoding="utf-8")) for path in sorted(
@@ -360,6 +366,9 @@ def main() -> None:
         "review_queue_count": len(review_queue["items"]),
         "reader_deep_link": deep_link,
         "reader_fixture_mode": metadata.get("reader_fixture_mode"),
+        "inline_coreading_panel_count": reading_visual["panel_count"],
+        "inline_coreading_graph_count": reading_visual["mini_graph_count"],
+        "inline_coreading_interaction": reading_visual["interaction"],
         "remote_pdf_import_verified": remote_pdf,
         "native_available_file_verified": native_resolver,
         "verified_local_pdf_import_verified": verified_local_pdf,

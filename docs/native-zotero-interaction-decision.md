@@ -142,7 +142,7 @@
 ## 首个实现切片
 
 1. 先完成 multilingual-aaai 六个历史 topic、28 个 run 对 ATR v2 的整理；共读坞只消费校正后的 current/history/quarantine 投影，不再让五篇 demo 成为 current。
-2. Reader/Item Pane 共读轨道已实现：v0.6.8 的「阅读原文并记录我的理解」一次建立 Reader + 单一原生共读 section；section 上半部是同一来源 Note 的 `note-editor`，下半部是默认展开、可分别折叠的知识图和「现实问题 → 研究问题」图。「在新标签深度编辑」打开同一 Note；完整四区 ATR section 与可置顶便携镜像都是次级入口。
+2. Reader/Item Pane 共读轨道已实现：v0.6.9 的「阅读原文并记录我的理解」一次建立 Reader + 单一原生共读 section；section 上半部是同一来源 Note 的 `note-editor`，下半部是默认展开、可分别折叠的知识图和「现实问题 → 研究问题」图。「在新标签深度编辑」打开同一 Note；完整四区 ATR section 与可置顶便携镜像都是次级入口。repo-local Zotero 9 smoke 已从实际 section DOM 记录 2 个 disclosure 和 2 张 SVG，而不是用普通 ATR section 的旧测试替代。
 3. 当前 source/annotation 驱动局部邻域；节点能反向打开原生 Note、item 或 PDF annotation。portfolio 投影另有一张全局 SVG：1 个 portfolio → 6 个 program authority → 28 条只读历史 branch；蓝色 program 现在解析 registry 中完全匹配的 `child_run_id` 并进入对应 Zotero topic，灰色历史节点才打开只读导航 Note。
 4. 当前全局图仍可嵌在 Item Pane 的「过程 / 项目总览」折叠区；持续共读时则使用同一投影的伴随窗，不再计划未经验证的 Library 私有 DOM 托盘。
 5. Zotero 9 隔离 smoke 已证明 v0.6.4 的 Reader 保持 `item` mode，阅读 Note 与 ATR 拥有不同 pane ID 并同时注册；来源 Note 是 Zotero 原生 `note-editor`，同一份 Note 仍可开标签。伴随窗继续渲染 4 个折叠区和 2 张局部 SVG；portfolio 的折叠 owner-review 队列还能执行 program → registered child authority → exact collision-review Note → 返回 portfolio。action child 投影包含 106 个去重来源、6 个 current source-reviewed knowledge Collection、6 个 historical scaffold Collection 和 16 个研究集合。仍需在日常 profile 完成主观密度验收。
