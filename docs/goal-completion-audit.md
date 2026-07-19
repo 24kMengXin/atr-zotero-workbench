@@ -19,7 +19,7 @@
 | 插件与 auto-research harness 同时优化 | 部分完成 | 两个真实 pilot形成 source-inspection/Zotero-state SHADOW card；本轮错误 arXiv PDF 被元数据核验拦截并形成 `HCH-source-identity-before-fulltext-inspected-v1` SHADOW card；collision review 已映射为问题卡子 Note | 两张 card 都未达到 OPTIONAL/ENFORCE；需按各自 sample 做 prospective comparison，并验证 identity check 的误拒率 |
 | 精确回到 Zotero 原始来源、PDF 与高亮 | 已证明（隔离环境） | 插件在事件发生时生成 user/group-aware `zotero://open-pdf/...page=...&annotation=...`；packet、queue、过程 Note 与 `review-links.md` 保留同一 URI；`Reader.open(..., {annotationID})` 内部重开也已验证 | 仍需在日常 profile 中点击一次真实 packet 链接做人工体验验收 |
 | 新 GitHub repo 与本机目录配合 | 已完成当前同步里程碑 | 插件仓库 `24kMengXin/atr-zotero-workbench` 的 `main` 已推送实现提交 `1bb9307`，包含 portfolio、六 child、历史归位、v0.6.4 共读界面与候选 XPI；父仓库 `24kMengXin/multilingual-aaai` 的 `main` 已推送独立 harness 提交 `27f839a`，只包含 knowledge-map 1.1 的四个合同文件。`.runtime`、Zotero profile/data、全文、SQLite 与凭据均未提交；父仓库其他未提交删除未进入该提交 | 后续每次真实 owner review 形成的新 artifact/投影仍需独立、可审计地提交；当前同步完成不等于完整研究闭环完成 |
-| 可安装候选 XPI | 部分完成 | v0.6.9 候选通过 71 项测试与完整 repo-local Zotero 9 smoke；XPI SHA-256 `b94b53ff2d6fe5d6642ba8961eb226e9d8a57923264c19a848afd81f9ee0080c`。smoke 真实完成 repo PDF 摘要复核→Zotero stored attachment→Reader→Note→两张内联图→annotation→最近问题距离 1→3 个 review packet，且清退了“repo PDF 必须经 collision 两跳”的错误验证假设 | 发布 v0.6.9；日常 profile 仍注册 0.5.2，需官方安装后完成实际共读验收 |
+| 可安装候选 XPI | 部分完成 | GitHub Release v0.6.9 已发布，asset digest 与 XPI SHA-256 `b94b53ff2d6fe5d6642ba8961eb226e9d8a57923264c19a848afd81f9ee0080c` 一致；71 项测试与完整 repo-local Zotero 9 smoke 通过。smoke 真实完成 repo PDF 摘要复核→Zotero stored attachment→Reader→Note→两张内联图→annotation→最近问题距离 1→3 个 review packet，且清退了“repo PDF 必须经 collision 两跳”的错误验证假设 | 日常 profile 仍注册 0.5.2，需官方安装 v0.6.9 后完成实际共读验收 |
 
 ## 当前最短的真实完成路径
 
